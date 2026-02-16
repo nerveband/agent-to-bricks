@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'BRICKS_AI_VERSION', '1.0.0' );
+define( 'BRICKS_AI_VERSION', '1.1.0' );
 define( 'BRICKS_AI_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BRICKS_AI_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
@@ -74,14 +74,26 @@ function bricks_ai_enqueue_editor_assets() {
 		true
 	);
 
+	// Build providers map for inline switching (exclude API keys).
+	$all_providers = BricksAI_Providers::get_all();
+	$providers_safe = array();
+	foreach ( $all_providers as $id => $p ) {
+		$providers_safe[ $id ] = array(
+			'name'   => $p['name'],
+			'models' => $p['models'] ?? array(),
+		);
+	}
+
 	wp_localize_script( 'bricks-ai-panel', 'bricksAIConfig', array(
-		'restUrl'    => rest_url( 'bricks-ai/v1/' ),
-		'nonce'      => wp_create_nonce( 'wp_rest' ),
-		'provider'   => $settings['provider'],
-		'model'      => $model,
-		'providerName' => $provider['name'] ?? $settings['provider'],
-		'temperature'  => (float) $settings['temperature'],
-		'maxTokens'    => (int) $settings['max_tokens'],
+		'restUrl'         => rest_url( 'bricks-ai/v1/' ),
+		'nonce'           => wp_create_nonce( 'wp_rest' ),
+		'provider'        => $settings['provider'],
+		'model'           => $model,
+		'providerName'    => $provider['name'] ?? $settings['provider'],
+		'temperature'     => (float) $settings['temperature'],
+		'maxTokens'       => (int) $settings['max_tokens'],
+		'availableModels' => $provider['models'] ?? array(),
+		'providers'       => $providers_safe,
 	) );
 }
 add_action( 'wp_enqueue_scripts', 'bricks_ai_enqueue_editor_assets' );
