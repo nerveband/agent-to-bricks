@@ -29,6 +29,7 @@
       mode: 'section',         // "section" or "page"
       phase: 'idle',           // "idle", "loading", "preview", "error"
       action: 'generate',      // "generate" or "modify"
+      insertMode: 'replace',   // "replace" or "insert" (for modify action)
       modifyTargetId: null,    // Element ID being modified
       elements: null,          // Generated elements (nested)
       explanation: '',
@@ -67,6 +68,11 @@
         <div class="bai-mode">
           <button class="bai-mode-btn active" data-mode="section">Section</button>
           <button class="bai-mode-btn" data-mode="page">Full Page</button>
+        </div>
+        <div class="bai-insert-mode">
+          <span class="bai-insert-mode-label">On modify:</span>
+          <button class="bai-insert-mode-btn active" data-insert-mode="replace">Replace</button>
+          <button class="bai-insert-mode-btn" data-insert-mode="insert">Insert Copy</button>
         </div>
         <div class="bai-prompt">
           <textarea placeholder="Describe what you want to build..." rows="4"></textarea>
@@ -125,6 +131,15 @@
         panel.querySelectorAll('.bai-mode-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         state.mode = btn.dataset.mode;
+      });
+    });
+
+    // Insert mode toggle.
+    panel.querySelectorAll('.bai-insert-mode-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        panel.querySelectorAll('.bai-insert-mode-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        state.insertMode = btn.dataset.insertMode;
       });
     });
 
@@ -496,8 +511,7 @@
       let insertedCount = 0;
 
       if (state.action === 'modify' && state.modifyTargetId) {
-        // Modify mode: find the target element's parent and position,
-        // delete the old element, then insert the replacement.
+        // Modify mode: find the target element's parent and position.
         const bricksState = bridge.getState();
         const oldEl = bricksState.content.find(e => e.id === state.modifyTargetId);
         const parentId = oldEl ? oldEl.parent : 0;
@@ -512,16 +526,23 @@
           }
         }
 
-        // Delete old element first.
-        bridge.deleteElement(state.modifyTargetId);
-
-        // Insert replacement at the same position.
-        for (const element of state.elements) {
-          const ids = bridge.insertTree(element, parentId, index);
-          insertedCount += ids.length;
+        if (state.insertMode === 'replace') {
+          // Replace: delete old element, insert new at same position.
+          bridge.deleteElement(state.modifyTargetId);
+          for (const element of state.elements) {
+            const ids = bridge.insertTree(element, parentId, index);
+            insertedCount += ids.length;
+          }
+          setStatus(`Replaced element with ${insertedCount} elements (Ctrl+Z to undo)`, 'success');
+        } else {
+          // Insert copy: keep original, add modified copy after it.
+          const insertIndex = index + 1;
+          for (const element of state.elements) {
+            const ids = bridge.insertTree(element, parentId, insertIndex);
+            insertedCount += ids.length;
+          }
+          setStatus(`Inserted ${insertedCount} elements after original (Ctrl+Z to undo)`, 'success');
         }
-
-        setStatus(`Replaced element with ${insertedCount} elements (Ctrl+Z to undo)`, 'success');
       } else if (state.mode === 'page') {
         const ids = bridge.insertFullPage(state.elements);
         insertedCount = ids.length;

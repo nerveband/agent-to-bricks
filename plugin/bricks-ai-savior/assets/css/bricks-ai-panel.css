@@ -164,6 +164,48 @@
   background: #45475a;
 }
 
+/* ---- Insert Mode Toggle ---- */
+
+.bai-insert-mode {
+  display: flex;
+  align-items: center;
+  padding: 6px 14px;
+  gap: 6px;
+  border-bottom: 1px solid #313244;
+  flex-shrink: 0;
+}
+
+.bai-insert-mode-label {
+  font-size: 11px;
+  color: #6c7086;
+  margin-right: 2px;
+  white-space: nowrap;
+}
+
+.bai-insert-mode-btn {
+  flex: 1;
+  padding: 4px 10px;
+  background: #313244;
+  border: 1px solid #45475a;
+  border-radius: 5px;
+  color: #a6adc8;
+  cursor: pointer;
+  font-size: 11px;
+  text-align: center;
+  transition: all 0.15s;
+}
+
+.bai-insert-mode-btn.active {
+  background: #f9e2af;
+  color: #1e1e2e;
+  border-color: #f9e2af;
+  font-weight: 600;
+}
+
+.bai-insert-mode-btn:hover:not(.active) {
+  background: #45475a;
+}
+
 /* ---- Prompt Area ---- */
 
 .bai-prompt {
