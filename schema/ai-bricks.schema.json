@@ -1,0 +1,246 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bricks-ai-savior/schema/ai-bricks.schema.json",
+  "title": "Bricks AI Patch",
+  "description": "Canonical JSON schema for AI-driven Bricks Builder element patches",
+  "type": "object",
+  "required": ["meta", "patchMode", "nodes"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["version", "source"],
+      "properties": {
+        "version": {
+          "type": "string",
+          "description": "Schema version",
+          "const": "1.0"
+        },
+        "source": {
+          "type": "string",
+          "description": "Origin of the patch",
+          "enum": ["ai-extension", "ai-transform", "manual", "import"]
+        },
+        "timestamp": {
+          "type": "integer",
+          "description": "Unix timestamp of patch creation"
+        },
+        "model": {
+          "type": "string",
+          "description": "LLM model used for generation (if applicable)"
+        },
+        "instruction": {
+          "type": "string",
+          "description": "Original user instruction that generated this patch"
+        },
+        "bricksVersion": {
+          "type": "string",
+          "description": "Target Bricks Builder version"
+        }
+      }
+    },
+    "patchMode": {
+      "type": "string",
+      "enum": ["insert", "replace", "append", "delete"],
+      "description": "How to apply the patch: insert at index, replace by ID, append to parent, or delete by ID"
+    },
+    "targetParent": {
+      "type": ["string", "integer"],
+      "description": "Parent element ID for insert/append. Use 0 for root-level insertion."
+    },
+    "targetIndex": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Position within parent's children array (for insert mode)"
+    },
+    "targetElementIds": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Element IDs to replace or delete (for replace/delete modes)"
+    },
+    "nodes": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/BricksNode" },
+      "description": "Elements to insert, replace, or append"
+    },
+    "assets": {
+      "$ref": "#/$defs/Assets",
+      "description": "Referenced media and external resources"
+    },
+    "bindings": {
+      "$ref": "#/$defs/Bindings",
+      "description": "Global class and variable references"
+    }
+  },
+  "$defs": {
+    "BricksNode": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Element ID. Auto-generated if omitted. Must be unique if provided.",
+          "pattern": "^[a-z0-9]{6,10}$"
+        },
+        "name": {
+          "type": "string",
+          "description": "Bricks element type name",
+          "examples": [
+            "section", "container", "block", "div",
+            "heading", "text-basic", "rich-text", "text-link",
+            "button", "icon", "image", "video",
+            "nav-menu", "nav-nested", "offcanvas",
+            "accordion", "accordion-nested", "tabs", "tabs-nested",
+            "slider", "slider-nested", "carousel",
+            "form", "map", "code", "template",
+            "post-content", "posts", "pagination"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "description": "User-visible label in structure panel"
+        },
+        "parent": {
+          "type": ["string", "integer"],
+          "description": "Parent element ID. Set by system during patch application."
+        },
+        "children": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/BricksNode" },
+          "description": "Nested child nodes (recursive). During application, flattened to IDs."
+        },
+        "settings": {
+          "$ref": "#/$defs/ElementSettings",
+          "description": "Element-specific settings"
+        }
+      }
+    },
+    "ElementSettings": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Text content (heading, text-basic, button)"
+        },
+        "tag": {
+          "type": "string",
+          "description": "HTML tag override",
+          "enum": ["div", "span", "p", "a", "h1", "h2", "h3", "h4", "h5", "h6", "header", "footer", "main", "section", "article", "aside", "nav", "ul", "ol", "li", "figure", "figcaption", "blockquote", "address"]
+        },
+        "_cssGlobalClasses": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Array of global class IDs applied to this element"
+        },
+        "_cssClasses": {
+          "type": "string",
+          "description": "Custom CSS classes (space-separated)"
+        },
+        "_cssId": {
+          "type": "string",
+          "description": "Custom CSS ID"
+        },
+        "_attributes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "value": { "type": "string" }
+            }
+          },
+          "description": "Custom HTML attributes"
+        },
+        "link": {
+          "type": "object",
+          "properties": {
+            "type": { "type": "string", "enum": ["external", "internal", "popup", "action"] },
+            "url": { "type": "string" },
+            "newTab": { "type": "boolean" },
+            "postId": { "type": ["string", "integer"] }
+          },
+          "description": "Link configuration"
+        },
+        "style": {
+          "type": "string",
+          "description": "Button style variant"
+        },
+        "size": {
+          "type": "string",
+          "description": "Button size"
+        },
+        "_hidden": {
+          "type": "object",
+          "description": "Hidden settings not visible in builder UI"
+        },
+        "_typography": {
+          "type": "object",
+          "description": "Typography settings (font, size, weight, etc.)"
+        },
+        "_background": {
+          "type": "object",
+          "description": "Background settings (color, image, gradient)"
+        },
+        "_border": {
+          "type": "object",
+          "description": "Border and border-radius settings"
+        },
+        "_gradient": {
+          "type": "object",
+          "description": "Gradient background settings"
+        }
+      },
+      "additionalProperties": true
+    },
+    "Assets": {
+      "type": "object",
+      "properties": {
+        "media": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "refId": { "type": "string", "description": "Reference ID used in node settings" },
+              "url": { "type": "string", "format": "uri" },
+              "attachmentId": { "type": "integer" },
+              "alt": { "type": "string" },
+              "width": { "type": "integer" },
+              "height": { "type": "integer" }
+            }
+          },
+          "description": "Media files referenced by elements"
+        }
+      }
+    },
+    "Bindings": {
+      "type": "object",
+      "properties": {
+        "globalClasses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name"],
+            "properties": {
+              "id": { "type": "string", "description": "Class ID (site-specific, may need remapping)" },
+              "name": { "type": "string", "description": "Class name (portable, used for matching)" },
+              "category": { "type": "string" },
+              "settings": { "type": "object" }
+            }
+          },
+          "description": "Global classes referenced by nodes. Used for cross-site portability."
+        },
+        "cssVariables": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string", "description": "CSS variable name (e.g. --primary)" },
+              "value": { "type": "string" },
+              "source": { "type": "string", "enum": ["acss", "bricks", "custom"] }
+            }
+          },
+          "description": "CSS variables referenced in settings"
+        }
+      }
+    }
+  }
+}

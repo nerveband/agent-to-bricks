@@ -1,0 +1,19 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Zip builds (regenerate from source)
+plugin/*.zip
+
+# Node (future)
+node_modules/
+
+# Environment
+.env
+.env.local

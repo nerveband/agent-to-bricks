@@ -1,0 +1,379 @@
+/**
+ * Bricks AI Savior — Floating Panel Styles
+ * Dark theme to match Bricks editor aesthetic.
+ */
+
+#bricks-ai-panel {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  width: 380px;
+  max-height: calc(100vh - 100px);
+  background: #1e1e2e;
+  color: #cdd6f4;
+  border: 1px solid #45475a;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: opacity 0.2s;
+}
+
+#bricks-ai-panel.bai-hidden {
+  display: none;
+}
+
+#bricks-ai-panel.bai-minimized {
+  max-height: 42px;
+  overflow: hidden;
+}
+
+/* ---- Header ---- */
+
+.bai-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #181825;
+  border-bottom: 1px solid #313244;
+  cursor: move;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.bai-header-title {
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bai-header-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.bai-header-btn {
+  background: none;
+  border: none;
+  color: #a6adc8;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.bai-header-btn:hover {
+  background: #313244;
+  color: #cdd6f4;
+}
+
+/* ---- Provider Badge ---- */
+
+.bai-provider {
+  padding: 6px 14px;
+  background: #11111b;
+  border-bottom: 1px solid #313244;
+  font-size: 11px;
+  color: #a6adc8;
+  flex-shrink: 0;
+}
+
+.bai-provider-name {
+  color: #89b4fa;
+  font-weight: 500;
+}
+
+/* ---- Context Bar ---- */
+
+.bai-context {
+  padding: 8px 14px;
+  background: #1e1e2e;
+  border-bottom: 1px solid #313244;
+  font-size: 12px;
+  color: #a6adc8;
+  flex-shrink: 0;
+}
+
+.bai-context-label {
+  color: #f9e2af;
+}
+
+/* ---- Mode Toggle ---- */
+
+.bai-mode {
+  display: flex;
+  padding: 8px 14px;
+  gap: 8px;
+  border-bottom: 1px solid #313244;
+  flex-shrink: 0;
+}
+
+.bai-mode-btn {
+  flex: 1;
+  padding: 6px 12px;
+  background: #313244;
+  border: 1px solid #45475a;
+  border-radius: 6px;
+  color: #a6adc8;
+  cursor: pointer;
+  font-size: 12px;
+  text-align: center;
+  transition: all 0.15s;
+}
+
+.bai-mode-btn.active {
+  background: #89b4fa;
+  color: #1e1e2e;
+  border-color: #89b4fa;
+  font-weight: 600;
+}
+
+.bai-mode-btn:hover:not(.active) {
+  background: #45475a;
+}
+
+/* ---- Prompt Area ---- */
+
+.bai-prompt {
+  padding: 10px 14px;
+  border-bottom: 1px solid #313244;
+  flex-shrink: 0;
+}
+
+.bai-prompt textarea {
+  width: 100%;
+  min-height: 80px;
+  max-height: 160px;
+  resize: vertical;
+  background: #11111b;
+  border: 1px solid #45475a;
+  border-radius: 6px;
+  color: #cdd6f4;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.bai-prompt textarea:focus {
+  outline: none;
+  border-color: #89b4fa;
+}
+
+.bai-prompt textarea::placeholder {
+  color: #6c7086;
+}
+
+/* ---- Action Buttons ---- */
+
+.bai-actions {
+  display: flex;
+  gap: 8px;
+  padding: 8px 14px;
+  border-bottom: 1px solid #313244;
+  flex-shrink: 0;
+}
+
+.bai-btn {
+  flex: 1;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.bai-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.bai-btn-generate {
+  background: #89b4fa;
+  color: #1e1e2e;
+}
+
+.bai-btn-generate:hover:not(:disabled) {
+  background: #74c7ec;
+}
+
+.bai-btn-modify {
+  background: #a6e3a1;
+  color: #1e1e2e;
+}
+
+.bai-btn-modify:hover:not(:disabled) {
+  background: #94e2d5;
+}
+
+.bai-btn-insert {
+  background: #a6e3a1;
+  color: #1e1e2e;
+}
+
+.bai-btn-insert:hover:not(:disabled) {
+  background: #94e2d5;
+}
+
+.bai-btn-cancel {
+  background: #45475a;
+  color: #cdd6f4;
+}
+
+.bai-btn-cancel:hover:not(:disabled) {
+  background: #585b70;
+}
+
+/* ---- Preview Tree ---- */
+
+.bai-preview {
+  padding: 10px 14px;
+  border-bottom: 1px solid #313244;
+  max-height: 200px;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.bai-preview-title {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #a6adc8;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.bai-tree {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #cdd6f4;
+}
+
+.bai-tree-node {
+  padding-left: 16px;
+  position: relative;
+}
+
+.bai-tree-node::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #45475a;
+}
+
+.bai-tree-leaf {
+  padding-left: 16px;
+  position: relative;
+}
+
+.bai-tree-leaf::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 10px;
+  width: 8px;
+  height: 1px;
+  background: #45475a;
+}
+
+.bai-tree-type {
+  color: #89b4fa;
+}
+
+.bai-tree-label {
+  color: #f9e2af;
+  margin-left: 6px;
+}
+
+/* ---- Loading State ---- */
+
+.bai-loading {
+  padding: 20px 14px;
+  text-align: center;
+  color: #a6adc8;
+  flex-shrink: 0;
+}
+
+.bai-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #45475a;
+  border-top-color: #89b4fa;
+  border-radius: 50%;
+  animation: bai-spin 0.8s linear infinite;
+  margin-bottom: 8px;
+}
+
+@keyframes bai-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ---- Status Bar ---- */
+
+.bai-status {
+  padding: 8px 14px;
+  font-size: 12px;
+  color: #a6adc8;
+  background: #11111b;
+  border-top: 1px solid #313244;
+  flex-shrink: 0;
+}
+
+.bai-status-success {
+  color: #a6e3a1;
+}
+
+.bai-status-error {
+  color: #f38ba8;
+}
+
+/* ---- Scrollbar ---- */
+
+#bricks-ai-panel ::-webkit-scrollbar {
+  width: 6px;
+}
+
+#bricks-ai-panel ::-webkit-scrollbar-track {
+  background: #1e1e2e;
+}
+
+#bricks-ai-panel ::-webkit-scrollbar-thumb {
+  background: #45475a;
+  border-radius: 3px;
+}
+
+#bricks-ai-panel ::-webkit-scrollbar-thumb:hover {
+  background: #585b70;
+}
+
+/* ---- Error Details ---- */
+
+.bai-error-details {
+  padding: 8px 14px;
+  background: #302030;
+  border-bottom: 1px solid #45475a;
+  font-size: 11px;
+  color: #f38ba8;
+  max-height: 100px;
+  overflow-y: auto;
+}
