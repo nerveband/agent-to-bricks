@@ -1,0 +1,873 @@
+{
+  "idx": 196,
+  "title": "Testimonial Section Lima",
+  "elementCount": 43,
+  "classCount": 11,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "799afc",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "4eaf04",
+          "c31c99"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hyrutb"
+          ]
+        },
+        "label": "Testimonial Section Lima"
+      },
+      {
+        "id": "c31c99",
+        "name": "container",
+        "parent": "799afc",
+        "children": [
+          "b0ee84",
+          "92b33a",
+          "4e4449",
+          "61fcdc",
+          "e29559",
+          "847170",
+          "5cc9c6",
+          "018642",
+          "d177a9",
+          "baee42",
+          "4302df",
+          "2efe72",
+          "c00e76",
+          "7771eb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lcywem",
+            "rktisp"
+          ],
+          "tag": "custom",
+          "customTag": "ul"
+        },
+        "label": "Testimonial Grid Lima (CSS)"
+      },
+      {
+        "id": "4eaf04",
+        "name": "container",
+        "parent": "799afc",
+        "children": [
+          "0ef000",
+          "eefaa6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ycetpw"
+          ]
+        },
+        "label": "Introduction Delta"
+      },
+      {
+        "id": "0ef000",
+        "name": "heading",
+        "parent": "4eaf04",
+        "children": [],
+        "settings": {
+          "text": "Your social proof heading goes here",
+          "tag": "h2"
+        }
+      },
+      {
+        "id": "eefaa6",
+        "name": "div",
+        "parent": "4eaf04",
+        "children": [
+          "e6ca89",
+          "0f067f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wughmh"
+          ]
+        },
+        "label": "Badge Group Alpha"
+      },
+      {
+        "id": "e6ca89",
+        "name": "div",
+        "parent": "eefaa6",
+        "children": [
+          "a2355e",
+          "6b6f32"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cogkhk"
+          ]
+        },
+        "label": "Badge Alpha (CSS)"
+      },
+      {
+        "id": "a95345",
+        "name": "icon",
+        "parent": "a2355e",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)",
+            "fill": {
+              "raw": "var(--icon-color)"
+            }
+          },
+          "_cssGlobalClasses": [
+            "gsmrgo"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Icon"
+      },
+      {
+        "id": "6b6f32",
+        "name": "text-basic",
+        "parent": "e6ca89",
+        "children": [],
+        "settings": {
+          "text": "on Google",
+          "_cssGlobalClasses": [
+            "ejyycy"
+          ],
+          "tag": "span"
+        },
+        "label": "Label"
+      },
+      {
+        "id": "a2355e",
+        "name": "div",
+        "parent": "e6ca89",
+        "children": [
+          "a95345",
+          "4824d0"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sylzqt",
+            "axkvcb"
+          ]
+        },
+        "label": "Icon Wrapper (w/ Data Attribute)"
+      },
+      {
+        "id": "4824d0",
+        "name": "text-basic",
+        "parent": "a2355e",
+        "children": [],
+        "settings": {
+          "text": "4.8",
+          "_cssGlobalClasses": [
+            "zrjdai"
+          ],
+          "tag": "span"
+        },
+        "label": "Rating"
+      },
+      {
+        "id": "0f067f",
+        "name": "div",
+        "parent": "eefaa6",
+        "children": [
+          "dfd58c",
+          "18885f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cogkhk"
+          ]
+        },
+        "label": "Badge Alpha (CSS)"
+      },
+      {
+        "id": "dfd58c",
+        "name": "div",
+        "parent": "0f067f",
+        "children": [
+          "f04465",
+          "45cd43"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sylzqt",
+            "axkvcb"
+          ]
+        },
+        "label": "Icon Wrapper (w/ Data Attribute)"
+      },
+      {
+        "id": "18885f",
+        "name": "text-basic",
+        "parent": "0f067f",
+        "children": [],
+        "settings": {
+          "text": "on Yelp",
+          "_cssGlobalClasses": [
+            "uxsnwg"
+          ],
+          "tag": "span"
+        },
+        "label": "Label"
+      },
+      {
+        "id": "f04465",
+        "name": "icon",
+        "parent": "dfd58c",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)",
+            "fill": {
+              "raw": "var(--icon-color)"
+            }
+          },
+          "_cssGlobalClasses": [
+            "gsmrgo"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Icon"
+      },
+      {
+        "id": "45cd43",
+        "name": "text-basic",
+        "parent": "dfd58c",
+        "children": [],
+        "settings": {
+          "text": "4.8",
+          "_cssGlobalClasses": [
+            "ejyycy"
+          ],
+          "tag": "span"
+        },
+        "label": "Rating"
+      },
+      {
+        "id": "b0ee84",
+        "name": "div",
+        "parent": "c31c99",
+        "children": [
+          "b5e888"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iorcjr"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Lima"
+      },
+      {
+        "id": "b5e888",
+        "name": "text-basic",
+        "parent": "b0ee84",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "auylqx"
+          ],
+          "text": "This is a short callout quote.",
+          "tag": "custom",
+          "customTag": "q"
+        },
+        "label": "Callout"
+      },
+      {
+        "id": "92b33a",
+        "name": "div",
+        "parent": "c31c99",
+        "children": [
+          "c2849d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iorcjr"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Lima"
+      },
+      {
+        "id": "c2849d",
+        "name": "text-basic",
+        "parent": "92b33a",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "auylqx"
+          ],
+          "text": "This is a short callout quote, but slightly longer.",
+          "tag": "custom",
+          "customTag": "q"
+        },
+        "label": "Callout"
+      },
+      {
+        "id": "4e4449",
+        "name": "div",
+        "parent": "c31c99",
+        "children": [
+          "552f21"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iorcjr"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Lima"
+      },
+      {
+        "id": "552f21",
+        "name": "text-basic",
+        "parent": "4e4449",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "auylqx"
+          ],
+          "text": "This is a really short one.",
+          "tag": "custom",
+          "customTag": "q"
+        },
+        "label": "Callout"
+      },
+      {
+        "id": "61fcdc",
+        "name": "div",
+        "parent": "c31c99",
+        "children": [
+          "7c9e60"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iorcjr"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Lima"
+      },
+      {
+        "id": "7c9e60",
+        "name": "text-basic",
+        "parent": "61fcdc",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "auylqx"
+          ],
+          "text": "A callout quote goes here.",
+          "tag": "custom",
+          "customTag": "q"
+        },
+        "label": "Callout"
+      },
+      {
+        "id": "e29559",
+        "name": "div",
+        "parent": "c31c99",
+        "children": [
+          "9a82a7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iorcjr"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Lima"
+      },
+      {
+        "id": "9a82a7",
+        "name": "text-basic",
+        "parent": "e29559",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "auylqx"
+          ],
+          "text": "Perfect for callouts.",
+          "tag": "custom",
+          "customTag": "q"
+        },
+        "label": "Callout"
+      },
+      {
+        "id": "847170",
+        "name": "div",
+        "parent": "c31c99",
+        "children": [
+          "761ee0"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iorcjr"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Lima"
+      },
+      {
+        "id": "761ee0",
+        "name": "text-basic",
+        "parent": "847170",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "auylqx"
+          ],
+          "text": "Really great layout to show a bunch of quick quotes.",
+          "tag": "custom",
+          "customTag": "q"
+        },
+        "label": "Callout"
+      },
+      {
+        "id": "5cc9c6",
+        "name": "div",
+        "parent": "c31c99",
+        "children": [
+          "050f2f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iorcjr"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Lima"
+      },
+      {
+        "id": "050f2f",
+        "name": "text-basic",
+        "parent": "5cc9c6",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "auylqx"
+          ],
+          "text": "Creates a wall of social proof.",
+          "tag": "custom",
+          "customTag": "q"
+        },
+        "label": "Callout"
+      },
+      {
+        "id": "018642",
+        "name": "div",
+        "parent": "c31c99",
+        "children": [
+          "0cee21"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iorcjr"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Lima"
+      },
+      {
+        "id": "0cee21",
+        "name": "text-basic",
+        "parent": "018642",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "auylqx"
+          ],
+          "text": "Works amazing with a custom post type.",
+          "tag": "custom",
+          "customTag": "q"
+        },
+        "label": "Callout"
+      },
+      {
+        "id": "d177a9",
+        "name": "div",
+        "parent": "c31c99",
+        "children": [
+          "b3201c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iorcjr"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Lima"
+      },
+      {
+        "id": "b3201c",
+        "name": "text-basic",
+        "parent": "d177a9",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "auylqx"
+          ],
+          "text": "Don't let the callouts get too long, though.",
+          "tag": "custom",
+          "customTag": "q"
+        },
+        "label": "Callout"
+      },
+      {
+        "id": "baee42",
+        "name": "div",
+        "parent": "c31c99",
+        "children": [
+          "ff4d19"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iorcjr"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Lima"
+      },
+      {
+        "id": "ff4d19",
+        "name": "text-basic",
+        "parent": "baee42",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "auylqx"
+          ],
+          "text": "A must-have.",
+          "tag": "custom",
+          "customTag": "q"
+        },
+        "label": "Callout"
+      },
+      {
+        "id": "4302df",
+        "name": "div",
+        "parent": "c31c99",
+        "children": [
+          "527af2"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iorcjr"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Lima"
+      },
+      {
+        "id": "527af2",
+        "name": "text-basic",
+        "parent": "4302df",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "auylqx"
+          ],
+          "text": "A great way to break up content.",
+          "tag": "custom",
+          "customTag": "q"
+        },
+        "label": "Callout"
+      },
+      {
+        "id": "2efe72",
+        "name": "div",
+        "parent": "c31c99",
+        "children": [
+          "8bbe18"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iorcjr"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Lima"
+      },
+      {
+        "id": "8bbe18",
+        "name": "text-basic",
+        "parent": "2efe72",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "auylqx"
+          ],
+          "text": "Stick this on any page, and it'll boost conversions.",
+          "tag": "custom",
+          "customTag": "q"
+        },
+        "label": "Callout"
+      },
+      {
+        "id": "c00e76",
+        "name": "div",
+        "parent": "c31c99",
+        "children": [
+          "29da33"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iorcjr"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Lima"
+      },
+      {
+        "id": "29da33",
+        "name": "text-basic",
+        "parent": "c00e76",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "auylqx"
+          ],
+          "text": "So simple, so elegant.",
+          "tag": "custom",
+          "customTag": "q"
+        },
+        "label": "Callout"
+      },
+      {
+        "id": "7771eb",
+        "name": "div",
+        "parent": "c31c99",
+        "children": [
+          "cabbdf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iorcjr"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Lima"
+      },
+      {
+        "id": "cabbdf",
+        "name": "text-basic",
+        "parent": "7771eb",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "auylqx"
+          ],
+          "text": "A big time saver for sure.",
+          "tag": "custom",
+          "customTag": "q"
+        },
+        "label": "Callout"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "rktisp",
+        "name": "list--none",
+        "settings": {
+          "_padding": {
+            "left": "0"
+          },
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "acss_import_list--none",
+        "modified": 1771254184,
+        "user_id": 1
+      },
+      {
+        "id": "iorcjr",
+        "name": "fr-testimonial-card-lima",
+        "settings": {
+          "_typography": {
+            "text-align": "center"
+          },
+          "_padding": {
+            "top": "var(--space-s)",
+            "right": "var(--space-s)",
+            "bottom": "var(--space-s)",
+            "left": "var(--space-s)"
+          },
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_width:mobile_portrait": "100%",
+          "_width:mobile_landscape": "100%",
+          "_display": "flex",
+          "_justifyContent": "center",
+          "_direction": "column",
+          "_alignItems": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "auylqx",
+        "name": "fr-testimonial-card-lima__callout",
+        "settings": {
+          "_typography": {
+            "font-weight": "600"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "lcywem",
+        "name": "fr-testimonial-grid-lima",
+        "settings": {
+          "_display": "flex",
+          "_justifyContent": "center",
+          "_direction": "row",
+          "_alignItems": "center",
+          "_flexWrap": "wrap",
+          "_columnGap": "calc(var(--grid-gap) / 2)",
+          "_rowGap": "calc(var(--grid-gap) / 2)",
+          "_cssCustom": "/* \nSet how many to show on mobile.\nAdd \"1\" to your desired number.\nE.g. to show 6, set the nth selector to \"7\".\n*/\n\n@media (max-width: 767px) {\n  .fr-testimonial-grid-lima > *:nth-child(n + 7) {\n    display: none!important;\n\t}\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "hyrutb",
+        "name": "fr-testimonial-section-lima",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ycetpw",
+        "name": "fr-intro-delta",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_alignItems": "center",
+          "_alignItems:mobile_portrait": "flex-start"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wughmh",
+        "name": "fr-badge-group-alpha",
+        "settings": {
+          "_direction": "row",
+          "_display": "flex",
+          "_rowGap": "var(--content-gap)",
+          "_columnGap": "var(--content-gap)",
+          "_direction:mobile_portrait": "column"
+        },
+        "_exists": false
+      },
+      {
+        "id": "cogkhk",
+        "name": "fr-badge-alpha",
+        "settings": {
+          "_display": "flex",
+          "_alignItems": "center",
+          "_columnGap": "0.5em",
+          "_cssCustom": ".fr-badge-alpha {\n\t--icon-size: 1.5em;\n  --icon-fill-color: transparent;\n  --icon-stroke-color: var(--text-dark);\n  --icon-fill-color-hover: transparent;  \n  --icon-stroke-color-hover: var(--text-dark);\n}\n\n/* \nAttribute value is set via data attribute\non the icon wrapper. The value may not render\ninside the editor, but will render on front end.\n*/\n\n.fr-badge-alpha__icon-wrapper::after {\n  content: attr(data-badge-value);\n  position: relative;\n  display: flex;\n  color: var(--text-dark);\n}",
+          "_typography": {
+            "line-height": "1"
+          },
+          "_width": "max-content"
+        },
+        "modified": 1754048894,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "gsmrgo",
+        "name": "fr-badge-alpha__icon",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "axkvcb",
+        "name": "fr-badge-alpha__icon-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_alignItems": "center",
+          "_columnGap": ".25em",
+          "_background": {
+            "color": {
+              "raw": "var(--bg-ultra-light)"
+            }
+          },
+          "_padding": {
+            "top": ".5em",
+            "right": ".5em",
+            "bottom": ".5em",
+            "left": ".5em"
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_cssCustom": ".fr-badge-alpha__icon-wrapper :is(svg, i) {\n  height: var(--icon-size);\n  width: var(--icon-size);\n  fill: var(--icon-fill-color);\n  color: var(--icon-stroke-color);\n}\n\n.fr-badge-alpha__icon-wrapper :is(svg, i):hover {\n  fill: var(--icon-fill-color-hover);\n  color: var(--icon-stroke-color);  \n}\n\n/* Bricks Canvas fix */\n:where(.brx-draggable:empty) {\n  min-height: unset;\n  min-width: unset;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "uxsnwg",
+        "name": "fr-badge-alpha__label",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

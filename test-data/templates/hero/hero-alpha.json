@@ -1,0 +1,288 @@
+{
+  "idx": 442,
+  "title": "Hero Alpha",
+  "elementCount": 10,
+  "classCount": 11,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "cfc3c9",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "49c48b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "bkkiqm",
+            "vtwwtv"
+          ]
+        },
+        "label": "Hero Alpha"
+      },
+      {
+        "id": "49c48b",
+        "name": "container",
+        "parent": "cfc3c9",
+        "children": [
+          "0a5c79",
+          "80b93f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ylqoas"
+          ]
+        },
+        "label": "Inner Wrapper"
+      },
+      {
+        "id": "0a5c79",
+        "name": "div",
+        "parent": "49c48b",
+        "children": [
+          "225608",
+          "ec2376",
+          "480340"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fwoubg"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "80b93f",
+        "name": "div",
+        "parent": "49c48b",
+        "children": [
+          "c7c0d9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hwecnp"
+          ]
+        },
+        "label": "Media"
+      },
+      {
+        "id": "225608",
+        "name": "heading",
+        "parent": "0a5c79",
+        "children": [],
+        "settings": {
+          "text": "Your hero heading",
+          "tag": "h1",
+          "_cssGlobalClasses": [
+            "mnxfko"
+          ]
+        }
+      },
+      {
+        "id": "ec2376",
+        "name": "text-basic",
+        "parent": "0a5c79",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "vlstvu"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "c7c0d9",
+        "name": "image",
+        "parent": "80b93f",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "bjunaa"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "loading": "eager"
+        },
+        "themeStyles": [],
+        "label": "Media"
+      },
+      {
+        "id": "480340",
+        "name": "div",
+        "parent": "0a5c79",
+        "children": [
+          "08a8a0",
+          "f30a84"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "konmnk"
+          ]
+        },
+        "label": "CTA Links Alpha"
+      },
+      {
+        "id": "08a8a0",
+        "name": "button",
+        "parent": "480340",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ],
+          "text": "Call to action"
+        },
+        "label": "Primary Action"
+      },
+      {
+        "id": "f30a84",
+        "name": "button",
+        "parent": "480340",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "_cssGlobalClasses": [
+            "btn--primary",
+            "btn--outline"
+          ]
+        },
+        "label": "Secondary Action"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "btn--outline",
+        "name": "btn--outline",
+        "settings": [],
+        "_mappedId": "acss_import_btn--outline",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "bkkiqm",
+        "name": "fr-hero-alpha",
+        "settings": {
+          "_padding": {
+            "top": "var(--section-space-m, 80px)",
+            "bottom": "var(--section-space-m, 80px)",
+            "left": "var(--gutter, 16px)",
+            "right": "var(--gutter, 16px)"
+          }
+        },
+        "modified": 1752601634,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "vtwwtv",
+        "name": "fr-hero",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_mappedId": "vtwwtv",
+        "modified": 1771256250,
+        "user_id": 1
+      },
+      {
+        "id": "ylqoas",
+        "name": "fr-hero-alpha__inner-wrapper",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-2-3, minmax(0, 2fr) minmax(0, 3fr))",
+          "_gridGap": "var(--grid-gap, 30px)",
+          "_alignItemsGrid": "center",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)",
+          "_gridTemplateRows": "var(--grid-1, minmax(0, 1fr))"
+        },
+        "_exists": false
+      },
+      {
+        "id": "fwoubg",
+        "name": "fr-hero-alpha__content-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_justifyContent": "center",
+          "_alignItems": "flex-start",
+          "_rowGap": "var(--content-gap, 30px)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "hwecnp",
+        "name": "fr-hero-alpha__media-wrapper",
+        "settings": {
+          "_border": {
+            "radius": {
+              "top": "var(--radius, var(--radius-m))",
+              "right": "var(--radius, var(--radius-m))",
+              "bottom": "var(--radius, var(--radius-m))",
+              "left": "var(--radius, var(--radius-m))"
+            }
+          },
+          "_overflow": "hidden"
+        },
+        "_exists": false
+      },
+      {
+        "id": "mnxfko",
+        "name": "fr-hero-alpha__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "bjunaa",
+        "name": "fr-hero-alpha__media",
+        "settings": {
+          "_width": "100%",
+          "_height": "100%"
+        },
+        "modified": 1731415156,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "konmnk",
+        "name": "fr-cta-links-alpha",
+        "settings": {
+          "_columnGap": "var(--content-gap, 30px)",
+          "_rowGap": "var(--content-gap, 30px)",
+          "_display": "flex",
+          "_flexWrap": "wrap",
+          "_cssCustom:mobile_portrait": ".fr-cta-links-alpha > * {\n  width: 100% !important;\n}",
+          "_direction": "row"
+        },
+        "_exists": false
+      },
+      {
+        "id": "vlstvu",
+        "name": "fr-hero-alpha__lede",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

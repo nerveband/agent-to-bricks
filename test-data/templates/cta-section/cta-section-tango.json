@@ -1,0 +1,379 @@
+{
+  "idx": 32,
+  "title": "CTA Section Tango",
+  "elementCount": 15,
+  "classCount": 13,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "5fd4d4",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "b5caf9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "urqfld"
+          ]
+        },
+        "label": "CTA Section Tango"
+      },
+      {
+        "id": "b5caf9",
+        "name": "container",
+        "parent": "5fd4d4",
+        "children": [
+          "b57ee7",
+          "5c6f0b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "nveyzh"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "b57ee7",
+        "name": "block",
+        "parent": "b5caf9",
+        "children": [
+          "c7ca4d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "garepj"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "5c6f0b",
+        "name": "block",
+        "parent": "b5caf9",
+        "children": [
+          "d85725",
+          "b0aab2",
+          "4e9cbd",
+          "22537f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "otfxco"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "c7ca4d",
+        "name": "div",
+        "parent": "b57ee7",
+        "children": [
+          "05b146",
+          "ff1a73",
+          "a7b7e5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vqlwpj"
+          ]
+        },
+        "label": "Image Group Tango (CSS)"
+      },
+      {
+        "id": "8b66f3",
+        "name": "image",
+        "parent": "ff1a73",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "26nn4v"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure"
+        },
+        "label": "Image",
+        "themeStyles": []
+      },
+      {
+        "id": "ff1a73",
+        "name": "div",
+        "parent": "c7ca4d",
+        "children": [
+          "8b66f3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "0n8mdk"
+          ]
+        },
+        "label": "Image Wrapper"
+      },
+      {
+        "id": "05b146",
+        "name": "div",
+        "parent": "c7ca4d",
+        "children": [
+          "4b55b3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "0n8mdk"
+          ]
+        },
+        "label": "Image Wrapper"
+      },
+      {
+        "id": "4b55b3",
+        "name": "image",
+        "parent": "05b146",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "26nn4v"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure"
+        },
+        "label": "Image",
+        "themeStyles": []
+      },
+      {
+        "id": "d85725",
+        "name": "heading",
+        "parent": "5c6f0b",
+        "children": [],
+        "settings": {
+          "text": "A heading that should convince the visitor to buy",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "pzayky"
+          ]
+        }
+      },
+      {
+        "id": "b0aab2",
+        "name": "text-basic",
+        "parent": "5c6f0b",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "slgawo"
+          ]
+        }
+      },
+      {
+        "id": "4e9cbd",
+        "name": "text",
+        "parent": "5c6f0b",
+        "children": [],
+        "settings": {
+          "text": "<p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.</p>",
+          "_cssGlobalClasses": [
+            "quupnv"
+          ]
+        }
+      },
+      {
+        "id": "22537f",
+        "name": "button",
+        "parent": "5c6f0b",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary",
+            "hnknio"
+          ]
+        }
+      },
+      {
+        "id": "a7b7e5",
+        "name": "div",
+        "parent": "c7ca4d",
+        "children": [
+          "f574c0"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "0n8mdk"
+          ]
+        },
+        "label": "Image Wrapper"
+      },
+      {
+        "id": "f574c0",
+        "name": "image",
+        "parent": "a7b7e5",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "26nn4v"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure"
+        },
+        "label": "Image",
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "vqlwpj",
+        "name": "image-group-tango",
+        "settings": {
+          "_display": "grid",
+          "_flexWrap": "nowrap",
+          "_gridGap": "var(--content-gap)",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_cssCustom": "/* Set min height to avoid layout shifts */\n.image-group-tango {\n  min-height: 675px;\n}\n\n/* Shape the 1st image */\n.image-group-tango > *:first-child {\n  grid-column: 1/-1;\n  width: 90%;\n}\n\n/* Shape the 2nd image */\n.image-group-tango > *:nth-child(2) {\n  width: 100%;\n  aspect-ratio: 16/9;\n}\n\n/* Shape the 3rd image */\n.image-group-tango > *:nth-child(3) {\n  width: 100%;  \n  aspect-ratio: 5/3.5;\n}",
+          "_justifyItemsGrid": "flex-end",
+          "_justifyItemsGrid:tablet_portrait": "flex-start",
+          "_gridGap:mobile_landscape": "var(--space-xs)",
+          "_width:tablet_portrait": "100%"
+        },
+        "modified": 1741951293,
+        "user_id": 26,
+        "_exists": false
+      },
+      {
+        "id": "0n8mdk",
+        "name": "image-group-tango__image-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "26nn4v",
+        "name": "image-group-tango__image",
+        "settings": {
+          "_width": "100%",
+          "_aspectRatio": "16/9",
+          "_objectFit": "cover",
+          "_height": "100%",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "urqfld",
+        "name": "cta-section-tango",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "nveyzh",
+        "name": "cta-section-tango__inner",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-3-2)",
+          "_gridGap": "calc(var(--grid-gap) * 2)",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)",
+          "_gridGap:tablet_portrait": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "garepj",
+        "name": "cta-section-tango__media-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "otfxco",
+        "name": "cta-section-tango__content-wrapper",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_justifyContent": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "pzayky",
+        "name": "cta-section-tango__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "slgawo",
+        "name": "cta-section-tango__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "quupnv",
+        "name": "cta-section-tango__text",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "hnknio",
+        "name": "cta-section-tango__cta",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

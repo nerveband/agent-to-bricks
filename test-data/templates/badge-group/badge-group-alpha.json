@@ -1,0 +1,281 @@
+{
+  "idx": 218,
+  "title": "Badge Group Alpha",
+  "elementCount": 9,
+  "classCount": 5,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "40db4b",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "7dc727",
+          "c5a7f6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wughmh"
+          ]
+        },
+        "label": "Badge Group Alpha"
+      },
+      {
+        "id": "c5a7f6",
+        "name": "div",
+        "parent": "40db4b",
+        "children": [
+          "25d6ad",
+          "4f937a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cogkhk"
+          ],
+          "_attributes": [
+            {
+              "id": "kkadiw",
+              "name": "role",
+              "value": "img"
+            },
+            {
+              "id": "yvbrgb",
+              "name": "aria-label",
+              "value": "4.8 out of 5 stars on Yelp"
+            }
+          ]
+        },
+        "label": "Badge Alpha (CSS)"
+      },
+      {
+        "id": "25d6ad",
+        "name": "div",
+        "parent": "c5a7f6",
+        "children": [
+          "dde89c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "axkvcb"
+          ],
+          "_attributes": [
+            {
+              "id": "crxchn",
+              "name": "data-badge-value",
+              "value": "4.8"
+            }
+          ]
+        },
+        "label": "Icon Wrapper (Attr)"
+      },
+      {
+        "id": "dde89c",
+        "name": "icon",
+        "parent": "25d6ad",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "fill": {
+              "raw": "var(--icon-color)"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)"
+          },
+          "_cssGlobalClasses": [
+            "gsmrgo"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Icon"
+      },
+      {
+        "id": "4f937a",
+        "name": "text-basic",
+        "parent": "c5a7f6",
+        "children": [],
+        "settings": {
+          "text": "on Yelp",
+          "_cssGlobalClasses": [
+            "uxsnwg"
+          ],
+          "tag": "span"
+        },
+        "label": "Label"
+      },
+      {
+        "id": "7dc727",
+        "name": "div",
+        "parent": "40db4b",
+        "children": [
+          "edb258",
+          "2ea099"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cogkhk"
+          ],
+          "_attributes": [
+            {
+              "id": "kkadiw",
+              "name": "role",
+              "value": "img"
+            },
+            {
+              "id": "yvbrgb",
+              "name": "aria-label",
+              "value": "4.8 out of 5 stars on Google"
+            }
+          ]
+        },
+        "label": "Badge Alpha (CSS)"
+      },
+      {
+        "id": "edb258",
+        "name": "div",
+        "parent": "7dc727",
+        "children": [
+          "9a9788"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "axkvcb"
+          ],
+          "_attributes": [
+            {
+              "id": "crxchn",
+              "name": "data-badge-value",
+              "value": "4.8"
+            }
+          ]
+        },
+        "label": "Icon Wrapper (Attr)"
+      },
+      {
+        "id": "9a9788",
+        "name": "icon",
+        "parent": "edb258",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "fill": {
+              "raw": "var(--icon-color)"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)"
+          },
+          "_cssGlobalClasses": [
+            "gsmrgo"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Icon"
+      },
+      {
+        "id": "2ea099",
+        "name": "text-basic",
+        "parent": "7dc727",
+        "children": [],
+        "settings": {
+          "text": "on Google",
+          "_cssGlobalClasses": [
+            "uxsnwg"
+          ],
+          "tag": "span"
+        },
+        "label": "Label"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "wughmh",
+        "name": "fr-badge-group-alpha",
+        "settings": {
+          "_direction": "row",
+          "_display": "flex",
+          "_rowGap": "var(--content-gap)",
+          "_columnGap": "var(--content-gap)",
+          "_direction:mobile_portrait": "column"
+        },
+        "_exists": false
+      },
+      {
+        "id": "cogkhk",
+        "name": "fr-badge-alpha",
+        "settings": {
+          "_display": "flex",
+          "_alignItems": "center",
+          "_columnGap": "0.5em",
+          "_cssCustom": ".fr-badge-alpha {\n\t--icon-size: 1.5em;\n  --icon-fill-color: transparent;\n  --icon-stroke-color: var(--text-dark);\n  --icon-fill-color-hover: transparent;  \n  --icon-stroke-color-hover: var(--text-dark);\n}\n\n/* \nAttribute value is set via data attribute\non the icon wrapper. The value may not render\ninside the editor, but will render on front end.\n*/\n\n.fr-badge-alpha__icon-wrapper::after {\n  content: attr(data-badge-value);\n  position: relative;\n  display: flex;\n  color: var(--text-dark);\n}",
+          "_typography": {
+            "line-height": "1"
+          },
+          "_width": "max-content"
+        },
+        "modified": 1754048894,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "axkvcb",
+        "name": "fr-badge-alpha__icon-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_alignItems": "center",
+          "_columnGap": ".25em",
+          "_background": {
+            "color": {
+              "raw": "var(--bg-ultra-light)"
+            }
+          },
+          "_padding": {
+            "top": ".5em",
+            "right": ".5em",
+            "bottom": ".5em",
+            "left": ".5em"
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_cssCustom": ".fr-badge-alpha__icon-wrapper :is(svg, i) {\n  height: var(--icon-size);\n  width: var(--icon-size);\n  fill: var(--icon-fill-color);\n  color: var(--icon-stroke-color);\n}\n\n.fr-badge-alpha__icon-wrapper :is(svg, i):hover {\n  fill: var(--icon-fill-color-hover);\n  color: var(--icon-stroke-color);  \n}\n\n/* Bricks Canvas fix */\n:where(.brx-draggable:empty) {\n  min-height: unset;\n  min-width: unset;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "gsmrgo",
+        "name": "fr-badge-alpha__icon",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "uxsnwg",
+        "name": "fr-badge-alpha__label",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

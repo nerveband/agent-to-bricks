@@ -1,0 +1,92 @@
+{
+  "idx": 325,
+  "title": "CTA Links Alpha",
+  "elementCount": 3,
+  "classCount": 3,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "660a0a",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "1b3502",
+          "25d332"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "konmnk"
+          ]
+        },
+        "label": "CTA Links Alpha"
+      },
+      {
+        "id": "1b3502",
+        "name": "button",
+        "parent": "660a0a",
+        "children": [],
+        "settings": {
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ],
+          "text": "Primary action"
+        },
+        "label": "Primary Action"
+      },
+      {
+        "id": "25d332",
+        "name": "button",
+        "parent": "660a0a",
+        "children": [],
+        "settings": {
+          "text": "Secondary action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--outline",
+            "btn--primary"
+          ]
+        },
+        "label": "Sectiondary Action"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "btn--outline",
+        "name": "btn--outline",
+        "settings": [],
+        "_mappedId": "acss_import_btn--outline",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "konmnk",
+        "name": "fr-cta-links-alpha",
+        "settings": {
+          "_columnGap": "var(--content-gap, 30px)",
+          "_rowGap": "var(--content-gap, 30px)",
+          "_display": "flex",
+          "_flexWrap": "wrap",
+          "_cssCustom:mobile_portrait": ".fr-cta-links-alpha > * {\n  width: 100% !important;\n}",
+          "_direction": "row"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

@@ -1,0 +1,885 @@
+{
+  "idx": 295,
+  "title": "CTA Section Golf",
+  "elementCount": 40,
+  "classCount": 18,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "8db19b",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "bea66b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "otjvsi"
+          ]
+        },
+        "label": "CTA Section Golf"
+      },
+      {
+        "id": "bea66b",
+        "name": "container",
+        "parent": "8db19b",
+        "children": [
+          "3e6c49",
+          "52315d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kkkcpi"
+          ]
+        },
+        "label": "CTA Grid Golf"
+      },
+      {
+        "id": "3e6c49",
+        "name": "block",
+        "parent": "bea66b",
+        "children": [
+          "773536",
+          "beb3b1",
+          "620642",
+          "27f03a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "yvrgbh"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "27f03a",
+        "name": "div",
+        "parent": "3e6c49",
+        "children": [
+          "3f5543",
+          "1066ae"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "glrhvz"
+          ]
+        },
+        "label": "CTA Links Bravo"
+      },
+      {
+        "id": "3f5543",
+        "name": "button",
+        "parent": "27f03a",
+        "children": [],
+        "settings": {
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ],
+          "text": "Primary action",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Primary Action"
+      },
+      {
+        "id": "1066ae",
+        "name": "text-basic",
+        "parent": "27f03a",
+        "children": [],
+        "settings": {
+          "text": "Secondary action",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_cssGlobalClasses": [
+            "aekezk"
+          ]
+        },
+        "label": "Secondary Action"
+      },
+      {
+        "id": "52315d",
+        "name": "block",
+        "parent": "bea66b",
+        "children": [
+          "bfb1aa",
+          "118212",
+          "15fe0a",
+          "f5e641",
+          "6ca8cc",
+          "33f9f9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "umdrhy",
+            "rktisp"
+          ],
+          "tag": "custom",
+          "customTag": "ul"
+        },
+        "label": "Testimonials Group"
+      },
+      {
+        "id": "773536",
+        "name": "text-basic",
+        "parent": "3e6c49",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "ezgodc"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "beb3b1",
+        "name": "heading",
+        "parent": "3e6c49",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "kujqhf"
+          ],
+          "tag": "h2"
+        }
+      },
+      {
+        "id": "620642",
+        "name": "text-basic",
+        "parent": "3e6c49",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "_cssGlobalClasses": [
+            "ycvhkp",
+            "kddjfd"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "bfb1aa",
+        "name": "block",
+        "parent": "52315d",
+        "children": [
+          "7cf9a9",
+          "2d8a3d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jcxszq"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Hotel"
+      },
+      {
+        "id": "2d8a3d",
+        "name": "image",
+        "parent": "bfb1aa",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jxgggf"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Avatar"
+      },
+      {
+        "id": "7cf9a9",
+        "name": "block",
+        "parent": "bfb1aa",
+        "children": [
+          "cb3645",
+          "25d51f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xateso"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "cb3645",
+        "name": "text-basic",
+        "parent": "7cf9a9",
+        "children": [],
+        "settings": {
+          "text": "One line callout testimonial",
+          "_cssGlobalClasses": [
+            "agezqv"
+          ],
+          "tag": "p"
+        },
+        "label": "Text"
+      },
+      {
+        "id": "25d51f",
+        "name": "text-basic",
+        "parent": "7cf9a9",
+        "children": [],
+        "settings": {
+          "text": "John Doe",
+          "_cssGlobalClasses": [
+            "ughytk"
+          ],
+          "tag": "p"
+        },
+        "label": "Name"
+      },
+      {
+        "id": "33f9f9",
+        "name": "block",
+        "parent": "52315d",
+        "children": [
+          "795d50",
+          "d3f130"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jcxszq"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Hotel"
+      },
+      {
+        "id": "795d50",
+        "name": "block",
+        "parent": "33f9f9",
+        "children": [
+          "14fdef",
+          "cce696"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xateso"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "d3f130",
+        "name": "image",
+        "parent": "33f9f9",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jxgggf"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Avatar"
+      },
+      {
+        "id": "14fdef",
+        "name": "text-basic",
+        "parent": "795d50",
+        "children": [],
+        "settings": {
+          "text": "One line callout testimonial.",
+          "_cssGlobalClasses": [
+            "agezqv"
+          ],
+          "tag": "p"
+        },
+        "label": "Text"
+      },
+      {
+        "id": "cce696",
+        "name": "text-basic",
+        "parent": "795d50",
+        "children": [],
+        "settings": {
+          "text": "John Doe",
+          "_cssGlobalClasses": [
+            "ughytk"
+          ],
+          "tag": "p"
+        },
+        "label": "Name"
+      },
+      {
+        "id": "6ca8cc",
+        "name": "block",
+        "parent": "52315d",
+        "children": [
+          "55b531",
+          "300f0d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jcxszq"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Hotel"
+      },
+      {
+        "id": "55b531",
+        "name": "block",
+        "parent": "6ca8cc",
+        "children": [
+          "89996f",
+          "9482bd"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xateso"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "300f0d",
+        "name": "image",
+        "parent": "6ca8cc",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jxgggf"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Avatar"
+      },
+      {
+        "id": "89996f",
+        "name": "text-basic",
+        "parent": "55b531",
+        "children": [],
+        "settings": {
+          "text": "One line callout testimonial.",
+          "_cssGlobalClasses": [
+            "agezqv"
+          ],
+          "tag": "p"
+        },
+        "label": "Text"
+      },
+      {
+        "id": "9482bd",
+        "name": "text-basic",
+        "parent": "55b531",
+        "children": [],
+        "settings": {
+          "text": "John Doe",
+          "_cssGlobalClasses": [
+            "ughytk"
+          ],
+          "tag": "p"
+        },
+        "label": "Name"
+      },
+      {
+        "id": "f5e641",
+        "name": "block",
+        "parent": "52315d",
+        "children": [
+          "329951",
+          "ae9e73"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jcxszq"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Hotel"
+      },
+      {
+        "id": "329951",
+        "name": "block",
+        "parent": "f5e641",
+        "children": [
+          "b80d82",
+          "f63ed1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xateso"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "ae9e73",
+        "name": "image",
+        "parent": "f5e641",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jxgggf"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Avatar"
+      },
+      {
+        "id": "b80d82",
+        "name": "text-basic",
+        "parent": "329951",
+        "children": [],
+        "settings": {
+          "text": "One line callout testimonial.",
+          "_cssGlobalClasses": [
+            "agezqv"
+          ],
+          "tag": "p"
+        },
+        "label": "Text"
+      },
+      {
+        "id": "f63ed1",
+        "name": "text-basic",
+        "parent": "329951",
+        "children": [],
+        "settings": {
+          "text": "John Doe",
+          "_cssGlobalClasses": [
+            "ughytk"
+          ],
+          "tag": "p"
+        },
+        "label": "Name"
+      },
+      {
+        "id": "15fe0a",
+        "name": "block",
+        "parent": "52315d",
+        "children": [
+          "5c2fc1",
+          "8a335a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jcxszq"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Hotel"
+      },
+      {
+        "id": "5c2fc1",
+        "name": "block",
+        "parent": "15fe0a",
+        "children": [
+          "fcff1c",
+          "eddd94"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xateso"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "8a335a",
+        "name": "image",
+        "parent": "15fe0a",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jxgggf"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Avatar"
+      },
+      {
+        "id": "fcff1c",
+        "name": "text-basic",
+        "parent": "5c2fc1",
+        "children": [],
+        "settings": {
+          "text": "One line callout testimonial",
+          "_cssGlobalClasses": [
+            "agezqv"
+          ],
+          "tag": "p"
+        },
+        "label": "Text"
+      },
+      {
+        "id": "eddd94",
+        "name": "text-basic",
+        "parent": "5c2fc1",
+        "children": [],
+        "settings": {
+          "text": "John Doe",
+          "_cssGlobalClasses": [
+            "ughytk"
+          ],
+          "tag": "p"
+        },
+        "label": "Name"
+      },
+      {
+        "id": "118212",
+        "name": "block",
+        "parent": "52315d",
+        "children": [
+          "d77e8a",
+          "08e45a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jcxszq"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Hotel"
+      },
+      {
+        "id": "d77e8a",
+        "name": "block",
+        "parent": "118212",
+        "children": [
+          "532b79",
+          "0c2322"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xateso"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "08e45a",
+        "name": "image",
+        "parent": "118212",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jxgggf"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Avatar"
+      },
+      {
+        "id": "532b79",
+        "name": "text-basic",
+        "parent": "d77e8a",
+        "children": [],
+        "settings": {
+          "text": "One line callout testimonial",
+          "_cssGlobalClasses": [
+            "agezqv"
+          ],
+          "tag": "p"
+        },
+        "label": "Text"
+      },
+      {
+        "id": "0c2322",
+        "name": "text-basic",
+        "parent": "d77e8a",
+        "children": [],
+        "settings": {
+          "text": "John Doe",
+          "_cssGlobalClasses": [
+            "ughytk"
+          ],
+          "tag": "p"
+        },
+        "label": "Name"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771255083,
+        "user_id": 1
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "rktisp",
+        "name": "list--none",
+        "settings": {
+          "_padding": {
+            "left": "0"
+          },
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "acss_import_list--none",
+        "modified": 1771255083,
+        "user_id": 1
+      },
+      {
+        "id": "glrhvz",
+        "name": "fr-cta-links-bravo",
+        "settings": {
+          "_display": "flex",
+          "_flexWrap": "wrap",
+          "_alignItems": "center",
+          "_rowGap": "var(--content-gap)",
+          "_columnGap": "var(--content-gap)",
+          "_direction:mobile_portrait": "column",
+          "_width:mobile_portrait": "100%",
+          "_cssCustom:mobile_portrait": ".fr-cta-links-bravo > * {\n\twidth: 100% !important;\n}",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_margin": {
+            "top": "var(--space-s)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "aekezk",
+        "name": "fr-cta-links-bravo__link",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "otjvsi",
+        "name": "fr-cta-section-golf",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "kkkcpi",
+        "name": "fr-cta-grid-golf",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-2-3)",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_alignItemsGrid": "center",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "yvrgbh",
+        "name": "fr-cta-section-golf__content-wrapper",
+        "settings": {
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "umdrhy",
+        "name": "fr-cta-section-golf__testimonials-group",
+        "settings": {
+          "_direction": "row",
+          "_flexWrap": "wrap",
+          "_justifyContent": "center",
+          "_columnGap": "1em",
+          "_rowGap": "1em",
+          "_alignItems": "flex-start",
+          "_cssCustom": ".fr-cta-section-golf__testimonials-group {\n\t--shift: -2em;\n}\n\n.fr-cta-section-golf__testimonials-group > *:nth-child(4n+1) {\n\twidth: 33%; \n  left: var(--shift);\n  align-self: center;\n}\n\n.fr-cta-section-golf__testimonials-group > *:nth-child(4n+2) {\n  width: 45%; \n  left: var(--shift);\n}\n\n.fr-cta-section-golf__testimonials-group > *:nth-child(4n+3) {\n  width: 45%; \n  right: calc(var(--shift) / 2);\n}\n\n.fr-cta-section-golf__testimonials-group > *:nth-child(4n+4) {\n  width: 36%; \n  align-self: center;\n}\n\n.fr-cta-section-golf__testimonials-group > *:nth-child(1) {\n\tbottom: var(--shift);\n}\n\n.fr-cta-section-golf__testimonials-group > *:nth-child(5n+5) {\n  top: var(--shift);\n}",
+          "_cssCustom:tablet_portrait": ".fr-cta-section-golf__testimonials-group > *:nth-child(n + 4) {display: none;}\n\n.fr-cta-section-golf__testimonials-group {\n  --shift: 0;\n}\n\n.fr-cta-section-golf__testimonials-group > *:nth-child(1) {\n\twidth: 40%;\n}",
+          "_alignItems:tablet_portrait": "center",
+          "_justifyContent:tablet_portrait": "center",
+          "_cssCustom:mobile_portrait": ".fr-cta-section-golf__testimonials-group > *:nth-child(1n) {\n\twidth: 45%;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ezgodc",
+        "name": "fr-cta-section-golf__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "kujqhf",
+        "name": "fr-cta-section-golf__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ycvhkp",
+        "name": "fr-cta-section-golf__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "jcxszq",
+        "name": "fr-testimonial-card-hotel",
+        "settings": {
+          "_cssCustom": ".fr-testimonial-card-hotel {\n\tdisplay: grid;\n  grid-template-columns: repeat(12, 1fr);\n}\n\n.fr-testimonial-card-hotel > figure {\n\tgrid-column: 1 / 11;\n  grid-row: 1 / 12;\n}\n\n.fr-testimonial-card-hotel > .fr-testimonial-card-hotel__content-wrapper {\n  grid-column: 5 / -1;\n\tgrid-row-start: 10;\n}",
+          "_position": "relative",
+          "_gridGap": "0"
+        },
+        "modified": 1738092309,
+        "user_id": 26,
+        "_exists": false
+      },
+      {
+        "id": "jxgggf",
+        "name": "fr-testimonial-card-hotel__avatar",
+        "settings": {
+          "_objectFit": "cover",
+          "_width": "100%",
+          "_flexGrow": "1",
+          "_cssCustom": ".fr-testimonial-card-hotel__avatar {\n\taspect-ratio: 1/1;\n}",
+          "_border": {
+            "radius": {
+              "top": "50%",
+              "right": "50%",
+              "bottom": "50%",
+              "left": "50%"
+            }
+          },
+          "_overflow": "hidden"
+        },
+        "_exists": false
+      },
+      {
+        "id": "xateso",
+        "name": "fr-testimonial-card-hotel__content-wrapper",
+        "settings": {
+          "_rowGap": ".25em",
+          "_background": {
+            "color": {
+              "raw": "var(--white)",
+              "id": "fxmwge",
+              "name": "Color #27"
+            }
+          },
+          "_zIndex": "1",
+          "_boxShadow": {
+            "values": {
+              "offsetX": "2",
+              "offsetY": "2",
+              "blur": "30",
+              "spread": "-5"
+            },
+            "color": {
+              "raw": "var(--neutral-trans-10)"
+            }
+          },
+          "_padding": {
+            "top": ".65em",
+            "right": ".65em",
+            "bottom": ".65em",
+            "left": ".65em"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "agezqv",
+        "name": "fr-testimonial-card-hotel__text",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-xs)",
+            "line-height": "1.3"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "ughytk",
+        "name": "fr-testimonial-card-hotel__name",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-xs)",
+            "font-weight": "600",
+            "line-height": "1"
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

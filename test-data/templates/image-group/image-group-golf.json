@@ -1,0 +1,98 @@
+{
+  "idx": 225,
+  "title": "Image Group Golf",
+  "elementCount": 3,
+  "classCount": 2,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "1d64f0",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "eee656",
+          "ffbc98"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xnqhiw"
+          ]
+        },
+        "label": "Image Group Golf (Control)"
+      },
+      {
+        "id": "eee656",
+        "name": "image",
+        "parent": "1d64f0",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "enkdzc"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "ffbc98",
+        "name": "image",
+        "parent": "1d64f0",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "enkdzc"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "xnqhiw",
+        "name": "fr-image-group-golf",
+        "settings": {
+          "_cssCustom": ".fr-image-group-golf {\n\tdisplay: grid;\n  grid-template-columns: repeat(12, minmax(0, 1fr));\n  margin-inline: auto;\n}\n\n.fr-image-group-golf > * {\n\tbox-shadow: var(--box-shadow-m);\n}\n\n.fr-image-group-golf > *:first-child {\n\tgrid-column: 1/11;\n  grid-row: 1/10;\n}\n\n.fr-image-group-golf > *:last-child {\n\tgrid-column: 3/-1;\n  grid-row: 3/12;\n}",
+          "_gridGap": "0"
+        },
+        "modified": 1723651556,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "enkdzc",
+        "name": "fr-image-group-golf__image",
+        "settings": {
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_objectFit": "cover"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

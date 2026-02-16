@@ -1,0 +1,244 @@
+{
+  "idx": 402,
+  "title": "Testimonial Card Foxtrot",
+  "elementCount": 8,
+  "classCount": 8,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "138394",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "51d197",
+          "c126b1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ioflnk"
+          ]
+        },
+        "label": "Testimonial Card Foxtrot (CSS)"
+      },
+      {
+        "id": "51d197",
+        "name": "block",
+        "parent": "138394",
+        "children": [
+          "cfb2f1",
+          "863188"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hdvmin"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "cfb2f1",
+        "name": "text-basic",
+        "parent": "51d197",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "pjgglz"
+          ]
+        },
+        "label": "Quote"
+      },
+      {
+        "id": "863188",
+        "name": "div",
+        "parent": "51d197",
+        "children": [
+          "e2ac3c",
+          "621ceb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tobvng"
+          ]
+        },
+        "label": "Name Wrapper"
+      },
+      {
+        "id": "e2ac3c",
+        "name": "text-basic",
+        "parent": "863188",
+        "children": [],
+        "settings": {
+          "text": "First Last",
+          "_cssGlobalClasses": [
+            "mbjyrv"
+          ]
+        },
+        "label": "Name"
+      },
+      {
+        "id": "621ceb",
+        "name": "text-basic",
+        "parent": "863188",
+        "children": [],
+        "settings": {
+          "text": "Title",
+          "_cssGlobalClasses": [
+            "wxxneb"
+          ]
+        },
+        "label": "Title"
+      },
+      {
+        "id": "c126b1",
+        "name": "block",
+        "parent": "138394",
+        "children": [
+          "e84fe3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "peuteb"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "e84fe3",
+        "name": "image",
+        "parent": "c126b1",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "ijxkuz"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        },
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "ioflnk",
+        "name": "fr-testimonial-card-foxtrot",
+        "settings": {
+          "_width": "var(--width-xl)",
+          "_cssCustom": ".fr-testimonial-card-foxtrot {\n\tdisplay: grid;\n  grid-template-columns: var(--grid-12);\n  grid-template-rows: auto;\n  gap: 0;\n}\n\n/* \nItems are placed in a 12-column grid.\nAdjust their position by adjusting the\nrow and column starts and ends below.\n*/\n\n/* MEDIA */\n.fr-testimonial-card-foxtrot > *:last-child {\n\tgrid-row-start: 1;\n  grid-row-end: 12;\n  grid-column-start: 1;\n  grid-column-end: 10;\n}\n\n/* CONTENT */\n.fr-testimonial-card-foxtrot > *:first-child {\n  grid-row-start: 4;\n  grid-row-end: 10;\n  grid-column-start: 7;\n  grid-column-end: 12;\n  \n}",
+          "_cssCustom:mobile_landscape": ".fr-testimonial-card-foxtrot {\n\tdisplay: grid;\n  grid-template-columns: var(--grid-1);\n  grid-template-rows: var(--grid-1);\n  gap: 0;\n}\n\n/* \nItems are placed in a 12-column grid.\nAdjust their position by adjusting the\nrow and column starts and ends below.\n*/\n\n/* CONTENT */\n.fr-testimonial-card-foxtrot > *:first-child {\n  grid-row-start: auto;\n  grid-row-end: auto;\n  grid-column-start: auto;\n  grid-column-end: auto;\n  \n}\n\n/* MEDIA */\n.fr-testimonial-card-foxtrot > *:last-child {\n\tgrid-row-start: auto;\n  grid-row-end: auto;\n  grid-column-start: auto;\n  grid-column-end: auto;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "hdvmin",
+        "name": "fr-testimonial-card-foxtrot__content-wrapper",
+        "settings": {
+          "_zIndex": "1",
+          "_background": {
+            "color": {
+              "raw": "var(--neutral-ultra-light)"
+            }
+          },
+          "_padding": {
+            "top": "var(--space-l)",
+            "right": "var(--space-l)",
+            "bottom": "var(--space-l)",
+            "left": "var(--space-l)"
+          },
+          "_rowGap": "var(--fr-card-gap)",
+          "_order:mobile_landscape": "1",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          }
+        },
+        "modified": 1728404363,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "pjgglz",
+        "name": "fr-testimonial-card-foxtrot__quote",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "tobvng",
+        "name": "fr-testimonial-card-foxtrot__name-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "0.5em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "mbjyrv",
+        "name": "fr-testimonial-card-foxtrot__name",
+        "settings": {
+          "_typography": {
+            "font-weight": "600",
+            "line-height": "1.1",
+            "font-family": "\"DM Sans\""
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "wxxneb",
+        "name": "fr-testimonial-card-foxtrot__title",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-s)",
+            "line-height": "1.1",
+            "font-family": "\"DM Sans\""
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "peuteb",
+        "name": "fr-testimonial-card-foxtrot__media-wrapper",
+        "settings": {
+          "_order": "-1",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_overflow": "hidden"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ijxkuz",
+        "name": "fr-testimonial-card-foxtrot__media",
+        "settings": {
+          "_width": "100%",
+          "_objectFit": "cover",
+          "_height": "100%"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

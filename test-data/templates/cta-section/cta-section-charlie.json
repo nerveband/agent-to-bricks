@@ -1,0 +1,483 @@
+{
+  "idx": 386,
+  "title": "CTA Section Charlie",
+  "elementCount": 19,
+  "classCount": 15,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "77ef05",
+        "name": "section",
+        "children": [
+          "c53c81"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "uaaxcr"
+          ]
+        },
+        "label": "CTA Charlie"
+      },
+      {
+        "id": "c53c81",
+        "name": "container",
+        "parent": "77ef05",
+        "children": [
+          "3adb44",
+          "d3d8cd"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ylwtip"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "3adb44",
+        "name": "div",
+        "parent": "c53c81",
+        "children": [
+          "cb4eea",
+          "c5475b",
+          "ea10c1",
+          "05992b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vrcveb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "05992b",
+        "name": "div",
+        "parent": "3adb44",
+        "children": [
+          "973e3b",
+          "333b36",
+          "10a08a"
+        ],
+        "settings": {
+          "tag": "custom",
+          "customTag": "ul",
+          "_cssGlobalClasses": [
+            "viepbt",
+            "xqhcwd"
+          ]
+        },
+        "label": "List Wrapper"
+      },
+      {
+        "id": "973e3b",
+        "name": "div",
+        "parent": "05992b",
+        "children": [
+          "bb39e9",
+          "9a5c88"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ydafrh"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "bb39e9",
+        "name": "icon",
+        "parent": "973e3b",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "fontawesomeSolid",
+            "icon": "fas fa-circle-check"
+          },
+          "_cssGlobalClasses": [
+            "mtncaz"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "9a5c88",
+        "name": "text-basic",
+        "parent": "973e3b",
+        "children": [],
+        "settings": {
+          "text": "A great selling point goes here",
+          "_cssGlobalClasses": [
+            "ajwhcz"
+          ],
+          "tag": "span"
+        }
+      },
+      {
+        "id": "c5475b",
+        "name": "text-basic",
+        "parent": "3adb44",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "btgdjw",
+            "qfdtjc"
+          ]
+        },
+        "label": "Accent heading"
+      },
+      {
+        "id": "cb4eea",
+        "name": "heading",
+        "parent": "3adb44",
+        "children": [],
+        "settings": {
+          "text": "Call to action heading",
+          "_cssGlobalClasses": [
+            "abqvjd"
+          ],
+          "tag": "h2"
+        }
+      },
+      {
+        "id": "ea10c1",
+        "name": "text-basic",
+        "parent": "3adb44",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "_cssGlobalClasses": [
+            "pyckol"
+          ],
+          "tag": "p"
+        },
+        "label": "Description"
+      },
+      {
+        "id": "d3d8cd",
+        "name": "div",
+        "parent": "c53c81",
+        "children": [
+          "3bb840",
+          "03a8a8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "amgmoj"
+          ]
+        },
+        "label": "Form Wrapper"
+      },
+      {
+        "id": "3bb840",
+        "name": "form",
+        "parent": "d3d8cd",
+        "children": [],
+        "settings": {
+          "fields": [
+            {
+              "type": "text",
+              "label": "Name",
+              "placeholder": "Your Name",
+              "id": "51c94e"
+            },
+            {
+              "type": "email",
+              "label": "Email",
+              "placeholder": "Your Email",
+              "required": true,
+              "id": "89a9ae"
+            },
+            {
+              "type": "textarea",
+              "label": "Message",
+              "placeholder": "Your Message",
+              "required": true,
+              "id": "0e594e"
+            }
+          ],
+          "actions": [
+            "email"
+          ],
+          "successMessage": "Message successfully sent. We will get back to you as soon as possible.",
+          "emailSubject": "Contact form request",
+          "emailTo": "admin_email",
+          "fromName": "Frames (Bricks)",
+          "emailErrorMessage": "Submission failed. Please reload the page and try to submit the form again.",
+          "htmlEmail": true,
+          "mailchimpPendingMessage": "Please check your email to confirm your subscription.",
+          "mailchimpErrorMessage": "Sorry, but we could not subscribe you.",
+          "sendgridErrorMessage": "Sorry, but we could not subscribe you.",
+          "_cssGlobalClasses": [
+            "swsgnh",
+            "ayvwbw",
+            "fvchph"
+          ]
+        }
+      },
+      {
+        "id": "03a8a8",
+        "name": "text-basic",
+        "parent": "d3d8cd",
+        "children": [],
+        "settings": {
+          "text": "These are the terms of the opt-in form.",
+          "_cssGlobalClasses": [
+            "jonhcs"
+          ],
+          "tag": "p"
+        },
+        "label": "Terms"
+      },
+      {
+        "id": "10a08a",
+        "name": "div",
+        "parent": "05992b",
+        "children": [
+          "66c18a",
+          "883e6b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ydafrh"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "66c18a",
+        "name": "icon",
+        "parent": "10a08a",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "fontawesomeSolid",
+            "icon": "fas fa-circle-check"
+          },
+          "_cssGlobalClasses": [
+            "mtncaz"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "883e6b",
+        "name": "text-basic",
+        "parent": "10a08a",
+        "children": [],
+        "settings": {
+          "text": "A great selling point goes here",
+          "_cssGlobalClasses": [
+            "ajwhcz"
+          ],
+          "tag": "span"
+        }
+      },
+      {
+        "id": "333b36",
+        "name": "div",
+        "parent": "05992b",
+        "children": [
+          "6041a4",
+          "d7773e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ydafrh"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "6041a4",
+        "name": "icon",
+        "parent": "333b36",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "fontawesomeSolid",
+            "icon": "fas fa-circle-check"
+          },
+          "_cssGlobalClasses": [
+            "mtncaz"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "d7773e",
+        "name": "text-basic",
+        "parent": "333b36",
+        "children": [],
+        "settings": {
+          "text": "A great selling point goes here",
+          "_cssGlobalClasses": [
+            "ajwhcz"
+          ],
+          "tag": "span"
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "fvchph",
+        "name": "form--light",
+        "settings": [],
+        "_mappedId": "acss_import_form--light",
+        "modified": 1771255856,
+        "user_id": 1
+      },
+      {
+        "id": "uaaxcr",
+        "name": "fr-cta-charlie",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ylwtip",
+        "name": "fr-cta-charlie__inner",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_alignItemsGrid": "stretch",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "vrcveb",
+        "name": "fr-cta-charlie__content-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "xqhcwd",
+        "name": "fr-cta-charlie__list-wrapper",
+        "settings": {
+          "_rowGap": "1em",
+          "_display": "flex",
+          "_direction": "column",
+          "_padding": {
+            "left": "0"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "ydafrh",
+        "name": "fr-cta-charlie__list-item",
+        "settings": {
+          "_display": "flex",
+          "_rowGap": ".5em",
+          "_columnGap": ".5em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "mtncaz",
+        "name": "fr-cta-charlie__list-icon",
+        "settings": {
+          "iconSize": "var(--text-l)",
+          "_cssCustom": ".fr-cta-charlie__list-icon {\n\taspect-ratio: 1;\n  display: flex;\n  justify-content: center;\n  align-items: center; \n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ajwhcz",
+        "name": "fr-cta-charlie__list-text",
+        "settings": {
+          "_typography": {
+            "line-height": "1.2"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "btgdjw",
+        "name": "fr-cta-charlie__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "abqvjd",
+        "name": "fr-cta-charlie__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "pyckol",
+        "name": "fr-cta-charlie__description",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "amgmoj",
+        "name": "fr-cta-charlie__form-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "var(--fr-content-gap)",
+          "_alignItems": "center",
+          "_justifyContent": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ayvwbw",
+        "name": "fr-cta-charlie__form",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "jonhcs",
+        "name": "fr-cta-charlie__terms",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-s)"
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

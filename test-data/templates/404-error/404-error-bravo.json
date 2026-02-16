@@ -1,0 +1,191 @@
+{
+  "idx": 293,
+  "title": "404 Error Bravo",
+  "elementCount": 7,
+  "classCount": 7,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "f36203",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "b7dc8a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "yfdllu"
+          ]
+        },
+        "label": "404 Error Bravo"
+      },
+      {
+        "id": "b7dc8a",
+        "name": "container",
+        "parent": "f36203",
+        "children": [
+          "5c111d",
+          "cfc175",
+          "6222f8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mmbkor"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "6222f8",
+        "name": "div",
+        "parent": "b7dc8a",
+        "children": [
+          "b98373",
+          "18e399"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "glrhvz"
+          ]
+        },
+        "label": "CTA Links Bravo"
+      },
+      {
+        "id": "b98373",
+        "name": "button",
+        "parent": "6222f8",
+        "children": [],
+        "settings": {
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ],
+          "text": "Primary action"
+        },
+        "label": "Primary Action"
+      },
+      {
+        "id": "18e399",
+        "name": "text-basic",
+        "parent": "6222f8",
+        "children": [],
+        "settings": {
+          "text": "Secondary action",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_cssGlobalClasses": [
+            "aekezk"
+          ]
+        },
+        "label": "Secondary Action"
+      },
+      {
+        "id": "5c111d",
+        "name": "heading",
+        "parent": "b7dc8a",
+        "children": [],
+        "settings": {
+          "text": "Page not found",
+          "tag": "h1"
+        }
+      },
+      {
+        "id": "cfc175",
+        "name": "text-basic",
+        "parent": "b7dc8a",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "bytkfk"
+          ]
+        },
+        "label": "Lede"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771255083,
+        "user_id": 1
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "yfdllu",
+        "name": "fr-error-bravo",
+        "settings": {
+          "_padding": {
+            "top": "var(--fr-hero-padding)",
+            "bottom": "var(--fr-hero-padding)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "mmbkor",
+        "name": "fr-error-bravo__inner",
+        "settings": {
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_rowGap": "var(--fr-content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "glrhvz",
+        "name": "fr-cta-links-bravo",
+        "settings": {
+          "_display": "flex",
+          "_flexWrap": "wrap",
+          "_alignItems": "center",
+          "_rowGap": "var(--content-gap)",
+          "_columnGap": "var(--content-gap)",
+          "_direction:mobile_portrait": "column",
+          "_width:mobile_portrait": "100%",
+          "_cssCustom:mobile_portrait": ".fr-cta-links-bravo > * {\n\twidth: 100% !important;\n}",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_margin": {
+            "top": "var(--space-s)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "aekezk",
+        "name": "fr-cta-links-bravo__link",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "bytkfk",
+        "name": "fr-error-bravo__lede",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

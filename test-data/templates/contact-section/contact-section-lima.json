@@ -1,0 +1,544 @@
+{
+  "idx": 274,
+  "title": "Contact Section Lima",
+  "elementCount": 20,
+  "classCount": 17,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "4b34d8",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "a91633",
+          "48c5b2"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ucdojn"
+          ]
+        },
+        "label": "Contact Section Lima"
+      },
+      {
+        "id": "a91633",
+        "name": "container",
+        "parent": "4b34d8",
+        "children": [
+          "6314d5",
+          "1956d8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "twsjqf"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "eaeaa1",
+        "name": "button",
+        "parent": "6314d5",
+        "children": [],
+        "settings": {
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary",
+            "gplcab"
+          ],
+          "text": "Primary action",
+          "icon": {
+            "library": "themify",
+            "icon": "ti-arrow-right"
+          },
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Icon Button Alpha"
+      },
+      {
+        "id": "6314d5",
+        "name": "div",
+        "parent": "a91633",
+        "children": [
+          "411968",
+          "a6ee1b",
+          "eaeaa1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "uavghx"
+          ]
+        },
+        "label": "Column Left"
+      },
+      {
+        "id": "1956d8",
+        "name": "div",
+        "parent": "a91633",
+        "children": [
+          "1b3680",
+          "fbd65f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vgisfa"
+          ]
+        },
+        "label": "Contact Wrapper"
+      },
+      {
+        "id": "411968",
+        "name": "text-basic",
+        "parent": "6314d5",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder.",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "fycxsm"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "a6ee1b",
+        "name": "heading",
+        "parent": "6314d5",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder headline.",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "yvzqmd"
+          ]
+        }
+      },
+      {
+        "id": "48c5b2",
+        "name": "block",
+        "parent": "4b34d8",
+        "children": [
+          "80bc28",
+          "54eac5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jwwehe"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "54eac5",
+        "name": "div",
+        "parent": "48c5b2",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sjvqks"
+          ]
+        },
+        "label": "Overlay"
+      },
+      {
+        "id": "80bc28",
+        "name": "image",
+        "parent": "48c5b2",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "olwsho"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        },
+        "label": "Media",
+        "themeStyles": []
+      },
+      {
+        "id": "1b3680",
+        "name": "block",
+        "parent": "1956d8",
+        "children": [
+          "d9b9dc",
+          "cf2617",
+          "0390b6",
+          "b80b30"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "urqpcp"
+          ]
+        },
+        "label": "Location"
+      },
+      {
+        "id": "d9b9dc",
+        "name": "heading",
+        "parent": "1b3680",
+        "children": [],
+        "settings": {
+          "text": "Location #1",
+          "_cssGlobalClasses": [
+            "nipxlo"
+          ]
+        }
+      },
+      {
+        "id": "cf2617",
+        "name": "text-basic",
+        "parent": "1b3680",
+        "children": [],
+        "settings": {
+          "text": "123 Street Name",
+          "_cssGlobalClasses": [
+            "fytrdn"
+          ]
+        },
+        "label": "Street"
+      },
+      {
+        "id": "0390b6",
+        "name": "text-basic",
+        "parent": "1b3680",
+        "children": [],
+        "settings": {
+          "text": "contact@email.com",
+          "_cssGlobalClasses": [
+            "bevmlq"
+          ],
+          "link": {
+            "type": "external",
+            "url": "mailto:contact@email.com"
+          }
+        },
+        "label": "Email"
+      },
+      {
+        "id": "b80b30",
+        "name": "text-basic",
+        "parent": "1b3680",
+        "children": [],
+        "settings": {
+          "text": "+1-234-567-8901",
+          "_cssGlobalClasses": [
+            "fghbwp"
+          ],
+          "link": {
+            "type": "external",
+            "url": "tel:1-234-567-8901"
+          }
+        },
+        "label": "Phone"
+      },
+      {
+        "id": "fbd65f",
+        "name": "block",
+        "parent": "1956d8",
+        "children": [
+          "506af4",
+          "7d5775",
+          "a9e256",
+          "768a9b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "urqpcp"
+          ]
+        },
+        "label": "Location"
+      },
+      {
+        "id": "506af4",
+        "name": "heading",
+        "parent": "fbd65f",
+        "children": [],
+        "settings": {
+          "text": "Location #2",
+          "_cssGlobalClasses": [
+            "nipxlo"
+          ]
+        }
+      },
+      {
+        "id": "7d5775",
+        "name": "text-basic",
+        "parent": "fbd65f",
+        "children": [],
+        "settings": {
+          "text": "123 Street Name",
+          "_cssGlobalClasses": [
+            "fytrdn"
+          ]
+        },
+        "label": "Street"
+      },
+      {
+        "id": "a9e256",
+        "name": "text-basic",
+        "parent": "fbd65f",
+        "children": [],
+        "settings": {
+          "text": "contact@email.com",
+          "_cssGlobalClasses": [
+            "bevmlq"
+          ],
+          "link": {
+            "type": "external",
+            "url": "mailto:contact@email.com"
+          }
+        },
+        "label": "Email"
+      },
+      {
+        "id": "768a9b",
+        "name": "text-basic",
+        "parent": "fbd65f",
+        "children": [],
+        "settings": {
+          "text": "+1-234-567-8901",
+          "_cssGlobalClasses": [
+            "fghbwp"
+          ],
+          "link": {
+            "type": "external",
+            "url": "tel:1-234-567-8901"
+          }
+        },
+        "label": "Phone"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "ucdojn",
+        "name": "fr-contact-section-lima",
+        "settings": {
+          "_position": "relative"
+        },
+        "_exists": false
+      },
+      {
+        "id": "twsjqf",
+        "name": "fr-contact-section-lima__content-wrapper",
+        "settings": {
+          "_zIndex": "1",
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          },
+          "_cssCustom:mobile_landscape": ".fr-contact-section-lima__content-wrapper {\n  grid-template-columns: var(--grid-1); \n}",
+          "_display": "grid",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns": "var(--grid-3-1)",
+          "_gridTemplateRows": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "gplcab",
+        "name": "fr-icon-button-alpha",
+        "settings": {
+          "_cssCustom": ".fr-icon-button-alpha {\n\t--icon-size: 1.5em;\n  --icon-color: var(--white);\n}\n\n.fr-icon-button-alpha:hover i,\n.fr-icon-button-alpha:hover svg {\n  -webkit-animation: iconMove ease-out .35s;\n  animation: iconMove ease-out .35s;\n}\n\n@-webkit-keyframes iconMove {\n    0% {\n        -webkit-transform: translateX(0);\n        transform:translateX(0)\n    }\n\n    30% {\n        opacity:0\n    }\n\n    31% {\n        -webkit-transform: translateX(1.25rem);\n        transform:translateX(1.25rem)\n    }\n\n    32% {\n        -webkit-transform: translateX(-1.25rem);\n        transform:translateX(-1.25rem)\n    }\n\n    84% {\n        opacity:1\n    }\n\n    100% {\n        -webkit-transform: translateX(0);\n        transform:translateX(0)\n    }\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "uavghx",
+        "name": "fr-contact-section-lima__column-left",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_alignItems": "flex-start",
+          "_rowGap": "var(--content-gap)",
+          "_columnGap": "var(--content-gap)",
+          "_widthMax": "var(--width-m)",
+          "_justifyContent": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "vgisfa",
+        "name": "fr-contact-section-lima__contact-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "var(--fr-grid-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "fycxsm",
+        "name": "fr-contact-section-lima__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "yvzqmd",
+        "name": "fr-contact-section-lima__heading",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--h1)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "jwwehe",
+        "name": "fr-contact-section-lima__media-wrapper",
+        "settings": {
+          "_top": "0",
+          "_left": "0",
+          "_bottom": "0",
+          "_right": "0",
+          "height": "100%",
+          "_position": "absolute"
+        },
+        "_exists": false
+      },
+      {
+        "id": "sjvqks",
+        "name": "fr-contact-section-lima__overlay",
+        "settings": {
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_background": {
+            "color": {
+              "raw": "var(--neutral-trans-60)"
+            }
+          },
+          "_cssCustom": ".fr-contact-section-alpha__overlay {\n  pointer-events: none\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "olwsho",
+        "name": "fr-contact-section-lima__media",
+        "settings": {
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_width": "100%",
+          "_height": "100%",
+          "_objectFit": "cover",
+          "_zIndex": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "urqpcp",
+        "name": "fr-contact-section-lima__location",
+        "settings": {
+          "_rowGap": ".5em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "nipxlo",
+        "name": "fr-contact-section-lima__location-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "fytrdn",
+        "name": "fr-contact-section-lima__location-street",
+        "settings": {
+          "_typography": {
+            "line-height": "1.2"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "bevmlq",
+        "name": "fr-contact-section-lima__email",
+        "settings": {
+          "_typography": {
+            "line-height": "1.2",
+            "color": {
+              "raw": "var(--white)",
+              "id": "kieovu",
+              "name": "Color #6"
+            }
+          },
+          "_typography:hover": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "fghbwp",
+        "name": "fr-contact-section-lima__fr-contact-section-lima__phone",
+        "settings": {
+          "_typography": {
+            "line-height": "1.2",
+            "color": {
+              "raw": "var(--white)",
+              "id": "kieovu",
+              "name": "Color #6"
+            }
+          },
+          "_typography:hover": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

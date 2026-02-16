@@ -1,0 +1,498 @@
+{
+  "idx": 20,
+  "title": "Slider Section Berlin",
+  "elementCount": 14,
+  "classCount": 13,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "1f18ae",
+        "name": "section",
+        "children": [
+          "e0aeda"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mlmmbo"
+          ]
+        },
+        "label": "Slider Section Berlin"
+      },
+      {
+        "id": "e0aeda",
+        "name": "container",
+        "parent": "1f18ae",
+        "children": [
+          "cd15a4",
+          "5f2e01",
+          "275b66"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gbkycr"
+          ]
+        },
+        "label": "Slider Berlin"
+      },
+      {
+        "id": "cd15a4",
+        "name": "heading",
+        "parent": "e0aeda",
+        "children": [],
+        "settings": {
+          "text": "Your heading",
+          "_cssGlobalClasses": [
+            "iohilz"
+          ],
+          "tag": "h2"
+        }
+      },
+      {
+        "id": "5f2e01",
+        "name": "fr-slider",
+        "parent": "e0aeda",
+        "children": [
+          "ca8a64"
+        ],
+        "settings": {
+          "height": "50vh",
+          "playButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-play"
+          },
+          "pauseButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-pause"
+          },
+          "sliderTag": "div",
+          "listTag": "ul",
+          "ariaCarousel": "Carousel",
+          "isSync": true,
+          "syncId": "slider-berlin",
+          "_cssGlobalClasses": [
+            "jnghur"
+          ],
+          "fixedHeight": "600px",
+          "breakout": true,
+          "type": "slide",
+          "updateOnMove": "onMove",
+          "gap": "var(--grid-gap)"
+        },
+        "label": "Slider Berlin",
+        "themeStyles": []
+      },
+      {
+        "id": "ca8a64",
+        "name": "div",
+        "parent": "5f2e01",
+        "children": [
+          "8393fa",
+          "ce4c31"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "_cssGlobalClasses": [
+            "ggoypl"
+          ],
+          "tag": "li",
+          "hasLoop": true,
+          "query": {
+            "post_type": [
+              "slider"
+            ],
+            "orderby": [
+              "title"
+            ],
+            "order": [
+              "asc"
+            ]
+          }
+        },
+        "label": "Slide"
+      },
+      {
+        "id": "c31c2b",
+        "name": "heading",
+        "parent": "8393fa",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "frpudb"
+          ],
+          "text": "{post_title}"
+        }
+      },
+      {
+        "id": "8393fa",
+        "name": "div",
+        "parent": "ca8a64",
+        "children": [
+          "c31c2b",
+          "f26fff",
+          "65eb75"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dowenn"
+          ]
+        },
+        "label": "Content"
+      },
+      {
+        "id": "ce4c31",
+        "name": "div",
+        "parent": "ca8a64",
+        "children": [
+          "7b1279"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vrqwer"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "7b1279",
+        "name": "image",
+        "parent": "ce4c31",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ltwpaz"
+          ],
+          "image": {
+            "useDynamicData": "{featured_image}",
+            "size": "large"
+          }
+        },
+        "label": "Media",
+        "themeStyles": []
+      },
+      {
+        "id": "f26fff",
+        "name": "text-basic",
+        "parent": "8393fa",
+        "children": [],
+        "settings": {
+          "text": "Accent Heading",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "qfdtjc"
+          ]
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "65eb75",
+        "name": "text",
+        "parent": "8393fa",
+        "children": [],
+        "settings": {
+          "text": "<p>{post_content}</p>"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "275b66",
+        "name": "fr-slider",
+        "parent": "e0aeda",
+        "children": [
+          "fe25d6"
+        ],
+        "settings": {
+          "height": "50vh",
+          "playButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-play"
+          },
+          "pauseButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-pause"
+          },
+          "nextArrow": {
+            "library": "themify",
+            "icon": "ti-arrow-right"
+          },
+          "nextArrowTop": "50%",
+          "nextArrowRight": "var(--space-xs)",
+          "nextArrowTranslate": "0,-50%",
+          "pagination": true,
+          "sliderTag": "div",
+          "listTag": "ul",
+          "ariaCarousel": "Carousel",
+          "isSync": true,
+          "syncId": "slider-berlin",
+          "isNavigation": true,
+          "fixedWidth": "fit-content",
+          "fixedHeight": "auto",
+          "focus": "0",
+          "type": "slide",
+          "_cssGlobalClasses": [
+            "qfmoqt"
+          ],
+          "gap": "calc(var(--space-xxl) * 2)",
+          "perPage": "1",
+          "breakout": true,
+          "updateOnMove": "onMove"
+        },
+        "themeStyles": [],
+        "label": "Slider Nav Berlin (CSS)"
+      },
+      {
+        "id": "fe25d6",
+        "name": "div",
+        "parent": "275b66",
+        "children": [
+          "105944"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "hasLoop": true,
+          "_cssGlobalClasses": [
+            "lvbtvp"
+          ],
+          "tag": "li",
+          "query": {
+            "post_type": [
+              "slider"
+            ],
+            "orderby": [
+              "title"
+            ],
+            "order": [
+              "asc"
+            ]
+          }
+        },
+        "label": "Slide"
+      },
+      {
+        "id": "105944",
+        "name": "heading",
+        "parent": "fe25d6",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ibuumr"
+          ],
+          "text": "{post_title}"
+        },
+        "label": "Title"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "mlmmbo",
+        "name": "slider-section-berlin",
+        "settings": {
+          "_overflow": "hidden",
+          "_background": {
+            "color": {
+              "raw": "var(--bg-ultra-dark)"
+            }
+          }
+        },
+        "modified": 1733448155,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "gbkycr",
+        "name": "slider-wrapper-berlin",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "iohilz",
+        "name": "slider-wrapper-berlin__heading",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "jnghur",
+        "name": "slider-berlin",
+        "settings": {
+          "slideOpacity": ".25",
+          "activeOpacity": "1",
+          "speed": "300",
+          "_cssCustom": ".slider-berlin li {\n  zoom: 95%;\n  margin-block: auto;\n}\n\n.slider-berlin li.is-active {\n  zoom: 100%;\n}",
+          "_cssCustom:tablet_portrait": ".slider-berlin .fr-slider__track.splide__track {\n  padding: 0!important;\n}",
+          "sliderPaddingStart": "10%",
+          "sliderPaddingEnd": "10%"
+        },
+        "modified": 1738693796,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "ggoypl",
+        "name": "slider-berlin__slide",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_alignItemsGrid": "stretch",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_overflow": "hidden",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)",
+          "_background": {
+            "color": {
+              "raw": "var(--bg-dark)"
+            }
+          },
+          "_cssCustom": ".slider-berlin__slide {\n  max-inline-size: 100%;\n}"
+        },
+        "modified": 1767912196,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "frpudb",
+        "name": "slider-berlin__heading",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "dowenn",
+        "name": "slider-berlin__content",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "var(--content-gap)",
+          "_padding": {
+            "top": "var(--space-l)",
+            "right": "var(--space-l)",
+            "bottom": "var(--space-l)",
+            "left": "var(--space-l)"
+          },
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light-muted)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "vrqwer",
+        "name": "slider-berlin__media-wrapper",
+        "settings": {
+          "_order": "-1",
+          "_display": "flex",
+          "_direction": "column",
+          "_justifyContent": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ltwpaz",
+        "name": "slider-berlin__media",
+        "settings": {
+          "_objectFit": "cover",
+          "_objectPosition": "center center",
+          "_width": "100%",
+          "_height": "100%"
+        },
+        "modified": 1733439669,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "qfmoqt",
+        "name": "slider-nav-berlin",
+        "settings": {
+          "_cssCustom": ".slider-nav-berlin {\n  --focus-color: var(--text-light-muted);\n}\n\n.slider-nav-berlin .fr-slider__list.splide__list li:not(:last-child)::after {\n  content: '';\n  position: absolute;\n  left: calc(100% + 1em);\n  height: 1px;\n  width: calc((var(--space-xxl) * 2) - 2em);\n  background-color: var(--text-light);\n}\n\n.slider-nav-berlin li .slider-nav-berlin__title,\n.slider-nav-berlin .fr-slider__list.splide__list li::after {\n  opacity: .25;\n}\n\n.slider-nav-berlin li.is-active .slider-nav-berlin__title {\n  opacity: 1;\n}",
+          "nextArrow": {
+            "library": "themify",
+            "icon": "ti-arrow-right"
+          },
+          "nextArrowTop": "50%",
+          "nextArrowRight": "var(--space-xs)",
+          "nextArrowTranslate": "0,-50%"
+        },
+        "modified": 1737632857,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "lvbtvp",
+        "name": "slider-nav-berlin__slide",
+        "settings": {
+          "_display": "flex",
+          "_direction": "row",
+          "_alignItems": "center",
+          "_columnGap": "var(--slider-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ibuumr",
+        "name": "slider-nav-berlin__title",
+        "settings": {
+          "_cursor": "pointer",
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          },
+          "_position": "relative"
+        },
+        "modified": 1733439909,
+        "user_id": 9,
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

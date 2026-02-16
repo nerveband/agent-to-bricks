@@ -1,0 +1,585 @@
+{
+  "idx": 65,
+  "title": "FAQ Charlie",
+  "elementCount": 29,
+  "classCount": 14,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "f05e9c",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "aa8fd2"
+        ],
+        "settings": [],
+        "label": "FAQ Section Charlie"
+      },
+      {
+        "id": "aa8fd2",
+        "name": "container",
+        "parent": "f05e9c",
+        "children": [
+          "533301",
+          "43a086"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "120h8y"
+          ]
+        },
+        "label": "Faq Grid Charlie"
+      },
+      {
+        "id": "533301",
+        "name": "block",
+        "parent": "aa8fd2",
+        "children": [
+          "e0ee7c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "3xyb6b"
+          ]
+        },
+        "label": "Sidebar"
+      },
+      {
+        "id": "43a086",
+        "name": "block",
+        "parent": "aa8fd2",
+        "children": [
+          "1771a1",
+          "03d425",
+          "70aaaa"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ugoynx",
+            "udtear"
+          ],
+          "tag": "ul"
+        },
+        "label": "FAQ List Charlie"
+      },
+      {
+        "id": "f15f73",
+        "name": "heading",
+        "parent": "e0ee7c",
+        "children": [],
+        "settings": {
+          "text": "FAQ",
+          "_cssGlobalClasses": [
+            "lcs2ps"
+          ],
+          "tag": "h2"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "01b98a",
+        "name": "text-basic",
+        "parent": "e0ee7c",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "_cssGlobalClasses": [
+            "0y3peo"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "a73f7e",
+        "name": "button",
+        "parent": "e0ee7c",
+        "children": [],
+        "settings": {
+          "text": "Contact us",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "k2e34y",
+            "btn--primary"
+          ]
+        },
+        "label": "Cta"
+      },
+      {
+        "id": "1771a1",
+        "name": "block",
+        "parent": "43a086",
+        "children": [
+          "8fe6b1",
+          "dd1db2"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wcwlgt",
+            "8sviaz"
+          ],
+          "tag": "li"
+        },
+        "label": "Faq Card Charlie"
+      },
+      {
+        "id": "8fe6b1",
+        "name": "block",
+        "parent": "1771a1",
+        "children": [
+          "bbb641",
+          "a2873d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zrh8n8",
+            "t84y7u"
+          ]
+        },
+        "label": "Question"
+      },
+      {
+        "id": "dd1db2",
+        "name": "block",
+        "parent": "1771a1",
+        "children": [
+          "87dd84",
+          "a05711"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "luy2xu",
+            "ndhmeg"
+          ]
+        },
+        "label": "Response"
+      },
+      {
+        "id": "a2873d",
+        "name": "heading",
+        "parent": "8fe6b1",
+        "children": [],
+        "settings": {
+          "text": "This is a question",
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "5m65j1"
+          ]
+        },
+        "label": "Question Heading"
+      },
+      {
+        "id": "87dd84",
+        "name": "text-basic",
+        "parent": "dd1db2",
+        "children": [],
+        "settings": {
+          "text": "Response",
+          "_cssGlobalClasses": [
+            "whs1ii"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "bbb641",
+        "name": "text-basic",
+        "parent": "8fe6b1",
+        "children": [],
+        "settings": {
+          "text": "Question",
+          "_cssGlobalClasses": [
+            "whs1ii"
+          ],
+          "tag": "span",
+          "_attributes": [
+            {
+              "id": "lumlcy",
+              "name": "aria-hidden",
+              "value": "true"
+            }
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "a05711",
+        "name": "text",
+        "parent": "dd1db2",
+        "children": [],
+        "settings": {
+          "text": "<p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.</p>",
+          "_cssGlobalClasses": [
+            "7cjiyg"
+          ]
+        },
+        "label": "Response Text"
+      },
+      {
+        "id": "70aaaa",
+        "name": "block",
+        "parent": "43a086",
+        "children": [
+          "415bcc",
+          "307dee"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wcwlgt",
+            "8sviaz"
+          ],
+          "tag": "li"
+        },
+        "label": "Faq Card Charlie"
+      },
+      {
+        "id": "415bcc",
+        "name": "block",
+        "parent": "70aaaa",
+        "children": [
+          "46eff9",
+          "0ad1d7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zrh8n8",
+            "t84y7u"
+          ]
+        },
+        "label": "Question"
+      },
+      {
+        "id": "46eff9",
+        "name": "text-basic",
+        "parent": "415bcc",
+        "children": [],
+        "settings": {
+          "text": "Question",
+          "_cssGlobalClasses": [
+            "whs1ii"
+          ],
+          "tag": "span",
+          "_attributes": [
+            {
+              "id": "lumlcy",
+              "name": "aria-hidden",
+              "value": "true"
+            }
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "0ad1d7",
+        "name": "heading",
+        "parent": "415bcc",
+        "children": [],
+        "settings": {
+          "text": "This is a question",
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "5m65j1"
+          ]
+        },
+        "label": "Question Heading"
+      },
+      {
+        "id": "307dee",
+        "name": "block",
+        "parent": "70aaaa",
+        "children": [
+          "84d365",
+          "0c7ddd"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "luy2xu",
+            "ndhmeg"
+          ]
+        },
+        "label": "Response"
+      },
+      {
+        "id": "84d365",
+        "name": "text-basic",
+        "parent": "307dee",
+        "children": [],
+        "settings": {
+          "text": "Response",
+          "_cssGlobalClasses": [
+            "whs1ii"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "0c7ddd",
+        "name": "text",
+        "parent": "307dee",
+        "children": [],
+        "settings": {
+          "text": "<p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.</p>",
+          "_cssGlobalClasses": [
+            "7cjiyg"
+          ]
+        },
+        "label": "Response Text"
+      },
+      {
+        "id": "03d425",
+        "name": "block",
+        "parent": "43a086",
+        "children": [
+          "194e14",
+          "d3c3b9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wcwlgt",
+            "8sviaz"
+          ],
+          "tag": "li"
+        },
+        "label": "Faq Card Charlie"
+      },
+      {
+        "id": "194e14",
+        "name": "block",
+        "parent": "03d425",
+        "children": [
+          "62d522",
+          "d87b78"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zrh8n8",
+            "t84y7u"
+          ]
+        },
+        "label": "Question"
+      },
+      {
+        "id": "62d522",
+        "name": "text-basic",
+        "parent": "194e14",
+        "children": [],
+        "settings": {
+          "text": "Question",
+          "_cssGlobalClasses": [
+            "whs1ii"
+          ],
+          "tag": "span",
+          "_attributes": [
+            {
+              "id": "lumlcy",
+              "name": "aria-hidden",
+              "value": "true"
+            }
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "d87b78",
+        "name": "heading",
+        "parent": "194e14",
+        "children": [],
+        "settings": {
+          "text": "This is a question",
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "5m65j1"
+          ]
+        },
+        "label": "Question Heading"
+      },
+      {
+        "id": "d3c3b9",
+        "name": "block",
+        "parent": "03d425",
+        "children": [
+          "35de71",
+          "e6efee"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "luy2xu",
+            "ndhmeg"
+          ]
+        },
+        "label": "Response"
+      },
+      {
+        "id": "35de71",
+        "name": "text-basic",
+        "parent": "d3c3b9",
+        "children": [],
+        "settings": {
+          "text": "Response",
+          "_cssGlobalClasses": [
+            "whs1ii"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "e6efee",
+        "name": "text",
+        "parent": "d3c3b9",
+        "children": [],
+        "settings": {
+          "text": "<p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.</p>",
+          "_cssGlobalClasses": [
+            "7cjiyg"
+          ]
+        },
+        "label": "Response Text"
+      },
+      {
+        "id": "e0ee7c",
+        "name": "block",
+        "parent": "533301",
+        "children": [
+          "f15f73",
+          "01b98a",
+          "a73f7e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rjfjbp"
+          ]
+        },
+        "label": "Sticky"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "120h8y",
+        "name": "faq-grid-charlie",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridGap": "calc(var(--grid-gap) * 3)",
+          "_gridGap:tablet_portrait": "calc(var(--grid-gap) * 2)",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "3xyb6b",
+        "name": "faq-grid-charlie__sidebar",
+        "settings": {
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ugoynx",
+        "name": "faq-list-charlie",
+        "settings": {
+          "_cssCustom": "/* ACSS Programmatic Dividers */\n/* Available Override Tokens\n--divider-size\n--divider-inline-size\n--divider-style\n--divider-color\n*/\n\n/* Remove gap from parent */\n.faq-list-charlie {\n  --divider-gap: calc(var(--container-gap) / 1.5);\n\trow-gap: 0 !important;\n  padding: 0;\n  margin: 0;\n  list-style-type: none;\n}\n\n/* Children are required to be relative and show overflow. They also need bottom margin to act as a gap. */\n.faq-list-charlie > *:not(:last-child) {\n\t\tposition: relative;\n\toverflow: visible;\n\tmargin-block-end: calc(var(--divider-gap) * 2);\n}\n\n/* Divider */\n.faq-list-charlie > *:not(:last-child)::after {\n\t\tcontent: '';\n\tdisplay: block;\n\tposition: absolute;\n\tinset-inline-start: 0;\n\tinset-block-end: calc(var(--divider-gap) * -1 - var(--divider-size));\n\tinline-size: var(--divider-inline-size);\n\tborder-block-end: var(--divider);\n}"
+        },
+        "modified": 1770486289,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "lcs2ps",
+        "name": "faq-grid-charlie__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "0y3peo",
+        "name": "faq-grid-charlie__lede",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-l)",
+            "color": {
+              "raw": "var(--text-dark-muted)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "k2e34y",
+        "name": "faq-grid-charlie__cta",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "wcwlgt",
+        "name": "faq-card-charlie",
+        "settings": {
+          "_cssCustom": "@media (min-width: 767px) {\n  \n  .faq-card-charlie__question, .faq-card-charlie__response {\n    display: grid;\n    grid-template-columns: 10ch minmax(0, 1fr);\n    gap: var(--space-m);\n\t}\n\t\n}",
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "zrh8n8",
+        "name": "faq-card-charlie__question",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "luy2xu",
+        "name": "faq-card-charlie__response",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "5m65j1",
+        "name": "faq-card-charlie__question-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "whs1ii",
+        "name": "faq-card-charlie__label",
+        "settings": {
+          "_display:mobile_landscape": "none",
+          "_typography": {
+            "font-size": "var(--text-s)",
+            "text-transform": "uppercase",
+            "color": {
+              "raw": "var(--text-dark-muted)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "7cjiyg",
+        "name": "faq-card-charlie__response-text",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "rjfjbp",
+        "name": "faq-section-charlie__sidebar-sticky",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_position": "sticky",
+          "_top": "var(--offset, 0)"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

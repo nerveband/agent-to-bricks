@@ -1,0 +1,259 @@
+{
+  "idx": 294,
+  "title": "Legal Meta Alpha",
+  "elementCount": 10,
+  "classCount": 6,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "e14f4c",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "22b4a1",
+          "8491fa"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "3zkfyg"
+          ]
+        },
+        "label": "Legal Meta Alpha"
+      },
+      {
+        "id": "22b4a1",
+        "name": "text-basic",
+        "parent": "e14f4c",
+        "children": [],
+        "settings": {
+          "text": "Copyright {current_date:Y} \u00a9 {site_title}",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "nrkxvi"
+          ]
+        },
+        "label": "Copyright"
+      },
+      {
+        "id": "8491fa",
+        "name": "block",
+        "parent": "e14f4c",
+        "children": [
+          "ed002b"
+        ],
+        "settings": {
+          "tag": "nav",
+          "_attributes": [
+            {
+              "id": "vtofgx",
+              "name": "aria-label",
+              "value": "Legal"
+            }
+          ],
+          "_cssGlobalClasses": [
+            "foetsb"
+          ]
+        },
+        "label": "Nav"
+      },
+      {
+        "id": "ed002b",
+        "name": "div",
+        "parent": "8491fa",
+        "children": [
+          "aac7a5",
+          "955549",
+          "88c8d7"
+        ],
+        "settings": {
+          "tag": "ul",
+          "_cssGlobalClasses": [
+            "fx7skj"
+          ]
+        },
+        "label": "List"
+      },
+      {
+        "id": "aac7a5",
+        "name": "block",
+        "parent": "ed002b",
+        "children": [
+          "156967"
+        ],
+        "settings": {
+          "tag": "li",
+          "_cssGlobalClasses": [
+            "4tmru2"
+          ]
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "156967",
+        "name": "text-link",
+        "parent": "aac7a5",
+        "children": [],
+        "settings": {
+          "text": "Privacy Policy",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_cssGlobalClasses": [
+            "ndxwdg"
+          ]
+        },
+        "label": "Link"
+      },
+      {
+        "id": "955549",
+        "name": "block",
+        "parent": "ed002b",
+        "children": [
+          "c7d09e"
+        ],
+        "settings": {
+          "tag": "li",
+          "_cssGlobalClasses": [
+            "4tmru2"
+          ]
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "c7d09e",
+        "name": "text-link",
+        "parent": "955549",
+        "children": [],
+        "settings": {
+          "text": "Disclaimer",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_cssGlobalClasses": [
+            "ndxwdg"
+          ]
+        },
+        "label": "Link"
+      },
+      {
+        "id": "88c8d7",
+        "name": "block",
+        "parent": "ed002b",
+        "children": [
+          "dcad09"
+        ],
+        "settings": {
+          "tag": "li",
+          "_cssGlobalClasses": [
+            "4tmru2"
+          ]
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "dcad09",
+        "name": "text-link",
+        "parent": "88c8d7",
+        "children": [],
+        "settings": {
+          "text": "Terms of Use",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_cssGlobalClasses": [
+            "ndxwdg"
+          ]
+        },
+        "label": "Link"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "3zkfyg",
+        "name": "fr-legal-meta-alpha",
+        "settings": {
+          "_display": "flex",
+          "_direction": "row",
+          "_flexWrap": "wrap",
+          "_columnGap": "var(--content-gap)",
+          "_rowGap": "calc(var(--content-gap) / 2)",
+          "_typography": {
+            "font-size": "var(--text-s)"
+          },
+          "_margin": {
+            "left": "0",
+            "right": "0"
+          },
+          "_cssCustom": ".fr-legal-meta-alpha[data-color=\"dark\"] {\n  color: var(--text-dark-muted);\n}\n.fr-legal-meta-alpha[data-color=\"light\"] {\n  color: var(--text-light-muted);\n}"
+        },
+        "modified": 1751314275,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "nrkxvi",
+        "name": "fr-legal-meta-alpha__copyright",
+        "settings": {
+          "_display": "flex",
+          "_width": "fit-content"
+        },
+        "modified": 1747641759,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "foetsb",
+        "name": "fr-legal-meta-alpha__nav",
+        "settings": {
+          "_display": "flex",
+          "_direction": "row",
+          "_width": "auto",
+          "_cssCustom": ".fr-legal-meta-alpha__nav {\n  --link-color: var(--text-dark-muted);\n  --link-color-hover: var(--text-dark);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "fx7skj",
+        "name": "fr-legal-meta-alpha__list",
+        "settings": {
+          "_padding": {
+            "left": "0"
+          },
+          "_display": "flex",
+          "_justifyContent": "center",
+          "_flexWrap": "nowrap",
+          "_columnGap": "1em",
+          "_rowGap": "1em",
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          },
+          "_cssCustom": ".fr-legal-meta-alpha__list {\n\tlist-style-type: none;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "4tmru2",
+        "name": "fr-legal-meta-alpha__list-item",
+        "settings": {
+          "_width": "auto"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ndxwdg",
+        "name": "fr-legal-meta-alpha__link",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

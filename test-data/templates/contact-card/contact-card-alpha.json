@@ -1,0 +1,282 @@
+{
+  "idx": 412,
+  "title": "Contact Card Alpha",
+  "elementCount": 8,
+  "classCount": 11,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "10c117",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "5845e3",
+          "5333db"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fkkfin"
+          ]
+        },
+        "label": "Contact Card Alpha"
+      },
+      {
+        "id": "5333db",
+        "name": "div",
+        "parent": "10c117",
+        "children": [
+          "15a33c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lvgzec"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "15a33c",
+        "name": "map",
+        "parent": "5333db",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pzfulh",
+            "tayvon"
+          ],
+          "addresses": [
+            {
+              "latitude": "33.7489924",
+              "longitude": "-84.3902644",
+              "id": "ylaatq"
+            }
+          ],
+          "scrollwheel": true,
+          "draggable": true,
+          "streetViewControl": true,
+          "zoomControl": true
+        },
+        "label": "Media"
+      },
+      {
+        "id": "5845e3",
+        "name": "div",
+        "parent": "10c117",
+        "children": [
+          "76e40e",
+          "7db391",
+          "f4c072",
+          "170aeb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "grzadt"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "7db391",
+        "name": "text-basic",
+        "parent": "5845e3",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "clnbim",
+            "qfdtjc"
+          ]
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "76e40e",
+        "name": "heading",
+        "parent": "5845e3",
+        "children": [],
+        "settings": {
+          "text": "Your heading goes here",
+          "_cssGlobalClasses": [
+            "mjoavz"
+          ],
+          "tag": "h2"
+        }
+      },
+      {
+        "id": "f4c072",
+        "name": "text-basic",
+        "parent": "5845e3",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "janppt",
+            "kddjfd"
+          ],
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "170aeb",
+        "name": "form",
+        "parent": "5845e3",
+        "children": [],
+        "settings": {
+          "fields": [
+            {
+              "type": "text",
+              "label": "Name",
+              "placeholder": "Your Name",
+              "id": "74f5f7"
+            },
+            {
+              "type": "email",
+              "label": "Email",
+              "placeholder": "Your Email",
+              "required": true,
+              "id": "42ac96"
+            },
+            {
+              "type": "textarea",
+              "label": "Message",
+              "placeholder": "Your Message",
+              "required": true,
+              "id": "4dd6b4"
+            }
+          ],
+          "submitButtonStyle": "primary",
+          "actions": [
+            "email"
+          ],
+          "successMessage": "Message successfully sent. We will get back to you as soon as possible.",
+          "emailSubject": "Contact form request",
+          "emailTo": "admin_email",
+          "fromName": "Frames (Bricks)",
+          "emailErrorMessage": "Submission failed. Please reload the page and try to submit the form again.",
+          "htmlEmail": true,
+          "mailchimpPendingMessage": "Please check your email to confirm your subscription.",
+          "mailchimpErrorMessage": "Sorry, but we could not subscribe you.",
+          "sendgridErrorMessage": "Sorry, but we could not subscribe you.",
+          "_cssGlobalClasses": [
+            "mithno",
+            "fvchph"
+          ]
+        },
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771255946,
+        "user_id": 1
+      },
+      {
+        "id": "fvchph",
+        "name": "form--light",
+        "settings": [],
+        "_mappedId": "acss_import_form--light",
+        "modified": 1771256089,
+        "user_id": 1
+      },
+      {
+        "id": "fkkfin",
+        "name": "fr-contact-card-alpha",
+        "settings": {
+          "_rowGap:mobile_portrait": "var(--fr-grid-gap)",
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-2-3)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_alignContentGrid": "stretch",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "lvgzec",
+        "name": "fr-contact-card-alpha__media-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "tayvon",
+        "name": "fr-contact-card-alpha__media",
+        "settings": {
+          "_width": "100%",
+          "_height": "100%",
+          "height": "50vh"
+        },
+        "_exists": false
+      },
+      {
+        "id": "grzadt",
+        "name": "fr-contact-card-alpha__content-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "var(--fr-content-gap)",
+          "_justifyContent": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "clnbim",
+        "name": "fr-contact-card-alpha__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "mjoavz",
+        "name": "fr-contact-card-alpha__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "janppt",
+        "name": "fr-contact-card-alpha__description",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "mithno",
+        "name": "fr-contact-card-alpha__form",
+        "settings": {
+          "_width": "100%"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

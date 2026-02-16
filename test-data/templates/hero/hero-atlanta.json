@@ -1,0 +1,379 @@
+{
+  "idx": 11,
+  "title": "Hero Atlanta",
+  "elementCount": 14,
+  "classCount": 13,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "5e3b07",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "3a173a",
+          "991101",
+          "ad8f2c",
+          "030c1c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rvkaeq"
+          ]
+        },
+        "label": "Hero Atlanta (BG CSS)"
+      },
+      {
+        "id": "3a173a",
+        "name": "container",
+        "parent": "5e3b07",
+        "children": [
+          "74b2cd"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "yiuefa"
+          ]
+        },
+        "label": "Intro"
+      },
+      {
+        "id": "ad8f2c",
+        "name": "container",
+        "parent": "5e3b07",
+        "children": [
+          "b50d77",
+          "dcbb55"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vmcxuc"
+          ]
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "991101",
+        "name": "block",
+        "parent": "5e3b07",
+        "children": [
+          "2f3222",
+          "36e9a6",
+          "4bb86b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "yj5wq4"
+          ]
+        },
+        "label": "Image Group Atlanta (CSS)"
+      },
+      {
+        "id": "bf21d5",
+        "name": "image",
+        "parent": "2f3222",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "1ysfju",
+            "tohjuc"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure"
+        },
+        "label": "Image",
+        "themeStyles": []
+      },
+      {
+        "id": "2f3222",
+        "name": "div",
+        "parent": "991101",
+        "children": [
+          "bf21d5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "v89lgk"
+          ]
+        },
+        "label": "Image Wrapper"
+      },
+      {
+        "id": "4bb86b",
+        "name": "div",
+        "parent": "991101",
+        "children": [
+          "2d47e6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "v89lgk"
+          ]
+        },
+        "label": "Image Wrapper"
+      },
+      {
+        "id": "2d47e6",
+        "name": "image",
+        "parent": "4bb86b",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "1ysfju",
+            "ddzona"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure"
+        },
+        "label": "Image",
+        "themeStyles": []
+      },
+      {
+        "id": "36e9a6",
+        "name": "div",
+        "parent": "991101",
+        "children": [
+          "87d3dd"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "v89lgk"
+          ]
+        },
+        "label": "Image Wrapper"
+      },
+      {
+        "id": "87d3dd",
+        "name": "image",
+        "parent": "36e9a6",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "1ysfju",
+            "nqmkcv"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure"
+        },
+        "label": "Image",
+        "themeStyles": []
+      },
+      {
+        "id": "74b2cd",
+        "name": "heading",
+        "parent": "3a173a",
+        "children": [],
+        "settings": {
+          "text": "Write a compelling headline that works without a lede",
+          "tag": "h1",
+          "_cssGlobalClasses": [
+            "kokvqc"
+          ]
+        }
+      },
+      {
+        "id": "b50d77",
+        "name": "button",
+        "parent": "ad8f2c",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ]
+        }
+      },
+      {
+        "id": "dcbb55",
+        "name": "text",
+        "parent": "ad8f2c",
+        "children": [],
+        "settings": {
+          "text": "<p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet.</p>",
+          "_cssGlobalClasses": [
+            "zqjtap"
+          ]
+        },
+        "label": "Footer Text"
+      },
+      {
+        "id": "030c1c",
+        "name": "fr-notes",
+        "parent": "5e3b07",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ieofwl"
+          ],
+          "notesContent": "<p>The blur is created with CSS. You can adjust the strength and radius of the blur by adjusting the CSS on Image Group Atlanta.</p>"
+        },
+        "label": "Hero Atlanta Notes"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "ieofwl",
+        "name": "fr-note",
+        "settings": {
+          "_cssCustom": ".fr-note {\n  padding: var(--card-padding, var(--space-m));\n  border-radius: var(--card-radius, var(--radius));\n  background: var(--warning-light, #FDEBB5);\n  color: var(--warning-ultra-dark, #544002);\n  margin-inline: auto;\n}\n\n.fr-note * + :is(h2, h3, h4) {\n  margin-top: var(--heading-spacing);\n  color: var(--text-dark);\n}\n\n.fr-note a {\n  text-decoration: underline;\n}",
+          "_width": "60ch",
+          "_typography": {
+            "color": {
+              "raw": "var(--text-dark-muted)"
+            }
+          }
+        },
+        "modified": 1744306417,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "rvkaeq",
+        "name": "hero-atlanta",
+        "settings": {
+          "_rowGap": "var(--container-gap)",
+          "_rowGap:mobile_landscape": "var(--content-gap)"
+        },
+        "modified": 1736030265,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "yiuefa",
+        "name": "hero-atlanta__intro",
+        "settings": {
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_alignItems:mobile_landscape": "flex-start"
+        },
+        "_exists": false
+      },
+      {
+        "id": "vmcxuc",
+        "name": "hero-atlanta__footer",
+        "settings": {
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_alignItems:mobile_landscape": "flex-start",
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "yj5wq4",
+        "name": "image-group-atlanta",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-3)",
+          "_gridGap": "var(--space-l)",
+          "_cssCustom": ".image-group-atlanta {\n  --fade-amount: 70%;\n  mask-image: radial-gradient(\n    circle,\n    black var(--fade-amount),\n    transparent 80%\n  );\n}",
+          "_gridGap:tablet_portrait": "var(--content-gap)",
+          "_cssCustom:mobile_landscape": ".image-group-atlanta {\n\t--bg: transparent;\n}",
+          "_gridGap:mobile_landscape": "var(--space-xs)",
+          "_width": "var(--content-width)"
+        },
+        "modified": 1736031181,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "1ysfju",
+        "name": "image-group-atlanta__image",
+        "settings": {
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_aspectRatio": "3/4.5",
+          "_objectFit": "cover"
+        },
+        "modified": 1747676083,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "tohjuc",
+        "name": "image-group-atlanta__image--left",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "v89lgk",
+        "name": "image-group-atlanta__image-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ddzona",
+        "name": "image-group-atlanta__image--right",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "nqmkcv",
+        "name": "image-group-atlanta__image--center",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "kokvqc",
+        "name": "hero-atlanta__heading",
+        "settings": {
+          "_cssCustom": ".hero-atlanta__heading {\n  text-wrap: balance;\n}",
+          "_width": "30ch"
+        },
+        "_exists": false
+      },
+      {
+        "id": "zqjtap",
+        "name": "hero-atlanta__footer-text",
+        "settings": {
+          "_order:mobile_landscape": "-1"
+        },
+        "modified": 1736028408,
+        "user_id": 1,
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

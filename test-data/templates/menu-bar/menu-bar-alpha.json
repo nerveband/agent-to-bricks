@@ -1,0 +1,430 @@
+{
+  "idx": 138,
+  "title": "Menu Bar Alpha",
+  "elementCount": 15,
+  "classCount": 6,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "892ea9",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "3c8519"
+        ],
+        "settings": {
+          "tag": "div",
+          "_cssGlobalClasses": [
+            "bmcomy"
+          ]
+        },
+        "label": "Menu Bar Alpha (CSS)"
+      },
+      {
+        "id": "aafb0a",
+        "name": "block",
+        "parent": "3c8519",
+        "children": [
+          "1cf179",
+          "cb39f7",
+          "6b76d8",
+          "4b48bf"
+        ],
+        "settings": {
+          "tag": "ul",
+          "_cssGlobalClasses": [
+            "m0wy8u"
+          ]
+        },
+        "label": "List"
+      },
+      {
+        "id": "1cf179",
+        "name": "block",
+        "parent": "aafb0a",
+        "children": [
+          "402ce3"
+        ],
+        "settings": {
+          "tag": "li",
+          "_cssGlobalClasses": [
+            "y64vpj"
+          ]
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "402ce3",
+        "name": "block",
+        "parent": "1cf179",
+        "children": [
+          "36663b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "31ucg2"
+          ],
+          "tag": "a",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "tsaegf",
+              "name": "data-balloon",
+              "value": "Call us"
+            },
+            {
+              "id": "krfrtk",
+              "name": "data-balloon-pos",
+              "value": "top"
+            }
+          ]
+        },
+        "label": "Link Wrapper (Attr)"
+      },
+      {
+        "id": "36663b",
+        "name": "icon",
+        "parent": "402ce3",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "3rmpv6"
+          ]
+        },
+        "label": "List Item Icon"
+      },
+      {
+        "id": "6b76d8",
+        "name": "block",
+        "parent": "aafb0a",
+        "children": [
+          "23fc22"
+        ],
+        "settings": {
+          "tag": "li",
+          "_cssGlobalClasses": [
+            "y64vpj"
+          ]
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "23fc22",
+        "name": "block",
+        "parent": "6b76d8",
+        "children": [
+          "6a6286"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "31ucg2"
+          ],
+          "tag": "a",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "vqodlf",
+              "name": "data-balloon",
+              "value": "Locations"
+            },
+            {
+              "id": "zdichy",
+              "name": "data-balloon-pos",
+              "value": "top"
+            }
+          ]
+        },
+        "label": "Link Wrapper (Attr)"
+      },
+      {
+        "id": "6a6286",
+        "name": "icon",
+        "parent": "23fc22",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)",
+            "fill": {
+              "raw": "var(--icon-color)"
+            }
+          },
+          "_cssGlobalClasses": [
+            "3rmpv6"
+          ]
+        },
+        "label": "List Item Icon"
+      },
+      {
+        "id": "4b48bf",
+        "name": "block",
+        "parent": "aafb0a",
+        "children": [
+          "ce66c8"
+        ],
+        "settings": {
+          "tag": "li",
+          "_cssGlobalClasses": [
+            "y64vpj"
+          ]
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "ce66c8",
+        "name": "block",
+        "parent": "4b48bf",
+        "children": [
+          "664111"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "31ucg2"
+          ],
+          "tag": "a",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "lfqckc",
+              "name": "data-balloon",
+              "value": "Special offer"
+            },
+            {
+              "id": "uvcmpl",
+              "name": "data-balloon-pos",
+              "value": "top"
+            }
+          ]
+        },
+        "label": "Link Wrapper (Attr)"
+      },
+      {
+        "id": "664111",
+        "name": "icon",
+        "parent": "ce66c8",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)",
+            "fill": {
+              "raw": "var(--icon-color)"
+            }
+          },
+          "_cssGlobalClasses": [
+            "3rmpv6"
+          ]
+        },
+        "label": "List Item Icon"
+      },
+      {
+        "id": "cb39f7",
+        "name": "block",
+        "parent": "aafb0a",
+        "children": [
+          "29cab0"
+        ],
+        "settings": {
+          "tag": "li",
+          "_cssGlobalClasses": [
+            "y64vpj"
+          ]
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "29cab0",
+        "name": "block",
+        "parent": "cb39f7",
+        "children": [
+          "404eb1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "31ucg2"
+          ],
+          "tag": "a",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "knbafl",
+              "name": "data-balloon",
+              "value": "Email us"
+            },
+            {
+              "id": "gyckup",
+              "name": "data-balloon-pos",
+              "value": "top"
+            }
+          ]
+        },
+        "label": "Link Wrapper (Attr)"
+      },
+      {
+        "id": "404eb1",
+        "name": "icon",
+        "parent": "29cab0",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)",
+            "fill": {
+              "raw": "var(--icon-color)"
+            }
+          },
+          "_cssGlobalClasses": [
+            "3rmpv6"
+          ]
+        },
+        "label": "List Item Icon"
+      },
+      {
+        "id": "3c8519",
+        "name": "block",
+        "parent": "892ea9",
+        "children": [
+          "aafb0a"
+        ],
+        "settings": {
+          "tag": "nav",
+          "_cssGlobalClasses": [
+            "uzayoj"
+          ]
+        },
+        "label": "Nav"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "bmcomy",
+        "name": "fr-menu-bar-alpha",
+        "settings": {
+          "_cssCustom": ".fr-menu-bar-alpha  {\n  /* Link */\n  --link-padding: var(--space-xs);\n  --link-background: var(--white);\n  --link-background-hover: var(--black-trans-10);\n  /* Divider */\n  --divider-color: var(--black-trans-20);\n  /* Icons */\n\t--icon-size: 1.5em;\n  --icon-color: var(--black-trans-80);\n  --icon-color-hover: var(--black);\n  /* Tooltip Styling */\n  --bricks-tooltip-bg: var(--black);\n  --bricks-tooltip-text: var(--white);\n  --bricks-tooltip-text-size: 14px;\n}\n\n/*** \nTHIS IS A MOBILE MENU BAR. UNCOMMENT THIS CODE TO HIDE THE MENU BAR AT A SPECIFIC BREAKPOINT AND UP.\n\n@media (min-width: 991px) {\n  .fr-menu-bar-alpha {\n  \tdisplay: none;\n  }\n}\n\n***/\n\n.fr-menu-bar-alpha__list-item-link-wrapper {\n\tbackground-color: var(--link-background);\n  transition: background-color .3s ease-in-out;\n}\n\n.fr-menu-bar-alpha__list-item:not(:first-of-type) {\n\tborder-left: 1px solid var(--divider-color);\n}\n\n.fr-menu-bar-alpha__list-item-link-wrapper:is(:hover, :active) {\n\tbackground: var(--link-background-hover);\n}\n\n.fr-menu-bar-alpha__list-item-icon {\n\ttransition: fill .3s ease-in-out;\n}\n\n.fr-menu-bar-alpha__list-item-link-wrapper:is(:hover, :active) .fr-menu-bar-alpha__list-item-icon {\n\t--icon-color: var(--icon-color-hover);\n}\n\n.fr-menu-bar-alpha__list-item-link-wrapper[data-balloon]:after {\n\tfont-size: var(--bricks-tooltip-text-size);\n}",
+          "_boxShadow": {
+            "values": {
+              "offsetX": "0",
+              "offsetY": "-20",
+              "blur": "40",
+              "spread": "-18"
+            },
+            "color": {
+              "raw": "var(--black-trans-20)"
+            }
+          },
+          "_position": "fixed",
+          "_bottom": "0",
+          "_left": "0",
+          "_zIndex": "999"
+        },
+        "_exists": false
+      },
+      {
+        "id": "m0wy8u",
+        "name": "fr-menu-bar-alpha__list",
+        "settings": {
+          "_alignItems": "stretch",
+          "_padding": {
+            "left": "0"
+          },
+          "_flexWrap": "nowrap",
+          "_direction": "row",
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "y64vpj",
+        "name": "fr-menu-bar-alpha__list-item",
+        "settings": {
+          "_alignItems": "center",
+          "_justifyContent": "center",
+          "_flexGrow": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "31ucg2",
+        "name": "fr-menu-bar-alpha__list-item-link-wrapper",
+        "settings": {
+          "_direction": "column",
+          "_alignItems": "center",
+          "_columnGap": ".5em",
+          "_justifyContent": "center",
+          "_padding": {
+            "top": "var(--link-padding)",
+            "right": "var(--link-padding)",
+            "bottom": "var(--link-padding)",
+            "left": "var(--link-padding)"
+          },
+          "_height": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "3rmpv6",
+        "name": "fr-menu-bar-alpha__list-item-icon",
+        "settings": {
+          "_cssCustom": ".fr-menu-bar-alpha__list-item-icon {\n  fill: var(--icon-color);\n  height: var(--icon-size);\n  width: var(--icon-size);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "uzayoj",
+        "name": "fr-menu-bar-alpha__nav",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

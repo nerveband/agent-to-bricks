@@ -1,0 +1,427 @@
+{
+  "idx": 447,
+  "title": "Article Grid Foxtrot",
+  "elementCount": 12,
+  "classCount": 14,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "55eca4",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "bd94b1"
+        ],
+        "settings": {
+          "tag": "custom",
+          "customTag": "ul",
+          "_cssGlobalClasses": [
+            "jhkapf",
+            "rktisp"
+          ]
+        },
+        "label": "Article Grid Foxtrot"
+      },
+      {
+        "id": "0e5f0c",
+        "name": "code",
+        "parent": 0,
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ycpxth"
+          ],
+          "executeCode": true,
+          "user_id": 9,
+          "time": 1726757521,
+          "javascriptCode": "//Go to Bricks > Settings > Builder Access and allow Code Execution for Administrator\n//Execute this code below this field\n// You only need one Accesibility Code for each card type. If you imported more than one Article Section Foxtrot, remove extra accessibility code. \n  \n// INSERT BELOWE THE ARTICLE CARDS LIST\n  const deltaCards = document.querySelectorAll('.fr-article-card-foxtrot')\n\ndeltaCards.forEach(card => {\n\t\n\tconst link = card.querySelector('.fr-article-card-foxtrot__title a');\n\tconst bodyCard = card.querySelector('.fr-article-card-foxtrot__body');\n\n\tlink.addEventListener('focus', () => {\n\t  bodyCard.classList.add('fr-article-card-foxtrot--visible');\n\t});\n\n\tlink.addEventListener('blur', () => {\n\t  bodyCard.classList.remove('fr-article-card-foxtrot--visible');\n\t});\n\n});"
+        },
+        "label": "Accessibility Code (Below)"
+      },
+      {
+        "id": "bd94b1",
+        "name": "div",
+        "parent": "55eca4",
+        "children": [
+          "c7a967",
+          "7e80f8"
+        ],
+        "settings": {
+          "tag": "custom",
+          "customTag": "li",
+          "_cssGlobalClasses": [
+            "iorlqz"
+          ],
+          "_transform:hover .fr-article-card-foxtrot__body": {
+            "translateX": "0px"
+          },
+          "hasLoop": true,
+          "query": {
+            "posts_per_page": "2"
+          }
+        },
+        "label": "Article Card Foxtrot"
+      },
+      {
+        "id": "c7a967",
+        "name": "div",
+        "parent": "bd94b1",
+        "children": [
+          "1eec41",
+          "c48e4e",
+          "99d8c6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dmbris"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "1eec41",
+        "name": "heading",
+        "parent": "c7a967",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "uvibko",
+            "acss_import_clickable-parent"
+          ],
+          "link": {
+            "type": "meta",
+            "useDynamicData": "{post_url}"
+          },
+          "text": "{post_title:10}"
+        }
+      },
+      {
+        "id": "c48e4e",
+        "name": "text-basic",
+        "parent": "c7a967",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sdgdcc"
+          ],
+          "tag": "p",
+          "text": "{post_excerpt:25}"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "99d8c6",
+        "name": "div",
+        "parent": "c7a967",
+        "children": [
+          "2062bf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ajefgd"
+          ],
+          "tag": "custom",
+          "customTag": "footer"
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "2062bf",
+        "name": "div",
+        "parent": "99d8c6",
+        "children": [
+          "115675",
+          "61df9f"
+        ],
+        "settings": {
+          "tag": "custom",
+          "customTag": "p",
+          "_cssGlobalClasses": [
+            "ydzkrn"
+          ]
+        },
+        "label": "Info Paragraph"
+      },
+      {
+        "id": "115675",
+        "name": "text-basic",
+        "parent": "2062bf",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "brrsvi"
+          ],
+          "tag": "custom",
+          "customTag": "time",
+          "_attributes": [
+            {
+              "id": "btzpkx",
+              "name": "datetime",
+              "value": "{post_date}"
+            }
+          ],
+          "text": "{post_date}"
+        },
+        "label": "Date"
+      },
+      {
+        "id": "61df9f",
+        "name": "text-basic",
+        "parent": "2062bf",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vkooit"
+          ],
+          "tag": "span",
+          "text": "{author_name}"
+        },
+        "label": "Author Name"
+      },
+      {
+        "id": "7e80f8",
+        "name": "div",
+        "parent": "bd94b1",
+        "children": [
+          "998a40"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ivpknk"
+          ]
+        },
+        "label": "Image Wrapper"
+      },
+      {
+        "id": "998a40",
+        "name": "image",
+        "parent": "7e80f8",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kxaucn"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "caption": "none"
+        },
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "rktisp",
+        "name": "list--none",
+        "settings": {
+          "_padding": {
+            "left": "0"
+          },
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "acss_import_list--none",
+        "modified": 1771256344,
+        "user_id": 1
+      },
+      {
+        "id": "acss_import_clickable-parent",
+        "name": "clickable-parent",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "jhkapf",
+        "name": "fr-article-grid-foxtrot",
+        "settings": {
+          "_display": "grid",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_alignItemsGrid": "stretch",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)",
+          "_padding": {
+            "left": "0"
+          },
+          "_cssCustom": ".fr-article-grid-foxtrot {list-style-type: none;}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ycpxth",
+        "name": "fr-article-card-foxtrot__accessibility-code",
+        "settings": {
+          "_cssCustom": "/*Keyboard focus styling*/\n.fr-article-card-foxtrot--visible {\n    opacity: 1!important;\n    transform: translateX(0px)!important;\n}\n\n/* Make body visible inside the builder*/\n.brx-body.iframe.mounted .fr-article-card-foxtrot__body {\n\topacity: 1;\n  transform: translateX(0)\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "iorlqz",
+        "name": "fr-article-card-foxtrot",
+        "settings": {
+          "_opacity:hover .fr-article-card-delta__body": "1",
+          "_transform:hover .fr-article-card-delta__body": {
+            "translateY": "0px"
+          },
+          "_overflow": "hidden",
+          "_opacity:hover .fr-article-card-foxtrot__body": "1",
+          "_transform:hover .fr-article-card-foxtrot__body": {
+            "translateX": "0px"
+          },
+          "_position": "relative",
+          "_cssCustom": "@media (hover: none) {\n  .fr-article-card-foxtrot__body {\n    opacity: 1 !important;\n    transform: translateX(0) !important;\n  }\n}\n\n.fr-article-card-foxtrot:hover .fr-article-card-foxtrot__body {\n  opacity: 1;\n  transform: translateX(0)\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "dmbris",
+        "name": "fr-article-card-foxtrot__body",
+        "settings": {
+          "_padding": {
+            "top": "var(--fr-card-padding)",
+            "right": "var(--space-xl)",
+            "bottom": "var(--fr-card-padding)",
+            "left": "var(--fr-card-padding)"
+          },
+          "_zIndex": "1",
+          "_left": "1px",
+          "_display": "flex",
+          "_direction": "column",
+          "_justifyContent": "flex-end",
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light-muted)"
+            }
+          },
+          "_rowGap": "var(--fr-card-gap)",
+          "_gradient": {
+            "colors": [
+              {
+                "id": "wkpygf",
+                "color": {
+                  "hex": "#ff0000",
+                  "rgb": "rgba(255, 0, 0, 0)",
+                  "hsl": "hsla(0, 100%, 50%, 0)"
+                }
+              },
+              {
+                "id": "qbujdx",
+                "color": {
+                  "raw": "var(--neutral-ultra-dark-trans-80)"
+                }
+              }
+            ],
+            "angle": "270",
+            "applyTo": "background"
+          },
+          "_cssTransition": ".2s ease-in-out",
+          "_transform": {
+            "translateX": "-1em"
+          },
+          "_top": "0px",
+          "_widthMin": "70%",
+          "_height": "100%",
+          "_position": "absolute",
+          "_opacity": "0"
+        },
+        "modified": 1719825262,
+        "user_id": 2,
+        "_exists": false
+      },
+      {
+        "id": "uvibko",
+        "name": "fr-article-card-foxtrot__title",
+        "settings": {
+          "_padding": {
+            "right": "",
+            "unit": {
+              "right": "var(--space-xl)"
+            }
+          },
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "sdgdcc",
+        "name": "fr-article-card-foxtrot__lede",
+        "settings": {
+          "_widthMax": "px",
+          "_padding": {
+            "right": "var(--space-l)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "ajefgd",
+        "name": "fr-article-card-foxtrot__footer",
+        "settings": {
+          "_display": "flex",
+          "_flexWrap": "wrap",
+          "_columnGap": "var(--fr-card-gap)",
+          "_rowGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ydzkrn",
+        "name": "fr-article-card-foxtrot__info",
+        "settings": {
+          "_display": "flex",
+          "_flexWrap": "wrap",
+          "_columnGap": "var(--fr-card-gap)",
+          "_rowGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "brrsvi",
+        "name": "fr-article-card-foxtrot__date",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "vkooit",
+        "name": "fr-article-card-foxtrot__author-name",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ivpknk",
+        "name": "fr-article-card-delta__image-wrapper",
+        "settings": {
+          "_height": "100%",
+          "_position": "static"
+        },
+        "_exists": false
+      },
+      {
+        "id": "kxaucn",
+        "name": "fr-article-card-delta__image",
+        "settings": {
+          "_height": "100%",
+          "_objectFit": "cover",
+          "_heightMin": "25em",
+          "_width": "100%",
+          "_position": "static"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

@@ -1,0 +1,1272 @@
+{
+  "idx": 63,
+  "title": "Testimonial Section Mike",
+  "elementCount": 66,
+  "classCount": 16,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "2412b4",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "8ba057"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eojspa"
+          ]
+        },
+        "label": "Testimonial Section Mike"
+      },
+      {
+        "id": "8ba057",
+        "name": "container",
+        "parent": "2412b4",
+        "children": [
+          "beb4d6",
+          "19406c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ck3r05"
+          ]
+        },
+        "label": "Testimonial Container Mike (CSS)"
+      },
+      {
+        "id": "16ae15",
+        "name": "heading",
+        "parent": "beb4d6",
+        "children": [],
+        "settings": {
+          "text": "What our customers are saying about us",
+          "_cssGlobalClasses": [
+            "dmyxiu"
+          ],
+          "tag": "h2"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "19406c",
+        "name": "block",
+        "parent": "8ba057",
+        "children": [
+          "c52bc3",
+          "5da84f",
+          "60691c",
+          "dca93c",
+          "11ecce",
+          "61bd3d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "icgu2n"
+          ],
+          "tag": "ul"
+        },
+        "label": "Masonry"
+      },
+      {
+        "id": "c52bc3",
+        "name": "block",
+        "parent": "19406c",
+        "children": [
+          "bf35dd",
+          "76592c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "glzt5e"
+          ],
+          "tag": "li"
+        },
+        "label": "Testimonial Card Mike"
+      },
+      {
+        "id": "bf35dd",
+        "name": "block",
+        "parent": "c52bc3",
+        "children": [
+          "2d8783",
+          "cd44b1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lfwgf4"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "76592c",
+        "name": "block",
+        "parent": "c52bc3",
+        "children": [
+          "10a765"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pzf44y"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "2d8783",
+        "name": "div",
+        "parent": "bf35dd",
+        "children": [
+          "6befbf",
+          "be8cb1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "5v2bdu"
+          ]
+        },
+        "label": "User"
+      },
+      {
+        "id": "6befbf",
+        "name": "image",
+        "parent": "2d8783",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "_cssGlobalClasses": [
+            "sigfgk"
+          ]
+        },
+        "themeStyles": [],
+        "label": "User Thumbnail"
+      },
+      {
+        "id": "be8cb1",
+        "name": "block",
+        "parent": "2d8783",
+        "children": [
+          "ed0b47",
+          "b4f5f8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "obml75"
+          ]
+        },
+        "label": "User Content"
+      },
+      {
+        "id": "ed0b47",
+        "name": "text-basic",
+        "parent": "be8cb1",
+        "children": [],
+        "settings": {
+          "text": "James Dean",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "fic82f"
+          ]
+        },
+        "label": "User Name"
+      },
+      {
+        "id": "b4f5f8",
+        "name": "text-basic",
+        "parent": "be8cb1",
+        "children": [],
+        "settings": {
+          "text": "Customer",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "gneqbb"
+          ]
+        },
+        "label": "User Title"
+      },
+      {
+        "id": "10a765",
+        "name": "text-basic",
+        "parent": "76592c",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "2bhtu4"
+          ]
+        },
+        "label": "Testimonial"
+      },
+      {
+        "id": "cd44b1",
+        "name": "icon",
+        "parent": "bf35dd",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "width": "var(--icon-size)",
+            "height": "var(--icon-size)"
+          },
+          "_cssGlobalClasses": [
+            "zb0t0j"
+          ]
+        },
+        "label": "Social Icon",
+        "themeStyles": []
+      },
+      {
+        "id": "beb4d6",
+        "name": "block",
+        "parent": "8ba057",
+        "children": [
+          "16ae15",
+          "ec0714"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ambjon"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "ec0714",
+        "name": "button",
+        "parent": "beb4d6",
+        "children": [],
+        "settings": {
+          "text": "See All Reviews",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ]
+        }
+      },
+      {
+        "id": "61bd3d",
+        "name": "block",
+        "parent": "19406c",
+        "children": [
+          "47e457",
+          "cee572"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "glzt5e"
+          ],
+          "tag": "li"
+        },
+        "label": "Testimonial Card Mike"
+      },
+      {
+        "id": "47e457",
+        "name": "block",
+        "parent": "61bd3d",
+        "children": [
+          "a02979",
+          "709932"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lfwgf4"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "a02979",
+        "name": "div",
+        "parent": "47e457",
+        "children": [
+          "77f7f1",
+          "0cca10"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "5v2bdu"
+          ]
+        },
+        "label": "User"
+      },
+      {
+        "id": "77f7f1",
+        "name": "image",
+        "parent": "a02979",
+        "children": [],
+        "settings": {
+          "tag": "figure",
+          "_cssGlobalClasses": [
+            "sigfgk"
+          ],
+          "image": {
+            "url": "https://bricks.getframes.io/wp-content/uploads/Placeholder-Man.jpeg",
+            "external": true,
+            "filename": "Placeholder-Man.jpeg"
+          }
+        },
+        "themeStyles": [],
+        "label": "User Thumbnail"
+      },
+      {
+        "id": "0cca10",
+        "name": "block",
+        "parent": "a02979",
+        "children": [
+          "da6e67",
+          "1e997a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "obml75"
+          ]
+        },
+        "label": "User Content"
+      },
+      {
+        "id": "da6e67",
+        "name": "text-basic",
+        "parent": "0cca10",
+        "children": [],
+        "settings": {
+          "text": "James Dean",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "fic82f"
+          ]
+        },
+        "label": "User Name"
+      },
+      {
+        "id": "1e997a",
+        "name": "text-basic",
+        "parent": "0cca10",
+        "children": [],
+        "settings": {
+          "text": "Customer",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "gneqbb"
+          ]
+        },
+        "label": "User Title"
+      },
+      {
+        "id": "709932",
+        "name": "icon",
+        "parent": "47e457",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "width": "var(--icon-size)",
+            "height": "var(--icon-size)"
+          },
+          "_cssGlobalClasses": [
+            "zb0t0j"
+          ]
+        },
+        "label": "Social Icon",
+        "themeStyles": []
+      },
+      {
+        "id": "cee572",
+        "name": "block",
+        "parent": "61bd3d",
+        "children": [
+          "5581c6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pzf44y"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "5581c6",
+        "name": "text-basic",
+        "parent": "cee572",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "2bhtu4"
+          ]
+        },
+        "label": "Testimonial"
+      },
+      {
+        "id": "11ecce",
+        "name": "block",
+        "parent": "19406c",
+        "children": [
+          "068131",
+          "bb8564"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "glzt5e"
+          ],
+          "tag": "li"
+        },
+        "label": "Testimonial Card Mike"
+      },
+      {
+        "id": "068131",
+        "name": "block",
+        "parent": "11ecce",
+        "children": [
+          "689c95",
+          "281646"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lfwgf4"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "689c95",
+        "name": "div",
+        "parent": "068131",
+        "children": [
+          "126861",
+          "db71a2"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "5v2bdu"
+          ]
+        },
+        "label": "User"
+      },
+      {
+        "id": "126861",
+        "name": "image",
+        "parent": "689c95",
+        "children": [],
+        "settings": {
+          "tag": "figure",
+          "_cssGlobalClasses": [
+            "sigfgk"
+          ],
+          "image": {
+            "url": "https://bricks.getframes.io/wp-content/uploads/Placeholder-Man.jpeg",
+            "external": true,
+            "filename": "Placeholder-Man.jpeg"
+          }
+        },
+        "themeStyles": [],
+        "label": "User Thumbnail"
+      },
+      {
+        "id": "db71a2",
+        "name": "block",
+        "parent": "689c95",
+        "children": [
+          "9e994a",
+          "1fc92d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "obml75"
+          ]
+        },
+        "label": "User Content"
+      },
+      {
+        "id": "9e994a",
+        "name": "text-basic",
+        "parent": "db71a2",
+        "children": [],
+        "settings": {
+          "text": "James Dean",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "fic82f"
+          ]
+        },
+        "label": "User Name"
+      },
+      {
+        "id": "1fc92d",
+        "name": "text-basic",
+        "parent": "db71a2",
+        "children": [],
+        "settings": {
+          "text": "Customer",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "gneqbb"
+          ]
+        },
+        "label": "User Title"
+      },
+      {
+        "id": "281646",
+        "name": "icon",
+        "parent": "068131",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "width": "var(--icon-size)",
+            "height": "var(--icon-size)"
+          },
+          "_cssGlobalClasses": [
+            "zb0t0j"
+          ]
+        },
+        "label": "Social Icon",
+        "themeStyles": []
+      },
+      {
+        "id": "bb8564",
+        "name": "block",
+        "parent": "11ecce",
+        "children": [
+          "cd402c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pzf44y"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "cd402c",
+        "name": "text-basic",
+        "parent": "bb8564",
+        "children": [],
+        "settings": {
+          "text": "Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "2bhtu4"
+          ]
+        },
+        "label": "Testimonial"
+      },
+      {
+        "id": "dca93c",
+        "name": "block",
+        "parent": "19406c",
+        "children": [
+          "268263",
+          "998dc8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "glzt5e"
+          ],
+          "tag": "li"
+        },
+        "label": "Testimonial Card Mike"
+      },
+      {
+        "id": "268263",
+        "name": "block",
+        "parent": "dca93c",
+        "children": [
+          "6a8289",
+          "ee22f8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lfwgf4"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "6a8289",
+        "name": "div",
+        "parent": "268263",
+        "children": [
+          "5fd38c",
+          "11b1e4"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "5v2bdu"
+          ]
+        },
+        "label": "User"
+      },
+      {
+        "id": "5fd38c",
+        "name": "image",
+        "parent": "6a8289",
+        "children": [],
+        "settings": {
+          "tag": "figure",
+          "_cssGlobalClasses": [
+            "sigfgk"
+          ],
+          "image": {
+            "url": "https://bricks.getframes.io/wp-content/uploads/Placeholder-Man.jpeg",
+            "external": true,
+            "filename": "Placeholder-Man.jpeg"
+          }
+        },
+        "themeStyles": [],
+        "label": "User Thumbnail"
+      },
+      {
+        "id": "11b1e4",
+        "name": "block",
+        "parent": "6a8289",
+        "children": [
+          "16da13",
+          "56dcf8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "obml75"
+          ]
+        },
+        "label": "User Content"
+      },
+      {
+        "id": "16da13",
+        "name": "text-basic",
+        "parent": "11b1e4",
+        "children": [],
+        "settings": {
+          "text": "James Dean",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "fic82f"
+          ]
+        },
+        "label": "User Name"
+      },
+      {
+        "id": "56dcf8",
+        "name": "text-basic",
+        "parent": "11b1e4",
+        "children": [],
+        "settings": {
+          "text": "Customer",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "gneqbb"
+          ]
+        },
+        "label": "User Title"
+      },
+      {
+        "id": "ee22f8",
+        "name": "icon",
+        "parent": "268263",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "width": "var(--icon-size)",
+            "height": "var(--icon-size)"
+          },
+          "_cssGlobalClasses": [
+            "zb0t0j"
+          ]
+        },
+        "label": "Social Icon",
+        "themeStyles": []
+      },
+      {
+        "id": "998dc8",
+        "name": "block",
+        "parent": "dca93c",
+        "children": [
+          "b3fb93"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pzf44y"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "b3fb93",
+        "name": "text-basic",
+        "parent": "998dc8",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "2bhtu4"
+          ]
+        },
+        "label": "Testimonial"
+      },
+      {
+        "id": "60691c",
+        "name": "block",
+        "parent": "19406c",
+        "children": [
+          "058af7",
+          "dc9f6c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "glzt5e"
+          ],
+          "tag": "li"
+        },
+        "label": "Testimonial Card Mike"
+      },
+      {
+        "id": "058af7",
+        "name": "block",
+        "parent": "60691c",
+        "children": [
+          "d88c68",
+          "9cdb05"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lfwgf4"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "d88c68",
+        "name": "div",
+        "parent": "058af7",
+        "children": [
+          "c6d912",
+          "ee4e22"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "5v2bdu"
+          ]
+        },
+        "label": "User"
+      },
+      {
+        "id": "c6d912",
+        "name": "image",
+        "parent": "d88c68",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "_cssGlobalClasses": [
+            "sigfgk"
+          ]
+        },
+        "themeStyles": [],
+        "label": "User Thumbnail"
+      },
+      {
+        "id": "ee4e22",
+        "name": "block",
+        "parent": "d88c68",
+        "children": [
+          "004485",
+          "f07766"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "obml75"
+          ]
+        },
+        "label": "User Content"
+      },
+      {
+        "id": "004485",
+        "name": "text-basic",
+        "parent": "ee4e22",
+        "children": [],
+        "settings": {
+          "text": "James Dean",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "fic82f"
+          ]
+        },
+        "label": "User Name"
+      },
+      {
+        "id": "f07766",
+        "name": "text-basic",
+        "parent": "ee4e22",
+        "children": [],
+        "settings": {
+          "text": "Customer",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "gneqbb"
+          ]
+        },
+        "label": "User Title"
+      },
+      {
+        "id": "9cdb05",
+        "name": "icon",
+        "parent": "058af7",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "width": "var(--icon-size)",
+            "height": "var(--icon-size)"
+          },
+          "_cssGlobalClasses": [
+            "zb0t0j"
+          ]
+        },
+        "label": "Social Icon",
+        "themeStyles": []
+      },
+      {
+        "id": "dc9f6c",
+        "name": "block",
+        "parent": "60691c",
+        "children": [
+          "cdca9d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pzf44y"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "cdca9d",
+        "name": "text-basic",
+        "parent": "dc9f6c",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "2bhtu4"
+          ]
+        },
+        "label": "Testimonial"
+      },
+      {
+        "id": "5da84f",
+        "name": "block",
+        "parent": "19406c",
+        "children": [
+          "e608c1",
+          "66af0b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "glzt5e"
+          ],
+          "tag": "li"
+        },
+        "label": "Testimonial Card Mike"
+      },
+      {
+        "id": "e608c1",
+        "name": "block",
+        "parent": "5da84f",
+        "children": [
+          "d5201d",
+          "daa87a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lfwgf4"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "d5201d",
+        "name": "div",
+        "parent": "e608c1",
+        "children": [
+          "308703",
+          "ab7f4a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "5v2bdu"
+          ]
+        },
+        "label": "User"
+      },
+      {
+        "id": "308703",
+        "name": "image",
+        "parent": "d5201d",
+        "children": [],
+        "settings": {
+          "tag": "figure",
+          "_cssGlobalClasses": [
+            "sigfgk"
+          ],
+          "image": {
+            "url": "https://bricks.getframes.io/wp-content/uploads/Placeholder-Man.jpeg",
+            "external": true,
+            "filename": "Placeholder-Man.jpeg"
+          }
+        },
+        "themeStyles": [],
+        "label": "User Thumbnail"
+      },
+      {
+        "id": "ab7f4a",
+        "name": "block",
+        "parent": "d5201d",
+        "children": [
+          "e3e033",
+          "9df2eb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "obml75"
+          ]
+        },
+        "label": "User Content"
+      },
+      {
+        "id": "e3e033",
+        "name": "text-basic",
+        "parent": "ab7f4a",
+        "children": [],
+        "settings": {
+          "text": "James Dean",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "fic82f"
+          ]
+        },
+        "label": "User Name"
+      },
+      {
+        "id": "9df2eb",
+        "name": "text-basic",
+        "parent": "ab7f4a",
+        "children": [],
+        "settings": {
+          "text": "Customer",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "gneqbb"
+          ]
+        },
+        "label": "User Title"
+      },
+      {
+        "id": "daa87a",
+        "name": "icon",
+        "parent": "e608c1",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "width": "var(--icon-size)",
+            "height": "var(--icon-size)"
+          },
+          "_cssGlobalClasses": [
+            "zb0t0j"
+          ]
+        },
+        "label": "Social Icon",
+        "themeStyles": []
+      },
+      {
+        "id": "66af0b",
+        "name": "block",
+        "parent": "5da84f",
+        "children": [
+          "f7559a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pzf44y"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "f7559a",
+        "name": "text-basic",
+        "parent": "66af0b",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "2bhtu4"
+          ],
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "tag": "p"
+        },
+        "label": "Testimonial"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "glzt5e",
+        "name": "testimonial-card-mike",
+        "settings": {
+          "_padding": {
+            "top": "var(--space-m)",
+            "right": "var(--space-m)",
+            "bottom": "var(--space-m)",
+            "left": "var(--space-m)"
+          },
+          "_rowGap": "var(--content-gap)",
+          "_background": {
+            "color": {
+              "raw": "var(--white)"
+            }
+          },
+          "_cssCustom": ".testimonial-card-mike {\n  --thumb-size: 50px;\n  border-radius: var(--radius);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "lfwgf4",
+        "name": "testimonial-card-mike__header",
+        "settings": {
+          "_direction": "row",
+          "_columnGap": "var(--space-s)",
+          "_justifyContent": "space-between"
+        },
+        "_exists": false
+      },
+      {
+        "id": "5v2bdu",
+        "name": "testimonial-card-mike__user",
+        "settings": {
+          "_display": "grid",
+          "_direction": "column",
+          "_gridTemplateColumns": "var(--thumb-size) var(--grid-1)",
+          "_gridGap": "var(--space-xs)",
+          "_alignItemsGrid": "center",
+          "_gridTemplateColumns:mobile_portrait": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "sigfgk",
+        "name": "testimonial-card-mike__user-thumbnail",
+        "settings": {
+          "_border": {
+            "radius": {
+              "top": "var(--radius-circle)",
+              "right": "var(--radius-circle)",
+              "bottom": "var(--radius-circle)",
+              "left": "var(--radius-circle)"
+            }
+          },
+          "_width": "var(--thumb-size)",
+          "_height": "var(--thumb-size)",
+          "_aspectRatio": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "obml75",
+        "name": "testimonial-card-mike__user-content",
+        "settings": {
+          "_rowGap": ".25em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "fic82f",
+        "name": "testimonial-card-mike__user-name",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-dark)"
+            },
+            "line-height": "1",
+            "font-weight": "700"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "gneqbb",
+        "name": "testimonial-card-mike__user-title",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-dark-muted)"
+            },
+            "font-size": "var(--text-s)",
+            "line-height": "1"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "zb0t0j",
+        "name": "testimonial-card-mike__social-icon",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-dark-muted)"
+            }
+          },
+          "_cssCustom": ".testimonial-card-mike__social-icon {\n  --icon-size: 24px;\n}"
+        },
+        "modified": 1726324349,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "pzf44y",
+        "name": "testimonial-card-mike__body",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "2bhtu4",
+        "name": "testimonial-card-mike__testimonial",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-dark-muted)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "eojspa",
+        "name": "testimonial-section-mike",
+        "settings": {
+          "_background": {
+            "color": {
+              "raw": "var(--bg-ultra-light)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "ck3r05",
+        "name": "testimonial-container-mike",
+        "settings": {
+          "_cssCustom": ".testimonial-container-mike {\n\t--padding: var(--space-xl);\n  --clip-amount: 120px; /* How much to cut off the bottom */\n \n  /* Concentric Radius */\n\tpadding: var(--padding) var(--padding) 0 var(--padding);\n\tborder-radius: calc(var(--radius) + var(--padding) / 2);\n}\n\n/* \nChange selector below based on which child\nneeds the inner radius.\n*/\n.testimonial-container-mike > * {\n\tborder-radius: var(--radius);\n\toverflow: hidden;\n}\n\n/* End Concentric Radius */",
+          "_overflow": "hidden",
+          "_rowGap": "calc(var(--content-gap) * 1.5)",
+          "_heightMax": "var(--max-height)",
+          "_cssCustom:mobile_landscape": ".testimonial-container-mike {\n  --padding: var(--space-l);\n}",
+          "_cssCustom:mobile_portrait": ".testimonial-container-mike {\n  --padding: var(--space-m);\n}",
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "dmyxiu",
+        "name": "testimonial-container-mike__heading",
+        "settings": {
+          "_width": "20ch"
+        },
+        "_exists": false
+      },
+      {
+        "id": "icgu2n",
+        "name": "testimonial-container-mike__masonry",
+        "settings": {
+          "_padding": {
+            "left": "0"
+          },
+          "_cssCustom": "/* Auto-responsive columns */\n.testimonial-container-mike__masonry {\n  list-style: none;\n\t--col-count: 3;\n\t--col-min-width: 250px;\n\t--col-rule-style: solid;\n\t--col-rule-width: 0;\n\t--col-rule-color: var(--black);\n\t--col-gap: var(--space-xs);\n\t--row-gap: var(--space-xs);\n}\n\n.testimonial-container-mike__masonry {\n\tdisplay: block !important;\n\tcolumns: var(--col-count) var(--col-min-width);\n\tcolumn-rule-style: var(--col-rule-style);\n\tcolumn-rule-width: var(--col-rule-width);\n\tcolumn-rule-color: var(--col-rule-color);\n\tgap: var(--col-gap);\n}\n\n.testimonial-container-mike__masonry > * {\n\t\tbreak-inside: avoid;\n\tmargin-block-end: var(--row-gap);\n}",
+          "_margin": {
+            "bottom": "calc(var(--clip-amount) * -1)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "ambjon",
+        "name": "testimonial-container-mike__header",
+        "settings": {
+          "_direction": "row",
+          "_justifyContent": "space-between",
+          "_columnGap": "var(--space-m)",
+          "_rowGap": "var(--content-gap)",
+          "_alignItems": "center",
+          "_overflow": "visible"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

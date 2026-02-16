@@ -1,0 +1,347 @@
+{
+  "idx": 301,
+  "title": "Blog Hero Delta",
+  "elementCount": 12,
+  "classCount": 14,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "57b8ba",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "26b897",
+          "e425be"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ryngmj"
+          ]
+        },
+        "label": "Blog Hero Delta"
+      },
+      {
+        "id": "26b897",
+        "name": "container",
+        "parent": "57b8ba",
+        "children": [
+          "3b1ab1",
+          "5e4d96",
+          "b58619"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "nwcbmh"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "e425be",
+        "name": "block",
+        "parent": "57b8ba",
+        "children": [
+          "0733e1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "breakout--full",
+            "usetge"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "0733e1",
+        "name": "image",
+        "parent": "e425be",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure",
+          "_cssGlobalClasses": [
+            "iglhrp"
+          ],
+          "caption": "none",
+          "loading": "eager"
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "3b1ab1",
+        "name": "heading",
+        "parent": "26b897",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "aqpldz"
+          ],
+          "tag": "h1",
+          "text": "{post_title}"
+        }
+      },
+      {
+        "id": "b58619",
+        "name": "div",
+        "parent": "26b897",
+        "children": [
+          "5335b5",
+          "4f08ef"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kyohnn"
+          ]
+        },
+        "label": "Article Meta Charlie"
+      },
+      {
+        "id": "5335b5",
+        "name": "block",
+        "parent": "b58619",
+        "children": [
+          "aa1e51",
+          "5e2497"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dtjciq"
+          ]
+        },
+        "label": "Author"
+      },
+      {
+        "id": "4f08ef",
+        "name": "block",
+        "parent": "b58619",
+        "children": [
+          "c46f18"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "uumuev"
+          ]
+        },
+        "label": "Date"
+      },
+      {
+        "id": "aa1e51",
+        "name": "image",
+        "parent": "5335b5",
+        "children": [],
+        "settings": {
+          "tag": "figure",
+          "caption": "none",
+          "_cssGlobalClasses": [
+            "eqpspp"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          }
+        },
+        "label": "Avatar",
+        "themeStyles": []
+      },
+      {
+        "id": "5e2497",
+        "name": "text-basic",
+        "parent": "5335b5",
+        "children": [],
+        "settings": {
+          "text": "{author_name}",
+          "tag": "span",
+          "_cssGlobalClasses": [
+            "cxhbqc"
+          ]
+        },
+        "label": "Author Name"
+      },
+      {
+        "id": "c46f18",
+        "name": "text-basic",
+        "parent": "4f08ef",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "yffsbt"
+          ],
+          "text": "{post_date}",
+          "tag": "custom",
+          "customTag": "time",
+          "_attributes": [
+            {
+              "id": "idswqb",
+              "name": "datetime",
+              "value": "{post_date}"
+            }
+          ]
+        },
+        "label": "Date"
+      },
+      {
+        "id": "5e4d96",
+        "name": "text-basic",
+        "parent": "26b897",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "_cssGlobalClasses": [
+            "xejcuw",
+            "kddjfd"
+          ]
+        },
+        "label": "Lede"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771255083,
+        "user_id": 1
+      },
+      {
+        "id": "breakout--full",
+        "name": "breakout--full",
+        "settings": [],
+        "_mappedId": "acss_import_breakout--full",
+        "modified": 1771255157,
+        "user_id": 1
+      },
+      {
+        "id": "ryngmj",
+        "name": "fr-blog-hero-delta",
+        "settings": {
+          "_rowGap": "var(--container-gap)",
+          "_padding": {
+            "bottom": "0"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "nwcbmh",
+        "name": "fr-blog-hero-delta__content-wrapper",
+        "settings": {
+          "_margin": {
+            "top": "var(--space-l)",
+            "bottom": "var(--space-l)"
+          },
+          "_rowGap": "var(--content-gap)",
+          "_margin:tablet_portrait": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "usetge",
+        "name": "fr-blog-hero-delta__media-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "iglhrp",
+        "name": "fr-blog-hero-delta__media",
+        "settings": {
+          "_objectFit": "cover",
+          "_cssCustom": ".fr-blog-hero-delta__media {\n\taspect-ratio: 24/9;\n}",
+          "_width": "100%",
+          "_cssCustom:tablet_portrait": ".fr-blog-hero-delta__media {\n\taspect-ratio: 16/9;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "aqpldz",
+        "name": "fr-blog-hero-delta__heading",
+        "settings": {
+          "_width": "26ch",
+          "_widthMax": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "kyohnn",
+        "name": "fr-article-meta-charlie",
+        "settings": {
+          "_display": "flex",
+          "_direction": "row",
+          "_columnGap": "var(--content-gap)",
+          "_alignItems": "center",
+          "_flexWrap": "wrap"
+        },
+        "_exists": false
+      },
+      {
+        "id": "dtjciq",
+        "name": "fr-article-meta-charlie__author-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_direction": "row",
+          "_alignItems": "center",
+          "_columnGap": ".75em",
+          "_width": "auto"
+        },
+        "_exists": false
+      },
+      {
+        "id": "uumuev",
+        "name": "fr-article-meta-charlie__date-wrapper",
+        "settings": {
+          "_width": "auto"
+        },
+        "_exists": false
+      },
+      {
+        "id": "eqpspp",
+        "name": "fr-article-meta-charlie__avatar",
+        "settings": {
+          "_width": "2em",
+          "_height": "2em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "cxhbqc",
+        "name": "fr-article-meta-charlie__author-name",
+        "settings": {
+          "_typography": {
+            "line-height": "1"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "yffsbt",
+        "name": "fr-article-meta-charlie__date",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "xejcuw",
+        "name": "fr-blog-hero-delta__lede",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-l)"
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

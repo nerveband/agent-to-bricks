@@ -1,0 +1,279 @@
+{
+  "idx": 69,
+  "title": "Article Grid Mike",
+  "elementCount": 9,
+  "classCount": 9,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "d19444",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "678590"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cibkgx"
+          ],
+          "tag": "ul"
+        },
+        "label": "Article Grid Mike"
+      },
+      {
+        "id": "678590",
+        "name": "block",
+        "parent": "d19444",
+        "children": [
+          "fad39d",
+          "0aa100"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "5o2et6"
+          ],
+          "hasLoop": true,
+          "query": {
+            "post_type": [
+              "post"
+            ],
+            "posts_per_page": "6"
+          },
+          "tag": "li"
+        },
+        "label": "Article Card Mike"
+      },
+      {
+        "id": "fad39d",
+        "name": "block",
+        "parent": "678590",
+        "children": [
+          "38a79d",
+          "7b1bd9",
+          "b0c3b7",
+          "b0591d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "woaoyp"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "38a79d",
+        "name": "heading",
+        "parent": "fad39d",
+        "children": [],
+        "settings": {
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "ruhgmv"
+          ],
+          "text": "{post_title}"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "7b1bd9",
+        "name": "text-basic",
+        "parent": "fad39d",
+        "children": [],
+        "settings": {
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "1w0yhg"
+          ],
+          "text": "{post_excerpt:20}"
+        },
+        "label": "Excerpt"
+      },
+      {
+        "id": "b0c3b7",
+        "name": "text-basic",
+        "parent": "fad39d",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ejykxm"
+          ],
+          "text": "{post_terms_category:plain}",
+          "tag": "span"
+        },
+        "label": "Term"
+      },
+      {
+        "id": "b0591d",
+        "name": "text-link",
+        "parent": "fad39d",
+        "children": [],
+        "settings": {
+          "text": "Read More",
+          "_cssGlobalClasses": [
+            "471lrd"
+          ],
+          "link": {
+            "type": "meta",
+            "useDynamicData": "{post_url}"
+          },
+          "_attributes": [
+            {
+              "id": "rkcyml",
+              "name": "aria-label",
+              "value": "{post_title}"
+            }
+          ]
+        },
+        "themeStyles": [],
+        "label": "Link"
+      },
+      {
+        "id": "0aa100",
+        "name": "block",
+        "parent": "678590",
+        "children": [
+          "eda453"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mtmk5a"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "eda453",
+        "name": "image",
+        "parent": "0aa100",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dnefwk"
+          ],
+          "image": {
+            "useDynamicData": "{featured_image}",
+            "size": "large"
+          },
+          "tag": "figure"
+        },
+        "label": "Media",
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "5o2et6",
+        "name": "article-card-mike",
+        "settings": {
+          "_margin:mobile_landscape": {
+            "top": "0 !important"
+          },
+          "_position": "relative",
+          "_flexGrow": "0",
+          "_flexShrink": "0",
+          "_cssCustom": ".article-card-mike:nth-child(even) {\n\tmargin-block-start: calc(var(--space-xl) * 1.5);\n}",
+          "_alignSelf": "flex-start"
+        },
+        "_exists": false
+      },
+      {
+        "id": "woaoyp",
+        "name": "article-card-mike__content-wrapper",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 2)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ruhgmv",
+        "name": "article-card-mike__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "1w0yhg",
+        "name": "article-card-mike__excerpt",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ejykxm",
+        "name": "article-card-mike__category",
+        "settings": {
+          "_order": "-1",
+          "_typography": {
+            "font-size": "var(--text-s)",
+            "color": {
+              "raw": "var(--text-dark-muted)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "471lrd",
+        "name": "article-card-mike__link",
+        "settings": {
+          "_margin": {
+            "top": "calc(var(--content-gap) / 1.5)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "mtmk5a",
+        "name": "article-card-mike__media-wrapper",
+        "settings": {
+          "_order": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "dnefwk",
+        "name": "article-card-mike__media",
+        "settings": {
+          "_width": "100%",
+          "_aspectRatio": "8/10",
+          "_objectFit": "cover",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_height": "100%"
+        },
+        "modified": 1721494631,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "cibkgx",
+        "name": "article-grid-mike",
+        "settings": {
+          "_display": "grid",
+          "_width": "1100",
+          "_rowGap:mobile_landscape": "var(--grid-gap)",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)",
+          "_gridGap": "var(--grid-gap) calc(var(--space-xl) * 2)",
+          "_padding": {
+            "left": "0"
+          },
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

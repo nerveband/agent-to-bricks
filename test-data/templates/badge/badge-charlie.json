@@ -1,0 +1,409 @@
+{
+  "idx": 35,
+  "title": "Badge Charlie",
+  "elementCount": 13,
+  "classCount": 9,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "d9503b",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "7dfd0a",
+          "897c93"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "4iycn1"
+          ],
+          "tag": "li"
+        },
+        "label": "Badge Charlie"
+      },
+      {
+        "id": "7dfd0a",
+        "name": "div",
+        "parent": "d9503b",
+        "children": [
+          "8d87d4",
+          "eb3321"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qhxu71"
+          ]
+        },
+        "label": "Logo Wrapper"
+      },
+      {
+        "id": "8d87d4",
+        "name": "text-basic",
+        "parent": "7dfd0a",
+        "children": [],
+        "settings": {
+          "text": "reviewed on",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "yzcvle"
+          ]
+        },
+        "label": "Text"
+      },
+      {
+        "id": "eb3321",
+        "name": "image",
+        "parent": "7dfd0a",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lyv6oi"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        },
+        "label": "Logo",
+        "themeStyles": []
+      },
+      {
+        "id": "897c93",
+        "name": "div",
+        "parent": "d9503b",
+        "children": [
+          "f16b2a",
+          "1383a0"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "grph2i"
+          ]
+        },
+        "label": "Rating Wrapper"
+      },
+      {
+        "id": "f16b2a",
+        "name": "div",
+        "parent": "897c93",
+        "children": [
+          "808d08",
+          "830238",
+          "f43237",
+          "bdc667",
+          "9caf5f",
+          "95fc3f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kndlyw"
+          ],
+          "_attributes": [
+            {
+              "id": "bcpeoi",
+              "name": "data-rating",
+              "value": "4.5"
+            }
+          ],
+          "tag": "custom",
+          "customTag": "span"
+        },
+        "label": "Rating Alpha (CSS + Set Data Attr)"
+      },
+      {
+        "id": "808d08",
+        "name": "icon",
+        "parent": "f16b2a",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "lwaybn",
+            "tshuyw"
+          ],
+          "_attributes": [
+            {
+              "id": "puzzqd",
+              "name": "aria-hidden",
+              "value": "true"
+            }
+          ]
+        },
+        "label": "Half (Don't Delete)",
+        "themeStyles": []
+      },
+      {
+        "id": "830238",
+        "name": "icon",
+        "parent": "f16b2a",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ],
+          "_attributes": [
+            {
+              "id": "lmhlqg",
+              "name": "aria-hidden",
+              "value": "true"
+            }
+          ]
+        },
+        "themeStyles": [],
+        "label": "1"
+      },
+      {
+        "id": "f43237",
+        "name": "icon",
+        "parent": "f16b2a",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ],
+          "_attributes": [
+            {
+              "id": "willma",
+              "name": "aria-hidden",
+              "value": "true"
+            }
+          ]
+        },
+        "label": "2",
+        "themeStyles": []
+      },
+      {
+        "id": "bdc667",
+        "name": "icon",
+        "parent": "f16b2a",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ],
+          "_attributes": [
+            {
+              "id": "ewtdhf",
+              "name": "aria-hidden",
+              "value": "true"
+            }
+          ]
+        },
+        "label": "3",
+        "themeStyles": []
+      },
+      {
+        "id": "9caf5f",
+        "name": "icon",
+        "parent": "f16b2a",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ],
+          "_attributes": [
+            {
+              "id": "norfky",
+              "value": "true",
+              "name": "aria-hidden"
+            }
+          ]
+        },
+        "label": "4",
+        "themeStyles": []
+      },
+      {
+        "id": "95fc3f",
+        "name": "icon",
+        "parent": "f16b2a",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ],
+          "_attributes": [
+            {
+              "id": "xmpjot",
+              "name": "aria-hidden",
+              "value": "true"
+            }
+          ]
+        },
+        "label": "5",
+        "themeStyles": []
+      },
+      {
+        "id": "1383a0",
+        "name": "text-basic",
+        "parent": "897c93",
+        "children": [],
+        "settings": {
+          "text": "123 reviews",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "gahfqa"
+          ]
+        },
+        "label": "Total Reviews"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "4iycn1",
+        "name": "fr-badge-charlie",
+        "settings": {
+          "_position": "relative",
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_gridGap": "1em",
+          "_alignItemsGrid": "center",
+          "_width": "fit-content"
+        },
+        "modified": 1728330403,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "qhxu71",
+        "name": "fr-badge-charlie__logo-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": ".25em",
+          "_columnGap": ".25em",
+          "_alignItems": "stretch",
+          "_justifyContent": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "yzcvle",
+        "name": "fr-badge-charlie__text",
+        "settings": [],
+        "modified": 1728331570,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "lyv6oi",
+        "name": "fr-badge-charlie__logo",
+        "settings": {
+          "_width": "10em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "grph2i",
+        "name": "fr-badge-charlie__rating-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_columnGap": ".25em",
+          "_rowGap": ".25em",
+          "_alignItems": "stretch",
+          "_justifyContent": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "kndlyw",
+        "name": "fr-rating-alpha",
+        "settings": {
+          "_display": "flex",
+          "_rowGap": ".25em",
+          "_columnGap": ".25em",
+          "_cssCustom": "/* RATINGS WON'T RENDER IN BUILDER */\n\n/* To change the star rating, change the value of the data attribute in the attributes tab on this element. If you want the rating to be generated dynamically, create a \"rating\" custom field for your parent element and then inject the value of that field dynamically into the data attribute value field. */\n\n.fr-rating-alpha {\n\t--icon-size: 1.5em;\n  --icon-fill-color: var(--primary);\n  --icon-stroke-color: var(--primary);\n  --icon-fill-color-hover: var(--primary);  \n  --icon-stroke-color-hover: var(--primary);\n}\n\n.fr-rating-alpha > *:first-child {display: none;} /* Hide half star by default */\n\n[data-rating*=\".\"] > *:first-child {display: flex;} /* Show half star for decimal ratings */\n\n[data-rating*=\".0\"] > *:first-child {display: none !important;} /* Hide half star for .0 ratings */\n\n/* Support for half star rating */\n[data-rating*=\".5\"] > *:first-child {display: flex !important;}\n\n[data-rating=\".5\"] > *:not(:first-child),\n[data-rating=\"0.5\"] > *:not(:first-child) {\n\tdisplay: none;\n}\n\n/* The Rest */\n\n[data-rating^=\"1\"] > *:nth-child(n+3) {\n display: none;\n}\n\n[data-rating^=\"2\"] > *:nth-child(n+4) {\n display: none;\n}\n\n[data-rating^=\"3\"] > *:nth-child(n+5) {\n display: none;\n}\n\n[data-rating^=\"4\"] > *:nth-child(n+6) {\n display: none;\n}\n\n.fr-rating-alpha svg {\n  height: var(--icon-size);\n  width: var(--icon-size);\n  fill: var(--icon-fill-color);\n  color: var(--icon-stroke-color);\n}\n\n.fr-rating-alpha i {\n  color: var(--icon-fill-color);\n  font-size: var(--icon-size);\n}\n\n.fr-rating-alpha svg:hover {\n  fill: var(--icon-fill-color-hover);\n  color: var(--icon-stroke-color-hover);  \n}\n\n.fr-rating-alpha i:hover {\n  color: var(--icon-fill-color-hover);\n}",
+          "_alignItems": "flex-start"
+        },
+        "modified": 1737998108,
+        "user_id": 26,
+        "_exists": false
+      },
+      {
+        "id": "lwaybn",
+        "name": "fr-rating-alpha__icon",
+        "settings": [],
+        "modified": 1726775024,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "tshuyw",
+        "name": "fr-rating-alpha__icon-half",
+        "settings": {
+          "_order": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "gahfqa",
+        "name": "fr-badge-charlie__total-reviews",
+        "settings": [],
+        "modified": 1728331570,
+        "user_id": 9,
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

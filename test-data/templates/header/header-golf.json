@@ -1,0 +1,458 @@
+{
+  "idx": 81,
+  "title": "Header Golf",
+  "elementCount": 10,
+  "classCount": 12,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "59997b",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "9f64d1",
+          "1e3ebe",
+          "5861da"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gwxqqj"
+          ]
+        },
+        "label": "Header Golf (CSS)"
+      },
+      {
+        "id": "9f64d1",
+        "name": "block",
+        "parent": "59997b",
+        "children": [
+          "a926ed"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "slx59l"
+          ]
+        },
+        "label": "Nav Wrapper"
+      },
+      {
+        "id": "a926ed",
+        "name": "nav-menu",
+        "parent": "9f64d1",
+        "children": [],
+        "settings": {
+          "mobileMenu": "tablet_portrait",
+          "_cssGlobalClasses": [
+            "xzqxtw"
+          ],
+          "menu": "269"
+        },
+        "themeStyles": [],
+        "label": "Nav Menu Alpha (CSS Tab)"
+      },
+      {
+        "id": "1e3ebe",
+        "name": "block",
+        "parent": "59997b",
+        "children": [
+          "835d8d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rfckna"
+          ]
+        },
+        "label": "Logo Wrapper"
+      },
+      {
+        "id": "5861da",
+        "name": "block",
+        "parent": "59997b",
+        "children": [
+          "d79dac",
+          "b89e87"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "1oas4b"
+          ]
+        },
+        "label": "Meta Wrapper"
+      },
+      {
+        "id": "835d8d",
+        "name": "image",
+        "parent": "1e3ebe",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "odxn63"
+          ],
+          "tag": "figure",
+          "link": "url",
+          "url": {
+            "type": "external",
+            "url": "/"
+          }
+        },
+        "label": "Logo",
+        "themeStyles": []
+      },
+      {
+        "id": "d79dac",
+        "name": "search",
+        "parent": "5861da",
+        "children": [],
+        "settings": {
+          "searchOverlayTitle": "Search site",
+          "_cssGlobalClasses": [
+            "zr7y3g"
+          ],
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)",
+            "stroke": {
+              "raw": "var(--icon-stroke-color)"
+            },
+            "fill": {
+              "raw": "var(--icon-fill-color)"
+            }
+          },
+          "searchType": "input"
+        },
+        "label": "Search",
+        "themeStyles": []
+      },
+      {
+        "id": "b89e87",
+        "name": "div",
+        "parent": "5861da",
+        "children": [
+          "be5c86",
+          "4da46d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vpznag"
+          ]
+        },
+        "label": "Extra Links"
+      },
+      {
+        "id": "be5c86",
+        "name": "text-link",
+        "parent": "b89e87",
+        "children": [],
+        "settings": {
+          "text": "Log in",
+          "_cssGlobalClasses": [
+            "1x8dcj"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Extra Link"
+      },
+      {
+        "id": "4da46d",
+        "name": "text-link",
+        "parent": "b89e87",
+        "children": [],
+        "settings": {
+          "text": "Sign up",
+          "_cssGlobalClasses": [
+            "lfjnpi",
+            "btn--primary",
+            "btn--s"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Cta",
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "xzqxtw",
+        "name": "fr-nav-alpha",
+        "settings": {
+          "mobileMenuToggleColor": {
+            "raw": "var(--text-dark)"
+          },
+          "_typography:tablet_portrait": {
+            "line-height": "0"
+          },
+          "mobileMenuTypography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          },
+          "menuMargin": {
+            "left": "0"
+          },
+          "_cssCustom": ".fr-nav-alpha {\n  --link-color: \t\t\t\tvar(--primary);\n  --link-color-hover: \tvar(--primary-hover);\n  --link-color-active: \tvar(--primary);\n  --toggle-gap: \t\t\t\t.5em;\n  --border-color: \t\t\ttransparent;\n\n  /* Mobile Menu */\n  --mm-padding-block: 0;\n  --mm-padding-inline: 1.5em;\n  --mm-item-gap: 1em;\n}\n\n.fr-nav-alpha li {\n  white-space: nowrap;\n}\n\n.fr-nav-alpha ul.sub-menu li {\n  padding: var(--btn-padding-block) var(--btn-padding-inline);\n  border-block-end: 0;\n}\n\n.fr-nav-alpha ul.bricks-mobile-menu {\n  display: flex;\n  gap: var(--mm-item-gap);\n  padding-block: var(--space-xxl);  \n  align-items: center;  \n}\n\n.fr-nav-alpha ul.bricks-mobile-menu li {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: var(--mm-item-gap);\n  padding: var(--mm-padding-block) var(--mm-padding-inline);   border-block-end: 0;\n}\n\n.fr-nav-alpha .bricks-mobile-menu-wrapper .bricks-mobile-menu>li>.brx-submenu-toggle>*,\n.fr-nav-alpha .bricks-mobile-menu-wrapper .bricks-mobile-menu>li>a,\n.fr-nav-alpha .bricks-mobile-menu-wrapper .sub-menu li>a,\n.fr-nav-alpha .bricks-mobile-menu-wrapper .sub-menu li>.brx-submenu-toggle>* {\n  padding: 0;\n  max-width: max-content;\n  line-height: var(--btn-line-height);\n}\n\n.show-mobile-menu ul.bricks-mobile-menu {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n}\n\n.bricks-mobile-menu-toggle {\n  margin-inline-start: auto;\n}\n\n.fr-nav-alpha .brx-submenu-toggle {\n  display: flex;\n  flex-direction: row;\n  gap: var(--toggle-gap);\n}\n\n.fr-nav-alpha.fr-nav-alpha .brx-submenu-toggle button {\n  margin: 0;\n  padding: 0;\n}\n\n.fr-nav-alpha .bricks-mobile-menu.sub-menu {\n  min-width: auto;\n}\n\n.fr-nav-alpha.brxe-nav-menu .bricks-mobile-menu-wrapper li.open>.sub-menu {\n  display: flex;\n  flex-direction: column;\n  gap: var(--mm-item-gap);\n}",
+          "subMenuIconTypography": {
+            "color": {
+              "raw": "var(--link-color)"
+            },
+            "font-size": "var(--text-s)",
+            "line-height": "1"
+          },
+          "subMenuBackgroundList": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "subMenuTypography": {
+            "color": {
+              "raw": "var(--link-color)"
+            },
+            "text-decoration": "none"
+          },
+          "menuIconTypography": {
+            "font-size": "var(--icon-size)",
+            "color": {
+              "raw": "var(--icon-color)"
+            }
+          },
+          "mobileSubMenuTypography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          },
+          "mobileMenuIconTypography:mobile_landscape": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          },
+          "menuTypography:hover": {
+            "color": {
+              "raw": "var(--link-color-hover)"
+            }
+          },
+          "menuTypography": {
+            "color": {
+              "raw": "var(--link-color)"
+            },
+            "line-height": "1",
+            "text-decoration": "none"
+          },
+          "menuActiveTypography": {
+            "color": {
+              "raw": "var(--link-color-active)"
+            }
+          },
+          "subMenuTypography:hover": {
+            "color": {
+              "raw": "var(--link-color-hover)"
+            }
+          },
+          "subMenuIconTypography:hover": {
+            "color": {
+              "raw": "var(--link-color-hover)"
+            }
+          },
+          "subMenuIconTransformOpen": {
+            "rotateZ": "270"
+          },
+          "menuIconTransformOpen": {
+            "rotateZ": "180"
+          },
+          "_display:mobile_landscape": "flex",
+          "menuGap": "var(--content-gap)",
+          "subMenuPadding": {
+            "left": "0",
+            "right": "0"
+          },
+          "subMenuBoxShadow": {
+            "color": {
+              "raw": "var(--box-shadow-m)"
+            }
+          },
+          "menuPadding": {
+            "top": "var(--btn-padding-block)",
+            "bottom": "var(--btn-padding-block)"
+          },
+          "menuIconPadding": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "modified": 1771252898,
+        "user_id": 1,
+        "_mappedId": "xzqxtw"
+      },
+      {
+        "id": "btn--s",
+        "name": "btn--s",
+        "settings": [],
+        "_mappedId": "acss_import_btn--s",
+        "modified": 1771252898,
+        "user_id": 1
+      },
+      {
+        "id": "gwxqqj",
+        "name": "header-golf",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-1) var(--logo-width) var(--grid-1)",
+          "_gridGap": "var(--space-l)",
+          "_cssCustom": ".header-golf {\n\t--logo-width: 120px;\n}\n\nheader {\n  padding-inline: var(--gutter);\n}",
+          "_padding": {
+            "top": "var(--space-s)",
+            "bottom": "var(--space-s)"
+          },
+          "_gridTemplateColumns:tablet_portrait": "var(--logo-width) var(--grid-1) var(--grid-1)",
+          "_cssCustom:tablet_portrait": ".header-golf {\n\t--logo-width: 75px;\n}",
+          "_gridGap:tablet_portrait": "var(--content-gap)"
+        },
+        "modified": 1735211329,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "slx59l",
+        "name": "header-golf__nav-wrapper",
+        "settings": {
+          "_width": "fit-content",
+          "_justifyContent": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "rfckna",
+        "name": "header-golf__logo-wrapper",
+        "settings": {
+          "_width": "fit-content",
+          "_flexShrink": "0",
+          "_order:tablet_portrait": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "1oas4b",
+        "name": "header-golf__meta-wrapper",
+        "settings": {
+          "_width": "fit-content",
+          "_direction": "row",
+          "_flexWrap": "nowrap",
+          "_columnGap": "var(--content-gap)",
+          "_alignItems": "center",
+          "_justifyContent": "flex-end",
+          "_margin": {
+            "left": "auto"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "odxn63",
+        "name": "header-golf__logo",
+        "settings": {
+          "_width": "var(--logo-width)",
+          "_flexShrink": "0"
+        },
+        "_exists": false
+      },
+      {
+        "id": "zr7y3g",
+        "name": "header-golf__search",
+        "settings": {
+          "inputBorder": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            },
+            "width": {
+              "top": "0",
+              "right": "0",
+              "bottom": "0",
+              "left": "0"
+            }
+          },
+          "placeholderColor": {
+            "raw": "var(--neutral-dark)"
+          },
+          "_cssCustom": ".header-golf__search {\n  --icon-size: 1em;\n\t--icon-stroke-color: var(--neutral-dark);\n  --icon-fill-color: transparent;\n}\n\n.header-golf__search input[type=search] {\n\twidth: inherit;\n}\n\n.header-golf__search .bricks-search-form {\n\talign-items: center;\n}\n\n@media (max-width: 1168px) {\n  .header-golf__search {\n  \tdisplay: none;\n  }\n}",
+          "_background": {
+            "color": {
+              "raw": "var(--neutral-ultra-light)"
+            }
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_width": "20ch",
+          "inputHeight": "45px /* Match height of button */"
+        },
+        "_exists": false
+      },
+      {
+        "id": "vpznag",
+        "name": "header-golf__extra-links",
+        "settings": {
+          "_display": "flex",
+          "_columnGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "1x8dcj",
+        "name": "header-golf__extra-link",
+        "settings": {
+          "_cssCustom": ".header-golf__extra-link {\n\twhite-space: nowrap;\n}",
+          "_display:mobile_portrait": "none"
+        },
+        "_exists": false
+      },
+      {
+        "id": "lfjnpi",
+        "name": "header-golf__cta",
+        "settings": {
+          "_widthMin": "auto",
+          "_cssCustom": ".header-golf__cta {\n\twhite-space: nowrap;\n}"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

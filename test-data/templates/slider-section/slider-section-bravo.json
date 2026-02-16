@@ -1,0 +1,1266 @@
+{
+  "idx": 232,
+  "title": "Slider Section Bravo",
+  "elementCount": 60,
+  "classCount": 19,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "e25c43",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "8f2253"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gigwil"
+          ]
+        },
+        "label": "Slider Section Bravo"
+      },
+      {
+        "id": "8f2253",
+        "name": "container",
+        "parent": "e25c43",
+        "children": [
+          "087b44",
+          "aa9b49"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "itjoyc"
+          ]
+        },
+        "label": "Slider Grid Bravo"
+      },
+      {
+        "id": "aa9b49",
+        "name": "fr-slider",
+        "parent": "8f2253",
+        "children": [
+          "1178d7",
+          "a6311e",
+          "a678c3",
+          "edd008"
+        ],
+        "settings": {
+          "height": "50vh",
+          "playButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-play"
+          },
+          "pauseButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-pause"
+          },
+          "arrowSize": "var(--space-l)",
+          "prevArrow": {
+            "library": "themify",
+            "icon": "ti-arrow-left"
+          },
+          "prevArrowTop": "50%",
+          "prevArrowLeft": "var(--space-xs)",
+          "nextArrow": {
+            "library": "themify",
+            "icon": "ti-arrow-right"
+          },
+          "nextArrowTop": "50%",
+          "nextArrowRight": "var(--space-xs)",
+          "sliderTag": "div",
+          "listTag": "ul",
+          "ariaCarousel": "Carousel",
+          "_cssGlobalClasses": [
+            "vsuwbx"
+          ],
+          "fixedWidth": "var(--width-m)",
+          "gap": "var(--grid-gap)",
+          "isSync": true,
+          "syncId": "fr-slider-bravo",
+          "fixedHeight": "auto",
+          "breakout": true,
+          "clipToContainer": "inset(-100vw -100vw -100vw 0)"
+        },
+        "label": "Slider Bravo",
+        "themeStyles": []
+      },
+      {
+        "id": "1178d7",
+        "name": "div",
+        "parent": "aa9b49",
+        "children": [
+          "5c1a3c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wbzwwb"
+          ],
+          "tag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "5c1a3c",
+        "name": "div",
+        "parent": "1178d7",
+        "children": [
+          "7caca0",
+          "ce2829"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pqnnmh"
+          ],
+          "tag": "article",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Echo"
+      },
+      {
+        "id": "7caca0",
+        "name": "block",
+        "parent": "5c1a3c",
+        "children": [
+          "e71c5a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vpjayo"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "e71c5a",
+        "name": "text-basic",
+        "parent": "7caca0",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "_cssGlobalClasses": [
+            "dsmrae"
+          ],
+          "tag": "p"
+        },
+        "label": "Quote"
+      },
+      {
+        "id": "ce2829",
+        "name": "block",
+        "parent": "5c1a3c",
+        "children": [
+          "fbb05a",
+          "2b9ab9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jfhtwk"
+          ]
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "fbb05a",
+        "name": "div",
+        "parent": "ce2829",
+        "children": [
+          "5cc807",
+          "772c74",
+          "e442dd",
+          "01a93d",
+          "7931f8",
+          "22502e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kndlyw"
+          ],
+          "_attributes": [
+            {
+              "id": "bcpeoi",
+              "name": "data-rating",
+              "value": "4.5"
+            }
+          ],
+          "tag": "custom",
+          "customTag": "span"
+        },
+        "label": "Rating Alpha (Set Data Attr)"
+      },
+      {
+        "id": "5cc807",
+        "name": "icon",
+        "parent": "fbb05a",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star-half"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn",
+            "tshuyw"
+          ]
+        },
+        "label": "Half (Don't Delete)"
+      },
+      {
+        "id": "772c74",
+        "name": "icon",
+        "parent": "fbb05a",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "themeStyles": [],
+        "label": "1"
+      },
+      {
+        "id": "e442dd",
+        "name": "icon",
+        "parent": "fbb05a",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "2"
+      },
+      {
+        "id": "01a93d",
+        "name": "icon",
+        "parent": "fbb05a",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "3"
+      },
+      {
+        "id": "7931f8",
+        "name": "icon",
+        "parent": "fbb05a",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "4"
+      },
+      {
+        "id": "22502e",
+        "name": "icon",
+        "parent": "fbb05a",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "5"
+      },
+      {
+        "id": "2b9ab9",
+        "name": "text-basic",
+        "parent": "ce2829",
+        "children": [],
+        "settings": {
+          "text": "Reviewer Name",
+          "_cssGlobalClasses": [
+            "qehxjw"
+          ],
+          "tag": "p"
+        },
+        "label": "Reviewer Name"
+      },
+      {
+        "id": "a6311e",
+        "name": "div",
+        "parent": "aa9b49",
+        "children": [
+          "e5924a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wbzwwb"
+          ],
+          "tag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "e5924a",
+        "name": "div",
+        "parent": "a6311e",
+        "children": [
+          "2cf1c0",
+          "7ccd1b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pqnnmh"
+          ],
+          "tag": "article",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Echo"
+      },
+      {
+        "id": "2cf1c0",
+        "name": "block",
+        "parent": "e5924a",
+        "children": [
+          "3ef296"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vpjayo"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "3ef296",
+        "name": "text-basic",
+        "parent": "2cf1c0",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "_cssGlobalClasses": [
+            "dsmrae"
+          ],
+          "tag": "p"
+        },
+        "label": "Quote"
+      },
+      {
+        "id": "7ccd1b",
+        "name": "block",
+        "parent": "e5924a",
+        "children": [
+          "48d854",
+          "9edbba"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jfhtwk"
+          ]
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "48d854",
+        "name": "div",
+        "parent": "7ccd1b",
+        "children": [
+          "a05557",
+          "466c0c",
+          "27edac",
+          "ede74f",
+          "043890",
+          "4ecfed"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kndlyw"
+          ],
+          "_attributes": [
+            {
+              "id": "bcpeoi",
+              "name": "data-rating",
+              "value": "4.5"
+            }
+          ],
+          "tag": "custom",
+          "customTag": "span"
+        },
+        "label": "Rating Alpha (Set Data Attr)"
+      },
+      {
+        "id": "a05557",
+        "name": "icon",
+        "parent": "48d854",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star-half"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn",
+            "tshuyw"
+          ]
+        },
+        "label": "Half (Don't Delete)"
+      },
+      {
+        "id": "466c0c",
+        "name": "icon",
+        "parent": "48d854",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "themeStyles": [],
+        "label": "1"
+      },
+      {
+        "id": "27edac",
+        "name": "icon",
+        "parent": "48d854",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "2"
+      },
+      {
+        "id": "ede74f",
+        "name": "icon",
+        "parent": "48d854",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "3"
+      },
+      {
+        "id": "043890",
+        "name": "icon",
+        "parent": "48d854",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "4"
+      },
+      {
+        "id": "4ecfed",
+        "name": "icon",
+        "parent": "48d854",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "5"
+      },
+      {
+        "id": "9edbba",
+        "name": "text-basic",
+        "parent": "7ccd1b",
+        "children": [],
+        "settings": {
+          "text": "Reviewer Name",
+          "_cssGlobalClasses": [
+            "qehxjw"
+          ],
+          "tag": "p"
+        },
+        "label": "Reviewer Name"
+      },
+      {
+        "id": "a678c3",
+        "name": "div",
+        "parent": "aa9b49",
+        "children": [
+          "34739a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wbzwwb"
+          ],
+          "tag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "34739a",
+        "name": "div",
+        "parent": "a678c3",
+        "children": [
+          "94433d",
+          "323864"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pqnnmh"
+          ],
+          "tag": "article",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Echo"
+      },
+      {
+        "id": "94433d",
+        "name": "block",
+        "parent": "34739a",
+        "children": [
+          "f39f55"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vpjayo"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "f39f55",
+        "name": "text-basic",
+        "parent": "94433d",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "_cssGlobalClasses": [
+            "dsmrae"
+          ],
+          "tag": "p"
+        },
+        "label": "Quote"
+      },
+      {
+        "id": "323864",
+        "name": "block",
+        "parent": "34739a",
+        "children": [
+          "a0bb84",
+          "4f4d7e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jfhtwk"
+          ]
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "a0bb84",
+        "name": "div",
+        "parent": "323864",
+        "children": [
+          "f50dc6",
+          "115286",
+          "0ccc48",
+          "6c8124",
+          "581eec",
+          "8193b7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kndlyw"
+          ],
+          "_attributes": [
+            {
+              "id": "bcpeoi",
+              "name": "data-rating",
+              "value": "4.5"
+            }
+          ],
+          "tag": "custom",
+          "customTag": "span"
+        },
+        "label": "Rating Alpha (Set Data Attr)"
+      },
+      {
+        "id": "f50dc6",
+        "name": "icon",
+        "parent": "a0bb84",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star-half"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn",
+            "tshuyw"
+          ]
+        },
+        "label": "Half (Don't Delete)"
+      },
+      {
+        "id": "115286",
+        "name": "icon",
+        "parent": "a0bb84",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "themeStyles": [],
+        "label": "1"
+      },
+      {
+        "id": "0ccc48",
+        "name": "icon",
+        "parent": "a0bb84",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "2"
+      },
+      {
+        "id": "6c8124",
+        "name": "icon",
+        "parent": "a0bb84",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "3"
+      },
+      {
+        "id": "581eec",
+        "name": "icon",
+        "parent": "a0bb84",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "4"
+      },
+      {
+        "id": "8193b7",
+        "name": "icon",
+        "parent": "a0bb84",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "5"
+      },
+      {
+        "id": "4f4d7e",
+        "name": "text-basic",
+        "parent": "323864",
+        "children": [],
+        "settings": {
+          "text": "Reviewer Name",
+          "_cssGlobalClasses": [
+            "qehxjw"
+          ],
+          "tag": "p"
+        },
+        "label": "Reviewer Name"
+      },
+      {
+        "id": "edd008",
+        "name": "div",
+        "parent": "aa9b49",
+        "children": [
+          "6e703c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wbzwwb"
+          ],
+          "tag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "6e703c",
+        "name": "div",
+        "parent": "edd008",
+        "children": [
+          "537072",
+          "718b2f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pqnnmh"
+          ],
+          "tag": "article",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Echo"
+      },
+      {
+        "id": "537072",
+        "name": "block",
+        "parent": "6e703c",
+        "children": [
+          "37a83c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vpjayo"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "37a83c",
+        "name": "text-basic",
+        "parent": "537072",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "_cssGlobalClasses": [
+            "dsmrae"
+          ],
+          "tag": "p"
+        },
+        "label": "Quote"
+      },
+      {
+        "id": "718b2f",
+        "name": "block",
+        "parent": "6e703c",
+        "children": [
+          "ff2f2f",
+          "081775"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jfhtwk"
+          ]
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "ff2f2f",
+        "name": "div",
+        "parent": "718b2f",
+        "children": [
+          "ff7647",
+          "71e22d",
+          "eae5ff",
+          "0010b4",
+          "244f6b",
+          "82b8cc"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kndlyw"
+          ],
+          "_attributes": [
+            {
+              "id": "bcpeoi",
+              "name": "data-rating",
+              "value": "4.5"
+            }
+          ],
+          "tag": "custom",
+          "customTag": "span"
+        },
+        "label": "Rating Alpha (Set Data Attr)"
+      },
+      {
+        "id": "ff7647",
+        "name": "icon",
+        "parent": "ff2f2f",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star-half"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn",
+            "tshuyw"
+          ]
+        },
+        "label": "Half (Don't Delete)"
+      },
+      {
+        "id": "71e22d",
+        "name": "icon",
+        "parent": "ff2f2f",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "themeStyles": [],
+        "label": "1"
+      },
+      {
+        "id": "eae5ff",
+        "name": "icon",
+        "parent": "ff2f2f",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "2"
+      },
+      {
+        "id": "0010b4",
+        "name": "icon",
+        "parent": "ff2f2f",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "3"
+      },
+      {
+        "id": "244f6b",
+        "name": "icon",
+        "parent": "ff2f2f",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "4"
+      },
+      {
+        "id": "82b8cc",
+        "name": "icon",
+        "parent": "ff2f2f",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "5"
+      },
+      {
+        "id": "081775",
+        "name": "text-basic",
+        "parent": "718b2f",
+        "children": [],
+        "settings": {
+          "text": "Reviewer Name",
+          "_cssGlobalClasses": [
+            "qehxjw"
+          ],
+          "tag": "p"
+        },
+        "label": "Reviewer Name"
+      },
+      {
+        "id": "087b44",
+        "name": "div",
+        "parent": "8f2253",
+        "children": [
+          "847983",
+          "10ad74",
+          "c8bbd5",
+          "93922c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eexxfd"
+          ]
+        },
+        "label": "Sidebar"
+      },
+      {
+        "id": "10ad74",
+        "name": "text-basic",
+        "parent": "087b44",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "gxiwte"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "847983",
+        "name": "heading",
+        "parent": "087b44",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "aluxdt"
+          ]
+        }
+      },
+      {
+        "id": "c8bbd5",
+        "name": "text-basic",
+        "parent": "087b44",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.<br>",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "dcnhay"
+          ],
+          "tag": "p",
+          "_padding": {
+            "bottom": "0"
+          }
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "93922c",
+        "name": "fr-slider-controls",
+        "parent": "087b44",
+        "children": [],
+        "settings": {
+          "type": "nextPrev",
+          "progressHeight": ".5rem",
+          "progressWidth": "100%",
+          "arrows": true,
+          "prevArrow": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "prevArrowAriaLabel": "Previous slide",
+          "nextArrow": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "nextArrowAriaLabel": "Next slide",
+          "_cssGlobalClasses": [
+            "wbvcbg"
+          ],
+          "syncId": "fr-slider-bravo"
+        },
+        "label": "Slider Controls (CSS)"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771254446,
+        "user_id": 1
+      },
+      {
+        "id": "kndlyw",
+        "name": "fr-rating-alpha",
+        "settings": {
+          "_display": "flex",
+          "_rowGap": ".25em",
+          "_columnGap": ".25em",
+          "_cssCustom": "/* RATINGS WON'T RENDER IN BUILDER */\n\n/* To change the star rating, change the value of the data attribute in the attributes tab on this element. If you want the rating to be generated dynamically, create a \"rating\" custom field for your parent element and then inject the value of that field dynamically into the data attribute value field. */\n\n.fr-rating-alpha {\n\t--icon-size: 1.5em;\n  --icon-fill-color: var(--primary);\n  --icon-stroke-color: var(--primary);\n  --icon-fill-color-hover: var(--primary);  \n  --icon-stroke-color-hover: var(--primary);\n}\n\n.fr-rating-alpha > *:first-child {display: none;} /* Hide half star by default */\n\n[data-rating*=\".\"] > *:first-child {display: flex;} /* Show half star for decimal ratings */\n\n[data-rating*=\".0\"] > *:first-child {display: none !important;} /* Hide half star for .0 ratings */\n\n/* Support for half star rating */\n[data-rating*=\".5\"] > *:first-child {display: flex !important;}\n\n[data-rating=\".5\"] > *:not(:first-child),\n[data-rating=\"0.5\"] > *:not(:first-child) {\n\tdisplay: none;\n}\n\n/* The Rest */\n\n[data-rating^=\"1\"] > *:nth-child(n+3) {\n display: none;\n}\n\n[data-rating^=\"2\"] > *:nth-child(n+4) {\n display: none;\n}\n\n[data-rating^=\"3\"] > *:nth-child(n+5) {\n display: none;\n}\n\n[data-rating^=\"4\"] > *:nth-child(n+6) {\n display: none;\n}\n\n.fr-rating-alpha svg {\n  height: var(--icon-size);\n  width: var(--icon-size);\n  fill: var(--icon-fill-color);\n  color: var(--icon-stroke-color);\n}\n\n.fr-rating-alpha i {\n  color: var(--icon-fill-color);\n  font-size: var(--icon-size);\n}\n\n.fr-rating-alpha svg:hover {\n  fill: var(--icon-fill-color-hover);\n  color: var(--icon-stroke-color-hover);  \n}\n\n.fr-rating-alpha i:hover {\n  color: var(--icon-fill-color-hover);\n}",
+          "_alignItems": "flex-start"
+        },
+        "modified": 1737998108,
+        "user_id": 26,
+        "_exists": false
+      },
+      {
+        "id": "lwaybn",
+        "name": "fr-rating-alpha__icon",
+        "settings": [],
+        "modified": 1726775024,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "tshuyw",
+        "name": "fr-rating-alpha__icon-half",
+        "settings": {
+          "_order": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "gigwil",
+        "name": "fr-slider-section-bravo",
+        "settings": {
+          "_overflow": "hidden",
+          "_padding": {
+            "bottom": "calc(var(--section-space-m) + var(--content-gap) + 1em)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "itjoyc",
+        "name": "fr-slider-grid-bravo",
+        "settings": {
+          "_position": "relative",
+          "_display": "grid",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns": "var(--grid-1-3)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1-2)",
+          "_alignItemsGrid": "center"
+        },
+        "modified": 1742494440,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "vsuwbx",
+        "name": "fr-slider-bravo",
+        "settings": {
+          "clipToContainer": "inset(-100vw -100vw -100vw 0)"
+        },
+        "modified": 1738224226,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "wbzwwb",
+        "name": "fr-slider-bravo__list-item",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "pqnnmh",
+        "name": "fr-testimonial-card-bravo",
+        "settings": {
+          "_rowGap": "var(--fr-card-gap)",
+          "_padding": {
+            "top": "var(--fr-card-padding)",
+            "right": "var(--fr-card-padding)",
+            "bottom": "var(--fr-card-padding)",
+            "left": "var(--fr-card-padding)"
+          },
+          "_background": {
+            "color": {
+              "raw": "var(--bg-ultra-light)"
+            }
+          },
+          "_justifyContent": "space-between",
+          "_display": "flex",
+          "_direction": "column",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          }
+        },
+        "modified": 1728404617,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "vpjayo",
+        "name": "fr-testimonial-card-bravo__body",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "dsmrae",
+        "name": "fr-testimonial-card-bravo__quote",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "jfhtwk",
+        "name": "fr-testimonial-card-bravo__footer",
+        "settings": {
+          "_direction": "row",
+          "_alignItems": "center",
+          "_justifyContent": "space-between",
+          "_columnGap": "1em",
+          "_rowGap": "0.5em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "qehxjw",
+        "name": "fr-testimonial-card-bravo__name",
+        "settings": {
+          "_order": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "eexxfd",
+        "name": "fr-slider-grid-bravo__sidebar",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_display": "flex",
+          "_direction": "column"
+        },
+        "_exists": false
+      },
+      {
+        "id": "gxiwte",
+        "name": "fr-slider-grid-bravo__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "aluxdt",
+        "name": "fr-slider-grid-bravo__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "dcnhay",
+        "name": "fr-slider-grid-bravo__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "wbvcbg",
+        "name": "fr-slider-bravo__controls",
+        "settings": {
+          "_widthMax": "max-content",
+          "arrowsGap": "var(--grid-gap)",
+          "arrowsFlexDirection": "row",
+          "_cssCustom": ".fr-slider-bravo__controls {\n\t--icon-size: 3em;\n  --icon-color: var(--text-dark);\n}\n\n.fr-slider-bravo__controls button :is(svg, i) {\n\theight: var(--icon-size);\n  width: var(--icon-size);\n  fill: var(--icon-color);\n}",
+          "arrowHeight": "var(--icon-size)",
+          "arrowWidth": "var(--icon-size)"
+        },
+        "modified": 1742408409,
+        "user_id": 9,
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

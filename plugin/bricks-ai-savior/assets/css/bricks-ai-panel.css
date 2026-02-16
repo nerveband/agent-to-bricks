@@ -8,6 +8,8 @@
   top: 80px;
   right: 20px;
   width: 380px;
+  min-width: 300px;
+  max-width: 600px;
   max-height: calc(100vh - 100px);
   background: #1e1e2e;
   color: #cdd6f4;
@@ -75,9 +77,12 @@
   color: #cdd6f4;
 }
 
-/* ---- Provider Badge ---- */
+/* ---- Provider Bar ---- */
 
 .bai-provider {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   padding: 6px 14px;
   background: #11111b;
   border-bottom: 1px solid #313244;
@@ -92,16 +97,17 @@
 }
 
 .bai-model-select {
-  background: #11111b;
+  background: #181825;
   color: #89b4fa;
   border: 1px solid #45475a;
   border-radius: 4px;
   padding: 2px 6px;
   font-size: 11px;
   font-family: inherit;
-  margin-left: 6px;
   cursor: pointer;
-  max-width: 220px;
+  flex: 1;
+  min-width: 0;
+  text-overflow: ellipsis;
 }
 
 .bai-model-select:focus {
@@ -387,7 +393,7 @@
 /* ---- Provider Select ---- */
 
 .bai-provider-select {
-  background: #11111b;
+  background: #181825;
   color: #a6e3a1;
   border: 1px solid #45475a;
   border-radius: 4px;
@@ -395,7 +401,10 @@
   font-size: 11px;
   font-family: inherit;
   cursor: pointer;
-  max-width: 140px;
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 120px;
+  text-overflow: ellipsis;
 }
 
 .bai-provider-select:focus {
@@ -427,6 +436,38 @@
   border-color: #89b4fa;
   background: rgba(137, 180, 250, 0.1);
   color: #89b4fa;
+}
+
+/* ---- Resize Handle ---- */
+
+.bai-resize-handle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  cursor: nwse-resize;
+  z-index: 10;
+}
+
+.bai-resize-handle::before {
+  content: '';
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #585b70;
+  border-bottom: 2px solid #585b70;
+}
+
+.bai-resize-handle:hover::before {
+  border-color: #89b4fa;
+}
+
+#bricks-ai-panel.bai-resizing {
+  transition: none;
+  user-select: none;
 }
 
 /* ---- Error Details ---- */

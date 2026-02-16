@@ -1,0 +1,236 @@
+{
+  "idx": 424,
+  "title": "Content Section Echo",
+  "elementCount": 9,
+  "classCount": 9,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "661319",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "276c53"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fgcqdr"
+          ]
+        },
+        "label": "Content Section Echo"
+      },
+      {
+        "id": "276c53",
+        "name": "container",
+        "parent": "661319",
+        "children": [
+          "b512bb",
+          "e326fe"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mhbpmj"
+          ]
+        },
+        "label": "Grid"
+      },
+      {
+        "id": "b512bb",
+        "name": "block",
+        "parent": "276c53",
+        "children": [
+          "952260",
+          "ebc1b0",
+          "ffa376"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fordze"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "e326fe",
+        "name": "block",
+        "parent": "276c53",
+        "children": [
+          "3cb3e7",
+          "d5b2e0"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ugicja"
+          ]
+        },
+        "label": "Image Group Alpha"
+      },
+      {
+        "id": "952260",
+        "name": "heading",
+        "parent": "b512bb",
+        "children": [],
+        "settings": {
+          "text": "Your headline here",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "clcehb"
+          ]
+        }
+      },
+      {
+        "id": "ebc1b0",
+        "name": "text-basic",
+        "parent": "b512bb",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "bixrcy"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "ffa376",
+        "name": "button",
+        "parent": "b512bb",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ]
+        }
+      },
+      {
+        "id": "3cb3e7",
+        "name": "image",
+        "parent": "e326fe",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "scwusy"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "d5b2e0",
+        "name": "image",
+        "parent": "e326fe",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "scwusy"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        },
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771256146,
+        "user_id": 1
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "ugicja",
+        "name": "fr-image-group-alpha",
+        "settings": {
+          "_direction": "row",
+          "_width:>-*": "50%",
+          "_widthMax:>-*": "50%",
+          "_columnGap": "var(--grid-gap)",
+          "_rowGap": "var(--grid-gap)",
+          "_flexWrap": "nowrap",
+          "_cssCustom": "@media (min-width: 768px) {\n  .fr-image-group-alpha > *:nth-child(odd) {\n    transform: translateY(-5%);\n  }\n  .fr-image-group-alpha > *:nth-child(even) {\n    transform: translateY(5%);\n  }\n}",
+          "_direction:mobile_portrait": "column"
+        },
+        "_exists": false
+      },
+      {
+        "id": "scwusy",
+        "name": "fr-image-group-alpha__media",
+        "settings": {
+          "_objectFit": "cover"
+        },
+        "_exists": false
+      },
+      {
+        "id": "fgcqdr",
+        "name": "fr-content-section-echo",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "mhbpmj",
+        "name": "fr-content-grid-echo",
+        "settings": {
+          "_display": "grid",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_alignItemsGrid": "center",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "fordze",
+        "name": "fr-content-grid-echo__content-wrapper",
+        "settings": {
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "clcehb",
+        "name": "fr-content-section-echo__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "bixrcy",
+        "name": "fr-content-section-echo__lede",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

@@ -1,0 +1,856 @@
+{
+  "idx": 320,
+  "title": "Profile Section Foxtrot",
+  "elementCount": 41,
+  "classCount": 14,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "028c8d",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "083874",
+          "a681c3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pldzji"
+          ]
+        },
+        "label": "Profile Section Foxtrot"
+      },
+      {
+        "id": "a681c3",
+        "name": "container",
+        "parent": "028c8d",
+        "children": [
+          "f99403",
+          "452d62",
+          "dd75b4",
+          "09f120",
+          "ab7c27",
+          "6936b6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qxzapd"
+          ],
+          "customTag": "ul",
+          "tag": "custom"
+        },
+        "label": "Profile Grid Foxtrot"
+      },
+      {
+        "id": "f99403",
+        "name": "block",
+        "parent": "a681c3",
+        "children": [
+          "3d0cce",
+          "e9da23"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fkdtzm",
+            "orfdgb"
+          ],
+          "customTag": "li",
+          "tag": "custom"
+        },
+        "label": "Profile Card Foxtrot"
+      },
+      {
+        "id": "3abae9",
+        "name": "image",
+        "parent": "e9da23",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gmtsdq"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Avatar",
+        "themeStyles": []
+      },
+      {
+        "id": "b2df3a",
+        "name": "heading",
+        "parent": "3d0cce",
+        "children": [],
+        "settings": {
+          "text": "John Doe",
+          "_cssGlobalClasses": [
+            "ybekdt",
+            "acss_import_clickable-parent"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Name"
+      },
+      {
+        "id": "0ada9a",
+        "name": "text-basic",
+        "parent": "3d0cce",
+        "children": [],
+        "settings": {
+          "text": "CEO",
+          "_cssGlobalClasses": [
+            "qbkjmt"
+          ],
+          "tag": "span"
+        },
+        "label": "Title"
+      },
+      {
+        "id": "e9da23",
+        "name": "block",
+        "parent": "f99403",
+        "children": [
+          "3abae9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fqdqwz"
+          ]
+        },
+        "label": "Avatar Wrapper"
+      },
+      {
+        "id": "3d0cce",
+        "name": "block",
+        "parent": "f99403",
+        "children": [
+          "b2df3a",
+          "0ada9a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vnbhrx"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "083874",
+        "name": "container",
+        "parent": "028c8d",
+        "children": [
+          "4e69f0",
+          "c53ceb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "slhmuz"
+          ]
+        },
+        "label": "Intro Bravo"
+      },
+      {
+        "id": "c53ceb",
+        "name": "text-basic",
+        "parent": "083874",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "cirgqc"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "4e69f0",
+        "name": "heading",
+        "parent": "083874",
+        "children": [],
+        "settings": {
+          "text": "Your headline here",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "okkigb"
+          ]
+        }
+      },
+      {
+        "id": "6936b6",
+        "name": "block",
+        "parent": "a681c3",
+        "children": [
+          "31ec11",
+          "19cd26"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fkdtzm",
+            "orfdgb"
+          ],
+          "customTag": "li",
+          "tag": "custom"
+        },
+        "label": "Profile Card Foxtrot"
+      },
+      {
+        "id": "31ec11",
+        "name": "block",
+        "parent": "6936b6",
+        "children": [
+          "9852ba",
+          "4b3443"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vnbhrx"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "19cd26",
+        "name": "block",
+        "parent": "6936b6",
+        "children": [
+          "1072f6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fqdqwz"
+          ]
+        },
+        "label": "Avatar Wrapper"
+      },
+      {
+        "id": "9852ba",
+        "name": "heading",
+        "parent": "31ec11",
+        "children": [],
+        "settings": {
+          "text": "John Doe",
+          "_cssGlobalClasses": [
+            "ybekdt",
+            "acss_import_clickable-parent"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Name"
+      },
+      {
+        "id": "4b3443",
+        "name": "text-basic",
+        "parent": "31ec11",
+        "children": [],
+        "settings": {
+          "text": "CEO",
+          "_cssGlobalClasses": [
+            "qbkjmt"
+          ],
+          "tag": "span"
+        },
+        "label": "Title"
+      },
+      {
+        "id": "1072f6",
+        "name": "image",
+        "parent": "19cd26",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gmtsdq"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Avatar",
+        "themeStyles": []
+      },
+      {
+        "id": "ab7c27",
+        "name": "block",
+        "parent": "a681c3",
+        "children": [
+          "fdea7c",
+          "331e1a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fkdtzm",
+            "orfdgb"
+          ],
+          "customTag": "li",
+          "tag": "custom"
+        },
+        "label": "Profile Card Foxtrot"
+      },
+      {
+        "id": "fdea7c",
+        "name": "block",
+        "parent": "ab7c27",
+        "children": [
+          "49e504",
+          "591ccf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vnbhrx"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "331e1a",
+        "name": "block",
+        "parent": "ab7c27",
+        "children": [
+          "0bc3ca"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fqdqwz"
+          ]
+        },
+        "label": "Avatar Wrapper"
+      },
+      {
+        "id": "49e504",
+        "name": "heading",
+        "parent": "fdea7c",
+        "children": [],
+        "settings": {
+          "text": "John Doe",
+          "_cssGlobalClasses": [
+            "ybekdt",
+            "acss_import_clickable-parent"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Name"
+      },
+      {
+        "id": "591ccf",
+        "name": "text-basic",
+        "parent": "fdea7c",
+        "children": [],
+        "settings": {
+          "text": "CEO",
+          "_cssGlobalClasses": [
+            "qbkjmt"
+          ],
+          "tag": "span"
+        },
+        "label": "Title"
+      },
+      {
+        "id": "0bc3ca",
+        "name": "image",
+        "parent": "331e1a",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gmtsdq"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Avatar",
+        "themeStyles": []
+      },
+      {
+        "id": "09f120",
+        "name": "block",
+        "parent": "a681c3",
+        "children": [
+          "f52ec7",
+          "7d6b2f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fkdtzm",
+            "orfdgb"
+          ],
+          "customTag": "li",
+          "tag": "custom"
+        },
+        "label": "Profile Card Foxtrot"
+      },
+      {
+        "id": "f52ec7",
+        "name": "block",
+        "parent": "09f120",
+        "children": [
+          "ef81c7",
+          "a14528"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vnbhrx"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "7d6b2f",
+        "name": "block",
+        "parent": "09f120",
+        "children": [
+          "3c8480"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fqdqwz"
+          ]
+        },
+        "label": "Avatar Wrapper"
+      },
+      {
+        "id": "ef81c7",
+        "name": "heading",
+        "parent": "f52ec7",
+        "children": [],
+        "settings": {
+          "text": "John Doe",
+          "_cssGlobalClasses": [
+            "ybekdt",
+            "acss_import_clickable-parent"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Name"
+      },
+      {
+        "id": "a14528",
+        "name": "text-basic",
+        "parent": "f52ec7",
+        "children": [],
+        "settings": {
+          "text": "CEO",
+          "_cssGlobalClasses": [
+            "qbkjmt"
+          ],
+          "tag": "span"
+        },
+        "label": "Title"
+      },
+      {
+        "id": "3c8480",
+        "name": "image",
+        "parent": "7d6b2f",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gmtsdq"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Avatar",
+        "themeStyles": []
+      },
+      {
+        "id": "dd75b4",
+        "name": "block",
+        "parent": "a681c3",
+        "children": [
+          "6a871f",
+          "fba5fb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fkdtzm",
+            "orfdgb"
+          ],
+          "customTag": "li",
+          "tag": "custom"
+        },
+        "label": "Profile Card Foxtrot"
+      },
+      {
+        "id": "6a871f",
+        "name": "block",
+        "parent": "dd75b4",
+        "children": [
+          "0fe6ae",
+          "06e6ce"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vnbhrx"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "fba5fb",
+        "name": "block",
+        "parent": "dd75b4",
+        "children": [
+          "037c6f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fqdqwz"
+          ]
+        },
+        "label": "Avatar Wrapper"
+      },
+      {
+        "id": "0fe6ae",
+        "name": "heading",
+        "parent": "6a871f",
+        "children": [],
+        "settings": {
+          "text": "John Doe",
+          "_cssGlobalClasses": [
+            "ybekdt",
+            "acss_import_clickable-parent"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Name"
+      },
+      {
+        "id": "06e6ce",
+        "name": "text-basic",
+        "parent": "6a871f",
+        "children": [],
+        "settings": {
+          "text": "CEO",
+          "_cssGlobalClasses": [
+            "qbkjmt"
+          ],
+          "tag": "span"
+        },
+        "label": "Title"
+      },
+      {
+        "id": "037c6f",
+        "name": "image",
+        "parent": "fba5fb",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gmtsdq"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Avatar",
+        "themeStyles": []
+      },
+      {
+        "id": "452d62",
+        "name": "block",
+        "parent": "a681c3",
+        "children": [
+          "3fb5cf",
+          "c11698"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fkdtzm",
+            "orfdgb"
+          ],
+          "customTag": "li",
+          "tag": "custom"
+        },
+        "label": "Profile Card Foxtrot"
+      },
+      {
+        "id": "3fb5cf",
+        "name": "block",
+        "parent": "452d62",
+        "children": [
+          "d7bdf0",
+          "d4999d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vnbhrx"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "c11698",
+        "name": "block",
+        "parent": "452d62",
+        "children": [
+          "ba14f3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fqdqwz"
+          ]
+        },
+        "label": "Avatar Wrapper"
+      },
+      {
+        "id": "d7bdf0",
+        "name": "heading",
+        "parent": "3fb5cf",
+        "children": [],
+        "settings": {
+          "text": "John Doe",
+          "_cssGlobalClasses": [
+            "ybekdt",
+            "acss_import_clickable-parent"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Name"
+      },
+      {
+        "id": "d4999d",
+        "name": "text-basic",
+        "parent": "3fb5cf",
+        "children": [],
+        "settings": {
+          "text": "CEO",
+          "_cssGlobalClasses": [
+            "qbkjmt"
+          ],
+          "tag": "span"
+        },
+        "label": "Title"
+      },
+      {
+        "id": "ba14f3",
+        "name": "image",
+        "parent": "c11698",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gmtsdq"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Avatar",
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "slhmuz",
+        "name": "fr-intro-bravo",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 2)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "cirgqc",
+        "name": "fr-intro-bravo__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "okkigb",
+        "name": "fr-intro-bravo__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "orfdgb",
+        "name": "focus-parent",
+        "settings": [],
+        "_mappedId": "acss_import_focus-parent",
+        "modified": 1771255313,
+        "user_id": 1
+      },
+      {
+        "id": "acss_import_clickable-parent",
+        "name": "clickable-parent",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "fkdtzm",
+        "name": "fr-profile-card-foxtrot",
+        "settings": {
+          "_cssCustom": "@media (hover: hover) and (pointer: fine) {\n  .fr-profile-card-foxtrot:hover .fr-profile-card-foxtrot__avatar-wrapper {\n    transform: translateY(-.5em); \n  }\n}\n\n/* Capture card contents z-index */\n.fr-profile-card-foxtrot {\n  isolation: isolate;\n}",
+          "_cssCustom:tablet_portrait": ".fr-profile-card-foxtrot {grid-template-rows: 20em;}",
+          "_position": "relative",
+          "_gridTemplateRows": "24em",
+          "_gridTemplateColumns": "1fr minmax(2em, auto)",
+          "_display": "grid",
+          "_alignItemsGrid": "stretch",
+          "_gridGap": "1em",
+          "_gridTemplateColumns:mobile_portrait": "var(--grid-1)"
+        },
+        "modified": 1757594259,
+        "user_id": 26,
+        "_exists": false
+      },
+      {
+        "id": "vnbhrx",
+        "name": "fr-profile-card-foxtrot__content-wrapper",
+        "settings": {
+          "_cssCustom": ".fr-profile-card-foxtrot__content-wrapper {\n  writing-mode: vertical-lr;\n}",
+          "_cssCustom:mobile_portrait": ".fr-profile-card-foxtrot__content-wrapper {\n  grid-column: 1 / 1;\n  writing-mode: horizontal-tb;\n}",
+          "_position": "static"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ybekdt",
+        "name": "fr-profile-card-foxtrot__name",
+        "settings": {
+          "_typography": {
+            "line-height": "1"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "qbkjmt",
+        "name": "fr-profile-card-foxtrot__title",
+        "settings": {
+          "_typography": {
+            "line-height": "1.5"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "fqdqwz",
+        "name": "fr-profile-card-foxtrot__avatar-wrapper",
+        "settings": {
+          "_height": "100%",
+          "_width:tablet_portrait": "100%",
+          "_height:tablet_portrait": "100%",
+          "_cssCustom:mobile_portrait": ".fr-profile-card-foxtrot__avatar-wrapper {\n\tgrid-column: 1 / 1;  \n}",
+          "_position": "static",
+          "_zIndex": "-1",
+          "_cssTransition": ".3s transform ease-in-out",
+          "_order": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "gmtsdq",
+        "name": "fr-profile-card-foxtrot__avatar",
+        "settings": {
+          "_objectFit": "cover",
+          "_cssCustom": ".fr-profile-card-foxtrot__avatar {flex: 1; position: static !important;}\n.fr-profile-card-foxtrot__avatar > * {position: static !important;}",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_width:tablet_portrait": "100%",
+          "_height:tablet_portrait": "100%",
+          "_position": "static",
+          "_width": "100%",
+          "_height": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "qxzapd",
+        "name": "fr-profile-grid-foxtrot",
+        "settings": {
+          "_padding": {
+            "left": "0"
+          },
+          "_display": "grid",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns": "var(--grid-3)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_alignItemsGrid": "stretch",
+          "_cssCustom": ".fr-profile-grid-foxtrot { list-style-type: none; }",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-2)",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "pldzji",
+        "name": "fr-profile-section-foxtrot",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

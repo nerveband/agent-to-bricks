@@ -1,0 +1,266 @@
+{
+  "idx": 338,
+  "title": "Blog Body Alpha",
+  "elementCount": 8,
+  "classCount": 12,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "7e5f73",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "b44eb3",
+          "1976bb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "uxhxth"
+          ]
+        },
+        "label": "Blog Post Alpha"
+      },
+      {
+        "id": "b44eb3",
+        "name": "post-content",
+        "parent": "7e5f73",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cqwrgh",
+            "fpranb",
+            "neswau"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "1976bb",
+        "name": "container",
+        "parent": "7e5f73",
+        "children": [
+          "9eba83"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "oofehh"
+          ]
+        },
+        "label": "Author Wrapper"
+      },
+      {
+        "id": "9eba83",
+        "name": "div",
+        "parent": "1976bb",
+        "children": [
+          "dfccf9",
+          "0fbaaf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hcrcgd",
+            "hhpxwy"
+          ],
+          "_cssId": "post-author"
+        },
+        "label": "Bio Card Alpha"
+      },
+      {
+        "id": "dfccf9",
+        "name": "div",
+        "parent": "9eba83",
+        "children": [
+          "907000",
+          "1222aa"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jnhqpe"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "907000",
+        "name": "text-basic",
+        "parent": "dfccf9",
+        "children": [],
+        "settings": {
+          "text": "{author_name}",
+          "_cssGlobalClasses": [
+            "fejnzm"
+          ],
+          "customTag": "address",
+          "tag": "custom"
+        },
+        "label": "Name"
+      },
+      {
+        "id": "1222aa",
+        "name": "text-basic",
+        "parent": "dfccf9",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vfzdae",
+            "kddjfd"
+          ],
+          "tag": "p",
+          "text": "{author_bio}"
+        },
+        "label": "Bio"
+      },
+      {
+        "id": "0fbaaf",
+        "name": "div",
+        "parent": "9eba83",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hqfgov"
+          ]
+        },
+        "label": "Header"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771255527,
+        "user_id": 1
+      },
+      {
+        "id": "neswau",
+        "name": "content-grid",
+        "settings": [],
+        "modified": 1771255527,
+        "user_id": 1,
+        "_mappedId": "acss_import_content-grid"
+      },
+      {
+        "id": "uxhxth",
+        "name": "fr-blog-post-alpha",
+        "settings": {
+          "_gridGap": "var(--content-gap)",
+          "_padding": {
+            "left": "0",
+            "right": "0"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "cqwrgh",
+        "name": "fr-post-content",
+        "settings": {
+          "_cssCustom": ".fr-post-content {\n  --content-width: 60ch;\n  gap: 0;\n}",
+          "_width": "100%"
+        },
+        "modified": 1730205564,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "fpranb",
+        "name": "fr-blog-post-alpha__content",
+        "settings": {
+          "_cssCustom": ".fr-blog-post-alpha__content {\n\t--content-width: 60ch;\n}\n\n.fr-blog-post-alpha__content > figure {\n  grid-column: feature-max;\n}\n\n.fr-blog-post-alpha__content > blockquote {\n  grid-column: feature;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "oofehh",
+        "name": "fr-blog-post-alpha__author-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "hcrcgd",
+        "name": "fr-profile-card-alpha",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "var(--fr-card-gap)",
+          "_alignItems": "center",
+          "_widthMax": "var(--width-l)",
+          "_width": "100%",
+          "_alignSelf": "center",
+          "_background": {
+            "color": {
+              "raw": "var(--bg-ultra-light)"
+            }
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "hhpxwy",
+        "name": "fr-bio-card--boxed",
+        "settings": {
+          "_padding": {
+            "top": "var(--fr-card-padding)",
+            "right": "var(--fr-card-padding)",
+            "bottom": "var(--fr-card-padding)",
+            "left": "var(--fr-card-padding)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "jnhqpe",
+        "name": "fr-profile-card-alpha__body",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "var(--fr-card-gap)",
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_width": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "fejnzm",
+        "name": "fr-profile-card-alpha__name",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "vfzdae",
+        "name": "fr-profile-card-alpha__bio",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "hqfgov",
+        "name": "fr-profile-card-alpha__header",
+        "settings": {
+          "_order": "-1",
+          "_width": "100%",
+          "_justifyContent": "center",
+          "_alignItems": "center",
+          "_display": "flex"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

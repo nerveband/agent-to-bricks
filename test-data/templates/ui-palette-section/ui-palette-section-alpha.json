@@ -1,0 +1,651 @@
+{
+  "idx": 26,
+  "title": "(UI) Palette Section Alpha",
+  "elementCount": 31,
+  "classCount": 12,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "e9dee2",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "b53ea6",
+          "d4d0a8",
+          "b396cc"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tpblhz"
+          ]
+        },
+        "label": "UI Color Section Alpha"
+      },
+      {
+        "id": "b53ea6",
+        "name": "container",
+        "parent": "e9dee2",
+        "children": [
+          "354055",
+          "7631dc",
+          "105c4a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kfsrng"
+          ]
+        },
+        "label": "Intro Foxtrot"
+      },
+      {
+        "id": "354055",
+        "name": "heading",
+        "parent": "b53ea6",
+        "children": [],
+        "settings": {
+          "text": "Brand Palette",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "fs98tf"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "7631dc",
+        "name": "text-basic",
+        "parent": "b53ea6",
+        "children": [],
+        "settings": {
+          "text": "Colors",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "luvynj"
+          ]
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "105c4a",
+        "name": "text-basic",
+        "parent": "b53ea6",
+        "children": [],
+        "settings": {
+          "text": "The following colors and shades are available for this project.",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "utn55l"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "d4d0a8",
+        "name": "container",
+        "parent": "e9dee2",
+        "children": [
+          "7094c4",
+          "bdb6b4",
+          "746f6e",
+          "877115",
+          "0c0ee2",
+          "503366"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tssicm"
+          ]
+        },
+        "label": "Circle Swatch Grid Alpha"
+      },
+      {
+        "id": "7094c4",
+        "name": "div",
+        "parent": "d4d0a8",
+        "children": [
+          "ebd8c1",
+          "a77e5d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "azxynk"
+          ],
+          "_attributes": [
+            {
+              "id": "wvbfif",
+              "name": "data-color",
+              "value": "primary"
+            }
+          ]
+        },
+        "label": "Circle Swatch Card Alpha"
+      },
+      {
+        "id": "ebd8c1",
+        "name": "div",
+        "parent": "7094c4",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xivtmn"
+          ]
+        },
+        "label": "Circle Swatch Alpha"
+      },
+      {
+        "id": "a77e5d",
+        "name": "block",
+        "parent": "7094c4",
+        "children": [
+          "0dc124"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "oaikft"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "0dc124",
+        "name": "heading",
+        "parent": "a77e5d",
+        "children": [],
+        "settings": {
+          "text": "Primary",
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "zouepg"
+          ]
+        }
+      },
+      {
+        "id": "bdb6b4",
+        "name": "div",
+        "parent": "d4d0a8",
+        "children": [
+          "ddb690",
+          "196ba6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "azxynk"
+          ],
+          "_attributes": [
+            {
+              "id": "dxogqk",
+              "name": "data-color",
+              "value": "secondary"
+            }
+          ]
+        },
+        "label": "Circle Swatch Alpha Wrapper"
+      },
+      {
+        "id": "ddb690",
+        "name": "div",
+        "parent": "bdb6b4",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xivtmn"
+          ]
+        },
+        "label": "Circle Swatch Alpha"
+      },
+      {
+        "id": "196ba6",
+        "name": "block",
+        "parent": "bdb6b4",
+        "children": [
+          "6e0947"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "oaikft"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "6e0947",
+        "name": "heading",
+        "parent": "196ba6",
+        "children": [],
+        "settings": {
+          "text": "Secondary",
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "zouepg"
+          ]
+        }
+      },
+      {
+        "id": "746f6e",
+        "name": "div",
+        "parent": "d4d0a8",
+        "children": [
+          "94cbcc",
+          "3e8c8e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "azxynk"
+          ],
+          "_attributes": [
+            {
+              "id": "ulzupj",
+              "name": "data-color",
+              "value": "tertiary"
+            }
+          ]
+        },
+        "label": "Circle Swatch Alpha Wrapper"
+      },
+      {
+        "id": "94cbcc",
+        "name": "div",
+        "parent": "746f6e",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xivtmn"
+          ]
+        },
+        "label": "Circle Swatch Alpha"
+      },
+      {
+        "id": "3e8c8e",
+        "name": "block",
+        "parent": "746f6e",
+        "children": [
+          "90ace0"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "oaikft"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "90ace0",
+        "name": "heading",
+        "parent": "3e8c8e",
+        "children": [],
+        "settings": {
+          "text": "Tertiary",
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "zouepg"
+          ]
+        }
+      },
+      {
+        "id": "877115",
+        "name": "div",
+        "parent": "d4d0a8",
+        "children": [
+          "bb0539",
+          "ed990d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "azxynk"
+          ],
+          "_attributes": [
+            {
+              "id": "yvnvug",
+              "name": "data-color",
+              "value": "accent"
+            }
+          ]
+        },
+        "label": "Circle Swatch Alpha Wrapper"
+      },
+      {
+        "id": "bb0539",
+        "name": "div",
+        "parent": "877115",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xivtmn"
+          ]
+        },
+        "label": "Circle Swatch Alpha"
+      },
+      {
+        "id": "ed990d",
+        "name": "block",
+        "parent": "877115",
+        "children": [
+          "bd87b4"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "oaikft"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "bd87b4",
+        "name": "heading",
+        "parent": "ed990d",
+        "children": [],
+        "settings": {
+          "text": "Accent",
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "zouepg"
+          ]
+        }
+      },
+      {
+        "id": "0c0ee2",
+        "name": "div",
+        "parent": "d4d0a8",
+        "children": [
+          "dd56e5",
+          "bb5d5c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "azxynk"
+          ],
+          "_attributes": [
+            {
+              "id": "iolftg",
+              "name": "data-color",
+              "value": "base"
+            }
+          ]
+        },
+        "label": "Circle Swatch Alpha Wrapper"
+      },
+      {
+        "id": "dd56e5",
+        "name": "div",
+        "parent": "0c0ee2",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xivtmn"
+          ]
+        },
+        "label": "Circle Swatch Alpha"
+      },
+      {
+        "id": "bb5d5c",
+        "name": "block",
+        "parent": "0c0ee2",
+        "children": [
+          "835368"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "oaikft"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "835368",
+        "name": "heading",
+        "parent": "bb5d5c",
+        "children": [],
+        "settings": {
+          "text": "Base",
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "zouepg"
+          ]
+        }
+      },
+      {
+        "id": "503366",
+        "name": "div",
+        "parent": "d4d0a8",
+        "children": [
+          "5e93a8",
+          "5a0345"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "azxynk"
+          ],
+          "_attributes": [
+            {
+              "id": "wcmxnv",
+              "name": "data-color",
+              "value": "neutral"
+            }
+          ]
+        },
+        "label": "Circle Swatch Alpha Wrapper"
+      },
+      {
+        "id": "5e93a8",
+        "name": "div",
+        "parent": "503366",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xivtmn"
+          ]
+        },
+        "label": "Circle Swatch Alpha"
+      },
+      {
+        "id": "5a0345",
+        "name": "block",
+        "parent": "503366",
+        "children": [
+          "243af3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "oaikft"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "243af3",
+        "name": "heading",
+        "parent": "5a0345",
+        "children": [],
+        "settings": {
+          "text": "Neutral",
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "zouepg"
+          ]
+        }
+      },
+      {
+        "id": "b396cc",
+        "name": "code",
+        "parent": "e9dee2",
+        "children": [],
+        "settings": {
+          "javascriptCode": "document.addEventListener('DOMContentLoaded', function() {\n  const colorElements = document.querySelectorAll('[data-color]');\n\n  colorElements.forEach(element => {\n    const bgValue = getComputedStyle(element).getPropertyValue('--bg').trim();\n    const contentWrapper = element.querySelector('[class*=\"__content-wrapper\"]');\n\n    if (!bgValue || bgValue === 'undefined') {\n      element.style.display = 'none';\n      return;\n    }\n\n    if (contentWrapper) {\n      const color = new Color(bgValue);\n      const hexValue = color.hex();\n      const rgbValue = color.rgb().string();\n      const hslValue = color.hsl().string();\n\n      const colorInfo = document.createElement('div');\n      colorInfo.innerHTML = `\n        <p>Hex: ${hexValue}</p>\n        <p>RGB: ${rgbValue}</p>\n        <p>HSL: ${hslValue}</p>\n      `;\n      contentWrapper.appendChild(colorInfo);\n    }\n  });\n});\n\n// Simple Color conversion class\nclass Color {\n  constructor(color) {\n    this.color = color;\n  }\n\n  hex() {\n    const rgb = this.rgb().array();\n    return '#' + rgb.map(x => {\n      const hex = x.toString(16);\n      return hex.length === 1 ? '0' + hex : hex;\n    }).join('');\n  }\n\n  rgb() {\n    const div = document.createElement('div');\n    div.style.color = this.color;\n    document.body.appendChild(div);\n    const rgb = window.getComputedStyle(div).color.match(/\\d+/g).map(Number);\n    document.body.removeChild(div);\n    return {\n      array: () => rgb,\n      string: () => `rgb(${rgb.join(', ')})`\n    };\n  }\n\n  hsl() {\n    const rgb = this.rgb().array();\n    const r = rgb[0] / 255;\n    const g = rgb[1] / 255;\n    const b = rgb[2] / 255;\n    const max = Math.max(r, g, b);\n    const min = Math.min(r, g, b);\n    let h, s, l = (max + min) / 2;\n\n    if (max === min) {\n      h = s = 0;\n    } else {\n      const d = max - min;\n      s = l > 0.5 ? d / (2 - max - min) : d / (max + min);\n      switch (max) {\n        case r: h = (g - b) / d + (g < b ? 6 : 0); break;\n        case g: h = (b - r) / d + 2; break;\n        case b: h = (r - g) / d + 4; break;\n      }\n      h /= 6;\n    }\n\n    return {\n      array: () => [Math.round(h * 360), Math.round(s * 100), Math.round(l * 100)],\n      string: () => `hsl(${Math.round(h * 360)}, ${Math.round(s * 100)}%, ${Math.round(l * 100)}%)`\n    };\n  }\n}",
+          "code": "<!-- Activate me and sign me -->",
+          "executeCode": true,
+          "user_id": 2,
+          "time": 1762444265,
+          "noRoot": true
+        },
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "tpblhz",
+        "name": "ui-color-section-alpha",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "kfsrng",
+        "name": "intro-foxtrot",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_alignItems:mobile_landscape": "flex-start"
+        },
+        "_exists": false
+      },
+      {
+        "id": "fs98tf",
+        "name": "intro-foxtrot__heading",
+        "settings": [],
+        "_mappedId": "fs98tf",
+        "modified": 1750209707,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "luvynj",
+        "name": "intro-foxtrot__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771252034,
+        "user_id": 1
+      },
+      {
+        "id": "utn55l",
+        "name": "intro-foxtrot__lede",
+        "settings": [],
+        "_mappedId": "utn55l",
+        "modified": 1750209707,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "tssicm",
+        "name": "circle-swatch-grid-alpha",
+        "settings": {
+          "_display": "grid",
+          "_cssCustom": "/* Variable Grid */\n.circle-swatch-grid-alpha {\n\t\t--min: 410px;\n\tdisplay: grid !important;\n\tgrid-template-columns: repeat(auto-fit, minmax(min(var(--min, calc(var(--content-width) / 2 - var(--space-xxl))), 100%), 1fr));\n\tgrid-template-rows: var(--grid-1);\n\tgap: var(--gap, var(--grid-gap));\n}\n\n/* End Variable Grid */"
+        },
+        "_exists": false
+      },
+      {
+        "id": "azxynk",
+        "name": "circle-swatch-card-alpha",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "auto var(--grid-1)",
+          "_gridGap": "var(--space-m)",
+          "_alignItemsGrid": "center",
+          "_cssCustom": ".circle-swatch-card-alpha {\n  isolation: isolate;\n  contain: paint;\n}\n\n.circle-swatch-card-alpha[data-color=\"primary\" i] {\n  --bg: var(--primary);\n  --ultra-light: var(--primary-ultra-light);\n  --light: var(--primary-light);\n  --semi-light: var(--primary-semi-light);\n  --semi-dark: var(--primary-semi-dark);\n  --dark: var(--primary-dark);\n  --ultra-dark: var(--primary-ultra-dark);\n}\n\n.circle-swatch-card-alpha[data-color=\"secondary\" i] {\n  --bg: var(--secondary);\n  --ultra-light: var(--secondary-ultra-light);\n  --light: var(--secondary-light);\n  --semi-light: var(--secondary-semi-light);\n  --semi-dark: var(--secondary-semi-dark);\n  --dark: var(--secondary-dark);\n  --ultra-dark: var(--secondary-ultra-dark);\n}\n\n.circle-swatch-card-alpha[data-color=\"tertiary\" i] {\n  --bg: var(--tertiary);\n  --ultra-light: var(--tertiary-ultra-light);\n  --light: var(--tertiary-light);\n  --semi-light: var(--tertiary-semi-light);\n  --semi-dark: var(--tertiary-semi-dark);\n  --dark: var(--tertiary-dark);\n  --ultra-dark: var(--tertiary-ultra-dark);\n}\n\n.circle-swatch-card-alpha[data-color=\"accent\" i] {\n  --bg: var(--accent);\n  --ultra-light: var(--accent-ultra-light);\n  --light: var(--accent-light);\n  --semi-light: var(--accent-semi-light);\n  --semi-dark: var(--accent-semi-dark);\n  --dark: var(--accent-dark);\n  --ultra-dark: var(--accent-ultra-dark);\n}\n\n.circle-swatch-card-alpha[data-color=\"base\" i] {\n  --bg: var(--base);\n  --ultra-light: var(--base-ultra-light);\n  --light: var(--base-light);\n  --semi-light: var(--base-semi-light);\n  --semi-dark: var(--base-semi-dark);\n  --dark: var(--base-dark);\n  --ultra-dark: var(--base-ultra-dark);\n}\n\n.circle-swatch-card-alpha[data-color=\"neutral\" i] {\n  --bg: var(--neutral);\n  --ultra-light: var(--neutral-ultra-light);\n  --light: var(--neutral-light);\n  --semi-light: var(--neutral-semi-light);\n  --semi-dark: var(--neutral-semi-dark);\n  --dark: var(--neutral-dark);\n  --ultra-dark: var(--neutral-ultra-dark);\n}",
+          "_padding": {
+            "top": "var(--space-m)",
+            "right": "var(--space-m)",
+            "bottom": "var(--space-m)",
+            "left": "var(--space-m)"
+          },
+          "_background": {
+            "color": {
+              "raw": "var(--neutral-ultra-light)"
+            }
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_gridTemplateColumns:mobile_portrait": "var(--grid-1)",
+          "_alignItemsGrid:mobile_portrait": "center",
+          "_justifyContentGrid:mobile_portrait": "center",
+          "_justifyItemsGrid:mobile_portrait": "center",
+          "_typography:mobile_portrait": {
+            "text-align": "center"
+          }
+        },
+        "_mappedId": "azxynk",
+        "modified": 1771252089,
+        "user_id": 1
+      },
+      {
+        "id": "xivtmn",
+        "name": "circle-swatch-card-alpha__swatch",
+        "settings": {
+          "_cssCustom": ".circle-swatch-card-alpha__swatch {\n  --swatch-size: 150px;\n  --border-thickness: 12%;\n  height: var(--swatch-size);\n  width: var(--swatch-size);\n  aspect-ratio: 1;\n  position: relative;\n  filter: drop-shadow(0 0 60px var(--neutral-dark-trans-30));\n  isolation: isolate;\n}\n\n.circle-swatch-card-alpha__swatch::before {\n  content: '';\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  border-radius: 50vw;\n  background: conic-gradient(\n    var(--light, var(--neutral-light-trans-10)) 0deg 60deg,\n    var(--semi-light, var(--neutral-light-trans-10)) 60deg 120deg,\n    var(--semi-dark, var(--neutral-light-trans-10)) 120deg 180deg,\n    var(--dark, var(--neutral-ultra-trans-10)) 180deg 240deg,\n    var(--ultra-dark, var(--neutral-light-trans-10)) 240deg 300deg,\n    var(--ultra-light, var(--neutral-light-trans-10)) 300deg 360deg\n  );\n  z-index: -1;\n}\n\n.circle-swatch-card-alpha__swatch::after {\n  content: '';\n  position: absolute;\n  inset: var(--border-thickness);\n  background: var(--bg, var(--neutral-light-trans-10));\n  border-radius: 50%;\n  z-index: -1;\n\n  /* remove this for no transition */\n  transition: transform .5s cubic-bezier(0.2, 0.85, 0.15, 1);\n}\n\n.circle-swatch-card-alpha__swatch:hover::after {\n  /* Set this to \"scale(0)\" to hide the central swatch on hover */\n  transform: scale(0.2);\n}"
+        },
+        "modified": 1771252089,
+        "user_id": 1,
+        "_mappedId": "xivtmn"
+      },
+      {
+        "id": "oaikft",
+        "name": "circle-swatch-card-alpha__content-wrapper",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 3)",
+          "_typography": {
+            "font-size": "var(--text-s)"
+          },
+          "_typography:mobile_portrait": {
+            "text-align": "center"
+          },
+          "_alignItems:mobile_portrait": "center",
+          "_justifyContent:mobile_portrait": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "zouepg",
+        "name": "circle-swatch-card-alpha__heading",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

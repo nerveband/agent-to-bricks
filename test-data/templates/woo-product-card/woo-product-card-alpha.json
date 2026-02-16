@@ -1,0 +1,643 @@
+{
+  "idx": 208,
+  "title": "Woo Product Card Alpha",
+  "elementCount": 24,
+  "classCount": 15,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "eebd9e",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "9aa5a4",
+          "bf4299",
+          "a77a40",
+          "ff2b42"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "taoblw"
+          ],
+          "tag": "custom",
+          "customTag": "li",
+          "hasLoop": true,
+          "query": {
+            "objectType": "post",
+            "post_type": [
+              "product"
+            ]
+          }
+        },
+        "label": "Product Card Alpha <li>"
+      },
+      {
+        "id": "a77a40",
+        "name": "block",
+        "parent": "eebd9e",
+        "children": [
+          "6a7735",
+          "f0507d",
+          "0070d5",
+          "e4445e",
+          "dda804",
+          "d8dab0",
+          "1ac38a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ooeina"
+          ],
+          "tag": "a",
+          "link": {
+            "type": "meta",
+            "useDynamicData": "{post_url}"
+          }
+        },
+        "label": "Body"
+      },
+      {
+        "id": "f0507d",
+        "name": "heading",
+        "parent": "a77a40",
+        "children": [],
+        "settings": {
+          "text": "{post_title}",
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "tuqoqz"
+          ]
+        }
+      },
+      {
+        "id": "e4445e",
+        "name": "div",
+        "parent": "a77a40",
+        "children": [
+          "a0d009",
+          "3c2d72",
+          "0c2f83",
+          "ec6699",
+          "7aa416",
+          "1bd170",
+          "901920",
+          "766690"
+        ],
+        "settings": {
+          "_attributes": [
+            {
+              "id": "bcpeoi",
+              "name": "data-rating",
+              "value": "{woo_product_rating:value}"
+            },
+            {
+              "id": "vmnwan",
+              "name": "aria-label",
+              "value": "Rating: {woo_product_rating:value} out of 5 stars"
+            },
+            {
+              "id": "ctemhe",
+              "name": "role",
+              "value": "img"
+            }
+          ],
+          "_cssGlobalClasses": [
+            "hcydby"
+          ],
+          "tag": "custom",
+          "customTag": "span"
+        },
+        "label": "Product Rating Alpha"
+      },
+      {
+        "id": "a0d009",
+        "name": "icon",
+        "parent": "e4445e",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "lwaybn",
+            "tshuyw"
+          ],
+          "_attributes": [
+            {
+              "id": "puzzqd",
+              "name": "aria-hidden",
+              "value": "true"
+            }
+          ]
+        },
+        "label": "Half (Don't Delete)",
+        "themeStyles": []
+      },
+      {
+        "id": "3c2d72",
+        "name": "icon",
+        "parent": "e4445e",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ],
+          "_attributes": [
+            {
+              "id": "lmhlqg",
+              "name": "aria-hidden",
+              "value": "true"
+            }
+          ]
+        },
+        "themeStyles": [],
+        "label": "1"
+      },
+      {
+        "id": "0c2f83",
+        "name": "icon",
+        "parent": "e4445e",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ],
+          "_attributes": [
+            {
+              "id": "willma",
+              "name": "aria-hidden",
+              "value": "true"
+            }
+          ]
+        },
+        "label": "2",
+        "themeStyles": []
+      },
+      {
+        "id": "ec6699",
+        "name": "icon",
+        "parent": "e4445e",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ],
+          "_attributes": [
+            {
+              "id": "ewtdhf",
+              "name": "aria-hidden",
+              "value": "true"
+            }
+          ]
+        },
+        "label": "3",
+        "themeStyles": []
+      },
+      {
+        "id": "7aa416",
+        "name": "icon",
+        "parent": "e4445e",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ],
+          "_attributes": [
+            {
+              "id": "norfky",
+              "value": "true",
+              "name": "aria-hidden"
+            }
+          ]
+        },
+        "label": "4",
+        "themeStyles": []
+      },
+      {
+        "id": "1bd170",
+        "name": "icon",
+        "parent": "e4445e",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ],
+          "_attributes": [
+            {
+              "id": "xmpjot",
+              "name": "aria-hidden",
+              "value": "true"
+            }
+          ]
+        },
+        "label": "5",
+        "themeStyles": []
+      },
+      {
+        "id": "901920",
+        "name": "text-basic",
+        "parent": "e4445e",
+        "children": [],
+        "settings": {
+          "text": "Not yet rated",
+          "_cssGlobalClasses": [
+            "ocmxcb"
+          ],
+          "tag": "span",
+          "customTag": "span"
+        },
+        "label": "No rating text"
+      },
+      {
+        "id": "766690",
+        "name": "text-basic",
+        "parent": "e4445e",
+        "children": [],
+        "settings": {
+          "tag": "span",
+          "_cssGlobalClasses": [
+            "wlirwx"
+          ],
+          "text": "({post_comments_count})"
+        },
+        "label": "Number of Reviews"
+      },
+      {
+        "id": "dda804",
+        "name": "block",
+        "parent": "a77a40",
+        "children": [
+          "619182"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ziywgz"
+          ]
+        },
+        "label": "Price Wrapper"
+      },
+      {
+        "id": "619182",
+        "name": "text-basic",
+        "parent": "dda804",
+        "children": [],
+        "settings": {
+          "text": "{woo_product_price}",
+          "_cssGlobalClasses": [
+            "ttvdnc"
+          ]
+        },
+        "label": "Price"
+      },
+      {
+        "id": "d8dab0",
+        "name": "text-basic",
+        "parent": "a77a40",
+        "children": [],
+        "settings": {
+          "text": "{woo_product_on_sale}",
+          "_cssGlobalClasses": [
+            "oknvgj"
+          ],
+          "tag": "div"
+        },
+        "label": "Product on Sale"
+      },
+      {
+        "id": "1ac38a",
+        "name": "image",
+        "parent": "a77a40",
+        "children": [],
+        "settings": {
+          "tag": "figure",
+          "_cssGlobalClasses": [
+            "shvfvc"
+          ],
+          "image": {
+            "useDynamicData": "{featured_image}",
+            "size": "large"
+          },
+          "caption": "none"
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "ff2b42",
+        "name": "block",
+        "parent": "eebd9e",
+        "children": [
+          "8c33bc",
+          "abe9ff"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "svzfos"
+          ]
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "8c33bc",
+        "name": "product-add-to-cart",
+        "parent": "ff2b42",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "amphvw"
+          ],
+          "icon": {
+            "library": "themify",
+            "icon": "ti-shopping-cart"
+          },
+          "_attributes": [
+            {
+              "id": "hxdaws",
+              "name": "role",
+              "value": "button"
+            }
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "9aa5a4",
+        "name": "text-basic",
+        "parent": "eebd9e",
+        "children": [],
+        "settings": {
+          "text": "{do_action:woocommerce_before_shop_loop_item}"
+        },
+        "label": "Template Hook - Item"
+      },
+      {
+        "id": "bf4299",
+        "name": "text-basic",
+        "parent": "eebd9e",
+        "children": [],
+        "settings": {
+          "text": "{do_action:woocommerce_before_shop_loop_item_title}"
+        },
+        "label": "Template Hook - Item Title"
+      },
+      {
+        "id": "6a7735",
+        "name": "text-basic",
+        "parent": "a77a40",
+        "children": [],
+        "settings": {
+          "text": "{do_action:woocommerce_shop_loop_item_title}"
+        },
+        "label": "Template Hook - Loop Title"
+      },
+      {
+        "id": "0070d5",
+        "name": "text-basic",
+        "parent": "a77a40",
+        "children": [],
+        "settings": {
+          "text": "{do_action:woocommerce_after_shop_loop_item_title}"
+        },
+        "label": "Template Hook - After Loop Title"
+      },
+      {
+        "id": "abe9ff",
+        "name": "text-basic",
+        "parent": "ff2b42",
+        "children": [],
+        "settings": {
+          "text": "{do_action:woocommerce_after_shop_loop_item}"
+        },
+        "label": "Template Hook - After Shop Loop"
+      },
+      {
+        "id": "262ff0",
+        "name": "fr-notes",
+        "parent": 0,
+        "children": [],
+        "settings": {
+          "notesContent": "<h3>Template Hooks</h3><p>Don't remove the Template Hooks Elements in the Structure<br /><a href=\"https://academy.bricksbuilder.io/article/woocommerce-template-hooks/\">https://academy.bricksbuilder.io/article/woocommerce-template-hooks/</a></p>",
+          "_cssGlobalClasses": [
+            "ieofwl"
+          ]
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "ieofwl",
+        "name": "fr-note",
+        "settings": {
+          "_cssCustom": ".fr-note {\n  padding: var(--card-padding, var(--space-m));\n  border-radius: var(--card-radius, var(--radius));\n  background: var(--warning-light, #FDEBB5);\n  color: var(--warning-ultra-dark, #544002);\n  margin-inline: auto;\n}\n\n.fr-note * + :is(h2, h3, h4) {\n  margin-top: var(--heading-spacing);\n  color: var(--text-dark);\n}\n\n.fr-note a {\n  text-decoration: underline;\n}",
+          "_width": "60ch",
+          "_typography": {
+            "color": {
+              "raw": "var(--text-dark-muted)"
+            }
+          }
+        },
+        "modified": 1744306417,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "lwaybn",
+        "name": "fr-rating-alpha__icon",
+        "settings": [],
+        "modified": 1726775024,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "tshuyw",
+        "name": "fr-rating-alpha__icon-half",
+        "settings": {
+          "_order": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "amphvw",
+        "name": "fr-woo-add-to-cart-alpha",
+        "settings": {
+          "_cssCustom": ".fr-woo-add-to-cart-alpha {\n\t--button-color: \t\t\tvar(--primary);\n  --button-color-hover: var(--primary-hover);  \n  --button-text: \t\t\t\tvar(--text-light);  \n  --button-text-hover: \tvar(--text-light); \n  --cart-gap: \t\t\t\t\tvar(--grid-gap);\n}\n\n.fr-woo-add-to-cart-alpha {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n\tgap: var(--cart-gap);\n}\n\n.fr-woo-add-to-cart-alpha a:not(.added_to_cart) {\n\tbackground-color: var(--button-color)!important;\n  border-color: var(--button-color)!important;\n\tcolor: var(--button-text)!important;  \n  border-width: var(--btn-border-size)!important;\n  border-radius: var(--btn-radius)!important;\n  border-style: solid;  \n  min-width: var(--btn-width)!important;\n  line-height: var(--btn-line-height)!important;  \n  letter-spacing: var(--btn-letter-spacing)!important;\n  text-transform: var(--btn-text-transform)!important;\n  text-decoration: var(--btn-text-decoration)!important;\n\tfont-style: var(--btn-text-style)!important;\n  font-weight: var(--btn-weight)!important;\n  padding: var(--btn-pad-y) var(--btn-pad-x)!important;\n}\n.fr-woo-add-to-cart-alpha a:hover:not(.added_to_cart)  {\n\tbackground-color: var(--button-color-hover)!important;\n  border-color: var(--button-color-hover)!important;\n\tcolor: var(--button-text-hover)!important;   \n}"
+        },
+        "modified": 1726746627,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "hcydby",
+        "name": "fr-product-rating-alpha",
+        "settings": {
+          "_cssCustom": "/* RATINGS WON'T RENDER IN BUILDER */\n\n/* To change the star rating, change the value of the data attribute in the attributes tab on this element. If you want the rating to be generated dynamically, create a \"rating\" custom field for your parent element and then inject the value of that field dynamically into the data attribute value field. */\n\n.fr-product-rating-alpha {\n\t--icon-size: var(--text-m);\n  --icon-fill-color: transparent;\n  --icon-stroke-color: var(--primary);\n  --icon-fill-color-hover: transparent;  \n  --icon-stroke-color-hover: var(--primary);\n}\n\n.fr-product-rating-alpha > i:first-child,\n.fr-product-rating-alpha > svg:first-child {display: none;} /* Hide half star by default */\n\n[data-rating*=\".\"] > i:first-child,\n[data-rating*=\".\"] > svg:first-child {display: flex;} /* Show half star for decimal ratings */\n\n[data-rating*=\".0\"] > i:first-child,\n[data-rating*=\".0\"] > svg:first-child {display: none;} /* Hide half star for .0 ratings */\n\n[data-rating^=\"0\"] > i,\n[data-rating^=\"0\"] > svg {\n display: none;\n}\n\n[data-rating^=\"1\"] > i:nth-child(n+3),\n[data-rating^=\"1\"] > svg:nth-child(n+3){\n display: none;\n}\n\n[data-rating^=\"2\"] > i:nth-child(n+4),\n[data-rating^=\"2\"] > svg:nth-child(n+4){\n display: none;\n}\n\n[data-rating^=\"3\"] > i:nth-child(n+5),\n[data-rating^=\"3\"] > svg:nth-child(n+5){\n display: none;\n}\n\n[data-rating^=\"4\"] > i:nth-child(n+6),\n[data-rating^=\"4\"] > svg:nth-child(n+6){\n display: none;\n}\n\n[data-rating*=\".\"] > span.fr-product-rating-alpha__notice {\n display: none;\n}\n\n[data-rating^=\"0\"] > span.fr-product-rating-alpha__notice {\n display: flex;\n}",
+          "_display": "flex",
+          "_rowGap": ".25em",
+          "_columnGap": ".25em",
+          "_alignItems": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ocmxcb",
+        "name": "fr-product-rating-alpha__notice",
+        "settings": {
+          "_order": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wlirwx",
+        "name": "fr-product-rating-alpha__reviews-number",
+        "settings": {
+          "_order": "2"
+        },
+        "_exists": false
+      },
+      {
+        "id": "taoblw",
+        "name": "fr-product-card-alpha",
+        "settings": {
+          "_rowGap": "var(--fr-card-gap)",
+          "_position": "relative",
+          "_display": "flex",
+          "_direction": "column",
+          "_justifyContent": "space-between"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ooeina",
+        "name": "fr-product-card-alpha__body",
+        "settings": {
+          "_rowGap": "calc(var(--fr-card-gap) / 2)",
+          "_typography": {
+            "text-decoration": "none"
+          },
+          "_display": "flex",
+          "_direction": "column"
+        },
+        "_exists": false
+      },
+      {
+        "id": "tuqoqz",
+        "name": "fr-product-card-alpha__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ziywgz",
+        "name": "fr-product-card-alpha__price-wrapper",
+        "settings": {
+          "_display": "flex"
+        },
+        "modified": 1728296473,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "ttvdnc",
+        "name": "fr-product-card-alpha__price",
+        "settings": {
+          "_cssCustom": "ins {\n    text-decoration: none;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "oknvgj",
+        "name": "fr-product-card-alpha__sale-badge",
+        "settings": {
+          "_cssCustom": ".fr-product-card-alpha__sale-badge .onsale {\n\tpadding: .25em .75em;\n  background: var(--bg-dark);\n  color: var(--text-light);\n  border-radius: var(--radius);\n}",
+          "_zIndex": "1",
+          "_position": "absolute",
+          "_top": "1em",
+          "_left": "1em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "shvfvc",
+        "name": "fr-product-card-alpha__image",
+        "settings": {
+          "_order": "-1",
+          "_objectFit": "cover",
+          "_cssCustom": ".fr-product-card-alpha__image {\n\taspect-ratio: 4/3;\n}",
+          "_width": "100%",
+          "_height": "100%"
+        },
+        "modified": 1726915561,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "svzfos",
+        "name": "fr-product-card-alpha__footer",
+        "settings": {
+          "_display": "flex",
+          "_direction": "row",
+          "_columnGap": "var(--grid-gap)",
+          "_alignItems": "center",
+          "_cssCustom": ".added_to_cart {\n\tpadding: 0;\n}",
+          "_rowGap": "var(--grid-gap)",
+          "_flexWrap": "wrap"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

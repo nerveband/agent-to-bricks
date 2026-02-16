@@ -1,0 +1,323 @@
+{
+  "idx": 130,
+  "title": "Notification Alpha",
+  "elementCount": 8,
+  "classCount": 8,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "7c4c51",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "a6e6cf",
+          "1dff3d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rcialc"
+          ],
+          "_attributes": [
+            {
+              "id": "aymrza",
+              "name": "style",
+              "value": "display: none"
+            }
+          ]
+        },
+        "label": "Notification Alpha (CSS)"
+      },
+      {
+        "id": "a6e6cf",
+        "name": "container",
+        "parent": "7c4c51",
+        "children": [
+          "7447f4",
+          "4c6279"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zplikc"
+          ]
+        },
+        "label": "Container"
+      },
+      {
+        "id": "7447f4",
+        "name": "text-basic",
+        "parent": "a6e6cf",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder notification text.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "kfupma"
+          ]
+        },
+        "label": "Message"
+      },
+      {
+        "id": "4c6279",
+        "name": "div",
+        "parent": "a6e6cf",
+        "children": [
+          "5a225c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kwdtjx"
+          ]
+        },
+        "label": "Icon Link Alpha Wrapper"
+      },
+      {
+        "id": "5a225c",
+        "name": "text-link",
+        "parent": "4c6279",
+        "children": [],
+        "settings": {
+          "text": "Text link",
+          "_cssGlobalClasses": [
+            "caehza"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)",
+            "fill": {
+              "raw": "var(--icon-color)"
+            }
+          }
+        },
+        "label": "Icon Link Alpha (CSS)"
+      },
+      {
+        "id": "1dff3d",
+        "name": "div",
+        "parent": "7c4c51",
+        "children": [
+          "3ffbc3",
+          "b9c9ab"
+        ],
+        "settings": {
+          "tag": "custom",
+          "customTag": "button",
+          "_cssGlobalClasses": [
+            "ppadzg"
+          ]
+        },
+        "label": "Close Button"
+      },
+      {
+        "id": "3ffbc3",
+        "name": "icon",
+        "parent": "1dff3d",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "thyqiw"
+          ]
+        },
+        "label": "Icon"
+      },
+      {
+        "id": "b9c9ab",
+        "name": "text-basic",
+        "parent": "1dff3d",
+        "children": [],
+        "settings": {
+          "text": "Close notification",
+          "tag": "span",
+          "_cssGlobalClasses": [
+            "acss_import_hidden-accessible"
+          ]
+        },
+        "label": "Accessibility Text"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "acss_import_hidden-accessible",
+        "name": "hidden-accessible",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "kwdtjx",
+        "name": "fr-icon-link-alpha-wrapper",
+        "settings": {
+          "_display": "flex"
+        },
+        "_exists": false
+      },
+      {
+        "id": "caehza",
+        "name": "fr-icon-link-alpha",
+        "settings": {
+          "_cssCustom": ".fr-icon-link-alpha {\n  --link-color: var(--black);\n  --link-color-hover: var(--primary);\n\t--icon-size: 1em;\n  --icon-color: var(--black);\n  --icon-color-hover: var(--black);\n  --icon-gap: .25em;\n  --icon-translate-distance: .25em;\n  --icon-transition-duration: 300ms;\n  --icon-transition-function: ease-in-out;\n  \n  /* Prevent Line Breaks */\n  white-space: nowrap;\n}\n\n/* Link */\n.fr-icon-link-alpha {\n\tcolor: var(--link-color);\n  text-decoration: underline;\n  text-underline-offset: var(--link-underline-offset, .25em);\n}\n\n.fr-icon-link-alpha:hover {\n\tcolor: var(--link-color-hover);\n}\n\n/* Icon */\n.fr-icon-link-alpha .icon {\n\ttransition: translate var(--icon-transition-duration) var(--icon-transition-function);\n\tfill: var(--icon-color);\n}\n\n.fr-icon-link-alpha:hover .icon {\n\ttranslate: var(--icon-translate-distance) 0;\n  fill: var(--icon-color-hover);\n}\n\n/* Light Version */\n.fr-icon-link-alpha--light {\n  --link-color: var(--white);\n  --link-color-hover: var(--primary);\n\t--icon-size: 1em;\n  --icon-color: var(--white);\n  --icon-color-hover: var(--primary);\n}",
+          "iconPosition": "right",
+          "gap": "var(--icon-gap)"
+        },
+        "modified": 1724413262,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "rcialc",
+        "name": "fr-notification-alpha",
+        "settings": {
+          "_position": "relative",
+          "_interactions": [
+            {
+              "id": "hzoefx",
+              "trigger": "contentLoaded",
+              "action": "toggleAttribute",
+              "storageType": "sessionStorage",
+              "actionAttributeKey": "style",
+              "actionAttributeValue": "display: block",
+              "interactionConditions": [
+                {
+                  "id": "svvole",
+                  "conditionType": "localStorage",
+                  "storageKey": "show_notification_bar",
+                  "storageCompare": "notExists",
+                  "storageCompareValue": "false"
+                }
+              ],
+              "titleEditable": "Content loaded"
+            },
+            {
+              "id": "ltnfao",
+              "trigger": "contentLoaded",
+              "action": "hide",
+              "storageType": "sessionStorage",
+              "actionAttributeKey": "show_notification_bar",
+              "actionAttributeValue": "true",
+              "interactionConditions": [
+                {
+                  "id": "svvole",
+                  "conditionType": "localStorage",
+                  "storageKey": "show_notification_bar",
+                  "storageCompare": "==",
+                  "storageCompareValue": "false"
+                }
+              ]
+            }
+          ],
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "_cssCustom": ".fr-notification-alpha {\n\t--icon-size: 1.5em;\n  --icon-color: var(--neutral);\n}",
+          "_padding": {
+            "top": "var(--space-xs)",
+            "bottom": "var(--space-xs)",
+            "left": "var(--gutter)",
+            "right": "var(--gutter)"
+          },
+          "_cssTransition": "display .3s ease"
+        },
+        "_exists": false
+      },
+      {
+        "id": "zplikc",
+        "name": "fr-notification-alpha__inner",
+        "settings": {
+          "_direction": "row",
+          "_alignItems": "center",
+          "_columnGap": "calc(var(--content-gap) / 2)",
+          "_rowGap": "calc(var(--content-gap) / 2)",
+          "_flexWrap": "nowrap",
+          "_justifyContent": "center",
+          "_flexWrap:mobile_portrait": "wrap",
+          "_justifyContent:mobile_portrait": "flex-start",
+          "_padding:mobile_portrait": {
+            "right": "1em"
+          },
+          "_alignItems:mobile_landscape": "flex-start",
+          "_justifyContent:mobile_landscape": "flex-start"
+        },
+        "_exists": false
+      },
+      {
+        "id": "kfupma",
+        "name": "fr-notification-alpha__message",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ppadzg",
+        "name": "fr-notification-alpha__close",
+        "settings": {
+          "_display": "flex",
+          "_position": "absolute",
+          "_top": "50%",
+          "_right": "1em",
+          "_transform": {
+            "translateY": "-50%"
+          },
+          "_interactions": [
+            {
+              "id": "orafev",
+              "trigger": "click",
+              "action": "hide",
+              "target": "custom",
+              "targetSelector": ".fr-notification-alpha",
+              "runOnce": true
+            },
+            {
+              "id": "fmrmrc",
+              "trigger": "click",
+              "action": "storageAdd",
+              "storageType": "localStorage",
+              "actionAttributeKey": "show_notification_bar",
+              "actionAttributeValue": "false"
+            }
+          ],
+          "_transform:mobile_portrait": {
+            "translateY": "0"
+          },
+          "_top:mobile_portrait": "1em",
+          "_background": {
+            "color": {
+              "raw": "transparent"
+            }
+          },
+          "_cssCustom": ".fr-notification-alpha__close svg {\n\twidth: var(--icon-size);\n  height: var(--icon-size);\n  color: var(--icon-color);\n  fill: var(--icon-color);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "thyqiw",
+        "name": "fr-notification-alpha__close-icon",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

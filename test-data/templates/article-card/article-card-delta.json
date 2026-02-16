@@ -1,0 +1,378 @@
+{
+  "idx": 380,
+  "title": "Article Card Delta",
+  "elementCount": 11,
+  "classCount": 12,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "c6d88c",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "f93e11",
+          "4991ba"
+        ],
+        "settings": {
+          "tag": "custom",
+          "customTag": "li",
+          "_cssGlobalClasses": [
+            "xpbfod"
+          ],
+          "hasLoop": true,
+          "query": {
+            "posts_per_page": "3"
+          }
+        },
+        "label": "Article Card Delta"
+      },
+      {
+        "id": "15168f",
+        "name": "code",
+        "parent": 0,
+        "children": [],
+        "settings": {
+          "code": "<script>\n  //Go to Bricks > Settings > Builder Access and allow Code Execution for Administrator\n  //Execute this code below this field\n  // You only need one Accesibility Code for each card type. If you imported more than one Article Section Delta, remove extra accessibility code. \n  \n  // INSERT BELOWE THE ARTICLE CARDS LIST\n  const deltaCards = document.querySelectorAll('.fr-article-card-delta')\n\ndeltaCards.forEach(card => {\n\t\n\tconst link = card.querySelector('.fr-article-card-delta__title a');\n\tconst bodyCard = card.querySelector('.fr-article-card-delta__body');\n\n\tlink.addEventListener('focus', () => {\n\t  bodyCard.classList.add('fr-article-card-delta--visible');\n\t});\n\n\tlink.addEventListener('blur', () => {\n\t  bodyCard.classList.remove('fr-article-card-delta--visible');\n\t});\n\n});\n</script>",
+          "_cssGlobalClasses": [
+            "cvvhls"
+          ],
+          "executeCode": true,
+          "user_id": 2,
+          "time": 1762444265
+        },
+        "label": "Accessibility Code (Below)"
+      },
+      {
+        "id": "f93e11",
+        "name": "div",
+        "parent": "c6d88c",
+        "children": [
+          "c23757",
+          "34c43b",
+          "643d85"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "efphkz"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "c23757",
+        "name": "heading",
+        "parent": "f93e11",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jajwat",
+            "acss_import_clickable-parent"
+          ],
+          "link": {
+            "type": "meta",
+            "useDynamicData": "{post_url}"
+          },
+          "text": "{post_title:10}"
+        }
+      },
+      {
+        "id": "34c43b",
+        "name": "text-basic",
+        "parent": "f93e11",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ygdepk"
+          ],
+          "text": "{post_excerpt:20}",
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "643d85",
+        "name": "div",
+        "parent": "f93e11",
+        "children": [
+          "ad4172"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cjyhua"
+          ],
+          "tag": "custom",
+          "customTag": "footer"
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "ad4172",
+        "name": "div",
+        "parent": "643d85",
+        "children": [
+          "c133ac",
+          "2ac147"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "uolsrd"
+          ],
+          "tag": "custom",
+          "customTag": "p"
+        },
+        "label": "Info Paragraph"
+      },
+      {
+        "id": "c133ac",
+        "name": "text-basic",
+        "parent": "ad4172",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qetpja"
+          ],
+          "tag": "custom",
+          "customTag": "time",
+          "_attributes": [
+            {
+              "id": "dwfctn",
+              "name": "datetime",
+              "value": "{post_date}"
+            }
+          ],
+          "text": "{post_date}"
+        },
+        "label": "Date"
+      },
+      {
+        "id": "2ac147",
+        "name": "text-basic",
+        "parent": "ad4172",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tjruiq"
+          ],
+          "tag": "custom",
+          "customTag": "span",
+          "text": "{author_name}"
+        },
+        "label": "Author"
+      },
+      {
+        "id": "4991ba",
+        "name": "div",
+        "parent": "c6d88c",
+        "children": [
+          "94904b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ivpknk"
+          ]
+        },
+        "label": "Image Wrapper"
+      },
+      {
+        "id": "94904b",
+        "name": "image",
+        "parent": "4991ba",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kxaucn"
+          ],
+          "caption": "none",
+          "image": {
+            "useDynamicData": "{featured_image}",
+            "size": "large"
+          },
+          "tag": "figure"
+        },
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "acss_import_clickable-parent",
+        "name": "clickable-parent",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "ivpknk",
+        "name": "fr-article-card-delta__image-wrapper",
+        "settings": {
+          "_height": "100%",
+          "_position": "static"
+        },
+        "_exists": false
+      },
+      {
+        "id": "kxaucn",
+        "name": "fr-article-card-delta__image",
+        "settings": {
+          "_height": "100%",
+          "_objectFit": "cover",
+          "_heightMin": "25em",
+          "_width": "100%",
+          "_position": "static"
+        },
+        "_exists": false
+      },
+      {
+        "id": "cvvhls",
+        "name": "fr-article-card-delta__accessibility-code",
+        "settings": {
+          "_cssCustom": "/*Focus Active Class*/\n.fr-article-card-delta--visible {\n    opacity: 1!important;\n    transform: translateX(0px)!important;\n}\n\n\n/*Show Body inside builder*/\n.brx-body.iframe.mounted .fr-article-card-delta__body {\n\topacity: 1;\n  transform: translateX(0px);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "xpbfod",
+        "name": "fr-article-card-delta",
+        "settings": {
+          "_opacity:hover .fr-article-card-delta__body": "1",
+          "_transform:hover .fr-article-card-delta__body": {
+            "translateY": "0px"
+          },
+          "_overflow": "hidden",
+          "_position": "relative",
+          "_cssCustom": ".fr-article-card-delta:hover .fr-article-card-delta__body{\n\topacity: 1;\n  transform: translateX(0px);\n}",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "efphkz",
+        "name": "fr-article-card-delta__body",
+        "settings": {
+          "_padding": {
+            "top": "var(--fr-card-padding)",
+            "right": "var(--fr-card-padding)",
+            "bottom": "var(--fr-card-padding)",
+            "left": "var(--fr-card-padding)"
+          },
+          "_zIndex": "1",
+          "_bottom": "0",
+          "_left": "0",
+          "_display": "flex",
+          "_direction": "column",
+          "_justifyContent": "flex-end",
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          },
+          "_rowGap": "var(--fr-card-gap)",
+          "_gradient": {
+            "applyTo": "background",
+            "colors": [
+              {
+                "id": "zqmgmk",
+                "color": {
+                  "hex": "#ff0000",
+                  "rgb": "rgba(255, 0, 0, 0)",
+                  "hsl": "hsla(0, 100%, 50%, 0)"
+                }
+              },
+              {
+                "id": "qbujdx",
+                "color": {
+                  "raw": "var(--neutral-ultra-dark-trans-80)"
+                }
+              }
+            ]
+          },
+          "_cssTransition": ".2s ease-in-out",
+          "_transform": {
+            "translateY": "1em"
+          },
+          "_width": "100%",
+          "_position": "absolute",
+          "_opacity": "0",
+          "_flexGrow": "1",
+          "_height": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "jajwat",
+        "name": "fr-article-card-delta__title",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          }
+        },
+        "modified": 1748382537,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "ygdepk",
+        "name": "fr-article-card-delta__lede",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light-muted)"
+            }
+          }
+        },
+        "modified": 1748382537,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "cjyhua",
+        "name": "fr-article-card-delta__footer",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "uolsrd",
+        "name": "fr-article-card-delta__info-paragraph",
+        "settings": {
+          "_rowGap": "var(--fr-card-gap)",
+          "_display": "flex",
+          "_direction": "row",
+          "_columnGap": "var(--fr-card-gap)",
+          "_flexWrap": "wrap",
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light-muted)"
+            }
+          }
+        },
+        "modified": 1748382537,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "qetpja",
+        "name": "fr-article-card-delta__date",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "tjruiq",
+        "name": "fr-article-card-delta__author-name",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

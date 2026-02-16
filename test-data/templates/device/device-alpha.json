@@ -1,0 +1,234 @@
+{
+  "idx": 176,
+  "title": "Device Alpha",
+  "elementCount": 7,
+  "classCount": 5,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "c24a20",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "b2bcbe",
+          "3f2c57"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hnlojt"
+          ],
+          "_boxShadow": {
+            "values": {
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "80",
+              "spread": "-40"
+            },
+            "color": {
+              "id": "acss_import_base-ultra-dark-trans-40",
+              "name": "base-ultra-dark-trans-40",
+              "raw": "var(--base-ultra-dark-trans-40)"
+            }
+          }
+        },
+        "label": "Device Alpha"
+      },
+      {
+        "id": "b2bcbe",
+        "name": "div",
+        "parent": "c24a20",
+        "children": [
+          "b922eb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "slxfvt"
+          ]
+        },
+        "label": "Browser Top"
+      },
+      {
+        "id": "b922eb",
+        "name": "div",
+        "parent": "b2bcbe",
+        "children": [
+          "48cd8b",
+          "13b6a1",
+          "db3594"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gcnjzb"
+          ]
+        },
+        "label": "Dots Wrapper"
+      },
+      {
+        "id": "48cd8b",
+        "name": "div",
+        "parent": "b922eb",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ohksiw"
+          ]
+        },
+        "label": "Dot"
+      },
+      {
+        "id": "3f2c57",
+        "name": "image",
+        "parent": "c24a20",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iarwef"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Media"
+      },
+      {
+        "id": "db3594",
+        "name": "div",
+        "parent": "b922eb",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ohksiw"
+          ]
+        },
+        "label": "Dot"
+      },
+      {
+        "id": "13b6a1",
+        "name": "div",
+        "parent": "b922eb",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ohksiw"
+          ]
+        },
+        "label": "Dot"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "hnlojt",
+        "name": "fr-device-alpha",
+        "settings": {
+          "_width": "var(--width-xxl)",
+          "_background": {
+            "color": {
+              "raw": "var(--white)",
+              "id": "ovygha",
+              "name": "Color #6"
+            }
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius-s)",
+              "right": "var(--radius-s)"
+            },
+            "width": {
+              "right": "3",
+              "left": "3",
+              "bottom": "3"
+            },
+            "style": "solid",
+            "color": {
+              "raw": "var(--neutral-light)"
+            }
+          },
+          "_overflow": "hidden",
+          "_direction": "column",
+          "_flexWrap:mobile_landscape": "nowrap",
+          "_flexWrap": "nowrap",
+          "_position": "relative"
+        },
+        "_exists": false
+      },
+      {
+        "id": "slxfvt",
+        "name": "fr-device-alpha__top",
+        "settings": {
+          "_display": "flex",
+          "_alignItems": "center",
+          "_columnGap": "var(--content-gap)",
+          "_width": "100%",
+          "_height": "4rem",
+          "_background": {
+            "color": {
+              "raw": "var(--neutral-light)"
+            }
+          },
+          "_padding": {
+            "left": "1em",
+            "right": "1em",
+            "top": ".5em",
+            "bottom": ".5em"
+          },
+          "_justifyContent": "space-between"
+        },
+        "_exists": false
+      },
+      {
+        "id": "gcnjzb",
+        "name": "fr-device-alpha__dots-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_direction": "row",
+          "_alignItems": "center",
+          "_rowGap": ".25em",
+          "_columnGap": ".25em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ohksiw",
+        "name": "fr-device-alpha__dot",
+        "settings": {
+          "_width": "14px",
+          "_height": "14px",
+          "_background": {
+            "color": {
+              "id": "acss_import_base-ultra-dark-trans-10",
+              "name": "base-ultra-dark-trans-10",
+              "raw": "var(--base-ultra-dark-trans-10)"
+            }
+          },
+          "_border": {
+            "radius": {
+              "top": "50%",
+              "right": "50%",
+              "bottom": "50%",
+              "left": "50%"
+            }
+          },
+          "_cssCustom": ".fr-device-alpha__dot {\n\tmin-width: 0;\n  min-height: 0;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "iarwef",
+        "name": "fr-device-alpha__media",
+        "settings": {
+          "_objectFit": "cover"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

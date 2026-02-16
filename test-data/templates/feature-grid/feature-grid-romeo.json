@@ -1,0 +1,762 @@
+{
+  "idx": 152,
+  "title": "Feature Grid Romeo",
+  "elementCount": 35,
+  "classCount": 16,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "594642",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "ad7805",
+          "f5255f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lxykxh"
+          ]
+        },
+        "label": "Feature Grid Romeo"
+      },
+      {
+        "id": "ad7805",
+        "name": "block",
+        "parent": "594642",
+        "children": [
+          "f0bd72",
+          "7aa6a6",
+          "5b9e74",
+          "2b933f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sxzqip"
+          ]
+        },
+        "label": "Content"
+      },
+      {
+        "id": "f0bd72",
+        "name": "heading",
+        "parent": "ad7805",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder headline, we will replace it with real copy soon",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "qdqsly"
+          ]
+        }
+      },
+      {
+        "id": "7aa6a6",
+        "name": "text-basic",
+        "parent": "ad7805",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "eeigpq"
+          ]
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "5b9e74",
+        "name": "text-basic",
+        "parent": "ad7805",
+        "children": [],
+        "settings": {
+          "text": "If you\u2019re curious, this is Website Ipsum. It was specifically developed for the use on development websites.",
+          "_cssGlobalClasses": [
+            "kwwwsw"
+          ],
+          "_typography": [],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "2b933f",
+        "name": "button",
+        "parent": "ad7805",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "CTA"
+      },
+      {
+        "id": "f5255f",
+        "name": "block",
+        "parent": "594642",
+        "children": [
+          "ab6445",
+          "8d4fd8",
+          "84048b",
+          "b3bcf2"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "unxxkr"
+          ]
+        },
+        "label": "Feature Romeo"
+      },
+      {
+        "id": "ab6445",
+        "name": "block",
+        "parent": "f5255f",
+        "children": [
+          "b7be24",
+          "741f21",
+          "5cbf0e",
+          "72a8c7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ddxkez"
+          ]
+        },
+        "label": "Feature Card Romeo (CSS)"
+      },
+      {
+        "id": "b7be24",
+        "name": "image",
+        "parent": "ab6445",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "lvkpwc"
+          ],
+          "loading": "eager",
+          "caption": "none"
+        },
+        "label": "Media"
+      },
+      {
+        "id": "741f21",
+        "name": "div",
+        "parent": "ab6445",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lqnmld"
+          ]
+        },
+        "label": "Overlay"
+      },
+      {
+        "id": "5cbf0e",
+        "name": "text-basic",
+        "parent": "ab6445",
+        "children": [],
+        "settings": {
+          "text": "Card heading",
+          "_cssGlobalClasses": [
+            "lxpkfh"
+          ],
+          "tag": "span"
+        },
+        "label": "Vertical Heading"
+      },
+      {
+        "id": "72a8c7",
+        "name": "div",
+        "parent": "ab6445",
+        "children": [
+          "eddacb",
+          "025cf5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wcjvwu"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "eddacb",
+        "name": "heading",
+        "parent": "72a8c7",
+        "children": [],
+        "settings": {
+          "text": "Card heading",
+          "_cssGlobalClasses": [
+            "szjynu",
+            "acss_import_clickable-parent"
+          ],
+          "tag": "h3",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "025cf5",
+        "name": "text-basic",
+        "parent": "72a8c7",
+        "children": [],
+        "settings": {
+          "text": "A description of the service or features goes here.",
+          "_cssGlobalClasses": [
+            "jwqlze"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "8d4fd8",
+        "name": "block",
+        "parent": "f5255f",
+        "children": [
+          "930da1",
+          "9959cd",
+          "4f42a2",
+          "a38c7b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ddxkez"
+          ]
+        },
+        "label": "Feature Card Romeo (CSS)"
+      },
+      {
+        "id": "930da1",
+        "name": "image",
+        "parent": "8d4fd8",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "lvkpwc"
+          ],
+          "loading": "eager",
+          "caption": "none"
+        },
+        "label": "Media"
+      },
+      {
+        "id": "9959cd",
+        "name": "div",
+        "parent": "8d4fd8",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lqnmld"
+          ]
+        },
+        "label": "Overlay"
+      },
+      {
+        "id": "4f42a2",
+        "name": "text-basic",
+        "parent": "8d4fd8",
+        "children": [],
+        "settings": {
+          "text": "Card heading",
+          "_cssGlobalClasses": [
+            "lxpkfh"
+          ],
+          "tag": "span"
+        },
+        "label": "Vertical Heading"
+      },
+      {
+        "id": "a38c7b",
+        "name": "div",
+        "parent": "8d4fd8",
+        "children": [
+          "991cb5",
+          "f32ce6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wcjvwu"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "991cb5",
+        "name": "heading",
+        "parent": "a38c7b",
+        "children": [],
+        "settings": {
+          "text": "Card heading",
+          "_cssGlobalClasses": [
+            "szjynu"
+          ],
+          "tag": "h3",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "f32ce6",
+        "name": "text-basic",
+        "parent": "a38c7b",
+        "children": [],
+        "settings": {
+          "text": "A description of the service or features goes here.",
+          "_cssGlobalClasses": [
+            "jwqlze"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "84048b",
+        "name": "block",
+        "parent": "f5255f",
+        "children": [
+          "7d8a24",
+          "9998df",
+          "6b6666",
+          "99926b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ddxkez"
+          ]
+        },
+        "label": "Feature Card Romeo (CSS)"
+      },
+      {
+        "id": "7d8a24",
+        "name": "image",
+        "parent": "84048b",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "lvkpwc"
+          ],
+          "loading": "eager",
+          "caption": "none"
+        },
+        "label": "Media"
+      },
+      {
+        "id": "9998df",
+        "name": "div",
+        "parent": "84048b",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lqnmld"
+          ]
+        },
+        "label": "Overlay"
+      },
+      {
+        "id": "6b6666",
+        "name": "text-basic",
+        "parent": "84048b",
+        "children": [],
+        "settings": {
+          "text": "Card heading",
+          "_cssGlobalClasses": [
+            "lxpkfh"
+          ],
+          "tag": "span"
+        },
+        "label": "Vertical Heading"
+      },
+      {
+        "id": "99926b",
+        "name": "div",
+        "parent": "84048b",
+        "children": [
+          "075613",
+          "4c93f0"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wcjvwu"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "075613",
+        "name": "heading",
+        "parent": "99926b",
+        "children": [],
+        "settings": {
+          "text": "Card heading",
+          "_cssGlobalClasses": [
+            "szjynu"
+          ],
+          "tag": "h3",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "4c93f0",
+        "name": "text-basic",
+        "parent": "99926b",
+        "children": [],
+        "settings": {
+          "text": "A description of the service or features goes here.",
+          "_cssGlobalClasses": [
+            "jwqlze"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "b3bcf2",
+        "name": "block",
+        "parent": "f5255f",
+        "children": [
+          "3b0d94",
+          "cc364e",
+          "7140d7",
+          "d204a7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ddxkez"
+          ]
+        },
+        "label": "Feature Card Romeo (CSS)"
+      },
+      {
+        "id": "3b0d94",
+        "name": "image",
+        "parent": "b3bcf2",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "lvkpwc"
+          ],
+          "loading": "eager",
+          "caption": "none"
+        },
+        "label": "Media"
+      },
+      {
+        "id": "cc364e",
+        "name": "div",
+        "parent": "b3bcf2",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lqnmld"
+          ]
+        },
+        "label": "Overlay"
+      },
+      {
+        "id": "7140d7",
+        "name": "text-basic",
+        "parent": "b3bcf2",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lxpkfh"
+          ],
+          "tag": "span",
+          "text": "Card heading"
+        },
+        "label": "Vertical Heading"
+      },
+      {
+        "id": "d204a7",
+        "name": "div",
+        "parent": "b3bcf2",
+        "children": [
+          "b4b621",
+          "3df892"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wcjvwu"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "b4b621",
+        "name": "heading",
+        "parent": "d204a7",
+        "children": [],
+        "settings": {
+          "text": "Card heading",
+          "_cssGlobalClasses": [
+            "szjynu"
+          ],
+          "tag": "h3",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "3df892",
+        "name": "text-basic",
+        "parent": "d204a7",
+        "children": [],
+        "settings": {
+          "text": "A description of the service or features goes here.",
+          "_cssGlobalClasses": [
+            "jwqlze"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "acss_import_clickable-parent",
+        "name": "clickable-parent",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "lxykxh",
+        "name": "fr-feature-grid-romeo",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-1-2)",
+          "_gridGap": "calc(var(--grid-gap) * 1)",
+          "_alignItemsGrid": "stretch",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)",
+          "_gridTemplateRows": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "sxzqip",
+        "name": "fr-feature-grid-romeo__content",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_justifyContent": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "unxxkr",
+        "name": "fr-feature-romeo",
+        "settings": {
+          "_direction": "row",
+          "_flexWrap": "nowrap",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_overflow": "hidden",
+          "_direction:mobile_landscape": "column",
+          "_rowGap:mobile_landscape": "var(--grid-gap)",
+          "_padding": {
+            "left": "0"
+          },
+          "_columnGap": "0"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ddxkez",
+        "name": "fr-feature-card-romeo",
+        "settings": {
+          "_cssCustom": ".fr-feature-card-romeo {\n  --card-width-collapsed: 20%;\n  --card-padding: var(--space-m);\n  --card-min-height: 24em;\n  --card-content-width: 24ch;\n  --transition-duration: .3s;\n  --transition-function: ease-in-out;\n  --overlay-color: var(--black-trans-50);\n  --overlay-color-hover: var(--black-trans-40);\n}\n\n/* Card */\n\n.fr-feature-card-romeo {\n  flex-basis: var(--card-width-collapsed);\n  transition: flex-basis var(--transition-duration) var(--transition-function);\n  min-height: var(--card-min-height);\n  isolation: isolate;\n  position: relative;\n  overflow: hidden;\n  height: 100%;\n}\n\n.fr-feature-card-romeo.is-hover,\n.fr-feature-card-romeo:focus-within {\n\tflex-basis: 100%;\n  cursor: pointer;\n}\n\n.fr-feature-card-romeo:focus-within :focus {\n\toutline: 0;\n  box-shadow: none;\n}\n\n@media (max-width: 767px) {\n  .fr-feature-card-romeo {\n  \tborder-radius: var(--radius);\n  }\n}\n\n/* Heading & Lede */\n\n@media (min-width: 767px) {\n  \n  .fr-feature-card-romeo__heading {\n    \n    /* Warning: Transforming or animating the heading \n    will break clickable parent. Don't attempt\n    to animate the heading */\n    \n    display: flex;\n    align-items: center;\n    width: var(--card-content-width);\n    max-width: var(--card-content-width);\n    opacity: 0;\n  }\n\n  .fr-feature-card-romeo__lede {\n    width: var(--card-content-width);\n    max-width: var(--card-content-width);\n    opacity: 0;\n    translate: 0% 200%;\n    transition: \n      opacity var(--transition-duration) var(--transition-function),\n      translate var(--transition-duration) var(--transition-function);\n  }\n\n  .fr-feature-card-romeo__heading::before {\n    content: '\u203a';\n    order: 1;\n    margin-left: .25em;\n  }\n\n  .fr-feature-card-romeo.is-hover .fr-feature-card-romeo__heading,\n  .fr-feature-card-romeo:focus-within .fr-feature-card-romeo__heading {\n    opacity: 1;\n  }\n\n  .fr-feature-card-romeo.is-hover .fr-feature-card-romeo__lede,\n  .fr-feature-card-romeo:focus-within .fr-feature-card-romeo__lede {\n    translate: 0% 0%;\n    opacity: 1;\n  }\n\n}\n\n/* Media */\n\n.fr-feature-card-romeo__media,\n.fr-feature-card-romeo__media img {\n  --radius: 0;\n\tposition: absolute;\n  height: 100%;\n  width: 100%;\n  z-index: -1;\n  min-width: 100%;\n  min-height: 100%;\n}\n\n/* Overlay */\n\n.fr-feature-card-romeo__overlay{\n\topacity: 1;\n  transition: opacity var(--transition-duration) var(--transition-function);\n}\n\n.fr-feature-card-romeo.is-hover .fr-feature-card-romeo__overlay,\n.fr-feature-card-romeo:focus-within .fr-feature-card-romeo__overlay {\n\topacity: 0;\n}\n\n\n/* Inner Content */\n\n.fr-feature-card-romeo__inner {\n  position: absolute;\n  background-image: linear-gradient(180deg, transparent 40%, var(--overlay-color-hover));\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  z-index: 1;\n  padding: var(--card-padding);\n  justify-content: flex-end;\n  align-items: flex-start;\n  gap: calc(var(--content-gap) / 2);\n  transition: opacity var(--transition-duration) var(--transition-function);\n}\n\n.fr-feature-card-romeo:focus-within .fr-feature-card-romeo__inner,\n.fr-feature-card-romeo.is-hover .fr-feature-card-romeo__inner {\n\topacity: 1;\n}\n\n@media (min-width: 767px) {\n  .fr-feature-card-romeo__inner {\n  \topacity: 0;\n  }\n}\n\n/* Vertical Heading */\n\n\n.fr-feature-card-romeo__heading--vert {\n  writing-mode: vertical-lr;\n  text-orientation: mixed;\n  white-space: nowrap;\n  rotate: 180deg;\n}\n\n.fr-feature-card-romeo__heading--vert {\n  position: absolute;\n  inset-block-start: var(--card-padding);\n  inset-inline-end: var(--card-padding);\n  translate: 0% 0%;\n  line-height: 1;\n  opacity: 1;\n  transition: \n    opacity var(--transition-duration) var(--transition-function),\n    translate var(--transition-duration) var(--transition-function);\n}\n\n.fr-feature-card-romeo:focus-within .fr-feature-card-romeo__heading--vert,\n.fr-feature-card-romeo.is-hover .fr-feature-card-romeo__heading--vert {\n  opacity: 0;\n  translate: -500% 0%;\n}\n\n\n/* Hide Elements on Mobile */\n\n@media (max-width: 767px) {\n  .fr-feature-card-romeo__overlay,\n  .fr-feature-card-romeo__heading--vert {\n  \tdisplay: none;\n  }\n}",
+          "_direction": "column",
+          "_flexGrow": "1",
+          "_interactions": [
+            {
+              "id": "hnhofk",
+              "trigger": "mouseenter",
+              "action": "setAttribute",
+              "actionAttributeKey": "class",
+              "actionAttributeValue": "is-hover"
+            },
+            {
+              "id": "nafkin",
+              "trigger": "mouseleave",
+              "action": "removeAttribute",
+              "actionAttributeKey": "class",
+              "actionAttributeValue": "is-hover"
+            }
+          ]
+        },
+        "modified": 1739117038,
+        "user_id": 26,
+        "_exists": false
+      },
+      {
+        "id": "lqnmld",
+        "name": "fr-feature-card-romeo__overlay",
+        "settings": {
+          "_background": {
+            "color": {
+              "raw": "var(--overlay-color)"
+            }
+          },
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_position": "absolute",
+          "_zIndex": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wcjvwu",
+        "name": "fr-feature-card-romeo__inner",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "szjynu",
+        "name": "fr-feature-card-romeo__heading",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--white)"
+            }
+          },
+          "_zIndex": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "jwqlze",
+        "name": "fr-feature-card-romeo__lede",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--white)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "lvkpwc",
+        "name": "fr-feature-card-romeo__media",
+        "settings": {
+          "_objectFit": "cover"
+        },
+        "_exists": false
+      },
+      {
+        "id": "lxpkfh",
+        "name": "fr-feature-card-romeo__heading--vert",
+        "settings": {
+          "_typography": {
+            "font-weight": "600",
+            "font-size": "var(--h3)",
+            "color": {
+              "raw": "var(--white)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "qdqsly",
+        "name": "fr-feature-grid-romeo__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "kwwwsw",
+        "name": "fr-feature-grid-romeo__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "eeigpq",
+        "name": "fr-feature-grid-romeo__accent-heading",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

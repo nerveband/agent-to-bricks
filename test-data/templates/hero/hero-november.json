@@ -1,0 +1,224 @@
+{
+  "idx": 342,
+  "title": "Hero November",
+  "elementCount": 7,
+  "classCount": 7,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "ed84ce",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "b0b077"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gymizp"
+          ]
+        },
+        "label": "Hero November"
+      },
+      {
+        "id": "b0b077",
+        "name": "container",
+        "parent": "ed84ce",
+        "children": [
+          "4af5ee",
+          "b3cdbc"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cmdqbr"
+          ]
+        },
+        "label": "Inner (CSS)"
+      },
+      {
+        "id": "4af5ee",
+        "name": "div",
+        "parent": "b0b077",
+        "children": [
+          "afb2b2",
+          "84978d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "bgkkxl"
+          ]
+        },
+        "label": "Content"
+      },
+      {
+        "id": "afb2b2",
+        "name": "heading",
+        "parent": "4af5ee",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder headline designed to overlap the main image",
+          "_cssGlobalClasses": [
+            "ugzlon"
+          ],
+          "tag": "h1"
+        }
+      },
+      {
+        "id": "84978d",
+        "name": "text-basic",
+        "parent": "4af5ee",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "_cssGlobalClasses": [
+            "vjafkh"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "b3cdbc",
+        "name": "div",
+        "parent": "b0b077",
+        "children": [
+          "37bf83"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "bbkexf"
+          ]
+        },
+        "label": "Media"
+      },
+      {
+        "id": "37bf83",
+        "name": "image",
+        "parent": "b3cdbc",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "nmppxf"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "loading": "eager"
+        },
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "gymizp",
+        "name": "fr-hero-november",
+        "settings": {
+          "_padding": {
+            "top": "0",
+            "bottom": "0"
+          },
+          "_overflow": "hidden",
+          "_cssCustom": ".fr-hero-november {\n\tisolation: isolate;\n}",
+          "_background": {
+            "color": {
+              "raw": "var(--base-ultra-light)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "cmdqbr",
+        "name": "fr-hero-november__inner",
+        "settings": {
+          "_rowGap:tablet_portrait": "0px",
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-12)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)",
+          "_cssCustom": ".fr-hero-november__inner {\n  --grid-span: 3; /* Width of Features Column */  \n  --image-aspect-ratio: 6/4;\n}\n\n@media (min-width: 768px) {\n\n  .fr-hero-november__inner .fr-hero-november__media-wrapper {\n    grid-column: span calc(12 - var(--grid-span));    \n  }\n  .fr-hero-november__inner .fr-hero-november__content {\n    grid-column: span var(--grid-span);    \n  }  \n\n  .fr-hero-november__inner .fr-hero-november__media {\n    min-width: calc(50vw - (var(--grid-span) - 6) * (var(--content-width) / 12));\n  }\n\n}",
+          "_alignItemsGrid": "center"
+        },
+        "modified": 1742233593,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "bgkkxl",
+        "name": "fr-hero-november__content",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "var(--content-gap)",
+          "_padding": {
+            "top": "var(--fr-hero-padding)",
+            "bottom": "var(--fr-hero-padding)"
+          },
+          "_position": "relative",
+          "_padding:tablet_portrait": {
+            "top": "var(--section-space-m)",
+            "bottom": "var(--section-space-m)"
+          },
+          "_gridItemColumnSpan:tablet_portrait": "span 1 / auto",
+          "_justifyContent": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ugzlon",
+        "name": "fr-hero-november__heading",
+        "settings": {
+          "_widthMin": "var(--width-m)",
+          "_widthMin:tablet_portrait": "initial"
+        },
+        "_exists": false
+      },
+      {
+        "id": "vjafkh",
+        "name": "fr-hero-november__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "bbkexf",
+        "name": "fr-hero-november__media-wrapper",
+        "settings": {
+          "_width:tablet_portrait": "100vw",
+          "_widthMax:tablet_portrait": "100vw",
+          "_transform:tablet_portrait": {
+            "translateX": "calc(var(--gutter)*-1)"
+          },
+          "_order:tablet_portrait": "-1",
+          "_zIndex": "-1",
+          "_flexGrow": "1",
+          "_heightMin:tablet_portrait": "0",
+          "_gridItemColumnSpan:tablet_portrait": "span 1 / auto"
+        },
+        "_exists": false
+      },
+      {
+        "id": "nmppxf",
+        "name": "fr-hero-november__media",
+        "settings": {
+          "_width": "100%",
+          "_objectFit": "cover",
+          "_cssCustom:tablet_portrait": ".fr-hero-november__media {\n\taspect-ratio: initial;\n}",
+          "_height": "100%",
+          "_position:tablet_portrait": "relative",
+          "_height:tablet_portrait": "auto",
+          "_cssCustom": ".fr-hero-november__media {\n\taspect-ratio: var(--image-aspect-ratio);\n}"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

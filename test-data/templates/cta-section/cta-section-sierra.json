@@ -1,0 +1,251 @@
+{
+  "idx": 71,
+  "title": "CTA Section Sierra",
+  "elementCount": 7,
+  "classCount": 8,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "85c1ae",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "264446"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "evceoo"
+          ]
+        },
+        "label": "CTA Section Sierra"
+      },
+      {
+        "id": "264446",
+        "name": "container",
+        "parent": "85c1ae",
+        "children": [
+          "c3b565",
+          "089882"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "w64zay"
+          ]
+        },
+        "label": "CTA Card Sierra (CSS)"
+      },
+      {
+        "id": "c3b565",
+        "name": "block",
+        "parent": "264446",
+        "children": [
+          "179460",
+          "0bf692",
+          "067d56"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "e2hlcf"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "089882",
+        "name": "image",
+        "parent": "264446",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "7h8fn5"
+          ]
+        },
+        "label": "Media",
+        "themeStyles": []
+      },
+      {
+        "id": "179460",
+        "name": "heading",
+        "parent": "c3b565",
+        "children": [],
+        "settings": {
+          "text": "A bold, action-oriented headline goes here.",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "oibks4"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "0bf692",
+        "name": "text",
+        "parent": "c3b565",
+        "children": [],
+        "settings": {
+          "text": "<p>This frame is designed to be used with a \"cutout\" style image with a transparent background (webp is best). For best results, make sure the image is cropped as closely to the subject as possible, both horizontally and vertically.</p><p>Traditionally our industry has used Lorem Ipsum, which is placeholder text written in Latin. Unfortunately, not everyone is familiar with Lorem Ipsum and that can lead to confusion. I can\u2019t tell you how many times clients have asked me why their website is in another language!</p>",
+          "_cssGlobalClasses": [
+            "usule5"
+          ]
+        },
+        "label": "Text"
+      },
+      {
+        "id": "067d56",
+        "name": "text-link",
+        "parent": "c3b565",
+        "children": [],
+        "settings": {
+          "text": "Text link",
+          "_cssGlobalClasses": [
+            "caehza",
+            "4lzeta"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)",
+            "fill": {
+              "raw": "var(--icon-color)"
+            }
+          }
+        },
+        "label": "Link",
+        "cid": "6533f7"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "evceoo",
+        "name": "cta-section-sierra",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "w64zay",
+        "name": "cta-card-sierra",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_flexWrap": "nowrap",
+          "_background": {
+            "color": {
+              "raw": "var(--bg-ultra-light)"
+            }
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_position": "relative",
+          "_padding": {
+            "top": "var(--card-padding)",
+            "right": "var(--card-padding)",
+            "bottom": "var(--card-padding)",
+            "left": "var(--card-padding)"
+          },
+          "_cssCustom": ".cta-card-sierra {\n  border: var(--border);\n}\n\n/* Desktop Styles\nChange min-width value to suitable stacking point based\non your particular image.\n*/\n@media (min-width: 1235px) {\n  .cta-card-sierra.cta-card-sierra {\n    --card-padding: var(--space-xxl);\n    --text-width: 36ch;\n    --content-gap: var(--space-l);\n    --overlap: calc(var(--section-space-m) / 1.5);\n  \tdisplay: flex;\n    flex-direction: row;\n  }\n  .cta-card-sierra__media.cta-card-sierra__media {\n  \tposition: absolute;\n    inset-block-end: 0;\n    inset-inline-end: calc(var(--card-padding) / 2);\n    inline-size: calc(100% - var(--content-gap) - (var(--text-width) + var(--card-padding) * 2));\n    max-block-size: calc(100% + var(--overlap));\n  }\n  .cta-card-sierra__content-wrapper.cta-card-sierra__content-wrapper {\n    margin-bottom: 0;\n   }\n}\n\n/* Mobile */\n.cta-card-sierra {\n\t--card-padding: var(--space-l);\n\t--text-width: 100%;\n}"
+        },
+        "modified": 1721426100,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "e2hlcf",
+        "name": "cta-card-sierra__content-wrapper",
+        "settings": {
+          "_width": "var(--text-width)",
+          "_rowGap": "calc(var(--content-gap) / 2)"
+        },
+        "modified": 1721425643,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "7h8fn5",
+        "name": "cta-card-sierra__media",
+        "settings": {
+          "_objectFit": "cover",
+          "_objectPosition": "50% 0%",
+          "_position": "relative",
+          "_width": "100%",
+          "_bottom": "calc(var(--card-padding) * -1)",
+          "_heightMax": "auto",
+          "_aspectRatio": "9/16",
+          "_border": {
+            "radius": {
+              "top": "0",
+              "right": "0",
+              "bottom": "0",
+              "left": "0"
+            }
+          }
+        },
+        "modified": 1721425930,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "oibks4",
+        "name": "cta-card-sierra__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "usule5",
+        "name": "cta-card-sierra__text",
+        "settings": {
+          "_margin": {
+            "bottom": "var(--content-gap)"
+          }
+        },
+        "modified": 1721425643,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "caehza",
+        "name": "fr-icon-link-alpha",
+        "settings": {
+          "_cssCustom": ".fr-icon-link-alpha {\n  --link-color: var(--black);\n  --link-color-hover: var(--primary);\n\t--icon-size: 1em;\n  --icon-color: var(--black);\n  --icon-color-hover: var(--black);\n  --icon-gap: .25em;\n  --icon-translate-distance: .25em;\n  --icon-transition-duration: 300ms;\n  --icon-transition-function: ease-in-out;\n  \n  /* Prevent Line Breaks */\n  white-space: nowrap;\n}\n\n/* Link */\n.fr-icon-link-alpha {\n\tcolor: var(--link-color);\n  text-decoration: underline;\n  text-underline-offset: var(--link-underline-offset, .25em);\n}\n\n.fr-icon-link-alpha:hover {\n\tcolor: var(--link-color-hover);\n}\n\n/* Icon */\n.fr-icon-link-alpha .icon {\n\ttransition: translate var(--icon-transition-duration) var(--icon-transition-function);\n\tfill: var(--icon-color);\n}\n\n.fr-icon-link-alpha:hover .icon {\n\ttranslate: var(--icon-translate-distance) 0;\n  fill: var(--icon-color-hover);\n}\n\n/* Light Version */\n.fr-icon-link-alpha--light {\n  --link-color: var(--white);\n  --link-color-hover: var(--primary);\n\t--icon-size: 1em;\n  --icon-color: var(--white);\n  --icon-color-hover: var(--primary);\n}",
+          "iconPosition": "right",
+          "gap": "var(--icon-gap)"
+        },
+        "modified": 1724413262,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "4lzeta",
+        "name": "cta-card-sierra__link",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

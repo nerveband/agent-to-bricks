@@ -1,0 +1,543 @@
+{
+  "idx": 5,
+  "title": "Content Section Yankee",
+  "elementCount": 23,
+  "classCount": 14,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "81eed7",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "2b5f88",
+          "5a98a9",
+          "aff25b",
+          "3d0666"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vexrsr",
+            "acss_import_bg--ultra-light"
+          ]
+        },
+        "label": "Content Section Yankee"
+      },
+      {
+        "id": "2b5f88",
+        "name": "container",
+        "parent": "81eed7",
+        "children": [
+          "97365a",
+          "debd80",
+          "d0287a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "u7fvr4"
+          ]
+        },
+        "label": "Content Grid Yankee"
+      },
+      {
+        "id": "97365a",
+        "name": "block",
+        "parent": "2b5f88",
+        "children": [
+          "049064"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "yk103y"
+          ]
+        },
+        "label": "Heading Wrapper"
+      },
+      {
+        "id": "debd80",
+        "name": "block",
+        "parent": "2b5f88",
+        "children": [
+          "91c271"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "r7818p"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "d0287a",
+        "name": "block",
+        "parent": "2b5f88",
+        "children": [
+          "a866aa"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "a9ubsf"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "a866aa",
+        "name": "text",
+        "parent": "d0287a",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "n5pp9g"
+          ],
+          "text": "<p>As we enter a new era of space exploration, science fiction is becoming reality. Advanced technology is transforming our capabilities beyond Earth's atmosphere.</p><p>The mission is clear: establish lunar bases and reach Mars. The current goal is to land a person on Mars by 2035, followed by the possibility of public space travel. Would you buy a ticket?</p>"
+        },
+        "label": "Content"
+      },
+      {
+        "id": "91c271",
+        "name": "image",
+        "parent": "debd80",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "arlujk"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure",
+          "loading": "eager"
+        },
+        "label": "Media",
+        "themeStyles": []
+      },
+      {
+        "id": "049064",
+        "name": "heading",
+        "parent": "97365a",
+        "children": [],
+        "settings": {
+          "text": "Beyond Earth: Humanity's Next Giant Leap could happen in the next 10 years",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "48x2yo"
+          ],
+          "_attributes": [
+            {
+              "id": "kkonew",
+              "name": "data-heading"
+            }
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "5a98a9",
+        "name": "container",
+        "parent": "81eed7",
+        "children": [
+          "533ad0",
+          "2777ec",
+          "51e9b6",
+          "2160bf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "59iani"
+          ],
+          "tag": "ul"
+        },
+        "label": "Social Proof Yankee"
+      },
+      {
+        "id": "533ad0",
+        "name": "div",
+        "parent": "5a98a9",
+        "children": [
+          "50f2d9",
+          "1fe676"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "0a48t7"
+          ],
+          "tag": "li"
+        },
+        "label": "Card"
+      },
+      {
+        "id": "50f2d9",
+        "name": "text-basic",
+        "parent": "533ad0",
+        "children": [],
+        "settings": {
+          "tag": "p",
+          "text": "$1.3 Trillion",
+          "_cssGlobalClasses": [
+            "sl406r"
+          ]
+        },
+        "label": "Card Value"
+      },
+      {
+        "id": "1fe676",
+        "name": "text-basic",
+        "parent": "533ad0",
+        "children": [],
+        "settings": {
+          "text": "Projected value of the global space economy by 2030",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "6kilx3"
+          ]
+        },
+        "label": "Card Description"
+      },
+      {
+        "id": "2160bf",
+        "name": "div",
+        "parent": "5a98a9",
+        "children": [
+          "68c047",
+          "e7341a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "0a48t7"
+          ],
+          "tag": "li"
+        },
+        "label": "Card"
+      },
+      {
+        "id": "68c047",
+        "name": "text-basic",
+        "parent": "2160bf",
+        "children": [],
+        "settings": {
+          "tag": "p",
+          "text": "40% Decrease",
+          "_cssGlobalClasses": [
+            "sl406r"
+          ]
+        },
+        "label": "Card Value"
+      },
+      {
+        "id": "e7341a",
+        "name": "text-basic",
+        "parent": "2160bf",
+        "children": [],
+        "settings": {
+          "text": "The reduction in space launch costs over the past decade.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "6kilx3"
+          ]
+        },
+        "label": "Card Description"
+      },
+      {
+        "id": "51e9b6",
+        "name": "div",
+        "parent": "5a98a9",
+        "children": [
+          "9b0d8e",
+          "9d9885"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "0a48t7"
+          ],
+          "tag": "li"
+        },
+        "label": "Card"
+      },
+      {
+        "id": "9b0d8e",
+        "name": "text-basic",
+        "parent": "51e9b6",
+        "children": [],
+        "settings": {
+          "tag": "p",
+          "text": "8.6 Billion",
+          "_cssGlobalClasses": [
+            "sl406r"
+          ]
+        },
+        "label": "Card Value"
+      },
+      {
+        "id": "9d9885",
+        "name": "text-basic",
+        "parent": "51e9b6",
+        "children": [],
+        "settings": {
+          "text": "The number of Earth-like planets estimated to exist in our galaxy.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "6kilx3"
+          ]
+        },
+        "label": "Card Description"
+      },
+      {
+        "id": "2777ec",
+        "name": "div",
+        "parent": "5a98a9",
+        "children": [
+          "d20308",
+          "2b12f1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "0a48t7"
+          ],
+          "tag": "li"
+        },
+        "label": "Card"
+      },
+      {
+        "id": "d20308",
+        "name": "text-basic",
+        "parent": "2777ec",
+        "children": [],
+        "settings": {
+          "tag": "p",
+          "text": "225 Million",
+          "_cssGlobalClasses": [
+            "sl406r"
+          ]
+        },
+        "label": "Card Value"
+      },
+      {
+        "id": "2b12f1",
+        "name": "text-basic",
+        "parent": "2777ec",
+        "children": [],
+        "settings": {
+          "text": "The average distance to Mars is a whopping 225 million km.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "6kilx3"
+          ]
+        },
+        "label": "Card Description"
+      },
+      {
+        "id": "aff25b",
+        "name": "code",
+        "parent": "81eed7",
+        "children": [],
+        "settings": {
+          "javascriptCode": "function wrapHeadingLines() {\n    const headings = document.querySelectorAll('[data-heading]');\n\n    headings.forEach(heading => {\n        // Get the computed styles of the heading\n        const computedStyle = window.getComputedStyle(heading);\n        const headingWidth = heading.offsetWidth;\n\n        // Create a hidden element for measuring\n        const measure = document.createElement('span');\n        measure.style.cssText = `\n            position: absolute;\n            visibility: hidden;\n            white-space: nowrap;\n            font: ${computedStyle.font};\n        `;\n        document.body.appendChild(measure);\n\n        // Get the text content and preserve all spaces\n        const text = heading.textContent;\n        const words = text.split(/(\\s+)/); // Split into words AND spaces to preserve spacing\n        let lines = [];\n        let currentLine = [];\n\n        // Build lines word by word\n        words.forEach(word => {\n            measure.textContent = currentLine.join('') + word; // Join without adding extra spaces\n\n            if (measure.offsetWidth > headingWidth && currentLine.length > 0) {\n                lines.push(currentLine.join('')); // Push the current line\n                currentLine = [word]; // Start a new line\n            } else {\n                currentLine.push(word); // Add the word to the current line\n            }\n        });\n\n        // Add the last line\n        if (currentLine.length > 0) {\n            lines.push(currentLine.join(''));\n        }\n\n        // Remove measuring element\n        document.body.removeChild(measure);\n\n        // Replace heading content with wrapped lines\n        heading.innerHTML = lines\n            .map(line => `<span class=\"line\" style=\"display: block;\">${line}</span>`)\n            .join('');\n    });\n}\n\n// Run on load and resize\ndocument.addEventListener('DOMContentLoaded', wrapHeadingLines);\nlet resizeTimer;\nwindow.addEventListener('resize', () => {\n    clearTimeout(resizeTimer);\n    resizeTimer = setTimeout(wrapHeadingLines, 250);\n});\n",
+          "executeCode": true,
+          "noRoot": true
+        },
+        "label": "Headline Line Styles",
+        "themeStyles": []
+      },
+      {
+        "id": "3d0666",
+        "name": "fr-notes",
+        "parent": "81eed7",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ieofwl"
+          ],
+          "notesContent": "<h2>Instructions</h2><h3>Spans / Overlap</h3><p>You can control the spans of the heading and media elements with var(--media-span) and\u00a0 var(--heading-span) on the the Content Grid Yankee element in custom CSS. The overlap is optional and can be removed by setting values that don't equal more than 11.</p><h3>Heading line highlighting</h3><p>You can't see the effect in the builder, but each line of the heading is wrapped in a span tag (automatically via JS snippet) and styled on the .content-grid-yankee__heading class in custom CSS which you're free to edit.</p><p>You can remove this effect altogether by disabling the JS snippet. If you don't see the effect at all, make sure the JS snippet is activated.</p>"
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "ieofwl",
+        "name": "fr-note",
+        "settings": {
+          "_cssCustom": ".fr-note {\n  padding: var(--card-padding, var(--space-m));\n  border-radius: var(--card-radius, var(--radius));\n  background: var(--warning-light, #FDEBB5);\n  color: var(--warning-ultra-dark, #544002);\n  margin-inline: auto;\n}\n\n.fr-note * + :is(h2, h3, h4) {\n  margin-top: var(--heading-spacing);\n  color: var(--text-dark);\n}\n\n.fr-note a {\n  text-decoration: underline;\n}",
+          "_width": "60ch",
+          "_typography": {
+            "color": {
+              "raw": "var(--text-dark-muted)"
+            }
+          }
+        },
+        "modified": 1744306417,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "acss_import_bg--ultra-light",
+        "name": "bg--ultra-light",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "vexrsr",
+        "name": "content-section-yankee",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_padding": {
+            "top": "var(--section-space-l)",
+            "bottom": "var(--section-space-l)"
+          }
+        },
+        "modified": 1739638832,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "u7fvr4",
+        "name": "content-grid-yankee",
+        "settings": {
+          "_cssCustom": ".content-grid-yankee {\n  --media-span: 7;\n  --heading-span: 7;\n  \n  display: grid;\n  position: relative;\n  isolation: isolate;\n  gap: var(--content-gap);\n  \n  @media (min-width: 768px) {\n\t\tgrid-template-columns: var(--grid-12);\n  \tgrid-template-rows: repeat(3, 1fr);\n\t}\n\n}\n\n.content-grid-yankee__heading-wrapper {\n  @media (min-width: 768px) {\n\t\tgrid-column: 1 / span var(--heading-span);\n    grid-row: 1;\n    translate: 0 var(--space-l);\n\t}\n}\n.content-grid-yankee__media-wrapper {\n  @media (min-width: 768px) {\n\t\tgrid-column: calc(12 - var(--media-span)) / -1;\n  \tgrid-row: 1 / -1;\n    \n    img {\n      aspect-ratio: 1/1;\n    }\n\t}\n  height: 100%;\n  width: 100%;\n  z-index: -1;\n\tborder-radius: var(--radius);\n  overflow: clip;\n  \n  img {\n    --radius: 0;\n  }\n}\n.content-grid-yankee__content-wrapper {\n  @media (min-width: 768px) {\n\t\tgrid-column: 1 / span 11;\n    grid-row: 3;\n    align-self: end;\n\t}\n  border-radius: var(--radius);\n}"
+        },
+        "modified": 1739732447,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "yk103y",
+        "name": "content-grid-yankee__heading-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "r7818p",
+        "name": "content-grid-yankee__media-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "a9ubsf",
+        "name": "content-grid-yankee__content-wrapper",
+        "settings": {
+          "_padding": {
+            "top": "var(--space-l)",
+            "right": "var(--space-l)",
+            "bottom": "var(--space-l)",
+            "left": "var(--space-l)"
+          },
+          "_background": {
+            "color": {
+              "raw": "var(--bg-dark)"
+            }
+          },
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light-muted)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "n5pp9g",
+        "name": "content-grid-yankee__content",
+        "settings": {
+          "_width": "100%",
+          "_cssCustom": "/* Auto-responsive columns */\n.content-grid-yankee__content {\n\t--col-count: 2;\n\t--col-min-width: 250px;\n\t--col-rule-style: solid;\n\t--col-rule-width: 0;\n\t--col-rule-color: var(--black);\n\t--col-gap: var(--grid-gap);\n\t--row-gap: var(--grid-gap);\n}\n\n.content-grid-yankee__content {\n\tdisplay: block !important;\n\tcolumns: var(--col-count) var(--col-min-width);\n\tcolumn-rule-style: var(--col-rule-style);\n\tcolumn-rule-width: var(--col-rule-width);\n\tcolumn-rule-color: var(--col-rule-color);\n\tgap: var(--col-gap);\n  font-size: var(--text-l);\n}\n\n.content-grid-yankee__content > * {\n\t\tbreak-inside: avoid;\n\tmargin-block-end: var(--row-gap);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "arlujk",
+        "name": "content-grid-yankee__media",
+        "settings": {
+          "_width": "100%",
+          "_height": "100%",
+          "_objectFit": "cover"
+        },
+        "_exists": false
+      },
+      {
+        "id": "48x2yo",
+        "name": "content-grid-yankee__heading",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--h1)",
+            "text-transform": "capitalize"
+          },
+          "_cssCustom": ".content-grid-yankee__heading {\n  line-height: 1;\n}\n\n.content-grid-yankee__heading .line {\n  display: inline-block;\n  padding: .15em .25em;\n  margin-block: .075em;\n  background: var(--white);\n  background-repeat: no-repeat;\n  border-radius: var(--radius);\n  width: fit-content;\n}"
+        },
+        "modified": 1741124112,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "59iani",
+        "name": "social-proof-yankee",
+        "settings": {
+          "_gridTemplateRows": "var(--grid-1)",
+          "_alignItemsGrid": "stretch",
+          "_gridTemplateColumns:xxl": "var(--grid-3)",
+          "_position": "relative",
+          "_padding": {
+            "left": "0"
+          },
+          "_cssCustom": "/* \nBegin List None\nChange selector to .social-proof-yankee > ul\" if\nusing on a parent container or rich text element.\n*/\n.social-proof-yankee {\n\t\tlist-style: none;\n\tpadding-inline-start: 0;\n\tmargin-block: 0;\n}\n\n/* End List None */",
+          "_display": "grid",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns": "var(--grid-4)",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-2)",
+          "_gridTemplateColumns:mobile_portrait": "var(--grid-1)"
+        },
+        "modified": 1739636869,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "0a48t7",
+        "name": "social-proof-yankee__card",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": ".25em",
+          "_columnGap": ".25em",
+          "_position": "relative",
+          "_justifyContent": "center",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_cssCustom": ".social-proof-yankee__card:not(:last-child)::after {\n  @media (min-width: 992px) {\n\t\tcontent: '';\n    border: var(--border-dark);\n    position: absolute;\n    top: 0;\n    left: calc(100% + var(--grid-gap) / 2);\n    height: 100%;\n    width: 1px;\n\t}\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "sl406r",
+        "name": "social-proof-yankee__card-value",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-dark)"
+            },
+            "font-size": "var(--text-xl)",
+            "font-variation-settings": "\"wght\" 600",
+            "font-weight": "700"
+          },
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "6kilx3",
+        "name": "social-proof-yankee__card-description",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

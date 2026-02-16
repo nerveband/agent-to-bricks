@@ -1,0 +1,494 @@
+{
+  "idx": 118,
+  "title": "Login Alpha",
+  "elementCount": 14,
+  "classCount": 13,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "b78bdd",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "efefab"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zfjfik"
+          ]
+        },
+        "label": "Login Alpha"
+      },
+      {
+        "id": "efefab",
+        "name": "container",
+        "parent": "b78bdd",
+        "children": [
+          "b6fc4c",
+          "780ca5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mqzeou"
+          ]
+        },
+        "label": "Inner (CSS)"
+      },
+      {
+        "id": "b6fc4c",
+        "name": "div",
+        "parent": "efefab",
+        "children": [
+          "923d34",
+          "b8076b",
+          "cc3bb9",
+          "490bf4",
+          "c3424c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lvulcr"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "b8076b",
+        "name": "heading",
+        "parent": "b6fc4c",
+        "children": [],
+        "settings": {
+          "text": "Log in to your account",
+          "_cssGlobalClasses": [
+            "hhkrmc"
+          ],
+          "tag": "h1"
+        }
+      },
+      {
+        "id": "c3424c",
+        "name": "div",
+        "parent": "b6fc4c",
+        "children": [
+          "35fa36",
+          "c7ed28"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ikontf"
+          ],
+          "_conditions": [
+            [
+              {
+                "id": "mswbup",
+                "key": "user_logged_in",
+                "compare": "==",
+                "value": "1"
+              }
+            ]
+          ]
+        },
+        "label": "Logged In"
+      },
+      {
+        "id": "35fa36",
+        "name": "text-basic",
+        "parent": "c3424c",
+        "children": [],
+        "settings": {
+          "text": "You are already logged in.",
+          "tag": "p"
+        },
+        "label": "Already Logged in"
+      },
+      {
+        "id": "c7ed28",
+        "name": "div",
+        "parent": "c3424c",
+        "children": [
+          "85ffa2",
+          "bb5e3d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "glrhvz"
+          ],
+          "_typography:mobile_portrait": {
+            "text-align": "left"
+          }
+        },
+        "label": "CTA Links Bravo"
+      },
+      {
+        "id": "85ffa2",
+        "name": "text-basic",
+        "parent": "c7ed28",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "aekezk"
+          ],
+          "text": "Back to Home",
+          "link": {
+            "type": "meta",
+            "useDynamicData": "{site_url}"
+          }
+        },
+        "label": "Secondary Action"
+      },
+      {
+        "id": "cc3bb9",
+        "name": "form",
+        "parent": "b6fc4c",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fvchph",
+            "huelml"
+          ],
+          "fields": [
+            {
+              "type": "text",
+              "label": "Username or Email Address",
+              "id": "oiyuli"
+            },
+            {
+              "type": "password",
+              "id": "bgwuui",
+              "label": "Password"
+            },
+            {
+              "type": "rememberme",
+              "id": "vipfze"
+            }
+          ],
+          "emailSubject": "Contact form request",
+          "emailTo": "admin_email",
+          "fromName": "Klinik Wollmarsh\u00f6he",
+          "emailErrorMessage": "Submission failed. Please reload the page and try to submit the form again.",
+          "htmlEmail": true,
+          "mailchimpPendingMessage": "Please check your email to confirm your subscription.",
+          "mailchimpErrorMessage": "Sorry, but we could not subscribe you.",
+          "sendgridErrorMessage": "Sorry, but we could not subscribe you.",
+          "actions": [
+            "login"
+          ],
+          "loginName": "oiyuli",
+          "loginPassword": "bgwuui",
+          "loginRemember": "vipfze",
+          "showLabels": true,
+          "submitButtonText": "Log In",
+          "_conditions": [
+            [
+              {
+                "id": "ifmyse",
+                "key": "user_logged_in",
+                "compare": "==",
+                "value": "0"
+              }
+            ]
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "923d34",
+        "name": "image",
+        "parent": "b6fc4c",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "horpzc",
+            "tqqkmn"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        },
+        "label": "Logo"
+      },
+      {
+        "id": "780ca5",
+        "name": "div",
+        "parent": "efefab",
+        "children": [
+          "20058e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "udfnqx"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "20058e",
+        "name": "image",
+        "parent": "780ca5",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "voympa"
+          ],
+          "caption": "none",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure"
+        },
+        "label": "Media"
+      },
+      {
+        "id": "bb5e3d",
+        "name": "text-basic",
+        "parent": "c7ed28",
+        "children": [],
+        "settings": {
+          "text": "WP Dashboard",
+          "link": {
+            "type": "meta",
+            "useDynamicData": "{site_url}/wp-admin"
+          },
+          "_cssGlobalClasses": [
+            "aekezk"
+          ]
+        },
+        "label": "Secondary Action"
+      },
+      {
+        "id": "490bf4",
+        "name": "text-basic",
+        "parent": "b6fc4c",
+        "children": [],
+        "settings": {
+          "text": "Lost Password?",
+          "tag": "p",
+          "link": {
+            "type": "meta",
+            "useDynamicData": "{site_url}/wp-login.php?action=lostpassword"
+          },
+          "_conditions": [
+            [
+              {
+                "id": "rzuzal",
+                "key": "user_logged_in",
+                "compare": "==",
+                "value": "0"
+              }
+            ]
+          ]
+        },
+        "label": "Lost Password"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "horpzc",
+        "name": "fr-logo",
+        "settings": [],
+        "_mappedId": "horpzc",
+        "modified": 1771253529,
+        "user_id": 1
+      },
+      {
+        "id": "fvchph",
+        "name": "form--light",
+        "settings": [],
+        "_mappedId": "acss_import_form--light",
+        "modified": 1771253526,
+        "user_id": 1
+      },
+      {
+        "id": "zfjfik",
+        "name": "fr-login-alpha",
+        "settings": {
+          "_padding": {
+            "top": "0",
+            "bottom": "0",
+            "left": "0",
+            "right": "0"
+          },
+          "_padding:tablet_portrait": {
+            "left": "0",
+            "right": "0",
+            "bottom": "var(--section-space-m)"
+          },
+          "_background:tablet_portrait": {
+            "color": {
+              "raw": "var(--neutral-ultra-light)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "mqzeou",
+        "name": "fr-login-alpha__inner",
+        "settings": {
+          "_cssCustom": ".fr-login-alpha__inner {\n  --content-span: 6; /* Width of Features Column */  \n  --login-grid-gap: calc(var(--grid-gap) * 2);\n}\n\n@media (min-width: 991px) {\n  \n  .fr-login-alpha__inner > *:nth-child(odd) {\n\t\torder: 1;\n\t\tdisplay: flex;\n    flex-direction: column;    \n    align-items: flex-start;\n  }\n  \n  .fr-login-alpha__inner > *:nth-child(even) {\n\t\torder: -1;\n\t\tdisplay: flex;\n    flex-direction: column;\n    align-items: flex-end;\n  }  \n\n}",
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-12)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_gridGap": "var(--login-grid-gap)",
+          "_alignItemsGrid": "stretch",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)",
+          "_gridGap:tablet_portrait": "0",
+          "_width": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "lvulcr",
+        "name": "fr-login-alpha__content-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "var(--content-gap)",
+          "_padding": {
+            "top": "var(--section-space-m)",
+            "bottom": "var(--section-space-m)"
+          },
+          "_gridItemColumnSpan:tablet_portrait": "auto",
+          "_width:tablet_portrait": "var(--content-width-safe)",
+          "_margin:tablet_portrait": {
+            "left": "auto",
+            "right": "auto",
+            "top": "calc(var(--space-xl) * -1)"
+          },
+          "_zIndex:tablet_portrait": "1",
+          "_padding:tablet_portrait": {
+            "top": "var(--space-l)",
+            "right": "var(--space-l)",
+            "bottom": "var(--space-l)",
+            "left": "var(--space-l)"
+          },
+          "_background:tablet_portrait": {
+            "color": {
+              "raw": "var(--white)"
+            }
+          },
+          "_gridItemColumnSpan": "span var(--content-span)",
+          "_heightMin": "100vh",
+          "_justifyContent": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "hhkrmc",
+        "name": "fr-login-alpha__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ikontf",
+        "name": "fr-login-alpha__notice",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "glrhvz",
+        "name": "fr-cta-links-bravo",
+        "settings": {
+          "_display": "flex",
+          "_flexWrap": "wrap",
+          "_alignItems": "center",
+          "_rowGap": "var(--content-gap)",
+          "_columnGap": "var(--content-gap)",
+          "_direction:mobile_portrait": "column",
+          "_width:mobile_portrait": "100%",
+          "_cssCustom:mobile_portrait": ".fr-cta-links-bravo > * {\n\twidth: 100% !important;\n}",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_margin": {
+            "top": "var(--space-s)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "aekezk",
+        "name": "fr-cta-links-bravo__link",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "huelml",
+        "name": "fr-login-alpha__form",
+        "settings": {
+          "labelTypography": {
+            "font-size": "var(--text-m)"
+          },
+          "fieldMargin": {
+            "bottom": "0"
+          },
+          "_flexDirection": "column",
+          "_gap": "var(--content-gap)",
+          "_alignItems": "flex-start",
+          "_width": "20em",
+          "placeholderTypography": {
+            "font-size": "var(--text-m)"
+          },
+          "_width:tablet_portrait": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "tqqkmn",
+        "name": "fr-login-alpha__logo",
+        "settings": {
+          "_order": "-1",
+          "_width": "200px"
+        },
+        "_exists": false
+      },
+      {
+        "id": "udfnqx",
+        "name": "fr-login-alpha__media-wrapper",
+        "settings": {
+          "_gridItemColumnSpan": "span calc(12 - var(--content-span))",
+          "_order:tablet_portrait": "-1",
+          "_gridItemColumnSpan:tablet_portrait": "1 / -1",
+          "_height:tablet_portrait": "320px",
+          "_position": "relative",
+          "_height": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "voympa",
+        "name": "fr-login-alpha__media",
+        "settings": {
+          "_width:tablet_portrait": "100%",
+          "_objectFit": "cover",
+          "_width": "100%",
+          "_height": "100%",
+          "_cssCustom": ".fr-login-alpha__media img {\n  min-height:100vh;\n}\n\n@media (min-width: 991px) {\n  .fr-login-alpha__media {\n    min-width: calc((50vw - ((var(--features-span) - 6) * (var(--content-width) / 12))) - (var(--grid-card-gap) / 4));\n  }\n}",
+          "_position:tablet_portrait": "absolute",
+          "_top:tablet_portrait": "0",
+          "_right:tablet_portrait": "0",
+          "_bottom:tablet_portrait": "0",
+          "_left:tablet_portrait": "0",
+          "_height:tablet_portrait": "100%"
+        },
+        "modified": 1718819603,
+        "user_id": 9,
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

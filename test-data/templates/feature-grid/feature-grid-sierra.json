@@ -1,0 +1,523 @@
+{
+  "idx": 212,
+  "title": "Feature Grid Sierra",
+  "elementCount": 25,
+  "classCount": 11,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "989708",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "8aadbc",
+          "8afa7f",
+          "ea222b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ulwtsp"
+          ],
+          "tag": "ul"
+        },
+        "label": "Feature Grid Sierra (CSS Tab)"
+      },
+      {
+        "id": "8aadbc",
+        "name": "block",
+        "parent": "989708",
+        "children": [
+          "25758a",
+          "00fd24"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tnmzzp"
+          ],
+          "tag": "li"
+        },
+        "label": "Feature Card Sierra <li>"
+      },
+      {
+        "id": "25758a",
+        "name": "block",
+        "parent": "8aadbc",
+        "children": [
+          "8b0cb7",
+          "ddebde",
+          "30ddcc",
+          "2a57bd"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "adolps"
+          ]
+        },
+        "label": "Content"
+      },
+      {
+        "id": "8b0cb7",
+        "name": "heading",
+        "parent": "25758a",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder headline, we will replace it once your website copy is finalized.",
+          "_cssGlobalClasses": [
+            "saclpu"
+          ],
+          "tag": "h3"
+        }
+      },
+      {
+        "id": "ddebde",
+        "name": "text-basic",
+        "parent": "25758a",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "ducwda"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "30ddcc",
+        "name": "text-basic",
+        "parent": "25758a",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "_cssGlobalClasses": [
+            "rdxioi"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "2a57bd",
+        "name": "button",
+        "parent": "25758a",
+        "children": [],
+        "settings": {
+          "text": "I am a button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary",
+            "bigfjw"
+          ]
+        }
+      },
+      {
+        "id": "00fd24",
+        "name": "block",
+        "parent": "8aadbc",
+        "children": [
+          "1cc1a1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zsfwcy"
+          ]
+        },
+        "label": "Media"
+      },
+      {
+        "id": "1cc1a1",
+        "name": "image",
+        "parent": "00fd24",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tazftb"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure"
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "8afa7f",
+        "name": "block",
+        "parent": "989708",
+        "children": [
+          "13cbeb",
+          "de766c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tnmzzp"
+          ],
+          "tag": "li"
+        },
+        "label": "Feature Card Sierra <li>"
+      },
+      {
+        "id": "13cbeb",
+        "name": "block",
+        "parent": "8afa7f",
+        "children": [
+          "1faf1e",
+          "6a7ca6",
+          "f5dc8c",
+          "0a5f02"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "adolps"
+          ]
+        },
+        "label": "Content"
+      },
+      {
+        "id": "1faf1e",
+        "name": "heading",
+        "parent": "13cbeb",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder headline, we will replace it once your website copy is finalized.",
+          "_cssGlobalClasses": [
+            "saclpu"
+          ],
+          "tag": "h3"
+        }
+      },
+      {
+        "id": "6a7ca6",
+        "name": "text-basic",
+        "parent": "13cbeb",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "ducwda"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "f5dc8c",
+        "name": "text-basic",
+        "parent": "13cbeb",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "_cssGlobalClasses": [
+            "rdxioi"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "0a5f02",
+        "name": "button",
+        "parent": "13cbeb",
+        "children": [],
+        "settings": {
+          "text": "I am a button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary",
+            "bigfjw"
+          ]
+        }
+      },
+      {
+        "id": "de766c",
+        "name": "block",
+        "parent": "8afa7f",
+        "children": [
+          "07018d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zsfwcy"
+          ]
+        },
+        "label": "Media"
+      },
+      {
+        "id": "07018d",
+        "name": "image",
+        "parent": "de766c",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tazftb"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "ea222b",
+        "name": "block",
+        "parent": "989708",
+        "children": [
+          "16e333",
+          "63701d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tnmzzp"
+          ],
+          "tag": "li"
+        },
+        "label": "Feature Card Sierra <li>"
+      },
+      {
+        "id": "16e333",
+        "name": "block",
+        "parent": "ea222b",
+        "children": [
+          "951b99",
+          "66f8ea",
+          "24aabd",
+          "2e3b89"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "adolps"
+          ]
+        },
+        "label": "Content"
+      },
+      {
+        "id": "951b99",
+        "name": "heading",
+        "parent": "16e333",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder headline, we will replace it once your website copy is finalized.",
+          "_cssGlobalClasses": [
+            "saclpu"
+          ],
+          "tag": "h3"
+        }
+      },
+      {
+        "id": "66f8ea",
+        "name": "text-basic",
+        "parent": "16e333",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "ducwda"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "24aabd",
+        "name": "text-basic",
+        "parent": "16e333",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "_cssGlobalClasses": [
+            "rdxioi"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "2e3b89",
+        "name": "button",
+        "parent": "16e333",
+        "children": [],
+        "settings": {
+          "text": "I am a button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary",
+            "bigfjw"
+          ]
+        }
+      },
+      {
+        "id": "63701d",
+        "name": "block",
+        "parent": "ea222b",
+        "children": [
+          "ac48d1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zsfwcy"
+          ]
+        },
+        "label": "Media"
+      },
+      {
+        "id": "ac48d1",
+        "name": "image",
+        "parent": "63701d",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tazftb"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "tnmzzp",
+        "name": "fr-feature-card-sierra",
+        "settings": {
+          "_gridGap": "var(--grid-card-gap)",
+          "_gridTemplateColumns": "var(--grid-12)",
+          "_display": "grid",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_cssCustom": ".fr-feature-card-sierra {\n  max-inline-size: 100%;\n}\n\n@media (min-width: 768px) {\n  \n\t/* Grid Alternating */  \n  .fr-feature-card-sierra:nth-child(odd) > *:last-child {\n\t  order: -1;\n    justify-content: flex-end;\n  }\n\t.fr-feature-card-sierra:nth-child(even) > *:last-child {\n\t  order: 0;\n    justify-content: flex-start;\n  }  \n  \n  .fr-feature-card-sierra > *:nth-child(odd) {\n    grid-column: span var(--features-span);\n  }\n  \n  .fr-feature-card-sierra > *:nth-child(even) {\n    grid-column: span calc(12 - var(--features-span));\n  }\n\n  .fr-feature-card-sierra > *:last-child * {\n    min-width: calc((50vw - (var(--features-span) - 6) * (var(--content-width) / 12)) - (var(--grid-card-gap) / 4))    \n  }\n  \n}",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)",
+          "_alignItemsGrid": "stretch"
+        },
+        "modified": 1756731957,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "adolps",
+        "name": "fr-feature-card-sierra__content-wrapper",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_display": "flex",
+          "_direction": "column",
+          "_justifyContent": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "saclpu",
+        "name": "fr-feature-card-sierra__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ducwda",
+        "name": "fr-feature-card-sierra__accent-heading",
+        "settings": {
+          "_order": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "rdxioi",
+        "name": "fr-feature-card-sierra__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "bigfjw",
+        "name": "fr-feature-card-sierra__cta",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "zsfwcy",
+        "name": "fr-feature-card-sierra__media-wrapper",
+        "settings": {
+          "_direction": "row"
+        },
+        "_exists": false
+      },
+      {
+        "id": "tazftb",
+        "name": "fr-feature-card-sierra__image",
+        "settings": {
+          "_height": "100%",
+          "_objectFit": "cover",
+          "_flexGrow": "1",
+          "_aspectRatio": "var(--image-aspect-ratio)",
+          "_width": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ulwtsp",
+        "name": "fr-feature-grid-sierra",
+        "settings": {
+          "_cssCustom": ".fr-feature-grid-sierra {\n  --features-span: 5; /* Width of Features Column */  \n  --grid-card-gap: calc(var(--grid-gap) * 1.5);\n  --image-aspect-ratio: 6/4;\n  list-style-type: none;\n}",
+          "_rowGap": "var(--container-gap)",
+          "_padding": {
+            "left": "0"
+          },
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "modified": 1729549224,
+        "user_id": 9,
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

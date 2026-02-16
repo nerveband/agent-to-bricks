@@ -1,0 +1,132 @@
+{
+  "idx": 438,
+  "title": "Testimonial Card Charlie",
+  "elementCount": 4,
+  "classCount": 4,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "4a4faf",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "e9ed20",
+          "f233d4",
+          "1a474a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wgklnj"
+          ],
+          "tag": "article"
+        },
+        "label": "Testimonial Card Charlie"
+      },
+      {
+        "id": "e9ed20",
+        "name": "text-basic",
+        "parent": "4a4faf",
+        "children": [],
+        "settings": {
+          "text": "\"Definitely the best thing since sliced bread. I couldn't be happier!\"",
+          "_cssGlobalClasses": [
+            "odjsfm"
+          ],
+          "tag": "p"
+        },
+        "label": "Testimonial"
+      },
+      {
+        "id": "f233d4",
+        "name": "text-basic",
+        "parent": "4a4faf",
+        "children": [],
+        "settings": {
+          "text": "Jack Sparrow",
+          "_cssGlobalClasses": [
+            "kgxpss"
+          ],
+          "tag": "p"
+        },
+        "label": "Name"
+      },
+      {
+        "id": "1a474a",
+        "name": "image",
+        "parent": "4a4faf",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eegtic"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          }
+        },
+        "themeStyles": [],
+        "label": "Avatar"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "wgklnj",
+        "name": "fr-testimonial-card-charlie",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_alignItems": "center",
+          "_rowGap": "var(--fr-card-gap)",
+          "_widthMax": "var(--width-s)",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_alignItems:tablet_portrait": "flex-start",
+          "_typography:tablet_portrait": {
+            "text-align": "left"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "odjsfm",
+        "name": "fr-testimonial-card-charlie__review",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "kgxpss",
+        "name": "fr-testimonial-card-charlie__name",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "eegtic",
+        "name": "fr-testimonial-card-charlie__avatar",
+        "settings": {
+          "_objectFit": "cover",
+          "_border": {
+            "radius": {
+              "top": "50vmax",
+              "right": "50vmax",
+              "bottom": "50vmax",
+              "left": "50vmax"
+            }
+          },
+          "_order": "-1",
+          "_overflow": "hidden",
+          "_aspectRatio": "1/1"
+        },
+        "modified": 1728407078,
+        "user_id": 9,
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

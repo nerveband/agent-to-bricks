@@ -1,0 +1,525 @@
+{
+  "idx": 100,
+  "title": "Blog Post Foxtrot",
+  "elementCount": 19,
+  "classCount": 20,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "dbbdf1",
+        "name": "block",
+        "children": [
+          "4ee18b",
+          "d35c4c"
+        ],
+        "settings": {
+          "tag": "article",
+          "_cssGlobalClasses": [
+            "jyitph"
+          ]
+        },
+        "label": "Blog Foxtrot"
+      },
+      {
+        "id": "4ee18b",
+        "name": "section",
+        "parent": "dbbdf1",
+        "children": [
+          "00c186"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "neswau",
+            "s2ncyv"
+          ]
+        },
+        "label": "Blog Hero Foxtrot"
+      },
+      {
+        "id": "00c186",
+        "name": "container",
+        "parent": "4ee18b",
+        "children": [
+          "257e99",
+          "4efe41"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jpah1x"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "d35c4c",
+        "name": "section",
+        "parent": "dbbdf1",
+        "children": [
+          "ef5ad3",
+          "f49712"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "uxhxth"
+          ]
+        },
+        "label": "Blog Post Body Alpha"
+      },
+      {
+        "id": "ef5ad3",
+        "name": "post-content",
+        "parent": "d35c4c",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cqwrgh",
+            "neswau"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "f49712",
+        "name": "text",
+        "parent": "d35c4c",
+        "children": [],
+        "settings": {
+          "text": "<p><strong>Delete this and pull in post content using the post content element.</strong></p><p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.<br /><br />Sometimes it\u2019s nice to put in text just to get an idea of how text will fill in a space on your website.<br /><br />Traditionally our industry has used Lorem Ipsum, which is placeholder text written in Latin. Unfortunately, not everyone is familiar with Lorem Ipsum and that can lead to confusion. I can\u2019t tell you how many times clients have asked me why their website is in another language!<br /><br />There are other placeholder text alternatives like Hipster Ipsum, Zombie Ipsum, Bacon Ipsum, and many more. While often hilarious, these placeholder passages can also lead to much of the same confusion.<br /><br />If you\u2019re curious, this is Website Ipsum. It was specifically developed for the use on development websites. Other than being less confusing than other Ipsum\u2019s, Website Ipsum is also formatted in patterns more similar to how real copy is formatted on the web today.</p>",
+          "_cssGlobalClasses": [
+            "neswau"
+          ],
+          "_cssCustom": "#brxe-f49712 {\n  --content-width: 60ch;\n}"
+        }
+      },
+      {
+        "id": "257e99",
+        "name": "block",
+        "parent": "00c186",
+        "children": [
+          "ea10c4",
+          "8e1466",
+          "53115f",
+          "605825"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lyo14l"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "605825",
+        "name": "div",
+        "parent": "257e99",
+        "children": [
+          "ebdaa1",
+          "8235e3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ydoujk"
+          ]
+        },
+        "label": "Avatar Alpha"
+      },
+      {
+        "id": "ebdaa1",
+        "name": "block",
+        "parent": "605825",
+        "children": [
+          "1f6fa8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "haxsgw",
+            "ebpnxq"
+          ]
+        },
+        "label": "Avatar Wrapper"
+      },
+      {
+        "id": "8235e3",
+        "name": "block",
+        "parent": "605825",
+        "children": [
+          "5a15e3",
+          "2b7674"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ekgzoz"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "1f6fa8",
+        "name": "image",
+        "parent": "ebdaa1",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xffjke"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Avatar",
+        "themeStyles": []
+      },
+      {
+        "id": "5a15e3",
+        "name": "text-basic",
+        "parent": "8235e3",
+        "children": [],
+        "settings": {
+          "text": "Avatar Name",
+          "_cssGlobalClasses": [
+            "qivkvi"
+          ],
+          "tag": "p"
+        },
+        "label": "Name"
+      },
+      {
+        "id": "2b7674",
+        "name": "text-basic",
+        "parent": "8235e3",
+        "children": [],
+        "settings": {
+          "text": "Label",
+          "_cssGlobalClasses": [
+            "bumahr"
+          ],
+          "tag": "p"
+        },
+        "label": "Label"
+      },
+      {
+        "id": "4efe41",
+        "name": "block",
+        "parent": "00c186",
+        "children": [
+          "09676b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xzjk6g"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "09676b",
+        "name": "image",
+        "parent": "4efe41",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "uns4gy"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Media",
+        "themeStyles": []
+      },
+      {
+        "id": "ea10c4",
+        "name": "heading",
+        "parent": "257e99",
+        "children": [],
+        "settings": {
+          "text": "Sample blog post heading that is long enough to fill three lines",
+          "tag": "h1",
+          "_cssGlobalClasses": [
+            "2zcwjw"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "e156d0",
+        "name": "text-basic",
+        "parent": "8e1466",
+        "children": [],
+        "settings": {
+          "tag": "span",
+          "_cssGlobalClasses": [
+            "26po2h"
+          ],
+          "text": "{post_date:d M Y}"
+        },
+        "label": "Date"
+      },
+      {
+        "id": "8e1466",
+        "name": "block",
+        "parent": "257e99",
+        "children": [
+          "e156d0"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "1jnwnd"
+          ]
+        },
+        "label": "Meta Wrapper"
+      },
+      {
+        "id": "53115f",
+        "name": "text-basic",
+        "parent": "257e99",
+        "children": [],
+        "settings": {
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "xlmf8g"
+          ],
+          "text": "This is a short introduction to the blog post, which you can easily add to your posts with a custom field."
+        },
+        "label": "Lede"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "neswau",
+        "name": "content-grid",
+        "settings": [],
+        "modified": 1771253133,
+        "user_id": 1,
+        "_mappedId": "acss_import_content-grid"
+      },
+      {
+        "id": "jyitph",
+        "name": "fr-blog-foxtrot",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "s2ncyv",
+        "name": "fr-blog-hero-foxtrot",
+        "settings": {
+          "_padding": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "jpah1x",
+        "name": "fr-blog-hero-foxtrot__inner",
+        "settings": {
+          "_padding:tablet_portrait": {
+            "top": "var(--section-space-m)",
+            "bottom": "0"
+          },
+          "_display": "grid",
+          "_gridItemColumnSpan": "content-start / full",
+          "_heightMin": "750px",
+          "_gridGap": "var(--grid-gap)",
+          "_cssCustom": ".fr-blog-hero-foxtrot__inner {\n\t--grid-gap: var(--space-xxl);\n}",
+          "_gridItemColumnSpan:tablet_portrait": "full",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)",
+          "_cssCustom:tablet_portrait": ".fr-blog-hero-foxtrot__inner {\n\t--grid-gap: var(--space-l);\n}",
+          "_gridTemplateColumns": "min(calc(var(--content-width) / 2 - var(--grid-gap)), 40vw) minmax(0, 1fr)",
+          "_gridTemplateRows": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "uxhxth",
+        "name": "fr-blog-post-alpha",
+        "settings": {
+          "_gridGap": "var(--content-gap)",
+          "_padding": {
+            "left": "0",
+            "right": "0"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "cqwrgh",
+        "name": "fr-post-content",
+        "settings": {
+          "_cssCustom": ".fr-post-content {\n  --content-width: 60ch;\n  gap: 0;\n}",
+          "_width": "100%"
+        },
+        "modified": 1730205564,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "lyo14l",
+        "name": "fr-blog-hero-foxtrot__content-wrapper",
+        "settings": {
+          "_padding": {
+            "bottom": "var(--section-space-m)",
+            "top": "var(--section-space-m)"
+          },
+          "_rowGap": "var(--content-gap)",
+          "_justifyContent": "center",
+          "_padding:tablet_portrait": {
+            "top": "0",
+            "bottom": "0",
+            "left": "var(--gutter)",
+            "right": "var(--gutter)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "ydoujk",
+        "name": "fr-avatar-alpha",
+        "settings": {
+          "_widthMax": "16em",
+          "_display": "grid",
+          "_gridTemplateColumns": "auto minmax(0, 1fr)",
+          "_alignItemsGrid": "center",
+          "_gridGap": "var(--space-xs)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "haxsgw",
+        "name": "fr-avatar-alpha__avatar-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ebpnxq",
+        "name": "fr-avatar-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ekgzoz",
+        "name": "fr-avatar-alpha__content-wrapper",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 3)",
+          "_typography": {
+            "line-height": "1"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "xffjke",
+        "name": "fr-avatar-alpha__avatar",
+        "settings": {
+          "_objectFit": "cover",
+          "_width": "50px",
+          "_height": "50px",
+          "_border": {
+            "radius": {
+              "top": "50%",
+              "right": "50%",
+              "bottom": "50%",
+              "left": "50%"
+            }
+          },
+          "_overflow": "hidden"
+        },
+        "_exists": false
+      },
+      {
+        "id": "qivkvi",
+        "name": "fr-avatar-alpha__name",
+        "settings": {
+          "_typography": {
+            "font-weight": "600"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "bumahr",
+        "name": "fr-avatar-alpha__label",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-s)",
+            "color": {
+              "raw": "var(--neutral-trans-60)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "xzjk6g",
+        "name": "fr-blog-hero-foxtrot__media-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "uns4gy",
+        "name": "fr-blog-hero-foxtrot__media",
+        "settings": {
+          "_objectFit": "cover",
+          "_width": "100%",
+          "_height": "100%",
+          "_aspectRatio": "10/9"
+        },
+        "_exists": false
+      },
+      {
+        "id": "2zcwjw",
+        "name": "fr-blog-hero-foxtrot__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "26po2h",
+        "name": "fr-blog-hero-foxtrot__date",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-dark-muted)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "1jnwnd",
+        "name": "fr-blog-hero-foxtrot__meta-wrapper",
+        "settings": {
+          "_order": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "xlmf8g",
+        "name": "fr-blog-hero-foxtrot__lede",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-dark-muted)"
+            },
+            "font-size": "var(--text-l)"
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

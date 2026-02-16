@@ -1,0 +1,453 @@
+{
+  "idx": 360,
+  "title": "Testimonial Card Alpha",
+  "elementCount": 15,
+  "classCount": 11,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "aa83af",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "80633c",
+          "8e8cc6",
+          "558829"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qicyzb"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Alpha (CSS)"
+      },
+      {
+        "id": "80633c",
+        "name": "block",
+        "parent": "aa83af",
+        "children": [
+          "de325f",
+          "623622",
+          "43234f",
+          "bac3b0",
+          "e6bd5b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "nbxmhv"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "de325f",
+        "name": "icon",
+        "parent": "80633c",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)",
+            "fill": {
+              "raw": "var(--icon-color)"
+            }
+          },
+          "_cssGlobalClasses": [
+            "gpcifh"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "8e8cc6",
+        "name": "block",
+        "parent": "aa83af",
+        "children": [
+          "c544b2",
+          "8bdc7b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kigzxx"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "c544b2",
+        "name": "text-basic",
+        "parent": "8e8cc6",
+        "children": [],
+        "settings": {
+          "text": "The most quotable part of the testimonial.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "nyokmh"
+          ]
+        },
+        "label": "Callout"
+      },
+      {
+        "id": "8bdc7b",
+        "name": "text-basic",
+        "parent": "8e8cc6",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "qngjzw"
+          ],
+          "customTag": "blockquote"
+        },
+        "label": "Quote"
+      },
+      {
+        "id": "558829",
+        "name": "block",
+        "parent": "aa83af",
+        "children": [
+          "2297f2",
+          "db42fc"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gpdtne"
+          ]
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "2297f2",
+        "name": "image",
+        "parent": "558829",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "_cssGlobalClasses": [
+            "uuhroq"
+          ],
+          "caption": "none",
+          "tag": "figure"
+        },
+        "themeStyles": [],
+        "label": "Avatar"
+      },
+      {
+        "id": "db42fc",
+        "name": "block",
+        "parent": "558829",
+        "children": [
+          "fc9cc2",
+          "360b00"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gpsbpc"
+          ],
+          "_margin": {
+            "left": 0
+          }
+        },
+        "label": "Wrapper"
+      },
+      {
+        "id": "fc9cc2",
+        "name": "text-basic",
+        "parent": "db42fc",
+        "children": [],
+        "settings": {
+          "text": "Person's Name",
+          "_cssGlobalClasses": [
+            "nnymwp"
+          ],
+          "tag": "p"
+        },
+        "label": "Name"
+      },
+      {
+        "id": "360b00",
+        "name": "text-basic",
+        "parent": "db42fc",
+        "children": [],
+        "settings": {
+          "text": "Person's Title",
+          "_cssGlobalClasses": [
+            "ckjyel"
+          ],
+          "tag": "p"
+        },
+        "label": "Title"
+      },
+      {
+        "id": "e6bd5b",
+        "name": "icon",
+        "parent": "80633c",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)",
+            "fill": {
+              "raw": "var(--icon-color)"
+            }
+          },
+          "_cssGlobalClasses": [
+            "gpcifh"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "bac3b0",
+        "name": "icon",
+        "parent": "80633c",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)",
+            "fill": {
+              "raw": "var(--icon-color)"
+            }
+          },
+          "_cssGlobalClasses": [
+            "gpcifh"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "43234f",
+        "name": "icon",
+        "parent": "80633c",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)",
+            "fill": {
+              "raw": "var(--icon-color)"
+            }
+          },
+          "_cssGlobalClasses": [
+            "gpcifh"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "623622",
+        "name": "icon",
+        "parent": "80633c",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)",
+            "fill": {
+              "raw": "var(--icon-color)"
+            }
+          },
+          "_cssGlobalClasses": [
+            "gpcifh"
+          ]
+        },
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qicyzb",
+        "name": "fr-testimonial-card-alpha",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 2)",
+          "_cssCustom": ".fr-testimonial-card-alpha {\n\t--icon-size: 1.1em;\n  --icon-color: var(--black);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "nbxmhv",
+        "name": "fr-testimonial-card-alpha__header",
+        "settings": {
+          "_direction": "row",
+          "_columnGap": "0.25em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "gpcifh",
+        "name": "fr-testimonial-card-alpha__star",
+        "settings": {
+          "iconSize": "var(--icon-size)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "kigzxx",
+        "name": "fr-testimonial-card-alpha__body",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 2)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "nyokmh",
+        "name": "fr-testimonial-card-alpha__callout",
+        "settings": {
+          "_typography": {
+            "font-weight": "800"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "qngjzw",
+        "name": "fr-testimonial-card-alpha__quote",
+        "settings": {
+          "_cssCustom": ".fr-testimonial-card-alpha__quote {font-family: inherit;}",
+          "_typography": {
+            "font-size": "var(--text-m)"
+          },
+          "_padding": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "_border": {
+            "width": {
+              "top": 0,
+              "right": 0,
+              "left": 0,
+              "bottom": 0
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "gpdtne",
+        "name": "fr-testimonial-card-alpha__footer",
+        "settings": {
+          "_columnGap": "var(--space-s)",
+          "_rowGap": "var(--space-s)",
+          "_margin": {
+            "top": "auto"
+          },
+          "_flexWrap:mobile_landscape": "nowrap",
+          "_display:mobile_portrait": "flex",
+          "_direction:mobile_portrait": "row",
+          "_display": "flex",
+          "_direction": "row",
+          "_alignItems": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "uuhroq",
+        "name": "fr-testimonial-card-alpha__avatar",
+        "settings": {
+          "_width": "4.5em",
+          "_height": "4.5em",
+          "_border": {
+            "radius": {
+              "top": 50,
+              "right": 50,
+              "bottom": 50,
+              "left": 50,
+              "unit": {
+                "top": "%",
+                "right": "%",
+                "bottom": "%",
+                "left": "%"
+              }
+            }
+          },
+          "_objectFit": "cover",
+          "_order": "-1",
+          "_aspectRatio": "1",
+          "_flexShrink": "0"
+        },
+        "modified": 1718883304,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "gpsbpc",
+        "name": "fr-testimonial-card-alpha__name-wrapper",
+        "settings": {
+          "_rowGap": "0.25em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "nnymwp",
+        "name": "fr-testimonial-card-alpha__name",
+        "settings": {
+          "_typography": {
+            "font-weight": "800",
+            "line-height": "1.2"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "ckjyel",
+        "name": "fr-testimonial-card-alpha__title",
+        "settings": {
+          "_typography": {
+            "line-height": "1.2"
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

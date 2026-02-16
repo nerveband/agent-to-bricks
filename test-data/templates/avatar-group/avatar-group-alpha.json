@@ -1,0 +1,254 @@
+{
+  "idx": 164,
+  "title": "Avatar Group Alpha",
+  "elementCount": 11,
+  "classCount": 3,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "c7e97b",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "22fcc9",
+          "2f4824",
+          "df48f6",
+          "a4a20d",
+          "257867"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fbfqco"
+          ]
+        },
+        "label": "Avatar Group Alpha (CSS)"
+      },
+      {
+        "id": "16a56b",
+        "name": "image",
+        "parent": "22fcc9",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cijugz"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Avatar"
+      },
+      {
+        "id": "22fcc9",
+        "name": "div",
+        "parent": "c7e97b",
+        "children": [
+          "16a56b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qqqhjz"
+          ]
+        },
+        "label": "Avatar Wrapper"
+      },
+      {
+        "id": "257867",
+        "name": "div",
+        "parent": "c7e97b",
+        "children": [
+          "dc7c88"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qqqhjz"
+          ]
+        },
+        "label": "Avatar Wrapper"
+      },
+      {
+        "id": "dc7c88",
+        "name": "image",
+        "parent": "257867",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cijugz"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Avatar"
+      },
+      {
+        "id": "a4a20d",
+        "name": "div",
+        "parent": "c7e97b",
+        "children": [
+          "778049"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qqqhjz"
+          ]
+        },
+        "label": "Avatar Wrapper"
+      },
+      {
+        "id": "778049",
+        "name": "image",
+        "parent": "a4a20d",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cijugz"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Avatar"
+      },
+      {
+        "id": "df48f6",
+        "name": "div",
+        "parent": "c7e97b",
+        "children": [
+          "94383b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qqqhjz"
+          ]
+        },
+        "label": "Avatar Wrapper"
+      },
+      {
+        "id": "94383b",
+        "name": "image",
+        "parent": "df48f6",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cijugz"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Avatar"
+      },
+      {
+        "id": "2f4824",
+        "name": "div",
+        "parent": "c7e97b",
+        "children": [
+          "0b8489"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qqqhjz"
+          ]
+        },
+        "label": "Avatar Wrapper"
+      },
+      {
+        "id": "0b8489",
+        "name": "image",
+        "parent": "2f4824",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cijugz"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Avatar"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "fbfqco",
+        "name": "fr-avatar-group-alpha",
+        "settings": {
+          "_width": "max-content",
+          "_overflow": "hidden",
+          "_display": "flex",
+          "_flexWrap": "nowrap",
+          "_justifyContent": "flex-start",
+          "_alignItems": "center",
+          "_cssCustom": ".fr-avatar-group-alpha {\n\t--overlap: 1.25em;\n  --avatar-size: 3.5em;\n}\n\n\n\n.fr-avatar-group-alpha > *:not(:first-child) {\n\tmargin-left: calc(var(--overlap) * -1);\n}",
+          "_flexWrap:tablet_portrait": "nowrap"
+        },
+        "_exists": false
+      },
+      {
+        "id": "cijugz",
+        "name": "fr-avatar-group-alpha__avatar",
+        "settings": {
+          "_flexShrink": "0",
+          "_objectFit": "cover",
+          "_width": "var(--avatar-size)",
+          "_overflow": "hidden",
+          "_border": {
+            "radius": {
+              "top": "50vw",
+              "right": "50vw",
+              "bottom": "50vw",
+              "left": "50vw"
+            },
+            "width": {
+              "top": "5",
+              "right": "5",
+              "bottom": "5",
+              "left": "5"
+            },
+            "style": "solid",
+            "color": {
+              "raw": "var(--white)"
+            }
+          },
+          "_height": "var(--avatar-size)",
+          "_aspectRatio": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "qqqhjz",
+        "name": "fr-avatar-group-alpha__avatar-wrapper",
+        "settings": {
+          "_flexShrink": "0"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

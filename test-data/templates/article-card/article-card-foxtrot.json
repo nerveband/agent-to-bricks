@@ -1,0 +1,369 @@
+{
+  "idx": 376,
+  "title": "Article Card Foxtrot",
+  "elementCount": 11,
+  "classCount": 11,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "715665",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "d5a5f7",
+          "c258ff"
+        ],
+        "settings": {
+          "tag": "article",
+          "customTag": "li",
+          "_cssGlobalClasses": [
+            "iorlqz"
+          ],
+          "_transform:hover .fr-article-card-foxtrot__body": {
+            "translateX": "0px"
+          },
+          "hasLoop": true,
+          "query": {
+            "posts_per_page": "1"
+          }
+        },
+        "label": "Article Card Foxtrot"
+      },
+      {
+        "id": "0caa20",
+        "name": "code",
+        "parent": 0,
+        "children": [],
+        "settings": {
+          "code": "<script>\n    //Go to Bricks > Settings > Builder Access and allow Code Execution for Administrator\n  //Execute this code below this field\n  // You only need one Accesibility Code for each card type. If you imported more than one Article Section Foxtrot, remove extra accessibility code. \n  \n  // INSERT BELOWE THE ARTICLE CARDS LIST\n  const deltaCards = document.querySelectorAll('.fr-article-card-foxtrot')\n\ndeltaCards.forEach(card => {\n\t\n\tconst link = card.querySelector('.fr-article-card-foxtrot__title a');\n\tconst bodyCard = card.querySelector('.fr-article-card-foxtrot__body');\n\n\tlink.addEventListener('focus', () => {\n\t  bodyCard.classList.add('fr-article-card-foxtrot--visible');\n\t});\n\n\tlink.addEventListener('blur', () => {\n\t  bodyCard.classList.remove('fr-article-card-foxtrot--visible');\n\t});\n\n});\n</script>",
+          "_cssGlobalClasses": [
+            "ycpxth"
+          ],
+          "executeCode": true,
+          "user_id": 2,
+          "time": 1762444265,
+          "noRoot": true
+        },
+        "label": "Accessibility Code (Below)"
+      },
+      {
+        "id": "d5a5f7",
+        "name": "div",
+        "parent": "715665",
+        "children": [
+          "799f3a",
+          "7721fa",
+          "5f0871"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dmbris"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "c258ff",
+        "name": "div",
+        "parent": "715665",
+        "children": [
+          "bfc5e6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ivpknk"
+          ]
+        },
+        "label": "Image Wrapper"
+      },
+      {
+        "id": "bfc5e6",
+        "name": "image",
+        "parent": "c258ff",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kxaucn"
+          ],
+          "caption": "none",
+          "image": {
+            "useDynamicData": "{featured_image}",
+            "size": "large"
+          }
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "799f3a",
+        "name": "heading",
+        "parent": "d5a5f7",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "uvibko"
+          ],
+          "link": {
+            "type": "meta",
+            "useDynamicData": "{post_url}"
+          },
+          "text": "{post_title:10}"
+        }
+      },
+      {
+        "id": "7721fa",
+        "name": "text-basic",
+        "parent": "d5a5f7",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sdgdcc"
+          ],
+          "tag": "p",
+          "text": "{post_excerpt:25}"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "5f0871",
+        "name": "div",
+        "parent": "d5a5f7",
+        "children": [
+          "4e36ee"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ajefgd"
+          ],
+          "tag": "custom",
+          "customTag": "footer"
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "da6726",
+        "name": "text-basic",
+        "parent": "4e36ee",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "brrsvi"
+          ],
+          "tag": "custom",
+          "customTag": "time",
+          "_attributes": [
+            {
+              "id": "btzpkx",
+              "name": "datetime",
+              "value": "{post_date}"
+            }
+          ],
+          "text": "{post_date}"
+        },
+        "label": "Date"
+      },
+      {
+        "id": "c91ed9",
+        "name": "text-basic",
+        "parent": "4e36ee",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vkooit"
+          ],
+          "tag": "span",
+          "text": "{author_name}"
+        },
+        "label": "Author Name"
+      },
+      {
+        "id": "4e36ee",
+        "name": "div",
+        "parent": "5f0871",
+        "children": [
+          "da6726",
+          "c91ed9"
+        ],
+        "settings": {
+          "tag": "custom",
+          "customTag": "p",
+          "_cssGlobalClasses": [
+            "ydzkrn"
+          ]
+        },
+        "label": "Info Paragraph"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "iorlqz",
+        "name": "fr-article-card-foxtrot",
+        "settings": {
+          "_opacity:hover .fr-article-card-delta__body": "1",
+          "_transform:hover .fr-article-card-delta__body": {
+            "translateY": "0px"
+          },
+          "_overflow": "hidden",
+          "_opacity:hover .fr-article-card-foxtrot__body": "1",
+          "_transform:hover .fr-article-card-foxtrot__body": {
+            "translateX": "0px"
+          },
+          "_position": "relative",
+          "_cssCustom": "@media (hover: none) {\n  .fr-article-card-foxtrot__body {\n    opacity: 1 !important;\n    transform: translateX(0) !important;\n  }\n}\n\n.fr-article-card-foxtrot:hover .fr-article-card-foxtrot__body {\n  opacity: 1;\n  transform: translateX(0)\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "dmbris",
+        "name": "fr-article-card-foxtrot__body",
+        "settings": {
+          "_padding": {
+            "top": "var(--fr-card-padding)",
+            "right": "var(--space-xl)",
+            "bottom": "var(--fr-card-padding)",
+            "left": "var(--fr-card-padding)"
+          },
+          "_zIndex": "1",
+          "_left": "1px",
+          "_display": "flex",
+          "_direction": "column",
+          "_justifyContent": "flex-end",
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light-muted)"
+            }
+          },
+          "_rowGap": "var(--fr-card-gap)",
+          "_gradient": {
+            "colors": [
+              {
+                "id": "wkpygf",
+                "color": {
+                  "hex": "#ff0000",
+                  "rgb": "rgba(255, 0, 0, 0)",
+                  "hsl": "hsla(0, 100%, 50%, 0)"
+                }
+              },
+              {
+                "id": "qbujdx",
+                "color": {
+                  "raw": "var(--neutral-ultra-dark-trans-80)"
+                }
+              }
+            ],
+            "angle": "270",
+            "applyTo": "background"
+          },
+          "_cssTransition": ".2s ease-in-out",
+          "_transform": {
+            "translateX": "-1em"
+          },
+          "_top": "0px",
+          "_widthMin": "70%",
+          "_height": "100%",
+          "_position": "absolute",
+          "_opacity": "0"
+        },
+        "modified": 1719825262,
+        "user_id": 2,
+        "_exists": false
+      },
+      {
+        "id": "ivpknk",
+        "name": "fr-article-card-delta__image-wrapper",
+        "settings": {
+          "_height": "100%",
+          "_position": "static"
+        },
+        "_exists": false
+      },
+      {
+        "id": "kxaucn",
+        "name": "fr-article-card-delta__image",
+        "settings": {
+          "_height": "100%",
+          "_objectFit": "cover",
+          "_heightMin": "25em",
+          "_width": "100%",
+          "_position": "static"
+        },
+        "_exists": false
+      },
+      {
+        "id": "uvibko",
+        "name": "fr-article-card-foxtrot__title",
+        "settings": {
+          "_padding": {
+            "right": "",
+            "unit": {
+              "right": "var(--space-xl)"
+            }
+          },
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "sdgdcc",
+        "name": "fr-article-card-foxtrot__lede",
+        "settings": {
+          "_widthMax": "px",
+          "_padding": {
+            "right": "var(--space-l)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "ajefgd",
+        "name": "fr-article-card-foxtrot__footer",
+        "settings": {
+          "_display": "flex",
+          "_flexWrap": "wrap",
+          "_columnGap": "var(--fr-card-gap)",
+          "_rowGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "brrsvi",
+        "name": "fr-article-card-foxtrot__date",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "vkooit",
+        "name": "fr-article-card-foxtrot__author-name",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ydzkrn",
+        "name": "fr-article-card-foxtrot__info",
+        "settings": {
+          "_display": "flex",
+          "_flexWrap": "wrap",
+          "_columnGap": "var(--fr-card-gap)",
+          "_rowGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ycpxth",
+        "name": "fr-article-card-foxtrot__accessibility-code",
+        "settings": {
+          "_cssCustom": "/*Keyboard focus styling*/\n.fr-article-card-foxtrot--visible {\n    opacity: 1!important;\n    transform: translateX(0px)!important;\n}\n\n/* Make body visible inside the builder*/\n.brx-body.iframe.mounted .fr-article-card-foxtrot__body {\n\topacity: 1;\n  transform: translateX(0)\n}"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

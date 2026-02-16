@@ -1,0 +1,663 @@
+{
+  "idx": 306,
+  "title": "Feature Section Bravo",
+  "elementCount": 32,
+  "classCount": 16,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "95933a",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "d26ede",
+          "7b00d6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iskfzk"
+          ]
+        },
+        "label": "Feature Section Bravo"
+      },
+      {
+        "id": "d26ede",
+        "name": "container",
+        "parent": "95933a",
+        "children": [
+          "8a8a87",
+          "076d27"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ocfpyi"
+          ]
+        },
+        "label": "Intro Charlie"
+      },
+      {
+        "id": "8a8a87",
+        "name": "block",
+        "parent": "d26ede",
+        "children": [
+          "7bb94c",
+          "556ae6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dyluos"
+          ]
+        },
+        "label": "Left"
+      },
+      {
+        "id": "7bb94c",
+        "name": "heading",
+        "parent": "8a8a87",
+        "children": [],
+        "settings": {
+          "text": "Section heading",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "glrfij"
+          ]
+        }
+      },
+      {
+        "id": "556ae6",
+        "name": "text-basic",
+        "parent": "8a8a87",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "ydlvhj"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "076d27",
+        "name": "block",
+        "parent": "d26ede",
+        "children": [
+          "85f1f2"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ekdrak"
+          ]
+        },
+        "label": "Sidebar"
+      },
+      {
+        "id": "85f1f2",
+        "name": "button",
+        "parent": "076d27",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "_cssGlobalClasses": [
+            "btn--primary",
+            "btn--outline"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "7b00d6",
+        "name": "container",
+        "parent": "95933a",
+        "children": [
+          "9679be",
+          "f2ec23",
+          "1a0372",
+          "e1fa8f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "uupbsj"
+          ],
+          "tag": "custom",
+          "customTag": "ul"
+        },
+        "label": "Feature Grid Bravo (CSS)"
+      },
+      {
+        "id": "9679be",
+        "name": "div",
+        "parent": "7b00d6",
+        "children": [
+          "3b1111",
+          "c64386"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eiwjrc"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature Card Bravo"
+      },
+      {
+        "id": "3b1111",
+        "name": "div",
+        "parent": "9679be",
+        "children": [
+          "3cacb2",
+          "892a0b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dismgo"
+          ]
+        },
+        "label": "Head"
+      },
+      {
+        "id": "3cacb2",
+        "name": "icon",
+        "parent": "3b1111",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "irvolo"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "892a0b",
+        "name": "heading",
+        "parent": "3b1111",
+        "children": [],
+        "settings": {
+          "text": "Awesome Feature",
+          "_cssGlobalClasses": [
+            "vpjzjq"
+          ],
+          "tag": "h3"
+        }
+      },
+      {
+        "id": "c64386",
+        "name": "div",
+        "parent": "9679be",
+        "children": [
+          "0b426c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ufjoii"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "0b426c",
+        "name": "text-basic",
+        "parent": "c64386",
+        "children": [],
+        "settings": {
+          "text": "Short yet extremely creative and catchy description of the feature.",
+          "_cssGlobalClasses": [
+            "ktlicc"
+          ],
+          "tag": "p"
+        }
+      },
+      {
+        "id": "e1fa8f",
+        "name": "div",
+        "parent": "7b00d6",
+        "children": [
+          "dff269",
+          "eaf0af"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eiwjrc"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature Card Bravo"
+      },
+      {
+        "id": "dff269",
+        "name": "div",
+        "parent": "e1fa8f",
+        "children": [
+          "76d779",
+          "e63b04"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dismgo"
+          ]
+        },
+        "label": "Head"
+      },
+      {
+        "id": "eaf0af",
+        "name": "div",
+        "parent": "e1fa8f",
+        "children": [
+          "7bb7f3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ufjoii"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "76d779",
+        "name": "icon",
+        "parent": "dff269",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "irvolo"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "e63b04",
+        "name": "heading",
+        "parent": "dff269",
+        "children": [],
+        "settings": {
+          "text": "Awesome Feature",
+          "_cssGlobalClasses": [
+            "vpjzjq"
+          ],
+          "tag": "h3"
+        }
+      },
+      {
+        "id": "7bb7f3",
+        "name": "text-basic",
+        "parent": "eaf0af",
+        "children": [],
+        "settings": {
+          "text": "Short yet extremely creative and catchy description of the feature.",
+          "_cssGlobalClasses": [
+            "ktlicc"
+          ],
+          "tag": "p"
+        }
+      },
+      {
+        "id": "1a0372",
+        "name": "div",
+        "parent": "7b00d6",
+        "children": [
+          "2cc3d3",
+          "fe9fa5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eiwjrc"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature Card Bravo"
+      },
+      {
+        "id": "2cc3d3",
+        "name": "div",
+        "parent": "1a0372",
+        "children": [
+          "ab9dbb",
+          "19945e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dismgo"
+          ]
+        },
+        "label": "Head"
+      },
+      {
+        "id": "fe9fa5",
+        "name": "div",
+        "parent": "1a0372",
+        "children": [
+          "e06584"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ufjoii"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "ab9dbb",
+        "name": "icon",
+        "parent": "2cc3d3",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "irvolo"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "19945e",
+        "name": "heading",
+        "parent": "2cc3d3",
+        "children": [],
+        "settings": {
+          "text": "Awesome Feature",
+          "_cssGlobalClasses": [
+            "vpjzjq"
+          ],
+          "tag": "h3"
+        }
+      },
+      {
+        "id": "e06584",
+        "name": "text-basic",
+        "parent": "fe9fa5",
+        "children": [],
+        "settings": {
+          "text": "Short yet extremely creative and catchy description of the feature.",
+          "_cssGlobalClasses": [
+            "ktlicc"
+          ],
+          "tag": "p"
+        }
+      },
+      {
+        "id": "f2ec23",
+        "name": "div",
+        "parent": "7b00d6",
+        "children": [
+          "e302fe",
+          "6603ac"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eiwjrc"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature Card Bravo"
+      },
+      {
+        "id": "e302fe",
+        "name": "div",
+        "parent": "f2ec23",
+        "children": [
+          "533ac5",
+          "6003c2"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dismgo"
+          ]
+        },
+        "label": "Head"
+      },
+      {
+        "id": "6603ac",
+        "name": "div",
+        "parent": "f2ec23",
+        "children": [
+          "3703f8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ufjoii"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "533ac5",
+        "name": "icon",
+        "parent": "e302fe",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "irvolo"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "6003c2",
+        "name": "heading",
+        "parent": "e302fe",
+        "children": [],
+        "settings": {
+          "text": "Awesome Feature",
+          "_cssGlobalClasses": [
+            "vpjzjq"
+          ],
+          "tag": "h3"
+        }
+      },
+      {
+        "id": "3703f8",
+        "name": "text-basic",
+        "parent": "6603ac",
+        "children": [],
+        "settings": {
+          "text": "Short yet extremely creative and catchy description of the feature.",
+          "_cssGlobalClasses": [
+            "ktlicc"
+          ],
+          "tag": "p"
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771255219,
+        "user_id": 1
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "btn--outline",
+        "name": "btn--outline",
+        "settings": [],
+        "_mappedId": "acss_import_btn--outline",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "iskfzk",
+        "name": "fr-feature-section-bravo",
+        "settings": {
+          "_rowGap": "var(--fr-container-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ocfpyi",
+        "name": "fr-intro-charlie",
+        "settings": {
+          "_display": "flex",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)",
+          "_direction": "row",
+          "_alignItems": "center",
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "dyluos",
+        "name": "fr-intro-charlie__content-wrapper",
+        "settings": {
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "glrfij",
+        "name": "fr-intro-charlie__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ydlvhj",
+        "name": "fr-intro-charlie__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ekdrak",
+        "name": "fr-intro-charlie__sidebar",
+        "settings": {
+          "_alignItems": "flex-end",
+          "_alignItems:tablet_portrait": "flex-start",
+          "_justifyContent": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "uupbsj",
+        "name": "fr-feature-grid-bravo",
+        "settings": {
+          "_padding": {
+            "left": "0"
+          },
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-4)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_gridGap": "var(--grid-gap)",
+          "_alignItemsGrid": "stretch",
+          "_cssCustom": ".fr-feature-grid-bravo {\n  --icon-size: 1.5em;\n  --icon-fill-color: transparent;\n  --icon-stroke-color: var(--bg-dark);\n  --icon-fill-color-hover: transparent;  \n  --icon-stroke-color-hover: var(--bg-dark); \n\n  list-style-type: none;\n}",
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          },
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-3)",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-2)",
+          "_gridTemplateColumns:mobile_portrait": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "eiwjrc",
+        "name": "fr-feature-card-bravo",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_columnGap": "var(--fr-card-gap)",
+          "_rowGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "dismgo",
+        "name": "fr-feature-card-bravo__head",
+        "settings": {
+          "_display": "flex",
+          "_columnGap": "calc(var(--content-gap) / 2)",
+          "_rowGap": "calc(var(--content-gap) / 2)",
+          "_flexWrap": "wrap",
+          "_alignItems": "center",
+          "_direction": "row",
+          "_justifyContent": "flex-start",
+          "_cssCustom": ".fr-feature-card-bravo__head svg {\n  height: var(--icon-size);\n  width: var(--icon-size);\n  fill: var(--icon-fill-color);\n  color: var(--icon-stroke-color);\n}\n\n.fr-feature-card-bravo__head i {\n  color: var(--icon-fill-color);\n  font-size: var(--icon-size);\n}\n\n.fr-feature-card-bravo__head svg:hover {\n  fill: var(--icon-fill-color-hover);\n  color: var(--icon-stroke-color-hover);  \n}\n\n.fr-feature-card-bravo__head i:hover {\n  color: var(--icon-fill-color-hover);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "irvolo",
+        "name": "fr-feature-card-bravo__icon",
+        "settings": {
+          "_width": "var(--text-l)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "vpjzjq",
+        "name": "fr-feature-card-bravo__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ufjoii",
+        "name": "fr-feature-card-bravo__body",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ktlicc",
+        "name": "fr-feature-card-bravo__lede",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

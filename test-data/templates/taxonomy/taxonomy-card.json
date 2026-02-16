@@ -1,0 +1,122 @@
+{
+  "idx": 254,
+  "title": "Taxonomy Card",
+  "elementCount": 3,
+  "classCount": 4,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "36acf9",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "b7ffe2",
+          "c6d53d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "yhmtnv"
+          ],
+          "tag": "article"
+        },
+        "label": "Taxonomy Card"
+      },
+      {
+        "id": "b7ffe2",
+        "name": "heading",
+        "parent": "36acf9",
+        "children": [],
+        "settings": {
+          "text": "Placeholder",
+          "_cssGlobalClasses": [
+            "acss_import_clickable-parent",
+            "uhtwya"
+          ],
+          "link": {
+            "type": "meta",
+            "useDynamicData": "{term_url}"
+          }
+        }
+      },
+      {
+        "id": "c6d53d",
+        "name": "image",
+        "parent": "36acf9",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "esqjyv"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "acss_import_clickable-parent",
+        "name": "clickable-parent",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "yhmtnv",
+        "name": "fr-taxonomy-card-alpha",
+        "settings": {
+          "_rowGap": "var(--fr-card-gap)",
+          "_position": "relative",
+          "_display": "flex",
+          "_direction": "column",
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "uhtwya",
+        "name": "fr-taxonomy-card-alpha__heading",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--h4)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "esqjyv",
+        "name": "fr-taxonomy-card-alpha__image",
+        "settings": {
+          "_border": {
+            "radius": {
+              "top": "50%",
+              "right": "50%",
+              "bottom": "50%",
+              "left": "50%"
+            }
+          },
+          "_order": "-1",
+          "_overflow": "hidden",
+          "_objectFit": "cover",
+          "_width": "100%",
+          "_position": "static",
+          "_aspectRatio": "1/1"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

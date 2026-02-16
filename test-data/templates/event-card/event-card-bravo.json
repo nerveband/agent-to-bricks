@@ -1,0 +1,422 @@
+{
+  "idx": 262,
+  "title": "Event Card Bravo",
+  "elementCount": 14,
+  "classCount": 16,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "b3bd77",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "3c1cef",
+          "c41d6b"
+        ],
+        "settings": {
+          "tag": "custom",
+          "customTag": "li",
+          "_cssGlobalClasses": [
+            "crslpi"
+          ]
+        },
+        "label": "Event Card Bravo"
+      },
+      {
+        "id": "3c1cef",
+        "name": "block",
+        "parent": "b3bd77",
+        "children": [
+          "332440"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wfxmay"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "332440",
+        "name": "image",
+        "parent": "3c1cef",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "nzgcvj"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "c41d6b",
+        "name": "block",
+        "parent": "b3bd77",
+        "children": [
+          "6aeace",
+          "b98414",
+          "1fccbc",
+          "1d6d87"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wimfji"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "6aeace",
+        "name": "heading",
+        "parent": "c41d6b",
+        "children": [],
+        "settings": {
+          "text": "Event Title",
+          "_cssGlobalClasses": [
+            "cveeya",
+            "acss_import_clickable-parent"
+          ],
+          "link": {
+            "type": "meta",
+            "url": "#",
+            "useDynamicData": "{post_url}"
+          }
+        },
+        "label": "Heading (Link)"
+      },
+      {
+        "id": "b98414",
+        "name": "block",
+        "parent": "c41d6b",
+        "children": [
+          "3d3b00",
+          "c45816"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ubnicc"
+          ]
+        },
+        "label": "Event Meta Bravo"
+      },
+      {
+        "id": "3d3b00",
+        "name": "div",
+        "parent": "b98414",
+        "children": [
+          "fb08de",
+          "707183"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hvllzd"
+          ]
+        },
+        "label": "When Wrapper"
+      },
+      {
+        "id": "fb08de",
+        "name": "text-basic",
+        "parent": "3d3b00",
+        "children": [],
+        "settings": {
+          "text": "January 01, 2023",
+          "tag": "custom",
+          "customTag": "time",
+          "_attributes": [
+            {
+              "id": "rofhru",
+              "name": "datetime"
+            }
+          ],
+          "_cssGlobalClasses": [
+            "zdfbls"
+          ]
+        },
+        "label": "Date"
+      },
+      {
+        "id": "707183",
+        "name": "div",
+        "parent": "3d3b00",
+        "children": [
+          "775be7",
+          "68c396"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hbfewd"
+          ]
+        },
+        "label": "Start & End Wrapper"
+      },
+      {
+        "id": "775be7",
+        "name": "text-basic",
+        "parent": "707183",
+        "children": [],
+        "settings": {
+          "text": "12:00",
+          "_cssGlobalClasses": [
+            "sgoeam"
+          ],
+          "tag": "custom",
+          "customTag": "time",
+          "_attributes": [
+            {
+              "id": "wubbom",
+              "name": "datetime"
+            }
+          ]
+        },
+        "label": "Start Time"
+      },
+      {
+        "id": "68c396",
+        "name": "text-basic",
+        "parent": "707183",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sidpvy"
+          ],
+          "text": "13:00",
+          "tag": "custom",
+          "customTag": "time",
+          "_attributes": [
+            {
+              "id": "sesmoy",
+              "name": "datetime"
+            }
+          ]
+        },
+        "label": "End Time"
+      },
+      {
+        "id": "c45816",
+        "name": "text-basic",
+        "parent": "b98414",
+        "children": [],
+        "settings": {
+          "text": "Free",
+          "tag": "span",
+          "_cssGlobalClasses": [
+            "phbdst"
+          ]
+        },
+        "label": "Price"
+      },
+      {
+        "id": "1fccbc",
+        "name": "text-basic",
+        "parent": "c41d6b",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "_cssGlobalClasses": [
+            "qtyxwa"
+          ],
+          "tag": "p"
+        },
+        "label": "Description"
+      },
+      {
+        "id": "1d6d87",
+        "name": "button",
+        "parent": "c41d6b",
+        "children": [],
+        "settings": {
+          "text": "View Details",
+          "_cssGlobalClasses": [
+            "btn--primary",
+            "xbpecy"
+          ]
+        },
+        "label": "Fake Button"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "acss_import_clickable-parent",
+        "name": "clickable-parent",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "ubnicc",
+        "name": "fr-event-meta-bravo",
+        "settings": {
+          "_direction": "row",
+          "_rowGap": "var(--fr-card-gap)",
+          "_columnGap": "var(--fr-card-gap)",
+          "_justifyContent": "space-between",
+          "_order": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "hvllzd",
+        "name": "fr-event-meta-bravo__when-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_columnGap": "var(--fr-card-gap)",
+          "_rowGap": "var(--fr-card-gap)",
+          "_flexWrap": "wrap"
+        },
+        "_exists": false
+      },
+      {
+        "id": "zdfbls",
+        "name": "fr-event-meta-bravo__date",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "hbfewd",
+        "name": "fr-event-meta-bravo__start-end-wrapper",
+        "settings": {
+          "_display": "flex"
+        },
+        "_exists": false
+      },
+      {
+        "id": "sgoeam",
+        "name": "fr-event-meta-bravo__start-time",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "sidpvy",
+        "name": "fr-event-meta-bravo__end-time",
+        "settings": {
+          "_cssCustom": ".fr-event-meta-bravo__end-time::before {\n\tcontent: \"-\";\n  margin: 0 .25em 0 .25em;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "phbdst",
+        "name": "fr-event-meta-bravo__price",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "crslpi",
+        "name": "fr-event-card-bravo",
+        "settings": {
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_position": "relative",
+          "_display": "grid",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)",
+          "_gridTemplateColumns": "var(--grid-1-2)",
+          "_overflow": "hidden"
+        },
+        "modified": 1730327344,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "wfxmay",
+        "name": "fr-event-card-bravo__media-wrapper",
+        "settings": {
+          "_position": "relative",
+          "_cssCustom:mobile_landscape": ".fr-event-card-bravo__media-wrapper {\n\taspect-ratio: 16/9;\n}",
+          "_direction": "column",
+          "_alignSelf": "stretch",
+          "_width": "100%",
+          "_height": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wimfji",
+        "name": "fr-event-card-bravo__body",
+        "settings": {
+          "_padding": {
+            "top": "var(--space-l)",
+            "right": "var(--space-l)",
+            "bottom": "var(--space-l)",
+            "left": "var(--space-l)"
+          },
+          "_rowGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "nzgcvj",
+        "name": "fr-event-card-bravo__media",
+        "settings": {
+          "_objectFit": "cover",
+          "stretch": true,
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_width": "100%",
+          "_height": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "cveeya",
+        "name": "fr-event-card-bravo__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "qtyxwa",
+        "name": "fr-event-card-bravo__description",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "xbpecy",
+        "name": "fr-event-card-bravo__button",
+        "settings": {
+          "_margin": {
+            "top": "auto"
+          },
+          "_typography": {
+            "font-size": "var(--text-s)"
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

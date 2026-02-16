@@ -1,0 +1,538 @@
+{
+  "idx": 19,
+  "title": "Feature Section Milan",
+  "elementCount": 17,
+  "classCount": 17,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "1ec1c2",
+        "name": "section",
+        "children": [
+          "b05190"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ponetv"
+          ]
+        },
+        "label": "Feature Section Milan"
+      },
+      {
+        "id": "b05190",
+        "name": "container",
+        "parent": "1ec1c2",
+        "children": [
+          "ff9770",
+          "fed558"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vcaxes"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "ff9770",
+        "name": "block",
+        "parent": "b05190",
+        "children": [
+          "0b28d3",
+          "802eac"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tfdhww"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "0b28d3",
+        "name": "block",
+        "parent": "ff9770",
+        "children": [
+          "daf6b3",
+          "3a6800"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "aqnjjg"
+          ]
+        },
+        "label": "Intro"
+      },
+      {
+        "id": "daf6b3",
+        "name": "heading",
+        "parent": "0b28d3",
+        "children": [],
+        "settings": {
+          "text": "Write a compelling heading for this section",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "nralvw"
+          ]
+        }
+      },
+      {
+        "id": "3a6800",
+        "name": "text",
+        "parent": "0b28d3",
+        "children": [],
+        "settings": {
+          "text": "<p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.</p>",
+          "_cssGlobalClasses": [
+            "izjilm"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "802eac",
+        "name": "block",
+        "parent": "ff9770",
+        "children": [
+          "f90e3f"
+        ],
+        "settings": {
+          "_attributes": [
+            {
+              "id": "cizmzy",
+              "name": "role",
+              "value": "tablist"
+            }
+          ],
+          "_cssGlobalClasses": [
+            "prlhwk"
+          ]
+        },
+        "label": "Stack"
+      },
+      {
+        "id": "3fb9c0",
+        "name": "div",
+        "parent": "257fef",
+        "children": [
+          "551f47"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "seiwvh"
+          ],
+          "_attributes": [
+            {
+              "id": "frzbce",
+              "name": "tab-selected",
+              "value": "false"
+            }
+          ],
+          "query": {
+            "objectType": "post",
+            "posts_per_page": "4"
+          }
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "551f47",
+        "name": "image",
+        "parent": "3fb9c0",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rzatvz"
+          ],
+          "tag": "picture",
+          "image": {
+            "useDynamicData": "{featured_image}",
+            "size": "full"
+          }
+        },
+        "themeStyles": [],
+        "label": "Media"
+      },
+      {
+        "id": "aa5c65",
+        "name": "heading",
+        "parent": "f90e3f",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rbuvhm"
+          ],
+          "text": "{post_title}"
+        }
+      },
+      {
+        "id": "257fef",
+        "name": "block",
+        "parent": "f90e3f",
+        "children": [
+          "d9dd89",
+          "3fb9c0"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qrvlve"
+          ]
+        },
+        "label": "Description Wrapper"
+      },
+      {
+        "id": "d9dd89",
+        "name": "text-basic",
+        "parent": "257fef",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ylenrt"
+          ],
+          "tag": "p",
+          "_attributes": [
+            {
+              "id": "faovtq",
+              "name": "aria-hidden",
+              "value": "true"
+            }
+          ],
+          "text": "{post_content:16}"
+        },
+        "label": "Description"
+      },
+      {
+        "id": "fed558",
+        "name": "block",
+        "parent": "b05190",
+        "children": [
+          "e24ba3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ndcoxx"
+          ]
+        },
+        "label": "Media Group"
+      },
+      {
+        "id": "e24ba3",
+        "name": "div",
+        "parent": "fed558",
+        "children": [
+          "766761"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "bgdzgv",
+            "gacnqm"
+          ],
+          "_attributes": [
+            {
+              "id": "frzbce",
+              "name": "tab-selected",
+              "value": "false"
+            }
+          ],
+          "hasLoop": true,
+          "query": {
+            "objectType": "post",
+            "posts_per_page": "4"
+          }
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "766761",
+        "name": "image",
+        "parent": "e24ba3",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rzatvz"
+          ],
+          "tag": "picture",
+          "image": {
+            "useDynamicData": "{featured_image}",
+            "size": "full"
+          }
+        },
+        "themeStyles": [],
+        "label": "Media"
+      },
+      {
+        "id": "5c1213",
+        "name": "code",
+        "children": [],
+        "settings": {
+          "javascriptCode": "document.addEventListener(\"DOMContentLoaded\", function() {\n  const buttons = document.querySelectorAll('.changing');\n  const slides = document.querySelectorAll('.changing-media');\n  const contents = document.querySelectorAll('.feature-card-milan__description');\n  let currentIndex = 0;\n  let intervalId;\n\n  // Initialize the first button, slide, and content\n  buttons[currentIndex].setAttribute('aria-selected', 'true');\n  contents[currentIndex].setAttribute('aria-hidden', 'false');\n\n  const animationDuration = getComputedStyle(document.documentElement)\n      .getPropertyValue('--animation-duration');\n  const durationInMs = parseInt(animationDuration);\n\n  function changeSelected() {\n    \n    const shouldAnimate = Array.from(buttons).every(button => button.dataset.shouldAnimate === 'true');\n    if (!shouldAnimate) return;\n\n    updateVisibility(currentIndex, false);\n    \n    currentIndex = (currentIndex + 1) % buttons.length;\n\n    updateVisibility(currentIndex, true);\n    \n    slides.forEach((slide) => {\n      slide.style.transform = `translateX(${(-currentIndex) * 100}%)`;\n    });\n  }\n\n  function updateVisibility(index, isVisible) {\n    buttons[index].setAttribute('aria-selected', isVisible);\n    slides[index].setAttribute('tab-selected', isVisible);\n    contents[index].setAttribute('aria-hidden', !isVisible);\n  }\n\n  function startInterval() {\n    intervalId = setInterval(changeSelected, durationInMs);\n  }\n\n  function stopInterval() {\n    clearInterval(intervalId);\n  }\n\n  startInterval();\n\n  buttons.forEach((button, index) => {\n    button.addEventListener('click', () => {\n      \n      buttons.forEach(btn => btn.dataset.shouldAnimate = 'false');\n\n      // Update visibility for the clicked button\n      updateVisibility(currentIndex, false);\n      currentIndex = index;\n      updateVisibility(currentIndex, true);\n\n      // Stop the animation\n      stopInterval();\n      \n      // Move the corresponding slide into view\n      slides.forEach((slide) => {\n        slide.style.transform = `translateX(${(-currentIndex) * 100}%)`;\n      });\n    });\n  });\n});\n",
+          "noRoot": true,
+          "user_id": 1,
+          "time": 1732294949,
+          "cssCode": ":root {\n  --animation-duration: 5000ms;\n}",
+          "executeCode": true
+        }
+      },
+      {
+        "id": "f90e3f",
+        "name": "div",
+        "parent": "802eac",
+        "children": [
+          "aa5c65",
+          "257fef"
+        ],
+        "settings": {
+          "_attributes": [
+            {
+              "id": "lswwsy",
+              "name": "aria-selected",
+              "value": "false"
+            },
+            {
+              "id": "ffczoc",
+              "name": "data-should-animate",
+              "value": "true"
+            },
+            {
+              "id": "scbuxb",
+              "name": "role",
+              "value": "tab"
+            },
+            {
+              "id": "axlftj",
+              "name": "type",
+              "value": "button"
+            }
+          ],
+          "_cssGlobalClasses": [
+            "oxwwdh",
+            "tmxfbo"
+          ],
+          "tag": "custom",
+          "customTag": "button",
+          "hasLoop": true,
+          "query": {
+            "objectType": "post",
+            "post_type": [
+              "post"
+            ],
+            "posts_per_page": "4"
+          }
+        },
+        "label": "Feature Card"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "ponetv",
+        "name": "feature-section-milan",
+        "settings": {
+          "_background": {
+            "color": {
+              "raw": "var(--bg-ultra-light)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "vcaxes",
+        "name": "feature-section-milan__inner",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_gridGap": "var(--container-gap)",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)",
+          "_alignItemsGrid": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "tfdhww",
+        "name": "feature-section-milan__content-wrapper",
+        "settings": {
+          "_rowGap": "var(--container-gap)",
+          "_padding": {
+            "bottom": "var(--space-s)",
+            "top": "var(--space-s)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "aqnjjg",
+        "name": "feature-section-milan__intro",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_direction": "column"
+        },
+        "_exists": false
+      },
+      {
+        "id": "nralvw",
+        "name": "feature-section-milan__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "izjilm",
+        "name": "feature-section-milan__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "prlhwk",
+        "name": "feature-section-milan__stack",
+        "settings": {
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "seiwvh",
+        "name": "feature-section-milan__media-wrapper-mobile",
+        "settings": {
+          "_width": "100%",
+          "_aspectRatio": "3 / 4",
+          "_position": "relative",
+          "_display": "none",
+          "_display:mobile_landscape": "flex",
+          "_direction:mobile_landscape": "column",
+          "_cssCustom": ".feature-section-milan__media-wrapper-mobile {\n  flex: 1;\n}"
+        },
+        "modified": 1738839674,
+        "user_id": 2,
+        "_exists": false
+      },
+      {
+        "id": "rzatvz",
+        "name": "feature-section-milan__media",
+        "settings": {
+          "_width": "100%",
+          "_objectFit": "cover",
+          "_position": "relative",
+          "_height": "100%"
+        },
+        "modified": 1732300648,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "rbuvhm",
+        "name": "feature-card-milan__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "qrvlve",
+        "name": "feature-card-milan__description-wrapper",
+        "settings": {
+          "_cssCustom": ".feature-card-milan__description-wrapper {\n  transition-duration: 5000ms\n}",
+          "_overflow": "hidden",
+          "_display": "flex",
+          "_height": "100%",
+          "_direction": "column",
+          "_rowGap": "var(--space-s)"
+        },
+        "modified": 1732271149,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "ylenrt",
+        "name": "feature-card-milan__description",
+        "settings": {
+          "_overflow": "hidden",
+          "_typography": {
+            "color": {
+              "raw": "var(--text-dark-muted)"
+            }
+          }
+        },
+        "modified": 1738841201,
+        "user_id": 2,
+        "_exists": false
+      },
+      {
+        "id": "ndcoxx",
+        "name": "feature-section-milan__media-group",
+        "settings": {
+          "_cssCustom": ".feature-section-milan__media-group {\n  display: flex;\n  overflow-x: auto;\n  scroll-snap-type: x mandatory;\n  scroll-behavior: smooth;\n  -webkit-overflow-scrolling: touch;\n  scrollbar-width: 0px;\n  scrollbar-color: transparent transparent;\n}\n\n.feature-section-milan__media-group::-webkit-scrollbar {\n  width: 0;\n}\n\n.feature-section-milan__media-group::-webkit-scrollbar-track {\n  background: transparent;\n}\n\n.feature-section-milan__media-group::-webkit-scrollbar-thumb {\n  background: transparent;\n  border: none;\n}\n\n.feature-section-milan__media-group > div {\n  scroll-snap-align: start;\n  flex-shrink: 0;\n  transform-origin: center center;\n  transform: scale(1);\n  position: relative;\n  \n  display: flex;\n  justify-content: center;\n  align-items: center;\n}",
+          "_flexWrap:mobile_landscape": "nowrap",
+          "_direction:mobile_landscape": "row",
+          "_columnGap": "0",
+          "_rowGap": "0",
+          "_direction": "row",
+          "_display:mobile_landscape": "none"
+        },
+        "_exists": false
+      },
+      {
+        "id": "bgdzgv",
+        "name": "feature-section-milan__media-wrapper",
+        "settings": {
+          "_cssTransition": "all .25s ease-in-out",
+          "_position": "relative",
+          "_width": "100%",
+          "_cssCustom": ".feature-section-milan__media-wrapper {\n  flex: 0 0 100%;\n}",
+          "_aspectRatio": "3 / 4"
+        },
+        "modified": 1738839674,
+        "user_id": 2,
+        "_exists": false
+      },
+      {
+        "id": "gacnqm",
+        "name": "changing-media",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "oxwwdh",
+        "name": "feature-card-milan",
+        "settings": {
+          "_rowGap": "var(--space-s)",
+          "_display": "grid",
+          "_gridTemplateRows": "auto 1fr",
+          "_cssCustom": ".feature-card-milan[aria-selected=false] {\n  grid-template-rows: auto 0fr !important;\n}\n\n.feature-card-milan[aria-selected=true][data-should-animate=false]{\n  border-inline-start-width: 2px;\n  border-color: var(--primary);\n}\n\n.feature-card-milan[aria-selected=true][data-should-animate=true]:after {\n    position: absolute;\n    top: 0;\n    inset-inline-start: -2px;\n    width: 2px;\n    content: \"\";\n    background-color: var(--primary);\n    animation-name: featureSectionMilan_progress;\n    animation-duration: var(--animation-duration);\n    animation-timing-function: linear;\n}\n\n@keyframes featureSectionMilan_progress {\n  0% {\n    height: 0;\n\t}\n  100% {\n    height: 100%;\n\t}\n}",
+          "_cssTransition": "grid-template-rows .25s ease-in-out",
+          "_gridTemplateColumns": "1fr",
+          "_position": "relative",
+          "_background": {
+            "color": {
+              "raw": "transparent"
+            }
+          },
+          "_border": {
+            "width": {
+              "left": "2"
+            },
+            "style": "solid",
+            "color": {
+              "raw": "var(--black-trans-10)"
+            }
+          },
+          "_padding": {
+            "left": "var(--space-m)",
+            "right": "var(--space-m)"
+          }
+        },
+        "modified": 1738839674,
+        "user_id": 2,
+        "_exists": false
+      },
+      {
+        "id": "tmxfbo",
+        "name": "changing",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

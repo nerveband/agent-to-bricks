@@ -1,0 +1,612 @@
+{
+  "idx": 197,
+  "title": "Vertical Header Alpha",
+  "elementCount": 18,
+  "classCount": 10,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "861fa5",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "465167",
+          "bbb2b2",
+          "2ee04a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "yehttm"
+          ]
+        },
+        "label": "Vertical Header Alpha (CSS)"
+      },
+      {
+        "id": "5e0ade",
+        "name": "nav-menu",
+        "parent": "bbb2b2",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cukdax"
+          ],
+          "menu": "61",
+          "menuIcon": {
+            "library": "ionicons",
+            "icon": "ion-ios-arrow-forward"
+          },
+          "subMenuIcon": {
+            "library": "ionicons",
+            "icon": "ion-ios-arrow-forward"
+          },
+          "mobileMenuFadeIn": true,
+          "mobileMenuIcon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "submenuStatic": true,
+          "mobileMenu": "mobile_landscape"
+        },
+        "label": "Vertical Nav Alpha (CSS)",
+        "themeStyles": []
+      },
+      {
+        "id": "2ee04a",
+        "name": "div",
+        "parent": "861fa5",
+        "children": [
+          "01d175",
+          "d43d18",
+          "e12753",
+          "923d01"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "siftbo"
+          ]
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "01d175",
+        "name": "div",
+        "parent": "2ee04a",
+        "children": [
+          "171459",
+          "32909e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dnicwq"
+          ],
+          "tag": "a",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Facebook"
+      },
+      {
+        "id": "171459",
+        "name": "icon",
+        "parent": "01d175",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "swiwsx"
+          ],
+          "icon": {
+            "library": "fontawesomeBrands",
+            "icon": "fab fa-facebook-square"
+          }
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "32909e",
+        "name": "text-basic",
+        "parent": "01d175",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "acss_import_hidden-accessible"
+          ],
+          "text": "Follow us on Facebook"
+        },
+        "label": "Label (Hidden Accessible)"
+      },
+      {
+        "id": "d43d18",
+        "name": "div",
+        "parent": "2ee04a",
+        "children": [
+          "18f2b6",
+          "08345a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dnicwq"
+          ],
+          "tag": "a",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Instagram"
+      },
+      {
+        "id": "18f2b6",
+        "name": "icon",
+        "parent": "d43d18",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "swiwsx"
+          ],
+          "icon": {
+            "library": "fontawesomeBrands",
+            "icon": "fab fa-instagram-square"
+          }
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "08345a",
+        "name": "text-basic",
+        "parent": "d43d18",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "acss_import_hidden-accessible"
+          ],
+          "text": "Follow us on Facebook"
+        },
+        "label": "Label (Hidden Accessible)"
+      },
+      {
+        "id": "e12753",
+        "name": "div",
+        "parent": "2ee04a",
+        "children": [
+          "de1f06",
+          "723195"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dnicwq"
+          ],
+          "tag": "a",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "TikTok"
+      },
+      {
+        "id": "de1f06",
+        "name": "icon",
+        "parent": "e12753",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "swiwsx"
+          ],
+          "icon": {
+            "library": "fontawesomeBrands",
+            "icon": "fab fa-tiktok"
+          }
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "723195",
+        "name": "text-basic",
+        "parent": "e12753",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "acss_import_hidden-accessible"
+          ],
+          "text": "Follow us on Facebook"
+        },
+        "label": "Label (Hidden Accessible)"
+      },
+      {
+        "id": "923d01",
+        "name": "div",
+        "parent": "2ee04a",
+        "children": [
+          "7c2f6b",
+          "32028e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dnicwq"
+          ],
+          "tag": "a",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "YouTube"
+      },
+      {
+        "id": "7c2f6b",
+        "name": "icon",
+        "parent": "923d01",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "swiwsx"
+          ],
+          "icon": {
+            "library": "fontawesomeBrands",
+            "icon": "fab fa-youtube"
+          }
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "32028e",
+        "name": "text-basic",
+        "parent": "923d01",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "acss_import_hidden-accessible"
+          ],
+          "text": "Follow us on Facebook"
+        },
+        "label": "Label (Hidden Accessible)"
+      },
+      {
+        "id": "38e393",
+        "name": "image",
+        "parent": "465167",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "horpzc",
+            "ldjdli"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "url": {
+            "type": "meta",
+            "useDynamicData": "{site_url}"
+          },
+          "link": "url",
+          "altText": "{site_title} logo",
+          "loading": "eager"
+        },
+        "label": "Logo",
+        "themeStyles": []
+      },
+      {
+        "id": "465167",
+        "name": "div",
+        "parent": "861fa5",
+        "children": [
+          "38e393"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qjfvqp"
+          ],
+          "_alignItems": "center"
+        },
+        "label": "Head"
+      },
+      {
+        "id": "bbb2b2",
+        "name": "div",
+        "parent": "861fa5",
+        "children": [
+          "5e0ade"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "muupeq"
+          ]
+        },
+        "label": "Body"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "horpzc",
+        "name": "fr-logo",
+        "settings": [],
+        "_mappedId": "horpzc",
+        "modified": 1771254171,
+        "user_id": 1
+      },
+      {
+        "id": "dnicwq",
+        "name": "fr-social-alpha__icon-wrapper",
+        "settings": {
+          "_display": "flex"
+        },
+        "modified": 1751313761,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "swiwsx",
+        "name": "fr-social-alpha__icon",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "acss_import_hidden-accessible",
+        "name": "hidden-accessible",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "yehttm",
+        "name": "fr-vertical-header-alpha",
+        "settings": {
+          "_cssCustom": "root, #brx-header, #brx-content, #brx-footer {\n \t\n  /* Header Styling */\n  --v-header-width: \t\t\t15em; \n  --v-header-color:\t\t\t\tvar(--bg-light);\n  --v-header-box-shadow:\n    1.4px 1.4px 1.1px rgba(0, 0, 0, 0.01),\n    3.8px 3.8px 3.1px rgba(0, 0, 0, 0.015),\n    9px 9px 7.5px rgba(0, 0, 0, 0.02),\n    30px 30px 25px rgba(0, 0, 0, 0.03);\n}\n\n/* Set width when Mobile Toggle display */\n@media (min-width: 768px) {\n  /* Boyed Layout Fix */\n  .brx-body {\n    position: relative;\n  }\n  /* Makes the navigation scrollable */\n  .fr-vertical-header-alpha {\n  \theight: 0;\n    min-height: 100vh;\n  }\n  #brx-header {\n    display: flex;\n    position: fixed;\n    isolation: isolate;  \n    top: 0;\n    bottom: 0;  \n    left: 0;  \n    width: var(--v-header-width);  \n  }\n  #brx-content, #brx-footer {\n      margin-left: var(--v-header-width);\n      width: auto;\n  }\n}\n#brx-header {\n  background-color: var(--v-header-color);\n  box-shadow: var(--v-header-box-shadow);   \n  z-index: 9999;\n}",
+          "_display": "flex",
+          "_direction": "column",
+          "_padding": {
+            "top": "var(--space-m)",
+            "bottom": "var(--space-m)",
+            "left": "var(--space-m)",
+            "right": "var(--space-m)"
+          },
+          "_rowGap": "var(--container-gap)",
+          "_alignItems": "center",
+          "_direction:mobile_landscape": "row",
+          "_display:mobile_landscape": "flex",
+          "_alignSelf:mobile_landscape": "center",
+          "_padding:mobile_landscape": {
+            "top": "var(--space-s)",
+            "right": "var(--gutter)",
+            "bottom": "var(--space-s)",
+            "left": "var(--gutter)"
+          },
+          "_justifyContent:mobile_landscape": "space-between",
+          "_position": "sticky",
+          "_top": "0"
+        },
+        "modified": 1720026248,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "cukdax",
+        "name": "fr-vertical-nav-alpha",
+        "settings": {
+          "menuAlignment": "column",
+          "menuMargin": {
+            "left": "0"
+          },
+          "_cssCustom": ".fr-vertical-nav-alpha {\n  /* Link Styling */\n  --v-link-color: \t\t\t\tvar(--primary);\n  --v-link-color-hover: \tvar(--primary-hover);\n  \n  /* Menu Item Background */\n  --v-menu-item-bg:\t\t\t \ttransparent;\n  --v-menu-item-bg-hover: var(--primary-trans-10);\n  \n  /* Menu Item Padding */\n  --v-menu-item-pad-x:\t\t1em;\n  --v-menu-item-pad-y:\t\t.5em;\n\t\n  --v-item-gap: \t\t\t\t\t0;\n}",
+          "menuTypography": {
+            "color": {
+              "raw": "var(--v-link-color)"
+            },
+            "text-decoration": "none",
+            "line-height": "2em"
+          },
+          "subMenuTypography": {
+            "color": {
+              "raw": "var(--v-link-color)"
+            },
+            "text-decoration": "none",
+            "line-height": "2em"
+          },
+          "subMenuTypography:hover": {
+            "color": {
+              "raw": "var(--v-link-color-hover)"
+            }
+          },
+          "menuTypography:hover": {
+            "color": {
+              "raw": "var(--v-link-color-hover)"
+            }
+          },
+          "_typography:mobile_landscape": {
+            "line-height": "0"
+          },
+          "_width": "100%",
+          "menuBackground": {
+            "color": {
+              "raw": "var(--v-menu-item-bg)"
+            }
+          },
+          "menuBackground:hover": {
+            "color": {
+              "raw": "var(--v-menu-item-bg-hover)"
+            }
+          },
+          "menuActiveBorder": {
+            "radius": {
+              "top": "--btn-radius",
+              "right": "--btn-radius",
+              "bottom": "--btn-radius",
+              "left": "--btn-radius"
+            }
+          },
+          "menuPadding": {
+            "top": "var(--v-menu-item-pad-y)",
+            "bottom": "var(--v-menu-item-pad-y)",
+            "right": "var(--v-menu-item-pad-x)",
+            "left": "var(--v-menu-item-pad-x)"
+          },
+          "menuBorder": {
+            "radius": {
+              "top": "var(--btn-radius)",
+              "right": "var(--btn-radius)",
+              "bottom": "var(--btn-radius)",
+              "left": "var(--btn-radius)"
+            }
+          },
+          "subMenuBackground": {
+            "color": {
+              "raw": "var(--v-menu-item-bg)"
+            }
+          },
+          "subMenuBackground:hover": {
+            "color": {
+              "raw": "var(--v-menu-item-bg-hover)"
+            }
+          },
+          "subMenuBackgroundList:hover": {
+            "color": {
+              "raw": "transparent"
+            }
+          },
+          "subMenuBackgroundList": {
+            "color": {
+              "raw": "transparent"
+            }
+          },
+          "subMenuItemBorder": {
+            "radius": {
+              "top": "var(--btn-radius)",
+              "right": "var(--btn-radius)",
+              "bottom": "var(--btn-radius)",
+              "left": "var(--btn-radius)"
+            }
+          },
+          "mobileMenuBackground": {
+            "color": {
+              "raw": "var(--v-header-color)"
+            }
+          },
+          "mobileMenuWidth": "100vw",
+          "mobileMenuAlignment": "center",
+          "mobileMenuAlignItems": "center",
+          "mobileMenuTypography": {
+            "font-size": "var(--text-xl)",
+            "color": {
+              "raw": "var(--v-link-color)"
+            }
+          },
+          "mobileMenuTextAlign": "left",
+          "menuActiveBackground": {
+            "color": {
+              "raw": "var(--v-menu-item-bg-hover)"
+            }
+          },
+          "mobileMenuActiveTypography": {
+            "color": {
+              "raw": "var(--v-link-color)"
+            }
+          },
+          "mobileMenuIconTypography": {
+            "color": {
+              "raw": "var(--v-link-color)"
+            }
+          },
+          "mobileSubMenuTypography": {
+            "color": {
+              "raw": "var(--v-link-color)"
+            },
+            "font-size": "var(--text-l)"
+          },
+          "mobileMenuToggleColor": {
+            "raw": "var(--v-link-color)"
+          },
+          "mobileMenuToggleColorClose": {
+            "raw": "var(--v-link-color)"
+          },
+          "subMenuActiveBackground": {
+            "color": {
+              "raw": "var(--v-menu-item-bg-hover)"
+            }
+          },
+          "subMenuIconTransformOpen": {
+            "rotateZ": "90"
+          },
+          "menuIconTransformOpen": {
+            "rotateZ": "90"
+          },
+          "subMenuPadding": {
+            "top": "var(--v-menu-item-pad-y)",
+            "bottom": "var(--v-menu-item-pad-y)",
+            "left": "calc(var(--v-menu-item-pad-x) * 1.5)",
+            "right": "var(--v-menu-item-pad-x)"
+          },
+          "subMenuIconMargin": {
+            "left": "0"
+          },
+          "subMenuIconPadding": {
+            "right": "var(--space-s)"
+          },
+          "menuGap": "var(--v-item-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "siftbo",
+        "name": "fr-vertical-header-alpha__footer",
+        "settings": {
+          "_direction": "row",
+          "_flexWrap": "wrap",
+          "_columnGap": "1em",
+          "_rowGap": "1em",
+          "_justifyContent": "center",
+          "_alignItems": "center",
+          "_display:mobile_landscape": "none",
+          "_display": "flex"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ldjdli",
+        "name": "fr-vertical-header-alpha__logo",
+        "settings": {
+          "_alignSelf": "flex-start",
+          "_width": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "qjfvqp",
+        "name": "fr-vertical-header-alpha__head",
+        "settings": {
+          "_width:mobile_landscape": "unset",
+          "_width": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "muupeq",
+        "name": "fr-vertical-header-alpha__body",
+        "settings": {
+          "_cssCustom": ".fr-vertical-header-alpha__body {\n  overflow-y: scroll;\n}\n\n.fr-vertical-header-alpha__body::-webkit-scrollbar {\n  width: .15em;\n}\n\n.fr-vertical-header-alpha__body::-webkit-scrollbar-track {\n\tbackground-color: transparent;\n}\n\n.fr-vertical-header-alpha__body::-webkit-scrollbar-thumb {\n  background-color: var(--primary-trans-20);\n  border-radius: var(--btn-radius);\n}",
+          "_width:mobile_landscape": "auto",
+          "_height": "100%",
+          "_padding": {
+            "right": ".15em",
+            "left": ".15em"
+          },
+          "_width": "100%"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "idx": 0,
+  "title": "Gallery Bravo",
+  "elementCount": 6,
+  "classCount": 4,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "80bd08",
+        "name": "container",
+        "children": [
+          "97c5bb",
+          "c7dbdf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ehqos4"
+          ],
+          "tag": "ul"
+        },
+        "label": "Gallery Bravo (CSS)"
+      },
+      {
+        "id": "97c5bb",
+        "name": "div",
+        "parent": "80bd08",
+        "children": [
+          "ddedb8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "u7uhqr"
+          ],
+          "hasLoop": true,
+          "query": {
+            "objectType": "post",
+            "post_type": [
+              "attachment"
+            ],
+            "tax_query": [
+              "happyfiles_category::284"
+            ],
+            "orderby": [
+              "rand"
+            ],
+            "posts_per_page": "-1"
+          },
+          "tag": "li"
+        },
+        "label": "Media Wrapper (CSS)"
+      },
+      {
+        "id": "ddedb8",
+        "name": "image",
+        "parent": "97c5bb",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "1mvt4w"
+          ],
+          "image": {
+            "useDynamicData": "{post_id}",
+            "size": "image-720"
+          },
+          "link": "lightbox",
+          "lightboxId": "gallery-bravo",
+          "lightboxCropped": true,
+          "tag": "figure",
+          "popupIconDisable": true
+        },
+        "label": "Media"
+      },
+      {
+        "id": "c7dbdf",
+        "name": "div",
+        "parent": "80bd08",
+        "children": [
+          "f074d0",
+          "17afb7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "u7uhqr",
+            "licypd"
+          ],
+          "tag": "li"
+        },
+        "label": "Button (CSS)"
+      },
+      {
+        "id": "f074d0",
+        "name": "text-basic",
+        "parent": "c7dbdf",
+        "children": [],
+        "settings": {
+          "text": "See All {query_results_count:97c5bb} Photos",
+          "tag": "p"
+        },
+        "label": "Button"
+      },
+      {
+        "id": "17afb7",
+        "name": "svg",
+        "parent": "c7dbdf",
+        "children": [],
+        "settings": {
+          "file": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "ehqos4",
+        "name": "gallery-bravo",
+        "settings": {
+          "_cssCustom": ".gallery-bravo {\n  --nb-cols: 2;\n  --nb-rows: 3;\n  --grid-areas:\n    \"featured featured\"\n    \"area2 area3\"\n    \"area4 cta\";  \n\n  display: grid;\n  grid-template-columns: repeat(var(--nb-cols), minmax(0, 1fr));\n  grid-template-rows: repeat(var(--nb-rows), min-content);\n  gap: calc(var(--grid-gap)/2);\n  grid-template-areas: var(--grid-areas);  \n  align-items: center;\n  list-style-type: none;\n  padding: 0;\n  margin: 0;\n}\n\n/*\n * Hide media wrappers that aren't the button,\n * after the 6th one\n*/\n.gallery-bravo > *:nth-child(n+6 of .gallery-bravo__media-wrapper:not(.gallery-bravo__media-wrapper--button)) {\n  display: none;\n}\n\n\n/* Mobile grid placement */\n@media screen and (max-width: 767px) {\n  \n  .gallery-bravo >:nth-child(2 of .gallery-bravo__media-wrapper) {\n    grid-area: featured;\n  }\n  .gallery-bravo >:nth-child(3 of .gallery-bravo__media-wrapper) {\n    grid-area: area2;\n  }\n  .gallery-bravo >:nth-child(4 of .gallery-bravo__media-wrapper) {\n    grid-area: area3;\n  }\n  .gallery-bravo >:nth-child(5 of .gallery-bravo__media-wrapper) {\n    grid-area: area4;\n  }\n  \n  .gallery-bravo >:nth-child(1 of .gallery-bravo__media-wrapper),\n  .gallery-bravo__media-wrapper--button {\n    grid-area: cta;\n  }\n}\n\n\n/* Desktop grid + grid placement */\n@media screen and (min-width: 768px) {\n\t.gallery-bravo {\n    --nb-cols: 4;\n\t  --nb-rows: 2;\n    --grid-areas:\n      \"featured featured area2 area3\"\n      \"featured featured area4 cta\"\n      ;\n\t}\n  \n  .gallery-bravo >:nth-child(1 of .gallery-bravo__media-wrapper) {\n    grid-area: featured;\n  }\n  .gallery-bravo >:nth-child(5 of .gallery-bravo__media-wrapper),\n  .gallery-bravo__media-wrapper--button {\n    grid-area: cta;\n  }\n\n}\n\n"
+        },
+        "modified": 1765232903,
+        "user_id": 26,
+        "_exists": false
+      },
+      {
+        "id": "u7uhqr",
+        "name": "gallery-bravo__media-wrapper",
+        "settings": {
+          "_overflow": "hidden",
+          "_cssCustom": ".gallery-bravo__media-wrapper,\n.gallery-bravo__media-wrapper a {\n  inline-size: 100%;\n  block-size: 100%;\n}\n\n.gallery-bravo__media-wrapper {\n  min-inline-size: 100%;\n  aspect-ratio: 1/1;\n  border-radius: var(--radius);  \n  overflow: clip;\n  contain: paint;\n}\n\n.gallery-bravo__media-wrapper a {\n  display: block;\n}\n\n.gallery-bravo__media-wrapper img {\n  position: relative;\n  isolation: isolate;\n  aspect-ratio: 16/9;\n  transition: transform var(--transition-duration) var(--transition-timing) var(--transition-delay);\n  \n}\n\n.gallery-bravo__media-wrapper:hover img {\n  transform: scale(1.05);\n}",
+          "_heightMin": "100%"
+        },
+        "modified": 1765229983,
+        "user_id": 26,
+        "_exists": false
+      },
+      {
+        "id": "1mvt4w",
+        "name": "gallery-bravo__media",
+        "settings": {
+          "_objectFit": "cover",
+          "popupIcon": [],
+          "_cssCustom": ".gallery-bravo__media, \n.gallery-bravo__media img {\n  inline-size: 100%;\n  block-size: 100%;\n  cursor: zoom-in;\n}"
+        },
+        "modified": 1762094949,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "licypd",
+        "name": "gallery-bravo__media-wrapper--button",
+        "settings": {
+          "_cssCustom": ".gallery-bravo__media-wrapper--button {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  position: relative;\n  isolation: isolate;\n  gap: .5em;\n  pointer-events: none;\n}\n\n.gallery-bravo__media-wrapper--button::before {\n  content: '';\n  position: absolute;\n  inset: 0;\n\tbackground: var(--neutral-trans-50);\n  z-index: -1;\n}\n\n.gallery-bravo__media-wrapper--button :is(svg, i) {\n  color: var(--text-light);\n  order: -1;\n  height: 2em;\n  width: 2em;\n}\n.gallery-bravo__media-wrapper--button p {\n  text-align: center;\n  color: var(--text-light);\n}"
+        },
+        "modified": 1762095247,
+        "user_id": 9,
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

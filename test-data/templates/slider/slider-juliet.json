@@ -1,0 +1,590 @@
+{
+  "idx": 42,
+  "title": "Slider Juliet",
+  "elementCount": 23,
+  "classCount": 7,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "a70fac",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "e29c9d",
+          "28a2ee"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "nh3mqg"
+          ]
+        },
+        "label": "Slider Juliet (CSS)"
+      },
+      {
+        "id": "28a2ee",
+        "name": "fr-slider",
+        "parent": "a70fac",
+        "children": [
+          "78a7d8",
+          "cef8bd",
+          "a17933",
+          "a59ad9",
+          "757fdc"
+        ],
+        "settings": {
+          "height": "50vh",
+          "playButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-play"
+          },
+          "pauseButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-pause"
+          },
+          "pagination": true,
+          "sliderTag": "div",
+          "ariaCarousel": "Carousel",
+          "_cssGlobalClasses": [
+            "whe1ah"
+          ],
+          "isSync": true,
+          "syncId": "fr-slider-juliet",
+          "isNavigation": true,
+          "perPage": "5",
+          "focus": "1",
+          "gap": "var(--slide-gap)",
+          "fixedHeight": "auto",
+          "listTag": "ul"
+        },
+        "label": "Thumbnail Slider",
+        "themeStyles": []
+      },
+      {
+        "id": "78a7d8",
+        "name": "div",
+        "parent": "28a2ee",
+        "children": [
+          "9ef425"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "l36hoh"
+          ],
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "query": [],
+          "tag": "li"
+        },
+        "label": "Thumbnail Slide"
+      },
+      {
+        "id": "e29c9d",
+        "name": "fr-slider",
+        "parent": "a70fac",
+        "children": [
+          "2b5123",
+          "a2eca2",
+          "fe645f",
+          "89ecd4",
+          "d3a132"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xf2aay"
+          ],
+          "height": "50vh",
+          "speed": 300,
+          "playButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-play"
+          },
+          "pauseButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-pause"
+          },
+          "pagination": true,
+          "sliderTag": "div",
+          "listTag": "ul",
+          "ariaCarousel": "Carousel",
+          "isSync": true,
+          "isNavigation": true,
+          "syncId": "fr-slider-juliet",
+          "perPage": "1",
+          "fixedHeight": "auto",
+          "type": "fade",
+          "rewind": true,
+          "gap": "0"
+        },
+        "label": "Main Slider",
+        "themeStyles": []
+      },
+      {
+        "id": "2b5123",
+        "name": "div",
+        "parent": "e29c9d",
+        "children": [
+          "fa3a74"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ikxwv6"
+          ],
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "query": {
+            "objectType": "post"
+          },
+          "tag": "li"
+        },
+        "label": "Main Slide"
+      },
+      {
+        "id": "fa3a74",
+        "name": "image",
+        "parent": "2b5123",
+        "children": [],
+        "settings": {
+          "tag": "figure",
+          "_cssGlobalClasses": [
+            "hkuowr"
+          ],
+          "loading": "eager",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        },
+        "label": "Media",
+        "themeStyles": []
+      },
+      {
+        "id": "9ef425",
+        "name": "image",
+        "parent": "78a7d8",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jjaiib"
+          ],
+          "loading": "eager",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure"
+        },
+        "themeStyles": [],
+        "label": "Media"
+      },
+      {
+        "id": "d3a132",
+        "name": "div",
+        "parent": "e29c9d",
+        "children": [
+          "a825a8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ikxwv6"
+          ],
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "query": {
+            "objectType": "post"
+          },
+          "tag": "li"
+        },
+        "label": "Main Slide"
+      },
+      {
+        "id": "a825a8",
+        "name": "image",
+        "parent": "d3a132",
+        "children": [],
+        "settings": {
+          "tag": "figure",
+          "_cssGlobalClasses": [
+            "hkuowr"
+          ],
+          "loading": "eager",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        },
+        "label": "Media",
+        "themeStyles": []
+      },
+      {
+        "id": "89ecd4",
+        "name": "div",
+        "parent": "e29c9d",
+        "children": [
+          "8701cd"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ikxwv6"
+          ],
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "query": {
+            "objectType": "post"
+          },
+          "tag": "li"
+        },
+        "label": "Main Slide"
+      },
+      {
+        "id": "8701cd",
+        "name": "image",
+        "parent": "89ecd4",
+        "children": [],
+        "settings": {
+          "tag": "figure",
+          "_cssGlobalClasses": [
+            "hkuowr"
+          ],
+          "loading": "eager",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        },
+        "label": "Media",
+        "themeStyles": []
+      },
+      {
+        "id": "fe645f",
+        "name": "div",
+        "parent": "e29c9d",
+        "children": [
+          "1960ca"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ikxwv6"
+          ],
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "query": {
+            "objectType": "post"
+          },
+          "tag": "li"
+        },
+        "label": "Main Slide"
+      },
+      {
+        "id": "1960ca",
+        "name": "image",
+        "parent": "fe645f",
+        "children": [],
+        "settings": {
+          "tag": "figure",
+          "_cssGlobalClasses": [
+            "hkuowr"
+          ],
+          "loading": "eager",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        },
+        "label": "Media",
+        "themeStyles": []
+      },
+      {
+        "id": "a2eca2",
+        "name": "div",
+        "parent": "e29c9d",
+        "children": [
+          "0b4720"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ikxwv6"
+          ],
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "query": {
+            "objectType": "post"
+          },
+          "tag": "li"
+        },
+        "label": "Main Slide"
+      },
+      {
+        "id": "0b4720",
+        "name": "image",
+        "parent": "a2eca2",
+        "children": [],
+        "settings": {
+          "tag": "figure",
+          "_cssGlobalClasses": [
+            "hkuowr"
+          ],
+          "loading": "eager",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        },
+        "label": "Media",
+        "themeStyles": []
+      },
+      {
+        "id": "757fdc",
+        "name": "div",
+        "parent": "28a2ee",
+        "children": [
+          "85da48"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "l36hoh"
+          ],
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "query": [],
+          "tag": "li"
+        },
+        "label": "Thumbnail Slide"
+      },
+      {
+        "id": "85da48",
+        "name": "image",
+        "parent": "757fdc",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jjaiib"
+          ],
+          "loading": "eager",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure"
+        },
+        "themeStyles": [],
+        "label": "Media"
+      },
+      {
+        "id": "a59ad9",
+        "name": "div",
+        "parent": "28a2ee",
+        "children": [
+          "57a3d1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "l36hoh"
+          ],
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "query": [],
+          "tag": "li"
+        },
+        "label": "Thumbnail Slide"
+      },
+      {
+        "id": "57a3d1",
+        "name": "image",
+        "parent": "a59ad9",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jjaiib"
+          ],
+          "loading": "eager",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure"
+        },
+        "themeStyles": [],
+        "label": "Media"
+      },
+      {
+        "id": "a17933",
+        "name": "div",
+        "parent": "28a2ee",
+        "children": [
+          "a61f14"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "l36hoh"
+          ],
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "query": [],
+          "tag": "li"
+        },
+        "label": "Thumbnail Slide"
+      },
+      {
+        "id": "a61f14",
+        "name": "image",
+        "parent": "a17933",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jjaiib"
+          ],
+          "loading": "eager",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure"
+        },
+        "themeStyles": [],
+        "label": "Media"
+      },
+      {
+        "id": "cef8bd",
+        "name": "div",
+        "parent": "28a2ee",
+        "children": [
+          "af5bac"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "l36hoh"
+          ],
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "query": [],
+          "tag": "li"
+        },
+        "label": "Thumbnail Slide"
+      },
+      {
+        "id": "af5bac",
+        "name": "image",
+        "parent": "cef8bd",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jjaiib"
+          ],
+          "loading": "eager",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure"
+        },
+        "themeStyles": [],
+        "label": "Media"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "nh3mqg",
+        "name": "fr-slider-juliet",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "var(--slide-gap)",
+          "_width": "var(--width-l)",
+          "_cssCustom": ".fr-slider-juliet {\n  --slide-gap: 1em;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "whe1ah",
+        "name": "fr-slider-juliet-thumbnail",
+        "settings": {
+          "speed": "300"
+        },
+        "_exists": false
+      },
+      {
+        "id": "l36hoh",
+        "name": "fr-slider-juliet-thumbnail__slide",
+        "settings": {
+          "_cursor": "pointer"
+        },
+        "_exists": false
+      },
+      {
+        "id": "xf2aay",
+        "name": "fr-slider-juliet-main",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ikxwv6",
+        "name": "fr-slider-juliet-main__slide",
+        "settings": {
+          "_cursor": "grab"
+        },
+        "_exists": false
+      },
+      {
+        "id": "hkuowr",
+        "name": "fr-slider-juliet-main__media",
+        "settings": {
+          "_aspectRatio": "16/9",
+          "_objectFit": "cover",
+          "_width": "100%",
+          "_height": "100%",
+          "_cssCustom": ".fr-slider-juliet-main__media img {\n  display: block;\n  inline-size: 100%;\n  block-size: 100%; \n}\n\n/* Optional border overlay:\nremove this comment if you want to add a visible border atop the root element.\nAdjust the border style as needed.\n\n.fr-slider-juliet-main__media {\n\tposition: relative;\n}\n\n.fr-slider-juliet-main__media::after {\n  content: '';\n  position: absolute;\n  z-index: 1;\n  inset: 0px;\n  border: 3px solid var(--neutral);\n}\n*/"
+        },
+        "modified": 1762080369,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "jjaiib",
+        "name": "fr-slider-juliet-thumbnail__media",
+        "settings": {
+          "_aspectRatio": "1/1",
+          "_objectFit": "cover",
+          "_cssCustom": "/* Optional border overlay:\nremove this comment if you want to add a visible border atop the root element.\nAdjust the border style as needed.\n\n.fr-slider-juliet-thumbnail__media {\n\tposition: relative;\n}\n\n.fr-slider-juliet-thumbnail__media::after {\n  content: '';\n  position: absolute;\n  z-index: 1;\n  inset: 0px;\n  border: 3px solid var(--neutral);\n*/"
+        },
+        "modified": 1761552726,
+        "user_id": 9,
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "idx": 245,
+  "title": "Squeeze Hero Charlie",
+  "elementCount": 6,
+  "classCount": 6,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "2dab9f",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "26d2da",
+          "faf1ef"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fvyuen"
+          ]
+        },
+        "label": "Squeeze Hero Charlie"
+      },
+      {
+        "id": "26d2da",
+        "name": "container",
+        "parent": "2dab9f",
+        "children": [
+          "236dfd",
+          "b7e1dc"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mcisrw"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "236dfd",
+        "name": "text-basic",
+        "parent": "26d2da",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "zrntik"
+          ]
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "b7e1dc",
+        "name": "heading",
+        "parent": "26d2da",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder headline, we will replace it once your website copy is finalized",
+          "_cssGlobalClasses": [
+            "huyntl"
+          ],
+          "tag": "h1"
+        }
+      },
+      {
+        "id": "faf1ef",
+        "name": "container",
+        "parent": "2dab9f",
+        "children": [
+          "1f2426"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tjvkvw"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "1f2426",
+        "name": "video",
+        "parent": "faf1ef",
+        "children": [],
+        "settings": {
+          "videoType": "youtube",
+          "youTubeId": "NpEaa2P7qZI",
+          "youtubeControls": true,
+          "youtubeShowinfo": true,
+          "vimeoByline": true,
+          "vimeoTitle": true,
+          "vimeoPortrait": true,
+          "fileControls": true
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "fvyuen",
+        "name": "fr-squeeze-hero-charlie",
+        "settings": {
+          "_rowGap": "var(--container-gap)",
+          "_padding": {
+            "bottom": "0"
+          },
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "mcisrw",
+        "name": "fr-squeeze-hero-charlie__content-wrapper",
+        "settings": {
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "zrntik",
+        "name": "fr-squeeze-hero-charlie__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "huyntl",
+        "name": "fr-squeeze-hero-charlie__heading",
+        "settings": {
+          "_width": "85%",
+          "_width:mobile_landscape": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "tjvkvw",
+        "name": "fr-squeeze-hero-charlie__media-wrapper",
+        "settings": {
+          "_overflow": "hidden"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

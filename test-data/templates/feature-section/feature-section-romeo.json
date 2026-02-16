@@ -1,0 +1,801 @@
+{
+  "idx": 151,
+  "title": "Feature Section Romeo",
+  "elementCount": 36,
+  "classCount": 17,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "04002e",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "b9f84c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "unixsw"
+          ]
+        },
+        "label": "Feature Section Romeo"
+      },
+      {
+        "id": "b9f84c",
+        "name": "container",
+        "parent": "04002e",
+        "children": [
+          "37a6ae",
+          "f487b8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lxykxh"
+          ]
+        },
+        "label": "Feature Grid Romeo"
+      },
+      {
+        "id": "37a6ae",
+        "name": "block",
+        "parent": "b9f84c",
+        "children": [
+          "478794",
+          "541d61",
+          "baf644",
+          "234627"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sxzqip"
+          ]
+        },
+        "label": "Content"
+      },
+      {
+        "id": "f487b8",
+        "name": "block",
+        "parent": "b9f84c",
+        "children": [
+          "f213d6",
+          "4dd443",
+          "c8b2e3",
+          "64b8a9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "unxxkr"
+          ],
+          "tag": "ul"
+        },
+        "label": "Feature Romeo"
+      },
+      {
+        "id": "64b8a9",
+        "name": "block",
+        "parent": "f487b8",
+        "children": [
+          "7ffc56",
+          "dbe678",
+          "a209f0",
+          "a57ddf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ddxkez"
+          ],
+          "tag": "li"
+        },
+        "label": "Feature Card Romeo (CSS)"
+      },
+      {
+        "id": "dbe678",
+        "name": "div",
+        "parent": "64b8a9",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lqnmld"
+          ]
+        },
+        "label": "Overlay"
+      },
+      {
+        "id": "a57ddf",
+        "name": "div",
+        "parent": "64b8a9",
+        "children": [
+          "bbd205",
+          "d91ee2"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wcjvwu"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "bbd205",
+        "name": "heading",
+        "parent": "a57ddf",
+        "children": [],
+        "settings": {
+          "text": "Card heading",
+          "_cssGlobalClasses": [
+            "szjynu",
+            "acss_import_clickable-parent"
+          ],
+          "tag": "h3",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "d91ee2",
+        "name": "text-basic",
+        "parent": "a57ddf",
+        "children": [],
+        "settings": {
+          "text": "A description of the service or features goes here.",
+          "_cssGlobalClasses": [
+            "jwqlze"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "7ffc56",
+        "name": "image",
+        "parent": "64b8a9",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "lvkpwc"
+          ],
+          "loading": "eager",
+          "caption": "none"
+        },
+        "label": "Media"
+      },
+      {
+        "id": "c8b2e3",
+        "name": "block",
+        "parent": "f487b8",
+        "children": [
+          "151055",
+          "9642aa",
+          "6835a9",
+          "10b02c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ddxkez"
+          ],
+          "tag": "li"
+        },
+        "label": "Feature Card Romeo (CSS)"
+      },
+      {
+        "id": "151055",
+        "name": "image",
+        "parent": "c8b2e3",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "lvkpwc"
+          ],
+          "loading": "eager",
+          "caption": "none"
+        },
+        "label": "Media"
+      },
+      {
+        "id": "9642aa",
+        "name": "div",
+        "parent": "c8b2e3",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lqnmld"
+          ]
+        },
+        "label": "Overlay"
+      },
+      {
+        "id": "10b02c",
+        "name": "div",
+        "parent": "c8b2e3",
+        "children": [
+          "0e1daa",
+          "e8e363"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wcjvwu"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "0e1daa",
+        "name": "heading",
+        "parent": "10b02c",
+        "children": [],
+        "settings": {
+          "text": "Card heading",
+          "_cssGlobalClasses": [
+            "szjynu",
+            "acss_import_clickable-parent"
+          ],
+          "tag": "h3",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "e8e363",
+        "name": "text-basic",
+        "parent": "10b02c",
+        "children": [],
+        "settings": {
+          "text": "A description of the service or features goes here.",
+          "_cssGlobalClasses": [
+            "jwqlze"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "f213d6",
+        "name": "block",
+        "parent": "f487b8",
+        "children": [
+          "7809e8",
+          "fe95e6",
+          "d419d8",
+          "b4d2f3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ddxkez"
+          ],
+          "tag": "li"
+        },
+        "label": "Feature Card Romeo (CSS)"
+      },
+      {
+        "id": "7809e8",
+        "name": "image",
+        "parent": "f213d6",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "lvkpwc"
+          ],
+          "loading": "eager",
+          "caption": "none"
+        },
+        "label": "Media"
+      },
+      {
+        "id": "fe95e6",
+        "name": "div",
+        "parent": "f213d6",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lqnmld"
+          ]
+        },
+        "label": "Overlay"
+      },
+      {
+        "id": "b4d2f3",
+        "name": "div",
+        "parent": "f213d6",
+        "children": [
+          "90c34d",
+          "b19abb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wcjvwu"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "90c34d",
+        "name": "heading",
+        "parent": "b4d2f3",
+        "children": [],
+        "settings": {
+          "text": "Card heading",
+          "_cssGlobalClasses": [
+            "szjynu",
+            "acss_import_clickable-parent"
+          ],
+          "tag": "h3",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "b19abb",
+        "name": "text-basic",
+        "parent": "b4d2f3",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jwqlze"
+          ],
+          "tag": "p",
+          "text": "A description of the service or features goes here."
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "a209f0",
+        "name": "text-basic",
+        "parent": "64b8a9",
+        "children": [],
+        "settings": {
+          "text": "Card heading",
+          "_cssGlobalClasses": [
+            "lxpkfh"
+          ],
+          "tag": "span"
+        },
+        "label": "Vertical Heading"
+      },
+      {
+        "id": "d419d8",
+        "name": "text-basic",
+        "parent": "f213d6",
+        "children": [],
+        "settings": {
+          "text": "Card heading",
+          "_cssGlobalClasses": [
+            "lxpkfh"
+          ],
+          "tag": "span"
+        },
+        "label": "Vertical Heading"
+      },
+      {
+        "id": "6835a9",
+        "name": "text-basic",
+        "parent": "c8b2e3",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lxpkfh"
+          ],
+          "tag": "span",
+          "text": "Card heading"
+        },
+        "label": "Vertical Heading"
+      },
+      {
+        "id": "4dd443",
+        "name": "block",
+        "parent": "f487b8",
+        "children": [
+          "4f4cc1",
+          "6b827b",
+          "4034ea",
+          "bea50b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ddxkez"
+          ],
+          "tag": "li"
+        },
+        "label": "Feature Card Romeo (CSS)"
+      },
+      {
+        "id": "4f4cc1",
+        "name": "image",
+        "parent": "4dd443",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lvkpwc"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "loading": "eager",
+          "caption": "none"
+        },
+        "label": "Media"
+      },
+      {
+        "id": "6b827b",
+        "name": "div",
+        "parent": "4dd443",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lqnmld"
+          ]
+        },
+        "label": "Overlay"
+      },
+      {
+        "id": "4034ea",
+        "name": "text-basic",
+        "parent": "4dd443",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lxpkfh"
+          ],
+          "text": "Card heading",
+          "tag": "span"
+        },
+        "label": "Vertical Heading"
+      },
+      {
+        "id": "bea50b",
+        "name": "div",
+        "parent": "4dd443",
+        "children": [
+          "e6df32",
+          "48fb46"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wcjvwu"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "e6df32",
+        "name": "heading",
+        "parent": "bea50b",
+        "children": [],
+        "settings": {
+          "text": "Card heading",
+          "_cssGlobalClasses": [
+            "szjynu",
+            "acss_import_clickable-parent"
+          ],
+          "tag": "h3",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "48fb46",
+        "name": "text-basic",
+        "parent": "bea50b",
+        "children": [],
+        "settings": {
+          "text": "A description of the service or features goes here.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "jwqlze"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "478794",
+        "name": "heading",
+        "parent": "37a6ae",
+        "children": [],
+        "settings": {
+          "text": "Heading goes here",
+          "_cssGlobalClasses": [
+            "qdqsly"
+          ],
+          "tag": "h2"
+        }
+      },
+      {
+        "id": "baf644",
+        "name": "text-basic",
+        "parent": "37a6ae",
+        "children": [],
+        "settings": {
+          "text": "If you\u2019re curious, this is Website Ipsum. It was specifically developed for the use on development websites.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "kwwwsw"
+          ],
+          "_typography": []
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "541d61",
+        "name": "text-basic",
+        "parent": "37a6ae",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "eeigpq"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "234627",
+        "name": "button",
+        "parent": "37a6ae",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "CTA"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "acss_import_clickable-parent",
+        "name": "clickable-parent",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "unixsw",
+        "name": "fr-feature-section-romeo",
+        "settings": {
+          "_rowGap": "calc(var(--container-gap) * 1.5)",
+          "_padding": {
+            "top": "var(--section-space-l)",
+            "bottom": "var(--section-space-l)"
+          },
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "lxykxh",
+        "name": "fr-feature-grid-romeo",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-1-2)",
+          "_gridGap": "calc(var(--grid-gap) * 1)",
+          "_alignItemsGrid": "stretch",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)",
+          "_gridTemplateRows": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "sxzqip",
+        "name": "fr-feature-grid-romeo__content",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_justifyContent": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "unxxkr",
+        "name": "fr-feature-romeo",
+        "settings": {
+          "_direction": "row",
+          "_flexWrap": "nowrap",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_overflow": "hidden",
+          "_direction:mobile_landscape": "column",
+          "_rowGap:mobile_landscape": "var(--grid-gap)",
+          "_padding": {
+            "left": "0"
+          },
+          "_columnGap": "0"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ddxkez",
+        "name": "fr-feature-card-romeo",
+        "settings": {
+          "_cssCustom": ".fr-feature-card-romeo {\n  --card-width-collapsed: 20%;\n  --card-padding: var(--space-m);\n  --card-min-height: 24em;\n  --card-content-width: 24ch;\n  --transition-duration: .3s;\n  --transition-function: ease-in-out;\n  --overlay-color: var(--black-trans-50);\n  --overlay-color-hover: var(--black-trans-40);\n}\n\n/* Card */\n\n.fr-feature-card-romeo {\n  flex-basis: var(--card-width-collapsed);\n  transition: flex-basis var(--transition-duration) var(--transition-function);\n  min-height: var(--card-min-height);\n  isolation: isolate;\n  position: relative;\n  overflow: hidden;\n  height: 100%;\n}\n\n.fr-feature-card-romeo.is-hover,\n.fr-feature-card-romeo:focus-within {\n\tflex-basis: 100%;\n  cursor: pointer;\n}\n\n.fr-feature-card-romeo:focus-within :focus {\n\toutline: 0;\n  box-shadow: none;\n}\n\n@media (max-width: 767px) {\n  .fr-feature-card-romeo {\n  \tborder-radius: var(--radius);\n  }\n}\n\n/* Heading & Lede */\n\n@media (min-width: 767px) {\n  \n  .fr-feature-card-romeo__heading {\n    \n    /* Warning: Transforming or animating the heading \n    will break clickable parent. Don't attempt\n    to animate the heading */\n    \n    display: flex;\n    align-items: center;\n    width: var(--card-content-width);\n    max-width: var(--card-content-width);\n    opacity: 0;\n  }\n\n  .fr-feature-card-romeo__lede {\n    width: var(--card-content-width);\n    max-width: var(--card-content-width);\n    opacity: 0;\n    translate: 0% 200%;\n    transition: \n      opacity var(--transition-duration) var(--transition-function),\n      translate var(--transition-duration) var(--transition-function);\n  }\n\n  .fr-feature-card-romeo__heading::before {\n    content: '\u203a';\n    order: 1;\n    margin-left: .25em;\n  }\n\n  .fr-feature-card-romeo.is-hover .fr-feature-card-romeo__heading,\n  .fr-feature-card-romeo:focus-within .fr-feature-card-romeo__heading {\n    opacity: 1;\n  }\n\n  .fr-feature-card-romeo.is-hover .fr-feature-card-romeo__lede,\n  .fr-feature-card-romeo:focus-within .fr-feature-card-romeo__lede {\n    translate: 0% 0%;\n    opacity: 1;\n  }\n\n}\n\n/* Media */\n\n.fr-feature-card-romeo__media,\n.fr-feature-card-romeo__media img {\n  --radius: 0;\n\tposition: absolute;\n  height: 100%;\n  width: 100%;\n  z-index: -1;\n  min-width: 100%;\n  min-height: 100%;\n}\n\n/* Overlay */\n\n.fr-feature-card-romeo__overlay{\n\topacity: 1;\n  transition: opacity var(--transition-duration) var(--transition-function);\n}\n\n.fr-feature-card-romeo.is-hover .fr-feature-card-romeo__overlay,\n.fr-feature-card-romeo:focus-within .fr-feature-card-romeo__overlay {\n\topacity: 0;\n}\n\n\n/* Inner Content */\n\n.fr-feature-card-romeo__inner {\n  position: absolute;\n  background-image: linear-gradient(180deg, transparent 40%, var(--overlay-color-hover));\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  z-index: 1;\n  padding: var(--card-padding);\n  justify-content: flex-end;\n  align-items: flex-start;\n  gap: calc(var(--content-gap) / 2);\n  transition: opacity var(--transition-duration) var(--transition-function);\n}\n\n.fr-feature-card-romeo:focus-within .fr-feature-card-romeo__inner,\n.fr-feature-card-romeo.is-hover .fr-feature-card-romeo__inner {\n\topacity: 1;\n}\n\n@media (min-width: 767px) {\n  .fr-feature-card-romeo__inner {\n  \topacity: 0;\n  }\n}\n\n/* Vertical Heading */\n\n\n.fr-feature-card-romeo__heading--vert {\n  writing-mode: vertical-lr;\n  text-orientation: mixed;\n  white-space: nowrap;\n  rotate: 180deg;\n}\n\n.fr-feature-card-romeo__heading--vert {\n  position: absolute;\n  inset-block-start: var(--card-padding);\n  inset-inline-end: var(--card-padding);\n  translate: 0% 0%;\n  line-height: 1;\n  opacity: 1;\n  transition: \n    opacity var(--transition-duration) var(--transition-function),\n    translate var(--transition-duration) var(--transition-function);\n}\n\n.fr-feature-card-romeo:focus-within .fr-feature-card-romeo__heading--vert,\n.fr-feature-card-romeo.is-hover .fr-feature-card-romeo__heading--vert {\n  opacity: 0;\n  translate: -500% 0%;\n}\n\n\n/* Hide Elements on Mobile */\n\n@media (max-width: 767px) {\n  .fr-feature-card-romeo__overlay,\n  .fr-feature-card-romeo__heading--vert {\n  \tdisplay: none;\n  }\n}",
+          "_direction": "column",
+          "_flexGrow": "1",
+          "_interactions": [
+            {
+              "id": "hnhofk",
+              "trigger": "mouseenter",
+              "action": "setAttribute",
+              "actionAttributeKey": "class",
+              "actionAttributeValue": "is-hover"
+            },
+            {
+              "id": "nafkin",
+              "trigger": "mouseleave",
+              "action": "removeAttribute",
+              "actionAttributeKey": "class",
+              "actionAttributeValue": "is-hover"
+            }
+          ]
+        },
+        "modified": 1739117038,
+        "user_id": 26,
+        "_exists": false
+      },
+      {
+        "id": "lqnmld",
+        "name": "fr-feature-card-romeo__overlay",
+        "settings": {
+          "_background": {
+            "color": {
+              "raw": "var(--overlay-color)"
+            }
+          },
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_position": "absolute",
+          "_zIndex": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wcjvwu",
+        "name": "fr-feature-card-romeo__inner",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "szjynu",
+        "name": "fr-feature-card-romeo__heading",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--white)"
+            }
+          },
+          "_zIndex": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "jwqlze",
+        "name": "fr-feature-card-romeo__lede",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--white)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "lvkpwc",
+        "name": "fr-feature-card-romeo__media",
+        "settings": {
+          "_objectFit": "cover"
+        },
+        "_exists": false
+      },
+      {
+        "id": "lxpkfh",
+        "name": "fr-feature-card-romeo__heading--vert",
+        "settings": {
+          "_typography": {
+            "font-weight": "600",
+            "font-size": "var(--h3)",
+            "color": {
+              "raw": "var(--white)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "qdqsly",
+        "name": "fr-feature-grid-romeo__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "kwwwsw",
+        "name": "fr-feature-grid-romeo__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "eeigpq",
+        "name": "fr-feature-grid-romeo__accent-heading",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

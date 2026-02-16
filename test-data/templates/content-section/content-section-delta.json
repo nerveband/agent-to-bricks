@@ -1,0 +1,169 @@
+{
+  "idx": 425,
+  "title": "Content Section Delta",
+  "elementCount": 6,
+  "classCount": 7,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "3b6e1f",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "139e29"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "simjfb"
+          ]
+        },
+        "label": "Content Section Delta"
+      },
+      {
+        "id": "139e29",
+        "name": "container",
+        "parent": "3b6e1f",
+        "children": [
+          "edeef3",
+          "dbdb97",
+          "4d57cc"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pxerje"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "edeef3",
+        "name": "heading",
+        "parent": "139e29",
+        "children": [],
+        "settings": {
+          "tag": "h2",
+          "text": "Your headline here",
+          "_cssGlobalClasses": [
+            "sbpiyb"
+          ]
+        }
+      },
+      {
+        "id": "1968ff",
+        "name": "image",
+        "parent": "dbdb97",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "ekowbw"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "4d57cc",
+        "name": "text-basic",
+        "parent": "139e29",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "ueamzy"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "dbdb97",
+        "name": "div",
+        "parent": "139e29",
+        "children": [
+          "1968ff"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ztngoq"
+          ]
+        },
+        "label": "Media Wrapper"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771256146,
+        "user_id": 1
+      },
+      {
+        "id": "simjfb",
+        "name": "fr-content-section-delta",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "pxerje",
+        "name": "fr-content-section-delta__inner",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_alignItems:mobile_landscape": "flex-start"
+        },
+        "_exists": false
+      },
+      {
+        "id": "sbpiyb",
+        "name": "fr-content-section-delta__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ekowbw",
+        "name": "fr-content-section-delta__media",
+        "settings": {
+          "_width": "100%",
+          "_objectFit": "cover",
+          "_aspectRatio": "16/9"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ueamzy",
+        "name": "fr-content-section-delta__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ztngoq",
+        "name": "fr-content-section-delta__media-wrapper",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

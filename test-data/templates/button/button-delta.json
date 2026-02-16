@@ -1,0 +1,552 @@
+{
+  "idx": 76,
+  "title": "Button Delta",
+  "elementCount": 18,
+  "classCount": 10,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "ce48ab",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "fbb191",
+          "10f297",
+          "ca8fc6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vvqqeh"
+          ],
+          "_attributes": [
+            {
+              "id": "nvtbvg",
+              "name": "data-btn-style",
+              "value": "split"
+            }
+          ]
+        },
+        "label": "Button Delta (Animation Styles)"
+      },
+      {
+        "id": "fbb191",
+        "name": "div",
+        "parent": "ce48ab",
+        "children": [
+          "61d0cf",
+          "d5bc65"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mujc5i",
+            "hrhojs"
+          ],
+          "tag": "custom",
+          "customTag": "button",
+          "_attributes": [
+            {
+              "id": "edhzco",
+              "name": "aria-haspopup",
+              "value": "true"
+            },
+            {
+              "id": "wqmiss",
+              "name": "aria-expanded",
+              "value": "false"
+            },
+            {
+              "id": "taryqo",
+              "name": "aria-controls",
+              "value": "split-button-list"
+            }
+          ]
+        },
+        "label": "Trigger (CSS Button Styles)"
+      },
+      {
+        "id": "61d0cf",
+        "name": "text-basic",
+        "parent": "fbb191",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ibcchn"
+          ],
+          "text": "See Options",
+          "tag": "span"
+        },
+        "label": "Trigger Text"
+      },
+      {
+        "id": "d5bc65",
+        "name": "icon",
+        "parent": "fbb191",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "6k1ewk"
+          ],
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_attributes": [
+            {
+              "id": "uxutkm",
+              "name": "aria-hidden",
+              "value": "true"
+            }
+          ]
+        },
+        "label": "Trigger Icon",
+        "themeStyles": []
+      },
+      {
+        "id": "10f297",
+        "name": "div",
+        "parent": "ce48ab",
+        "children": [
+          "077098",
+          "5e0871",
+          "dec85d"
+        ],
+        "settings": {
+          "tag": "ul",
+          "_cssGlobalClasses": [
+            "m8e9lg"
+          ],
+          "_cssId": "split-button-list"
+        },
+        "label": "List"
+      },
+      {
+        "id": "67e587",
+        "name": "div",
+        "parent": "077098",
+        "children": [
+          "ff2a7d",
+          "3a5e77"
+        ],
+        "settings": {
+          "tag": "a",
+          "_cssGlobalClasses": [
+            "obaow9"
+          ],
+          "customTag": "button",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Link"
+      },
+      {
+        "id": "ff2a7d",
+        "name": "text-basic",
+        "parent": "67e587",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hu9co4"
+          ],
+          "text": "Destination #1",
+          "tag": "span"
+        },
+        "label": "Link Text"
+      },
+      {
+        "id": "3a5e77",
+        "name": "icon",
+        "parent": "67e587",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "0dvnl8"
+          ],
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_attributes": [
+            {
+              "id": "kbecst",
+              "name": "aria-hidden",
+              "value": "true"
+            }
+          ]
+        },
+        "label": "Link Icon",
+        "themeStyles": []
+      },
+      {
+        "id": "077098",
+        "name": "div",
+        "parent": "10f297",
+        "children": [
+          "67e587"
+        ],
+        "settings": {
+          "tag": "li",
+          "_cssGlobalClasses": [
+            "0s75by"
+          ]
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "5e0871",
+        "name": "div",
+        "parent": "10f297",
+        "children": [
+          "c626e1"
+        ],
+        "settings": {
+          "tag": "li",
+          "_cssGlobalClasses": [
+            "0s75by"
+          ]
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "c626e1",
+        "name": "div",
+        "parent": "5e0871",
+        "children": [
+          "be4b20",
+          "dc2d24"
+        ],
+        "settings": {
+          "tag": "a",
+          "_cssGlobalClasses": [
+            "obaow9"
+          ],
+          "customTag": "button",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Link"
+      },
+      {
+        "id": "be4b20",
+        "name": "text-basic",
+        "parent": "c626e1",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hu9co4"
+          ],
+          "text": "Destination #2",
+          "tag": "span"
+        },
+        "label": "Link Text"
+      },
+      {
+        "id": "dc2d24",
+        "name": "icon",
+        "parent": "c626e1",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "0dvnl8"
+          ],
+          "_attributes": [
+            {
+              "id": "fbdoki",
+              "name": "aria-hidden",
+              "value": "true"
+            }
+          ]
+        },
+        "label": "Link Icon",
+        "themeStyles": []
+      },
+      {
+        "id": "ca8fc6",
+        "name": "code",
+        "parent": "ce48ab",
+        "children": [],
+        "settings": {
+          "executeCode": true,
+          "noRoot": true,
+          "user_id": 1,
+          "time": 1731706213,
+          "javascriptCode": "document.querySelectorAll('[data-btn-style=\"split\"]').forEach(button => {\n  const trigger = button.querySelector('button:first-of-type');\n  const list = button.querySelector('ul');\n  const items = list.querySelectorAll('a, button');\n\n  // Make sure all items are initially unfocusable\n  items.forEach(item => item.setAttribute('tabindex', '-1'));\n\n  // Function to expand the list and set aria-expanded to true\n  function expandList() {\n    button.classList.add('expanded');\n    trigger.setAttribute('aria-expanded', 'true');\n    // Make items focusable\n    items.forEach(item => item.removeAttribute('tabindex'));\n  }\n\n  // Function to close the list and set aria-expanded to false\n  function closeList() {\n    button.classList.remove('expanded');\n    trigger.setAttribute('aria-expanded', 'false');\n    trigger.focus();\n    // Make items unfocusable\n    items.forEach(item => item.setAttribute('tabindex', '-1'));\n  }\n\n  // Add expanded class for showing the list\n  trigger.addEventListener('click', function() {\n    if (button.classList.contains('expanded')) {\n      closeList();\n    } else {\n      expandList();\n    }\n  });\n\n  // Handle keyboard activation for the trigger\n  trigger.addEventListener('keydown', function(event) {\n    if (event.key === 'Enter' || event.key === ' ') {\n      event.preventDefault(); // Prevent default behavior for Enter and Space\n      if (button.classList.contains('expanded')) {\n        closeList();\n      } else {\n        expandList();\n        items[0].focus(); // Focus the first item\n      }\n    }\n  });\n\n  // Listen for escape key to close the list & return focus\n  document.addEventListener('keydown', function(event) {\n    if (event.key === 'Escape' && button.classList.contains('expanded')) {\n      closeList();\n    }\n  });\n\n  // Listen for clicks outside the button to close the list\n  document.addEventListener('click', function(event) {\n    if (!button.contains(event.target) && button.classList.contains('expanded')) {\n      closeList();\n    }\n  });\n\n  // Listen for arrow keys and trap focus\n  list.addEventListener('keydown', function(event) {\n    const itemsArray = Array.from(items);\n    let currentIndex = itemsArray.indexOf(document.activeElement);\n\n    if (event.key === 'ArrowDown') {\n      event.preventDefault();\n      currentIndex = (currentIndex + 1) % itemsArray.length;\n      itemsArray[currentIndex].focus();\n    } else if (event.key === 'ArrowUp') {\n      event.preventDefault();\n      currentIndex = (currentIndex - 1 + itemsArray.length) % itemsArray.length;\n      itemsArray[currentIndex].focus();\n    } else if (event.key === 'Tab') {\n      if (button.classList.contains('expanded')) {\n        event.preventDefault();\n        if (event.shiftKey) {\n          // Move focus to the previous item for Shift+Tab\n          currentIndex = (currentIndex - 1 + itemsArray.length) % itemsArray.length;\n        } else {\n          // Move focus to the next item for Tab\n          currentIndex = (currentIndex + 1) % itemsArray.length;\n        }\n        itemsArray[currentIndex].focus();\n      }\n    }\n  });\n});"
+        },
+        "label": "JS"
+      },
+      {
+        "id": "dec85d",
+        "name": "div",
+        "parent": "10f297",
+        "children": [
+          "999e31"
+        ],
+        "settings": {
+          "tag": "li",
+          "_cssGlobalClasses": [
+            "0s75by"
+          ]
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "999e31",
+        "name": "div",
+        "parent": "dec85d",
+        "children": [
+          "94fbac",
+          "5aa6d7"
+        ],
+        "settings": {
+          "tag": "a",
+          "_cssGlobalClasses": [
+            "obaow9"
+          ],
+          "customTag": "button",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Link"
+      },
+      {
+        "id": "94fbac",
+        "name": "text-basic",
+        "parent": "999e31",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hu9co4"
+          ],
+          "text": "Destination #3",
+          "tag": "span"
+        },
+        "label": "Link Text"
+      },
+      {
+        "id": "5aa6d7",
+        "name": "icon",
+        "parent": "999e31",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "0dvnl8"
+          ],
+          "_attributes": [
+            {
+              "id": "cmzuga",
+              "name": "aria-hidden",
+              "value": "true"
+            }
+          ]
+        },
+        "themeStyles": [],
+        "label": "Link Icon"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "vvqqeh",
+        "name": "button-delta",
+        "settings": {
+          "_cssCustom": "/* Show/hide list */\n.button-delta {\n\t--scale-size-start: .5;\n  --transition-speed: .3s;\n  --transition-function: ease-in-out;\n}\n.button-delta {\n  isolation: isolate;\n}\n.button-delta__list {\n  opacity: 0;\n  z-index: -1;\n  scale: var(--scale-size-start);\n  transition: transform var(--transition-speed) var(--transition-function), opacity 0.3s var(--transition-function), scale var(--transition-speed) ease, width var(--transition-speed) var(--transition-function);\n}\n.button-delta.expanded .button-delta__list {\n  opacity: 1;\n  z-index: 1;\n  width: calc(100% + 2em);\n  scale: 1;\n}",
+          "_width": "fit-content",
+          "_heightMin": "0",
+          "_widthMin": "0",
+          "_position": "relative"
+        },
+        "modified": 1720196128,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "mujc5i",
+        "name": "button-delta__trigger",
+        "settings": {
+          "_display": "flex",
+          "_alignItems": "center",
+          "_columnGap": ".5em",
+          "_cssCustom": "/* Custom Button Styles\nUse in conjunction with custom .btn-- class\nCustomize the values below to your liking */\n.button-delta__trigger {\n\t--btn-background: var(--white);\n\t--btn-background-hover: var(--primary-hover);\n\t--btn-text-color: var(--primary);\n\t--btn-text-color-hover: var(--primary-ultra-light);\n\t--btn-border-color: var(--primary);\n\t--btn-border-color-hover: var(--primary-hover);\n\t--focus-color: var(--primary-light);\n\t--btn-border-width: var(--btn-outline-border-width);\n}\n\n/* End Custom Button Styles */\n\n.button-delta__trigger:hover .button-delta__trigger-icon {\n\tcolor: var(--btn-text-color-hover);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "hrhojs",
+        "name": "btn--delta",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ibcchn",
+        "name": "button-delta__trigger-text",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "6k1ewk",
+        "name": "button-delta__trigger-icon",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--primary)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "m8e9lg",
+        "name": "button-delta__list",
+        "settings": {
+          "_cssCustom": ".button-delta__list {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  translate: -50% -50%;\n  box-shadow: var(--box-shadow-m);\n  border: 1px solid var(--primary-light-trans-50);\n  border-radius: var(--radius);\n  list-style: none;\n}",
+          "_direction": "column",
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          },
+          "_background": {
+            "color": {
+              "raw": "var(--white)"
+            }
+          },
+          "_padding": {
+            "left": ".25em",
+            "top": ".25em",
+            "bottom": ".25em",
+            "right": ".25em"
+          },
+          "_widthMin": "100%",
+          "_widthMax": "unset"
+        },
+        "modified": 1726475479,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "obaow9",
+        "name": "button-delta__link",
+        "settings": {
+          "_display": "flex",
+          "_alignItems": "center",
+          "_columnGap": ".5em",
+          "_typography": {
+            "text-decoration": "none",
+            "color": {
+              "raw": "var(--primary)"
+            }
+          },
+          "_widthMax": "unset",
+          "_flexShrink": "0",
+          "_flexWrap": "nowrap",
+          "_padding": {
+            "left": ".75em",
+            "right": ".75em",
+            "top": ".5em",
+            "bottom": ".5em"
+          },
+          "_cssCustom": ".button-delta__link:hover, .button-delta__link:focus-visible {\n\tbackground: var(--primary-ultra-light);\n  color: var(--primary-dark);\n}\n.button-delta__link:hover .button-delta__link-icon, .button-delta__link:focus-visible .button-delta__link-icon {\n\tcolor: var(--primary-dark);\n}\n.button-delta__link:focus, .button-delta__link:focus-visible {\n\t--focus-color: transparent;\n  background: var(--primary-ultra-light);\n}",
+          "_cssTransition": "var(--transition)",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_width": "100%",
+          "_background": {
+            "color": {
+              "raw": "transparent"
+            }
+          },
+          "_justifyContent": "space-between"
+        },
+        "modified": 1720205895,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "hu9co4",
+        "name": "button-delta__link-text",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "0dvnl8",
+        "name": "button-delta__link-icon",
+        "settings": {
+          "_width": "1em",
+          "_height": "1em",
+          "_flexShrink": "0",
+          "_margin": {
+            "left": "auto"
+          },
+          "_typography": {
+            "color": {
+              "raw": "var(--primary)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "0s75by",
+        "name": "button-delta__list-item",
+        "settings": {
+          "_typography": {
+            "line-height": "1"
+          },
+          "_flexShrink": "0",
+          "_cssCustom": ".button-delta__list-item {\n\ttext-wrap: nowrap;\n}",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

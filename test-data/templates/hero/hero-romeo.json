@@ -1,0 +1,328 @@
+{
+  "idx": 135,
+  "title": "Hero Romeo",
+  "elementCount": 11,
+  "classCount": 11,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "11f8b9",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "d369ae",
+          "1c34a0"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "h7x45y",
+            "sao9nk"
+          ]
+        },
+        "label": "Hero Section Romeo (CSS)"
+      },
+      {
+        "id": "d369ae",
+        "name": "container",
+        "parent": "11f8b9",
+        "children": [
+          "b391cd",
+          "577b8a",
+          "28bdeb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "5m7fzg",
+            "4mnhnj"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "35deec",
+        "name": "block",
+        "parent": "1c34a0",
+        "children": [
+          "1a8425"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ckn3ah",
+            "68yyau"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "ae5258",
+        "name": "block",
+        "parent": "1c34a0",
+        "children": [
+          "3aa394"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ckn3ah",
+            "68yyau"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "b391cd",
+        "name": "heading",
+        "parent": "d369ae",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder headline",
+          "_cssGlobalClasses": [
+            "4ijmrh",
+            "xfsbll"
+          ],
+          "tag": "h1"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "577b8a",
+        "name": "text-basic",
+        "parent": "d369ae",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "_cssGlobalClasses": [
+            "g2f5xh",
+            "kddjfd",
+            "z3jfvz"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "28bdeb",
+        "name": "button",
+        "parent": "d369ae",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "_cssGlobalClasses": [
+            "pgeeuf",
+            "dv84qu",
+            "lkavco"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "CTA"
+      },
+      {
+        "id": "1a8425",
+        "name": "image",
+        "parent": "35deec",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "_cssGlobalClasses": [
+            "vfthuu",
+            "ln9n6m"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Media"
+      },
+      {
+        "id": "3aa394",
+        "name": "image",
+        "parent": "ae5258",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "_cssGlobalClasses": [
+            "vfthuu",
+            "ln9n6m"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Media"
+      },
+      {
+        "id": "1c34a0",
+        "name": "block",
+        "parent": "11f8b9",
+        "children": [
+          "ae5258",
+          "35deec",
+          "812213"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hndruv",
+            "hye9p5"
+          ]
+        },
+        "label": "Background Wrapper"
+      },
+      {
+        "id": "812213",
+        "name": "div",
+        "parent": "1c34a0",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "krctvv",
+            "acetyg"
+          ],
+          "tag": "custom",
+          "customTag": "span"
+        },
+        "label": "Overlay"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771253638,
+        "user_id": 1
+      },
+      {
+        "id": "lkavco",
+        "name": "btn--neutral-light",
+        "settings": [],
+        "_mappedId": "acss_import_btn--neutral-light",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "sao9nk",
+        "name": "fr-hero-section-romeo",
+        "settings": {
+          "_cssCustom": ".fr-hero-section-romeo {\n\t--overlay: var(--black-trans-40);\n  --min-height: calc(100vh - 10rem);\n}\n\n.fr-hero-section-romeo__background-wrapper {\n  display: grid;\n  grid-template-columns: var(--grid-2);\n  grid-template-rows: var(--grid-1);\n  gap: 0;\n  position: absolute;\n  inset: 0;\n}\n\n/* Remove 2nd image on mobile */\n@media (max-width: 767px) {\n  .fr-hero-section-romeo__background-wrapper {\n  \tgrid-template-columns: var(--grid-1);\n  }\n  .fr-hero-section-romeo__media-wrapper:nth-child(2) {\n  \tdisplay: none;\n  }\n}",
+          "_justifyContent": "center",
+          "_heightMin": "var(--min-height)",
+          "_position": "relative",
+          "_cssCustom:tablet_portrait": ".fr-hero-section-romeo {\n\t--min-height: 60vh;\n}",
+          "_cssCustom:mobile_landscape": ".fr-hero-section-romeo {\n\t--min-height: auto;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "4mnhnj",
+        "name": "fr-hero-section-romeo__inner",
+        "settings": {
+          "_typography": {
+            "text-align": "center"
+          },
+          "_zIndex": "1",
+          "_alignItems": "center",
+          "_rowGap": "var(--content-gap)",
+          "_alignItems:mobile_landscape": "flex-start",
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "68yyau",
+        "name": "fr-hero-section-romeo__media-wrapper",
+        "settings": {
+          "_width": "100%",
+          "_height": "100%",
+          "_flexGrow": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "xfsbll",
+        "name": "fr-hero-section-romeo__heading",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--white)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "z3jfvz",
+        "name": "fr-hero-section-romeo__lede",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--white)"
+            },
+            "font-size": "var(--text-l)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "dv84qu",
+        "name": "fr-hero-section-romeo__cta",
+        "settings": {
+          "_margin": {
+            "top": "var(--space-s)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "ln9n6m",
+        "name": "fr-hero-section-romeo__media",
+        "settings": {
+          "_objectFit": "cover",
+          "_width": "100%",
+          "_height": "100%",
+          "_flexGrow": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "hye9p5",
+        "name": "fr-hero-section-romeo__background-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "acetyg",
+        "name": "fr-hero-section-romeo__overlay",
+        "settings": {
+          "_position": "absolute",
+          "_bottom": "0",
+          "_background": {
+            "color": {
+              "raw": "var(--overlay)"
+            }
+          },
+          "_top": "0",
+          "_right": "0",
+          "_left": "0"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

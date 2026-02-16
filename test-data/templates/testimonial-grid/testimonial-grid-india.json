@@ -1,0 +1,1827 @@
+{
+  "idx": 266,
+  "title": "Testimonial Grid India",
+  "elementCount": 95,
+  "classCount": 26,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "a6d014",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "914d72",
+          "9a3868"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hvvqdn"
+          ]
+        },
+        "label": "Testimonial Grid India"
+      },
+      {
+        "id": "914d72",
+        "name": "block",
+        "parent": "a6d014",
+        "children": [
+          "3f68fa",
+          "b66ac9",
+          "2afc84",
+          "cdfe2d",
+          "345f19"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kkqruo",
+            "rktisp"
+          ],
+          "tag": "custom",
+          "customTag": "ul"
+        },
+        "label": "Main"
+      },
+      {
+        "id": "3f68fa",
+        "name": "block",
+        "parent": "914d72",
+        "children": [
+          "83bb39",
+          "5545bc"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "elqyop"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card India"
+      },
+      {
+        "id": "83bb39",
+        "name": "block",
+        "parent": "3f68fa",
+        "children": [
+          "268118",
+          "a4daa6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ypiykl"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "268118",
+        "name": "div",
+        "parent": "83bb39",
+        "children": [
+          "56c77b",
+          "bedbbb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xjirsw"
+          ]
+        },
+        "label": "Profile Wrapper"
+      },
+      {
+        "id": "56c77b",
+        "name": "image",
+        "parent": "268118",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "_cssGlobalClasses": [
+            "wwptam"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        },
+        "themeStyles": [],
+        "label": "Avatar"
+      },
+      {
+        "id": "bedbbb",
+        "name": "block",
+        "parent": "268118",
+        "children": [
+          "8d0520",
+          "862c36"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tupvdm"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "8d0520",
+        "name": "text-basic",
+        "parent": "bedbbb",
+        "children": [],
+        "settings": {
+          "text": "Person's Name<br>",
+          "_cssGlobalClasses": [
+            "qcevfw"
+          ],
+          "tag": "p"
+        },
+        "label": "Profile Name"
+      },
+      {
+        "id": "862c36",
+        "name": "text-basic",
+        "parent": "bedbbb",
+        "children": [],
+        "settings": {
+          "text": "Person's Title",
+          "_cssGlobalClasses": [
+            "rfgxxw"
+          ],
+          "tag": "p"
+        },
+        "label": "Profile Title"
+      },
+      {
+        "id": "a4daa6",
+        "name": "image",
+        "parent": "83bb39",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "wdvasq"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        },
+        "themeStyles": [],
+        "label": "Logo"
+      },
+      {
+        "id": "5545bc",
+        "name": "block",
+        "parent": "3f68fa",
+        "children": [
+          "8603c8",
+          "c3603d",
+          "511f86"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ddfzrb"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "8603c8",
+        "name": "div",
+        "parent": "5545bc",
+        "children": [
+          "1b18be",
+          "3b6870",
+          "d8a7ec",
+          "d35f6a",
+          "639afd"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lakobf"
+          ]
+        },
+        "label": "Rating Wrapper"
+      },
+      {
+        "id": "1b18be",
+        "name": "icon",
+        "parent": "8603c8",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "spylvs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "3b6870",
+        "name": "icon",
+        "parent": "8603c8",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "spylvs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "d8a7ec",
+        "name": "icon",
+        "parent": "8603c8",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "spylvs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "d35f6a",
+        "name": "icon",
+        "parent": "8603c8",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "spylvs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "639afd",
+        "name": "icon",
+        "parent": "8603c8",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "spylvs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "c3603d",
+        "name": "text-basic",
+        "parent": "5545bc",
+        "children": [],
+        "settings": {
+          "text": "This is callout quote.",
+          "_cssGlobalClasses": [
+            "xlatqf"
+          ],
+          "tag": "p"
+        },
+        "label": "Callout Text"
+      },
+      {
+        "id": "511f86",
+        "name": "text-basic",
+        "parent": "5545bc",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "_cssGlobalClasses": [
+            "okjbyq"
+          ],
+          "tag": "p"
+        },
+        "label": "Main Text"
+      },
+      {
+        "id": "9a3868",
+        "name": "block",
+        "parent": "a6d014",
+        "children": [
+          "50ae11"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dtcaei"
+          ]
+        },
+        "label": "Sidebar"
+      },
+      {
+        "id": "50ae11",
+        "name": "block",
+        "parent": "9a3868",
+        "children": [
+          "31712b",
+          "225d90"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rthxpw",
+            "mbiebv"
+          ]
+        },
+        "label": "CTA Card Alpha"
+      },
+      {
+        "id": "31712b",
+        "name": "block",
+        "parent": "50ae11",
+        "children": [
+          "3ae3dd",
+          "a82bbe"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kelpjk"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "3ae3dd",
+        "name": "heading",
+        "parent": "31712b",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "upnrdo"
+          ]
+        }
+      },
+      {
+        "id": "a82bbe",
+        "name": "text-basic",
+        "parent": "31712b",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "_cssGlobalClasses": [
+            "mwlspu"
+          ],
+          "tag": "p"
+        },
+        "label": "Text"
+      },
+      {
+        "id": "225d90",
+        "name": "block",
+        "parent": "50ae11",
+        "children": [
+          "8575d1",
+          "214469"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zwyuyc"
+          ]
+        },
+        "label": "Action Wrapper"
+      },
+      {
+        "id": "8575d1",
+        "name": "button",
+        "parent": "225d90",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "style": "primary",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_cssGlobalClasses": [
+            "btn--primary",
+            "fekeir"
+          ]
+        }
+      },
+      {
+        "id": "214469",
+        "name": "text-basic",
+        "parent": "225d90",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_cssGlobalClasses": [
+            "lrnwnh"
+          ]
+        },
+        "label": "CTA Link"
+      },
+      {
+        "id": "345f19",
+        "name": "block",
+        "parent": "914d72",
+        "children": [
+          "729f71",
+          "5c4cca"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "elqyop"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card India"
+      },
+      {
+        "id": "729f71",
+        "name": "block",
+        "parent": "345f19",
+        "children": [
+          "93cb31",
+          "af194a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ypiykl"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "5c4cca",
+        "name": "block",
+        "parent": "345f19",
+        "children": [
+          "52d0b9",
+          "6e6898",
+          "b81438"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ddfzrb"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "93cb31",
+        "name": "div",
+        "parent": "729f71",
+        "children": [
+          "035b5e",
+          "2b66a0"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xjirsw"
+          ]
+        },
+        "label": "Profile Wrapper"
+      },
+      {
+        "id": "af194a",
+        "name": "image",
+        "parent": "729f71",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "wdvasq"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        },
+        "themeStyles": [],
+        "label": "Logo"
+      },
+      {
+        "id": "52d0b9",
+        "name": "div",
+        "parent": "5c4cca",
+        "children": [
+          "8b707b",
+          "b6ec08",
+          "50bdd4",
+          "843712",
+          "398d10"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lakobf"
+          ]
+        },
+        "label": "Rating Wrapper"
+      },
+      {
+        "id": "6e6898",
+        "name": "text-basic",
+        "parent": "5c4cca",
+        "children": [],
+        "settings": {
+          "text": "This is callout quote.",
+          "_cssGlobalClasses": [
+            "xlatqf"
+          ],
+          "tag": "p"
+        },
+        "label": "Callout Text"
+      },
+      {
+        "id": "b81438",
+        "name": "text-basic",
+        "parent": "5c4cca",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "_cssGlobalClasses": [
+            "okjbyq"
+          ],
+          "tag": "p"
+        },
+        "label": "Main Text"
+      },
+      {
+        "id": "035b5e",
+        "name": "image",
+        "parent": "93cb31",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "_cssGlobalClasses": [
+            "wwptam"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        },
+        "themeStyles": [],
+        "label": "Avatar"
+      },
+      {
+        "id": "2b66a0",
+        "name": "block",
+        "parent": "93cb31",
+        "children": [
+          "bba00d",
+          "1631fd"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tupvdm"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "8b707b",
+        "name": "icon",
+        "parent": "52d0b9",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "spylvs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "b6ec08",
+        "name": "icon",
+        "parent": "52d0b9",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "spylvs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "50bdd4",
+        "name": "icon",
+        "parent": "52d0b9",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "spylvs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "843712",
+        "name": "icon",
+        "parent": "52d0b9",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "spylvs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "398d10",
+        "name": "icon",
+        "parent": "52d0b9",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "spylvs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "bba00d",
+        "name": "text-basic",
+        "parent": "2b66a0",
+        "children": [],
+        "settings": {
+          "text": "Person's Name<br>",
+          "_cssGlobalClasses": [
+            "qcevfw"
+          ],
+          "tag": "p"
+        },
+        "label": "Profile Name"
+      },
+      {
+        "id": "1631fd",
+        "name": "text-basic",
+        "parent": "2b66a0",
+        "children": [],
+        "settings": {
+          "text": "Person's Title",
+          "_cssGlobalClasses": [
+            "rfgxxw"
+          ],
+          "tag": "p"
+        },
+        "label": "Profile Title"
+      },
+      {
+        "id": "cdfe2d",
+        "name": "block",
+        "parent": "914d72",
+        "children": [
+          "515e83",
+          "c79e89"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "elqyop"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card India"
+      },
+      {
+        "id": "515e83",
+        "name": "block",
+        "parent": "cdfe2d",
+        "children": [
+          "6a5909",
+          "8202aa"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ypiykl"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "c79e89",
+        "name": "block",
+        "parent": "cdfe2d",
+        "children": [
+          "51230d",
+          "a074ba",
+          "cdde72"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ddfzrb"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "6a5909",
+        "name": "div",
+        "parent": "515e83",
+        "children": [
+          "cf0efb",
+          "7518e1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xjirsw"
+          ]
+        },
+        "label": "Profile Wrapper"
+      },
+      {
+        "id": "8202aa",
+        "name": "image",
+        "parent": "515e83",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "wdvasq"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        },
+        "themeStyles": [],
+        "label": "Logo"
+      },
+      {
+        "id": "51230d",
+        "name": "div",
+        "parent": "c79e89",
+        "children": [
+          "55e230",
+          "a98e1e",
+          "40c6d0",
+          "48047f",
+          "0ebcc4"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lakobf"
+          ]
+        },
+        "label": "Rating Wrapper"
+      },
+      {
+        "id": "a074ba",
+        "name": "text-basic",
+        "parent": "c79e89",
+        "children": [],
+        "settings": {
+          "text": "This is callout quote.",
+          "_cssGlobalClasses": [
+            "xlatqf"
+          ],
+          "tag": "p"
+        },
+        "label": "Callout Text"
+      },
+      {
+        "id": "cdde72",
+        "name": "text-basic",
+        "parent": "c79e89",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "_cssGlobalClasses": [
+            "okjbyq"
+          ],
+          "tag": "p"
+        },
+        "label": "Main Text"
+      },
+      {
+        "id": "cf0efb",
+        "name": "image",
+        "parent": "6a5909",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "_cssGlobalClasses": [
+            "wwptam"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        },
+        "themeStyles": [],
+        "label": "Avatar"
+      },
+      {
+        "id": "7518e1",
+        "name": "block",
+        "parent": "6a5909",
+        "children": [
+          "a7bceb",
+          "1b5d59"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tupvdm"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "55e230",
+        "name": "icon",
+        "parent": "51230d",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "spylvs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "a98e1e",
+        "name": "icon",
+        "parent": "51230d",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "spylvs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "40c6d0",
+        "name": "icon",
+        "parent": "51230d",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "spylvs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "48047f",
+        "name": "icon",
+        "parent": "51230d",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "spylvs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "0ebcc4",
+        "name": "icon",
+        "parent": "51230d",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "spylvs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "a7bceb",
+        "name": "text-basic",
+        "parent": "7518e1",
+        "children": [],
+        "settings": {
+          "text": "Person's Name<br>",
+          "_cssGlobalClasses": [
+            "qcevfw"
+          ],
+          "tag": "p"
+        },
+        "label": "Profile Name"
+      },
+      {
+        "id": "1b5d59",
+        "name": "text-basic",
+        "parent": "7518e1",
+        "children": [],
+        "settings": {
+          "text": "Person's Title",
+          "_cssGlobalClasses": [
+            "rfgxxw"
+          ],
+          "tag": "p"
+        },
+        "label": "Profile Title"
+      },
+      {
+        "id": "2afc84",
+        "name": "block",
+        "parent": "914d72",
+        "children": [
+          "1f6021",
+          "c26211"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "elqyop"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card India"
+      },
+      {
+        "id": "1f6021",
+        "name": "block",
+        "parent": "2afc84",
+        "children": [
+          "4ac450",
+          "6e3337"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ypiykl"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "c26211",
+        "name": "block",
+        "parent": "2afc84",
+        "children": [
+          "62fc68",
+          "cc9a95",
+          "00291f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ddfzrb"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "4ac450",
+        "name": "div",
+        "parent": "1f6021",
+        "children": [
+          "5685f8",
+          "8ac2fc"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xjirsw"
+          ]
+        },
+        "label": "Profile Wrapper"
+      },
+      {
+        "id": "6e3337",
+        "name": "image",
+        "parent": "1f6021",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "wdvasq"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        },
+        "themeStyles": [],
+        "label": "Logo"
+      },
+      {
+        "id": "62fc68",
+        "name": "div",
+        "parent": "c26211",
+        "children": [
+          "a6a11c",
+          "ea2d11",
+          "08a931",
+          "c7ffb2",
+          "91f471"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lakobf"
+          ]
+        },
+        "label": "Rating Wrapper"
+      },
+      {
+        "id": "cc9a95",
+        "name": "text-basic",
+        "parent": "c26211",
+        "children": [],
+        "settings": {
+          "text": "This is callout quote.",
+          "_cssGlobalClasses": [
+            "xlatqf"
+          ],
+          "tag": "p"
+        },
+        "label": "Callout Text"
+      },
+      {
+        "id": "00291f",
+        "name": "text-basic",
+        "parent": "c26211",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "_cssGlobalClasses": [
+            "okjbyq"
+          ],
+          "tag": "p"
+        },
+        "label": "Main Text"
+      },
+      {
+        "id": "5685f8",
+        "name": "image",
+        "parent": "4ac450",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "_cssGlobalClasses": [
+            "wwptam"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        },
+        "themeStyles": [],
+        "label": "Avatar"
+      },
+      {
+        "id": "8ac2fc",
+        "name": "block",
+        "parent": "4ac450",
+        "children": [
+          "c1c69b",
+          "fb7b34"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tupvdm"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "a6a11c",
+        "name": "icon",
+        "parent": "62fc68",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "spylvs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "ea2d11",
+        "name": "icon",
+        "parent": "62fc68",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "spylvs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "08a931",
+        "name": "icon",
+        "parent": "62fc68",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "spylvs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "c7ffb2",
+        "name": "icon",
+        "parent": "62fc68",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "spylvs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "91f471",
+        "name": "icon",
+        "parent": "62fc68",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "spylvs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "c1c69b",
+        "name": "text-basic",
+        "parent": "8ac2fc",
+        "children": [],
+        "settings": {
+          "text": "Person's Name<br>",
+          "_cssGlobalClasses": [
+            "qcevfw"
+          ],
+          "tag": "p"
+        },
+        "label": "Profile Name"
+      },
+      {
+        "id": "fb7b34",
+        "name": "text-basic",
+        "parent": "8ac2fc",
+        "children": [],
+        "settings": {
+          "text": "Person's Title",
+          "_cssGlobalClasses": [
+            "rfgxxw"
+          ],
+          "tag": "p"
+        },
+        "label": "Profile Title"
+      },
+      {
+        "id": "b66ac9",
+        "name": "block",
+        "parent": "914d72",
+        "children": [
+          "af1a7b",
+          "6e8896"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "elqyop"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card India"
+      },
+      {
+        "id": "af1a7b",
+        "name": "block",
+        "parent": "b66ac9",
+        "children": [
+          "be8684",
+          "b2eb7a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ypiykl"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "6e8896",
+        "name": "block",
+        "parent": "b66ac9",
+        "children": [
+          "221435",
+          "286640",
+          "8ee3b5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ddfzrb"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "be8684",
+        "name": "div",
+        "parent": "af1a7b",
+        "children": [
+          "ffd9e4",
+          "cc5ce5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xjirsw"
+          ]
+        },
+        "label": "Profile Wrapper"
+      },
+      {
+        "id": "b2eb7a",
+        "name": "image",
+        "parent": "af1a7b",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "wdvasq"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        },
+        "themeStyles": [],
+        "label": "Logo"
+      },
+      {
+        "id": "221435",
+        "name": "div",
+        "parent": "6e8896",
+        "children": [
+          "863037",
+          "80ff00",
+          "e06593",
+          "4355ba",
+          "56316a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lakobf"
+          ]
+        },
+        "label": "Rating Wrapper"
+      },
+      {
+        "id": "286640",
+        "name": "text-basic",
+        "parent": "6e8896",
+        "children": [],
+        "settings": {
+          "text": "This is callout quote.",
+          "_cssGlobalClasses": [
+            "xlatqf"
+          ],
+          "tag": "p"
+        },
+        "label": "Callout Text"
+      },
+      {
+        "id": "8ee3b5",
+        "name": "text-basic",
+        "parent": "6e8896",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "_cssGlobalClasses": [
+            "okjbyq"
+          ],
+          "tag": "p"
+        },
+        "label": "Main Text"
+      },
+      {
+        "id": "ffd9e4",
+        "name": "image",
+        "parent": "be8684",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "_cssGlobalClasses": [
+            "wwptam"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        },
+        "themeStyles": [],
+        "label": "Avatar"
+      },
+      {
+        "id": "cc5ce5",
+        "name": "block",
+        "parent": "be8684",
+        "children": [
+          "ff5450",
+          "e3a227"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tupvdm"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "863037",
+        "name": "icon",
+        "parent": "221435",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "spylvs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "80ff00",
+        "name": "icon",
+        "parent": "221435",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "spylvs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "e06593",
+        "name": "icon",
+        "parent": "221435",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "spylvs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "4355ba",
+        "name": "icon",
+        "parent": "221435",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "spylvs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "56316a",
+        "name": "icon",
+        "parent": "221435",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "spylvs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "ff5450",
+        "name": "text-basic",
+        "parent": "cc5ce5",
+        "children": [],
+        "settings": {
+          "text": "Person's Name<br>",
+          "_cssGlobalClasses": [
+            "qcevfw"
+          ],
+          "tag": "p"
+        },
+        "label": "Profile Name"
+      },
+      {
+        "id": "e3a227",
+        "name": "text-basic",
+        "parent": "cc5ce5",
+        "children": [],
+        "settings": {
+          "text": "Person's Title",
+          "_cssGlobalClasses": [
+            "rfgxxw"
+          ],
+          "tag": "p"
+        },
+        "label": "Profile Title"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "rktisp",
+        "name": "list--none",
+        "settings": {
+          "_padding": {
+            "left": "0"
+          },
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "acss_import_list--none",
+        "modified": 1771254723,
+        "user_id": 1
+      },
+      {
+        "id": "rthxpw",
+        "name": "fr-cta-card-alpha",
+        "settings": {
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "_padding": {
+            "top": "var(--fr-card-padding)",
+            "right": "var(--fr-card-padding)",
+            "bottom": "var(--fr-card-padding)",
+            "left": "var(--fr-card-padding)"
+          },
+          "_rowGap": "var(--fr-card-gap)",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "kelpjk",
+        "name": "fr-cta-card-alpha__content-wrapper",
+        "settings": {
+          "_typography": {
+            "text-align": "center"
+          },
+          "_alignItems": "center",
+          "_rowGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "upnrdo",
+        "name": "fr-cta-card-alpha__heading",
+        "settings": {
+          "_typography": {
+            "text-align": "center"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "mwlspu",
+        "name": "fr-cta-card-alpha__text",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "zwyuyc",
+        "name": "fr-cta-card-alpha__action-wrapper",
+        "settings": {
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_rowGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "fekeir",
+        "name": "fr-cta-card-alpha__button",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "lrnwnh",
+        "name": "fr-cta-card-alpha__cta-link",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "elqyop",
+        "name": "fr-testimonial-card-india",
+        "settings": {
+          "_rowGap": "var(--fr-card-gap)",
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "_padding": {
+            "top": "var(--fr-card-padding)",
+            "right": "var(--fr-card-padding)",
+            "bottom": "var(--fr-card-padding)",
+            "left": "var(--fr-card-padding)"
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "ypiykl",
+        "name": "fr-testimonial-card-india__header",
+        "settings": {
+          "_display": "flex",
+          "_direction": "row",
+          "_justifyContent": "space-between",
+          "_alignItems": "center",
+          "_columnGap": "var(--fr-card-gap)",
+          "_flexWrap:mobile_portrait": "wrap",
+          "_rowGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "xjirsw",
+        "name": "fr-testimonial-card-india__profile-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_alignItems": "center",
+          "_columnGap": "var(--fr-card-gap)",
+          "_width:mobile_portrait": "100%",
+          "_width": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wwptam",
+        "name": "fr-testimonial-card-india__avatar",
+        "settings": {
+          "_objectFit": "cover",
+          "_cssCustom": ".fr-testimonial-card-india__avatar {\n  aspect-ratio: 1;\n}",
+          "_width": "4em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "tupvdm",
+        "name": "fr-testimonial-card-india__profile-content-wrapper",
+        "settings": {
+          "_width": "100%",
+          "_flexBasis": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "qcevfw",
+        "name": "fr-testimonial-card-india__profile-name",
+        "settings": {
+          "_typography": {
+            "font-weight": "600"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "rfgxxw",
+        "name": "fr-testimonial-card-india__profile-title",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-s)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "wdvasq",
+        "name": "fr-testimonial-card-india__logo",
+        "settings": {
+          "_width": "10em",
+          "_order:mobile_portrait": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ddfzrb",
+        "name": "fr-testimonial-card-india__body",
+        "settings": {
+          "_rowGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "lakobf",
+        "name": "fr-testimonial-card-india__rating-wrapper",
+        "settings": {
+          "_columnGap": ".25em",
+          "_display": "flex"
+        },
+        "_exists": false
+      },
+      {
+        "id": "spylvs",
+        "name": "fr-testimonial-card-india__rating-icon",
+        "settings": {
+          "iconSize": "var(--text-l)",
+          "iconColor": {
+            "raw": "var(--primary)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "xlatqf",
+        "name": "fr-testimonial-card-india__callout-text",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--h3)",
+            "font-weight": "700"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "okjbyq",
+        "name": "fr-testimonial-card-india__main-text",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "hvvqdn",
+        "name": "fr-testimonial-grid-india",
+        "settings": {
+          "_display": "grid",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns": "var(--grid-2-1)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_alignItemsGrid": "stretch",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "kkqruo",
+        "name": "fr-testimonial-grid-india__main",
+        "settings": {
+          "_rowGap": "var(--grid-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "dtcaei",
+        "name": "fr-testimonial-grid-india__sidebar",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "mbiebv",
+        "name": "fr-cta-card-alpha--sticky",
+        "settings": {
+          "_position": "sticky",
+          "_top": "var(--header-height, 0)"
+        },
+        "modified": 1725297988,
+        "user_id": 1,
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

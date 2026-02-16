@@ -1,0 +1,382 @@
+{
+  "idx": 129,
+  "title": "Article Grid Juliet",
+  "elementCount": 13,
+  "classCount": 12,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "78cf8a",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "84455d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zwmrrc"
+          ],
+          "tag": "ul"
+        },
+        "label": "Article Grid Juliet"
+      },
+      {
+        "id": "84455d",
+        "name": "block",
+        "parent": "78cf8a",
+        "children": [
+          "61ee11"
+        ],
+        "settings": {
+          "hasLoop": true,
+          "query": {
+            "objectType": "post"
+          },
+          "tag": "li"
+        },
+        "label": "List Item (Loop Me)"
+      },
+      {
+        "id": "61ee11",
+        "name": "block",
+        "parent": "84455d",
+        "children": [
+          "f2ff08",
+          "f7ebb8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "c7y28p"
+          ],
+          "query": {
+            "posts_per_page": "10"
+          },
+          "tag": "article"
+        },
+        "label": "Article Card Juliet"
+      },
+      {
+        "id": "f2ff08",
+        "name": "block",
+        "parent": "61ee11",
+        "children": [
+          "798a77",
+          "5158d6",
+          "ffe3ee",
+          "6d5b60"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "0fjji5"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "798a77",
+        "name": "heading",
+        "parent": "f2ff08",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "va4cxw"
+          ],
+          "tag": "h3",
+          "_typography": {
+            "font-size": "var(--h2)"
+          },
+          "text": "{post_title}",
+          "link": {
+            "type": "meta",
+            "useDynamicData": "{post_url}"
+          }
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "5158d6",
+        "name": "text-basic",
+        "parent": "f2ff08",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "avw8ct"
+          ],
+          "text": "{post_terms_category:plain}"
+        },
+        "label": "Category"
+      },
+      {
+        "id": "ffe3ee",
+        "name": "text-basic",
+        "parent": "f2ff08",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "5s3r3j"
+          ],
+          "text": "{post_excerpt:20}",
+          "tag": "p"
+        },
+        "label": "Excerpt"
+      },
+      {
+        "id": "6d5b60",
+        "name": "text-basic",
+        "parent": "f2ff08",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ud4shy"
+          ],
+          "tag": "span",
+          "text": "{author_name}"
+        },
+        "label": "Author"
+      },
+      {
+        "id": "f7ebb8",
+        "name": "block",
+        "parent": "61ee11",
+        "children": [
+          "faf8a3",
+          "49e9e7",
+          "a09cbb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "n71qrt"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "faf8a3",
+        "name": "image",
+        "parent": "f7ebb8",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ov5mu6"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "useDynamicData": "{featured_image}",
+            "size": "large"
+          }
+        },
+        "label": "Image"
+      },
+      {
+        "id": "49e9e7",
+        "name": "div",
+        "parent": "f7ebb8",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mnkg3h"
+          ]
+        },
+        "label": "Overlay"
+      },
+      {
+        "id": "a09cbb",
+        "name": "div",
+        "parent": "f7ebb8",
+        "children": [
+          "26b16b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "8ewnrj"
+          ]
+        },
+        "label": "Date Wrapper"
+      },
+      {
+        "id": "26b16b",
+        "name": "text-basic",
+        "parent": "a09cbb",
+        "children": [],
+        "settings": {
+          "tag": "custom",
+          "customTag": "time",
+          "_cssGlobalClasses": [
+            "8uiydi"
+          ],
+          "text": "{post_date}",
+          "_attributes": [
+            {
+              "id": "dpvlmu",
+              "name": "datetime",
+              "value": "{post_date:Y-m-d h:m}"
+            }
+          ]
+        },
+        "label": "Date"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "zwmrrc",
+        "name": "fr-article-grid-juliet",
+        "settings": {
+          "_rowGap": "var(--space-xl)",
+          "_padding": {
+            "left": "0"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "c7y28p",
+        "name": "article-card-juliet",
+        "settings": {
+          "_alignItemsGrid": "stretch",
+          "_display": "grid",
+          "_gridGap": "var(--space-xl)",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)",
+          "_gridGap:mobile_landscape": "var(--content-gap)",
+          "_position": "relative",
+          "_cssCustom": ".article-card-juliet, .article-card-juliet__overlay, .article-card-juliet__heading {\n  transition: var(--transition);\n}\n.article-card-juliet:hover {\n  .article-card-juliet__heading {\n    color: var(--primary-hover);\n  }\n  .article-card-juliet__overlay {\n    background: var(--primary-trans-20);\n  }\n}\n\n/* Begin Clickable Parent\nEnsure this is placed on the clickable parent element. */\n.article-card-juliet:has(a) {\n  position: relative;\n}\n\n/* Configure your selector if you have more than one link */\n.article-card-juliet a::after {\n  content: \"\";\n  position: absolute;\n  inset: 0;\n  z-index: 10;\n}\n\n/* Remove effect in builder.\nSet target.\nBricks = .bricks-area */\n.target .article-card-juliet a::after {\n  content: \"\";\n  position: relative;\n}\n\n/* End Clickable Parent */\n\n/* Begin Focus Parent */\n.article-card-juliet:focus-within {\n  outline: var(--focus-width) solid var(--focus-color);\n  outline-offset: var(--focus-offset);\n}\n\n.article-card-juliet :focus {\n  outline: none !important;\n  box-shadow: none !important;\n}\n\n/* End Focus Parent */"
+        },
+        "_exists": false
+      },
+      {
+        "id": "n71qrt",
+        "name": "article-card-juliet__media-wrapper",
+        "settings": {
+          "_position": "relative",
+          "_order": "-1",
+          "_heightMin": "400px",
+          "_heightMin:tablet_portrait": "200",
+          "_heightMin:mobile_landscape": "250",
+          "_heightMin:mobile_portrait": "175",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_overflow": "hidden"
+        },
+        "_exists": false
+      },
+      {
+        "id": "0fjji5",
+        "name": "article-card-juliet__content-wrapper",
+        "settings": {
+          "_justifyContent": "center",
+          "_rowGap": "var(--content-gap)",
+          "_position": "static"
+        },
+        "modified": 1732813638,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "va4cxw",
+        "name": "article-card-juliet__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "avw8ct",
+        "name": "article-card-juliet__category",
+        "settings": {
+          "_order": "-1",
+          "_typography": {
+            "line-height": "1"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "5s3r3j",
+        "name": "article-card-juliet__excerpt",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ud4shy",
+        "name": "article-card-juliet__author",
+        "settings": {
+          "_typography": {
+            "line-height": "1",
+            "font-size": "var(--text-s)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "ov5mu6",
+        "name": "article-card-juliet__image",
+        "settings": {
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_objectFit": "cover",
+          "_width": "100%",
+          "_height": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "mnkg3h",
+        "name": "article-card-juliet__overlay",
+        "settings": {
+          "_position": "absolute",
+          "_right": "0",
+          "_bottom": "0",
+          "_top": "0",
+          "_left": "0"
+        },
+        "_exists": false
+      },
+      {
+        "id": "8ewnrj",
+        "name": "article-card-juliet__date-wrapper",
+        "settings": {
+          "_position": "absolute",
+          "_right": "0",
+          "_bottom": "0",
+          "_padding": {
+            "top": "1.5em",
+            "right": "1.5em",
+            "bottom": "1.5em",
+            "left": "1.5em"
+          },
+          "_background": {
+            "color": {
+              "raw": "var(--white)"
+            }
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "8uiydi",
+        "name": "article-card-juliet__date",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

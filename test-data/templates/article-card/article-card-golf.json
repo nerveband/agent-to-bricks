@@ -1,0 +1,279 @@
+{
+  "idx": 356,
+  "title": "Article Card Golf",
+  "elementCount": 9,
+  "classCount": 9,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "879c06",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "783020",
+          "e84878"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hsbups"
+          ],
+          "hasLoop": true,
+          "tag": "custom",
+          "customTag": "li",
+          "query": {
+            "posts_per_page": "1"
+          }
+        },
+        "label": "Article Card Golf"
+      },
+      {
+        "id": "783020",
+        "name": "block",
+        "parent": "879c06",
+        "children": [
+          "e3a9a1",
+          "085385",
+          "00118f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "krlqfj"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "085385",
+        "name": "text-basic",
+        "parent": "783020",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tfefdz"
+          ],
+          "text": "{post_terms_category}",
+          "tag": "span"
+        },
+        "label": "Label"
+      },
+      {
+        "id": "e3a9a1",
+        "name": "heading",
+        "parent": "783020",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wmsbpk"
+          ],
+          "link": {
+            "type": "external",
+            "url": "{post_url}"
+          },
+          "text": "{post_title:12}..."
+        }
+      },
+      {
+        "id": "00118f",
+        "name": "div",
+        "parent": "783020",
+        "children": [
+          "b40807",
+          "46c762"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eygabz"
+          ]
+        },
+        "label": "Meta"
+      },
+      {
+        "id": "b40807",
+        "name": "text-basic",
+        "parent": "00118f",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kmideh"
+          ],
+          "text": "{author_name}",
+          "tag": "p"
+        },
+        "label": "Author"
+      },
+      {
+        "id": "46c762",
+        "name": "text-basic",
+        "parent": "00118f",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dgkcmu"
+          ],
+          "text": "{post_date}",
+          "tag": "custom",
+          "customTag": "time",
+          "_attributes": [
+            {
+              "id": "hwldxo",
+              "name": "datetime"
+            }
+          ]
+        },
+        "label": "Date"
+      },
+      {
+        "id": "e84878",
+        "name": "block",
+        "parent": "879c06",
+        "children": [
+          "d409ff"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hpfmcp"
+          ]
+        },
+        "label": "Media"
+      },
+      {
+        "id": "d409ff",
+        "name": "image",
+        "parent": "e84878",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "whkpnp"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "useDynamicData": "{featured_image}",
+            "size": "image-480"
+          }
+        },
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "hsbups",
+        "name": "fr-article-card-golf",
+        "settings": {
+          "_direction": "row",
+          "_alignItems": "center",
+          "_columnGap": "var(--fr-card-gap)",
+          "_rowGap": "var(--fr-card-gap)",
+          "_position": "relative",
+          "_direction:mobile_landscape": "column",
+          "_rowGap:mobile_landscape": "var(--fr-card-gap)",
+          "_direction:mobile_portrait": "column",
+          "_direction:tablet_portrait": "column"
+        },
+        "_exists": false
+      },
+      {
+        "id": "hpfmcp",
+        "name": "fr-article-card-golf__media-wrapper",
+        "settings": {
+          "_order": "-1",
+          "_cssCustom": ".fr-article-card-golf__media-wrapper {aspect-ratio: 1/1;}",
+          "_width:tablet_portrait": "100%",
+          "_height:tablet_portrait": "14em",
+          "_cssCustom:tablet_portrait": ".fr-article-card-golf__media-wrapper {flex: auto;}",
+          "_height:mobile_portrait": "12em",
+          "_width": "10em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "krlqfj",
+        "name": "fr-article-card-golf__body",
+        "settings": {
+          "_rowGap": "1em",
+          "_cssCustom": ".fr-article-card-golf__body {flex: 2;}",
+          "_cssCustom:tablet_portrait": ".fr-article-card-golf__body {flex: auto;}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "whkpnp",
+        "name": "fr-article-card-golf__media",
+        "settings": {
+          "_objectFit": "cover",
+          "_width": "100%",
+          "_flexGrow": "1",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_height": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "tfefdz",
+        "name": "fr-article-card-golf__label",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-s)",
+            "line-height": "1"
+          },
+          "_order": "-1",
+          "_zIndex": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wmsbpk",
+        "name": "fr-article-card-golf__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "eygabz",
+        "name": "fr-article-card-golf__meta-wrapper",
+        "settings": {
+          "_direction": "row",
+          "_display": "flex",
+          "_typography": {
+            "font-size": "var(--text-s)"
+          },
+          "_rowGap": "1em",
+          "_cssCustom": ".fr-article-card-golf__meta-wrapper > *:not(:first-child)::before {\n content: \"\u2022\";\n margin: 0 .5em;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "kmideh",
+        "name": "fr-article-card-golf__author",
+        "settings": {
+          "_typography": {
+            "line-height": "1"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "dgkcmu",
+        "name": "fr-article-card-golf__date",
+        "settings": {
+          "_typography": {
+            "line-height": "1"
+          },
+          "_cssCustom": ".fr-article-card-golf__date {\n  white-space: nowrap;\n}"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

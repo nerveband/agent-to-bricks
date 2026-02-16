@@ -1,0 +1,742 @@
+{
+  "idx": 59,
+  "title": "Slider Section Hotel",
+  "elementCount": 23,
+  "classCount": 24,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "a03020",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "ae1cf5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rtplzv"
+          ]
+        },
+        "label": "Slider Section Hotel"
+      },
+      {
+        "id": "ae1cf5",
+        "name": "container",
+        "parent": "a03020",
+        "children": [
+          "ea0499",
+          "37d243"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "yniymq"
+          ]
+        },
+        "label": "Slider Grid Hotel"
+      },
+      {
+        "id": "ea0499",
+        "name": "div",
+        "parent": "ae1cf5",
+        "children": [
+          "63c2c9",
+          "c6b5c9",
+          "f3121c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "08r69e"
+          ]
+        },
+        "label": "Content"
+      },
+      {
+        "id": "ad91e4",
+        "name": "fr-slider",
+        "parent": "37d243",
+        "children": [
+          "acb848"
+        ],
+        "settings": {
+          "height": "50vh",
+          "speed": 300,
+          "playButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-play"
+          },
+          "pauseButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-pause"
+          },
+          "sliderTag": "div",
+          "listTag": "ul",
+          "ariaCarousel": "Carousel",
+          "_cssGlobalClasses": [
+            "mwxqbp"
+          ],
+          "isSync": true,
+          "syncId": "fr-slider-hotel",
+          "fixedHeight": "25em",
+          "clipToContainer": "inset(-100vw 0 -100vw -100vw)"
+        },
+        "label": "Slider Hotel Main",
+        "themeStyles": []
+      },
+      {
+        "id": "acb848",
+        "name": "div",
+        "parent": "ad91e4",
+        "children": [
+          "6388f8",
+          "95d19a"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "_cssGlobalClasses": [
+            "j6v7z6"
+          ],
+          "tag": "li",
+          "hasLoop": true
+        },
+        "label": "Slide"
+      },
+      {
+        "id": "9bb9d5",
+        "name": "heading",
+        "parent": "6388f8",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "emjcbo"
+          ],
+          "text": "{post_title}"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "e86c8f",
+        "name": "text-basic",
+        "parent": "f3121c",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "gqxbdk"
+          ],
+          "tag": "p"
+        },
+        "label": "Text"
+      },
+      {
+        "id": "b62cef",
+        "name": "heading",
+        "parent": "63c2c9",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder headline",
+          "_cssGlobalClasses": [
+            "ae5dvv"
+          ],
+          "tag": "h2"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "a0d58c",
+        "name": "button",
+        "parent": "c6b5c9",
+        "children": [],
+        "settings": {
+          "text": "Get started",
+          "_cssGlobalClasses": [
+            "7efpwt",
+            "btn--primary"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Button"
+      },
+      {
+        "id": "387abb",
+        "name": "text",
+        "parent": "c6b5c9",
+        "children": [],
+        "settings": {
+          "text": "<p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.</p>",
+          "_cssGlobalClasses": [
+            "lsihfl"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "37d243",
+        "name": "div",
+        "parent": "ae1cf5",
+        "children": [
+          "ad91e4",
+          "343754",
+          "b85062"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vbwwoc"
+          ]
+        },
+        "label": "Slider Hotel (CSS)"
+      },
+      {
+        "id": "4dfa5c",
+        "name": "fr-slider-controls",
+        "parent": "343754",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "bjtdym"
+          ],
+          "type": "progress",
+          "arrows": true,
+          "arrowTypography": "var(--neutral-ultra-dark)",
+          "arrowsGap": "var(--space-l)",
+          "prevArrow": {
+            "library": "themify",
+            "icon": "ti-arrow-left"
+          },
+          "prevArrowAriaLabel": "Previous slide",
+          "nextArrow": {
+            "library": "themify",
+            "icon": "ti-arrow-right"
+          },
+          "nextArrowAriaLabel": "Next slide",
+          "syncId": "fr-slider-hotel",
+          "_cssId": "slider-progress"
+        },
+        "label": "Slider Hotel Progress"
+      },
+      {
+        "id": "95d19a",
+        "name": "image",
+        "parent": "acb848",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "uefmyc"
+          ],
+          "tag": "figure",
+          "image": {
+            "useDynamicData": "{featured_image}",
+            "size": "large"
+          }
+        },
+        "label": "Media",
+        "themeStyles": []
+      },
+      {
+        "id": "5efbab",
+        "name": "text-link",
+        "parent": "6388f8",
+        "children": [],
+        "settings": {
+          "text": "Discover now",
+          "_cssGlobalClasses": [
+            "lpa71z"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Link",
+        "themeStyles": []
+      },
+      {
+        "id": "fe17d6",
+        "name": "text-basic",
+        "parent": "6388f8",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "yfkh5x"
+          ],
+          "text": "Accent Heading",
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "6388f8",
+        "name": "div",
+        "parent": "acb848",
+        "children": [
+          "9bb9d5",
+          "fe17d6",
+          "5efbab"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "6h34c1"
+          ]
+        },
+        "label": "Content"
+      },
+      {
+        "id": "b85062",
+        "name": "code",
+        "parent": "37d243",
+        "children": [],
+        "settings": {
+          "noRoot": true,
+          "user_id": 9,
+          "time": 1725372492,
+          "executeCode": true,
+          "javascriptCode": "document.addEventListener('DOMContentLoaded', function () {\n  if (typeof Splide === 'undefined') return;\n\n  var splideElements = document.querySelectorAll('.splide');\n  if (!splideElements.length) return;\n\n  var splideInstances = [];\n  var syncGroups = {}; // syncId -> [Splide instances]\n\n  splideElements.forEach(function (splideEl) {\n    // Skip if already initialized (e.g. duplicate script in duplicated markup)\n    if (splideEl.getAttribute('data-fr-slider-initialized') === 'true') return;\n\n    var splide = new Splide(splideEl, {\n      arrows: false,\n    });\n\n    // Container: the block that holds the slider and controls (e.g. .fr-slider-hotel)\n    var container = splideEl.closest('.fr-slider-hotel') || splideEl.parentElement;\n    // Each slider has its own data-fr-slider-sync-id \u2013 used to find matching nav elements\n    var syncId = splideEl.getAttribute('data-fr-slider-sync-id') || '';\n\n    var SlideNumber = function (Splide, Components, options) {\n      options = options || { doubleDigit: false };\n      var scope = options.scope || document;\n      var navSyncId = options.navSyncId || '';\n      var track = Components.Elements.track;\n      var currentSlideEl;\n      var totalSlidesEl;\n      var navContainer;\n\n      function mount() {\n        // Progress container: match to slider via data-fr-slider-nav-sync-id (same ID as slider)\n        if (navSyncId) {\n          navContainer = scope.querySelector('[data-fr-slider-nav-sync-id=\"' + navSyncId + '\"][data-fr-slider-nav-type=\"progress\"]');\n        }\n        if (!navContainer) {\n          navContainer = scope.querySelector('.fr-slider-hotel__progress, [data-fr-slider-nav-type=\"progress\"]');\n        }\n        if (!navContainer) {\n          navContainer = document.createElement('div');\n          navContainer.className = 'fr-slider-hotel__progress';\n          if (track && track.parentElement) {\n            track.parentElement.insertBefore(navContainer, track.nextSibling);\n          }\n        }\n\n        currentSlideEl = navContainer.querySelector('.current-slide');\n        totalSlidesEl = navContainer.querySelector('.total-slides');\n\n        if (!currentSlideEl) {\n          currentSlideEl = document.createElement('div');\n          currentSlideEl.className = 'current-slide';\n          navContainer.appendChild(currentSlideEl);\n        }\n        if (!totalSlidesEl) {\n          totalSlidesEl = document.createElement('div');\n          totalSlidesEl.className = 'total-slides';\n          navContainer.appendChild(totalSlidesEl);\n        }\n\n        totalSlidesEl.textContent = formatNumber(Splide.length);\n        Splide.on('mounted move moved updated', update);\n\n        // Arrows: find the correct block via data-fr-slider-nav-sync-id (nextPrev)\n        var arrowsContainer = null;\n        if (navSyncId) {\n          arrowsContainer = scope.querySelector('[data-fr-slider-nav-sync-id=\"' + navSyncId + '\"][data-fr-slider-nav-type=\"nextPrev\"]');\n        }\n        if (!arrowsContainer) {\n          arrowsContainer = scope;\n        }\n        var prevArrow = arrowsContainer.querySelector('.fr-slider__custom-arrow--prev');\n        var nextArrow = arrowsContainer.querySelector('.fr-slider__custom-arrow--next');\n        if (prevArrow) {\n          prevArrow.addEventListener('click', function () { Splide.go('<'); });\n        }\n        if (nextArrow) {\n          nextArrow.addEventListener('click', function () { Splide.go('>'); });\n        }\n\n        // Progress buttons: in the already found navContainer\n        var progressButtonsContainer = navContainer.querySelector('.fr-slider__progress-buttons');\n        if (progressButtonsContainer) {\n          progressButtonsContainer.addEventListener('click', function (event) {\n            var button = event.target.closest('.fr-slider__progress-button');\n            if (button) {\n              var index = parseInt(button.getAttribute('data-index'), 10);\n              Splide.go(index);\n            }\n          });\n        }\n\n        update();\n      }\n\n      function update() {\n        if (!currentSlideEl) return;\n        var currentIndex = Splide.index + 1;\n        currentSlideEl.textContent = formatNumber(currentIndex);\n      }\n\n      function formatNumber(number) {\n        return options.doubleDigit ? String(number).padStart(2, '0') : String(number);\n      }\n\n      return { mount: mount };\n    };\n\n    splide.on('mounted', function () {\n      var slideNumberInstance = SlideNumber(splide, splide.Components, {\n        doubleDigit: true,\n        scope: container,\n        navSyncId: syncId,\n      });\n      slideNumberInstance.mount();\n    });\n\n    splide.mount();\n    splideEl.setAttribute('data-fr-slider-initialized', 'true');\n    splideInstances.push({ splide: splide, el: splideEl, container: container });\n\n    // Collect sync group (same syncId = sliders run in sync)\n    if (syncId) {\n      if (!syncGroups[syncId]) syncGroups[syncId] = [];\n      syncGroups[syncId].push(splide);\n    }\n  });\n\n  // Sync: on \"moved\", set all other sliders in the same group to the same index\n  Object.keys(syncGroups).forEach(function (syncId) {\n    var group = syncGroups[syncId];\n    if (group.length < 2) return;\n\n    var syncing = false; // prevents re-entry when calling go() programmatically\n    group.forEach(function (splide) {\n      splide.on('moved', function (newIndex) {\n        if (syncing) return;\n        syncing = true;\n        group.forEach(function (other) {\n          if (other !== splide && other.index !== newIndex) {\n            other.go(newIndex);\n          }\n        });\n        syncing = false;\n      });\n    });\n  });\n});\n"
+        },
+        "label": "Slider Numbers JS",
+        "themeStyles": []
+      },
+      {
+        "id": "dcbd00",
+        "name": "fr-slider-controls",
+        "parent": "343754",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cgcjeu"
+          ],
+          "type": "nextPrev",
+          "arrows": true,
+          "prevArrow": {
+            "library": "svg",
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)",
+            "stroke": {
+              "raw": "var(--icon-color)"
+            },
+            "icon": "fas fa-angle-left",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "prevArrowAriaLabel": "Previous slide",
+          "nextArrow": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)",
+            "stroke": {
+              "raw": "var(--icon-color)"
+            }
+          },
+          "nextArrowAriaLabel": "Next slide",
+          "syncId": "fr-slider-hotel"
+        },
+        "label": "Slider Hotel Arrows",
+        "themeStyles": []
+      },
+      {
+        "id": "63c2c9",
+        "name": "div",
+        "parent": "ea0499",
+        "children": [
+          "b62cef",
+          "2f5763"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "h4qkfe"
+          ]
+        },
+        "label": "Head"
+      },
+      {
+        "id": "c6b5c9",
+        "name": "div",
+        "parent": "ea0499",
+        "children": [
+          "387abb",
+          "a0d58c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "loryji"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "f3121c",
+        "name": "div",
+        "parent": "ea0499",
+        "children": [
+          "e86c8f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "td8efz"
+          ]
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "2f5763",
+        "name": "text-basic",
+        "parent": "63c2c9",
+        "children": [],
+        "settings": {
+          "text": "Accent Heading",
+          "_cssGlobalClasses": [
+            "5mji8o",
+            "qfdtjc"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "343754",
+        "name": "div",
+        "parent": "37d243",
+        "children": [
+          "dcbd00",
+          "4dfa5c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "bhmfcn"
+          ]
+        },
+        "label": "Slider Controls"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "rtplzv",
+        "name": "fr-slider-section-hotel",
+        "settings": {
+          "_rowGap": "var(--container-gap)",
+          "_overflow": "hidden"
+        },
+        "_exists": false
+      },
+      {
+        "id": "yniymq",
+        "name": "fr-slider-grid-hotel",
+        "settings": {
+          "_display": "grid",
+          "_gridGap": "var(--space-xxl)",
+          "_gridTemplateColumns": "var(--grid-2-3)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_alignItemsGrid": "stretch",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "08r69e",
+        "name": "fr-slider-grid-hotel__content",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "var(--container-gap)",
+          "_alignItems": "flex-start"
+        },
+        "_exists": false
+      },
+      {
+        "id": "mwxqbp",
+        "name": "fr-slider-hotel__main",
+        "settings": {
+          "_cssCustom": ".fr-slider-hotel__main .fr-slider__list {\n\ttransition: transform .5s cubic-bezier(0.77, 0, 0.175, 1) 0s!important;\n}",
+          "_zIndex": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "j6v7z6",
+        "name": "fr-slider-hotel__slide",
+        "settings": {
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "_position": "relative",
+          "_height": "100%",
+          "_width": "100%",
+          "_display": "flex",
+          "_direction": "column"
+        },
+        "modified": 1718903172,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "emjcbo",
+        "name": "fr-slider-hotel__heading",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--heading-color)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "gqxbdk",
+        "name": "fr-slider-grid-hotel__text",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ae5dvv",
+        "name": "fr-slider-grid-hotel__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "7efpwt",
+        "name": "fr-slider-grid-hotel__button",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "lsihfl",
+        "name": "fr-slider-grid-hotel__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "vbwwoc",
+        "name": "fr-slider-hotel",
+        "settings": {
+          "_alignItemsGrid": "stretch",
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "0",
+          "_columnGap": "0",
+          "_cssCustom": ".fr-slider-hotel {\n  --controls-height: 3em;\n  --controls-bg-color: var(--bg-dark);\n  --progress-bg-color: var(--neutral-light-trans-20);\n  --number-color: var(--text-light);\n  --text-color: var(--text-light-muted);\n  --heading-color: var(--text-light);\n  --link-color: var(--text-light-muted);\n  --link-color-hover: var(--text-light);\n  --icon-size: 2em;\n  --icon-color: var(--text-dark);\n}"
+        },
+        "modified": 1721251847,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "bjtdym",
+        "name": "fr-slider-hotel__progress",
+        "settings": {
+          "_display": "flex",
+          "_position": "relative",
+          "_background": {
+            "color": {
+              "raw": "var(--bg-dark)"
+            }
+          },
+          "_cssCustom": ".fr-slider-hotel__progress {\n\tpadding-inline: var(--space-m);\n  color: var(--number-color);\n  background-color: var(--controls-bg-color);  \n}\n\n.fr-slider-hotel__progress::after {\n  content: '';\n  background-color: var(--controls-bg-color);   \n  position: absolute;\n  inset-inline-end: calc(var(--controls-height) * -1);\n  inset-block-end: 0;\n  height: 20em;\n  width: calc(var(--controls-height) + 1px);\n  z-index: -1;\n}\n\n.fr-slider-hotel__progress .fr-slider__progress {\n  background-color: var(--progress-bg-color);\n  position: relative !important;\n  height: .25em !important;\n  width: 5em;\n  display: flex;\n  flex-direction: column;\n}\n\n.fr-slider-hotel__progress .current-slide {\n  order: -1;\n}\n\n.fr-slider-hotel__progress .current-slide,\n.fr-slider-hotel__progress .total-slides {\n  width: 1.5em;\n}",
+          "progressHeight": "100%",
+          "progressBgColorActive": {
+            "id": "acss_import_neutral-light",
+            "name": "neutral-light",
+            "raw": "var(--neutral-light)"
+          },
+          "_flexDirection": "row",
+          "_alignItems": "center",
+          "_gap": "1em"
+        },
+        "modified": 1771161128,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "uefmyc",
+        "name": "fr-slider-hotel__media",
+        "settings": {
+          "_width": "100%",
+          "_height": "100%",
+          "_objectFit": "cover"
+        },
+        "_exists": false
+      },
+      {
+        "id": "lpa71z",
+        "name": "fr-slider-hotel__link",
+        "settings": {
+          "_cssCustom": ".fr-slider-hotel__link {\n  color: var(--link-color);\n}\n.fr-slider-hotel__link:hover {\n  color: var(--link-color-hover);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "yfkh5x",
+        "name": "fr-slider-hotel__accent-heading",
+        "settings": {
+          "_order": "-1",
+          "_typography": {
+            "color": {
+              "raw": "var(--text-color)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "6h34c1",
+        "name": "fr-slider-hotel__content",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light-muted)"
+            }
+          },
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": ".5em",
+          "_position": "absolute",
+          "_bottom": "0",
+          "_left": "0",
+          "_right": "0",
+          "_padding": {
+            "top": "var(--space-l)",
+            "right": "var(--space-l)",
+            "bottom": "var(--space-l)",
+            "left": "var(--space-l)"
+          },
+          "_top": "0",
+          "_justifyContent": "flex-end",
+          "_background": {
+            "color": {
+              "raw": "var(--neutral-trans-50)"
+            }
+          },
+          "_zIndex": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "cgcjeu",
+        "name": "fr-slider-hotel__arrows",
+        "settings": {
+          "_cssCustom": ".fr-slider-hotel__arrows {\n\tdisplay: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n\n.fr-slider-hotel__arrows .fr-slider__custom-arrow i {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}",
+          "arrowBackground": {
+            "raw": "transparent"
+          },
+          "arrowsGap": "var(--space-m)",
+          "arrowsGap:tablet_portrait": "var(--space-xs)",
+          "prevArrow": []
+        },
+        "modified": 1769457585,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "h4qkfe",
+        "name": "fr-slider-grid-hotel__head",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": ".5em",
+          "_alignItems": "flex-start",
+          "_width": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "loryji",
+        "name": "fr-slider-grid-hotel__body",
+        "settings": {
+          "_width": "100%",
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "var(--content-gap)",
+          "_alignItems": "flex-start"
+        },
+        "_exists": false
+      },
+      {
+        "id": "td8efz",
+        "name": "fr-slider-grid-hotel__footer",
+        "settings": {
+          "_cssCustom": ".fr-slider-grid-hotel__footer::after {\n\tcontent: '';\n  background-color: var(--neutral-light);\n  width: 100%;\n  height: 1px;\n  position: absolute;\n  top: calc(var(--container-gap) * -.5);\n  left: 0;\n}",
+          "_position": "relative",
+          "_width": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "5mji8o",
+        "name": "fr-slider-grid-hotel__link",
+        "settings": {
+          "_order": "-1",
+          "iconPosition": "right",
+          "gap": ".5em",
+          "_typography": {
+            "text-decoration": "none"
+          },
+          "_cssCustom": ".fr-slider-grid-hotel__link .icon {\n\ttransition: translate .3s ease;\n}\n\n.fr-slider-grid-hotel__link:hover .icon {\n\ttranslate: .25em 0;\n}",
+          "_cssTransition": "all .3s ease"
+        },
+        "_exists": false
+      },
+      {
+        "id": "bhmfcn",
+        "name": "fr-slider-hotel__controls",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-1-2)",
+          "_gridGap": "0",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_height": "var(--controls-height)",
+          "_alignItemsGrid": "center"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

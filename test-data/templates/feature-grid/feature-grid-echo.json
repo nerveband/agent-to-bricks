@@ -1,0 +1,449 @@
+{
+  "idx": 364,
+  "title": "Feature Grid Echo",
+  "elementCount": 17,
+  "classCount": 8,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "4ecc11",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "a74d43",
+          "e46bac",
+          "df2c4a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "artaxq",
+            "rktisp"
+          ],
+          "tag": "custom",
+          "customTag": "ul"
+        },
+        "label": "Feature Grid Echo"
+      },
+      {
+        "id": "a74d43",
+        "name": "block",
+        "parent": "4ecc11",
+        "children": [
+          "51d615",
+          "254278"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tavxaa"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature Card Echo"
+      },
+      {
+        "id": "51d615",
+        "name": "image",
+        "parent": "a74d43",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://bricks.getframes.io/wp-content/uploads/Placeholder-Small.jpeg",
+            "external": true,
+            "filename": "Placeholder-Small.jpeg"
+          },
+          "_cssGlobalClasses": [
+            "kbyybs"
+          ],
+          "tag": "figure"
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "254278",
+        "name": "block",
+        "parent": "a74d43",
+        "children": [
+          "bb8b04",
+          "ee919b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iucggb"
+          ],
+          "customTag": "li"
+        },
+        "label": "Overlay"
+      },
+      {
+        "id": "bb8b04",
+        "name": "heading",
+        "parent": "254278",
+        "children": [],
+        "settings": {
+          "text": "Card heading",
+          "_cssGlobalClasses": [
+            "ifcfrl",
+            "acss_import_clickable-parent"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "ee919b",
+        "name": "text-basic",
+        "parent": "254278",
+        "children": [],
+        "settings": {
+          "text": "Here goes your text ... Select any part of your text to access the formatting toolbar.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "qgtiul"
+          ]
+        }
+      },
+      {
+        "id": "df2c4a",
+        "name": "block",
+        "parent": "4ecc11",
+        "children": [
+          "c6d384",
+          "920a5c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tavxaa"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature Card Echo"
+      },
+      {
+        "id": "c6d384",
+        "name": "image",
+        "parent": "df2c4a",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://bricks.getframes.io/wp-content/uploads/Placeholder-Small.jpeg",
+            "external": true,
+            "filename": "Placeholder-Small.jpeg"
+          },
+          "_cssGlobalClasses": [
+            "kbyybs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "920a5c",
+        "name": "block",
+        "parent": "df2c4a",
+        "children": [
+          "e07039",
+          "bf3836"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iucggb"
+          ],
+          "customTag": "li"
+        },
+        "label": "Overlay"
+      },
+      {
+        "id": "e07039",
+        "name": "heading",
+        "parent": "920a5c",
+        "children": [],
+        "settings": {
+          "text": "Card heading",
+          "_cssGlobalClasses": [
+            "ifcfrl",
+            "acss_import_clickable-parent"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "bf3836",
+        "name": "text-basic",
+        "parent": "920a5c",
+        "children": [],
+        "settings": {
+          "text": "Here goes your text ... Select any part of your text to access the formatting toolbar.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "qgtiul"
+          ]
+        }
+      },
+      {
+        "id": "e46bac",
+        "name": "block",
+        "parent": "4ecc11",
+        "children": [
+          "74d4ed",
+          "6ee2fa"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tavxaa"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature Card Echo"
+      },
+      {
+        "id": "74d4ed",
+        "name": "image",
+        "parent": "e46bac",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://bricks.getframes.io/wp-content/uploads/Placeholder-Small.jpeg",
+            "external": true,
+            "filename": "Placeholder-Small.jpeg"
+          },
+          "_cssGlobalClasses": [
+            "kbyybs"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "6ee2fa",
+        "name": "block",
+        "parent": "e46bac",
+        "children": [
+          "037f90",
+          "347e09"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iucggb"
+          ],
+          "customTag": "li"
+        },
+        "label": "Overlay"
+      },
+      {
+        "id": "037f90",
+        "name": "heading",
+        "parent": "6ee2fa",
+        "children": [],
+        "settings": {
+          "text": "Card heading",
+          "_cssGlobalClasses": [
+            "ifcfrl",
+            "acss_import_clickable-parent"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "347e09",
+        "name": "text-basic",
+        "parent": "6ee2fa",
+        "children": [],
+        "settings": {
+          "text": "Here goes your text ... Select any part of your text to access the formatting toolbar.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "qgtiul"
+          ]
+        }
+      },
+      {
+        "id": "78ba92",
+        "name": "code",
+        "parent": 0,
+        "children": [],
+        "settings": {
+          "code": "<script>\n  \n    // To enable code execution go to Bricks > Settings > Builder Access\n  \nfunction activateScript() {\n  if (window.innerWidth >= 992) {\n    const card = '.fr-feature-card-echo';\n    const featureCards = document.querySelectorAll(card);\n\n    // Function to recalculate textHeight\n    const recalculateTextHeight = (cardText) => {\n      cardText.style.height = 'auto';\n      const textHeight = cardText.offsetHeight;\n      cardText.style.height = '1px';\n      return textHeight;\n    }\n\n    for (var i = 0; i < featureCards.length; i++) {\n      const c = featureCards[i];\n      const textSelector = `${card}__text`;\n      const cardText = c.querySelector(textSelector);\n      let textHeight = recalculateTextHeight(cardText); // Initial calculation\n\n      c.addEventListener('mouseover', function() {\n        this.querySelector(textSelector).style.height = textHeight + 'px';\n        this.querySelector(textSelector).style.opacity = '1';\n      });\n\n      c.addEventListener('mouseout', function() {\n        this.querySelector(textSelector).style.height = '1px';\n        this.querySelector(textSelector).style.opacity = '0';\n      });\n\n      // Recalculate textHeight on heading focus\n      const heading = c.querySelector(`${card}__heading > a`);\n      heading.addEventListener('focus', function() {\n        textHeight = recalculateTextHeight(cardText);\n        c.querySelector(textSelector).style.height = textHeight + 'px';\n        c.querySelector(textSelector).style.opacity = '1';\n      });\n\n      heading.addEventListener('blur', function() {\n        c.querySelector(textSelector).style.height = '1px';\n        c.querySelector(textSelector).style.opacity = '0';\n      });\n    }\n  }\n}\n\nactivateScript();\n\nwindow.addEventListener('resize', activateScript);\n\n</script>\n",
+          "noRoot": true,
+          "executeCode": true,
+          "user_id": 2,
+          "time": 1762444265
+        },
+        "label": "Feature Grid Code"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "rktisp",
+        "name": "list--none",
+        "settings": {
+          "_padding": {
+            "left": "0"
+          },
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "acss_import_list--none",
+        "modified": 1771255637,
+        "user_id": 1
+      },
+      {
+        "id": "acss_import_clickable-parent",
+        "name": "clickable-parent",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "artaxq",
+        "name": "fr-feature-grid-echo",
+        "settings": {
+          "_display": "grid",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns": "var(--grid-3)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-2)",
+          "_gridTemplateColumns:mobile_portrait": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "tavxaa",
+        "name": "fr-feature-card-echo",
+        "settings": {
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_overflow": "hidden",
+          "_opacity:hover .fr-feature-card-echo__text": "1",
+          "_margin:hover .fr-feature-card-echo__text": {
+            "top": "",
+            "unit": {
+              "top": "var(--fr-card-gap)"
+            }
+          },
+          "_cssCustom": ".fr-feature-card-echo:hover .fr-feature-card-echo__text {\n  opacity: 1;\n}",
+          "_position": "relative",
+          "_width": "100%",
+          "_heightMin": "20em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "kbyybs",
+        "name": "fr-feature-card-echo__image",
+        "settings": {
+          "_width": "100%",
+          "_height": "100%",
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_objectFit": "cover"
+        },
+        "_exists": false
+      },
+      {
+        "id": "iucggb",
+        "name": "fr-feature-card-echo__overlay",
+        "settings": {
+          "_padding": {
+            "top": "var(--space-l)",
+            "right": "var(--space-l)",
+            "bottom": "var(--space-l)",
+            "left": "var(--space-l)"
+          },
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_justifyContent": "flex-end",
+          "_alignItems": "flex-start",
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          },
+          "_rowGap": "var(--fr-card-gap)",
+          "_zIndex": "1",
+          "_position": "absolute",
+          "_gradient": {
+            "colors": [
+              {
+                "id": "fyxeiq",
+                "color": {
+                  "raw": "var(--neutral-ultra-dark-trans-20)"
+                }
+              },
+              {
+                "id": "srmrem",
+                "color": {
+                  "raw": "var(--neutral-ultra-dark-trans-80)"
+                }
+              }
+            ],
+            "applyTo": "background"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "ifcfrl",
+        "name": "fr-feature-card-echo__heading",
+        "settings": {
+          "_typography:hover": {
+            "color": {
+              "raw": "var(--white)",
+              "id": "kieovu",
+              "name": "Color #6"
+            }
+          },
+          "_cssCustom": ".fr-feature-card-echo__heading:hover a {\n  color: var(--text-light);\n}",
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "qgtiul",
+        "name": "fr-feature-card-echo__text",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-s)",
+            "color": {
+              "raw": "var(--text-light-muted)"
+            }
+          },
+          "_cssTransition": "all var(--transition-duration) var(--transition-timing) var(--transition-delay)",
+          "_opacity": "0",
+          "_opacity:tablet_portrait": "1!important",
+          "_height:tablet_portrait": "auto!important"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

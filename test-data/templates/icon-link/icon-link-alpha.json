@@ -1,0 +1,82 @@
+{
+  "idx": 143,
+  "title": "Icon Link Alpha",
+  "elementCount": 2,
+  "classCount": 2,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "ce99c8",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "7eaa55"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kwdtjx"
+          ]
+        },
+        "label": "Icon Link Alpha Wrapper"
+      },
+      {
+        "id": "7eaa55",
+        "name": "text-link",
+        "parent": "ce99c8",
+        "children": [],
+        "settings": {
+          "text": "Text link",
+          "_cssGlobalClasses": [
+            "caehza"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)",
+            "fill": {
+              "raw": "var(--icon-color)"
+            }
+          }
+        },
+        "label": "Icon Link Alpha (CSS)"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "kwdtjx",
+        "name": "fr-icon-link-alpha-wrapper",
+        "settings": {
+          "_display": "flex"
+        },
+        "_exists": false
+      },
+      {
+        "id": "caehza",
+        "name": "fr-icon-link-alpha",
+        "settings": {
+          "_cssCustom": ".fr-icon-link-alpha {\n  --link-color: var(--black);\n  --link-color-hover: var(--primary);\n\t--icon-size: 1em;\n  --icon-color: var(--black);\n  --icon-color-hover: var(--black);\n  --icon-gap: .25em;\n  --icon-translate-distance: .25em;\n  --icon-transition-duration: 300ms;\n  --icon-transition-function: ease-in-out;\n  \n  /* Prevent Line Breaks */\n  white-space: nowrap;\n}\n\n/* Link */\n.fr-icon-link-alpha {\n\tcolor: var(--link-color);\n  text-decoration: underline;\n  text-underline-offset: var(--link-underline-offset, .25em);\n}\n\n.fr-icon-link-alpha:hover {\n\tcolor: var(--link-color-hover);\n}\n\n/* Icon */\n.fr-icon-link-alpha .icon {\n\ttransition: translate var(--icon-transition-duration) var(--icon-transition-function);\n\tfill: var(--icon-color);\n}\n\n.fr-icon-link-alpha:hover .icon {\n\ttranslate: var(--icon-translate-distance) 0;\n  fill: var(--icon-color-hover);\n}\n\n/* Light Version */\n.fr-icon-link-alpha--light {\n  --link-color: var(--white);\n  --link-color-hover: var(--primary);\n\t--icon-size: 1em;\n  --icon-color: var(--white);\n  --icon-color-hover: var(--primary);\n}",
+          "iconPosition": "right",
+          "gap": "var(--icon-gap)"
+        },
+        "modified": 1724413262,
+        "user_id": 9,
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

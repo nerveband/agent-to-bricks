@@ -1,0 +1,186 @@
+{
+  "idx": 166,
+  "title": "Avatar Alpha",
+  "elementCount": 6,
+  "classCount": 7,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "b11447",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "bd66be",
+          "19f0b0"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ydoujk"
+          ]
+        },
+        "label": "Avatar Alpha"
+      },
+      {
+        "id": "bd66be",
+        "name": "block",
+        "parent": "b11447",
+        "children": [
+          "12934d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "haxsgw",
+            "ebpnxq"
+          ]
+        },
+        "label": "Avatar Wrapper"
+      },
+      {
+        "id": "19f0b0",
+        "name": "block",
+        "parent": "b11447",
+        "children": [
+          "9905ac",
+          "16d253"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ekgzoz"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "12934d",
+        "name": "image",
+        "parent": "bd66be",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xffjke"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Avatar"
+      },
+      {
+        "id": "9905ac",
+        "name": "text-basic",
+        "parent": "19f0b0",
+        "children": [],
+        "settings": {
+          "text": "Avatar Name",
+          "_cssGlobalClasses": [
+            "qivkvi"
+          ],
+          "tag": "p"
+        },
+        "label": "Name"
+      },
+      {
+        "id": "16d253",
+        "name": "text-basic",
+        "parent": "19f0b0",
+        "children": [],
+        "settings": {
+          "text": "Label",
+          "_cssGlobalClasses": [
+            "bumahr"
+          ],
+          "tag": "p"
+        },
+        "label": "Label"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "ydoujk",
+        "name": "fr-avatar-alpha",
+        "settings": {
+          "_widthMax": "16em",
+          "_display": "grid",
+          "_gridTemplateColumns": "auto minmax(0, 1fr)",
+          "_alignItemsGrid": "center",
+          "_gridGap": "var(--space-xs)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "haxsgw",
+        "name": "fr-avatar-alpha__avatar-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ebpnxq",
+        "name": "fr-avatar-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ekgzoz",
+        "name": "fr-avatar-alpha__content-wrapper",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 3)",
+          "_typography": {
+            "line-height": "1"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "xffjke",
+        "name": "fr-avatar-alpha__avatar",
+        "settings": {
+          "_objectFit": "cover",
+          "_width": "50px",
+          "_height": "50px",
+          "_border": {
+            "radius": {
+              "top": "50%",
+              "right": "50%",
+              "bottom": "50%",
+              "left": "50%"
+            }
+          },
+          "_overflow": "hidden"
+        },
+        "_exists": false
+      },
+      {
+        "id": "qivkvi",
+        "name": "fr-avatar-alpha__name",
+        "settings": {
+          "_typography": {
+            "font-weight": "600"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "bumahr",
+        "name": "fr-avatar-alpha__label",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-s)",
+            "color": {
+              "raw": "var(--neutral-trans-60)"
+            }
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

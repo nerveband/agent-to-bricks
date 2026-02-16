@@ -1,0 +1,292 @@
+{
+  "idx": 243,
+  "title": "Squeeze Footer Charlie",
+  "elementCount": 11,
+  "classCount": 7,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "a8c901",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "ff8b27"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jdunst"
+          ],
+          "tag": "div"
+        },
+        "label": "Squeeze Footer Charlie"
+      },
+      {
+        "id": "ff8b27",
+        "name": "container",
+        "parent": "a8c901",
+        "children": [
+          "6ba38c",
+          "8101c7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "3zkfyg"
+          ]
+        },
+        "label": "Legal Meta Alpha"
+      },
+      {
+        "id": "6ba38c",
+        "name": "text-basic",
+        "parent": "ff8b27",
+        "children": [],
+        "settings": {
+          "text": "Copyright {current_date:Y} \u00a9 {site_title}",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "nrkxvi"
+          ]
+        },
+        "label": "Copyright"
+      },
+      {
+        "id": "8101c7",
+        "name": "block",
+        "parent": "ff8b27",
+        "children": [
+          "c3bcd4"
+        ],
+        "settings": {
+          "tag": "nav",
+          "_attributes": [
+            {
+              "id": "vtofgx",
+              "name": "aria-label",
+              "value": "Legal"
+            }
+          ],
+          "_cssGlobalClasses": [
+            "foetsb"
+          ]
+        },
+        "label": "Nav"
+      },
+      {
+        "id": "c3bcd4",
+        "name": "div",
+        "parent": "8101c7",
+        "children": [
+          "658e56",
+          "59d110",
+          "1d885d"
+        ],
+        "settings": {
+          "tag": "ul",
+          "_cssGlobalClasses": [
+            "fx7skj"
+          ]
+        },
+        "label": "List"
+      },
+      {
+        "id": "658e56",
+        "name": "block",
+        "parent": "c3bcd4",
+        "children": [
+          "6b5c6e"
+        ],
+        "settings": {
+          "tag": "li",
+          "_cssGlobalClasses": [
+            "4tmru2"
+          ]
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "6b5c6e",
+        "name": "text-link",
+        "parent": "658e56",
+        "children": [],
+        "settings": {
+          "text": "Privacy Policy",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_cssGlobalClasses": [
+            "ndxwdg"
+          ]
+        },
+        "label": "Link"
+      },
+      {
+        "id": "59d110",
+        "name": "block",
+        "parent": "c3bcd4",
+        "children": [
+          "b14170"
+        ],
+        "settings": {
+          "tag": "li",
+          "_cssGlobalClasses": [
+            "4tmru2"
+          ]
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "b14170",
+        "name": "text-link",
+        "parent": "59d110",
+        "children": [],
+        "settings": {
+          "text": "Disclaimer",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_cssGlobalClasses": [
+            "ndxwdg"
+          ]
+        },
+        "label": "Link"
+      },
+      {
+        "id": "1d885d",
+        "name": "block",
+        "parent": "c3bcd4",
+        "children": [
+          "3244a3"
+        ],
+        "settings": {
+          "tag": "li",
+          "_cssGlobalClasses": [
+            "4tmru2"
+          ]
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "3244a3",
+        "name": "text-link",
+        "parent": "1d885d",
+        "children": [],
+        "settings": {
+          "text": "Terms of Use",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_cssGlobalClasses": [
+            "ndxwdg"
+          ]
+        },
+        "label": "Link"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "jdunst",
+        "name": "fr-squeeze-footer-charlie",
+        "settings": {
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "_padding": {
+            "top": "var(--section-space-s)",
+            "bottom": "var(--section-space-s)",
+            "left": "var(--gutter)",
+            "right": "var(--gutter)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "3zkfyg",
+        "name": "fr-legal-meta-alpha",
+        "settings": {
+          "_display": "flex",
+          "_direction": "row",
+          "_flexWrap": "wrap",
+          "_columnGap": "var(--content-gap)",
+          "_rowGap": "calc(var(--content-gap) / 2)",
+          "_typography": {
+            "font-size": "var(--text-s)"
+          },
+          "_margin": {
+            "left": "0",
+            "right": "0"
+          },
+          "_cssCustom": ".fr-legal-meta-alpha[data-color=\"dark\"] {\n  color: var(--text-dark-muted);\n}\n.fr-legal-meta-alpha[data-color=\"light\"] {\n  color: var(--text-light-muted);\n}"
+        },
+        "modified": 1751314275,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "nrkxvi",
+        "name": "fr-legal-meta-alpha__copyright",
+        "settings": {
+          "_display": "flex",
+          "_width": "fit-content"
+        },
+        "modified": 1747641759,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "foetsb",
+        "name": "fr-legal-meta-alpha__nav",
+        "settings": {
+          "_display": "flex",
+          "_direction": "row",
+          "_width": "auto",
+          "_cssCustom": ".fr-legal-meta-alpha__nav {\n  --link-color: var(--text-dark-muted);\n  --link-color-hover: var(--text-dark);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "fx7skj",
+        "name": "fr-legal-meta-alpha__list",
+        "settings": {
+          "_padding": {
+            "left": "0"
+          },
+          "_display": "flex",
+          "_justifyContent": "center",
+          "_flexWrap": "nowrap",
+          "_columnGap": "1em",
+          "_rowGap": "1em",
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          },
+          "_cssCustom": ".fr-legal-meta-alpha__list {\n\tlist-style-type: none;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "4tmru2",
+        "name": "fr-legal-meta-alpha__list-item",
+        "settings": {
+          "_width": "auto"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ndxwdg",
+        "name": "fr-legal-meta-alpha__link",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

@@ -1,0 +1,312 @@
+{
+  "idx": 337,
+  "title": "Blog Hero Alpha",
+  "elementCount": 10,
+  "classCount": 8,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "312f12",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "19d23e",
+          "806918"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "yukzdx"
+          ]
+        },
+        "label": "Blog Hero Alpha"
+      },
+      {
+        "id": "19d23e",
+        "name": "container",
+        "parent": "312f12",
+        "children": [
+          "9bd08e",
+          "9c4f87"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mnfylo"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "9bd08e",
+        "name": "heading",
+        "parent": "19d23e",
+        "children": [],
+        "settings": {
+          "tag": "h1",
+          "text": "{post_title}",
+          "_cssGlobalClasses": [
+            "nezyfg"
+          ]
+        }
+      },
+      {
+        "id": "9c4f87",
+        "name": "div",
+        "parent": "19d23e",
+        "children": [
+          "d99723",
+          "cce04c",
+          "22c306"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ofuxrk"
+          ]
+        },
+        "label": "Blog Meta Alpha"
+      },
+      {
+        "id": "d99723",
+        "name": "text-basic",
+        "parent": "9c4f87",
+        "children": [],
+        "settings": {
+          "text": "{author_name}",
+          "_cssGlobalClasses": [
+            "nmyktx"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#post-author",
+            "rel": "author"
+          },
+          "tag": "custom",
+          "customTag": "p"
+        },
+        "label": "Author"
+      },
+      {
+        "id": "cce04c",
+        "name": "text-basic",
+        "parent": "9c4f87",
+        "children": [],
+        "settings": {
+          "text": "{post_date}",
+          "_cssGlobalClasses": [
+            "nmyktx"
+          ],
+          "tag": "custom",
+          "customTag": "time",
+          "_attributes": [
+            {
+              "id": "zcttps",
+              "name": "datetime",
+              "value": "{post_date}"
+            },
+            {
+              "id": "gmyfyu",
+              "name": "pubdate"
+            }
+          ]
+        },
+        "label": "Date"
+      },
+      {
+        "id": "22c306",
+        "name": "text-basic",
+        "parent": "9c4f87",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "nmyktx"
+          ],
+          "text": "{post_comments_count} comments"
+        },
+        "label": "Comment Count"
+      },
+      {
+        "id": "806918",
+        "name": "div",
+        "parent": "312f12",
+        "children": [
+          "a46a88",
+          "488c88"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wbvnsl"
+          ]
+        },
+        "label": "Background Alpha (Read CSS Tab)"
+      },
+      {
+        "id": "a46a88",
+        "name": "image",
+        "parent": "806918",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "usirxg"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "useDynamicData": "{featured_image}",
+            "size": "large",
+            "filename": "",
+            "id": 11964,
+            "url": "https://bricks.getframes.io/wp-content/uploads/Blog-Hero-Alpha-1024x768.jpg"
+          }
+        }
+      },
+      {
+        "id": "488c88",
+        "name": "div",
+        "parent": "806918",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "heyndn"
+          ]
+        },
+        "label": "Overlay"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "wbvnsl",
+        "name": "fr-background-alpha",
+        "settings": {
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_cssCustom": "/* \n\nTo use this frame correctly, ensure the parent container is set to position relative. It's also advisable to add the following code to the parent container's CSS tab:\n\n.fr-background-alpha {isolation: isolate;}\n\n*/",
+          "_zIndex": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "usirxg",
+        "name": "fr-background-alpha__image",
+        "settings": {
+          "_objectFit": "cover",
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_width": "100%",
+          "_zIndex": "-1",
+          "_height": "100%",
+          "_border": {
+            "radius": {
+              "top": "0",
+              "right": "0",
+              "bottom": "0",
+              "left": "0"
+            }
+          },
+          "_margin": {
+            "bottom": "0"
+          },
+          "_cssCustom": ".fr-background-alpha__image img {\n  height: 100%;\n}"
+        },
+        "modified": 1771255524,
+        "user_id": 1,
+        "_mappedId": "usirxg"
+      },
+      {
+        "id": "heyndn",
+        "name": "fr-background-alpha__overlay",
+        "settings": {
+          "_zIndex": "-1",
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_background": {
+            "color": {
+              "raw": "var(--overlay-bg, var(--neutral-ultra-dark-trans-60))"
+            }
+          }
+        },
+        "_mappedId": "heyndn",
+        "modified": 1771255524,
+        "user_id": 1
+      },
+      {
+        "id": "yukzdx",
+        "name": "fr-blog-hero-alpha",
+        "settings": {
+          "_heightMin": "25em",
+          "_justifyContent": "center",
+          "_alignItems": "center",
+          "_position": "relative",
+          "_isolation": "isolate"
+        },
+        "_exists": false
+      },
+      {
+        "id": "mnfylo",
+        "name": "fr-blog-hero-alpha__content-wrapper",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_alignItems": "center",
+          "_alignItems:mobile_landscape": "flex-start",
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_zIndex": "1",
+          "_cssCustom": ".fr-blog-hero-alpha__content-wrapper, .fr-blog-hero-alpha__content-wrapper a {\n\tcolor: var(--text-light);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "nezyfg",
+        "name": "fr-blog-hero-alpha__heading",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "ofuxrk",
+        "name": "fr-blog-meta-alpha",
+        "settings": {
+          "_display": "flex",
+          "_alignItems": "center",
+          "_cssCustom": ".fr-blog-meta-alpha > *:not(:first-child)::before {\n\tcontent: '\u2022';\n  margin-inline: .5em;\n}",
+          "_flexWrap": "wrap"
+        },
+        "_exists": false
+      },
+      {
+        "id": "nmyktx",
+        "name": "fr-blog-meta-alpha__meta-link",
+        "settings": {
+          "_typography:hover": {
+            "color": {
+              "raw": "var(--neutral-light)"
+            }
+          },
+          "_cssCustom:mobile_portrait": ".fr-blog-meta-alpha__meta-link ~ .fr-blog-meta-alpha__meta-link:before {\n   display: none;\n}"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

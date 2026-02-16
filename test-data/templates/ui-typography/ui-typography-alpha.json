@@ -1,0 +1,694 @@
+{
+  "idx": 27,
+  "title": "(UI) Typography Alpha",
+  "elementCount": 37,
+  "classCount": 11,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "9bbff1",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "03f503",
+          "00c1ca"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jcv30u"
+          ]
+        },
+        "label": "Ui Typography Section Alpha"
+      },
+      {
+        "id": "00c1ca",
+        "name": "container",
+        "parent": "9bbff1",
+        "children": [
+          "a95e82",
+          "b05393",
+          "849a25",
+          "5d2ca4",
+          "5427c8",
+          "6cd194",
+          "52cd91",
+          "eaa19e",
+          "6262d2",
+          "eabf61"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "63fo0j"
+          ]
+        },
+        "label": "Rows"
+      },
+      {
+        "id": "a95e82",
+        "name": "block",
+        "parent": "00c1ca",
+        "children": [
+          "1becd4",
+          "de28d8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gipdys"
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "1becd4",
+        "name": "heading",
+        "parent": "a95e82",
+        "children": [],
+        "settings": {
+          "text": "The quick brown fox jumps over the lazy dog",
+          "tag": "h1",
+          "_cssGlobalClasses": [
+            "alq0tl"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "de28d8",
+        "name": "text-basic",
+        "parent": "a95e82",
+        "children": [],
+        "settings": {
+          "text": "h1",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "wz92g5"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "6cd194",
+        "name": "block",
+        "parent": "00c1ca",
+        "children": [
+          "b77e71",
+          "b5d6fd"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gipdys"
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "b77e71",
+        "name": "heading",
+        "parent": "6cd194",
+        "children": [],
+        "settings": {
+          "text": "The quick brown fox jumps over the lazy dog",
+          "tag": "h6",
+          "_cssGlobalClasses": [
+            "alq0tl"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "b5d6fd",
+        "name": "text-basic",
+        "parent": "6cd194",
+        "children": [],
+        "settings": {
+          "text": "h6",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "wz92g5"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "5427c8",
+        "name": "block",
+        "parent": "00c1ca",
+        "children": [
+          "b68094",
+          "97e935"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gipdys"
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "b68094",
+        "name": "heading",
+        "parent": "5427c8",
+        "children": [],
+        "settings": {
+          "text": "The quick brown fox jumps over the lazy dog",
+          "_cssGlobalClasses": [
+            "alq0tl"
+          ],
+          "tag": "h5"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "97e935",
+        "name": "text-basic",
+        "parent": "5427c8",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "wz92g5"
+          ],
+          "text": "h5",
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "5d2ca4",
+        "name": "block",
+        "parent": "00c1ca",
+        "children": [
+          "6a21a5",
+          "71350b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gipdys"
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "6a21a5",
+        "name": "heading",
+        "parent": "5d2ca4",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "alq0tl"
+          ],
+          "text": "The quick brown fox jumps over the lazy dog",
+          "tag": "h4"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "71350b",
+        "name": "text-basic",
+        "parent": "5d2ca4",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "wz92g5"
+          ],
+          "text": "h4",
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "849a25",
+        "name": "block",
+        "parent": "00c1ca",
+        "children": [
+          "7faf55",
+          "8f7212"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gipdys"
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "7faf55",
+        "name": "heading",
+        "parent": "849a25",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "alq0tl"
+          ],
+          "text": "The quick brown fox jumps over the lazy dog",
+          "tag": "h3"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "8f7212",
+        "name": "text-basic",
+        "parent": "849a25",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "wz92g5"
+          ],
+          "text": "h3",
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "b05393",
+        "name": "block",
+        "parent": "00c1ca",
+        "children": [
+          "7affff",
+          "97beaf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gipdys"
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "7affff",
+        "name": "heading",
+        "parent": "b05393",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "alq0tl"
+          ],
+          "text": "The quick brown fox jumps over the lazy dog",
+          "tag": "h2"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "97beaf",
+        "name": "text-basic",
+        "parent": "b05393",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "wz92g5"
+          ],
+          "text": "h2",
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "52cd91",
+        "name": "block",
+        "parent": "00c1ca",
+        "children": [
+          "bc2972",
+          "77c44e",
+          "53d672"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gipdys"
+          ],
+          "_attributes": [
+            {
+              "id": "cgbcav",
+              "name": "data-typography-sample",
+              "value": "l"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "bc2972",
+        "name": "heading",
+        "parent": "52cd91",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "alq0tl"
+          ],
+          "text": "The quick brown fox jumps over the lazy dog",
+          "tag": "h1"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "77c44e",
+        "name": "text-basic",
+        "parent": "52cd91",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "wz92g5"
+          ],
+          "text": "h1 &amp; L",
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "53d672",
+        "name": "text-basic",
+        "parent": "52cd91",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fpddnx"
+          ],
+          "text": "This is large placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "tag": "p"
+        },
+        "label": "Example"
+      },
+      {
+        "id": "eaa19e",
+        "name": "block",
+        "parent": "00c1ca",
+        "children": [
+          "8b7e79",
+          "dc1bd7",
+          "d9e152"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gipdys"
+          ],
+          "_attributes": [
+            {
+              "id": "fmajfk",
+              "name": "data-typography-sample",
+              "value": "m"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "8b7e79",
+        "name": "heading",
+        "parent": "eaa19e",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "alq0tl"
+          ],
+          "text": "The quick brown fox jumps over the lazy dog",
+          "tag": "h2"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "d9e152",
+        "name": "text-basic",
+        "parent": "eaa19e",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fpddnx"
+          ],
+          "text": "This is default placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "tag": "p"
+        },
+        "label": "Example"
+      },
+      {
+        "id": "dc1bd7",
+        "name": "text-basic",
+        "parent": "eaa19e",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "wz92g5"
+          ],
+          "text": "h2 &amp; m",
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "6262d2",
+        "name": "block",
+        "parent": "00c1ca",
+        "children": [
+          "1bb64c",
+          "7b2f1f",
+          "297eba"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gipdys"
+          ],
+          "_attributes": [
+            {
+              "id": "ylsqqk",
+              "name": "data-typography-sample",
+              "value": "s"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "1bb64c",
+        "name": "heading",
+        "parent": "6262d2",
+        "children": [],
+        "settings": {
+          "text": "The quick brown fox jumps over the lazy dog",
+          "_cssGlobalClasses": [
+            "alq0tl"
+          ],
+          "tag": "h3"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "297eba",
+        "name": "text-basic",
+        "parent": "6262d2",
+        "children": [],
+        "settings": {
+          "text": "This is small placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "_cssGlobalClasses": [
+            "fpddnx"
+          ],
+          "tag": "p"
+        },
+        "label": "Example"
+      },
+      {
+        "id": "7b2f1f",
+        "name": "text-basic",
+        "parent": "6262d2",
+        "children": [],
+        "settings": {
+          "text": "h3 &amp; s",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "wz92g5"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "eabf61",
+        "name": "code",
+        "parent": "00c1ca",
+        "children": [],
+        "settings": {
+          "javascriptCode": "document.addEventListener('DOMContentLoaded', function() {\n  const rows = document.querySelectorAll('.ui-typography-section-alpha__row:not([data-typography-sample])');\n  \n  rows.forEach(row => {\n    const heading = row.querySelector('h1, h2, h3, h4, h5, h6');\n    if (heading) {\n      const styles = window.getComputedStyle(heading);\n      \n      const fontFamily = styles.getPropertyValue('font-family');\n      const fontSize = styles.getPropertyValue('font-size');\n      const fontWeight = styles.getPropertyValue('font-weight');\n      const letterSpacing = styles.getPropertyValue('letter-spacing');\n      \n      const infoDiv = document.createElement('div');\n      infoDiv.innerHTML = `\n        <p>${fontFamily} / ${fontSize} / ${fontWeight} Weight / ${letterSpacing} Letter Spacing</p>\n      `;\n      \n      row.appendChild(infoDiv);\n    }\n  });\n});",
+          "executeCode": true,
+          "noRoot": true,
+          "user_id": 2,
+          "time": 1762444265,
+          "code": "<!-- Get Typography Values -->"
+        }
+      },
+      {
+        "id": "03f503",
+        "name": "container",
+        "parent": "9bbff1",
+        "children": [
+          "4f0e67"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pdcgtq"
+          ]
+        },
+        "label": "Intro Echo"
+      },
+      {
+        "id": "4f0e67",
+        "name": "block",
+        "parent": "03f503",
+        "children": [
+          "0cceec",
+          "c1c62b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cbghev"
+          ]
+        },
+        "label": "Heading Wrapper"
+      },
+      {
+        "id": "c1c62b",
+        "name": "text-basic",
+        "parent": "4f0e67",
+        "children": [],
+        "settings": {
+          "text": "Typography",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "wbfkbf"
+          ],
+          "_typography": []
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "0cceec",
+        "name": "heading",
+        "parent": "4f0e67",
+        "children": [],
+        "settings": {
+          "text": "Headings &amp; Text",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "bkgkvg"
+          ]
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "jcv30u",
+        "name": "ui-typography-section-alpha",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "63fo0j",
+        "name": "ui-typography-section-alpha__rows",
+        "settings": {
+          "_rowGap": "var(--container-gap)",
+          "_cssCustom": ".ui-typography-section-alpha__rows {\n  position: relative;\n}\n\n.ui-typography-section-alpha__rows::before {\n  content: '';\n  width: 100%;\n  height: 1px;\n  border: var(--divider);\n  inset-block-start: 0;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "gipdys",
+        "name": "ui-typography-section-alpha__row",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 2)",
+          "_cssCustom": ".ui-typography-section-alpha__row[data-typography-sample=\"l\" i] p {\n  font-size: var(--text-l);\n}\n.ui-typography-section-alpha__row[data-typography-sample=\"s\" i] p {\n  font-size: var(--text-s);\n}"
+        },
+        "modified": 1731705127,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "alq0tl",
+        "name": "ui-typography-section-alpha__row-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "wz92g5",
+        "name": "ui-typography-section-alpha__row-accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "fpddnx",
+        "name": "ui-typography-section-alpha__example",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "pdcgtq",
+        "name": "fr-intro-echo",
+        "settings": {
+          "_cssCustom:mobile_landscape": ".fr-intro-echo {\n  grid-template-columns: 1fr;\n}",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns": "var(--grid-2-1)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_display": "grid",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)",
+          "_alignItemsGrid": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "cbghev",
+        "name": "fr-intro-echo__heading-wrapper",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 2)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wbfkbf",
+        "name": "fr-intro-echo__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "bkgkvg",
+        "name": "fr-intro-echo__heading",
+        "settings": {
+          "_cssCustom": ".fr-intro-echo__heading {\n  text-wrap: balance;\n}"
+        },
+        "_mappedId": "bkgkvg",
+        "modified": 1771252092,
+        "user_id": 1
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

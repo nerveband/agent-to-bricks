@@ -1,0 +1,275 @@
+{
+  "idx": 60,
+  "title": "Content Section Tampa",
+  "elementCount": 11,
+  "classCount": 11,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "3b85e4",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "0bf84a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "d216ot"
+          ]
+        },
+        "label": "Content Section Tampa"
+      },
+      {
+        "id": "0bf84a",
+        "name": "container",
+        "parent": "3b85e4",
+        "children": [
+          "3c7953",
+          "2f4cf1",
+          "7a70c1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "nqulbv"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "3c7953",
+        "name": "heading",
+        "parent": "0bf84a",
+        "children": [],
+        "settings": {
+          "text": "Our mission",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "kc2l4n"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "2f4cf1",
+        "name": "block",
+        "parent": "0bf84a",
+        "children": [
+          "321620",
+          "6c32c2"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "g4klyr"
+          ]
+        },
+        "label": "Grid"
+      },
+      {
+        "id": "321620",
+        "name": "block",
+        "parent": "2f4cf1",
+        "children": [
+          "d1811a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rff91h"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "6c32c2",
+        "name": "block",
+        "parent": "2f4cf1",
+        "children": [
+          "292618"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lzbjh8"
+          ]
+        },
+        "label": "Cta Wrapper"
+      },
+      {
+        "id": "d1811a",
+        "name": "text",
+        "parent": "321620",
+        "children": [],
+        "settings": {
+          "text": "<h3>Here's what we think</h3><p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.</p><h3>Here's more of what we think</h3><p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.</p><p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.</p>",
+          "_cssGlobalClasses": [
+            "5p5n7u"
+          ]
+        },
+        "label": "Text"
+      },
+      {
+        "id": "292618",
+        "name": "block",
+        "parent": "6c32c2",
+        "children": [
+          "60dc2f",
+          "d8dc14"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wtvztf"
+          ]
+        },
+        "label": "Cta Card"
+      },
+      {
+        "id": "60dc2f",
+        "name": "heading",
+        "parent": "292618",
+        "children": [],
+        "settings": {
+          "text": "This is designed to be a multi-line CTA heading that stands alone. It can even be more than one sentence.",
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "kc2l4n"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "d8dc14",
+        "name": "button",
+        "parent": "292618",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary",
+            "2kinc4"
+          ]
+        },
+        "label": "Button"
+      },
+      {
+        "id": "7a70c1",
+        "name": "text-basic",
+        "parent": "0bf84a",
+        "children": [],
+        "settings": {
+          "text": "Here's a small line of text for notice or <a href=\"#\">secondary CTA</a>.",
+          "_cssGlobalClasses": [
+            "bqhspx"
+          ]
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "d216ot",
+        "name": "content-section-tampa",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "nqulbv",
+        "name": "content-section-tampa__inner",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) * 1.5)",
+          "_width": "1000"
+        },
+        "modified": 1726327682,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "kc2l4n",
+        "name": "content-section-tampa__heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.5"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "g4klyr",
+        "name": "content-section-tampa__grid",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-3-2)",
+          "_gridGap": "calc(var(--grid-gap) * 2)",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)",
+          "_gridGap:mobile_landscape": "var(--content-gap)"
+        },
+        "modified": 1726506446,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "rff91h",
+        "name": "content-section-tampa__content-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "lzbjh8",
+        "name": "content-section-tampa__cta-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "5p5n7u",
+        "name": "content-section-tampa__text",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "wtvztf",
+        "name": "content-section-tampa__cta-card",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_widthMax": "300",
+          "_alignSelf": "flex-end",
+          "_position": "sticky",
+          "_top": "var(--offset, 0)",
+          "_widthMax:mobile_landscape": "100%"
+        },
+        "modified": 1726506446,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "2kinc4",
+        "name": "content-section-tampa__button",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "bqhspx",
+        "name": "content-section-tampa__notice",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-s)",
+            "color": {
+              "raw": "var(--text-dark-muted)"
+            }
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

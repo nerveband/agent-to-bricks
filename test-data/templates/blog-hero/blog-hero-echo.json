@@ -1,0 +1,350 @@
+{
+  "idx": 283,
+  "title": "Blog Hero Echo",
+  "elementCount": 13,
+  "classCount": 13,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "97f77c",
+        "name": "section",
+        "children": [
+          "2a00fb",
+          "f55e4f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cgsdxw"
+          ]
+        },
+        "label": "Blog Hero Echo (CSS)"
+      },
+      {
+        "id": "2a00fb",
+        "name": "container",
+        "parent": "97f77c",
+        "children": [
+          "c37c6c",
+          "532afa",
+          "5df375"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qbgebp"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "c37c6c",
+        "name": "block",
+        "parent": "2a00fb",
+        "children": [
+          "eeb99d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zybhre"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "532afa",
+        "name": "block",
+        "parent": "2a00fb",
+        "children": [
+          "bb9b89"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jagclw"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "bb9b89",
+        "name": "image",
+        "parent": "532afa",
+        "children": [],
+        "settings": {
+          "tag": "figure",
+          "caption": "none",
+          "stretch": true,
+          "_cssGlobalClasses": [
+            "frghpa"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        },
+        "label": "Media",
+        "themeStyles": []
+      },
+      {
+        "id": "bbb441",
+        "name": "heading",
+        "parent": "eeb99d",
+        "children": [],
+        "settings": {
+          "tag": "h1",
+          "_cssGlobalClasses": [
+            "vlcnob"
+          ],
+          "text": "{post_title}"
+        }
+      },
+      {
+        "id": "5e98ae",
+        "name": "text-basic",
+        "parent": "eeb99d",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ljjncm"
+          ],
+          "text": "{post_terms_category}",
+          "tag": "span"
+        },
+        "label": "Category"
+      },
+      {
+        "id": "13226b",
+        "name": "text-basic",
+        "parent": "eeb99d",
+        "children": [],
+        "settings": {
+          "tag": "custom",
+          "customTag": "time",
+          "text": "{post_date}",
+          "_cssGlobalClasses": [
+            "vgzsrj"
+          ]
+        },
+        "label": "Date"
+      },
+      {
+        "id": "5df375",
+        "name": "div",
+        "parent": "2a00fb",
+        "children": [
+          "66e6e1",
+          "e7f3e4"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dkspgd"
+          ]
+        },
+        "label": "Author Meta Alpha"
+      },
+      {
+        "id": "66e6e1",
+        "name": "image",
+        "parent": "5df375",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "brdsec"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "useDynamicData": "{author_avatar}",
+            "size": "large",
+            "url": "https://secure.gravatar.com/avatar/bd2ef7c9cdb5f2917f8c760f21e5d2ce?s=1024&d=mm&r=g"
+          }
+        },
+        "themeStyles": [],
+        "label": "Avatar"
+      },
+      {
+        "id": "e7f3e4",
+        "name": "text-basic",
+        "parent": "5df375",
+        "children": [],
+        "settings": {
+          "text": "{author_name}",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "mmswuv"
+          ]
+        },
+        "label": "Author Name"
+      },
+      {
+        "id": "eeb99d",
+        "name": "block",
+        "parent": "c37c6c",
+        "children": [
+          "bbb441",
+          "5e98ae",
+          "13226b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vugwqt"
+          ]
+        },
+        "label": "Heading Group"
+      },
+      {
+        "id": "f55e4f",
+        "name": "div",
+        "parent": "97f77c",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "afabdd"
+          ]
+        },
+        "label": "Background"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "cgsdxw",
+        "name": "fr-blog-hero-echo",
+        "settings": {
+          "_cssCustom": "/* Background is offset by the height + extra space variables defined below to protect the background from ever interacting with the author info. Make sure \"author height\" matches the height of your author container and then set the extra spacing to whatever value you'd like to create simulated padding. */\n\n.fr-blog-hero-echo {\n  /* Set offsets */\n  --author-height: 54px;\n  --author-extra-spacing: var(--space-xs);\n  /* Use this variable for offsets */\n  --author-bg-offset: calc(var(--author-height) + var(--author-extra-spacing));\n}",
+          "_cssCustom:tablet_portrait": ".fr-blog-hero-echo {\n\tbackground: rgb(0,0,0);\n\tbackground: \n    /* Gradient color */\n    linear-gradient(180deg, var(--neutral-ultra-light)\n      /* Position */\n      calc(100% - (var(--author-gradient-offset) * 2)), rgba(0,0,0,0) calc(100% - (var(--author-gradient-offset) * 2)));\n}",
+          "_position": "relative",
+          "_padding": {
+            "bottom": "0"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "qbgebp",
+        "name": "fr-blog-hero-echo__inner",
+        "settings": {
+          "_position": "relative",
+          "_zIndex": "1",
+          "_display": "grid",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_alignItemsGrid": "stretch",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "zybhre",
+        "name": "fr-blog-hero-echo__content-wrapper",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_justifyContent": "space-between"
+        },
+        "_exists": false
+      },
+      {
+        "id": "jagclw",
+        "name": "fr-blog-hero-echo__media-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "frghpa",
+        "name": "fr-blog-hero-echo__media",
+        "settings": {
+          "_objectFit": "cover"
+        },
+        "_exists": false
+      },
+      {
+        "id": "vlcnob",
+        "name": "fr-blog-hero-echo__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ljjncm",
+        "name": "fr-blog-hero-echo__cat",
+        "settings": {
+          "_order": "-1",
+          "_typography": {
+            "line-height": "1"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "vgzsrj",
+        "name": "fr-blog-hero-echo__date",
+        "settings": {
+          "_typography": {
+            "line-height": "1"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "dkspgd",
+        "name": "fr-author-meta-alpha",
+        "settings": {
+          "_display": "flex",
+          "_direction": "row",
+          "_alignItems": "center",
+          "_columnGap": "1em",
+          "_rowGap": "1em",
+          "_position:tablet_portrait": "relative"
+        },
+        "_exists": false
+      },
+      {
+        "id": "brdsec",
+        "name": "fr-author-meta-alpha__avatar",
+        "settings": {
+          "_width": "3em",
+          "_objectFit": "cover",
+          "_height": "3em",
+          "_overflow": "hidden"
+        },
+        "_exists": false
+      },
+      {
+        "id": "mmswuv",
+        "name": "fr-author-meta-alpha__author-name",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "vugwqt",
+        "name": "fr-blog-hero-echo__heading-group",
+        "settings": {
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "afabdd",
+        "name": "fr-blog-hero-echo__bg",
+        "settings": {
+          "_width": "100%",
+          "_position": "absolute",
+          "_top": "0",
+          "_left": "0",
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "_height:tablet_portrait": "calc(100% - var(--author-bg-offset) * 2)",
+          "_bottom": "var(--author-bg-offset)"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

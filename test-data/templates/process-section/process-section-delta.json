@@ -1,0 +1,794 @@
+{
+  "idx": 186,
+  "title": "Process Section Delta",
+  "elementCount": 33,
+  "classCount": 16,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "9a0b1c",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "b40be4",
+          "614af3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "klxvnd"
+          ]
+        },
+        "label": "Process Section Delta"
+      },
+      {
+        "id": "614af3",
+        "name": "container",
+        "parent": "9a0b1c",
+        "children": [
+          "0950e0",
+          "eb860e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "znfbjy"
+          ]
+        },
+        "label": "Process Grid Delta"
+      },
+      {
+        "id": "b40be4",
+        "name": "container",
+        "parent": "9a0b1c",
+        "children": [
+          "cc3fd5",
+          "33ca83",
+          "eb2d38"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dliabf",
+            "xgmzei"
+          ]
+        },
+        "label": "Intro Alpha"
+      },
+      {
+        "id": "33ca83",
+        "name": "text-basic",
+        "parent": "b40be4",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "blgfqd"
+          ],
+          "text": "Accent heading",
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "cc3fd5",
+        "name": "heading",
+        "parent": "b40be4",
+        "children": [],
+        "settings": {
+          "text": "Your heading",
+          "_cssGlobalClasses": [
+            "tkbujj"
+          ],
+          "tag": "h2"
+        }
+      },
+      {
+        "id": "eb2d38",
+        "name": "text-basic",
+        "parent": "b40be4",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "dizast"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "0950e0",
+        "name": "fr-slider",
+        "parent": "614af3",
+        "children": [
+          "95b95b",
+          "60f48e",
+          "a6f1c5",
+          "41a64b",
+          "cbfbf7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ujeimv"
+          ],
+          "height": "50vh",
+          "type": "slide",
+          "rewindByDrag": true,
+          "arrowSize": "var(--space-l)",
+          "prevArrow": {
+            "library": "themify",
+            "icon": "ti-arrow-left"
+          },
+          "prevArrowTop": "50%",
+          "prevArrowLeft": "var(--space-xs)",
+          "nextArrow": {
+            "library": "themify",
+            "icon": "ti-arrow-right"
+          },
+          "nextArrowTop": "50%",
+          "nextArrowRight": "var(--space-xs)",
+          "listTag": "ul",
+          "sliderTag": "div",
+          "ariaCarousel": "Carousel",
+          "gap": "var(--slides-gap)",
+          "perPage:tablet_portrait": "2",
+          "isSync": true,
+          "syncId": "process-slider-delta",
+          "perPage:mobile_landscape": "1.1",
+          "perPage": "3"
+        },
+        "themeStyles": [],
+        "label": "Slider (CSS)"
+      },
+      {
+        "id": "95b95b",
+        "name": "div",
+        "parent": "0950e0",
+        "children": [
+          "bf00a1",
+          "2f2c98"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "_cssGlobalClasses": [
+            "vcivkr"
+          ],
+          "tag": "li"
+        },
+        "label": "Process Card Delta"
+      },
+      {
+        "id": "bf00a1",
+        "name": "heading",
+        "parent": "95b95b",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "xwwbza"
+          ]
+        }
+      },
+      {
+        "id": "2f2c98",
+        "name": "div",
+        "parent": "95b95b",
+        "children": [
+          "c94c08",
+          "3eb012"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sitpnk"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "3eb012",
+        "name": "image",
+        "parent": "2f2c98",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ncdoup"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure"
+        }
+      },
+      {
+        "id": "eb860e",
+        "name": "fr-slider-controls",
+        "parent": "614af3",
+        "children": [],
+        "settings": {
+          "type": "nextPrev",
+          "progressHeight": ".5rem",
+          "progressWidth": "100%",
+          "arrows": true,
+          "arrowsGap": "var(--space-l)",
+          "prevArrow": {
+            "library": "themify",
+            "icon": "ti-angle-left"
+          },
+          "nextArrow": {
+            "library": "themify",
+            "icon": "ti-angle-right"
+          },
+          "syncId": "process-slider-delta",
+          "_cssGlobalClasses": [
+            "ptoozi"
+          ]
+        }
+      },
+      {
+        "id": "c94c08",
+        "name": "div",
+        "parent": "2f2c98",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iftmwc"
+          ]
+        },
+        "label": "Step"
+      },
+      {
+        "id": "cbfbf7",
+        "name": "div",
+        "parent": "0950e0",
+        "children": [
+          "3c9c83",
+          "3ce9d2"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "_cssGlobalClasses": [
+            "vcivkr"
+          ],
+          "tag": "li"
+        },
+        "label": "Process Card Delta"
+      },
+      {
+        "id": "3c9c83",
+        "name": "heading",
+        "parent": "cbfbf7",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "xwwbza"
+          ]
+        }
+      },
+      {
+        "id": "3ce9d2",
+        "name": "div",
+        "parent": "cbfbf7",
+        "children": [
+          "a27ab7",
+          "150593"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sitpnk"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "a27ab7",
+        "name": "div",
+        "parent": "3ce9d2",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iftmwc"
+          ]
+        },
+        "label": "Step"
+      },
+      {
+        "id": "150593",
+        "name": "image",
+        "parent": "3ce9d2",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ncdoup"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure"
+        }
+      },
+      {
+        "id": "41a64b",
+        "name": "div",
+        "parent": "0950e0",
+        "children": [
+          "3d0762",
+          "709949"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "_cssGlobalClasses": [
+            "vcivkr"
+          ],
+          "tag": "li"
+        },
+        "label": "Process Card Delta"
+      },
+      {
+        "id": "3d0762",
+        "name": "heading",
+        "parent": "41a64b",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "xwwbza"
+          ]
+        }
+      },
+      {
+        "id": "709949",
+        "name": "div",
+        "parent": "41a64b",
+        "children": [
+          "80ced8",
+          "78f94c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sitpnk"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "80ced8",
+        "name": "div",
+        "parent": "709949",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iftmwc"
+          ]
+        },
+        "label": "Step"
+      },
+      {
+        "id": "78f94c",
+        "name": "image",
+        "parent": "709949",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ncdoup"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure"
+        }
+      },
+      {
+        "id": "a6f1c5",
+        "name": "div",
+        "parent": "0950e0",
+        "children": [
+          "728098",
+          "1a6d54"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "_cssGlobalClasses": [
+            "vcivkr"
+          ],
+          "tag": "li"
+        },
+        "label": "Process Card Delta"
+      },
+      {
+        "id": "728098",
+        "name": "heading",
+        "parent": "a6f1c5",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "xwwbza"
+          ]
+        }
+      },
+      {
+        "id": "1a6d54",
+        "name": "div",
+        "parent": "a6f1c5",
+        "children": [
+          "30a243",
+          "975b03"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sitpnk"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "30a243",
+        "name": "div",
+        "parent": "1a6d54",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iftmwc"
+          ]
+        },
+        "label": "Step"
+      },
+      {
+        "id": "975b03",
+        "name": "image",
+        "parent": "1a6d54",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ncdoup"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure"
+        }
+      },
+      {
+        "id": "60f48e",
+        "name": "div",
+        "parent": "0950e0",
+        "children": [
+          "3a0319",
+          "cd5af6"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "_cssGlobalClasses": [
+            "vcivkr"
+          ],
+          "tag": "li"
+        },
+        "label": "Process Card Delta"
+      },
+      {
+        "id": "3a0319",
+        "name": "heading",
+        "parent": "60f48e",
+        "children": [],
+        "settings": {
+          "text": "This is a placeholder",
+          "_cssGlobalClasses": [
+            "xwwbza"
+          ]
+        }
+      },
+      {
+        "id": "cd5af6",
+        "name": "div",
+        "parent": "60f48e",
+        "children": [
+          "18c2c8",
+          "a67070"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sitpnk"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "18c2c8",
+        "name": "div",
+        "parent": "cd5af6",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iftmwc"
+          ]
+        },
+        "label": "Step"
+      },
+      {
+        "id": "a67070",
+        "name": "image",
+        "parent": "cd5af6",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ncdoup"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure"
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771254061,
+        "user_id": 1
+      },
+      {
+        "id": "dliabf",
+        "name": "fr-intro",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "xgmzei",
+        "name": "fr-intro-alpha",
+        "settings": {
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_alignItems:mobile_landscape": "flex-start",
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "blgfqd",
+        "name": "fr-intro-alpha__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "tkbujj",
+        "name": "fr-intro-alpha__heading",
+        "settings": {
+          "_typography:mobile_landscape": {
+            "font-size": "var(--h1)"
+          }
+        },
+        "modified": 1734899474,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "dizast",
+        "name": "fr-intro-alpha__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "klxvnd",
+        "name": "fr-process-section-delta",
+        "settings": {
+          "_rowGap": "var(--container-gap)",
+          "_background": {
+            "color": {
+              "raw": "var(--neutral-ultra-light)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "znfbjy",
+        "name": "fr-process-grid-delta",
+        "settings": {
+          "_cssCustom": ".fr-process-grid-delta {  \n  /* Gap between Slides */\n  --slides-gap: calc(var(--space-xxl) * 2.5);\n\n  /* Width + height of Step */\n  --step-dimension: 80px;\n  --step-font-size: var(--h3);\n  \n  /* Arrow Styling */\n  --arrow-width: .2em;\n\t--arrow-color: var(--neutral-light);\n}"
+        },
+        "modified": 1750322285,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "ujeimv",
+        "name": "fr-process-slider-delta",
+        "settings": {
+          "_cssCustom": ".fr-process-slider-delta {\n  counter-reset: process-counter 0;\n}\n\n/* Fix so that step is not truncated by overflow */\n.fr-slider__track {\n\tpadding-inline: 0 calc(var(--step-dimension) / 2)!important;\n}\n\n/* Arrow */\n.fr-process-slider-delta li:not(:last-child) .fr-process-card-delta__media-wrapper::before {\n\tcontent: '';\n  position: absolute;\n  left: calc((100% + var(--slides-gap) - var(--grid-gap)) - (var(--arrow-width) * 4));\n  border: solid var(--arrow-color);\n  border-width: 0 var(--arrow-width) var(--arrow-width) 0;\n  display: inline-block;\n  padding: var(--arrow-width);\n  transform: rotate(-45deg);\n  -webkit-transform: rotate(-45deg);  \n  z-index: 1;\n}\n\n.fr-process-slider-delta li:not(:last-child) .fr-process-card-delta__media-wrapper::after {\n  content: '';  \n  position: absolute;\n\tleft: calc(100% + var(--grid-gap));\n  border-bottom: var(--arrow-width) dashed var(--arrow-color);\n  width: calc((var(--slides-gap) - (var(--grid-gap) * 2) - (var(--arrow-width) * 4)));\n}",
+          "sliderPaddingEnd:mobile_landscape": "var(--space-xxl)",
+          "sliderPaddingStart:mobile_landscape": "var(--space-xxl)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "vcivkr",
+        "name": "fr-process-card-delta",
+        "settings": {
+          "_cssCustom": ".fr-process-card-delta:nth-child(-n + 9) .fr-process-card-delta__step::before {\n  content: '0';\n  font-size: var(--step-font-size);\n}",
+          "_rowGap": "var(--fr-card-gap)",
+          "_position": "relative",
+          "_display": "flex",
+          "_direction": "column",
+          "_justifyContent": "flex-start"
+        },
+        "modified": 1718710294,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "xwwbza",
+        "name": "fr-process-card-delta__heading",
+        "settings": {
+          "_typography": {
+            "text-align": "center"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "sitpnk",
+        "name": "fr-process-card-delta__media-wrapper",
+        "settings": {
+          "_position": "relative",
+          "_display": "flex",
+          "_alignSelf": "center",
+          "_justifyContent": "center",
+          "_alignItems": "center",
+          "_order": "-1",
+          "_width": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ncdoup",
+        "name": "fr-process-card-delta__image",
+        "settings": {
+          "_cssCustom": ".fr-process-card-delta__image {\n\taspect-ratio: 1/1;\n}",
+          "_objectFit": "cover",
+          "_border": {
+            "radius": {
+              "top": "var(--fr-card-avatar-radius)",
+              "right": "var(--fr-card-avatar-radius)",
+              "bottom": "var(--fr-card-avatar-radius)",
+              "left": "var(--fr-card-avatar-radius)"
+            }
+          },
+          "_overflow": "hidden",
+          "_width": "100%",
+          "_height": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ptoozi",
+        "name": "fr-process-slider-delta__controls",
+        "settings": {
+          "_display": "flex",
+          "_justifyContent": "center",
+          "_alignItems": "center",
+          "arrowSize": "28",
+          "arrowBackground": {
+            "raw": "transparent"
+          },
+          "_alignItems:mobile_landscape": "center",
+          "_justifyContent:mobile_landscape": "flex-start",
+          "_margin": {
+            "top": "var(--container-gap)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "iftmwc",
+        "name": "fr-process-card-delta__step",
+        "settings": {
+          "_position": "absolute",
+          "_display": "flex",
+          "_justifyContent": "center",
+          "_alignItems": "center",
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            },
+            "line-height": "1"
+          },
+          "_cssCustom": ".fr-process-card-delta__step::after {\n  counter-increment: process-counter;\n  content: counter(process-counter);\n\tfont-size: var(--step-font-size);\n}",
+          "_zIndex": "1",
+          "_background": {
+            "color": {
+              "raw": "var(--bg-dark)"
+            }
+          },
+          "_heightMin": "var(--step-dimension)",
+          "_border": {
+            "radius": {
+              "top": "var(--fr-card-avatar-radius)",
+              "right": "var(--fr-card-avatar-radius)",
+              "bottom": "var(--fr-card-avatar-radius)",
+              "left": "var(--fr-card-avatar-radius)"
+            },
+            "width": {
+              "top": ".25em",
+              "right": ".25em",
+              "bottom": ".25em",
+              "left": ".25em"
+            },
+            "style": "solid",
+            "color": {
+              "raw": "var(--neutral-ultra-light)"
+            }
+          },
+          "_right": "0",
+          "_transform": {
+            "translateX": "25%"
+          },
+          "_widthMin": "var(--step-dimension)",
+          "_rowGap": "0",
+          "_columnGap": "0"
+        },
+        "modified": 1750322285,
+        "user_id": 9,
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

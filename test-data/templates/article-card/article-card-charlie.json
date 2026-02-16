@@ -1,0 +1,338 @@
+{
+  "idx": 382,
+  "title": "Article Card Charlie",
+  "elementCount": 9,
+  "classCount": 11,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "aa6b30",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "c36b2b",
+          "cb4d79"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ukimvc",
+            "orfdgb"
+          ],
+          "tag": "custom",
+          "customTag": "li",
+          "hasLoop": true,
+          "query": {
+            "posts_per_page": "6"
+          }
+        },
+        "label": "Article Card Charlie"
+      },
+      {
+        "id": "c36b2b",
+        "name": "div",
+        "parent": "aa6b30",
+        "children": [
+          "da1440",
+          "d4355d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "knuahl"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "da1440",
+        "name": "heading",
+        "parent": "c36b2b",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ykajgw",
+            "acss_import_clickable-parent"
+          ],
+          "link": {
+            "type": "meta",
+            "useDynamicData": "{post_url}"
+          },
+          "text": "{post_title:10}",
+          "tag": "h3"
+        }
+      },
+      {
+        "id": "d4355d",
+        "name": "div",
+        "parent": "c36b2b",
+        "children": [
+          "ffd5f1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "krarvc"
+          ],
+          "tag": "custom",
+          "customTag": "footer"
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "ffd5f1",
+        "name": "div",
+        "parent": "d4355d",
+        "children": [
+          "691946",
+          "c5ff4d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gfoahq"
+          ],
+          "tag": "custom",
+          "customTag": "p"
+        },
+        "label": "Info Paragraph"
+      },
+      {
+        "id": "691946",
+        "name": "text-basic",
+        "parent": "ffd5f1",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "npcskp"
+          ],
+          "tag": "custom",
+          "customTag": "time",
+          "_attributes": [
+            {
+              "id": "dwfctn",
+              "name": "datetime",
+              "value": "{post_date}"
+            }
+          ],
+          "text": "{post_date}"
+        },
+        "label": "Date"
+      },
+      {
+        "id": "c5ff4d",
+        "name": "text-basic",
+        "parent": "ffd5f1",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kmlqzn"
+          ],
+          "tag": "custom",
+          "customTag": "span",
+          "text": "{author_name:plain}"
+        },
+        "label": "Author"
+      },
+      {
+        "id": "cb4d79",
+        "name": "div",
+        "parent": "aa6b30",
+        "children": [
+          "db1f2f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ebqgau"
+          ]
+        },
+        "label": "Image Wrapper"
+      },
+      {
+        "id": "db1f2f",
+        "name": "image",
+        "parent": "cb4d79",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "uhdvus"
+          ],
+          "caption": "none",
+          "image": {
+            "useDynamicData": "{featured_image}",
+            "size": "large"
+          }
+        },
+        "label": "Featured Image",
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "orfdgb",
+        "name": "focus-parent",
+        "settings": [],
+        "_mappedId": "acss_import_focus-parent",
+        "modified": 1771255837,
+        "user_id": 1
+      },
+      {
+        "id": "acss_import_clickable-parent",
+        "name": "clickable-parent",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "ukimvc",
+        "name": "fr-article-card-charlie",
+        "settings": {
+          "_overflow": "hidden",
+          "_position": "relative",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_cssCustom": ".fr-article-card-charlie {\n\ttransition: translate .3s ease-in-out;\n  list-style: none;\n}\n.fr-article-card-charlie:hover {\n\ttranslate: 0 -.5rem;\n}\n"
+        },
+        "_exists": false
+      },
+      {
+        "id": "knuahl",
+        "name": "fr-article-card-charlie__body",
+        "settings": {
+          "_left": "0",
+          "_width": "100%",
+          "_padding": {
+            "top": "var(--fr-card-padding)",
+            "right": "var(--fr-card-padding)",
+            "bottom": "var(--fr-card-padding)",
+            "left": "var(--fr-card-padding)"
+          },
+          "_heightMin": "50%",
+          "_display": "flex",
+          "_alignItems": "flex-start",
+          "_direction": "column",
+          "_justifyContent": "flex-end",
+          "_gradient": {
+            "applyTo": "background",
+            "colors": [
+              {
+                "id": "itoaeb",
+                "color": {
+                  "hex": "#ff0000",
+                  "rgb": "rgba(255, 0, 0, 0)",
+                  "hsl": "hsla(0, 100%, 50%, 0)"
+                }
+              },
+              {
+                "id": "ffukkp",
+                "color": {
+                  "raw": "var(--neutral-ultra-dark-trans-80)"
+                }
+              }
+            ]
+          },
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          },
+          "_rowGap": "var(--fr-card-gap)",
+          "_position": "absolute",
+          "_zIndex": "1",
+          "_top": "0",
+          "_height": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ykajgw",
+        "name": "fr-article-card-charlie__heading",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          }
+        },
+        "modified": 1748382459,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "krarvc",
+        "name": "fr-article-card-charlie__footer",
+        "settings": {
+          "_display": "flex",
+          "_columnGap": "var(--fr-card-gap)",
+          "_rowGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "gfoahq",
+        "name": "fr-article-card-charlie__info",
+        "settings": {
+          "_display": "flex",
+          "_rowGap": "var(--fr-card-gap)",
+          "_columnGap": "var(--fr-card-gap)",
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light-muted)"
+            }
+          }
+        },
+        "modified": 1748382459,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "npcskp",
+        "name": "fr-article-card-charlie__date",
+        "settings": {
+          "_display": "flex",
+          "_rowGap": "var(--fr-card-gap)",
+          "_columnGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "kmlqzn",
+        "name": "fr-article-card-charlie__author-name",
+        "settings": {
+          "_rowGap": "var(--fr-card-gap)",
+          "_columnGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ebqgau",
+        "name": "fr-article-card-charlie__image-wrapper",
+        "settings": {
+          "_width": "100%",
+          "_height": "100%",
+          "_heightMax": "65rem",
+          "_display": "flex",
+          "_direction": "column"
+        },
+        "_exists": false
+      },
+      {
+        "id": "uhdvus",
+        "name": "fr-article-card-charlie__image",
+        "settings": {
+          "_objectFit": "cover",
+          "_heightMin:mobile_portrait": "35rem",
+          "_width": "100%",
+          "_height": "100%"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

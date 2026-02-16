@@ -1,0 +1,264 @@
+{
+  "idx": 98,
+  "title": "Woo Notice Alpha",
+  "elementCount": 1,
+  "classCount": 1,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "2f1256",
+        "name": "woocommerce-notice",
+        "parent": 0,
+        "children": [],
+        "settings": {
+          "previewType": "all",
+          "_cssGlobalClasses": [
+            "znxnjs"
+          ]
+        },
+        "label": "Woo Notice Alpha (CSS)"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "znxnjs",
+        "name": "fr-woo-notice-alpha",
+        "settings": {
+          "_cssCustom": ".fr-woo-notice-alpha {\n\t--notice-color: var(--info, var(--bricks-bg-info));\n  --error-color: var(--danger, var(--bricks-bg-danger));\n  --success-color: var(--success, var(--bricks-bg-success));\n  --text-color: var(--text-light);\n  --button-color: var(--neutral);\n  --button-hover-color: var(--neutral-hover);\n  --button-text: var(--text-light);\n  --button-hover-text: var(--text-light);\n  --shadow: var(--box-shadow-m);\n}\n\n.fr-woo-notice-alpha a.button,\n.fr-woo-notice-alpha a.showcoupon {\n  line-height: var(--btn-line-height);\n  font-style: var(--btn-font-style);\n  font-weight: var(--btn-font-weight);\n\tletter-spacing: var(--btn-letter-spacing);\n  min-inline-size: var(--btn-min-width);\n}\n\n.fr-woo-notice-alpha li {\n  max-inline-size: 100%;\n}",
+          "noticeBackgroundColor": {
+            "raw": "var(--notice-color)"
+          },
+          "noticeTypography": {
+            "color": {
+              "raw": "var(--text-color)"
+            },
+            "line-height": "var(--btn-line-height)"
+          },
+          "noticeBorder": {
+            "radius": {
+              "right": "var(--btn-border-radius)",
+              "bottom": "var(--btn-border-radius)",
+              "left": "var(--btn-border-radius)",
+              "top": "var(--btn-border-radius)"
+            },
+            "style": "none"
+          },
+          "noticePadding": {
+            "top": "var(--btn-padding-block)",
+            "bottom": "var(--btn-padding-block)",
+            "right": "var(--btn-padding-inline)",
+            "left": "var(--btn-padding-inline)"
+          },
+          "successPadding": {
+            "top": "var(--btn-padding-block)",
+            "bottom": "var(--btn-padding-block)",
+            "left": "var(--btn-padding-inline)",
+            "right": "var(--btn-padding-inline)"
+          },
+          "successBackgroundColor": {
+            "raw": "var(--success-color)"
+          },
+          "successBorder": {
+            "radius": {
+              "top": "var(--btn-radius)",
+              "right": "var(--btn-radius)",
+              "bottom": "var(--btn-radius)",
+              "left": "var(--btn-radius)"
+            },
+            "style": "none"
+          },
+          "successTypography": {
+            "color": {
+              "raw": "var(--text-color)"
+            },
+            "line-height": "var(--btn-line-height)"
+          },
+          "errorBackgroundColor": {
+            "raw": "var(--error-color)"
+          },
+          "errorTypography": {
+            "color": {
+              "raw": "var(--text-color)"
+            }
+          },
+          "errorBorder": {
+            "radius": {
+              "top": "var(--btn-radius)",
+              "right": "var(--btn-radius)",
+              "bottom": "var(--btn-radius)",
+              "left": "var(--btn-radius)"
+            },
+            "style": "none"
+          },
+          "errorPadding": {
+            "top": "var(--btn-padding-block)",
+            "bottom": "var(--btn-padding-block)",
+            "left": "var(--btn-padding-inline)",
+            "right": "var(--btn-padding-inline)"
+          },
+          "errorLinkPadding": {
+            "top": "var(--btn-padding-block)",
+            "right": "var(--btn-padding-inline)",
+            "left": "var(--btn-padding-inline)",
+            "bottom": "var(--btn-padding-block)"
+          },
+          "errorLinkBorder": {
+            "radius": {
+              "top": "var(--btn-radius)",
+              "right": "var(--btn-radius)",
+              "bottom": "var(--btn-radius)",
+              "left": "var(--btn-radius)"
+            },
+            "width": {
+              "top": "var(--btn-border-width)",
+              "right": "var(--btn-border-width)",
+              "bottom": "var(--btn-border-width)",
+              "left": "var(--btn-border-width)"
+            },
+            "style": "solid",
+            "color": {
+              "raw": "var(--button-color)"
+            }
+          },
+          "successLinkPadding": {
+            "top": "var(--btn-padding-block)",
+            "left": "var(--btn-padding-inline)",
+            "right": "var(--btn-padding-inline)",
+            "bottom": "var(--btn-padding-block)"
+          },
+          "successLinkBorder": {
+            "radius": {
+              "top": "var(--btn-radius)",
+              "right": "var(--btn-radius)",
+              "bottom": "var(--btn-radius)",
+              "left": "var(--btn-radius)"
+            },
+            "width": {
+              "top": "var(--btn-border-width)",
+              "right": "var(--btn-border-width)",
+              "bottom": "var(--btn-border-width)",
+              "left": "var(--btn-border-width)"
+            },
+            "style": "solid",
+            "color": {
+              "raw": "var(--button-color)"
+            }
+          },
+          "noticeLinkPadding": {
+            "top": "var(--btn-padding-block)",
+            "bottom": "var(--btn-padding-block)",
+            "left": "var(--btn-padding-inline)",
+            "right": "var(--btn-padding-inline)"
+          },
+          "successLinkBackgroundColor": {
+            "raw": "var(--button-color)"
+          },
+          "noticeLinkBackgroundColor": {
+            "raw": "var(--button-color)"
+          },
+          "errorLinkBackgroundColor": {
+            "raw": "var(--button-color)"
+          },
+          "errorLinkTypography": {
+            "color": {
+              "raw": "var(--button-text)"
+            },
+            "text-decoration": "none"
+          },
+          "noticeLinkTypography": {
+            "color": {
+              "raw": "var(--button-text)"
+            },
+            "text-decoration": "none"
+          },
+          "errorLinkBackgroundColor:hover": {
+            "raw": "var(--button-hover-color)"
+          },
+          "successLinkBackgroundColor:hover": {
+            "raw": "var(--button-hover-color)"
+          },
+          "noticeLinkBackgroundColor:hover": {
+            "raw": "var(--button-hover-color)"
+          },
+          "successLinkTypography": {
+            "color": {
+              "raw": "var(--button-text)"
+            },
+            "text-decoration": "none"
+          },
+          "noticeLinkTypography:hover": {
+            "color": {
+              "raw": "var(--button-hover-text)"
+            }
+          },
+          "successLinkTypography:hover": {
+            "color": {
+              "raw": "var(--button-hover-text)"
+            }
+          },
+          "errorLinkTypography:hover": {
+            "color": {
+              "raw": "var(--button-hover-text)"
+            }
+          },
+          "errorLinkMargin": {
+            "left": "0"
+          },
+          "noticeLinkMargin": {
+            "left": "0"
+          },
+          "successLinkMargin": {
+            "left": "0"
+          },
+          "_position": "fixed",
+          "_bottom": "var(--space-l)",
+          "_widthMax": "var(--width-l)",
+          "_left": "50%",
+          "errorBoxShadow": {
+            "color": {
+              "raw": "var(--shadow)"
+            }
+          },
+          "noticeBoxShadow": {
+            "color": {
+              "raw": "var(--shadow)"
+            }
+          },
+          "successBoxShadow": {
+            "color": {
+              "raw": "var(--shadow)"
+            }
+          },
+          "_zIndex": "1",
+          "_transform": {
+            "translateX": "-50%"
+          },
+          "noticeLinkBorder": {
+            "radius": {
+              "top": "var(--btn-border-radius)",
+              "right": "var(--btn-border-radius)",
+              "bottom": "var(--btn-border-radius)",
+              "left": "var(--btn-border-radius)"
+            },
+            "width": {
+              "top": "var(--btn-border-width)",
+              "right": "var(--btn-border-width)",
+              "bottom": "var(--btn-border-width)",
+              "left": "var(--btn-border-width)"
+            },
+            "style": "solid",
+            "color": {
+              "raw": "var(--button-color)"
+            }
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

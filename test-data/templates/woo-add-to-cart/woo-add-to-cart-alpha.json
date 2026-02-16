@@ -1,0 +1,50 @@
+{
+  "idx": 206,
+  "title": "Woo Add to Cart Alpha",
+  "elementCount": 1,
+  "classCount": 1,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "ddefc8",
+        "name": "product-add-to-cart",
+        "parent": 0,
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "amphvw"
+          ],
+          "icon": {
+            "library": "themify",
+            "icon": "ti-shopping-cart"
+          },
+          "_attributes": [
+            {
+              "id": "hxdaws",
+              "name": "role",
+              "value": "button"
+            }
+          ]
+        },
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "amphvw",
+        "name": "fr-woo-add-to-cart-alpha",
+        "settings": {
+          "_cssCustom": ".fr-woo-add-to-cart-alpha {\n\t--button-color: \t\t\tvar(--primary);\n  --button-color-hover: var(--primary-hover);  \n  --button-text: \t\t\t\tvar(--text-light);  \n  --button-text-hover: \tvar(--text-light); \n  --cart-gap: \t\t\t\t\tvar(--grid-gap);\n}\n\n.fr-woo-add-to-cart-alpha {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n\tgap: var(--cart-gap);\n}\n\n.fr-woo-add-to-cart-alpha a:not(.added_to_cart) {\n\tbackground-color: var(--button-color)!important;\n  border-color: var(--button-color)!important;\n\tcolor: var(--button-text)!important;  \n  border-width: var(--btn-border-size)!important;\n  border-radius: var(--btn-radius)!important;\n  border-style: solid;  \n  min-width: var(--btn-width)!important;\n  line-height: var(--btn-line-height)!important;  \n  letter-spacing: var(--btn-letter-spacing)!important;\n  text-transform: var(--btn-text-transform)!important;\n  text-decoration: var(--btn-text-decoration)!important;\n\tfont-style: var(--btn-text-style)!important;\n  font-weight: var(--btn-weight)!important;\n  padding: var(--btn-pad-y) var(--btn-pad-x)!important;\n}\n.fr-woo-add-to-cart-alpha a:hover:not(.added_to_cart)  {\n\tbackground-color: var(--button-color-hover)!important;\n  border-color: var(--button-color-hover)!important;\n\tcolor: var(--button-text-hover)!important;   \n}"
+        },
+        "modified": 1726746627,
+        "user_id": 9,
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

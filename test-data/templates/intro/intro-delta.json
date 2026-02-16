@@ -1,0 +1,333 @@
+{
+  "idx": 405,
+  "title": "Intro Delta",
+  "elementCount": 11,
+  "classCount": 7,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "2fc282",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "b595f5",
+          "fb3b04"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ycetpw"
+          ]
+        },
+        "label": "Intro Delta"
+      },
+      {
+        "id": "b595f5",
+        "name": "heading",
+        "parent": "2fc282",
+        "children": [],
+        "settings": {
+          "text": "Your social proof heading goes here",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "rtjymu"
+          ]
+        }
+      },
+      {
+        "id": "fb3b04",
+        "name": "div",
+        "parent": "2fc282",
+        "children": [
+          "5994a8",
+          "3117fb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wughmh"
+          ]
+        },
+        "label": "Badge Group Alpha"
+      },
+      {
+        "id": "3117fb",
+        "name": "div",
+        "parent": "fb3b04",
+        "children": [
+          "1df1fb",
+          "1413f4"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cogkhk"
+          ],
+          "_attributes": [
+            {
+              "id": "kkadiw",
+              "name": "role",
+              "value": "img"
+            },
+            {
+              "id": "yvbrgb",
+              "name": "aria-label",
+              "value": "4.8 out of 5 stars on Yelp"
+            }
+          ]
+        },
+        "label": "Badge Alpha (CSS)"
+      },
+      {
+        "id": "1df1fb",
+        "name": "div",
+        "parent": "3117fb",
+        "children": [
+          "4497ed"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "axkvcb"
+          ],
+          "_attributes": [
+            {
+              "id": "crxchn",
+              "name": "data-badge-value",
+              "value": "4.8"
+            }
+          ]
+        },
+        "label": "Icon Wrapper (Attr)"
+      },
+      {
+        "id": "4497ed",
+        "name": "icon",
+        "parent": "1df1fb",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "fill": {
+              "raw": "var(--icon-color)"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)"
+          },
+          "_cssGlobalClasses": [
+            "gsmrgo"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Icon"
+      },
+      {
+        "id": "1413f4",
+        "name": "text-basic",
+        "parent": "3117fb",
+        "children": [],
+        "settings": {
+          "text": "on Yelp",
+          "_cssGlobalClasses": [
+            "uxsnwg"
+          ],
+          "tag": "span"
+        },
+        "label": "Label"
+      },
+      {
+        "id": "5994a8",
+        "name": "div",
+        "parent": "fb3b04",
+        "children": [
+          "2217e0",
+          "6020aa"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cogkhk"
+          ],
+          "_attributes": [
+            {
+              "id": "kkadiw",
+              "name": "role",
+              "value": "img"
+            },
+            {
+              "id": "yvbrgb",
+              "name": "aria-label",
+              "value": "4.8 out of 5 stars on Google"
+            }
+          ]
+        },
+        "label": "Badge Alpha (CSS)"
+      },
+      {
+        "id": "2217e0",
+        "name": "div",
+        "parent": "5994a8",
+        "children": [
+          "c40187"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "axkvcb"
+          ],
+          "_attributes": [
+            {
+              "id": "crxchn",
+              "name": "data-badge-value",
+              "value": "4.8"
+            }
+          ]
+        },
+        "label": "Icon Wrapper (Attr)"
+      },
+      {
+        "id": "c40187",
+        "name": "icon",
+        "parent": "2217e0",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "fill": {
+              "raw": "var(--icon-color)"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)"
+          },
+          "_cssGlobalClasses": [
+            "gsmrgo"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Icon"
+      },
+      {
+        "id": "6020aa",
+        "name": "text-basic",
+        "parent": "5994a8",
+        "children": [],
+        "settings": {
+          "text": "on Google",
+          "_cssGlobalClasses": [
+            "uxsnwg"
+          ],
+          "tag": "span"
+        },
+        "label": "Label"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "cogkhk",
+        "name": "fr-badge-alpha",
+        "settings": {
+          "_display": "flex",
+          "_alignItems": "center",
+          "_columnGap": "0.5em",
+          "_cssCustom": ".fr-badge-alpha {\n\t--icon-size: 1.5em;\n  --icon-fill-color: transparent;\n  --icon-stroke-color: var(--text-dark);\n  --icon-fill-color-hover: transparent;  \n  --icon-stroke-color-hover: var(--text-dark);\n}\n\n/* \nAttribute value is set via data attribute\non the icon wrapper. The value may not render\ninside the editor, but will render on front end.\n*/\n\n.fr-badge-alpha__icon-wrapper::after {\n  content: attr(data-badge-value);\n  position: relative;\n  display: flex;\n  color: var(--text-dark);\n}",
+          "_typography": {
+            "line-height": "1"
+          },
+          "_width": "max-content"
+        },
+        "modified": 1754048894,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "axkvcb",
+        "name": "fr-badge-alpha__icon-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_alignItems": "center",
+          "_columnGap": ".25em",
+          "_background": {
+            "color": {
+              "raw": "var(--bg-ultra-light)"
+            }
+          },
+          "_padding": {
+            "top": ".5em",
+            "right": ".5em",
+            "bottom": ".5em",
+            "left": ".5em"
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_cssCustom": ".fr-badge-alpha__icon-wrapper :is(svg, i) {\n  height: var(--icon-size);\n  width: var(--icon-size);\n  fill: var(--icon-fill-color);\n  color: var(--icon-stroke-color);\n}\n\n.fr-badge-alpha__icon-wrapper :is(svg, i):hover {\n  fill: var(--icon-fill-color-hover);\n  color: var(--icon-stroke-color);  \n}\n\n/* Bricks Canvas fix */\n:where(.brx-draggable:empty) {\n  min-height: unset;\n  min-width: unset;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "gsmrgo",
+        "name": "fr-badge-alpha__icon",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "uxsnwg",
+        "name": "fr-badge-alpha__label",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ycetpw",
+        "name": "fr-intro-delta",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_alignItems": "center",
+          "_alignItems:mobile_portrait": "flex-start"
+        },
+        "_exists": false
+      },
+      {
+        "id": "rtjymu",
+        "name": "fr-intro-delta__heading",
+        "settings": {
+          "_typography": {
+            "text-align": "center"
+          },
+          "_typography:mobile_portrait": {
+            "text-align": "left"
+          },
+          "_width": "40ch"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wughmh",
+        "name": "fr-badge-group-alpha",
+        "settings": {
+          "_direction": "row",
+          "_display": "flex",
+          "_rowGap": "var(--content-gap)",
+          "_columnGap": "var(--content-gap)",
+          "_direction:mobile_portrait": "column"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

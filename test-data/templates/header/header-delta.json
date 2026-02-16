@@ -1,0 +1,286 @@
+{
+  "idx": 247,
+  "title": "Header Delta",
+  "elementCount": 4,
+  "classCount": 5,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "a37bcc",
+        "name": "container",
+        "parent": "715b83",
+        "children": [
+          "e99d31",
+          "d26a0c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pkqutx"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "e99d31",
+        "name": "image",
+        "parent": "a37bcc",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eikisk",
+            "horpzc",
+            "hhywmw"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "link": "url",
+          "url": {
+            "type": "meta",
+            "url": "/",
+            "useDynamicData": "{site_url}"
+          },
+          "caption": "none",
+          "altText": "{site_title} logo",
+          "loading": "eager"
+        },
+        "label": "Logo",
+        "themeStyles": []
+      },
+      {
+        "id": "d26a0c",
+        "name": "nav-menu",
+        "parent": "a37bcc",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ckitbu"
+          ],
+          "mobileMenu": "tablet_portrait",
+          "subMenuIcon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "subMenuIconPosition": "right",
+          "menuIcon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "1.15em",
+            "width": "1.15em"
+          },
+          "mobileMenuIcon": {
+            "library": "fontawesomeSolid",
+            "icon": "fas fa-angle-down"
+          },
+          "mobileMenuCloseIcon": {
+            "library": "fontawesomeSolid",
+            "icon": "fas fa-angle-up"
+          },
+          "menuIconPosition": "right",
+          "menu": "61"
+        },
+        "label": "Nav Menu Delta (CSS Tab)",
+        "themeStyles": []
+      },
+      {
+        "id": "715b83",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "a37bcc"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "llcyft"
+          ]
+        },
+        "label": "Header Delta"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "horpzc",
+        "name": "fr-logo",
+        "settings": [],
+        "_mappedId": "horpzc",
+        "modified": 1771254582,
+        "user_id": 1
+      },
+      {
+        "id": "ckitbu",
+        "name": "fr-nav-delta",
+        "settings": {
+          "_width": "100%",
+          "mobileMenuToggleColor": {
+            "raw": "var(--text-dark)"
+          },
+          "_typography:tablet_portrait": {
+            "line-height": "0"
+          },
+          "mobileMenuTypography": {
+            "color": {
+              "raw": "var(--text-light)"
+            },
+            "line-height": "var(--text-line-height);"
+          },
+          "_cssCustom": "/* This menu automatically turns the last link in your menu into a button and positions it to the right. This is better than using a physical button outside your menu, because it retains a working link for the CTA item in your mobile menu and maintains proper semantic menu/list structure. All styling can be adjusted below */\n\n.fr-nav-delta {\n  --link-color: var(--primary);\n  --link-color-hover: var(--primary-hover);\n  --link-color-active: var(--primary-light);\n  --button-color: var(--primary);\n  --button-color-hover: var(--primary-hover);  \n  --button-color-active: var(--primary-dark);    \n  --button-text: var(--text-light);  \n  --button-text-hover: var(--text-light); \n  --button-text-active: var(--primary-light);   \n  --toggle-gap: .5em;\n  --sub-li-block-padding: 1em;\n  --sub-li-inline-padding: 1.5em;  \n  --sub-li-bg: transparent;\n  --sub-li-bg-hover: var(--neutral-light);\n}\n\n.fr-nav-delta > nav > ul {\n  align-items: center;\n}\n\n.fr-nav-delta ul.bricks-mobile-menu {\n  display: flex;\n  align-items: center;\n  padding-block: var(--space-xxl);\n}\n\n.show-mobile-menu ul.bricks-mobile-menu {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n}\n\n.fr-nav-delta {\n  align-items: center; \n}\n\n.fr-nav-delta nav {\n  width: 100%;\n}\n\n/* ACSS text max-width fix */\n.fr-nav-delta:not(.show-mobile-menu) li.menu-item:not(.sub-menu li) {\n  max-width: fit-content;\n}\n\n/* Center Navigation when Nav is set to width:100% */\n.fr-nav-delta .bricks-nav-menu > li:first-child,\n.fr-nav-delta .bricks-nav-menu > li:last-child {\n  margin-inline-start: auto;\n}\n\n/* Button Styling */\n.fr-nav-delta ul.bricks-nav-menu > li:last-of-type a {\n  background-color: var(--button-color);\n  border-color: var(--button-color);\n  color: var(--button-text);\n  border-width: var(--btn-border-size);\n  border-radius: var(--btn-radius);\n  border-style: var(--btn-border-style);\n  min-inline-size: var(--btn-min-width);\n  line-height: var(--btn-line-height);  \n  letter-spacing: var(--btn-letter-spacing);\n  text-transform: var(--btn-text-transform);\n  text-decoration: var(--btn-text-decoration);\n  font-style: var(--btn-font-style);\n  font-weight: var(--btn-font-weight);\n  padding: var(--btn-padding-block) var(--btn-padding-inline);\n  justify-content: center;\n  text-align: center;\n}\n/* Button Hover Styling */\n.fr-nav-delta ul.bricks-nav-menu > li:last-of-type a:hover {\n  background-color: var(--button-color-hover);\n  border-color: var(--button-color-hover);\n  color: var(--button-text-hover);\n}\n\n.fr-nav-delta.fr-nav-delta.brxe-nav-menu .bricks-nav-menu li.current-menu-item:last-child > a {\n  color: var(--button-text-active);\n  background-color: var(--button-color-active);\n  border-color: var(--button-color-active);  \n}\n\n.fr-nav-delta .brx-submenu-toggle {\n  display: flex;\n  flex-direction: row;\n  gap: var(--toggle-gap);\n}\n\n.fr-nav-delta .brx-submenu-toggle button {\n  margin: 0;\n  padding: 0;\n}\n\n.fr-nav-delta .sub-menu {\n  min-inline-size: max-content;\n}\n\n.fr-nav-delta .sub-menu li {\n  background-color: var(--sub-li-bg);\n  padding-block: var(--sub-li-block-padding);\n  padding-inline: var(--sub-li-inline-padding);  \n  position: relative;\n}\n\n.fr-nav-delta ul.bricks-mobile-menu .sub-menu li {\n  padding-block: 0;  \n  padding-inline: var(--sub-li-inline-padding);  \n}\n\n.fr-nav-delta.show-mobile-menu .sub-menu li > ul li {\n  padding-block: 0;  \n  padding-inline: var(--sub-li-inline-padding) 0;  \n}\n\n.fr-nav-delta:not(.show-mobile-menu) .sub-menu li:hover {\n  background-color: var(--sub-li-bg-hover);\n}",
+          "subMenuIconTypography": {
+            "color": {
+              "raw": "var(--link-color)"
+            },
+            "font-size": "var(--text-s)",
+            "line-height": "1"
+          },
+          "subMenuBackgroundList": {
+            "color": {
+              "raw": "var(--neutral-ultra-light)"
+            }
+          },
+          "subMenuTypography": {
+            "color": {
+              "raw": "var(--link-color)"
+            }
+          },
+          "mobileSubMenuTypography": {
+            "color": {
+              "raw": "var(--text-light)"
+            },
+            "line-height": "var(--text-line-height);"
+          },
+          "mobileMenuIconTypography:mobile_landscape": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          },
+          "menuTypography": {
+            "color": {
+              "raw": "var(--link-color)"
+            },
+            "line-height": "var(--text-line-height)"
+          },
+          "menuActiveTypography": {
+            "color": {
+              "raw": "var(--link-color-active)"
+            }
+          },
+          "subMenuIconTransformOpen": {
+            "rotateZ": "270"
+          },
+          "menuIconTransformOpen": {
+            "rotateZ": "180"
+          },
+          "menuGap": "var(--content-gap)",
+          "menuJustifyContent": "center",
+          "_display": "flex",
+          "_justifyContent": "flex-end",
+          "menuMargin": {
+            "left": "0"
+          },
+          "subMenuPadding": {
+            "left": "0",
+            "right": "0"
+          },
+          "menuPadding": {
+            "top": "1.5em",
+            "bottom": "1.5em"
+          },
+          "mobileMenuWidth": "500px",
+          "menuTypography:hover": {
+            "color": {
+              "raw": "var(--link-color-hover)"
+            }
+          },
+          "subMenuTypography:hover": {
+            "color": {
+              "raw": "var(--link-color-hover)"
+            }
+          },
+          "subMenuIconTypography:hover": {
+            "color": {
+              "raw": "var(--link-color-hover)"
+            }
+          },
+          "mobileMenuPadding": {
+            "top": ".5em",
+            "bottom": ".5em",
+            "left": "1em",
+            "right": "var(--sub-li-inline-padding)"
+          },
+          "mobileSubMenuPadding": {
+            "left": "1em",
+            "top": ".5em",
+            "bottom": ".5em",
+            "right": "0"
+          },
+          "mobileMenuToggleColorClose": {
+            "raw": "var(--text-light)"
+          },
+          "mobileMenuToggleClosePosition": {
+            "right": "calc(--sub-li-inline-padding - var(--gutter))"
+          }
+        },
+        "modified": 1753993418,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "pkqutx",
+        "name": "fr-header-delta__inner",
+        "settings": {
+          "_display": "flex",
+          "_direction": "row",
+          "_alignItems": "center",
+          "_justifyContent": "space-between",
+          "_alignSelf": "center",
+          "_flexWrap:mobile_landscape": "nowrap",
+          "_padding": {
+            "left": "var(--gutter)",
+            "right": "var(--gutter)"
+          },
+          "_heightMin": "5em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "hhywmw",
+        "name": "fr-header-delta__logo",
+        "settings": {
+          "_width": "15em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "llcyft",
+        "name": "fr-header-delta",
+        "settings": {
+          "_background": {
+            "color": {
+              "raw": "var(--neutral-ultra-light)"
+            }
+          },
+          "_width": "var(--content-width)",
+          "_cssCustom": ".fr-header-delta {\n  margin-inline: auto;\n  /* Uncomment line below if you want glass blur effect */\n\t/* backdrop-filter: blur(5px); */\n}"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

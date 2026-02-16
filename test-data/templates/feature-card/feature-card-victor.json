@@ -1,0 +1,314 @@
+{
+  "idx": 119,
+  "title": "Feature Card Victor",
+  "elementCount": 9,
+  "classCount": 11,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "27cb40",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "a36536",
+          "dfee8e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "e4sux8",
+            "orfdgb"
+          ],
+          "tag": "li"
+        },
+        "label": "Feature Card Victor"
+      },
+      {
+        "id": "a36536",
+        "name": "block",
+        "parent": "27cb40",
+        "children": [
+          "0b4457",
+          "38d864"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "268yya"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "0b4457",
+        "name": "block",
+        "parent": "a36536",
+        "children": [
+          "349345",
+          "caa1aa"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "2snl57"
+          ]
+        },
+        "label": "Main"
+      },
+      {
+        "id": "349345",
+        "name": "heading",
+        "parent": "0b4457",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder heading",
+          "_cssGlobalClasses": [
+            "21xyaa",
+            "acss_import_clickable-parent"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "caa1aa",
+        "name": "div",
+        "parent": "0b4457",
+        "children": [
+          "f87b7e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "7syay2"
+          ]
+        },
+        "label": "Meta"
+      },
+      {
+        "id": "f87b7e",
+        "name": "text-basic",
+        "parent": "caa1aa",
+        "children": [],
+        "settings": {
+          "text": "Short description goes here",
+          "_cssGlobalClasses": [
+            "2zeuxx"
+          ],
+          "tag": "p"
+        },
+        "label": "Description"
+      },
+      {
+        "id": "38d864",
+        "name": "text-basic",
+        "parent": "a36536",
+        "children": [],
+        "settings": {
+          "text": "Label<br>",
+          "_cssGlobalClasses": [
+            "16tcsi"
+          ],
+          "tag": "p"
+        },
+        "label": "Label"
+      },
+      {
+        "id": "dfee8e",
+        "name": "block",
+        "parent": "27cb40",
+        "children": [
+          "47b407"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "8djrwq"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "47b407",
+        "name": "image",
+        "parent": "dfee8e",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "8wczh4"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure"
+        },
+        "label": "Media"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "orfdgb",
+        "name": "focus-parent",
+        "settings": [],
+        "_mappedId": "acss_import_focus-parent",
+        "modified": 1771253537,
+        "user_id": 1
+      },
+      {
+        "id": "acss_import_clickable-parent",
+        "name": "clickable-parent",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "e4sux8",
+        "name": "fr-feature-card-victor",
+        "settings": {
+          "_position": "relative",
+          "_heightMin": "350px",
+          "_overflow": "hidden",
+          "_isolation": "isolate",
+          "_background": {
+            "color": {
+              "raw": "var(--neutral-dark-trans-30)"
+            }
+          },
+          "_cssCustom": ".fr-feature-card-victor {\n\t--start-opacity: 0;\n  --end-opacity: .4;\n  --start-scale: 1;\n  --end-scale: 1.1;\n  --transition-duration: .6s;\n  --transition-function: ease;\n  --focus-color: var(--white-trans-10);\n}\n\n.fr-feature-card-victor__media {\n  scale: var(--start-scale);\n  transition: \n    opacity var(--transition-duration) var(--transition-function),\n    scale var(--transition-duration) var(--transition-function);\n  opacity: var(--start-opacity);\n}\n\n.fr-feature-card-victor:hover .fr-feature-card-victor__media,\n.fr-feature-card-victor:focus-within .fr-feature-card-victor__media{\n\topacity: var(--end-opacity);\n  scale: var(--end-scale);\n}",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "268yya",
+        "name": "fr-feature-card-victor__content-wrapper",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_flexGrow": "1",
+          "_padding": {
+            "top": "var(--space-m)",
+            "right": "var(--space-m)",
+            "bottom": "var(--space-m)",
+            "left": "var(--space-m)"
+          },
+          "_justifyContent": "space-between"
+        },
+        "_exists": false
+      },
+      {
+        "id": "2snl57",
+        "name": "fr-feature-card-victor__main",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 2)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "21xyaa",
+        "name": "fr-feature-card-victor__heading",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--white)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "7syay2",
+        "name": "fr-feature-card-victor__meta",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--white-trans-80)"
+            }
+          },
+          "_display": "flex"
+        },
+        "_exists": false
+      },
+      {
+        "id": "2zeuxx",
+        "name": "fr-feature-card-victor__description",
+        "settings": {
+          "_typography": {
+            "line-height": "1"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "16tcsi",
+        "name": "fr-feature-card-victor__label",
+        "settings": {
+          "_order": "-1",
+          "_typography": {
+            "line-height": "1",
+            "color": {
+              "raw": "var(--white-trans-80)"
+            },
+            "font-size": "var(--text-s)"
+          },
+          "_background": {
+            "color": {
+              "raw": "var(--neutral-ultra-dark-trans-70)"
+            }
+          },
+          "_padding": {
+            "top": ".5em",
+            "right": "1em",
+            "bottom": ".5em",
+            "left": "1em"
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_width": "fit-content"
+        },
+        "_exists": false
+      },
+      {
+        "id": "8djrwq",
+        "name": "fr-feature-card-victor__media-wrapper",
+        "settings": {
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_zIndex": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "8wczh4",
+        "name": "fr-feature-card-victor__media",
+        "settings": {
+          "_width": "100%",
+          "_height": "100%",
+          "_objectFit": "cover"
+        },
+        "modified": 1718814058,
+        "user_id": 9,
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

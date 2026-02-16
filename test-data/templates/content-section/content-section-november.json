@@ -1,0 +1,260 @@
+{
+  "idx": 105,
+  "title": "Content Section November",
+  "elementCount": 8,
+  "classCount": 9,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "f3f92f",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "4ad06c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "r9ljzk"
+          ],
+          "_attributes": [
+            {
+              "id": "xlrpft",
+              "name": "data-layout"
+            }
+          ]
+        },
+        "label": "Content Section November (CSS)"
+      },
+      {
+        "id": "4ad06c",
+        "name": "container",
+        "parent": "f3f92f",
+        "children": [
+          "13928b",
+          "fb42c5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "6u6fm1"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "04b6d0",
+        "name": "image",
+        "parent": "13928b",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "rkosfw"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Media",
+        "themeStyles": []
+      },
+      {
+        "id": "13928b",
+        "name": "block",
+        "parent": "4ad06c",
+        "children": [
+          "04b6d0"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wx7olg"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "fb42c5",
+        "name": "block",
+        "parent": "4ad06c",
+        "children": [
+          "da4ae3",
+          "53c663",
+          "7e5d35"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "6cmeaf"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "da4ae3",
+        "name": "heading",
+        "parent": "fb42c5",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder headline",
+          "_cssGlobalClasses": [
+            "jnmcnl"
+          ],
+          "tag": "h2"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "7e5d35",
+        "name": "button",
+        "parent": "fb42c5",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary",
+            "rsaj0m"
+          ]
+        },
+        "label": "Button"
+      },
+      {
+        "id": "53c663",
+        "name": "text",
+        "parent": "fb42c5",
+        "children": [],
+        "settings": {
+          "text": "<p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.</p>",
+          "_cssGlobalClasses": [
+            "ghsyhd"
+          ]
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "r9ljzk",
+        "name": "fr-content-section-november",
+        "settings": {
+          "_position": "relative",
+          "_cssCustom": ".fr-content-section-november {\n  --grid: var(--grid-12); /* No touchey */\n  --min-height: calc(100vh - 200px);\n  --content-box-width: 720px; /* Optionally limit width in px) */  \n  --overlap: 2; /* Degree of overlap (< media ratio) */\n  --media-ratio: 7; /* Out of 12 (\"7\" is 50%) */  \n  --media-position: 50% 50%; /* Object-position control */\n\t--media-width: calc((50vw + (var(--media-ratio) - 6) * (var(--content-width) / 12))); \n  contain: paint;\n}\n\n.fr-content-section-november__media-wrapper {\n\tgrid-column: 1 / var(--media-ratio);\n  grid-row: 1;\n  align-items: flex-end;\n}\n\n.fr-content-section-november__content-wrapper {\n  grid-column: calc(var(--media-ratio) - var(--overlap)) / -1;\n\tgrid-row: 1;\n}\n\n[data-layout=\"alt\"] .fr-content-section-november__content-wrapper {\n  grid-column: 1 / calc(var(--media-ratio) + var(--overlap) - 1);\n\tgrid-row: 1;\n}\n[data-layout=\"alt\"] .fr-content-section-november__media-wrapper {\n\tgrid-column: calc(13 - var(--media-ratio)) / end;\n  grid-row: 1;\n  align-items: flex-start;  \n}",
+          "_padding": {
+            "top": "0",
+            "bottom": "0"
+          },
+          "_background": {
+            "color": {
+              "raw": "var(--neutral-ultra-light)"
+            }
+          },
+          "_cssCustom:mobile_landscape": ".fr-content-section-november,\n.fr-content-section-november[data-layout=\"alt\"] {\n  --grid: var(--grid-1);\n  --min-height: auto;\n\t--media-width: 100vw;\n  --media-position: 10% 50%;\n  --media-ratio: 1;\n}\n\n.fr-content-section-november__media,\n.fr-content-section-november[data-layout=\"alt\"] .fr-content-section-november__media {\n  translate: -5% 0;\n}\n\n.fr-content-section-november__content-wrapper,\n.fr-content-section-november[data-layout=\"alt\"] .fr-content-section-november__content-wrapper {\n\tmargin-top: calc(var(--space-m) * -2);\n}"
+        },
+        "modified": 1750805373,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "6u6fm1",
+        "name": "fr-content-section-november__inner",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid) /* CSS */",
+          "_alignItemsGrid": "stretch",
+          "_heightMin": "var(--min-height)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_display:mobile_landscape": "flex",
+          "_direction:mobile_landscape": "column"
+        },
+        "modified": 1750805373,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "rkosfw",
+        "name": "fr-content-section-november__media",
+        "settings": {
+          "_objectFit": "cover",
+          "_height": "100%",
+          "_objectPosition": "var(--media-position)",
+          "_widthMin": "var(--media-width)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wx7olg",
+        "name": "fr-content-section-november__media-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_justifyContent": "flex-end"
+        },
+        "_exists": false
+      },
+      {
+        "id": "6cmeaf",
+        "name": "fr-content-section-november__content-wrapper",
+        "settings": {
+          "_padding": {
+            "top": "var(--space-xl)",
+            "right": "var(--space-xl)",
+            "bottom": "var(--space-xl)",
+            "left": "var(--space-xl)"
+          },
+          "_rowGap": "var(--content-gap)",
+          "_zIndex": "1",
+          "_background": {
+            "color": {
+              "raw": "var(--white)"
+            }
+          },
+          "_alignSelf": "center",
+          "_gridItemRowSpan:mobile_landscape": "unset",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_width": "var(--content-box-width)",
+          "_gridItemColumnSpan:mobile_landscape": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "jnmcnl",
+        "name": "fr-content-section-november__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "rsaj0m",
+        "name": "fr-content-section-november__button",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ghsyhd",
+        "name": "fr-content-section-november__lede",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

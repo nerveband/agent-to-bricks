@@ -1,0 +1,88 @@
+{
+  "idx": 249,
+  "title": "Image Group Foxtrot",
+  "elementCount": 3,
+  "classCount": 2,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "a49c61",
+        "name": "block",
+        "children": [
+          "ae17d4",
+          "b2b60e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "yiysom"
+          ]
+        },
+        "label": "Image Group Foxtrot"
+      },
+      {
+        "id": "ae17d4",
+        "name": "image",
+        "parent": "a49c61",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "czmqre"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        }
+      },
+      {
+        "id": "b2b60e",
+        "name": "image",
+        "parent": "a49c61",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "czmqre"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "yiysom",
+        "name": "fr-image-group-foxtrot",
+        "settings": {
+          "_cssCustom": ".fr-image-group-foxtrot > *:first-child {\n  aspect-ratio: 4/5;\n\tgrid-area: 1/1/8/9;\n}\n\n.fr-image-group-foxtrot > *:last-child {\n  aspect-ratio: 4/5;\n\tgrid-area: 4/5/12/-1;\n}",
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-12)",
+          "_gridTemplateRows": "var(--grid-12)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "czmqre",
+        "name": "fr-image-group-foxtrot__image",
+        "settings": {
+          "_objectFit": "cover"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

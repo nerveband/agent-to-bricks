@@ -17,3 +17,16 @@ node_modules/
 # Environment
 .env
 .env.local
+
+# Test artifacts (raw captures, logs)
+test-data/*.log
+test-data/*.png
+test-data/all-*.json
+test-data/autosave-request.txt
+test-data/gallery-bravo-raw.json
+
+# Serena
+.serena/
+
+# mcporter config
+config/mcporter.json

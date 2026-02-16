@@ -1,0 +1,511 @@
+{
+  "idx": 437,
+  "title": "Hero Echo",
+  "elementCount": 21,
+  "classCount": 15,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "8ac2ee",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "952700"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "bagysh",
+            "vtwwtv"
+          ]
+        },
+        "label": "Hero Echo"
+      },
+      {
+        "id": "952700",
+        "name": "container",
+        "parent": "8ac2ee",
+        "children": [
+          "219cf9",
+          "812105"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "crhgjw"
+          ]
+        },
+        "label": "Inner Wrapper"
+      },
+      {
+        "id": "219cf9",
+        "name": "div",
+        "parent": "952700",
+        "children": [
+          "8361c7",
+          "8bcedc",
+          "d1ae0c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wrkpqp"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "812105",
+        "name": "div",
+        "parent": "952700",
+        "children": [
+          "86f169",
+          "74fadb",
+          "3a11ab"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jqbjzn"
+          ]
+        },
+        "label": "Testimonials Wrapper"
+      },
+      {
+        "id": "86f169",
+        "name": "div",
+        "parent": "812105",
+        "children": [
+          "51a35a",
+          "2a3a1c",
+          "8aa40d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wgklnj"
+          ],
+          "tag": "article"
+        },
+        "label": "Testimonial Card Charlie"
+      },
+      {
+        "id": "51a35a",
+        "name": "text-basic",
+        "parent": "86f169",
+        "children": [],
+        "settings": {
+          "text": "\"Definitely the best thing since sliced bread. I couldn't be happier!\"",
+          "_cssGlobalClasses": [
+            "odjsfm"
+          ],
+          "tag": "p"
+        },
+        "label": "Testimonial"
+      },
+      {
+        "id": "2a3a1c",
+        "name": "text-basic",
+        "parent": "86f169",
+        "children": [],
+        "settings": {
+          "text": "Jack Sparrow",
+          "_cssGlobalClasses": [
+            "kgxpss"
+          ],
+          "tag": "span"
+        },
+        "label": "Name"
+      },
+      {
+        "id": "8aa40d",
+        "name": "image",
+        "parent": "86f169",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eegtic"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure"
+        },
+        "themeStyles": [],
+        "label": "Avatar"
+      },
+      {
+        "id": "8361c7",
+        "name": "heading",
+        "parent": "219cf9",
+        "children": [],
+        "settings": {
+          "text": "Your hero heading",
+          "tag": "h1",
+          "_cssGlobalClasses": [
+            "suxnno"
+          ]
+        }
+      },
+      {
+        "id": "8bcedc",
+        "name": "text-basic",
+        "parent": "219cf9",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "kjbyfb",
+            "kddjfd"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "d1ae0c",
+        "name": "div",
+        "parent": "219cf9",
+        "children": [
+          "997964",
+          "9734e3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jzxauh"
+          ]
+        },
+        "label": "CTA Wrapper"
+      },
+      {
+        "id": "997964",
+        "name": "button",
+        "parent": "d1ae0c",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "9734e3",
+        "name": "button",
+        "parent": "d1ae0c",
+        "children": [],
+        "settings": {
+          "text": "Alternate CTA",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary",
+            "btn--outline"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "3a11ab",
+        "name": "div",
+        "parent": "812105",
+        "children": [
+          "9433ca",
+          "c03a4e",
+          "abc00b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wgklnj"
+          ],
+          "tag": "article"
+        },
+        "label": "Testimonial Card Charlie"
+      },
+      {
+        "id": "9433ca",
+        "name": "text-basic",
+        "parent": "3a11ab",
+        "children": [],
+        "settings": {
+          "text": "\"Definitely the best thing since sliced bread. I couldn't be happier!\"",
+          "_cssGlobalClasses": [
+            "odjsfm"
+          ],
+          "tag": "p"
+        },
+        "label": "Testimonial"
+      },
+      {
+        "id": "c03a4e",
+        "name": "text-basic",
+        "parent": "3a11ab",
+        "children": [],
+        "settings": {
+          "text": "Jack Sparrow",
+          "_cssGlobalClasses": [
+            "kgxpss"
+          ],
+          "tag": "span"
+        },
+        "label": "Name"
+      },
+      {
+        "id": "abc00b",
+        "name": "image",
+        "parent": "3a11ab",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eegtic"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure"
+        },
+        "themeStyles": [],
+        "label": "Avatar"
+      },
+      {
+        "id": "74fadb",
+        "name": "div",
+        "parent": "812105",
+        "children": [
+          "afb4df",
+          "4c5d13",
+          "91a414"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wgklnj"
+          ],
+          "tag": "article"
+        },
+        "label": "Testimonial Card Charlie"
+      },
+      {
+        "id": "afb4df",
+        "name": "text-basic",
+        "parent": "74fadb",
+        "children": [],
+        "settings": {
+          "text": "\"Definitely the best thing since sliced bread. I couldn't be happier!\"",
+          "_cssGlobalClasses": [
+            "odjsfm"
+          ],
+          "tag": "p"
+        },
+        "label": "Testimonial"
+      },
+      {
+        "id": "4c5d13",
+        "name": "text-basic",
+        "parent": "74fadb",
+        "children": [],
+        "settings": {
+          "text": "Jack Sparrow",
+          "_cssGlobalClasses": [
+            "kgxpss"
+          ],
+          "tag": "span"
+        },
+        "label": "Name"
+      },
+      {
+        "id": "91a414",
+        "name": "image",
+        "parent": "74fadb",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eegtic"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure"
+        },
+        "themeStyles": [],
+        "label": "Avatar"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771256218,
+        "user_id": 1
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "btn--outline",
+        "name": "btn--outline",
+        "settings": [],
+        "_mappedId": "acss_import_btn--outline",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "vtwwtv",
+        "name": "fr-hero",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_mappedId": "vtwwtv",
+        "modified": 1771256250,
+        "user_id": 1
+      },
+      {
+        "id": "bagysh",
+        "name": "fr-hero-echo",
+        "settings": {
+          "_padding": {
+            "top": "var(--section-space-l)",
+            "bottom": "var(--section-space-l)"
+          },
+          "_cssCustom": ".fr-hero-echo {\n\t--grid-gap: var(--space-xl);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "crhgjw",
+        "name": "fr-hero-echo__inner-wrapper",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wrkpqp",
+        "name": "fr-hero-echo__content-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "var(--fr-content-gap)",
+          "_justifyContent": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "jqbjzn",
+        "name": "fr-hero-echo__testimonials-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_flexWrap": "wrap",
+          "_justifyContent": "space-around",
+          "_alignItems": "center",
+          "_columnGap": "var(--content-gap)",
+          "_rowGap": "var(--content-gap)",
+          "_justifyContent:tablet_portrait": "flex-start",
+          "_alignItems:tablet_portrait": "flex-start",
+          "_flexWrap:tablet_portrait": "wrap",
+          "_direction:tablet_portrait": "column"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wgklnj",
+        "name": "fr-testimonial-card-charlie",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_alignItems": "center",
+          "_rowGap": "var(--fr-card-gap)",
+          "_widthMax": "var(--width-s)",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_alignItems:tablet_portrait": "flex-start",
+          "_typography:tablet_portrait": {
+            "text-align": "left"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "odjsfm",
+        "name": "fr-testimonial-card-charlie__review",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "kgxpss",
+        "name": "fr-testimonial-card-charlie__name",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "eegtic",
+        "name": "fr-testimonial-card-charlie__avatar",
+        "settings": {
+          "_objectFit": "cover",
+          "_border": {
+            "radius": {
+              "top": "50vmax",
+              "right": "50vmax",
+              "bottom": "50vmax",
+              "left": "50vmax"
+            }
+          },
+          "_order": "-1",
+          "_overflow": "hidden",
+          "_aspectRatio": "1/1"
+        },
+        "modified": 1728407078,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "suxnno",
+        "name": "fr-hero-echo__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "kjbyfb",
+        "name": "fr-hero-echo__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "jzxauh",
+        "name": "fr-hero-echo__cta-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_flexWrap": "wrap",
+          "_columnGap": "var(--fr-card-gap)",
+          "_rowGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

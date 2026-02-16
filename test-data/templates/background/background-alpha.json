@@ -1,0 +1,129 @@
+{
+  "idx": 227,
+  "title": "Background Alpha",
+  "elementCount": 3,
+  "classCount": 3,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "f22788",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "6ca04c",
+          "95267d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wbvnsl"
+          ]
+        },
+        "label": "Background Alpha (Read CSS Tab)"
+      },
+      {
+        "id": "6ca04c",
+        "name": "image",
+        "parent": "f22788",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "usirxg"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        }
+      },
+      {
+        "id": "95267d",
+        "name": "div",
+        "parent": "f22788",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "heyndn"
+          ],
+          "tag": "custom",
+          "customTag": "span"
+        },
+        "label": "Overlay"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "wbvnsl",
+        "name": "fr-background-alpha",
+        "settings": {
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_cssCustom": "/* \n\nTo use this frame correctly, ensure the parent container is set to position relative. It's also advisable to add the following code to the parent container's CSS tab:\n\n.fr-background-alpha {isolation: isolate;}\n\n*/",
+          "_zIndex": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "usirxg",
+        "name": "fr-background-alpha__image",
+        "settings": {
+          "_objectFit": "cover",
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_width": "100%",
+          "_zIndex": "-1",
+          "_height": "100%",
+          "_border": {
+            "radius": {
+              "top": "0",
+              "right": "0",
+              "bottom": "0",
+              "left": "0"
+            }
+          },
+          "_margin": {
+            "bottom": "0"
+          },
+          "_cssCustom": ".fr-background-alpha__image img {\n  height: 100%;\n}"
+        },
+        "modified": 1771254449,
+        "user_id": 1,
+        "_mappedId": "usirxg"
+      },
+      {
+        "id": "heyndn",
+        "name": "fr-background-alpha__overlay",
+        "settings": {
+          "_zIndex": "-1",
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_background": {
+            "color": {
+              "raw": "var(--overlay-bg, var(--neutral-ultra-dark-trans-60))"
+            }
+          }
+        },
+        "_mappedId": "heyndn",
+        "modified": 1771254449,
+        "user_id": 1
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

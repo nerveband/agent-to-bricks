@@ -1,0 +1,408 @@
+{
+  "idx": 144,
+  "title": "Profile Card Golf",
+  "elementCount": 12,
+  "classCount": 11,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "f91ab8",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "f9c0c7",
+          "09a131",
+          "42a441"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wqklti"
+          ],
+          "tag": "article"
+        },
+        "label": "Profile Card Golf (CSS)"
+      },
+      {
+        "id": "09a131",
+        "name": "image",
+        "parent": "f91ab8",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hrlpcr"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Media"
+      },
+      {
+        "id": "42a441",
+        "name": "div",
+        "parent": "f91ab8",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kofmmy"
+          ]
+        },
+        "label": "Overlay"
+      },
+      {
+        "id": "f9c0c7",
+        "name": "block",
+        "parent": "f91ab8",
+        "children": [
+          "b31b02",
+          "6aeda2",
+          "c9ff5c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "doifgh"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "b31b02",
+        "name": "div",
+        "parent": "f9c0c7",
+        "children": [
+          "25f505"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "nqnhis"
+          ],
+          "tag": "custom",
+          "customTag": "h3"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "25f505",
+        "name": "div",
+        "parent": "b31b02",
+        "children": [
+          "bb72f3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tcsveq",
+            "acss_import_clickable-parent"
+          ],
+          "tag": "custom",
+          "customTag": "button",
+          "_attributes": [
+            {
+              "id": "asvwsy",
+              "name": "tabindex",
+              "value": "-1"
+            }
+          ]
+        },
+        "label": "Button"
+      },
+      {
+        "id": "bb72f3",
+        "name": "heading",
+        "parent": "25f505",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "oyevdv"
+          ],
+          "tag": "custom",
+          "text": "Amy Walker",
+          "customTag": "span"
+        },
+        "label": "Name"
+      },
+      {
+        "id": "6aeda2",
+        "name": "text-basic",
+        "parent": "f9c0c7",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rfwwny"
+          ],
+          "tag": "span",
+          "text": "Web Designer"
+        },
+        "label": "Title"
+      },
+      {
+        "id": "c9ff5c",
+        "name": "div",
+        "parent": "f9c0c7",
+        "children": [
+          "3a885a",
+          "03adde",
+          "418477"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "onyhdn"
+          ]
+        },
+        "label": "Social "
+      },
+      {
+        "id": "3a885a",
+        "name": "icon",
+        "parent": "c9ff5c",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--social-icon-size)",
+            "width": "var(--social-icon-size)",
+            "fill": {
+              "raw": "var(--social-icon-color)"
+            }
+          },
+          "_cssGlobalClasses": [
+            "nudera"
+          ]
+        },
+        "label": "Facebook"
+      },
+      {
+        "id": "03adde",
+        "name": "icon",
+        "parent": "c9ff5c",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--social-icon-size)",
+            "width": "var(--social-icon-size)",
+            "fill": {
+              "raw": "var(--social-icon-color)"
+            }
+          },
+          "_cssGlobalClasses": [
+            "nudera"
+          ]
+        },
+        "label": "Instagram"
+      },
+      {
+        "id": "418477",
+        "name": "icon",
+        "parent": "c9ff5c",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--social-icon-size)",
+            "width": "var(--social-icon-size)",
+            "fill": {
+              "raw": "var(--social-icon-color)"
+            }
+          },
+          "_cssGlobalClasses": [
+            "nudera"
+          ]
+        },
+        "label": "X"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "acss_import_clickable-parent",
+        "name": "clickable-parent",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "wqklti",
+        "name": "fr-profile-card-golf",
+        "settings": {
+          "_position": "relative",
+          "_cssCustom": ".fr-profile-card-golf {\n\t--overlay-color: var(--black-trans-60);\n  --transition-duration: .3s;\n  --transition-function: ease-in-out;\n  --transition-delay: .05s;\n  --social-icon-size: 1.15em;\n  --social-icon-color: var(--white);\n  --social-icon-gap: .25em;\n}\n\n.fr-profile-card-golf {\n\toverflow: hidden;\n}\n\n.fr-profile-card-golf:focus-within :focus {\n\toutline: none;\n  box-shadow: none;\n}\n\n.fr-profile-card-golf:focus-within {\n\tbox-shadow: 0 0 40px 0px var(--black-trans-10);\n  outline: none !important;\n}\n\n@media (min-width:767px) {\n\n  /* Media */\n\n  .fr-profile-card-golf__media {\n    transition: var(--transition-duration) var(--transition-function);\n  }\n\n  .fr-profile-card-golf.is-hover .fr-profile-card-golf__media,\n  .fr-profile-card-golf:focus-within .fr-profile-card-golf__media{\n    scale: 1.1;\n  }\n\n  /* Overlay */\n\n  .fr-profile-card-golf__overlay {\n    opacity: 0;\n    transition: calc(var(--transition-duration) + .35s) var(--transition-function);\n  }\n\n  .fr-profile-card-golf.is-hover .fr-profile-card-golf__overlay,\n  .fr-profile-card-golf:focus-within .fr-profile-card-golf__overlay{\n    opacity: 1;\n  }\n\n  /*** Content ***/\n\n  /* Name */\n\n  .fr-profile-card-golf__name {\n    transition: calc(var(--transition-duration)) var(--transition-function);\n    opacity: 0;\n  }\n\n  .fr-profile-card-golf.is-hover .fr-profile-card-golf__name,\n  .fr-profile-card-golf:focus-within .fr-profile-card-golf__name{\n    opacity: 1;\n  }\n\n  /* Title */\n\n  .fr-profile-card-golf__title {\n    translate: 0% 100%;\n    opacity: 0;\n    transition: calc(var(--transition-duration) - .05s) var(--transition-function);\n  }\n\n  .fr-profile-card-golf.is-hover .fr-profile-card-golf__title,\n  .fr-profile-card-golf:focus-within .fr-profile-card-golf__title {\n    translate: 0% 0%;\n    opacity: 1;\n  }\n\n  /* Social Icons */\n\n  .fr-profile-card-golf__social-icon {\n    transition: var(--transition-duration) var(--transition-function);\n    opacity: 0;\n    translate: 0% 100%;\n  }\n\n  .fr-profile-card-golf.is-hover .fr-profile-card-golf__social-icon,\n  .fr-profile-card-golf:focus-within .fr-profile-card-golf__social-icon {\n    translate: 0% 0%;\n    opacity: 1;\n  }\n\n  .fr-profile-card-golf__social-icon:nth-child(1) {\n    transition-delay: var(--transition-delay);\n  }\n  .fr-profile-card-golf__social-icon:nth-child(2) {\n    transition-delay: calc(var(--transition-delay) + .05s);\n  }\n  .fr-profile-card-golf__social-icon:nth-child(3) {\n    transition-delay: calc(var(--transition-delay) + .075s);\n  }\n\n}",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_interactions": [
+            {
+              "id": "ellrxv",
+              "trigger": "mouseenter",
+              "action": "setAttribute",
+              "actionAttributeKey": "class",
+              "actionAttributeValue": "is-hover"
+            },
+            {
+              "id": "vvzihh",
+              "trigger": "mouseleave",
+              "action": "removeAttribute",
+              "actionAttributeKey": "class",
+              "actionAttributeValue": "is-hover"
+            }
+          ]
+        },
+        "modified": 1739907413,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "hrlpcr",
+        "name": "fr-profile-card-golf__media",
+        "settings": {
+          "_aspectRatio": "1/1.15",
+          "_objectFit": "cover"
+        },
+        "_exists": false
+      },
+      {
+        "id": "kofmmy",
+        "name": "fr-profile-card-golf__overlay",
+        "settings": {
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_gradient": {
+            "colors": [
+              {
+                "id": "bievld",
+                "color": {
+                  "raw": "transparent"
+                }
+              },
+              {
+                "id": "jkcqah",
+                "color": {
+                  "raw": "var(--overlay-color)"
+                }
+              }
+            ]
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "doifgh",
+        "name": "fr-profile-card-golf__content-wrapper",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--white)"
+            }
+          },
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_justifyContent": "flex-end",
+          "_padding": {
+            "top": "var(--space-m)",
+            "right": "var(--space-m)",
+            "bottom": "var(--space-m)",
+            "left": "var(--space-m)"
+          },
+          "_rowGap": "calc(var(--content-gap) / 5)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "nqnhis",
+        "name": "fr-profile-card-golf__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "tcsveq",
+        "name": "fr-profile-card-golf__button",
+        "settings": {
+          "_background": {
+            "color": {
+              "raw": "transparent"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "oyevdv",
+        "name": "fr-profile-card-golf__name",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--white)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "rfwwny",
+        "name": "fr-profile-card-golf__title",
+        "settings": {
+          "_typography": {
+            "line-height": "1"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "onyhdn",
+        "name": "fr-profile-card-golf__social",
+        "settings": {
+          "_display": "flex",
+          "_columnGap": "var(--social-icon-gap)",
+          "_display:mobile_landscape": "none",
+          "_margin": {
+            "top": ".25em"
+          }
+        },
+        "modified": 1727026608,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "nudera",
+        "name": "fr-profile-card-golf__social-icon",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

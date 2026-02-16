@@ -1,0 +1,503 @@
+{
+  "idx": 147,
+  "title": "Event Modal Alpha",
+  "elementCount": 18,
+  "classCount": 15,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "701028",
+        "name": "fr-modal",
+        "parent": 0,
+        "children": [
+          "a669a3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "bwsnvk"
+          ],
+          "triggerSelector": ".fr-schedule-card-alpha__button",
+          "closeSelector": ".fr-close",
+          "fadeTime": "300ms",
+          "isCloseButton": true,
+          "iconPlacement": "inside",
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "fill": {
+              "raw": "var(--black-trans-60)"
+            }
+          },
+          "positionFor": "page",
+          "isScroll": true
+        },
+        "label": "Event Modal Alpha"
+      },
+      {
+        "id": "a669a3",
+        "name": "block",
+        "parent": "701028",
+        "children": [
+          "ce9379",
+          "e20af6",
+          "2dfd4b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "soyofg"
+          ]
+        },
+        "label": "Event Detail Alpha"
+      },
+      {
+        "id": "ce9379",
+        "name": "block",
+        "parent": "a669a3",
+        "children": [
+          "28613c",
+          "c1fc01"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ilosxi"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "28613c",
+        "name": "heading",
+        "parent": "ce9379",
+        "children": [],
+        "settings": {
+          "text": "Schedule Item Heading",
+          "_cssGlobalClasses": [
+            "qgavep"
+          ]
+        }
+      },
+      {
+        "id": "c1fc01",
+        "name": "block",
+        "parent": "ce9379",
+        "children": [
+          "542c95",
+          "16e239",
+          "4ecb4a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "thqguj"
+          ]
+        },
+        "label": "Meta Wrapper"
+      },
+      {
+        "id": "542c95",
+        "name": "div",
+        "parent": "c1fc01",
+        "children": [
+          "276eaa",
+          "46a4f6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hhyqld"
+          ]
+        },
+        "label": "Time"
+      },
+      {
+        "id": "276eaa",
+        "name": "icon",
+        "parent": "542c95",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--text-m)",
+            "width": "var(--text-m)",
+            "fill": {
+              "raw": "var(--black-trans-60)"
+            }
+          },
+          "_cssGlobalClasses": [
+            "uvncqq"
+          ]
+        }
+      },
+      {
+        "id": "46a4f6",
+        "name": "text-basic",
+        "parent": "542c95",
+        "children": [],
+        "settings": {
+          "text": "6:00pm",
+          "_cssGlobalClasses": [
+            "vbqhje",
+            "ogjoln"
+          ],
+          "tag": "custom",
+          "customTag": "time"
+        },
+        "label": "Time"
+      },
+      {
+        "id": "16e239",
+        "name": "div",
+        "parent": "c1fc01",
+        "children": [
+          "37383b",
+          "8536c3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hhyqld"
+          ]
+        },
+        "label": "Duration"
+      },
+      {
+        "id": "37383b",
+        "name": "icon",
+        "parent": "16e239",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--text-m)",
+            "width": "var(--text-m)",
+            "fill": {
+              "raw": "var(--black-trans-60)"
+            }
+          },
+          "_cssGlobalClasses": [
+            "uvncqq"
+          ]
+        }
+      },
+      {
+        "id": "8536c3",
+        "name": "text-basic",
+        "parent": "16e239",
+        "children": [],
+        "settings": {
+          "text": "60min",
+          "_cssGlobalClasses": [
+            "vbqhje",
+            "cahmyz"
+          ],
+          "tag": "custom",
+          "customTag": "time"
+        },
+        "label": "Duration"
+      },
+      {
+        "id": "4ecb4a",
+        "name": "div",
+        "parent": "c1fc01",
+        "children": [
+          "cd9ed2",
+          "e201f9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hhyqld"
+          ],
+          "tag": "a",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Related"
+      },
+      {
+        "id": "cd9ed2",
+        "name": "icon",
+        "parent": "4ecb4a",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--text-m)",
+            "width": "var(--text-m)",
+            "fill": {
+              "raw": "var(--black-trans-60)"
+            }
+          },
+          "_cssGlobalClasses": [
+            "uvncqq"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "e201f9",
+        "name": "text-basic",
+        "parent": "4ecb4a",
+        "children": [],
+        "settings": {
+          "text": "Related Page",
+          "_cssGlobalClasses": [
+            "vbqhje",
+            "hbdrvf",
+            "cwgfle"
+          ],
+          "tag": "custom",
+          "customTag": "time"
+        },
+        "label": "Related"
+      },
+      {
+        "id": "e20af6",
+        "name": "block",
+        "parent": "a669a3",
+        "children": [
+          "fe9519"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pmfokt"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "fe9519",
+        "name": "image",
+        "parent": "e20af6",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "aytabz"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Media"
+      },
+      {
+        "id": "2dfd4b",
+        "name": "block",
+        "parent": "a669a3",
+        "children": [
+          "f6aa6f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hkmdxs"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "f6aa6f",
+        "name": "text",
+        "parent": "2dfd4b",
+        "children": [],
+        "settings": {
+          "text": "<p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.</p><p>Sometimes it\u2019s nice to put in text just to get an idea of how text will fill in a space on your website.</p><p>Traditionally our industry has used Lorem Ipsum, which is placeholder text written in Latin. Unfortunately, not everyone is familiar with Lorem Ipsum and that can lead to confusion. I can\u2019t tell you how many times clients have asked me why their website is in another language!</p><p>There are other placeholder text alternatives like Hipster Ipsum, Zombie Ipsum, Bacon Ipsum, and many more. While often hilarious, these placeholder passages can also lead to much of the same confusion.</p>",
+          "_cssGlobalClasses": [
+            "qwvurb"
+          ]
+        },
+        "label": "Content"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "bwsnvk",
+        "name": "fr-event-modal-alpha",
+        "settings": {
+          "overlayColor": {
+            "raw": "var(--black-trans-70)"
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius-m)",
+              "right": "var(--radius-m)",
+              "bottom": "var(--radius-m)",
+              "left": "var(--radius-m)"
+            }
+          },
+          "_overflow": "hidden",
+          "iconSize": "var(--text-xl)",
+          "iconBackgroundSize": "0",
+          "iconPosTop": "16px",
+          "iconPosRight": "40px",
+          "iconPosBottom": "auto",
+          "iconPosLeft": "auto",
+          "width": "var(--width-l)",
+          "modalBodyOffsetVertical": "1em",
+          "modalBodyOffsetHorizontal": "1em",
+          "verticalPosition": "center",
+          "horizontalPosition": "center",
+          "modalBodyOffsetVertical:mobile_portrait": ".5em",
+          "modalBodyOffsetHorizontal:mobile_portrait": ".5em",
+          "scrollMaxHeight": "90vh"
+        },
+        "_exists": false
+      },
+      {
+        "id": "soyofg",
+        "name": "fr-event-detail-alpha",
+        "settings": {
+          "_background": {
+            "color": {
+              "raw": "var(--white)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "ilosxi",
+        "name": "fr-event-detail-alpha__header",
+        "settings": {
+          "_padding": {
+            "left": "var(--space-l)",
+            "right": "var(--space-l)",
+            "top": "var(--space-m)",
+            "bottom": "var(--space-m)"
+          },
+          "_rowGap": "calc(var(--content-gap) / 2)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "qgavep",
+        "name": "fr-event-detail-alpha__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "thqguj",
+        "name": "fr-event-detail-alpha__meta-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_direction": "row",
+          "_columnGap": "var(--content-gap)",
+          "_rowGap": "calc(var(--content-gap) / 3)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "hhyqld",
+        "name": "fr-event-detail-alpha__meta-item",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "auto minmax(0, 1fr)",
+          "_gridGap": ".5em",
+          "_alignItemsGrid": "center",
+          "_typography": {
+            "color": {
+              "raw": "var(--black-trans-60)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "uvncqq",
+        "name": "fr-event-detail-alpha__meta-icon",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "vbqhje",
+        "name": "fr-event-detail-alpha__meta-label",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ogjoln",
+        "name": "fr-event-detail-alpha__meta-label--time",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "cahmyz",
+        "name": "fr-event-detail-alpha__meta-label--duration",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "cwgfle",
+        "name": "fr-event-detail-alpha__meta-label--related",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "pmfokt",
+        "name": "fr-event-detail-alpha__media-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "aytabz",
+        "name": "fr-event-detail-alpha__media",
+        "settings": {
+          "_aspectRatio": "16/5",
+          "_objectFit": "cover",
+          "_objectPosition": "50% 50%",
+          "_aspectRatio:mobile_landscape": "16/9",
+          "_width": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "hkmdxs",
+        "name": "fr-event-detail-alpha__body",
+        "settings": {
+          "_padding": {
+            "left": "var(--space-l)",
+            "right": "var(--space-l)",
+            "top": "var(--space-l)",
+            "bottom": "var(--space-l)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "qwvurb",
+        "name": "fr-event-detail-alpha__body-content",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

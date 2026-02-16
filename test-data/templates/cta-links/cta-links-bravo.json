@@ -1,0 +1,102 @@
+{
+  "idx": 326,
+  "title": "CTA Links Bravo",
+  "elementCount": 3,
+  "classCount": 3,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "53e4e7",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "6c1478",
+          "6dcffa"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "glrhvz"
+          ]
+        },
+        "label": "CTA Links Bravo"
+      },
+      {
+        "id": "6c1478",
+        "name": "button",
+        "parent": "53e4e7",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ],
+          "text": "Primary action",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Primary Action"
+      },
+      {
+        "id": "6dcffa",
+        "name": "text-basic",
+        "parent": "53e4e7",
+        "children": [],
+        "settings": {
+          "text": "Secondary action",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_cssGlobalClasses": [
+            "aekezk"
+          ]
+        },
+        "label": "Secondary Action"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "glrhvz",
+        "name": "fr-cta-links-bravo",
+        "settings": {
+          "_display": "flex",
+          "_flexWrap": "wrap",
+          "_alignItems": "center",
+          "_rowGap": "var(--content-gap)",
+          "_columnGap": "var(--content-gap)",
+          "_direction:mobile_portrait": "column",
+          "_width:mobile_portrait": "100%",
+          "_cssCustom:mobile_portrait": ".fr-cta-links-bravo > * {\n\twidth: 100% !important;\n}",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_margin": {
+            "top": "var(--space-s)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "aekezk",
+        "name": "fr-cta-links-bravo__link",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

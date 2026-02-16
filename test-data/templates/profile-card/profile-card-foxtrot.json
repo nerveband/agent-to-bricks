@@ -1,0 +1,206 @@
+{
+  "idx": 318,
+  "title": "Profile Card Foxtrot",
+  "elementCount": 6,
+  "classCount": 7,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "8551ae",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "8bd9df",
+          "e74107"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fkdtzm"
+          ],
+          "customTag": "li",
+          "tag": "custom"
+        },
+        "label": "Profile Card Foxtrot"
+      },
+      {
+        "id": "8bd9df",
+        "name": "block",
+        "parent": "8551ae",
+        "children": [
+          "4f9744",
+          "a0e43e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vnbhrx"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "4f9744",
+        "name": "heading",
+        "parent": "8bd9df",
+        "children": [],
+        "settings": {
+          "text": "John Doe",
+          "_cssGlobalClasses": [
+            "ybekdt",
+            "acss_import_clickable-parent"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Name"
+      },
+      {
+        "id": "a0e43e",
+        "name": "text-basic",
+        "parent": "8bd9df",
+        "children": [],
+        "settings": {
+          "text": "CEO",
+          "_cssGlobalClasses": [
+            "qbkjmt"
+          ],
+          "tag": "span"
+        },
+        "label": "Title"
+      },
+      {
+        "id": "e74107",
+        "name": "block",
+        "parent": "8551ae",
+        "children": [
+          "b79948"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fqdqwz"
+          ]
+        },
+        "label": "Avatar Wrapper"
+      },
+      {
+        "id": "b79948",
+        "name": "image",
+        "parent": "e74107",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gmtsdq"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "caption": "none",
+          "tag": "figure"
+        },
+        "label": "Avatar",
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "acss_import_clickable-parent",
+        "name": "clickable-parent",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "fkdtzm",
+        "name": "fr-profile-card-foxtrot",
+        "settings": {
+          "_cssCustom": "@media (hover: hover) and (pointer: fine) {\n  .fr-profile-card-foxtrot:hover .fr-profile-card-foxtrot__avatar-wrapper {\n    transform: translateY(-.5em); \n  }\n}\n\n/* Capture card contents z-index */\n.fr-profile-card-foxtrot {\n  isolation: isolate;\n}",
+          "_cssCustom:tablet_portrait": ".fr-profile-card-foxtrot {grid-template-rows: 20em;}",
+          "_position": "relative",
+          "_gridTemplateRows": "24em",
+          "_gridTemplateColumns": "1fr minmax(2em, auto)",
+          "_display": "grid",
+          "_alignItemsGrid": "stretch",
+          "_gridGap": "1em",
+          "_gridTemplateColumns:mobile_portrait": "var(--grid-1)"
+        },
+        "modified": 1757594259,
+        "user_id": 26,
+        "_exists": false
+      },
+      {
+        "id": "vnbhrx",
+        "name": "fr-profile-card-foxtrot__content-wrapper",
+        "settings": {
+          "_cssCustom": ".fr-profile-card-foxtrot__content-wrapper {\n  writing-mode: vertical-lr;\n}",
+          "_cssCustom:mobile_portrait": ".fr-profile-card-foxtrot__content-wrapper {\n  grid-column: 1 / 1;\n  writing-mode: horizontal-tb;\n}",
+          "_position": "static"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ybekdt",
+        "name": "fr-profile-card-foxtrot__name",
+        "settings": {
+          "_typography": {
+            "line-height": "1"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "qbkjmt",
+        "name": "fr-profile-card-foxtrot__title",
+        "settings": {
+          "_typography": {
+            "line-height": "1.5"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "fqdqwz",
+        "name": "fr-profile-card-foxtrot__avatar-wrapper",
+        "settings": {
+          "_height": "100%",
+          "_width:tablet_portrait": "100%",
+          "_height:tablet_portrait": "100%",
+          "_cssCustom:mobile_portrait": ".fr-profile-card-foxtrot__avatar-wrapper {\n\tgrid-column: 1 / 1;  \n}",
+          "_position": "static",
+          "_zIndex": "-1",
+          "_cssTransition": ".3s transform ease-in-out",
+          "_order": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "gmtsdq",
+        "name": "fr-profile-card-foxtrot__avatar",
+        "settings": {
+          "_objectFit": "cover",
+          "_cssCustom": ".fr-profile-card-foxtrot__avatar {flex: 1; position: static !important;}\n.fr-profile-card-foxtrot__avatar > * {position: static !important;}",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_width:tablet_portrait": "100%",
+          "_height:tablet_portrait": "100%",
+          "_position": "static",
+          "_width": "100%",
+          "_height": "100%"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

@@ -1,0 +1,297 @@
+{
+  "idx": 181,
+  "title": "Feature Grid Papa",
+  "elementCount": 13,
+  "classCount": 5,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "2a6fa4",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "209ed6",
+          "f8f7a1",
+          "05a9c1",
+          "a3330e"
+        ],
+        "settings": {
+          "tag": "custom",
+          "customTag": "ul",
+          "_cssGlobalClasses": [
+            "bsdulb",
+            "rktisp"
+          ]
+        },
+        "label": "Feature Grid Papa"
+      },
+      {
+        "id": "209ed6",
+        "name": "block",
+        "parent": "2a6fa4",
+        "children": [
+          "4dc042",
+          "e64523"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "flpukc"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature Card Papa (CSS)"
+      },
+      {
+        "id": "4dc042",
+        "name": "text-basic",
+        "parent": "209ed6",
+        "children": [],
+        "settings": {
+          "text": "83",
+          "_cssGlobalClasses": [
+            "ubilby"
+          ],
+          "tag": "p"
+        },
+        "label": "Stat"
+      },
+      {
+        "id": "e64523",
+        "name": "text-basic",
+        "parent": "209ed6",
+        "children": [],
+        "settings": {
+          "text": "Placeholder",
+          "_cssGlobalClasses": [
+            "jsecpk"
+          ],
+          "tag": "p"
+        },
+        "label": "Label"
+      },
+      {
+        "id": "f8f7a1",
+        "name": "block",
+        "parent": "2a6fa4",
+        "children": [
+          "b7fb66",
+          "aa237b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "flpukc"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature Card Papa (CSS)"
+      },
+      {
+        "id": "b7fb66",
+        "name": "text-basic",
+        "parent": "f8f7a1",
+        "children": [],
+        "settings": {
+          "text": "83",
+          "_cssGlobalClasses": [
+            "ubilby"
+          ],
+          "tag": "p"
+        },
+        "label": "Stat"
+      },
+      {
+        "id": "aa237b",
+        "name": "text-basic",
+        "parent": "f8f7a1",
+        "children": [],
+        "settings": {
+          "text": "Placeholder",
+          "_cssGlobalClasses": [
+            "jsecpk"
+          ],
+          "tag": "p"
+        },
+        "label": "Label"
+      },
+      {
+        "id": "05a9c1",
+        "name": "block",
+        "parent": "2a6fa4",
+        "children": [
+          "dc753f",
+          "edb605"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "flpukc"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature Card Papa (CSS)"
+      },
+      {
+        "id": "dc753f",
+        "name": "text-basic",
+        "parent": "05a9c1",
+        "children": [],
+        "settings": {
+          "text": "83",
+          "_cssGlobalClasses": [
+            "ubilby"
+          ],
+          "tag": "p"
+        },
+        "label": "Stat"
+      },
+      {
+        "id": "edb605",
+        "name": "text-basic",
+        "parent": "05a9c1",
+        "children": [],
+        "settings": {
+          "text": "Placeholder",
+          "_cssGlobalClasses": [
+            "jsecpk"
+          ],
+          "tag": "p"
+        },
+        "label": "Label"
+      },
+      {
+        "id": "a3330e",
+        "name": "block",
+        "parent": "2a6fa4",
+        "children": [
+          "0977e5",
+          "6b2ab8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "flpukc"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature Card Papa (CSS)"
+      },
+      {
+        "id": "0977e5",
+        "name": "text-basic",
+        "parent": "a3330e",
+        "children": [],
+        "settings": {
+          "text": "83",
+          "_cssGlobalClasses": [
+            "ubilby"
+          ],
+          "tag": "p"
+        },
+        "label": "Stat"
+      },
+      {
+        "id": "6b2ab8",
+        "name": "text-basic",
+        "parent": "a3330e",
+        "children": [],
+        "settings": {
+          "text": "Placeholder",
+          "_cssGlobalClasses": [
+            "jsecpk"
+          ],
+          "tag": "p"
+        },
+        "label": "Label"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "rktisp",
+        "name": "list--none",
+        "settings": {
+          "_padding": {
+            "left": "0"
+          },
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "acss_import_list--none",
+        "modified": 1771254048,
+        "user_id": 1
+      },
+      {
+        "id": "bsdulb",
+        "name": "fr-feature-grid-papa",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-4)",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-2)",
+          "_gridTemplateColumns:mobile_portrait": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "flpukc",
+        "name": "fr-feature-card-papa",
+        "settings": {
+          "_cssCustom": ".fr-feature-card-papa {\n  display: grid;\n\tplace-items: center;\n  gap: 0;\n}\n\n.fr-feature-card-papa > * {\n\tgrid-area: 1/1/1/1;\n}",
+          "_cssCustom:mobile_portrait": ".fr-feature-card-papa {\n\tplace-items: inherit;\n  align-items: center;\n  justify-content: flex-start;\n}",
+          "_justifyContentGrid": "center",
+          "_gridGap": "0"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ubilby",
+        "name": "fr-feature-card-papa__stat",
+        "settings": {
+          "_typography": {
+            "font-size": "12em",
+            "font-weight": "700",
+            "line-height": "1"
+          },
+          "_opacity": ".1",
+          "_typography:mobile_landscape": {
+            "font-size": "10em"
+          },
+          "_margin": {
+            "bottom": "0",
+            "top": "0"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "jsecpk",
+        "name": "fr-feature-card-papa__label",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--h3)",
+            "font-weight": "700",
+            "line-height": "1.2",
+            "text-align": "center"
+          },
+          "_zIndex": "1",
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "modified": 1728034136,
+        "user_id": 9,
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

@@ -1,0 +1,327 @@
+{
+  "idx": 132,
+  "title": "Hero Section Indigo",
+  "elementCount": 11,
+  "classCount": 13,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "4fb99e",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "0db7c9",
+          "fda4e5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vdfmpc"
+          ]
+        },
+        "label": "Hero Section Indigo"
+      },
+      {
+        "id": "fda4e5",
+        "name": "container",
+        "parent": "4fb99e",
+        "children": [
+          "44791f",
+          "922ac0",
+          "545eb8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "8whrv1"
+          ]
+        },
+        "label": "CTA Indigo (CSS)"
+      },
+      {
+        "id": "922ac0",
+        "name": "image",
+        "parent": "fda4e5",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "_cssGlobalClasses": [
+            "d4teff"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Image"
+      },
+      {
+        "id": "44791f",
+        "name": "block",
+        "parent": "fda4e5",
+        "children": [
+          "47252c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fjldqn"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "545eb8",
+        "name": "div",
+        "parent": "fda4e5",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lj5nid"
+          ]
+        },
+        "label": "Gradient"
+      },
+      {
+        "id": "c19102",
+        "name": "heading",
+        "parent": "47252c",
+        "children": [],
+        "settings": {
+          "text": "Your call to action text goes here. It shouldn't be too long.",
+          "_cssGlobalClasses": [
+            "yhrxlk"
+          ],
+          "tag": "custom",
+          "customTag": "p"
+        }
+      },
+      {
+        "id": "565ecc",
+        "name": "button",
+        "parent": "47252c",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "_cssGlobalClasses": [
+            "kszdfb",
+            "lkavco"
+          ]
+        }
+      },
+      {
+        "id": "47252c",
+        "name": "block",
+        "parent": "44791f",
+        "children": [
+          "c19102",
+          "565ecc"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "epkkxe"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "0db7c9",
+        "name": "container",
+        "parent": "4fb99e",
+        "children": [
+          "9ee7ab",
+          "e54c9e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jzuyre"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "9ee7ab",
+        "name": "heading",
+        "parent": "0db7c9",
+        "children": [],
+        "settings": {
+          "text": "Placeholder Headline",
+          "tag": "h1",
+          "_cssGlobalClasses": [
+            "flwcdk"
+          ]
+        }
+      },
+      {
+        "id": "e54c9e",
+        "name": "text-basic",
+        "parent": "0db7c9",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "wkmhvq",
+            "kddjfd"
+          ]
+        },
+        "label": "Lede"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771253638,
+        "user_id": 1
+      },
+      {
+        "id": "lkavco",
+        "name": "btn--neutral-light",
+        "settings": [],
+        "_mappedId": "acss_import_btn--neutral-light",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "vdfmpc",
+        "name": "fr-hero-section-indigo",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "8whrv1",
+        "name": "fr-cta-indigo",
+        "settings": {
+          "_position": "relative",
+          "_cssCustom": ".fr-cta-indigo {\n\t--min-height: 60rem;\n  /* Main Gradient Styling */\n  --gradient-start-color: var(--primary);\n  --gradient-stripe-color: var(--primary-trans-50);\n  --gradient-angle: 75deg;\n  /* Content Protection */\n  --safe-area: 24em;\n  --safe-area-padding: var(--space-l);\n  /* Use 100% for boxed effect and 100vw for full width */\n  --image-width: 100%;\n  /* Accent Styling */\n  --accent-offset: 2em;\n  --accent-opacity: .25;\n}\n\n:has(> .fr-cta-indigo) {\n\toverflow: hidden;\n}\n\n.fr-cta-indigo__gradient {\n    position: absolute;\n    inset: 0;\n}\n\n.fr-cta-indigo__image {\n\tposition: absolute;\n  inset: 0;\n}\n\n/* Main Gradient */\n\n@media (min-width: 767px) {\n  .fr-cta-indigo__gradient {\n    background-image: linear-gradient(\n      var(--gradient-angle), \n      var(--gradient-start-color) 0%, \n      var(--gradient-start-color) var(--safe-area), \n      var(--gradient-stripe-color) var(--safe-area), \n      var(--gradient-stripe-color) calc(var(--safe-area) + 8vw),\n      transparent calc(var(--safe-area) + 8vw) \n    );\n    }\n  \n  /* Gradient Extension to Left Edge */\n  .fr-cta-indigo::after {\n    content: '';\n    width: 100%;\n    height: 100%;\n    background-color: var(--gradient-start-color);\n    position: absolute;\n    top: 0;\n    left: -100%;\n  }\n  \n  /* Angled Accent */\n  .fr-cta-indigo::before {\n    content: '';\n    width: 80vw;\n    height: calc(100% + var(--accent-offset));\n    background-image: linear-gradient(var(--gradient-angle), var(--gradient-stripe-color) 80%, transparent 80%);\n    position: absolute;\n    top: calc(var(--accent-offset) / 2 * -1);\n    left: -50%;\n    opacity: var(--accent-opacity);\n  }\n  \n  /* Image Styling */\n  .fr-cta-indigo__image {\n    width: var(--image-width);\n    max-width: var(--image-width);\n\t}\n}",
+          "_alignItems": "flex-start",
+          "_heightMin": "var(--min-height)",
+          "_justifyContent": "flex-end",
+          "_padding": {
+            "top": "var(--space-xl)",
+            "bottom": "var(--space-xl)"
+          },
+          "_heightMin:mobile_landscape": "auto",
+          "_padding:mobile_landscape": {
+            "top": "var(--space-l)",
+            "bottom": "var(--space-l)"
+          },
+          "_padding:mobile_portrait": {
+            "top": "var(--space-m)",
+            "bottom": "var(--space-m)"
+          },
+          "_padding:tablet_portrait": {
+            "left": "var(--gutter)",
+            "right": "var(--gutter)"
+          }
+        },
+        "modified": 1723652119,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "d4teff",
+        "name": "fr-cta-indigo__image",
+        "settings": {
+          "_height": "100%",
+          "_objectFit": "cover",
+          "_objectPosition": "0% 60%",
+          "_border": {
+            "radius": {
+              "top": "var(--radius-m)",
+              "right": "var(--radius-m)",
+              "bottom": "var(--radius-m)",
+              "left": "var(--radius-m)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "fjldqn",
+        "name": "fr-cta-indigo__content-wrapper",
+        "settings": {
+          "_zIndex": "1",
+          "_rowGap": "var(--content-gap)",
+          "_width": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "lj5nid",
+        "name": "fr-cta-indigo__gradient",
+        "settings": {
+          "_background:mobile_landscape": {
+            "color": {
+              "raw": "var(--black-trans-70)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "yhrxlk",
+        "name": "fr-cta-indigo__heading",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--white)"
+            },
+            "font-size": "var(--h3)",
+            "line-height": "1.4"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "kszdfb",
+        "name": "fr-cta-indigo__button",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "epkkxe",
+        "name": "fr-cta-indigo__inner",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_width": "100%",
+          "_widthMax": "calc(var(--safe-area) - var(--safe-area-padding) * 2)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "jzuyre",
+        "name": "fr-hero-section-indigo__inner",
+        "settings": {
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "flwcdk",
+        "name": "fr-hero-section-indigo__heading",
+        "settings": {
+          "_width": "100%",
+          "_widthMax": "20ch"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wkmhvq",
+        "name": "fr-hero-section-indigo__lede",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "idx": 33,
+  "title": "Content Section Victor",
+  "elementCount": 8,
+  "classCount": 8,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "b8005b",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "e4f34d",
+          "fe4ef7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sjy5dn"
+          ],
+          "_rowGap": "var(--container-gap)"
+        },
+        "label": "Content Section Victor"
+      },
+      {
+        "id": "fe4ef7",
+        "name": "container",
+        "parent": "b8005b",
+        "children": [
+          "963f06"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gn6j3a"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "963f06",
+        "name": "image",
+        "parent": "fe4ef7",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wxoiqs"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure"
+        },
+        "label": "Media"
+      },
+      {
+        "id": "e4f34d",
+        "name": "container",
+        "parent": "b8005b",
+        "children": [
+          "10cd0d",
+          "065197"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "9yqzvm"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "065197",
+        "name": "block",
+        "parent": "e4f34d",
+        "children": [
+          "c94694"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wgarty"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "10cd0d",
+        "name": "block",
+        "parent": "e4f34d",
+        "children": [
+          "838314"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ciaxv7"
+          ]
+        },
+        "label": "Heading Wrapper"
+      },
+      {
+        "id": "838314",
+        "name": "heading",
+        "parent": "10cd0d",
+        "children": [],
+        "settings": {
+          "text": "Write a compelling heading for this section",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "3x77sk"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "c94694",
+        "name": "text",
+        "parent": "065197",
+        "children": [],
+        "settings": {
+          "text": "<p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.</p><p>Sometimes it\u2019s nice to put in text just to get an idea of how text will fill in a space on your website.</p><p>Traditionally our industry has used Lorem Ipsum, which is placeholder text written in Latin. Unfortunately, not everyone is familiar with Lorem Ipsum and that can lead to confusion.</p>",
+          "_cssGlobalClasses": [
+            "z6z6uc"
+          ]
+        },
+        "label": "Content"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "sjy5dn",
+        "name": "content-section-victor",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "gn6j3a",
+        "name": "content-section-victor__media-wrapper",
+        "settings": {
+          "_order": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wxoiqs",
+        "name": "content-section-victor__media",
+        "settings": {
+          "_aspectRatio": "16/7",
+          "_width": "100%",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_objectFit": "cover"
+        },
+        "modified": 1730583716,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "9yqzvm",
+        "name": "content-section-victor__inner",
+        "settings": {
+          "_display": "grid",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns": "var(--grid-auto-2)"
+        },
+        "modified": 1729437863,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "wgarty",
+        "name": "content-section-victor__content-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ciaxv7",
+        "name": "content-section-victor__heading-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "3x77sk",
+        "name": "content-section-victor__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "z6z6uc",
+        "name": "content-section-victor__content",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

@@ -1,0 +1,738 @@
+{
+  "idx": 191,
+  "title": "Feature Section Papa",
+  "elementCount": 31,
+  "classCount": 17,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "8c4247",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "3efccb",
+          "703b0b",
+          "438174"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sedgpt"
+          ]
+        },
+        "label": "Feature Section Papa"
+      },
+      {
+        "id": "438174",
+        "name": "block",
+        "parent": "8c4247",
+        "children": [
+          "62147f",
+          "1cffa6",
+          "47378a",
+          "4faaec",
+          "762b7a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vafnmr",
+            "rktisp"
+          ],
+          "tag": "custom",
+          "customTag": "ul"
+        },
+        "label": "Logos Alpha <ul>"
+      },
+      {
+        "id": "62147f",
+        "name": "div",
+        "parent": "438174",
+        "children": [
+          "b3c970"
+        ],
+        "settings": {
+          "tag": "custom",
+          "customTag": "li",
+          "_cssGlobalClasses": [
+            "rvyudp"
+          ]
+        },
+        "label": "Logo Wrapper <li>"
+      },
+      {
+        "id": "1cffa6",
+        "name": "div",
+        "parent": "438174",
+        "children": [
+          "daad69"
+        ],
+        "settings": {
+          "tag": "custom",
+          "customTag": "li",
+          "_cssGlobalClasses": [
+            "rvyudp"
+          ]
+        },
+        "label": "Logo Wrapper <li>"
+      },
+      {
+        "id": "703b0b",
+        "name": "container",
+        "parent": "8c4247",
+        "children": [
+          "4ef4b1",
+          "8ff718",
+          "d15000",
+          "880850"
+        ],
+        "settings": {
+          "tag": "custom",
+          "customTag": "ul",
+          "_cssGlobalClasses": [
+            "bsdulb",
+            "rktisp"
+          ]
+        },
+        "label": "Feature Grid Papa"
+      },
+      {
+        "id": "4ef4b1",
+        "name": "block",
+        "parent": "703b0b",
+        "children": [
+          "43c50f",
+          "78fd54"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "flpukc"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature Card Papa (CSS)"
+      },
+      {
+        "id": "43c50f",
+        "name": "text-basic",
+        "parent": "4ef4b1",
+        "children": [],
+        "settings": {
+          "text": "83",
+          "_cssGlobalClasses": [
+            "ubilby"
+          ],
+          "tag": "p"
+        },
+        "label": "Stat"
+      },
+      {
+        "id": "78fd54",
+        "name": "text-basic",
+        "parent": "4ef4b1",
+        "children": [],
+        "settings": {
+          "text": "Placeholder",
+          "_cssGlobalClasses": [
+            "jsecpk"
+          ],
+          "tag": "p"
+        },
+        "label": "Label"
+      },
+      {
+        "id": "b3c970",
+        "name": "image",
+        "parent": "62147f",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "vqtdgc"
+          ],
+          "caption": "none",
+          "tag": "figure"
+        },
+        "label": "Logo",
+        "themeStyles": []
+      },
+      {
+        "id": "daad69",
+        "name": "image",
+        "parent": "1cffa6",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "vqtdgc"
+          ],
+          "caption": "none",
+          "tag": "figure"
+        },
+        "label": "Logo"
+      },
+      {
+        "id": "3efccb",
+        "name": "container",
+        "parent": "8c4247",
+        "children": [
+          "22722b",
+          "b12e01",
+          "041f10"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dliabf",
+            "xgmzei"
+          ]
+        },
+        "label": "Intro Alpha"
+      },
+      {
+        "id": "041f10",
+        "name": "div",
+        "parent": "3efccb",
+        "children": [
+          "f4bb7c",
+          "5b5038"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "konmnk"
+          ]
+        },
+        "label": "CTA Links Alpha"
+      },
+      {
+        "id": "f4bb7c",
+        "name": "button",
+        "parent": "041f10",
+        "children": [],
+        "settings": {
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ],
+          "text": "Primary action"
+        },
+        "label": "Primary Action"
+      },
+      {
+        "id": "5b5038",
+        "name": "button",
+        "parent": "041f10",
+        "children": [],
+        "settings": {
+          "text": "Secondary action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary",
+            "btn--outline"
+          ]
+        },
+        "label": "Sectiondary Action"
+      },
+      {
+        "id": "22722b",
+        "name": "heading",
+        "parent": "3efccb",
+        "children": [],
+        "settings": {
+          "text": "Your heading",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "tkbujj"
+          ]
+        }
+      },
+      {
+        "id": "b12e01",
+        "name": "text-basic",
+        "parent": "3efccb",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "dizast"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "880850",
+        "name": "block",
+        "parent": "703b0b",
+        "children": [
+          "2217e6",
+          "9a14c2"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "flpukc"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature Card Papa (CSS)"
+      },
+      {
+        "id": "2217e6",
+        "name": "text-basic",
+        "parent": "880850",
+        "children": [],
+        "settings": {
+          "text": "83",
+          "_cssGlobalClasses": [
+            "ubilby"
+          ],
+          "tag": "p"
+        },
+        "label": "Stat"
+      },
+      {
+        "id": "9a14c2",
+        "name": "text-basic",
+        "parent": "880850",
+        "children": [],
+        "settings": {
+          "text": "Placeholder",
+          "_cssGlobalClasses": [
+            "jsecpk"
+          ],
+          "tag": "p"
+        },
+        "label": "Label"
+      },
+      {
+        "id": "d15000",
+        "name": "block",
+        "parent": "703b0b",
+        "children": [
+          "f52655",
+          "587fa2"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "flpukc"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature Card Papa (CSS)"
+      },
+      {
+        "id": "f52655",
+        "name": "text-basic",
+        "parent": "d15000",
+        "children": [],
+        "settings": {
+          "text": "83",
+          "_cssGlobalClasses": [
+            "ubilby"
+          ],
+          "tag": "p"
+        },
+        "label": "Stat"
+      },
+      {
+        "id": "587fa2",
+        "name": "text-basic",
+        "parent": "d15000",
+        "children": [],
+        "settings": {
+          "text": "Placeholder",
+          "_cssGlobalClasses": [
+            "jsecpk"
+          ],
+          "tag": "p"
+        },
+        "label": "Label"
+      },
+      {
+        "id": "8ff718",
+        "name": "block",
+        "parent": "703b0b",
+        "children": [
+          "9778ad",
+          "37aea5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "flpukc"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature Card Papa (CSS)"
+      },
+      {
+        "id": "9778ad",
+        "name": "text-basic",
+        "parent": "8ff718",
+        "children": [],
+        "settings": {
+          "text": "83",
+          "_cssGlobalClasses": [
+            "ubilby"
+          ],
+          "tag": "p"
+        },
+        "label": "Stat"
+      },
+      {
+        "id": "37aea5",
+        "name": "text-basic",
+        "parent": "8ff718",
+        "children": [],
+        "settings": {
+          "text": "Placeholder",
+          "_cssGlobalClasses": [
+            "jsecpk"
+          ],
+          "tag": "p"
+        },
+        "label": "Label"
+      },
+      {
+        "id": "762b7a",
+        "name": "div",
+        "parent": "438174",
+        "children": [
+          "5ff338"
+        ],
+        "settings": {
+          "tag": "custom",
+          "customTag": "li",
+          "_cssGlobalClasses": [
+            "rvyudp"
+          ]
+        },
+        "label": "Logo Wrapper <li>"
+      },
+      {
+        "id": "5ff338",
+        "name": "image",
+        "parent": "762b7a",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "vqtdgc"
+          ],
+          "caption": "none",
+          "tag": "figure"
+        },
+        "label": "Logo"
+      },
+      {
+        "id": "4faaec",
+        "name": "div",
+        "parent": "438174",
+        "children": [
+          "1c4cac"
+        ],
+        "settings": {
+          "tag": "custom",
+          "customTag": "li",
+          "_cssGlobalClasses": [
+            "rvyudp"
+          ]
+        },
+        "label": "Logo Wrapper <li>"
+      },
+      {
+        "id": "1c4cac",
+        "name": "image",
+        "parent": "4faaec",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "vqtdgc"
+          ],
+          "caption": "none",
+          "tag": "figure"
+        },
+        "label": "Logo"
+      },
+      {
+        "id": "47378a",
+        "name": "div",
+        "parent": "438174",
+        "children": [
+          "97d90c"
+        ],
+        "settings": {
+          "tag": "custom",
+          "customTag": "li",
+          "_cssGlobalClasses": [
+            "rvyudp"
+          ]
+        },
+        "label": "Logo Wrapper <li>"
+      },
+      {
+        "id": "97d90c",
+        "name": "image",
+        "parent": "47378a",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "vqtdgc"
+          ],
+          "caption": "none",
+          "tag": "figure"
+        },
+        "label": "Logo"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771254061,
+        "user_id": 1
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "btn--outline",
+        "name": "btn--outline",
+        "settings": [],
+        "_mappedId": "acss_import_btn--outline",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "konmnk",
+        "name": "fr-cta-links-alpha",
+        "settings": {
+          "_columnGap": "var(--content-gap, 30px)",
+          "_rowGap": "var(--content-gap, 30px)",
+          "_display": "flex",
+          "_flexWrap": "wrap",
+          "_cssCustom:mobile_portrait": ".fr-cta-links-alpha > * {\n  width: 100% !important;\n}",
+          "_direction": "row"
+        },
+        "_exists": false
+      },
+      {
+        "id": "dliabf",
+        "name": "fr-intro",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "xgmzei",
+        "name": "fr-intro-alpha",
+        "settings": {
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_alignItems:mobile_landscape": "flex-start",
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "tkbujj",
+        "name": "fr-intro-alpha__heading",
+        "settings": {
+          "_typography:mobile_landscape": {
+            "font-size": "var(--h1)"
+          }
+        },
+        "modified": 1734899474,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "dizast",
+        "name": "fr-intro-alpha__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "rktisp",
+        "name": "list--none",
+        "settings": {
+          "_padding": {
+            "left": "0"
+          },
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "acss_import_list--none",
+        "modified": 1771254048,
+        "user_id": 1
+      },
+      {
+        "id": "bsdulb",
+        "name": "fr-feature-grid-papa",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-4)",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-2)",
+          "_gridTemplateColumns:mobile_portrait": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "flpukc",
+        "name": "fr-feature-card-papa",
+        "settings": {
+          "_cssCustom": ".fr-feature-card-papa {\n  display: grid;\n\tplace-items: center;\n  gap: 0;\n}\n\n.fr-feature-card-papa > * {\n\tgrid-area: 1/1/1/1;\n}",
+          "_cssCustom:mobile_portrait": ".fr-feature-card-papa {\n\tplace-items: inherit;\n  align-items: center;\n  justify-content: flex-start;\n}",
+          "_justifyContentGrid": "center",
+          "_gridGap": "0"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ubilby",
+        "name": "fr-feature-card-papa__stat",
+        "settings": {
+          "_typography": {
+            "font-size": "12em",
+            "font-weight": "700",
+            "line-height": "1"
+          },
+          "_opacity": ".1",
+          "_typography:mobile_landscape": {
+            "font-size": "10em"
+          },
+          "_margin": {
+            "bottom": "0",
+            "top": "0"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "jsecpk",
+        "name": "fr-feature-card-papa__label",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--h3)",
+            "font-weight": "700",
+            "line-height": "1.2",
+            "text-align": "center"
+          },
+          "_zIndex": "1",
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "modified": 1728034136,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "sedgpt",
+        "name": "fr-feature-section-papa",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "vafnmr",
+        "name": "fr-logo-group-alpha",
+        "settings": {
+          "_direction": "row",
+          "_flexWrap": "wrap",
+          "_justifyContent": "center",
+          "_alignItems": "center",
+          "_columnGap": "var(--content-gap)",
+          "_rowGap": "var(--content-gap)",
+          "_margin": {
+            "left": "auto",
+            "right": "auto"
+          },
+          "_cssCustom": "/* \nSet how many to show on mobile.\nAdd \"1\" to your desired number.\nE.g. to show 6, set the nth selector to \"7\".\n*/\n\n/*\n@media (max-width: 767px) {\n  .fr-logo-group-alpha > *:nth-child(n + 5) {\n    display: none!important;\n\t}\n}\n*/\n\n.fr-logo-group-alpha {\n\tlist-style: none;\n}",
+          "_width": "var(--content-width)",
+          "_padding": {
+            "left": "0"
+          },
+          "_display": "flex"
+        },
+        "_exists": false
+      },
+      {
+        "id": "rvyudp",
+        "name": "fr-logo-group-alpha__logo-wrapper",
+        "settings": {
+          "_width": "fit-content"
+        },
+        "_exists": false
+      },
+      {
+        "id": "vqtdgc",
+        "name": "fr-logo-group-alpha__logo",
+        "settings": {
+          "_height": "2em",
+          "_objectFit": "contain",
+          "_width": "auto",
+          "_width:mobile_landscape": "15rem",
+          "_margin:mobile_landscape": {
+            "bottom": "unset"
+          }
+        },
+        "modified": 1760711904,
+        "user_id": 26,
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

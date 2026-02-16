@@ -1,0 +1,482 @@
+{
+  "idx": 127,
+  "title": "Article Section Juliet",
+  "elementCount": 17,
+  "classCount": 16,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "d2a9aa",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "28f86f",
+          "6f98ae"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kojiwf"
+          ]
+        },
+        "label": "Article Section Juliet"
+      },
+      {
+        "id": "6f98ae",
+        "name": "container",
+        "parent": "d2a9aa",
+        "children": [
+          "08af52"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zwmrrc"
+          ],
+          "tag": "ul"
+        },
+        "label": "Article Grid Juliet"
+      },
+      {
+        "id": "0b0fab",
+        "name": "block",
+        "parent": "08af52",
+        "children": [
+          "acc9ce",
+          "8be874"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "c7y28p"
+          ],
+          "query": {
+            "posts_per_page": "10"
+          },
+          "tag": "article"
+        },
+        "label": "Article Card Juliet"
+      },
+      {
+        "id": "28f86f",
+        "name": "container",
+        "parent": "d2a9aa",
+        "children": [
+          "48d3eb",
+          "b47f4f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "slhmuz"
+          ]
+        },
+        "label": "Intro Bravo"
+      },
+      {
+        "id": "b47f4f",
+        "name": "text-basic",
+        "parent": "28f86f",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "_cssGlobalClasses": [
+            "qfdtjc"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "48d3eb",
+        "name": "heading",
+        "parent": "28f86f",
+        "children": [],
+        "settings": {
+          "text": "Your headline here",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "okkigb"
+          ]
+        }
+      },
+      {
+        "id": "8be874",
+        "name": "block",
+        "parent": "0b0fab",
+        "children": [
+          "f5d0d8",
+          "35fe6f",
+          "5ff8bc"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "n71qrt"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "acc9ce",
+        "name": "block",
+        "parent": "0b0fab",
+        "children": [
+          "fc51ee",
+          "ecbe85",
+          "6c62b0",
+          "73cd21"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "0fjji5"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "fc51ee",
+        "name": "heading",
+        "parent": "acc9ce",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "va4cxw"
+          ],
+          "tag": "h3",
+          "_typography": {
+            "font-size": "var(--h2)"
+          },
+          "text": "{post_title}",
+          "link": {
+            "type": "meta",
+            "useDynamicData": "{post_url}"
+          }
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "ecbe85",
+        "name": "text-basic",
+        "parent": "acc9ce",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "avw8ct"
+          ],
+          "text": "{post_terms_category:plain}"
+        },
+        "label": "Category"
+      },
+      {
+        "id": "6c62b0",
+        "name": "text-basic",
+        "parent": "acc9ce",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "5s3r3j"
+          ],
+          "text": "{post_excerpt:20}",
+          "tag": "p"
+        },
+        "label": "Excerpt"
+      },
+      {
+        "id": "73cd21",
+        "name": "text-basic",
+        "parent": "acc9ce",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ud4shy"
+          ],
+          "tag": "span",
+          "text": "{author_name}"
+        },
+        "label": "Author"
+      },
+      {
+        "id": "f5d0d8",
+        "name": "image",
+        "parent": "8be874",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ov5mu6"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "useDynamicData": "{featured_image}",
+            "size": "large"
+          }
+        },
+        "label": "Image"
+      },
+      {
+        "id": "35fe6f",
+        "name": "div",
+        "parent": "8be874",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mnkg3h"
+          ]
+        },
+        "label": "Overlay"
+      },
+      {
+        "id": "5ff8bc",
+        "name": "div",
+        "parent": "8be874",
+        "children": [
+          "ab667c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "8ewnrj"
+          ]
+        },
+        "label": "Date Wrapper"
+      },
+      {
+        "id": "ab667c",
+        "name": "text-basic",
+        "parent": "5ff8bc",
+        "children": [],
+        "settings": {
+          "tag": "custom",
+          "customTag": "time",
+          "_cssGlobalClasses": [
+            "8uiydi"
+          ],
+          "text": "{post_date}",
+          "_attributes": [
+            {
+              "id": "opmerk",
+              "name": "datetime",
+              "value": "{post_date:Y-m-d h:m}"
+            }
+          ]
+        },
+        "label": "Date"
+      },
+      {
+        "id": "08af52",
+        "name": "block",
+        "parent": "6f98ae",
+        "children": [
+          "0b0fab"
+        ],
+        "settings": {
+          "hasLoop": true,
+          "query": {
+            "objectType": "post"
+          },
+          "tag": "li"
+        },
+        "label": "List Item (Loop Me)"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "slhmuz",
+        "name": "fr-intro-bravo",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 2)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "okkigb",
+        "name": "fr-intro-bravo__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "kojiwf",
+        "name": "fr-article-section-juliet",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "zwmrrc",
+        "name": "fr-article-grid-juliet",
+        "settings": {
+          "_rowGap": "var(--space-xl)",
+          "_padding": {
+            "left": "0"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "c7y28p",
+        "name": "article-card-juliet",
+        "settings": {
+          "_alignItemsGrid": "stretch",
+          "_display": "grid",
+          "_gridGap": "var(--space-xl)",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)",
+          "_gridGap:mobile_landscape": "var(--content-gap)",
+          "_position": "relative",
+          "_cssCustom": ".article-card-juliet, .article-card-juliet__overlay, .article-card-juliet__heading {\n  transition: var(--transition);\n}\n.article-card-juliet:hover {\n  .article-card-juliet__heading {\n    color: var(--primary-hover);\n  }\n  .article-card-juliet__overlay {\n    background: var(--primary-trans-20);\n  }\n}\n\n/* Begin Clickable Parent\nEnsure this is placed on the clickable parent element. */\n.article-card-juliet:has(a) {\n  position: relative;\n}\n\n/* Configure your selector if you have more than one link */\n.article-card-juliet a::after {\n  content: \"\";\n  position: absolute;\n  inset: 0;\n  z-index: 10;\n}\n\n/* Remove effect in builder.\nSet target.\nBricks = .bricks-area */\n.target .article-card-juliet a::after {\n  content: \"\";\n  position: relative;\n}\n\n/* End Clickable Parent */\n\n/* Begin Focus Parent */\n.article-card-juliet:focus-within {\n  outline: var(--focus-width) solid var(--focus-color);\n  outline-offset: var(--focus-offset);\n}\n\n.article-card-juliet :focus {\n  outline: none !important;\n  box-shadow: none !important;\n}\n\n/* End Focus Parent */"
+        },
+        "_exists": false
+      },
+      {
+        "id": "n71qrt",
+        "name": "article-card-juliet__media-wrapper",
+        "settings": {
+          "_position": "relative",
+          "_order": "-1",
+          "_heightMin": "400px",
+          "_heightMin:tablet_portrait": "200",
+          "_heightMin:mobile_landscape": "250",
+          "_heightMin:mobile_portrait": "175",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_overflow": "hidden"
+        },
+        "_exists": false
+      },
+      {
+        "id": "0fjji5",
+        "name": "article-card-juliet__content-wrapper",
+        "settings": {
+          "_justifyContent": "center",
+          "_rowGap": "var(--content-gap)",
+          "_position": "static"
+        },
+        "modified": 1732813638,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "va4cxw",
+        "name": "article-card-juliet__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "avw8ct",
+        "name": "article-card-juliet__category",
+        "settings": {
+          "_order": "-1",
+          "_typography": {
+            "line-height": "1"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "5s3r3j",
+        "name": "article-card-juliet__excerpt",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ud4shy",
+        "name": "article-card-juliet__author",
+        "settings": {
+          "_typography": {
+            "line-height": "1",
+            "font-size": "var(--text-s)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "ov5mu6",
+        "name": "article-card-juliet__image",
+        "settings": {
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_objectFit": "cover",
+          "_width": "100%",
+          "_height": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "mnkg3h",
+        "name": "article-card-juliet__overlay",
+        "settings": {
+          "_position": "absolute",
+          "_right": "0",
+          "_bottom": "0",
+          "_top": "0",
+          "_left": "0"
+        },
+        "_exists": false
+      },
+      {
+        "id": "8ewnrj",
+        "name": "article-card-juliet__date-wrapper",
+        "settings": {
+          "_position": "absolute",
+          "_right": "0",
+          "_bottom": "0",
+          "_padding": {
+            "top": "1.5em",
+            "right": "1.5em",
+            "bottom": "1.5em",
+            "left": "1.5em"
+          },
+          "_background": {
+            "color": {
+              "raw": "var(--white)"
+            }
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "8uiydi",
+        "name": "article-card-juliet__date",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

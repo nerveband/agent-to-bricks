@@ -1,0 +1,1878 @@
+{
+  "idx": 3,
+  "title": "Header London",
+  "elementCount": 79,
+  "classCount": 35,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "9ec899",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "f1cccc",
+          "fb24d3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ouxtgq"
+          ]
+        },
+        "label": "Header London"
+      },
+      {
+        "id": "fb24d3",
+        "name": "code",
+        "parent": "9ec899",
+        "children": [],
+        "settings": {
+          "javascriptCode": "// Helper function for logging (enable if needed)\nfunction log(message, data = null) {\n    // console.log(message, data);\n}\n\n// Function to calculate #brx-header height and set it as CSS variable --nav-height\nfunction updateNavHeight() {\n    const header = document.getElementById('brx-header');\n    if (header) {\n        // Use requestAnimationFrame for accurate measurement after rendering\n        requestAnimationFrame(() => {\n            const height = header.offsetHeight;\n            document.documentElement.style.setProperty('--nav-height', `${height}px`);\n            log('Navigation height set to:', height);\n        });\n    } else {\n        log('#brx-header element not found');\n    }\n}\n\n// Initial triggers for height calculation\ndocument.addEventListener('DOMContentLoaded', updateNavHeight);\nwindow.addEventListener('load', updateNavHeight);\nupdateNavHeight(); // Fallback in case events have already fired\n\n// Watch for images and fonts loading inside the header for accurate height\nfunction watchImagesAndFonts() {\n    const header = document.getElementById('brx-header');\n    if (!header) return;\n\n    // Watch all images inside the header\n    const images = header.querySelectorAll('img');\n    images.forEach(img => {\n        if (!img.complete) {\n            img.addEventListener('load', updateNavHeight, { once: true });\n        }\n    });\n\n    // Watch for web fonts loading (if used)\n    if (document.fonts) {\n        document.fonts.ready.then(updateNavHeight);\n    }\n}\nwindow.addEventListener('load', watchImagesAndFonts);\n\n// Debounced resize handler for performance\nlet resizeTimeout;\nwindow.addEventListener('resize', () => {\n    clearTimeout(resizeTimeout);\n    resizeTimeout = setTimeout(updateNavHeight, 100);\n});\n\n// MutationObserver for dynamic header changes (attributes, children, subtree)\nconst header = document.getElementById('brx-header');\nif (header) {\n    new MutationObserver(updateNavHeight).observe(header, {\n        attributes: true,\n        childList: true,\n        subtree: true\n    });\n}\n\n// Centralized DOM element selection\nconst domElements = {\n    dropdownItems: document.querySelectorAll('li[data-script-id].brxe-dropdown'),\n    logo: document.querySelector('[data-logo]'),\n    customButton: document.querySelector('[data-back-button]'),\n    toggleButton: document.querySelector('button[aria-label]'),\n    navList: document.querySelector('ul.brx-nav-nested-items'),\n    mainNav: document.querySelector('.brxe-nav-nested')\n};\n\n// Event delegation for dropdown items (handles dynamic elements as well)\ndocument.addEventListener('click', (event) => {\n    const target = event.target.closest('li[data-script-id].brxe-dropdown');\n    if (!target) return;\n\n    const isOpen = target.classList.contains('open') && target.classList.contains('active');\n    log(\"Dropdown item clicked - is open?\", isOpen);\n\n    if (!isOpen) {\n        domElements.logo?.setAttribute('data-logo', 'hidden');\n        domElements.customButton?.setAttribute('data-back-button', 'visible');\n        domElements.navList?.classList.add('dropdown-open');\n    }\n});\n\n// Unified event handler for custom and toggle buttons\nfunction handleButtonInteractions() {\n    domElements.toggleButton?.click();\n    domElements.customButton?.setAttribute('data-back-button', 'hidden');\n    domElements.logo?.setAttribute('data-logo', 'visible');\n    domElements.navList?.classList.remove('dropdown-open');\n}\n\nif (domElements.customButton && domElements.toggleButton) {\n    domElements.customButton.addEventListener('click', handleButtonInteractions);\n    domElements.toggleButton.addEventListener('click', () => {\n        if (domElements.customButton.getAttribute('data-back-button') === 'visible') {\n            handleButtonInteractions();\n        }\n    });\n}\n\n// MutationObserver for main navigation to reset UI state when menu closes\nif (domElements.mainNav) {\n    new MutationObserver(() => {\n        if (!domElements.mainNav.classList.contains('brx-open')) {\n            domElements.logo?.setAttribute('data-logo', 'visible');\n            domElements.customButton?.setAttribute('data-back-button', 'hidden');\n            domElements.navList?.classList.remove('dropdown-open');\n        }\n    }).observe(domElements.mainNav, {\n        attributes: true,\n        attributeFilter: ['class']\n    });\n}\n",
+          "executeCode": true,
+          "noRoot": true
+        },
+        "label": "Nav JS",
+        "themeStyles": {
+          "prettify": "tomorrow-night"
+        }
+      },
+      {
+        "id": "f1cccc",
+        "name": "container",
+        "parent": "9ec899",
+        "children": [
+          "e4d4e6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kvycly"
+          ]
+        },
+        "label": "Inner (Border CSS)"
+      },
+      {
+        "id": "e4d4e6",
+        "name": "nav-nested",
+        "parent": "f1cccc",
+        "children": [
+          "4add48",
+          "ad1ccc",
+          "28415e",
+          "1b1bb4"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qlbklv",
+            "dscqur"
+          ],
+          "mobileMenu": "tablet_portrait"
+        },
+        "themeStyles": [],
+        "label": "Nav Nestable MM Alpha (CSS)"
+      },
+      {
+        "id": "28415e",
+        "name": "div",
+        "parent": "e4d4e6",
+        "children": [
+          "4c2432"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "240b7y"
+          ],
+          "_attributes": [
+            {
+              "id": "cylqke",
+              "name": "data-logo",
+              "value": "visible"
+            }
+          ]
+        },
+        "label": "Logo Wrapper"
+      },
+      {
+        "id": "4c2432",
+        "name": "image",
+        "parent": "28415e",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "p1ea29"
+          ],
+          "altText": "{site_title} Logo",
+          "loading": "eager",
+          "link": "url",
+          "url": {
+            "type": "meta",
+            "useDynamicData": "{site_url}"
+          },
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        },
+        "label": "Logo",
+        "themeStyles": []
+      },
+      {
+        "id": "1b1bb4",
+        "name": "text-link",
+        "parent": "e4d4e6",
+        "children": [],
+        "settings": {
+          "text": "go back",
+          "_cssGlobalClasses": [
+            "swdx6p"
+          ],
+          "_attributes": [
+            {
+              "id": "grpwfu",
+              "name": "data-back-button",
+              "value": "hidden"
+            },
+            {
+              "id": "esazne",
+              "name": "style",
+              "value": "position: absolute; inset-inline-start: var(--gutter);"
+            },
+            {
+              "id": "ndltgd",
+              "name": "role",
+              "value": "button"
+            }
+          ],
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          }
+        },
+        "label": "Back Button"
+      },
+      {
+        "id": "4add48",
+        "name": "block",
+        "parent": "e4d4e6",
+        "children": [
+          "27284d",
+          "c55a33",
+          "9877b9",
+          "db6cb1",
+          "af17b1",
+          "f709d5"
+        ],
+        "settings": {
+          "tag": "ul",
+          "_hidden": {
+            "_cssClasses": "brx-nav-nested-items"
+          },
+          "_cssGlobalClasses": [
+            "ojwqwv"
+          ]
+        },
+        "label": "Nav items",
+        "cloneable": false,
+        "deletable": false
+      },
+      {
+        "id": "27284d",
+        "name": "dropdown",
+        "parent": "4add48",
+        "children": [
+          "cb10a7"
+        ],
+        "settings": {
+          "text": "Features",
+          "_cssGlobalClasses": [
+            "eynmgs",
+            "kcstrk"
+          ],
+          "megaMenu": true,
+          "megaMenuSelectorVertical": "#brx-header",
+          "megaMenuSelector": ".brxe-nav-nested"
+        },
+        "label": "MM Alpha",
+        "themeStyles": []
+      },
+      {
+        "id": "cb10a7",
+        "name": "div",
+        "parent": "27284d",
+        "children": [
+          "e14125",
+          "842225",
+          "12be90"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "brx-dropdown-content"
+          },
+          "_cssGlobalClasses": [
+            "jeqndp",
+            "hxhtca"
+          ]
+        },
+        "label": "Content (CSS)",
+        "cloneable": false,
+        "deletable": false
+      },
+      {
+        "id": "c55a33",
+        "name": "dropdown",
+        "parent": "4add48",
+        "children": [
+          "1ad41c"
+        ],
+        "settings": {
+          "text": "Company",
+          "megaMenu": true,
+          "megaMenuSelectorVertical": "#brx-header",
+          "_cssGlobalClasses": [
+            "bqdqrt"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Dropdown Alpha"
+      },
+      {
+        "id": "1ad41c",
+        "name": "div",
+        "parent": "c55a33",
+        "children": [
+          "6b0645",
+          "1a3d96",
+          "430fad"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "brx-dropdown-content"
+          },
+          "tag": "ul",
+          "_cssGlobalClasses": [
+            "xltpxw"
+          ]
+        },
+        "label": "List <ul>",
+        "cloneable": false,
+        "deletable": false
+      },
+      {
+        "id": "6b0645",
+        "name": "div",
+        "parent": "1ad41c",
+        "children": [
+          "b38268"
+        ],
+        "settings": {
+          "tag": "li",
+          "_cssGlobalClasses": [
+            "dxcqhy"
+          ]
+        },
+        "label": "List-Item <li>"
+      },
+      {
+        "id": "b38268",
+        "name": "text-link",
+        "parent": "6b0645",
+        "children": [],
+        "settings": {
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "text": "About us",
+          "_cssGlobalClasses": [
+            "lukfoz"
+          ]
+        },
+        "label": "Link <a>",
+        "themeStyles": []
+      },
+      {
+        "id": "db6cb1",
+        "name": "div",
+        "parent": "4add48",
+        "children": [
+          "f00324"
+        ],
+        "settings": {
+          "tag": "li",
+          "_cssGlobalClasses": [
+            "cnwlwy"
+          ]
+        },
+        "label": "List-Item <li>"
+      },
+      {
+        "id": "f00324",
+        "name": "text-link",
+        "parent": "db6cb1",
+        "children": [],
+        "settings": {
+          "text": "Marketplace",
+          "_cssGlobalClasses": [
+            "kmwmve"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Nav link",
+        "themeStyles": []
+      },
+      {
+        "id": "af17b1",
+        "name": "div",
+        "parent": "4add48",
+        "children": [
+          "4f4786",
+          "aff19f"
+        ],
+        "settings": {
+          "tag": "li",
+          "_cssGlobalClasses": [
+            "yfwyur",
+            "orfdgb"
+          ]
+        },
+        "label": "Support"
+      },
+      {
+        "id": "4f4786",
+        "name": "text-basic",
+        "parent": "af17b1",
+        "children": [],
+        "settings": {
+          "text": "Customer Support",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "euufqi"
+          ]
+        },
+        "label": "Desc"
+      },
+      {
+        "id": "aff19f",
+        "name": "text-link",
+        "parent": "af17b1",
+        "children": [],
+        "settings": {
+          "link": {
+            "type": "external",
+            "url": "tel:1234567890"
+          },
+          "text": "(123) 456-7890",
+          "_cssGlobalClasses": [
+            "znloku",
+            "acss_import_clickable-parent"
+          ],
+          "_attributes": [
+            {
+              "id": "obarsk",
+              "name": "data-exclude"
+            }
+          ]
+        },
+        "label": "Phone",
+        "themeStyles": []
+      },
+      {
+        "id": "f709d5",
+        "name": "div",
+        "parent": "4add48",
+        "children": [
+          "66ead1"
+        ],
+        "settings": {
+          "tag": "li",
+          "_cssGlobalClasses": [
+            "cnwlwy"
+          ]
+        },
+        "label": "List-Item <li>"
+      },
+      {
+        "id": "66ead1",
+        "name": "text-basic",
+        "parent": "f709d5",
+        "children": [],
+        "settings": {
+          "text": "Contact us",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ]
+        },
+        "label": "CTA"
+      },
+      {
+        "id": "ad1ccc",
+        "name": "fr-trigger",
+        "parent": "e4d4e6",
+        "children": [],
+        "settings": {
+          "triggerType": "burger",
+          "animation": "fr-hamburger--elastic",
+          "triggerText": "Menu",
+          "useText": true,
+          "buttonText": "Open Modal",
+          "useActiveText": true,
+          "buttonActiveText": "Close Modal",
+          "buttonIcon": {
+            "library": "themify",
+            "icon": "ti-layers"
+          },
+          "buttonIconActive": {
+            "library": "themify",
+            "icon": "ti-layers"
+          },
+          "ariaLabel": "Toggle Menu",
+          "toggleClass": true,
+          "classToToggle": "brx-open",
+          "targetSelector": ".brxe-nav-nested",
+          "_cssGlobalClasses": [
+            "yswjgm"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Frames Trigger (CSS)"
+      },
+      {
+        "id": "430fad",
+        "name": "div",
+        "parent": "1ad41c",
+        "children": [
+          "f920d2"
+        ],
+        "settings": {
+          "tag": "li"
+        },
+        "label": "List-Item <li>"
+      },
+      {
+        "id": "f920d2",
+        "name": "text-link",
+        "parent": "430fad",
+        "children": [],
+        "settings": {
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "text": "Locations"
+        },
+        "label": "Link <a>",
+        "themeStyles": []
+      },
+      {
+        "id": "1a3d96",
+        "name": "div",
+        "parent": "1ad41c",
+        "children": [
+          "5f7236"
+        ],
+        "settings": {
+          "tag": "li"
+        },
+        "label": "List-Item <li>"
+      },
+      {
+        "id": "5f7236",
+        "name": "text-link",
+        "parent": "1a3d96",
+        "children": [],
+        "settings": {
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "text": "Our Team"
+        },
+        "label": "Link <a>",
+        "themeStyles": []
+      },
+      {
+        "id": "e14125",
+        "name": "block",
+        "parent": "cb10a7",
+        "children": [
+          "b610c6",
+          "8ef0e6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ldkowq",
+            "kdhwuf"
+          ]
+        },
+        "label": "Column"
+      },
+      {
+        "id": "b610c6",
+        "name": "text-basic",
+        "parent": "e14125",
+        "children": [],
+        "settings": {
+          "text": "Feature",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "lyhbpb",
+            "qqfmuo"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "8ef0e6",
+        "name": "block",
+        "parent": "e14125",
+        "children": [
+          "5934d9",
+          "b0d405",
+          "867064",
+          "d7d4b0",
+          "3f3799"
+        ],
+        "settings": {
+          "tag": "ul",
+          "_cssGlobalClasses": [
+            "reqmqi",
+            "jmvhsd"
+          ]
+        },
+        "label": "List"
+      },
+      {
+        "id": "5934d9",
+        "name": "block",
+        "parent": "8ef0e6",
+        "children": [
+          "c8a676"
+        ],
+        "settings": {
+          "tag": "li",
+          "_cssGlobalClasses": [
+            "ehqwav",
+            "qxdbee"
+          ],
+          "query": {
+            "objectType": "post",
+            "disable_query_merge": true
+          }
+        },
+        "label": "Item"
+      },
+      {
+        "id": "c8a676",
+        "name": "text-link",
+        "parent": "5934d9",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ujawpf",
+            "dihnhg"
+          ],
+          "text": "Feature #1",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Link (CSS)",
+        "themeStyles": []
+      },
+      {
+        "id": "b0d405",
+        "name": "block",
+        "parent": "8ef0e6",
+        "children": [
+          "b2ff32"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ehqwav",
+            "qxdbee"
+          ],
+          "tag": "li",
+          "query": {
+            "objectType": "post",
+            "disable_query_merge": true
+          }
+        },
+        "label": "Item"
+      },
+      {
+        "id": "b2ff32",
+        "name": "text-link",
+        "parent": "b0d405",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ujawpf",
+            "dihnhg"
+          ],
+          "text": "Feature #2",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Link (CSS)",
+        "themeStyles": []
+      },
+      {
+        "id": "867064",
+        "name": "block",
+        "parent": "8ef0e6",
+        "children": [
+          "96659f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ehqwav",
+            "qxdbee"
+          ],
+          "tag": "li",
+          "query": {
+            "objectType": "post",
+            "disable_query_merge": true
+          }
+        },
+        "label": "Item"
+      },
+      {
+        "id": "96659f",
+        "name": "text-link",
+        "parent": "867064",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ujawpf",
+            "dihnhg"
+          ],
+          "text": "Feature #3",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Link (CSS)",
+        "themeStyles": []
+      },
+      {
+        "id": "d7d4b0",
+        "name": "block",
+        "parent": "8ef0e6",
+        "children": [
+          "b31183"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ehqwav",
+            "qxdbee"
+          ],
+          "tag": "li",
+          "query": {
+            "objectType": "post",
+            "disable_query_merge": true
+          }
+        },
+        "label": "Item"
+      },
+      {
+        "id": "b31183",
+        "name": "text-link",
+        "parent": "d7d4b0",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ujawpf",
+            "dihnhg"
+          ],
+          "text": "Feature #4",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Link (CSS)",
+        "themeStyles": []
+      },
+      {
+        "id": "3f3799",
+        "name": "block",
+        "parent": "8ef0e6",
+        "children": [
+          "15fdaf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ehqwav",
+            "qxdbee"
+          ],
+          "tag": "li",
+          "query": {
+            "objectType": "post",
+            "disable_query_merge": true
+          }
+        },
+        "label": "Item"
+      },
+      {
+        "id": "15fdaf",
+        "name": "text-link",
+        "parent": "3f3799",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ujawpf",
+            "dihnhg"
+          ],
+          "text": "Feature #5",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Link (CSS)",
+        "themeStyles": []
+      },
+      {
+        "id": "9877b9",
+        "name": "dropdown",
+        "parent": "4add48",
+        "children": [
+          "3a0510"
+        ],
+        "settings": {
+          "text": "Services",
+          "_cssGlobalClasses": [
+            "ruwjzl"
+          ],
+          "megaMenu": true,
+          "megaMenuSelectorVertical": "#brx-header"
+        },
+        "label": "Dropdown Bravo (CSS)",
+        "themeStyles": []
+      },
+      {
+        "id": "3a0510",
+        "name": "div",
+        "parent": "9877b9",
+        "children": [
+          "33a75f",
+          "aba9e7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gyttwm"
+          ],
+          "_hidden": {
+            "_cssClasses": "brx-dropdown-content"
+          },
+          "tag": "ul"
+        },
+        "label": "List <ul>",
+        "cloneable": false,
+        "deletable": false
+      },
+      {
+        "id": "33a75f",
+        "name": "div",
+        "parent": "3a0510",
+        "children": [
+          "6dbb1f",
+          "88e3ef"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "owsbhy",
+            "orfdgb"
+          ],
+          "tag": "li"
+        },
+        "label": "List-Item <li>"
+      },
+      {
+        "id": "6dbb1f",
+        "name": "div",
+        "parent": "33a75f",
+        "children": [
+          "9a48a4",
+          "523cb3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kntfvm"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "9a48a4",
+        "name": "text-link",
+        "parent": "6dbb1f",
+        "children": [],
+        "settings": {
+          "text": "Dropdown link 1",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_cssGlobalClasses": [
+            "acss_import_clickable-parent",
+            "rjrozj"
+          ]
+        },
+        "label": "Link <a>"
+      },
+      {
+        "id": "523cb3",
+        "name": "text-basic",
+        "parent": "6dbb1f",
+        "children": [],
+        "settings": {
+          "tag": "p",
+          "text": "Here goes your text ..."
+        }
+      },
+      {
+        "id": "88e3ef",
+        "name": "div",
+        "parent": "33a75f",
+        "children": [
+          "5cda3f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "bgtuqe"
+          ]
+        },
+        "label": "Icon Wrapper"
+      },
+      {
+        "id": "5cda3f",
+        "name": "icon",
+        "parent": "88e3ef",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "flitlo"
+          ],
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          }
+        }
+      },
+      {
+        "id": "aba9e7",
+        "name": "div",
+        "parent": "3a0510",
+        "children": [
+          "6d0aaf",
+          "4447a1"
+        ],
+        "settings": {
+          "tag": "li",
+          "_cssGlobalClasses": [
+            "owsbhy",
+            "orfdgb"
+          ]
+        },
+        "label": "List-Item <li>"
+      },
+      {
+        "id": "6d0aaf",
+        "name": "div",
+        "parent": "aba9e7",
+        "children": [
+          "3e32b6",
+          "7b15ed"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kntfvm"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "3e32b6",
+        "name": "text-link",
+        "parent": "6d0aaf",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "acss_import_clickable-parent",
+            "rjrozj"
+          ],
+          "text": "Dropdown link 1",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Link <a>"
+      },
+      {
+        "id": "7b15ed",
+        "name": "text-basic",
+        "parent": "6d0aaf",
+        "children": [],
+        "settings": {
+          "text": "Here goes your text ...",
+          "tag": "p"
+        }
+      },
+      {
+        "id": "4447a1",
+        "name": "div",
+        "parent": "aba9e7",
+        "children": [
+          "c8890c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "bgtuqe"
+          ]
+        },
+        "label": "Icon Wrapper"
+      },
+      {
+        "id": "c8890c",
+        "name": "icon",
+        "parent": "4447a1",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "flitlo"
+          ],
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          }
+        }
+      },
+      {
+        "id": "12be90",
+        "name": "block",
+        "parent": "cb10a7",
+        "children": [
+          "f84989",
+          "e6c879"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ldkowq",
+            "kdhwuf"
+          ]
+        },
+        "label": "Column"
+      },
+      {
+        "id": "f84989",
+        "name": "text-basic",
+        "parent": "12be90",
+        "children": [],
+        "settings": {
+          "text": "Feature",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "lyhbpb",
+            "qqfmuo"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "e6c879",
+        "name": "block",
+        "parent": "12be90",
+        "children": [
+          "b5fcd9",
+          "db3f81",
+          "cccca8",
+          "88f99f",
+          "7b68bb"
+        ],
+        "settings": {
+          "tag": "ul",
+          "_cssGlobalClasses": [
+            "reqmqi",
+            "jmvhsd"
+          ]
+        },
+        "label": "List"
+      },
+      {
+        "id": "b5fcd9",
+        "name": "block",
+        "parent": "e6c879",
+        "children": [
+          "c13401"
+        ],
+        "settings": {
+          "tag": "li",
+          "_cssGlobalClasses": [
+            "ehqwav",
+            "qxdbee"
+          ],
+          "query": {
+            "objectType": "post",
+            "disable_query_merge": true
+          }
+        },
+        "label": "Item"
+      },
+      {
+        "id": "c13401",
+        "name": "text-link",
+        "parent": "b5fcd9",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ujawpf",
+            "dihnhg"
+          ],
+          "text": "Feature #1",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Link (CSS)",
+        "themeStyles": []
+      },
+      {
+        "id": "db3f81",
+        "name": "block",
+        "parent": "e6c879",
+        "children": [
+          "ffe0f7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ehqwav",
+            "qxdbee"
+          ],
+          "tag": "li",
+          "query": {
+            "objectType": "post",
+            "disable_query_merge": true
+          }
+        },
+        "label": "Item"
+      },
+      {
+        "id": "ffe0f7",
+        "name": "text-link",
+        "parent": "db3f81",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ujawpf",
+            "dihnhg"
+          ],
+          "text": "Feature #2",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Link (CSS)",
+        "themeStyles": []
+      },
+      {
+        "id": "cccca8",
+        "name": "block",
+        "parent": "e6c879",
+        "children": [
+          "6b652b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ehqwav",
+            "qxdbee"
+          ],
+          "tag": "li",
+          "query": {
+            "objectType": "post",
+            "disable_query_merge": true
+          }
+        },
+        "label": "Item"
+      },
+      {
+        "id": "6b652b",
+        "name": "text-link",
+        "parent": "cccca8",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ujawpf",
+            "dihnhg"
+          ],
+          "text": "Feature #3",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Link (CSS)",
+        "themeStyles": []
+      },
+      {
+        "id": "88f99f",
+        "name": "block",
+        "parent": "e6c879",
+        "children": [
+          "3980ee"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ehqwav",
+            "qxdbee"
+          ],
+          "tag": "li",
+          "query": {
+            "objectType": "post",
+            "disable_query_merge": true
+          }
+        },
+        "label": "Item"
+      },
+      {
+        "id": "3980ee",
+        "name": "text-link",
+        "parent": "88f99f",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ujawpf",
+            "dihnhg"
+          ],
+          "text": "Feature #4",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Link (CSS)",
+        "themeStyles": []
+      },
+      {
+        "id": "7b68bb",
+        "name": "block",
+        "parent": "e6c879",
+        "children": [
+          "7e7b4d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ehqwav",
+            "qxdbee"
+          ],
+          "tag": "li",
+          "query": {
+            "objectType": "post",
+            "disable_query_merge": true
+          }
+        },
+        "label": "Item"
+      },
+      {
+        "id": "7e7b4d",
+        "name": "text-link",
+        "parent": "7b68bb",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ujawpf",
+            "dihnhg"
+          ],
+          "text": "Feature #5",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Link (CSS)",
+        "themeStyles": []
+      },
+      {
+        "id": "842225",
+        "name": "block",
+        "parent": "cb10a7",
+        "children": [
+          "d9fd25",
+          "ddf338"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ldkowq",
+            "kdhwuf"
+          ]
+        },
+        "label": "Column"
+      },
+      {
+        "id": "d9fd25",
+        "name": "text-basic",
+        "parent": "842225",
+        "children": [],
+        "settings": {
+          "text": "Feature",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "lyhbpb",
+            "qqfmuo"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "ddf338",
+        "name": "block",
+        "parent": "842225",
+        "children": [
+          "c532d2",
+          "64bbbc",
+          "e57e7d",
+          "24ba97",
+          "b823f3"
+        ],
+        "settings": {
+          "tag": "ul",
+          "_cssGlobalClasses": [
+            "reqmqi",
+            "jmvhsd"
+          ]
+        },
+        "label": "List"
+      },
+      {
+        "id": "c532d2",
+        "name": "block",
+        "parent": "ddf338",
+        "children": [
+          "299ef8"
+        ],
+        "settings": {
+          "tag": "li",
+          "_cssGlobalClasses": [
+            "ehqwav",
+            "qxdbee"
+          ],
+          "query": {
+            "objectType": "post",
+            "disable_query_merge": true
+          }
+        },
+        "label": "Item"
+      },
+      {
+        "id": "299ef8",
+        "name": "text-link",
+        "parent": "c532d2",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ujawpf",
+            "dihnhg"
+          ],
+          "text": "Feature #1",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Link (CSS)",
+        "themeStyles": []
+      },
+      {
+        "id": "64bbbc",
+        "name": "block",
+        "parent": "ddf338",
+        "children": [
+          "5f972e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ehqwav",
+            "qxdbee"
+          ],
+          "tag": "li",
+          "query": {
+            "objectType": "post",
+            "disable_query_merge": true
+          }
+        },
+        "label": "Item"
+      },
+      {
+        "id": "5f972e",
+        "name": "text-link",
+        "parent": "64bbbc",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ujawpf",
+            "dihnhg"
+          ],
+          "text": "Feature #2",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Link (CSS)",
+        "themeStyles": []
+      },
+      {
+        "id": "e57e7d",
+        "name": "block",
+        "parent": "ddf338",
+        "children": [
+          "d448c5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ehqwav",
+            "qxdbee"
+          ],
+          "tag": "li",
+          "query": {
+            "objectType": "post",
+            "disable_query_merge": true
+          }
+        },
+        "label": "Item"
+      },
+      {
+        "id": "d448c5",
+        "name": "text-link",
+        "parent": "e57e7d",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ujawpf",
+            "dihnhg"
+          ],
+          "text": "Feature #3",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Link (CSS)",
+        "themeStyles": []
+      },
+      {
+        "id": "24ba97",
+        "name": "block",
+        "parent": "ddf338",
+        "children": [
+          "084c08"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ehqwav",
+            "qxdbee"
+          ],
+          "tag": "li",
+          "query": {
+            "objectType": "post",
+            "disable_query_merge": true
+          }
+        },
+        "label": "Item"
+      },
+      {
+        "id": "084c08",
+        "name": "text-link",
+        "parent": "24ba97",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ujawpf",
+            "dihnhg"
+          ],
+          "text": "Feature #4",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Link (CSS)",
+        "themeStyles": []
+      },
+      {
+        "id": "b823f3",
+        "name": "block",
+        "parent": "ddf338",
+        "children": [
+          "b61b9e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ehqwav",
+            "qxdbee"
+          ],
+          "tag": "li",
+          "query": {
+            "objectType": "post",
+            "disable_query_merge": true
+          }
+        },
+        "label": "Item"
+      },
+      {
+        "id": "b61b9e",
+        "name": "text-link",
+        "parent": "b823f3",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ujawpf",
+            "dihnhg"
+          ],
+          "text": "Feature #5",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Link (CSS)",
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "orfdgb",
+        "name": "focus-parent",
+        "settings": [],
+        "_mappedId": "acss_import_focus-parent",
+        "modified": 1771251421,
+        "user_id": 1
+      },
+      {
+        "id": "acss_import_clickable-parent",
+        "name": "clickable-parent",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "bqdqrt",
+        "name": "fr-dropdown-alpha",
+        "settings": {
+          "_cssCustom": ".fr-dropdown-alpha {\n  white-space: nowrap;\n  --focus-color: var(--nav-link-color);   \n}\n\n.brxe-nav-nested:not(.brx-open) .fr-dropdown-alpha ul.brx-dropdown-content {\n  min-inline-size: auto!important;\n  max-inline-size: max-content!important;\n  inset-inline: auto!important;\n}\n\n.brxe-nav-nested:not(.brx-open) .fr-dropdown-alpha ul.brx-dropdown-content a {\n  min-inline-size: var(--dd-min-inline-size, 200px);\n}\n\n.fr-dropdown-alpha .brx-dropdown-content {\n  gap: var(--dd-item-gap);\n  padding: var(--dd-content-padding);\n  background-color: var(--dd-bg-color);\n  box-shadow: \n    var(--dd-box-shadow, \n      rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,\n      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px\n    );\n  border: var(--dd-border-width) solid var(--dd-border-color);\n  border-start-start-radius:\n    var(--dd-border-radius, var(--radius));\n  border-start-end-radius: \n    var(--dd-border-radius, var(--radius));    \n  border-end-start-radius: \n    var(--dd-border-radius, var(--radius));\n  border-end-end-radius: \n    var(--dd-border-radius, var(--radius));\n}\n\n.fr-dropdown-alpha .brx-dropdown-content li a {\n  padding-block: var(--dd-link-block-padding, 1em);\n  padding-inline: var(--dd-link-inline-padding, 1em);\n  color: var(--dd-link-color);\n  transition: var(--transition);\n  background: var(--dd-link-background-color);   \n  border-radius: var(--dd-border-radius, var(--radius));\n  border-width: var(--btn-border-width, 1px);\n  border-style: var(--btn-border-style, solid);\n  border-color: var(--dd-link-background-color); \n  --focus-color: var(--dd-link-color, var(--text-dark-muted));  \n}\n\n.fr-dropdown-alpha .brx-dropdown-content li a:hover {\n  background: var(--dd-link-background-hover-color, var(--bg-ultra-light));  \n  border-color: var(--dd-link-background-hover-color, var(--bg-ultra-light));   \n  color: var(--dd-link-color-hover);  \n}",
+          "gap": "var(--nav-gap)"
+        },
+        "modified": 1747862584,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "xltpxw",
+        "name": "fr-dropdown-alpha__list",
+        "settings": [],
+        "modified": 1747863459,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "dxcqhy",
+        "name": "fr-dropdown-alpha__list-item",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "lukfoz",
+        "name": "fr-dropdown-alpha__link",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "kcstrk",
+        "name": "fr-mm-alpha",
+        "settings": {
+          "_cssCustom": ".fr-mm-alpha {\n  --focus-color: var(--nav-link-color);    \n}\n.fr-mm-alpha .brx-dropdown-content {\n  background-color: var(--dd-bg-color, var(--white));\n  box-shadow: \n    var(--dd-box-shadow, \n      rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,\n      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px\n    );\n  border: var(--dd-border-width) solid var(--dd-border-color);\n  border-start-start-radius:\n    var(--dd-border-radius, var(--radius));\n  border-start-end-radius: \n    var(--dd-border-radius, var(--radius));    \n  border-end-start-radius: \n    var(--dd-border-radius, var(--radius));\n  border-end-end-radius: \n    var(--dd-border-radius, var(--radius)); \n}\n\n.fr-mm-alpha .brx-dropdown-content li a { \n  padding-block: var(--dd-link-block-padding, 1rem);\n  padding-inline: var(--dd-link-inline-padding, 1rem);\n  background: var(--dd-link-background-color, var(--bg-ultra-light));  \n  color: var(--dd-link-color, var(--text-dark-muted));\n  transition: var(--transition);\n  border-radius: var(--dd-border-radius, var(--radius));\n  border-width: var(--btn-border-width, 1px);\n  border-style: var(--btn-border-style, solid);\n  border-color: var(--nav-item-background-color);\n  width: 100%;\n  --focus-color: var(--dd-link-color, var(--text-dark-muted));\n}\n\n.fr-mm-alpha .brx-dropdown-content li a:is(:hover, :focus) { \n  background: var(--dd-link-background-hover-color, var(--bg-ultra-light));\n  color: var(--dd-link-color-hover, var(--text-dark));\n  border-color: var(--dd-link-background-hover-color, var(--bg-ultra-light));   \n}",
+          "gap": "var(--nav-gap)"
+        },
+        "modified": 1748815546,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "hxhtca",
+        "name": "fr-mm-alpha__content",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-3)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_gridGap": "var(--grid-gap)",
+          "_alignContentGrid": "stretch",
+          "_cssCustom": ".brx-open .fr-mm-alpha__content {\n  grid-template-columns: var(--grid-1);\n}",
+          "_boxShadow": {
+            "color": {
+              "raw": "var(--mm-box-shadow, rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px)"
+            }
+          },
+          "_background": {
+            "color": {
+              "raw": "var(--mm-bg-color)"
+            }
+          },
+          "_border": {
+            "width": {
+              "top": "1px",
+              "right": "1px",
+              "bottom": "1px",
+              "left": "1px"
+            },
+            "style": "solid",
+            "color": {
+              "raw": "var(--mm-border-color)"
+            }
+          },
+          "_padding": {
+            "top": "calc(var(--dd-content-padding) + var(--dd-link-block-padding))",
+            "right": "var(--dd-content-padding)",
+            "bottom": "var(--dd-content-padding)",
+            "left": "var(--dd-content-padding)"
+          }
+        },
+        "modified": 1747859311,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "kdhwuf",
+        "name": "fr-mm-alpha__column",
+        "settings": {
+          "_cssCustomSass": "/* when not open on mobile */\n.mm:not(.brx-open) .fr-mm-alpha__column {\n  padding: var(--space-m);\n}\n\n/* when open on mobile */\n.mm.brx-open .fr-mm-alpha__column {\n\tpadding: var(--space-m) var(--gutter);\n}",
+          "_rowGap": "var(--dd-gap)",
+          "_columnGap": "var(--dd-gap)"
+        },
+        "modified": 1747859311,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "qqfmuo",
+        "name": "fr-mm-alpha__heading",
+        "settings": {
+          "_cssCustom": ".fr-mm-alpha__heading::after {\n  content: '';\n  position: absolute;\n  inset-inline: 0;\n  inset-block-end: calc(var(--dd-gap) * -.5);\n  height: 1px;\n  width: 100%;\n  background-color: var(--dd-border-color);\n}\n\n.fr-mm-alpha__heading {\n  font-family: var(--heading-font-family);\n  font-size: var(--h3);\n  font-weight: var(--heading-font-weight);\n  color: var(--mm-text-color);\n  line-height: var(--heading-line-height);\n  letter-spacing: var(--heading-letter-spacing);\n  text-wrap: var(--heading-text-wrap);\n  padding-inline: var(--dd-link-inline-padding, 1rem);\n}",
+          "_width": "100%",
+          "_position": "relative"
+        },
+        "_exists": false
+      },
+      {
+        "id": "jmvhsd",
+        "name": "fr-mm-alpha__list",
+        "settings": {
+          "_cssCustom": ".fr-mm-alpha__list {\n  list-style-type: none;\n  padding: 0;\n  margin: 0;\n}",
+          "_direction": "column",
+          "_columnGap": "var(--dd-item-gap)",
+          "_rowGap": "var(--dd-item-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "qxdbee",
+        "name": "fr-mm-alpha__list-item",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "dihnhg",
+        "name": "fr-mm-alpha__link",
+        "settings": [],
+        "modified": 1748978735,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "ruwjzl",
+        "name": "fr-dropdown-bravo",
+        "settings": {
+          "_cssCustom": ".fr-dropdown-bravo {\n  --item-icon-size: var(--dd-icon-size, 1.5em);\n  --item-icon-color: \n    var(--dd-icon-color, var(--text-dark-muted));\n  --item-icon-color-hover: \n    var(--dd-icon-color-hover, var(--text-dark));\n  --item-icon-bg: \n    var(--dd-icon-bg-color, var(--white-trans-20));\n  --item-icon-bg-hover: \n    var(--dd-icon-bg-color-hover, var(--white-trans-40));\n  \n  white-space: nowrap;\n  --focus-color: var(--nav-link-color); \n}\n\n.brxe-nav-nested:not(.brx-open) .fr-dropdown-bravo ul.brx-dropdown-content {\n  min-inline-size: auto!important;\n  max-inline-size: max-content!important;\n  inset-inline: auto!important;\n}\n\n.brxe-nav-nested:not(.brx-open) .fr-dropdown-bravo ul.brx-dropdown-content a {\n  min-inline-size: var(--dd-min-inline-size, 200px);\n}\n\n.fr-dropdown-bravo .brx-dropdown-content {\n  gap: var(--dd-item-gap, var(--space-xs));\n  padding: var(--dd-content-padding, var(--space-xs));\n  background-color: var(--dd-bg-color, var(--neutral-ultra-dark));\n  box-shadow: \n    var(--dd-box-shadow, \n      rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,\n      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px\n    );\n  border: var(--dd-border-width) solid var(--dd-border-color);\n  border-start-start-radius:\n    var(--dd-border-radius, var(--radius));\n  border-start-end-radius: \n    var(--dd-border-radius, var(--radius));    \n  border-end-start-radius: \n    var(--dd-border-radius, var(--radius));\n  border-end-end-radius: \n    var(--dd-border-radius, var(--radius));\n}\n\n.fr-dropdown-bravo .brx-dropdown-content li {\n  padding-block: var(--dd-link-block-padding, 1em);\n  padding-inline: var(--dd-content-padding, var(--space-xs));\n  transition: var(--transition);\n  background: var(--dd-link-background-color);   \n  border-radius: var(--dd-border-radius, var(--radius));\n  border-width: var(--btn-border-width, 1px);\n  border-style: var(--btn-border-style, solid);\n  border-color: var(--dd-link-background-color);\n  color: var(--text-color);\n  --focus-color: var(--dd-link-color, var(--text-dark-muted)); \n}\n\n.fr-dropdown-bravo .brx-dropdown-content li:is(:hover, :focus) {\n  background: var(--dd-link-background-hover-color, var(--bg-ultra-light));  \n  border-color: var(--dd-link-background-hover-color, var(--bg-ultra-light));    \n}\n.fr-dropdown-bravo .brx-dropdown-content li a {  \n  color: var(--dd-link-color);\n}\n.fr-dropdown-bravo .brx-dropdown-content li a:hover {\n  color: var(--dd-link-color-hover);\n}\n\n.fr-dropdown-bravo .brx-dropdown-content li :is(a, svg, i) { \n  transition: var(--transition);\n}\n\n.fr-dropdown-bravo .brx-dropdown-content li :is(svg, i) {  \n\tcolor: var(--item-icon-color, var(--text-light));\n  width: var(--item-icon-size);\n  height: var(--item-icon-size);  \n}\n\n.fr-dropdown-bravo .brx-dropdown-content li:is(:hover, :focus) :is(svg, i) {     \n  color: var(--item-icon-color-hover);\n}\n\n.fr-dropdown-bravo .brx-dropdown-content li .fr-dropdown-bravo__icon-wrapper {\n  background: var(--item-icon-bg);\n  border-radius: var(--dd-border-radius, var(--radius)); \n}\n.fr-dropdown-bravo .brx-dropdown-content li:hover .fr-dropdown-bravo__icon-wrapper {\n  background: var(--item-icon-bg-hover);\n}\n",
+          "gap": "var(--nav-gap)"
+        },
+        "modified": 1749718944,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "gyttwm",
+        "name": "fr-dropdown-bravo__list",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "owsbhy",
+        "name": "fr-dropdown-bravo__list-item",
+        "settings": {
+          "_display": "flex",
+          "_width": "100%",
+          "_alignItems": "center",
+          "_rowGap": "var(--dd-item-gap)",
+          "_columnGap": "var(--dd-item-gap)",
+          "_cssCustom": ".brxe-nav-nested li.fr-dropdown-bravo__list-item.fr-dropdown-bravo__list-item {\n  position: relative;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "kntfvm",
+        "name": "fr-dropdown-bravo__content-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "rjrozj",
+        "name": "fr-dropdown-bravo__link",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "bgtuqe",
+        "name": "fr-dropdown-bravo__icon-wrapper",
+        "settings": {
+          "_order": "-1",
+          "_display": "flex",
+          "_direction": "column",
+          "_alignSelf": "center",
+          "_justifyContent": "center",
+          "_alignItems": "center",
+          "_width": "calc(var(--icon-size) * 1)",
+          "_height": "calc(var(--icon-size) * 1)",
+          "_cssCustom": ".fr-dropdown-bravo__icon-wrapper {\n  transition: var(--transition);\n  padding: .5em;\n  width: calc(var(--item-icon-size) * 1.5);\n  height: calc(var(--item-icon-size) * 1.5);\n}\n\n.fr-dropdown-bravo__icon-wrapper :is(svg, i) {\n  width: var(--item-icon-size);\n  height: var(--item-icon-size);\n}"
+        },
+        "modified": 1749718944,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "flitlo",
+        "name": "fr-dropdown-bravo__icon",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ouxtgq",
+        "name": "fr-header-london",
+        "settings": {
+          "_padding": {
+            "right": "var(--gutter)",
+            "left": "var(--gutter)"
+          },
+          "_position": "relative",
+          "_background": {
+            "color": {
+              "raw": "var(--neutral-ultra-dark-trans-80)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "kvycly",
+        "name": "fr-header-london__inner",
+        "settings": {
+          "_display": "flex",
+          "_alignItems": "center",
+          "_justifyContent": "space-between",
+          "_direction": "row",
+          "_flexWrap:mobile_landscape": "nowrap",
+          "_columnGap": "var(--space-xl)",
+          "_cssCustom": ".fr-header-london__inner {\n\tborder-block-end: var(--divider);\n}\n\n.fr-header-london__inner::before {\n  content: '';\n  position: absolute;\n  bottom: 0; \n  left: 0;\n  width: 100%;\n  height: 2px;\n  background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.35) 49.5%, rgba(255, 255, 255, 0.00) 100%);\n}",
+          "_position": "static",
+          "_padding": {
+            "top": ".5em",
+            "bottom": ".5em"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "qlbklv",
+        "name": "fr-nav-mm-alpha",
+        "settings": {
+          "_width": "100%",
+          "_cssCustom": "/* Desktop */\n.brxe-nav-nested:not(.brx-open) > ul > li:is(:first-of-type, :nth-last-of-type(2)) {\n  margin-inline-start: auto;\n}\n/* Mobile */\n.fr-nav-mm-alpha.brx-open > ul > li:is(:nth-last-of-type(2)) {\n  margin-block-start: auto;\n}\n\n/* General Styling */\n.fr-nav-mm-alpha .brx-nav-nested-items {\n  gap: var(--nav-gap);\n}\n.brxe-nav-nested:not(.brx-open) .brx-nav-nested-items > li > a:not([class*=\"btn--\"]):not([href^=\"tel:\" i]):not([href^=\"mailto:\" i]):not([data-exclude]), \n.brxe-nav-nested:not(.brx-open) .brx-nav-nested-items > li[data-script-id] > .brx-submenu-toggle {\n  padding: \n    var(--nav-item-block-padding)\n    var(--nav-item-inline-padding);\n  background: var(--nav-item-background-color);\n  border-width: var(--btn-border-width);\n  border-style: var(--btn-border-style);\n\tborder-color: var(--nav-item-border-color);  \n  border-radius: var(--nav-item-border-radius);\n  color: var(--nav-link-color);\n\tline-height: var(--btn-line-height);  \n  --focus-color: var(--nav-link-color);    \n}\n\n.brxe-nav-nested:not(.brx-open) .brx-nav-nested-items > li > a:not([class*=\"btn--\"]):not([href^=\"tel:\" i]):not([href^=\"mailto:\" i]):not([data-exclude]):hover, \n.brxe-nav-nested:not(.brx-open) .brx-nav-nested-items > li[data-script-id] > .brx-submenu-toggle:hover {\n  color: var(--nav-link-hover-color);\n  background: var(--nav-item-background-hover-color);  \n\tborder-color: var(--nav-item-border-hover-color);  \n}\n\n.brxe-nav-nested.brxe-nav-nested:not(.brx-open) .brx-nav-nested-items > li > a[aria-current=\"page\"]:not([class*=\"btn--\"]):not([data-exclude]) {\n  color: var(--nav-link-active-color, var(--nav-link-color));\n  background: var(--nav-item-background-active-color);\n  border-color: var(--nav-item-border-active-color);\n  padding: \n    var(--nav-item-block-padding) \n    var(--nav-item-inline-padding);\n  border-width: var(--btn-border-width);\n  border-style: var(--btn-border-style);\n  border-radius: var(--nav-item-border-radius);\n  line-height: var(--btn-line-height);\n}\n\n.brxe-nav-nested:not(.brx-open) .brx-nav-nested-items > li { \n  display: flex;\n  /* Use the width that is actually needed */\n  inline-size: fit-content;  \n}\n\n/* Dropdown/Mega Menu Stylings */\n.brxe-nav-nested.brx-open .brx-dropdown-content {\n  padding: var(--gutter);\n}\n\n.brxe-nav-nested:not(.brx-open) .open .brx-dropdown-content {\n  transform: translateY(var(--dd-slide-in-open));\n}\n.brxe-nav-nested.brx-open .open .brx-dropdown-content {\n  transform: translateY(0px);\n}\n\n.brxe-nav-nested:not(.brx-open) .brx-dropdown-content {\n  transform: translateY(var(--dd-slide-in-closed));\n}\n\n.brxe-nav-nested.brx-open .brx-dropdown-content {\n  transform: translateY(0px);\n}\n\n:where(.brxe-nav-nested.brx-open) :where(li, li > a) {\n  /* Use fit-content here if you want the icon right next to the text. Note: makes animation look weird */\n  inline-size: 100%;\n}\n\n.brxe-nav-nested.brx-open .brxe-dropdown>.brx-dropdown-content {\n  transform: translateX(100%);\n  opacity: 0;\n  visibility: visible;\n  display: flex;\n  inset: 0!important;\n}\n\n.brxe-nav-nested.brx-open ul.brx-nav-nested-items {\n  inset: calc(var(--nav-height, 100px) + var(--wp-admin--admin-bar--height, 0px)) 0 0 0;\n  height: calc(100dvh - (var(--nav-height, 100px) + var(--wp-admin--admin-bar--height, 0px)));\n  padding-inline: var(--gutter);\n  padding-block: var(--content-gap);    \n  overflow: hidden;  \n}\n\n.brxe-nav-nested.brx-open .brx-nav-nested-items li {\n  position: static;\n}\n\n.brxe-nav-nested.brx-open .brx-nav-nested-items {\n  gap: var(--m-nav-gap);\n  background: var(--m-nav-bg);\n}\n\n.brxe-nav-nested.brx-open .brx-nav-nested-items > li > a:not([class*=btn--]):not([href^=\"tel:\" i]):not([href^=\"mailto:\" i]), .brxe-nav-nested.brx-open .brx-nav-nested-items > li > .brx-submenu-toggle {\n  padding: \n    var(--m-nav-item-block-padding)\n    var(--m-nav-item-inline-padding);\n  background: var(--m-nav-item-background-color);\n  border-radius: var(--m-nav-item-border-radius);\n  color: var(--m-nav-item-text-color);\n}\n\n.brxe-nav-nested.brx-open ul.brx-nav-nested-items > li > .brxe-button.bricks-button, .brxe-nav-nested.brx-open ul.brx-nav-nested-items > li > [class*=btn--] {\n  width: var(--m-button-width);\n}\n\n.brx-open .brx-submenu-toggle button {\n  transform: rotate(var(--m-icon-rotation));\n}\n.brxe-nav-nested.brx-open .brxe-dropdown.open>.brx-dropdown-content {\n  position: fixed;\n  inset: \n    calc(var(--nav-height) + var(--wp-admin--admin-bar--height, 0px)) 0 0 0!important;\n  height: calc(100dvh - (var(--nav-height) + var(--wp-admin--admin-bar--height, 0px)));\n  overflow: hidden scroll;\n  scrollbar-width: none;\n  border-radius: 0;\n}\n\n[data-logo],\n[data-back-button],\n.brxe-nav-nested .brx-nav-nested-items .brx-submenu-toggle,\n.brxe-nav-nested .brx-nav-nested-items > li > a,\n.brxe-nav-nested .brx-nav-nested-items > li > [class*=\"btn--\"],\n.brxe-nav-nested .brx-nav-nested-items > li > p,\n.brxe-nav-nested.brx-open .brxe-dropdown>.brx-dropdown-content {\n  transition-property: opacity, transform, background, color, border;\n  transition-duration: var(--transition-duration);\n  transition-timing-function: var(--transition-timing);\n  transition-delay: var(--transition-delay);\n}\n\n.brx-open [data-logo=\"hidden\"],\n.brx-open .brx-nav-nested-items.dropdown-open .brx-submenu-toggle,\n.brx-open .brx-nav-nested-items.dropdown-open > li > a,\n.brx-open .brx-nav-nested-items > li > [class*=\"btn--\"],\n.brx-open .brx-nav-nested-items.dropdown-open > li > p {\n  opacity: 0;\n  transform: translateX(-100%);\n}\n\n[data-back-button] {\n  opacity: 0;\n  transform: translateX(100%);\n}\n\n[data-back-button=\"hidden\"] {\n\tpointer-events: none;\n}\n\n[data-logo=\"visible\"], .brx-open [data-back-button=\"visible\"],\n.brx-open .brx-nav-nested-items .brx-submenu-toggle,\n.brx-open .brx-nav-nested-items > li > a,\n.brx-open .brx-nav-nested-items > li > [class*=\"btn--\"],\n.brx-open .brx-nav-nested-items > li > p,\n.brx-open .brxe-dropdown.open .brx-dropdown-content {\n  opacity: 1;\n  transform: translateX(0);\n}\n\n/* ACSS Button Padding Overwrite */\n.fr-nav-mm-alpha li a {\n  --btn-padding-inline: var(--nav-item-inline-padding);\n  --btn-padding-block: var(--nav-item-block-padding);\n}\n\n/* Dropdown */\n.fr-nav-mm-alpha .brxe-dropdown .brx-submenu-toggle button :is(svg, i) {\n\tcolor: var(--nav-icon-color, var(--text-light));\n  width: var(--nav-icon-size, 16px);\n  height: var(--nav-icon-size, 16px);\n}",
+          "_gap": "var(--content-gap)"
+        },
+        "modified": 1754565262,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "dscqur",
+        "name": "fr-nav-mm-alpha--controls",
+        "settings": {
+          "_cssCustom": ".fr-nav-mm-alpha--controls {\n  /* Header */\n  --text-color: var(--text-dark);\n  \n  /* Mega Menu Text Color */\n  --mm-text-color: var(--text-dark);\n  \n  /* Desktop Nav - general Styling */\n  --nav-link-color: var(--text-light-muted);\n  --nav-item-background-color: transparent; \n  --nav-item-border-color: transparent;  \n\n  --nav-item-block-padding: .75em;\n  --nav-item-inline-padding: 1em;\n\t--nav-item-border-radius: var(--radius);\n  --nav-item-active-border-color: red;\n  --nav-gap: var(--space-xs);\n  \n  /* Nav Hover Styling */\n  --nav-link-hover-color: var(--text-light);  \n  --nav-item-background-hover-color: var(--white-trans-10);\n  --nav-item-border-hover-color: var(--white-trans-10);\n  \n  /* Nav Active Styling */\n  --nav-link-active-color: var(--text-light);  \n  --nav-item-background-active-color: transparent;  \n  --nav-item-border-active-color: var(--white-trans-10);  \n  \n  /* Icon Styling */\n  --nav-icon-color: var(--nav-link-color);\n  --nav-icon-color-hover: var(--nav-link-hover-color);\n  --nav-icon-size: 1em;\n\n  /* Genneral - Mega Menu / Dropdown Styling */\n  --dd-bg-color: var(--white);  \n  --dd-color: var(--text-dark-muted);\n  --dd-color-hover: var(--text-dark);\n  --dd-link-background-color: transparent;\n  --dd-link-background-hover-color: var(--neutral-ultra-light);\n  --dd-link-color: var(--text-dark-muted);\n  --dd-link-color-hover: var(--text-dark);\n  --dd-link-block-padding: .5em;\n  --dd-link-inline-padding: var(--space-s);  \n\n  --dd-content-padding: var(--space-xs);   \n  --dd-gap: var(--content-gap);\n  --dd-item-gap: var(--space-xs);\n  \n  --dd-icon-color: var(--text-dark-muted);\n  --dd-icon-color-hover: var(--text-dark);\n  --dd-icon-bg-color: var(--neutral-trans-10);  \n\t--dd-icon-bg-color-hover: var(--neutral-trans-20);\n  --dd-box-shadow: var(--box-shadow-m);\n  --dd-min-inline-size: 200px;   \n  \n  /* Border Styling - Mega Menu / Dropdown */\n  --dd-border-width: 0;\n  --dd-border-radius: var(--radius);  \n  --dd-border-color: var(--neutral-trans-10);  \n\n  /* Slide In Effect - Mega Menu / Dropdown */\n  --dd-slide-in-open: 0, 10px;\n  --dd-slide-in-closed: 0, 20px;\n\n  /* Mobile Styling */  \n  --m-nav-gap: 1em;\n  --m-nav-bg: var(--bg-dark);\n  \n  --m-nav-item-block-padding: .75em;\n  --m-nav-item-inline-padding: 1em;\n  --m-nav-item-text-color: var(--text-light);\n  --m-nav-item-background-color: var(--black-trans-20);\n  --m-nav-item-border-radius: var(--radius);\n  \n  --m-button-width: fit-content;\n  --m-icon-rotation: -90deg;\n\n}\n"
+        },
+        "modified": 1754565262,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "240b7y",
+        "name": "fr-nav-mm-alpha__logo-wrapper",
+        "settings": {
+          "_position": "relative",
+          "_height": "fit-content",
+          "_width": "200px",
+          "_cssCustom": ".fr-nav-mm-alpha__logo-wrapper {\n  --focus-color: var(--nav-link-color);  \n  order: -1;\n}"
+        },
+        "modified": 1765706736,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "p1ea29",
+        "name": "fr-nav-mm-alpha__logo",
+        "settings": {
+          "_width": "100%",
+          "_height": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "swdx6p",
+        "name": "fr-nav-mm-alpha__back-button",
+        "settings": {
+          "_cursor": "pointer",
+          "_cssCustom": ".fr-nav-mm-alpha__back-button,\n.fr-nav-mm-alpha__back-button svg {\n  color: var(--nav-link-color);\n}\n\n.fr-nav-mm-alpha__back-button:hover,\n.fr-nav-mm-alpha__back-button:hover svg {\n  color: var(--nav-link-hover-color);\n}"
+        },
+        "modified": 1739155498,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "ojwqwv",
+        "name": "fr-nav-mm-alpha__list",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "cnwlwy",
+        "name": "fr-nav-mm-alpha__list-item",
+        "settings": {
+          "_cssCustom": ".fr-nav-mm-alpha__list-item.fr-nav-mm-alpha__list-item a {\n  --focus-color: var(--nav-link-color);  \n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "kmwmve",
+        "name": "fr-nav-mm-alpha__link",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "yfwyur",
+        "name": "fr-nav-mm-alpha__meta-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_width": "fit-content",
+          "_rowGap": ".5em",
+          "_cssCustom": ".fr-nav-mm-alpha__meta-wrapper.fr-nav-mm-alpha__meta-wrapper {\n  --focus-color: var(--nav-link-color);  \n}\n\n/* Fix required because Bricks uses (0, 3, 1) specificity on mobile styles */\n.fr-nav-mm-alpha__meta-wrapper,\n.brxe-nav-nested.brx-open .brx-nav-nested-items li.fr-nav-mm-alpha__meta-wrapper {\n  position: relative;\n}"
+        },
+        "modified": 1755687169,
+        "user_id": 26,
+        "_exists": false
+      },
+      {
+        "id": "euufqi",
+        "name": "fr-nav-mm-alpha__meta-description",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-s)",
+            "color": {
+              "raw": "var(--text-light)"
+            },
+            "line-height": "1"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "znloku",
+        "name": "fr-nav-mm-alpha__meta-link",
+        "settings": {
+          "_cssCustom": "a {\n  color: var(--nav-link-color);\n}\n\na:hover {\n  color: var(--nav-link-hover-color);\n}",
+          "_typography": {
+            "line-height": "1"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "yswjgm",
+        "name": "fr-nav-mm-alpha__trigger",
+        "settings": {
+          "buttonIcon": {
+            "library": "themify",
+            "icon": "ti-layers"
+          },
+          "buttonIconActive": {
+            "library": "themify",
+            "icon": "ti-layers"
+          },
+          "backgroundColor": {
+            "raw": "transparent"
+          },
+          "lineColor": {
+            "raw": "var(--nav-link-hover-color)"
+          },
+          "activeLinesColor": {
+            "raw": "var(--nav-link-hover-color)"
+          },
+          "lineHeight": "3px",
+          "triggerSize": ".75",
+          "_cssCustom": ".fr-nav-mm-alpha__trigger {\n  margin-inline-start: auto;\n  display: none;\n}\n\n.fr-nav-mm-alpha__trigger.fr-hamburger {\n  opacity: .7;  \n}\n.fr-nav-mm-alpha__trigger.fr-hamburger:hover {\n  opacity: 1;  \n}",
+          "_cssCustom:tablet_portrait": ".fr-nav-mm-alpha__trigger {\n  display: flex;\n}"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

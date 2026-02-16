@@ -1,0 +1,158 @@
+{
+  "idx": 422,
+  "title": "Content Section Golf",
+  "elementCount": 6,
+  "classCount": 6,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "621371",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "b2bcc1",
+          "23904c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rsjhvx"
+          ]
+        },
+        "label": "Content Section Golf"
+      },
+      {
+        "id": "23904c",
+        "name": "container",
+        "parent": "621371",
+        "children": [
+          "9f34d6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sohcqn"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "9f34d6",
+        "name": "text",
+        "parent": "23904c",
+        "children": [],
+        "settings": {
+          "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Felis donec et odio pellentesque diam volutpat commodo. Et egestas quis ipsum suspendisse ultrices gravida. Nam libero justo laoreet sit amet cursus sit amet dictum. Est ante in nibh mauris cursus mattis molestie a.</p><p>Erat velit scelerisque in dictum non consectetur a. Turpis nunc eget lorem dolor sed. Tincidunt ornare massa eget egestas purus viverra accumsan in. Sed tempus urna et pharetra pharetra massa massa.</p><p>Ultrices eros in cursus turpis massa tincidunt dui. Nec feugiat nisl pretium fusce id. Est lorem ipsum dolor sit. Diam maecenas ultricies mi eget mauris. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget. Non quam lacus suspendisse faucibus interdum.</p><p>Metus dictum at tempor commodo. Pellentesque habitant morbi tristique senectus et netus. Nulla pharetra diam sit amet. Facilisi cras fermentum odio eu feugiat. Dictum fusce ut placerat orci nulla pellentesque.</p><p>Diam maecenas ultricies mi eget mauris pharetra et ultrices. Nibh venenatis cras sed felis eget velit aliquet sagittis id. Arcu ac tortor dignissim convallis. Velit dignissim sodales ut eu sem. Orci dapibus ultrices in iaculis. Adipiscing elit ut aliquam purus.</p><p>Orci ac auctor augue mauris augue neque gravida. Egestas integer eget aliquet nibh praesent tristique magna sit. Elementum integer enim neque volutpat ac tincidunt vitae.</p>",
+          "_cssGlobalClasses": [
+            "xkpyhk"
+          ]
+        },
+        "label": "Text"
+      },
+      {
+        "id": "b2bcc1",
+        "name": "container",
+        "parent": "621371",
+        "children": [
+          "16e846",
+          "527720"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "slhmuz"
+          ]
+        },
+        "label": "Intro Bravo"
+      },
+      {
+        "id": "527720",
+        "name": "text-basic",
+        "parent": "b2bcc1",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "_cssGlobalClasses": [
+            "qfdtjc"
+          ]
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "16e846",
+        "name": "heading",
+        "parent": "b2bcc1",
+        "children": [],
+        "settings": {
+          "text": "Your headline here",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "okkigb"
+          ]
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "slhmuz",
+        "name": "fr-intro-bravo",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 2)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "okkigb",
+        "name": "fr-intro-bravo__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "rsjhvx",
+        "name": "fr-content-section-golf",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "sohcqn",
+        "name": "fr-content-section-golf__content-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "xkpyhk",
+        "name": "fr-content-section-golf__text",
+        "settings": {
+          "_cssCustom": ".fr-content-section-golf__text {\n  column-count: 2;\n  column-width: 30ch;\n  column-gap: var(--grid-gap);\n}",
+          "_width": "100%"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

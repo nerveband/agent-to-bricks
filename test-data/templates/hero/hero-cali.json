@@ -1,0 +1,451 @@
+{
+  "idx": 4,
+  "title": "Hero Cali",
+  "elementCount": 13,
+  "classCount": 20,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "8d66e3",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "a405ff",
+          "54ede3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "olpivm",
+            "acss_import_bg--ultra-dark"
+          ]
+        },
+        "label": "Hero Cali"
+      },
+      {
+        "id": "a405ff",
+        "name": "container",
+        "parent": "8d66e3",
+        "children": [
+          "d9dfee",
+          "2845bf",
+          "f2136e",
+          "922fc8",
+          "65c5e4"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kfsrng"
+          ]
+        },
+        "label": "Intro Foxtrot"
+      },
+      {
+        "id": "d9dfee",
+        "name": "heading",
+        "parent": "a405ff",
+        "children": [],
+        "settings": {
+          "text": "Discover the Golden State's Hidden Treasures",
+          "tag": "h1",
+          "_cssGlobalClasses": [
+            "fs98tf",
+            "bzgvbc"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "2845bf",
+        "name": "text-basic",
+        "parent": "a405ff",
+        "children": [],
+        "settings": {
+          "text": "Accent Heading",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "luvynj"
+          ]
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "f2136e",
+        "name": "text-basic",
+        "parent": "a405ff",
+        "children": [],
+        "settings": {
+          "text": "Beyond the iconic landmarks lies a California few travelers ever experience. From hidden redwood groves to desert oases, the Golden State harbors extraordinary treasures waiting for those willing to venture off the beaten path.",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "utn55l",
+            "text--l"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "922fc8",
+        "name": "div",
+        "parent": "a405ff",
+        "children": [
+          "aa5f38",
+          "5eae35"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "glrhvz"
+          ]
+        },
+        "label": "CTA Links Bravo"
+      },
+      {
+        "id": "aa5f38",
+        "name": "button",
+        "parent": "922fc8",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ],
+          "text": "Primary action",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Primary Action"
+      },
+      {
+        "id": "5eae35",
+        "name": "text-basic",
+        "parent": "922fc8",
+        "children": [],
+        "settings": {
+          "text": "Secondary action",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_cssGlobalClasses": [
+            "aekezk",
+            "btn--outline"
+          ]
+        },
+        "label": "Secondary Action"
+      },
+      {
+        "id": "54ede3",
+        "name": "block",
+        "parent": "8d66e3",
+        "children": [
+          "d9261c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lagcnd",
+            "ehgaei"
+          ]
+        },
+        "label": "Background Wrapper"
+      },
+      {
+        "id": "f5be72",
+        "name": "image",
+        "parent": "442df5",
+        "children": [],
+        "settings": {
+          "image": {
+            "useDynamicData": "{post_id}",
+            "size": "image-960"
+          },
+          "_cssGlobalClasses": [
+            "wgytap"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "442df5",
+        "name": "div",
+        "parent": "d9261c",
+        "children": [
+          "f5be72"
+        ],
+        "settings": {
+          "hasLoop": true,
+          "query": {
+            "post_type": [
+              "attachment"
+            ],
+            "tax_query": [
+              "happyfiles_category::284"
+            ],
+            "posts_per_page": "15"
+          },
+          "_cssGlobalClasses": [
+            "hqnxvd"
+          ]
+        },
+        "label": "Looper"
+      },
+      {
+        "id": "d9261c",
+        "name": "block",
+        "parent": "54ede3",
+        "children": [
+          "442df5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ouvkvf"
+          ]
+        },
+        "label": "Background"
+      },
+      {
+        "id": "65c5e4",
+        "name": "fr-notes",
+        "parent": "a405ff",
+        "children": [],
+        "settings": {
+          "notesContent": "<p>This frame is very media heavy. It's best for sites that have a lot of imagery. Using too few images will break the visual effect.</p><h3>Note:</h3><p>It's recommended to create a folder with something like Happy Files and loop through the folder using a query loop. You can find the looper element in the Background Wrapper.</p><h3>Can you use manual images?</h3><p>Yes, but it'll be very tedious to insert all of them and manage them. But yes, it's possible.</p><h3>.is-bg class is not working</h3><p>Make sure you have enabled the \"Background Color\" Classes in ACSS</p>",
+          "_cssGlobalClasses": [
+            "ieofwl"
+          ]
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "kfsrng",
+        "name": "intro-foxtrot",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_alignItems:mobile_landscape": "flex-start"
+        },
+        "_exists": false
+      },
+      {
+        "id": "fs98tf",
+        "name": "intro-foxtrot__heading",
+        "settings": [],
+        "_mappedId": "fs98tf",
+        "modified": 1750209707,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "luvynj",
+        "name": "intro-foxtrot__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771251430,
+        "user_id": 1
+      },
+      {
+        "id": "utn55l",
+        "name": "intro-foxtrot__lede",
+        "settings": [],
+        "_mappedId": "utn55l",
+        "modified": 1750209707,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "btn--outline",
+        "name": "btn--outline",
+        "settings": [],
+        "_mappedId": "acss_import_btn--outline",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "ieofwl",
+        "name": "fr-note",
+        "settings": {
+          "_cssCustom": ".fr-note {\n  padding: var(--card-padding, var(--space-m));\n  border-radius: var(--card-radius, var(--radius));\n  background: var(--warning-light, #FDEBB5);\n  color: var(--warning-ultra-dark, #544002);\n  margin-inline: auto;\n}\n\n.fr-note * + :is(h2, h3, h4) {\n  margin-top: var(--heading-spacing);\n  color: var(--text-dark);\n}\n\n.fr-note a {\n  text-decoration: underline;\n}",
+          "_width": "60ch",
+          "_typography": {
+            "color": {
+              "raw": "var(--text-dark-muted)"
+            }
+          }
+        },
+        "modified": 1744306417,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "text--l",
+        "name": "text--l",
+        "settings": [],
+        "_mappedId": "acss_import_text--l",
+        "modified": 1771251430,
+        "user_id": 1
+      },
+      {
+        "id": "acss_import_bg--ultra-dark",
+        "name": "bg--ultra-dark",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "lagcnd",
+        "name": "is-bg",
+        "settings": [],
+        "_mappedId": "acss_import_is-bg",
+        "modified": 1771251430,
+        "user_id": 1
+      },
+      {
+        "id": "olpivm",
+        "name": "hero-cali",
+        "settings": {
+          "_heightMin": "90vh",
+          "_justifyContent": "flex-end",
+          "_overflow": "clip",
+          "_padding": {
+            "bottom": "var(--section-space-xl)"
+          },
+          "_heightMin:mobile_landscape": "70vh",
+          "_padding:mobile_landscape": {
+            "bottom": "var(--section-space-m)"
+          }
+        },
+        "modified": 1741117719,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "bzgvbc",
+        "name": "hero-cali__heading",
+        "settings": {
+          "_width": "24ch"
+        },
+        "_exists": false
+      },
+      {
+        "id": "glrhvz",
+        "name": "fr-cta-links-bravo",
+        "settings": {
+          "_display": "flex",
+          "_flexWrap": "wrap",
+          "_alignItems": "center",
+          "_rowGap": "var(--content-gap)",
+          "_columnGap": "var(--content-gap)",
+          "_direction:mobile_portrait": "column",
+          "_width:mobile_portrait": "100%",
+          "_cssCustom:mobile_portrait": ".fr-cta-links-bravo > * {\n\twidth: 100% !important;\n}",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_margin": {
+            "top": "var(--space-s)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "aekezk",
+        "name": "fr-cta-links-bravo__link",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ehgaei",
+        "name": "hero-cali__bg-wrapper",
+        "settings": {
+          "_cssCustom": "/* Begin Fade Bottom */\n.hero-cali__bg-wrapper {\n  --fade-amount: 70%;\n  height: 95%;  \n  mask-image: radial-gradient(circle at top, black 40%, transparent var(--fade-amount));\n}\n\n/* End Fade Bottom */"
+        },
+        "modified": 1743018197,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "wgytap",
+        "name": "hero-cali__bg-image",
+        "settings": {
+          "_objectFit": "cover",
+          "_border": {
+            "radius": {
+              "top": "var(--card-radius)",
+              "right": "var(--card-radius)",
+              "bottom": "var(--card-radius)",
+              "left": "var(--card-radius)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "hqnxvd",
+        "name": "hero-cali__looper",
+        "settings": {
+          "_cssCustom": ".hero-cali__looper:nth-child(4n+1) img, \n.hero-cali__looper:nth-child(4n+4) img {\n  aspect-ratio: 3/4;\n}\n\n/* For even columns (2nd column, 4th column, etc.) */\n.hero-cali__looper:nth-child(4n+2) img,\n.hero-cali__looper:nth-child(4n+3) img {\n  aspect-ratio: 3/4.5;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ouvkvf",
+        "name": "hero-cali__bg",
+        "settings": {
+          "_cssCustom": ".hero-cali__bg {\n  translate: 0% -200px;\n  height: 90vh;\n}\n\n/* Begin Fade Bottom */\n.hero-cali__bg {\n  --fade-amount: 85%;\n  -webkit-mask-image:\n    linear-gradient(to top, transparent 20%, black var(--fade-amount));\n  mask-image:\n    linear-gradient(to top, transparent 20%, black var(--fade-amount));\n\n}\n/* End Fade Bottom */\n\n/* Auto-responsive columns */\n.hero-cali__bg {\n  --col-count: 6;\n  --col-min-width: 0;\n  --col-rule-style: solid;\n  --col-rule-width: 0;\n  --col-rule-color: var(--black);\n  --col-gap: var(--grid-gap);\n  --row-gap: var(--grid-gap);\n\n  @media (max-width: 992px) {\n    --col-count: 4;\n  }\n  @media (max-width: 767px) {\n    --col-count: 3;\n  }\n}\n\n.hero-cali__bg {\n  display: block !important;\n  columns: var(--col-count) var(--col-min-width);\n  column-rule-style: var(--col-rule-style);\n  column-rule-width: var(--col-rule-width);\n  column-rule-color: var(--col-rule-color);\n  gap: var(--col-gap);\n}\n\n.hero-cali__bg > * {\n  break-inside: avoid;\n  margin-block-end: var(--row-gap);\n}"
+        },
+        "modified": 1744306417,
+        "user_id": 9,
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

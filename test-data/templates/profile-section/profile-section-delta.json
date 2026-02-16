@@ -1,0 +1,1038 @@
+{
+  "idx": 299,
+  "title": "Profile Section Delta",
+  "elementCount": 54,
+  "classCount": 15,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "e3e7a6",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "25ccc9",
+          "23a383"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sgvksu"
+          ]
+        },
+        "label": "Profile Section Delta"
+      },
+      {
+        "id": "23a383",
+        "name": "container",
+        "parent": "e3e7a6",
+        "children": [
+          "a9afe8",
+          "9aa632",
+          "49dc61",
+          "ddf075",
+          "f76625",
+          "cafbbb",
+          "fdb0bd",
+          "1421c1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vqzgsv",
+            "rktisp"
+          ],
+          "tag": "custom",
+          "customTag": "ul"
+        },
+        "label": "Profile Grid Delta"
+      },
+      {
+        "id": "25ccc9",
+        "name": "container",
+        "parent": "e3e7a6",
+        "children": [
+          "b7adba",
+          "9dd709",
+          "ec0732"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xgmzei"
+          ]
+        },
+        "label": "Intro Alpha"
+      },
+      {
+        "id": "b7adba",
+        "name": "text-basic",
+        "parent": "25ccc9",
+        "children": [],
+        "settings": {
+          "text": "Accent heading",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "blgfqd"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "9dd709",
+        "name": "heading",
+        "parent": "25ccc9",
+        "children": [],
+        "settings": {
+          "text": "Your heading",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "tkbujj"
+          ]
+        }
+      },
+      {
+        "id": "ec0732",
+        "name": "text-basic",
+        "parent": "25ccc9",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "dizast"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "a9afe8",
+        "name": "block",
+        "parent": "23a383",
+        "children": [
+          "090b58",
+          "1d22c2"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jqevap"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Profile Card Delta"
+      },
+      {
+        "id": "1d22c2",
+        "name": "block",
+        "parent": "a9afe8",
+        "children": [
+          "c45e01"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lqcovj"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "090b58",
+        "name": "block",
+        "parent": "a9afe8",
+        "children": [
+          "a8bf75",
+          "763628"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "naodck"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "c45e01",
+        "name": "image",
+        "parent": "1d22c2",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "_cssGlobalClasses": [
+            "eflohm"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Avatar",
+        "themeStyles": []
+      },
+      {
+        "id": "a8bf75",
+        "name": "heading",
+        "parent": "090b58",
+        "children": [],
+        "settings": {
+          "text": "Person Name",
+          "_cssGlobalClasses": [
+            "phfaky"
+          ]
+        },
+        "label": "Name"
+      },
+      {
+        "id": "763628",
+        "name": "text-basic",
+        "parent": "090b58",
+        "children": [],
+        "settings": {
+          "text": "Chief Executive Officer",
+          "_cssGlobalClasses": [
+            "lssfgs"
+          ],
+          "tag": "p"
+        },
+        "label": "Title"
+      },
+      {
+        "id": "cafbbb",
+        "name": "block",
+        "parent": "23a383",
+        "children": [
+          "daf37d",
+          "a5bbc2"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jqevap"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Profile Card Delta"
+      },
+      {
+        "id": "daf37d",
+        "name": "block",
+        "parent": "cafbbb",
+        "children": [
+          "b02ed0",
+          "2abd44"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "naodck"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "a5bbc2",
+        "name": "block",
+        "parent": "cafbbb",
+        "children": [
+          "2b8281"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lqcovj"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "b02ed0",
+        "name": "heading",
+        "parent": "daf37d",
+        "children": [],
+        "settings": {
+          "text": "Person Name",
+          "_cssGlobalClasses": [
+            "phfaky"
+          ]
+        },
+        "label": "Name"
+      },
+      {
+        "id": "2abd44",
+        "name": "text-basic",
+        "parent": "daf37d",
+        "children": [],
+        "settings": {
+          "text": "Chief Executive Officer",
+          "_cssGlobalClasses": [
+            "lssfgs"
+          ],
+          "tag": "p"
+        },
+        "label": "Title"
+      },
+      {
+        "id": "2b8281",
+        "name": "image",
+        "parent": "a5bbc2",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eflohm"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "url": "https://bricks.getframes.io/wp-content/uploads/Placeholder-Man.jpeg",
+            "external": true,
+            "filename": "Placeholder-Man.jpeg"
+          }
+        },
+        "label": "Avatar",
+        "themeStyles": []
+      },
+      {
+        "id": "f76625",
+        "name": "block",
+        "parent": "23a383",
+        "children": [
+          "46fa3d",
+          "f2f4e6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jqevap"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Profile Card Delta"
+      },
+      {
+        "id": "46fa3d",
+        "name": "block",
+        "parent": "f76625",
+        "children": [
+          "2f7a73",
+          "3c9cb2"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "naodck"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "f2f4e6",
+        "name": "block",
+        "parent": "f76625",
+        "children": [
+          "51ae34"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lqcovj"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "2f7a73",
+        "name": "heading",
+        "parent": "46fa3d",
+        "children": [],
+        "settings": {
+          "text": "Person Name",
+          "_cssGlobalClasses": [
+            "phfaky"
+          ]
+        },
+        "label": "Name"
+      },
+      {
+        "id": "3c9cb2",
+        "name": "text-basic",
+        "parent": "46fa3d",
+        "children": [],
+        "settings": {
+          "text": "Chief Executive Officer",
+          "_cssGlobalClasses": [
+            "lssfgs"
+          ],
+          "tag": "p"
+        },
+        "label": "Title"
+      },
+      {
+        "id": "51ae34",
+        "name": "image",
+        "parent": "f2f4e6",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eflohm"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "url": "https://bricks.getframes.io/wp-content/uploads/Placeholder-Man.jpeg",
+            "external": true,
+            "filename": "Placeholder-Man.jpeg"
+          }
+        },
+        "label": "Avatar",
+        "themeStyles": []
+      },
+      {
+        "id": "ddf075",
+        "name": "block",
+        "parent": "23a383",
+        "children": [
+          "109a9e",
+          "5a06e0"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jqevap"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Profile Card Delta"
+      },
+      {
+        "id": "109a9e",
+        "name": "block",
+        "parent": "ddf075",
+        "children": [
+          "468f1d",
+          "4e14d8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "naodck"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "5a06e0",
+        "name": "block",
+        "parent": "ddf075",
+        "children": [
+          "b88982"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lqcovj"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "468f1d",
+        "name": "heading",
+        "parent": "109a9e",
+        "children": [],
+        "settings": {
+          "text": "Person Name",
+          "_cssGlobalClasses": [
+            "phfaky"
+          ]
+        },
+        "label": "Name"
+      },
+      {
+        "id": "4e14d8",
+        "name": "text-basic",
+        "parent": "109a9e",
+        "children": [],
+        "settings": {
+          "text": "Chief Executive Officer",
+          "_cssGlobalClasses": [
+            "lssfgs"
+          ],
+          "tag": "p"
+        },
+        "label": "Title"
+      },
+      {
+        "id": "b88982",
+        "name": "image",
+        "parent": "5a06e0",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eflohm"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "url": "https://bricks.getframes.io/wp-content/uploads/Placeholder-Man.jpeg",
+            "external": true,
+            "filename": "Placeholder-Man.jpeg"
+          }
+        },
+        "label": "Avatar",
+        "themeStyles": []
+      },
+      {
+        "id": "49dc61",
+        "name": "block",
+        "parent": "23a383",
+        "children": [
+          "c66cf4",
+          "0e60ac"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jqevap"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Profile Card Delta"
+      },
+      {
+        "id": "c66cf4",
+        "name": "block",
+        "parent": "49dc61",
+        "children": [
+          "1b555b",
+          "1e3208"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "naodck"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "0e60ac",
+        "name": "block",
+        "parent": "49dc61",
+        "children": [
+          "f8faa8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lqcovj"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "1b555b",
+        "name": "heading",
+        "parent": "c66cf4",
+        "children": [],
+        "settings": {
+          "text": "Person Name",
+          "_cssGlobalClasses": [
+            "phfaky"
+          ]
+        },
+        "label": "Name"
+      },
+      {
+        "id": "1e3208",
+        "name": "text-basic",
+        "parent": "c66cf4",
+        "children": [],
+        "settings": {
+          "text": "Chief Executive Officer",
+          "_cssGlobalClasses": [
+            "lssfgs"
+          ],
+          "tag": "p"
+        },
+        "label": "Title"
+      },
+      {
+        "id": "f8faa8",
+        "name": "image",
+        "parent": "0e60ac",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eflohm"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "url": "https://bricks.getframes.io/wp-content/uploads/Placeholder-Man.jpeg",
+            "external": true,
+            "filename": "Placeholder-Man.jpeg"
+          }
+        },
+        "label": "Avatar",
+        "themeStyles": []
+      },
+      {
+        "id": "9aa632",
+        "name": "block",
+        "parent": "23a383",
+        "children": [
+          "8dd162",
+          "b4f9a9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jqevap"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Profile Card Delta"
+      },
+      {
+        "id": "8dd162",
+        "name": "block",
+        "parent": "9aa632",
+        "children": [
+          "0fa7d2",
+          "df7c38"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "naodck"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "b4f9a9",
+        "name": "block",
+        "parent": "9aa632",
+        "children": [
+          "4a03ce"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lqcovj"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "0fa7d2",
+        "name": "heading",
+        "parent": "8dd162",
+        "children": [],
+        "settings": {
+          "text": "Person Name",
+          "_cssGlobalClasses": [
+            "phfaky"
+          ]
+        },
+        "label": "Name"
+      },
+      {
+        "id": "df7c38",
+        "name": "text-basic",
+        "parent": "8dd162",
+        "children": [],
+        "settings": {
+          "text": "Chief Executive Officer",
+          "_cssGlobalClasses": [
+            "lssfgs"
+          ],
+          "tag": "p"
+        },
+        "label": "Title"
+      },
+      {
+        "id": "4a03ce",
+        "name": "image",
+        "parent": "b4f9a9",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eflohm"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "url": "https://bricks.getframes.io/wp-content/uploads/Placeholder-Man.jpeg",
+            "external": true,
+            "filename": "Placeholder-Man.jpeg"
+          }
+        },
+        "label": "Avatar",
+        "themeStyles": []
+      },
+      {
+        "id": "1421c1",
+        "name": "block",
+        "parent": "23a383",
+        "children": [
+          "fac3cd",
+          "359e57"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jqevap"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Profile Card Delta"
+      },
+      {
+        "id": "fac3cd",
+        "name": "block",
+        "parent": "1421c1",
+        "children": [
+          "90397b",
+          "2a5889"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "naodck"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "359e57",
+        "name": "block",
+        "parent": "1421c1",
+        "children": [
+          "2ebae8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lqcovj"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "90397b",
+        "name": "heading",
+        "parent": "fac3cd",
+        "children": [],
+        "settings": {
+          "text": "Person Name",
+          "_cssGlobalClasses": [
+            "phfaky"
+          ]
+        },
+        "label": "Name"
+      },
+      {
+        "id": "2a5889",
+        "name": "text-basic",
+        "parent": "fac3cd",
+        "children": [],
+        "settings": {
+          "text": "Chief Executive Officer",
+          "_cssGlobalClasses": [
+            "lssfgs"
+          ],
+          "tag": "p"
+        },
+        "label": "Title"
+      },
+      {
+        "id": "2ebae8",
+        "name": "image",
+        "parent": "359e57",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eflohm"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "url": "https://bricks.getframes.io/wp-content/uploads/Placeholder-Man.jpeg",
+            "external": true,
+            "filename": "Placeholder-Man.jpeg"
+          }
+        },
+        "label": "Avatar",
+        "themeStyles": []
+      },
+      {
+        "id": "fdb0bd",
+        "name": "block",
+        "parent": "23a383",
+        "children": [
+          "59afd7",
+          "349ae9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jqevap"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Profile Card Delta"
+      },
+      {
+        "id": "59afd7",
+        "name": "block",
+        "parent": "fdb0bd",
+        "children": [
+          "0a676c",
+          "75db0c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "naodck"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "349ae9",
+        "name": "block",
+        "parent": "fdb0bd",
+        "children": [
+          "fe2565"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lqcovj"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "0a676c",
+        "name": "heading",
+        "parent": "59afd7",
+        "children": [],
+        "settings": {
+          "text": "Person Name",
+          "_cssGlobalClasses": [
+            "phfaky"
+          ]
+        },
+        "label": "Name"
+      },
+      {
+        "id": "75db0c",
+        "name": "text-basic",
+        "parent": "59afd7",
+        "children": [],
+        "settings": {
+          "text": "Chief Executive Officer",
+          "_cssGlobalClasses": [
+            "lssfgs"
+          ],
+          "tag": "p"
+        },
+        "label": "Title"
+      },
+      {
+        "id": "fe2565",
+        "name": "image",
+        "parent": "349ae9",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eflohm"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "url": "https://bricks.getframes.io/wp-content/uploads/Placeholder-Man.jpeg",
+            "external": true,
+            "filename": "Placeholder-Man.jpeg"
+          }
+        },
+        "label": "Avatar",
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771255083,
+        "user_id": 1
+      },
+      {
+        "id": "xgmzei",
+        "name": "fr-intro-alpha",
+        "settings": {
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_alignItems:mobile_landscape": "flex-start",
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "blgfqd",
+        "name": "fr-intro-alpha__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "tkbujj",
+        "name": "fr-intro-alpha__heading",
+        "settings": {
+          "_typography:mobile_landscape": {
+            "font-size": "var(--h1)"
+          }
+        },
+        "modified": 1734899474,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "dizast",
+        "name": "fr-intro-alpha__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "rktisp",
+        "name": "list--none",
+        "settings": {
+          "_padding": {
+            "left": "0"
+          },
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "acss_import_list--none",
+        "modified": 1771255083,
+        "user_id": 1
+      },
+      {
+        "id": "sgvksu",
+        "name": "fr-profile-section-delta",
+        "settings": {
+          "_rowGap": "var(--fr-container-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "vqzgsv",
+        "name": "fr-profile-grid-delta",
+        "settings": {
+          "_cssCustom": ".fr-profile-grid-delta {\n\tdisplay: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: var(--fr-grid-gap);\n}",
+          "_cssCustom:mobile_landscape": ".fr-profile-grid-delta {\n  grid-template-columns: repeat(2, 1fr);\n}",
+          "_cssCustom:tablet_portrait": ".fr-profile-grid-delta {\n  grid-template-columns: repeat(3, 1fr);\n}",
+          "_cssCustom:mobile_portrait": ".fr-profile-grid-delta {\n  grid-template-columns: 1fr;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "jqevap",
+        "name": "fr-profile-card-delta",
+        "settings": {
+          "_rowGap": "var(--fr-card-gap)",
+          "_display": "flex",
+          "_direction": "column",
+          "_position": "relative"
+        },
+        "_exists": false
+      },
+      {
+        "id": "lqcovj",
+        "name": "fr-profile-card-delta__media-wrapper",
+        "settings": {
+          "_order": "-1",
+          "_alignItems": "center",
+          "_alignItems:mobile_landscape": "flex-start"
+        },
+        "_exists": false
+      },
+      {
+        "id": "naodck",
+        "name": "fr-profile-card-delta__body",
+        "settings": {
+          "_alignItems": "center",
+          "_rowGap": "calc(var(--fr-card-gap) / 2)",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_alignItems:mobile_landscape": "flex-start"
+        },
+        "_exists": false
+      },
+      {
+        "id": "eflohm",
+        "name": "fr-profile-card-delta__avatar",
+        "settings": {
+          "_objectFit": "cover",
+          "_border": {
+            "radius": {
+              "top": "50%",
+              "right": "50%",
+              "bottom": "50%",
+              "left": "50%"
+            }
+          },
+          "_overflow": "hidden",
+          "_width": "8em",
+          "_height": "8em",
+          "_width:mobile_landscape": "6em",
+          "_height:mobile_landscape": "6em",
+          "_position": "static"
+        },
+        "_exists": false
+      },
+      {
+        "id": "phfaky",
+        "name": "fr-profile-card-delta__name",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "lssfgs",
+        "name": "fr-profile-card-delta__title",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1"
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

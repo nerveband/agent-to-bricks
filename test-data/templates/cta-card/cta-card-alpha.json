@@ -1,0 +1,222 @@
+{
+  "idx": 264,
+  "title": "CTA Card Alpha",
+  "elementCount": 7,
+  "classCount": 9,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "0f0a50",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "d41cf6",
+          "79276d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rthxpw",
+            "sticky"
+          ]
+        },
+        "label": "CTA Card Alpha"
+      },
+      {
+        "id": "d41cf6",
+        "name": "block",
+        "parent": "0f0a50",
+        "children": [
+          "93d630",
+          "82ac26"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kelpjk"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "93d630",
+        "name": "heading",
+        "parent": "d41cf6",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "upnrdo"
+          ],
+          "_typography": {
+            "text-align": "left"
+          }
+        }
+      },
+      {
+        "id": "82ac26",
+        "name": "text-basic",
+        "parent": "d41cf6",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "_cssGlobalClasses": [
+            "mwlspu"
+          ],
+          "tag": "p"
+        },
+        "label": "Text"
+      },
+      {
+        "id": "79276d",
+        "name": "block",
+        "parent": "0f0a50",
+        "children": [
+          "87bb20",
+          "24424b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zwyuyc"
+          ]
+        },
+        "label": "Action Wrapper"
+      },
+      {
+        "id": "87bb20",
+        "name": "button",
+        "parent": "79276d",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_cssGlobalClasses": [
+            "btn--primary",
+            "fekeir"
+          ]
+        }
+      },
+      {
+        "id": "24424b",
+        "name": "text-basic",
+        "parent": "79276d",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_cssGlobalClasses": [
+            "lrnwnh"
+          ]
+        },
+        "label": "CTA Link"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "sticky",
+        "name": "sticky",
+        "settings": [],
+        "_mappedId": "acss_import_sticky",
+        "modified": 1771254708,
+        "user_id": 1
+      },
+      {
+        "id": "rthxpw",
+        "name": "fr-cta-card-alpha",
+        "settings": {
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "_padding": {
+            "top": "var(--fr-card-padding)",
+            "right": "var(--fr-card-padding)",
+            "bottom": "var(--fr-card-padding)",
+            "left": "var(--fr-card-padding)"
+          },
+          "_rowGap": "var(--fr-card-gap)",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "kelpjk",
+        "name": "fr-cta-card-alpha__content-wrapper",
+        "settings": {
+          "_typography": {
+            "text-align": "center"
+          },
+          "_alignItems": "center",
+          "_rowGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "upnrdo",
+        "name": "fr-cta-card-alpha__heading",
+        "settings": {
+          "_typography": {
+            "text-align": "center"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "mwlspu",
+        "name": "fr-cta-card-alpha__text",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "zwyuyc",
+        "name": "fr-cta-card-alpha__action-wrapper",
+        "settings": {
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_rowGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "fekeir",
+        "name": "fr-cta-card-alpha__button",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "lrnwnh",
+        "name": "fr-cta-card-alpha__cta-link",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

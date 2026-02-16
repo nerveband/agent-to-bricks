@@ -1,0 +1,172 @@
+{
+  "idx": 95,
+  "title": "Image Group Lima",
+  "elementCount": 7,
+  "classCount": 3,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "e20f11",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "68c1e7",
+          "dbc6d1",
+          "3c70c0"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "4pqyit"
+          ]
+        },
+        "label": "Image Group Lima (CSS)"
+      },
+      {
+        "id": "68c1e7",
+        "name": "block",
+        "parent": "e20f11",
+        "children": [
+          "6bd391"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mtscb7"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "6bd391",
+        "name": "image",
+        "parent": "68c1e7",
+        "children": [],
+        "settings": {
+          "tag": "figure",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "4crsfr"
+          ]
+        },
+        "label": "Media",
+        "themeStyles": []
+      },
+      {
+        "id": "3c70c0",
+        "name": "block",
+        "parent": "e20f11",
+        "children": [
+          "1a6a96"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mtscb7"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "1a6a96",
+        "name": "image",
+        "parent": "3c70c0",
+        "children": [],
+        "settings": {
+          "tag": "figure",
+          "_cssGlobalClasses": [
+            "4crsfr"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        },
+        "label": "Media",
+        "themeStyles": []
+      },
+      {
+        "id": "dbc6d1",
+        "name": "block",
+        "parent": "e20f11",
+        "children": [
+          "154d20"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mtscb7"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "154d20",
+        "name": "image",
+        "parent": "dbc6d1",
+        "children": [],
+        "settings": {
+          "tag": "figure",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "4crsfr"
+          ]
+        },
+        "label": "Media",
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "4pqyit",
+        "name": "fr-image-group-lima",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridGap": "calc(var(--grid-gap) / 3)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_cssCustom": ".fr-image-group-lima {\n\t--image-1-object-position: 50% 50%;\n  --image-2-object-position: 50% 50%;\n  --image-3-object-position: 50% 50%;\n}\n\n.fr-image-group-lima > *:first-child {\n\tgrid-row: span 2;\n}\n\n.fr-image-group-lima > *:nth-child(1) img {\n\tobject-position: var(--image-1-object-position);\n}\n.fr-image-group-lima > *:nth-child(2) img {\n\tobject-position: var(--image-2-object-position);\n}\n.fr-image-group-lima > *:nth-child(3) img {\n\tgrid-template-columns: var(--image-3-object-position);\n}",
+          "_cssCustom:mobile_portrait": ".fr-image-group-lima > *:first-child {\n\tgrid-column: span 2;\n  grid-row: span 1;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "mtscb7",
+        "name": "fr-image-group-lima__media-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "4crsfr",
+        "name": "fr-image-group-lima__media",
+        "settings": {
+          "_flexGrow": "1",
+          "_objectFit": "cover",
+          "_aspectRatio": "4/3",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

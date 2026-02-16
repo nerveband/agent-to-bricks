@@ -1,0 +1,116 @@
+{
+  "templateName": "Gallery Bravo",
+  "source": "getframes.io",
+  "capturedAt": "2026-02-16T13:02:07.407Z",
+  "elementCount": 6,
+  "elements": [
+    {
+      "id": "602412",
+      "name": "container",
+      "parent": 0,
+      "children": [
+        "0a50a6",
+        "705dd1"
+      ],
+      "settings": {
+        "_cssGlobalClasses": [
+          "ehqos4"
+        ],
+        "tag": "ul"
+      },
+      "label": "Gallery Bravo (CSS)"
+    },
+    {
+      "id": "0a50a6",
+      "name": "div",
+      "parent": "602412",
+      "children": [
+        "a31249"
+      ],
+      "settings": {
+        "_cssGlobalClasses": [
+          "u7uhqr"
+        ],
+        "hasLoop": true,
+        "query": {
+          "objectType": "post",
+          "post_type": [
+            "attachment"
+          ],
+          "tax_query": [
+            "happyfiles_category::284"
+          ],
+          "orderby": [
+            "rand"
+          ],
+          "posts_per_page": "-1"
+        },
+        "tag": "li"
+      },
+      "label": "Media Wrapper (CSS)"
+    },
+    {
+      "id": "705dd1",
+      "name": "div",
+      "parent": "602412",
+      "children": [
+        "0dac0e",
+        "0ebf4f"
+      ],
+      "settings": {
+        "_cssGlobalClasses": [
+          "u7uhqr",
+          "licypd"
+        ],
+        "tag": "li"
+      },
+      "label": "Button (CSS)"
+    },
+    {
+      "id": "a31249",
+      "name": "image",
+      "parent": "0a50a6",
+      "children": [],
+      "settings": {
+        "_cssGlobalClasses": [
+          "1mvt4w"
+        ],
+        "image": {
+          "useDynamicData": "{post_id}",
+          "size": "image-720"
+        },
+        "link": "lightbox",
+        "lightboxId": "gallery-bravo",
+        "lightboxCropped": true,
+        "tag": "figure",
+        "popupIconDisable": true
+      },
+      "label": "Media"
+    },
+    {
+      "id": "0dac0e",
+      "name": "text-basic",
+      "parent": "705dd1",
+      "children": [],
+      "settings": {
+        "text": "See All {query_results_count:0a50a6} Photos",
+        "tag": "p"
+      },
+      "label": "Button"
+    },
+    {
+      "id": "0ebf4f",
+      "name": "svg",
+      "parent": "705dd1",
+      "children": [],
+      "settings": {
+        "file": {
+          "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+          "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+          "isPlaceholder": true,
+          "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+        }
+      }
+    }
+  ]
+}

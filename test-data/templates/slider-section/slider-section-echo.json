@@ -1,0 +1,923 @@
+{
+  "idx": 177,
+  "title": "Slider Section Echo",
+  "elementCount": 40,
+  "classCount": 20,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "2a78fe",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "60cc1b",
+          "6dc4e5",
+          "b96073"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rvkawq"
+          ]
+        },
+        "label": "Slider Section Echo"
+      },
+      {
+        "id": "60cc1b",
+        "name": "container",
+        "parent": "2a78fe",
+        "children": [
+          "6ae300"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zvlzjr"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "6dc4e5",
+        "name": "div",
+        "parent": "2a78fe",
+        "children": [
+          "f65d5f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kbpjzr"
+          ]
+        },
+        "label": "Background Slider Wrapper"
+      },
+      {
+        "id": "6ae300",
+        "name": "block",
+        "parent": "60cc1b",
+        "children": [
+          "908935",
+          "cfecf0"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lwuqyp"
+          ]
+        },
+        "label": "Main Slider Wrapper (Width)"
+      },
+      {
+        "id": "f65d5f",
+        "name": "fr-slider",
+        "parent": "6dc4e5",
+        "children": [
+          "673bf4",
+          "022eeb",
+          "3ba37c"
+        ],
+        "settings": {
+          "arrowSize": "var(--space-l)",
+          "_cssGlobalClasses": [
+            "owsiij"
+          ],
+          "perPage": "1",
+          "fixedWidth": "100%",
+          "gap": "0",
+          "type": "fade",
+          "isSync": true,
+          "syncId": "fr-slider-section-echo",
+          "fixedHeight": "100%"
+        }
+      },
+      {
+        "id": "673bf4",
+        "name": "block",
+        "parent": "f65d5f",
+        "children": [
+          "10afe3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "azkdmt"
+          ],
+          "tag": "li"
+        },
+        "label": "Slide"
+      },
+      {
+        "id": "10afe3",
+        "name": "image",
+        "parent": "673bf4",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "_cssGlobalClasses": [
+            "lgpdcs"
+          ],
+          "loading": "eager"
+        }
+      },
+      {
+        "id": "cfecf0",
+        "name": "block",
+        "parent": "6ae300",
+        "children": [
+          "78bef6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dmzvhr"
+          ]
+        },
+        "label": "Slider Controls Wrapper"
+      },
+      {
+        "id": "908935",
+        "name": "block",
+        "parent": "6ae300",
+        "children": [
+          "a7d753"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "bhndkm"
+          ]
+        },
+        "label": "Slider Content Wrapper"
+      },
+      {
+        "id": "78bef6",
+        "name": "fr-slider",
+        "parent": "cfecf0",
+        "children": [
+          "c4d31e",
+          "2c1e19",
+          "c4bd04"
+        ],
+        "settings": {
+          "arrowSize": "var(--space-l)",
+          "listTag": "ul",
+          "sliderTag": "nav",
+          "ariaCarousel": "Carousel",
+          "_cssGlobalClasses": [
+            "dypktt"
+          ],
+          "perPage": "3",
+          "isSync": true,
+          "syncId": "fr-slider-section-echo",
+          "isNavigation": true,
+          "type": "slide",
+          "_attributes": [
+            {
+              "id": "phyzqb",
+              "name": "aria-label",
+              "value": "Hero Navigation"
+            }
+          ],
+          "perPage:mobile_portrait": "3",
+          "drag": "false"
+        }
+      },
+      {
+        "id": "c4d31e",
+        "name": "block",
+        "parent": "78bef6",
+        "children": [
+          "891780",
+          "26c66e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ldsond"
+          ],
+          "text": "Slide #1",
+          "tag": "li"
+        },
+        "label": "Slider Control Item (CSS)"
+      },
+      {
+        "id": "891780",
+        "name": "icon",
+        "parent": "c4d31e",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "npuipf"
+          ]
+        }
+      },
+      {
+        "id": "26c66e",
+        "name": "text-basic",
+        "parent": "c4d31e",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ypnrml"
+          ],
+          "tag": "span",
+          "text": "Slide #1"
+        },
+        "label": "Label"
+      },
+      {
+        "id": "c4bd04",
+        "name": "block",
+        "parent": "78bef6",
+        "children": [
+          "9ac566",
+          "5d22fa"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ldsond"
+          ],
+          "text": "Slide #1",
+          "tag": "li"
+        },
+        "label": "Slider Control Item (CSS)"
+      },
+      {
+        "id": "9ac566",
+        "name": "icon",
+        "parent": "c4bd04",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "npuipf"
+          ]
+        }
+      },
+      {
+        "id": "5d22fa",
+        "name": "text-basic",
+        "parent": "c4bd04",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ypnrml"
+          ],
+          "tag": "span",
+          "text": "Slide #3"
+        },
+        "label": "Label"
+      },
+      {
+        "id": "2c1e19",
+        "name": "block",
+        "parent": "78bef6",
+        "children": [
+          "b3fd34",
+          "c332a6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ldsond"
+          ],
+          "text": "Slide #1",
+          "tag": "li"
+        },
+        "label": "Slider Control Item (CSS)"
+      },
+      {
+        "id": "b3fd34",
+        "name": "icon",
+        "parent": "2c1e19",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "npuipf"
+          ]
+        }
+      },
+      {
+        "id": "c332a6",
+        "name": "text-basic",
+        "parent": "2c1e19",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ypnrml"
+          ],
+          "tag": "span",
+          "text": "Slide #2<br>"
+        },
+        "label": "Label"
+      },
+      {
+        "id": "a7d753",
+        "name": "fr-slider",
+        "parent": "908935",
+        "children": [
+          "4f1e9f",
+          "2e52db",
+          "4ef003"
+        ],
+        "settings": {
+          "arrowSize": "var(--space-l)",
+          "listTag": "ul",
+          "sliderTag": "div",
+          "ariaCarousel": "Carousel",
+          "_cssGlobalClasses": [
+            "sfuykf"
+          ],
+          "isSync": true,
+          "syncId": "fr-slider-section-echo",
+          "type": "fade",
+          "perPage": "1",
+          "speed": "-100"
+        }
+      },
+      {
+        "id": "4f1e9f",
+        "name": "block",
+        "parent": "a7d753",
+        "children": [
+          "033758",
+          "98a606",
+          "1e1a0e",
+          "9eee8b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vtiais"
+          ],
+          "tag": "li"
+        },
+        "label": "Item"
+      },
+      {
+        "id": "033758",
+        "name": "heading",
+        "parent": "4f1e9f",
+        "children": [],
+        "settings": {
+          "text": "Slide One",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "mtvtpr"
+          ]
+        }
+      },
+      {
+        "id": "98a606",
+        "name": "text-basic",
+        "parent": "4f1e9f",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "kmrczh"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "1e1a0e",
+        "name": "button",
+        "parent": "4f1e9f",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "9eee8b",
+        "name": "text-link",
+        "parent": "4f1e9f",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wweczz"
+          ],
+          "text": "Secondary call to action",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "b96073",
+        "name": "div",
+        "parent": "2a78fe",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rshmvr"
+          ]
+        },
+        "label": "Overlay"
+      },
+      {
+        "id": "4ef003",
+        "name": "block",
+        "parent": "a7d753",
+        "children": [
+          "72b422",
+          "299288",
+          "1bf277",
+          "5c80d8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vtiais"
+          ],
+          "tag": "li"
+        },
+        "label": "Item"
+      },
+      {
+        "id": "72b422",
+        "name": "heading",
+        "parent": "4ef003",
+        "children": [],
+        "settings": {
+          "text": "Slide Three",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "mtvtpr"
+          ]
+        }
+      },
+      {
+        "id": "299288",
+        "name": "text-basic",
+        "parent": "4ef003",
+        "children": [],
+        "settings": {
+          "text": "If you\u2019re curious, this is Website Ipsum. It was specifically developed for the use on development websites. Other than being less confusing than other Ipsum\u2019s, Website Ipsum is also formatted in patterns more similar to how real copy is formatted on the web today.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "kmrczh"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "1bf277",
+        "name": "button",
+        "parent": "4ef003",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "5c80d8",
+        "name": "text-link",
+        "parent": "4ef003",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wweczz"
+          ],
+          "text": "Secondary call to action",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "2e52db",
+        "name": "block",
+        "parent": "a7d753",
+        "children": [
+          "5f5fe5",
+          "5811ee",
+          "4a898f",
+          "ddaca2"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vtiais"
+          ],
+          "tag": "li"
+        },
+        "label": "Item"
+      },
+      {
+        "id": "5f5fe5",
+        "name": "heading",
+        "parent": "2e52db",
+        "children": [],
+        "settings": {
+          "text": "Slide Two",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "mtvtpr"
+          ]
+        }
+      },
+      {
+        "id": "5811ee",
+        "name": "text-basic",
+        "parent": "2e52db",
+        "children": [],
+        "settings": {
+          "text": "Traditionally our industry has used Lorem Ipsum, which is placeholder text written in Latin. Unfortunately, not everyone is familiar with Lorem Ipsum and that can lead to confusion.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "kmrczh"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "4a898f",
+        "name": "button",
+        "parent": "2e52db",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "ddaca2",
+        "name": "text-link",
+        "parent": "2e52db",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wweczz"
+          ],
+          "text": "Secondary call to action",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "022eeb",
+        "name": "block",
+        "parent": "f65d5f",
+        "children": [
+          "7fc7ce"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "azkdmt"
+          ],
+          "tag": "li"
+        },
+        "label": "Slide"
+      },
+      {
+        "id": "7fc7ce",
+        "name": "image",
+        "parent": "022eeb",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "_cssGlobalClasses": [
+            "lgpdcs"
+          ]
+        }
+      },
+      {
+        "id": "3ba37c",
+        "name": "block",
+        "parent": "f65d5f",
+        "children": [
+          "34188d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "azkdmt"
+          ],
+          "tag": "li"
+        },
+        "label": "Slide"
+      },
+      {
+        "id": "34188d",
+        "name": "image",
+        "parent": "3ba37c",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "_cssGlobalClasses": [
+            "lgpdcs"
+          ]
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "rvkawq",
+        "name": "fr-slider-section-echo",
+        "settings": {
+          "_position": "relative",
+          "_padding:tablet_portrait": {
+            "top": "0",
+            "right": "0",
+            "bottom": "0",
+            "left": "0"
+          },
+          "_overflow": "hidden",
+          "_isolation": "isolate"
+        },
+        "_exists": false
+      },
+      {
+        "id": "zvlzjr",
+        "name": "fr-slider-section-echo__inner",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "kbpjzr",
+        "name": "fr-slider-section-echo__background-slider-wrapper",
+        "settings": {
+          "_width": "100%",
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_zIndex": "-1",
+          "_position:tablet_portrait": "relative",
+          "_direction": "column",
+          "_display": "flex",
+          "_justifyContent": "center",
+          "_overflow": "hidden",
+          "_height": "100%"
+        },
+        "modified": 1734976314,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "lwuqyp",
+        "name": "fr-slider-section-echo__main-slider-wrapper",
+        "settings": {
+          "_width": "100%",
+          "_background": {
+            "color": {
+              "raw": "var(--white)"
+            }
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_overflow": "hidden",
+          "_width:tablet_portrait": "100%",
+          "_border:tablet_portrait": {
+            "radius": {
+              "top": "0",
+              "right": "0",
+              "bottom": "0",
+              "left": "0"
+            }
+          },
+          "_widthMax": "640px",
+          "_widthMax:tablet_portrait": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "owsiij",
+        "name": "fr-slider-section-echo__background-slider",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "azkdmt",
+        "name": "fr-slider-section-echo__background-slide",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "lgpdcs",
+        "name": "fr-slider-section-echo__slide-image",
+        "settings": {
+          "_objectFit": "cover",
+          "_width": "100%",
+          "_height": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "dmzvhr",
+        "name": "fr-slider-section-echo__slider-controls-wrapper",
+        "settings": {
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "_order": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "bhndkm",
+        "name": "fr-slider-section-echo__content-slider-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "dypktt",
+        "name": "fr-slider-section-echo__slider-controls",
+        "settings": {
+          "_width": "100%"
+        },
+        "modified": 1719955660,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "ldsond",
+        "name": "fr-slider-section-echo__slider-control-item",
+        "settings": {
+          "_alignItems": "center",
+          "_rowGap": "calc(var(--content-gap) / 3)",
+          "_justifyContent": "center",
+          "_cssCustom": ".fr-slider-section-echo__slider-control-item {\n  --border-color: var(--neutral-light);\n\t--active-border-color: var(--neutral);\n  --border-hover-color: var(--neutral-trans-80);\n  --active-border-thickness: 2px;\n  transition: .3s ease;\n}\n\n.fr-slider-section-echo__slider-control-item {\n\tborder-block-end: var(--active-border-thickness) solid var(--border-color);\n}\n\n.fr-slider-section-echo__slider-control-item:hover {\n\tborder-block-end-color: var(--border-hover-color);\n}\n\n.fr-slider-section-echo__slider-control-item.is-active {\n\tborder-block-end: var(--active-border-thickness) solid var(--active-border-color);\n}\n\n.fr-slider-section-echo__slider-control-item:focus {\n\toutline: none!important;\n  border-bottom: var(--active-border-thickness) solid var(--active-border-color);\n}",
+          "_padding": {
+            "top": "var(--space-m)",
+            "right": "var(--space-m)",
+            "bottom": "var(--space-m)",
+            "left": "var(--space-m)"
+          },
+          "_padding:mobile_portrait": {
+            "top": "var(--space-s)",
+            "right": "var(--space-s)",
+            "bottom": "var(--space-s)",
+            "left": "var(--space-s)"
+          },
+          "_width": "auto",
+          "_cursor": "pointer"
+        },
+        "modified": 1729865672,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "npuipf",
+        "name": "fr-slider-section-echo__slider-control-icon",
+        "settings": {
+          "iconSize": "var(--text-l)",
+          "_height": "1em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ypnrml",
+        "name": "fr-slider-section-echo__slider-control-label",
+        "settings": {
+          "_typography": {
+            "font-weight": "700"
+          },
+          "_typography:mobile_landscape": {
+            "font-size": "var(--text-s)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "sfuykf",
+        "name": "fr-slider-section-echo__content-slider",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "vtiais",
+        "name": "fr-slider-section-echo__content-slider-item",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_padding": {
+            "top": "var(--space-l)",
+            "right": "var(--space-l)",
+            "bottom": "var(--space-l)",
+            "left": "var(--space-l)"
+          },
+          "_cssCustom": ".fr-slider-section-echo__content-slider-item a.bricks-button {\n  margin-block-start: auto;\n}"
+        },
+        "modified": 1729865493,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "mtvtpr",
+        "name": "fr-slider-section-echo__content-slide-heading",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--h1)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "kmrczh",
+        "name": "fr-slider-section-echo__content-slide-lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "wweczz",
+        "name": "fr-slider-section-echo__content-slide-link",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "rshmvr",
+        "name": "fr-slider-section-echo__overlay",
+        "settings": {
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_background": {
+            "color": {
+              "raw": "var(--neutral-trans-80)"
+            }
+          },
+          "_zIndex": "-1"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

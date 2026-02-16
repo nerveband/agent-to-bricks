@@ -1,0 +1,201 @@
+{
+  "idx": 441,
+  "title": "Hero Bravo",
+  "elementCount": 7,
+  "classCount": 9,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "c80d0d",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "1114b4"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vhcjzf",
+            "vtwwtv"
+          ]
+        },
+        "label": "Hero Bravo"
+      },
+      {
+        "id": "1114b4",
+        "name": "container",
+        "parent": "c80d0d",
+        "children": [
+          "cb27df",
+          "65b2db",
+          "58abef"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "nfbzvx"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "cb27df",
+        "name": "heading",
+        "parent": "1114b4",
+        "children": [],
+        "settings": {
+          "text": "Your awesome heading",
+          "_cssGlobalClasses": [
+            "lyvfpo"
+          ],
+          "tag": "h1"
+        }
+      },
+      {
+        "id": "65b2db",
+        "name": "text-basic",
+        "parent": "1114b4",
+        "children": [],
+        "settings": {
+          "text": "Frames speeds up your wireframing and development workflow so you can build beautiful websites in half the time with zero limits on your creativity. ",
+          "_cssGlobalClasses": [
+            "ugddao",
+            "kddjfd"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "58abef",
+        "name": "div",
+        "parent": "1114b4",
+        "children": [
+          "aa6a00",
+          "2c52dd"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "konmnk"
+          ]
+        },
+        "label": "CTA Links Alpha"
+      },
+      {
+        "id": "aa6a00",
+        "name": "button",
+        "parent": "58abef",
+        "children": [],
+        "settings": {
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ],
+          "text": "Call to action"
+        },
+        "label": "Primary Action"
+      },
+      {
+        "id": "2c52dd",
+        "name": "button",
+        "parent": "58abef",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary",
+            "btn--outline"
+          ]
+        },
+        "label": "Sectiondary Action"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771256218,
+        "user_id": 1
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "btn--outline",
+        "name": "btn--outline",
+        "settings": [],
+        "_mappedId": "acss_import_btn--outline",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "vtwwtv",
+        "name": "fr-hero",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_mappedId": "vtwwtv",
+        "modified": 1771256250,
+        "user_id": 1
+      },
+      {
+        "id": "konmnk",
+        "name": "fr-cta-links-alpha",
+        "settings": {
+          "_columnGap": "var(--content-gap, 30px)",
+          "_rowGap": "var(--content-gap, 30px)",
+          "_display": "flex",
+          "_flexWrap": "wrap",
+          "_cssCustom:mobile_portrait": ".fr-cta-links-alpha > * {\n  width: 100% !important;\n}",
+          "_direction": "row"
+        },
+        "_exists": false
+      },
+      {
+        "id": "vhcjzf",
+        "name": "fr-hero-bravo",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "nfbzvx",
+        "name": "fr-hero-bravo__content-wrapper",
+        "settings": {
+          "_alignItems": "center",
+          "_justifyContent": "center",
+          "_rowGap": "var(--fr-content-gap)",
+          "_widthMax": "px",
+          "_typography": {
+            "text-align": "center"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "lyvfpo",
+        "name": "fr-hero-bravo__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ugddao",
+        "name": "fr-hero-bravo__lede",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

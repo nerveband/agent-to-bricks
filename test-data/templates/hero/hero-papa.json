@@ -1,0 +1,356 @@
+{
+  "idx": 185,
+  "title": "Hero Papa",
+  "elementCount": 13,
+  "classCount": 14,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "79e23d",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "a6c871",
+          "89788a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dtvpbv"
+          ]
+        },
+        "label": "Hero Papa"
+      },
+      {
+        "id": "a6c871",
+        "name": "container",
+        "parent": "79e23d",
+        "children": [
+          "71f5f4",
+          "8c6d1d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ualesg"
+          ]
+        },
+        "label": "Top Row"
+      },
+      {
+        "id": "89788a",
+        "name": "container",
+        "parent": "79e23d",
+        "children": [
+          "213a23",
+          "607f97"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hdfquk"
+          ]
+        },
+        "label": "Bottom Row"
+      },
+      {
+        "id": "71f5f4",
+        "name": "block",
+        "parent": "a6c871",
+        "children": [
+          "53acc9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lqeqgx"
+          ]
+        },
+        "label": "Heading Wrapper"
+      },
+      {
+        "id": "8c6d1d",
+        "name": "block",
+        "parent": "a6c871",
+        "children": [
+          "e58d77"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kwwryx"
+          ]
+        },
+        "label": "List Wrapper"
+      },
+      {
+        "id": "213a23",
+        "name": "block",
+        "parent": "89788a",
+        "children": [
+          "d7dd5a",
+          "4efce4",
+          "dd2adf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "bkumho"
+          ]
+        },
+        "label": "Lede Wrapper"
+      },
+      {
+        "id": "607f97",
+        "name": "block",
+        "parent": "89788a",
+        "children": [
+          "61338a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "awigmu"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "53acc9",
+        "name": "heading",
+        "parent": "71f5f4",
+        "children": [],
+        "settings": {
+          "text": "Big bold headline to really fill up the space in this hero section",
+          "tag": "h1",
+          "_cssGlobalClasses": [
+            "tpznvx"
+          ]
+        }
+      },
+      {
+        "id": "e58d77",
+        "name": "text",
+        "parent": "8c6d1d",
+        "children": [],
+        "settings": {
+          "text": "<ol><li>First talking point</li><li>Second talking point</li><li>Third talking point</li><li>Fourth talking point</li><li>Fifth talking point</li><li>Sixth talking point</li></ol>",
+          "_cssGlobalClasses": [
+            "mpzbzg"
+          ]
+        },
+        "label": "List (CSS)"
+      },
+      {
+        "id": "d7dd5a",
+        "name": "text-basic",
+        "parent": "213a23",
+        "children": [],
+        "settings": {
+          "text": "We recommend making this callout text a little bigger to get the visitors attention.",
+          "_cssGlobalClasses": [
+            "rwgjzl"
+          ],
+          "tag": "p"
+        },
+        "label": "Callout"
+      },
+      {
+        "id": "4efce4",
+        "name": "text-basic",
+        "parent": "213a23",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "_cssGlobalClasses": [
+            "qrwoer"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "dd2adf",
+        "name": "button",
+        "parent": "213a23",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "_cssGlobalClasses": [
+            "btn--primary",
+            "dnhfon"
+          ]
+        }
+      },
+      {
+        "id": "61338a",
+        "name": "video",
+        "parent": "607f97",
+        "children": [],
+        "settings": {
+          "videoType": "youtube",
+          "youTubeId": "5DGo0AYOJ7s",
+          "youtubeControls": true,
+          "youtubeShowinfo": true,
+          "vimeoByline": true,
+          "vimeoTitle": true,
+          "vimeoPortrait": true,
+          "fileControls": true,
+          "_cssGlobalClasses": [
+            "htckaz"
+          ]
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "dtvpbv",
+        "name": "fr-hero-papa",
+        "settings": {
+          "_rowGap": "calc(var(--grid-gap) * 2)",
+          "_padding": {
+            "bottom": "0"
+          },
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "_padding:tablet_portrait": {
+            "bottom": "var(--section-space-m)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "ualesg",
+        "name": "fr-hero-papa__top-row",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-3-2)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_gridGap": "calc(var(--grid-gap) * 2)",
+          "_alignItemsGrid": "flex-end",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)",
+          "_gridGap:mobile_landscape": "var(--grid-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "hdfquk",
+        "name": "fr-hero-papa__bottom-row",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-2-3)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_gridGap": "calc(var(--grid-gap) * 2)",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "lqeqgx",
+        "name": "fr-hero-papa__heading-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "kwwryx",
+        "name": "fr-hero-papa__list-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "bkumho",
+        "name": "fr-hero-papa__lede-wrapper",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 2)",
+          "_width": "100%",
+          "_widthMax": "38ch",
+          "_width:tablet_portrait": "100%",
+          "_widthMax:tablet_portrait": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "awigmu",
+        "name": "fr-hero-papa__media-wrapper",
+        "settings": {
+          "_margin": {
+            "bottom": "calc(var(--section-space-m) * -1)"
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_overflow": "hidden",
+          "_margin:tablet_portrait": {
+            "bottom": "0"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "tpznvx",
+        "name": "fr-hero-papa__heading",
+        "settings": {
+          "_typography:mobile_landscape": {
+            "font-size": "var(--h1)"
+          },
+          "_typography": {
+            "font-size": "calc(var(--h1) * 1.5)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "mpzbzg",
+        "name": "fr-hero-papa__list",
+        "settings": {
+          "_cssCustom": ".fr-hero-papa__list {\n  /* How many list columns should there be? */\n  --column-count: 2;\n  /* List item font size? */\n\t--list-item-font-size: var(--text-l);\n  /* Row gap between list items? */\n  --list-item-margin: 1em;\n  /* Column gap inside the list? */\n  --list-item-column-gap: calc(var(--grid-gap) * 2);\n  /* What column width should the columns stack at? */\n  --minimum-column-width: 10em;\n  /* Manage the left list padding */\n  --left-padding: 1.3em;\n}\n\n.fr-hero-papa__list ol {\n  padding-inline-start: var(--left-padding);\n  display: block;\n  column-count: var(--column-count);\n  column-width: var(--minimum-column-width);\n  gap: var(--list-item-column-gap);\n  margin-block-end: calc(var(--list-item-margin) * -1);\n}\n\n.fr-hero-papa__list ol li {\n\tfont-size: var(--list-item-font-size);\n  margin-block-end: var(--list-item-margin);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "rwgjzl",
+        "name": "fr-hero-papa__callout",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-l)",
+            "font-weight": "600"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "qrwoer",
+        "name": "fr-hero-papa__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "dnhfon",
+        "name": "fr-hero-papa__cta",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "htckaz",
+        "name": "fr-hero-papa__media",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

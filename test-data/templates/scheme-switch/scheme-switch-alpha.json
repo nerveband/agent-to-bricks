@@ -1,0 +1,393 @@
+{
+  "idx": 154,
+  "title": "Scheme Switch Alpha",
+  "elementCount": 8,
+  "classCount": 8,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "d18326",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "be29bf",
+          "8a61af",
+          "836f89"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dpniqa"
+          ]
+        },
+        "label": "Scheme Switch Alpha"
+      },
+      {
+        "id": "be29bf",
+        "name": "div",
+        "parent": "d18326",
+        "children": [
+          "4099ef",
+          "4e233d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hmtxoa",
+            "ualwuq"
+          ],
+          "tag": "custom",
+          "customTag": "button"
+        },
+        "label": "Button (Main)"
+      },
+      {
+        "id": "4099ef",
+        "name": "icon",
+        "parent": "be29bf",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "1.5em",
+            "fill": {
+              "raw": "var(--black)"
+            }
+          },
+          "_cssGlobalClasses": [
+            "iapozp",
+            "ekltgc"
+          ]
+        },
+        "label": "Icon (Main)"
+      },
+      {
+        "id": "4e233d",
+        "name": "text-basic",
+        "parent": "be29bf",
+        "children": [],
+        "settings": {
+          "text": "Dark Mode",
+          "_cssGlobalClasses": [
+            "hzlneo"
+          ],
+          "tag": "span"
+        },
+        "label": "Label (CSS - Don't Delete)"
+      },
+      {
+        "id": "8a61af",
+        "name": "div",
+        "parent": "d18326",
+        "children": [
+          "f37053",
+          "ea18e3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hmtxoa",
+            "wdbkmx"
+          ],
+          "tag": "custom",
+          "customTag": "button",
+          "_attributes": [
+            {
+              "id": "ktkstx",
+              "name": "style",
+              "value": "display: none;"
+            }
+          ]
+        },
+        "label": "Button (Alt)"
+      },
+      {
+        "id": "f37053",
+        "name": "icon",
+        "parent": "8a61af",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "1.5em",
+            "fill": {
+              "raw": "var(--black)"
+            }
+          },
+          "_cssGlobalClasses": [
+            "iapozp",
+            "drrjne"
+          ]
+        },
+        "label": "Icon (Alt)"
+      },
+      {
+        "id": "ea18e3",
+        "name": "text-basic",
+        "parent": "8a61af",
+        "children": [],
+        "settings": {
+          "text": "Light Mode",
+          "_cssGlobalClasses": [
+            "hzlneo"
+          ],
+          "tag": "span"
+        },
+        "label": "Label (CSS - Don't Delete)"
+      },
+      {
+        "id": "836f89",
+        "name": "code",
+        "parent": "d18326",
+        "children": [],
+        "settings": {
+          "noRoot": true,
+          "executeCode": true,
+          "user_id": 1,
+          "time": 1731706213,
+          "javascriptCode": "  document.addEventListener('DOMContentLoaded', function() {\n\t\t\n    // Identify Buttons\n    const mainButton = document.querySelector('.scheme-switch-alpha__button--main');\n    const altButton = document.querySelector('.scheme-switch-alpha__button--alt');\n    \n    // Set Focus on Click With Slight Delay\n    altButton.addEventListener('click', function() {\n      setTimeout(function() {\n        mainButton.focus();\n      }, 1);\n    });\n    mainButton.addEventListener('click', function() {\n      setTimeout(function() {\n        altButton.focus();\n      }, 1);\n    });\n  });"
+        },
+        "label": "Accessibility (Don't Delete)"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "dpniqa",
+        "name": "scheme-switch-alpha",
+        "settings": {
+          "_columnGap": ".5em",
+          "_background": {
+            "color": {
+              "raw": "transparent"
+            }
+          },
+          "_interactions": [
+            {
+              "id": "oujfbb",
+              "trigger": "contentLoaded",
+              "action": "setAttribute",
+              "actionAttributeKey": "class",
+              "actionAttributeValue": "color-scheme--alt",
+              "target": "custom",
+              "targetSelector": "html",
+              "interactionConditions": [
+                {
+                  "id": "rccxkc",
+                  "conditionType": "localStorage",
+                  "storageKey": "prefers-color-scheme",
+                  "storageCompare": "==",
+                  "storageCompareValue": "alt"
+                }
+              ]
+            }
+          ],
+          "_display": "flex"
+        },
+        "_exists": false
+      },
+      {
+        "id": "hmtxoa",
+        "name": "scheme-switch-alpha__button",
+        "settings": {
+          "_display": "flex",
+          "_columnGap": ".5em",
+          "_alignItems": "center",
+          "_background": {
+            "color": {
+              "raw": "transparent"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "ualwuq",
+        "name": "scheme-switch-alpha__button--main",
+        "settings": {
+          "_interactions": [
+            {
+              "id": "rsfiic",
+              "trigger": "contentLoaded",
+              "action": "hide",
+              "interactionConditions": [
+                {
+                  "id": "zcgfgx",
+                  "conditionType": "localStorage",
+                  "storageKey": "prefers-color-scheme",
+                  "storageCompare": "==",
+                  "storageCompareValue": "alt"
+                }
+              ],
+              "interactionConditionsRelation": "or"
+            },
+            {
+              "id": "ahjvep",
+              "trigger": "click",
+              "action": "show",
+              "target": "custom",
+              "targetSelector": ".scheme-switch-alpha__button--alt",
+              "titleEditable": "Show Alt on Click",
+              "actionAttributeKey": "class",
+              "actionAttributeValue": "active"
+            },
+            {
+              "id": "bjmpmj",
+              "titleEditable": "Scheme on Click",
+              "trigger": "click",
+              "action": "setAttribute",
+              "actionAttributeKey": "class",
+              "actionAttributeValue": "color-scheme--alt",
+              "target": "custom",
+              "targetSelector": "html"
+            },
+            {
+              "id": "ayfboe",
+              "titleEditable": "Set Preference",
+              "trigger": "click",
+              "action": "storageAdd",
+              "storageType": "localStorage",
+              "actionAttributeKey": "prefers-color-scheme",
+              "actionAttributeValue": "alt"
+            },
+            {
+              "id": "bvamfp",
+              "titleEditable": "Animate Alt Icon",
+              "trigger": "click",
+              "action": "startAnimation",
+              "animationType": "jello",
+              "animationDuration": "1s",
+              "target": "custom",
+              "targetSelector": ".scheme-switch-alpha__icon--alt"
+            },
+            {
+              "id": "nkdfmc",
+              "titleEditable": "Hide on Click",
+              "trigger": "click",
+              "action": "hide"
+            }
+          ]
+        },
+        "_exists": false
+      },
+      {
+        "id": "iapozp",
+        "name": "scheme-switch-alpha__icon",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ekltgc",
+        "name": "scheme-switch-alpha__icon--main",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "hzlneo",
+        "name": "scheme-switch-alpha__label",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-dark)"
+            },
+            "line-height": "1",
+            "font-size": "var(--text-s)"
+          },
+          "_cssCustom": "/* \n\nDO NOT DELETE!\nIf you remove this label, the button will not be accessible.\nIf you don't want the label, apply the class .hidden-accessible to it. That will hide the label from sighted users while retaining accessibility for the button.\n\n*/"
+        },
+        "modified": 1748329837,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "wdbkmx",
+        "name": "scheme-switch-alpha__button--alt",
+        "settings": {
+          "_interactions": [
+            {
+              "id": "xztqwp",
+              "trigger": "contentLoaded",
+              "action": "removeAttribute",
+              "target": "self",
+              "interactionConditions": [
+                {
+                  "id": "bpmlfh",
+                  "conditionType": "localStorage",
+                  "storageKey": "prefers-color-scheme",
+                  "storageCompare": "==",
+                  "storageCompareValue": "alt"
+                }
+              ],
+              "interactionConditionsRelation": "or",
+              "actionAttributeKey": "style",
+              "actionAttributeValue": "display: none;"
+            },
+            {
+              "id": "euygxf",
+              "trigger": "click",
+              "action": "show",
+              "target": "custom",
+              "targetSelector": ".scheme-switch-alpha__button--main",
+              "titleEditable": "Show Main on Click"
+            },
+            {
+              "id": "llxzgh",
+              "titleEditable": "Scheme Change",
+              "trigger": "click",
+              "action": "removeAttribute",
+              "actionAttributeKey": "class",
+              "actionAttributeValue": "color-scheme--alt",
+              "target": "custom",
+              "targetSelector": "html"
+            },
+            {
+              "id": "vyxfyk",
+              "titleEditable": "Set Preference",
+              "trigger": "click",
+              "action": "storageAdd",
+              "storageType": "localStorage",
+              "actionAttributeKey": "prefers-color-scheme",
+              "actionAttributeValue": "main"
+            },
+            {
+              "id": "jjfdlo",
+              "titleEditable": "Animate Main Btn",
+              "trigger": "click",
+              "action": "startAnimation",
+              "animationType": "jello",
+              "animationDuration": "1s",
+              "target": "custom",
+              "targetSelector": ".scheme-switch-alpha__icon--main"
+            },
+            {
+              "id": "ymrspz",
+              "titleEditable": "Hide on Click",
+              "trigger": "click",
+              "action": "hide"
+            }
+          ]
+        },
+        "_exists": false
+      },
+      {
+        "id": "drrjne",
+        "name": "scheme-switch-alpha__icon--alt",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

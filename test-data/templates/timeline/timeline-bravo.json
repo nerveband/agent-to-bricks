@@ -1,0 +1,903 @@
+{
+  "idx": 110,
+  "title": "Timeline Bravo",
+  "elementCount": 45,
+  "classCount": 10,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "e5d69e",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "6d8b71",
+          "efb56f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gxnhuv"
+          ],
+          "_direction": "column"
+        },
+        "label": "Timeline Bravo (CSS)"
+      },
+      {
+        "id": "6d8b71",
+        "name": "fr-slider",
+        "parent": "e5d69e",
+        "children": [
+          "9a444a",
+          "c30376",
+          "4f4d6e",
+          "bed3b5",
+          "27cc29",
+          "517d81"
+        ],
+        "settings": {
+          "height": "50vh",
+          "playButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-play"
+          },
+          "pauseButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-pause"
+          },
+          "arrowSize": "var(--space-l)",
+          "prevArrow": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "15",
+            "width": "15"
+          },
+          "prevArrowTop": "50%",
+          "prevArrowLeft": "var(--space-xs)",
+          "nextArrowTop": "50%",
+          "nextArrowRight": "var(--space-xs)",
+          "sliderTag": "div",
+          "listTag": "ol",
+          "ariaCarousel": "Carousel",
+          "fixedHeight": "auto",
+          "_cssGlobalClasses": [
+            "slbjqb"
+          ],
+          "gap": "var(--grid-gap)",
+          "type": "loop",
+          "focus": "center",
+          "nextArrow": {
+            "library": "themify",
+            "icon": "ti-arrow-right"
+          },
+          "drag": "false",
+          "isSync": true,
+          "syncId": "fr-timeline-bravo",
+          "perPage:tablet_portrait": "3",
+          "perPage": "5",
+          "perPage:mobile_landscape": "1"
+        }
+      },
+      {
+        "id": "9a444a",
+        "name": "block",
+        "parent": "6d8b71",
+        "children": [
+          "2ab5a1",
+          "1a2651"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eu2kdc"
+          ],
+          "tag": "li"
+        },
+        "label": "Timeline Card"
+      },
+      {
+        "id": "2ab5a1",
+        "name": "block",
+        "parent": "9a444a",
+        "children": [
+          "ba0fb5",
+          "122ffd",
+          "dd7b49"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "y5096o"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "ba0fb5",
+        "name": "heading",
+        "parent": "2ab5a1",
+        "children": [],
+        "settings": {
+          "text": "Placeholder headline",
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "mge3t9"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "122ffd",
+        "name": "text-basic",
+        "parent": "2ab5a1",
+        "children": [],
+        "settings": {
+          "text": "Here goes your text ... Select any part of your text to access the formatting toolbar.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "ao4enh"
+          ]
+        },
+        "label": "Description"
+      },
+      {
+        "id": "dd7b49",
+        "name": "text-basic",
+        "parent": "2ab5a1",
+        "children": [],
+        "settings": {
+          "text": "2007",
+          "tag": "custom",
+          "customTag": "time",
+          "_cssGlobalClasses": [
+            "3qye36"
+          ]
+        },
+        "label": "Date"
+      },
+      {
+        "id": "1a2651",
+        "name": "block",
+        "parent": "9a444a",
+        "children": [
+          "c85077"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "41y54k"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "c85077",
+        "name": "image",
+        "parent": "1a2651",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "_cssGlobalClasses": [
+            "zkj6ef"
+          ],
+          "caption": "none",
+          "tag": "figure"
+        },
+        "label": "Image"
+      },
+      {
+        "id": "c30376",
+        "name": "block",
+        "parent": "6d8b71",
+        "children": [
+          "1b3773",
+          "d9d628"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eu2kdc"
+          ],
+          "tag": "li"
+        },
+        "label": "Timeline Card"
+      },
+      {
+        "id": "1b3773",
+        "name": "block",
+        "parent": "c30376",
+        "children": [
+          "d4fdd7",
+          "d0dd0d",
+          "93a47b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "y5096o"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "d4fdd7",
+        "name": "heading",
+        "parent": "1b3773",
+        "children": [],
+        "settings": {
+          "text": "Placeholder headline",
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "mge3t9"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "d0dd0d",
+        "name": "text-basic",
+        "parent": "1b3773",
+        "children": [],
+        "settings": {
+          "text": "Here goes your text ... Select any part of your text to access the formatting toolbar.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "ao4enh"
+          ]
+        },
+        "label": "Description"
+      },
+      {
+        "id": "93a47b",
+        "name": "text-basic",
+        "parent": "1b3773",
+        "children": [],
+        "settings": {
+          "text": "2008",
+          "tag": "custom",
+          "customTag": "time",
+          "_cssGlobalClasses": [
+            "3qye36"
+          ]
+        },
+        "label": "Date"
+      },
+      {
+        "id": "d9d628",
+        "name": "block",
+        "parent": "c30376",
+        "children": [
+          "887194"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "41y54k"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "887194",
+        "name": "image",
+        "parent": "d9d628",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "_cssGlobalClasses": [
+            "zkj6ef"
+          ],
+          "caption": "none",
+          "tag": "figure"
+        },
+        "label": "Image"
+      },
+      {
+        "id": "4f4d6e",
+        "name": "block",
+        "parent": "6d8b71",
+        "children": [
+          "0eefa2",
+          "bbdd79"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eu2kdc"
+          ],
+          "tag": "li"
+        },
+        "label": "Timeline Card"
+      },
+      {
+        "id": "0eefa2",
+        "name": "block",
+        "parent": "4f4d6e",
+        "children": [
+          "f6000f",
+          "5fd3c7",
+          "aa855d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "y5096o"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "f6000f",
+        "name": "heading",
+        "parent": "0eefa2",
+        "children": [],
+        "settings": {
+          "text": "Placeholder headline",
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "mge3t9"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "5fd3c7",
+        "name": "text-basic",
+        "parent": "0eefa2",
+        "children": [],
+        "settings": {
+          "text": "Here goes your text ... Select any part of your text to access the formatting toolbar.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "ao4enh"
+          ]
+        },
+        "label": "Description"
+      },
+      {
+        "id": "aa855d",
+        "name": "text-basic",
+        "parent": "0eefa2",
+        "children": [],
+        "settings": {
+          "text": "2009",
+          "tag": "custom",
+          "customTag": "time",
+          "_cssGlobalClasses": [
+            "3qye36"
+          ]
+        },
+        "label": "Date"
+      },
+      {
+        "id": "bbdd79",
+        "name": "block",
+        "parent": "4f4d6e",
+        "children": [
+          "70d7b2"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "41y54k"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "70d7b2",
+        "name": "image",
+        "parent": "bbdd79",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "_cssGlobalClasses": [
+            "zkj6ef"
+          ],
+          "caption": "none",
+          "tag": "figure"
+        },
+        "label": "Image"
+      },
+      {
+        "id": "bed3b5",
+        "name": "block",
+        "parent": "6d8b71",
+        "children": [
+          "8f60bd",
+          "1df607"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eu2kdc"
+          ],
+          "tag": "li"
+        },
+        "label": "Timeline Card"
+      },
+      {
+        "id": "8f60bd",
+        "name": "block",
+        "parent": "bed3b5",
+        "children": [
+          "ad2961",
+          "321ca2",
+          "660760"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "y5096o"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "ad2961",
+        "name": "heading",
+        "parent": "8f60bd",
+        "children": [],
+        "settings": {
+          "text": "Placeholder headline",
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "mge3t9"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "321ca2",
+        "name": "text-basic",
+        "parent": "8f60bd",
+        "children": [],
+        "settings": {
+          "text": "Here goes your text ... Select any part of your text to access the formatting toolbar.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "ao4enh"
+          ]
+        },
+        "label": "Description"
+      },
+      {
+        "id": "660760",
+        "name": "text-basic",
+        "parent": "8f60bd",
+        "children": [],
+        "settings": {
+          "text": "2004",
+          "tag": "custom",
+          "customTag": "time",
+          "_cssGlobalClasses": [
+            "3qye36"
+          ]
+        },
+        "label": "Date"
+      },
+      {
+        "id": "1df607",
+        "name": "block",
+        "parent": "bed3b5",
+        "children": [
+          "23cb5a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "41y54k"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "23cb5a",
+        "name": "image",
+        "parent": "1df607",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "_cssGlobalClasses": [
+            "zkj6ef"
+          ],
+          "caption": "none",
+          "tag": "figure"
+        },
+        "label": "Image"
+      },
+      {
+        "id": "27cc29",
+        "name": "block",
+        "parent": "6d8b71",
+        "children": [
+          "91c119",
+          "124602"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eu2kdc"
+          ],
+          "tag": "li"
+        },
+        "label": "Timeline Card"
+      },
+      {
+        "id": "91c119",
+        "name": "block",
+        "parent": "27cc29",
+        "children": [
+          "be5ab5",
+          "66f769",
+          "87fa56"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "y5096o"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "be5ab5",
+        "name": "heading",
+        "parent": "91c119",
+        "children": [],
+        "settings": {
+          "text": "Placeholder headline",
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "mge3t9"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "66f769",
+        "name": "text-basic",
+        "parent": "91c119",
+        "children": [],
+        "settings": {
+          "text": "Here goes your text ... Select any part of your text to access the formatting toolbar.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "ao4enh"
+          ]
+        },
+        "label": "Description"
+      },
+      {
+        "id": "87fa56",
+        "name": "text-basic",
+        "parent": "91c119",
+        "children": [],
+        "settings": {
+          "text": "2005",
+          "tag": "custom",
+          "customTag": "time",
+          "_cssGlobalClasses": [
+            "3qye36"
+          ]
+        },
+        "label": "Date"
+      },
+      {
+        "id": "124602",
+        "name": "block",
+        "parent": "27cc29",
+        "children": [
+          "cc63a8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "41y54k"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "cc63a8",
+        "name": "image",
+        "parent": "124602",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "_cssGlobalClasses": [
+            "zkj6ef"
+          ],
+          "caption": "none",
+          "tag": "figure"
+        },
+        "label": "Image"
+      },
+      {
+        "id": "517d81",
+        "name": "block",
+        "parent": "6d8b71",
+        "children": [
+          "192e32",
+          "725f30"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eu2kdc"
+          ],
+          "tag": "li"
+        },
+        "label": "Timeline Card"
+      },
+      {
+        "id": "192e32",
+        "name": "block",
+        "parent": "517d81",
+        "children": [
+          "48f855",
+          "8a7da6",
+          "0a71d2"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "y5096o"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "48f855",
+        "name": "heading",
+        "parent": "192e32",
+        "children": [],
+        "settings": {
+          "text": "Placeholder headline",
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "mge3t9"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "8a7da6",
+        "name": "text-basic",
+        "parent": "192e32",
+        "children": [],
+        "settings": {
+          "text": "Here goes your text ... Select any part of your text to access the formatting toolbar.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "ao4enh"
+          ]
+        },
+        "label": "Description"
+      },
+      {
+        "id": "0a71d2",
+        "name": "text-basic",
+        "parent": "192e32",
+        "children": [],
+        "settings": {
+          "text": "2006",
+          "tag": "custom",
+          "customTag": "time",
+          "_cssGlobalClasses": [
+            "3qye36"
+          ]
+        },
+        "label": "Date"
+      },
+      {
+        "id": "725f30",
+        "name": "block",
+        "parent": "517d81",
+        "children": [
+          "0d1f16"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "41y54k"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "0d1f16",
+        "name": "image",
+        "parent": "725f30",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "_cssGlobalClasses": [
+            "zkj6ef"
+          ],
+          "caption": "none",
+          "tag": "figure"
+        },
+        "label": "Image"
+      },
+      {
+        "id": "efb56f",
+        "name": "fr-slider-controls",
+        "parent": "e5d69e",
+        "children": [],
+        "settings": {
+          "type": "nextPrev",
+          "progressHeight": ".5rem",
+          "progressWidth": "100%",
+          "arrows": true,
+          "prevArrow": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "fill": {
+              "raw": "var(--action)"
+            }
+          },
+          "prevArrowAriaLabel": "Previous slide",
+          "nextArrow": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "fill": {
+              "raw": "var(--action)"
+            }
+          },
+          "nextArrowAriaLabel": "Next slide",
+          "_cssGlobalClasses": [
+            "fvqril"
+          ],
+          "syncId": "fr-timeline-bravo"
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "gxnhuv",
+        "name": "fr-timeline-bravo",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_position": "relative",
+          "_cssCustom": ".fr-timeline-bravo {\n\t--channel-height: 80px;\n  --channel-line-color: var(--neutral-light);\n  --channel-indicator-size: 20px;\n  --channel-indicator-color: var(--primary);\n}\n\n.fr-timeline-bravo__slider::before {\n\tcontent: '';\n  width: 100vw;\n  height: var(--channel-line-height, 2px);\n  background-color: var(--channel-line-color, var(--neutral-light));\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  translate: -50% -50%;\n}\n\n.fr-timeline-bravo__content-wrapper::after {\n  content: '';\n  width: var(--channel-indicator-size, 20px);\n  height: var(--channel-indicator-size, 20px);\n  background-color: var(--channel-indicator-color, var(--primary));\n  border-radius: 50vw;\n  position: absolute;\n  inset-block-start: 50%;\n  translate: 0 -50%;\n  z-index: 1;\n}\n\n.fr-timeline-bravo__timeline-card:nth-child(even) .fr-timeline-bravo__media-wrapper,\n.fr-timeline-bravo__timeline-card:nth-child(even) .fr-timeline-bravo__date {\n\torder: -1;\n}",
+          "_direction": "row",
+          "_columnGap": "var(--grid-gap)",
+          "_padding": {
+            "left": "0"
+          },
+          "_width": "calc(100% - 200px)",
+          "_width:tablet_portrait": "var(--content-width)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "slbjqb",
+        "name": "fr-timeline-bravo__slider",
+        "settings": {
+          "speed": "300",
+          "_cssCustom:mobile_landscape": "/* Padding left/right */\n.fr-timeline-bravo__slider .fr-slider__track {\n  padding-inline: 20%!important;\n}\n/* Breakout */\n.fr-timeline-bravo__slider {\n  inline-size: 100vw !important;\n  max-inline-size: 100vw !important;\n  margin-inline: calc(-50vw + 50%) !important;\n  align-self: flex-start;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "eu2kdc",
+        "name": "fr-timeline-bravo__timeline-card",
+        "settings": {
+          "_alignItems": "center",
+          "_rowGap": "var(--channel-height)",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_display": "grid",
+          "_gridTemplateRows": "var(--grid-2)",
+          "_position": "relative",
+          "_gridTemplateColumns": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "y5096o",
+        "name": "fr-timeline-bravo__content-wrapper",
+        "settings": {
+          "_alignItems": "center",
+          "_justifyContent": "center",
+          "_rowGap": "calc(var(--content-gap) / 2)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "mge3t9",
+        "name": "fr-timeline-bravo__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ao4enh",
+        "name": "fr-timeline-bravo__description",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "3qye36",
+        "name": "fr-timeline-bravo__date",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-xxl)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "41y54k",
+        "name": "fr-timeline-bravo__media-wrapper",
+        "settings": {
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_overflow": "hidden",
+          "_aspectRatio": "4/3"
+        },
+        "modified": 1733757164,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "zkj6ef",
+        "name": "fr-timeline-bravo__image",
+        "settings": {
+          "_objectFit": "cover",
+          "_height": "100%",
+          "_width": "100%"
+        },
+        "modified": 1733757164,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "fvqril",
+        "name": "fr-timeline-bravo__slider-controls",
+        "settings": {
+          "arrowSize": "35",
+          "arrowBackground": {
+            "raw": "transparent"
+          },
+          "arrowsGap": "var(--content-gap)",
+          "_display": "flex",
+          "_alignItems": "center",
+          "_justifyContent": "center"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

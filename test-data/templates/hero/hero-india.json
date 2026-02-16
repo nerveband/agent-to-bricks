@@ -1,0 +1,292 @@
+{
+  "idx": 435,
+  "title": "Hero India",
+  "elementCount": 10,
+  "classCount": 10,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "5003db",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "dd0d28",
+          "8dbd21"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tooejv",
+            "acss_import_bg--ultra-dark"
+          ]
+        },
+        "label": "Hero India"
+      },
+      {
+        "id": "dd0d28",
+        "name": "container",
+        "parent": "5003db",
+        "children": [
+          "3accfc",
+          "626f0d",
+          "ff3f5f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jmaoto"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "8dbd21",
+        "name": "div",
+        "parent": "5003db",
+        "children": [
+          "474faa",
+          "769255"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wbvnsl"
+          ]
+        },
+        "label": "Background Alpha (Read CSS Tab)"
+      },
+      {
+        "id": "474faa",
+        "name": "image",
+        "parent": "8dbd21",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "usirxg"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        }
+      },
+      {
+        "id": "769255",
+        "name": "div",
+        "parent": "8dbd21",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "heyndn"
+          ]
+        },
+        "label": "Overlay"
+      },
+      {
+        "id": "ff3f5f",
+        "name": "div",
+        "parent": "dd0d28",
+        "children": [
+          "876e19",
+          "cca877"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "konmnk"
+          ]
+        },
+        "label": "CTA Links Alpha"
+      },
+      {
+        "id": "876e19",
+        "name": "button",
+        "parent": "ff3f5f",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "style": "btn--primary"
+        },
+        "label": "Primary Action"
+      },
+      {
+        "id": "cca877",
+        "name": "button",
+        "parent": "ff3f5f",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "style": "btn--primary",
+          "outline": true
+        },
+        "label": "Secondary Action"
+      },
+      {
+        "id": "3accfc",
+        "name": "heading",
+        "parent": "dd0d28",
+        "children": [],
+        "settings": {
+          "text": "Hero heading",
+          "_cssGlobalClasses": [
+            "gbdhwx"
+          ],
+          "tag": "h1"
+        }
+      },
+      {
+        "id": "626f0d",
+        "name": "text-basic",
+        "parent": "dd0d28",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "_cssGlobalClasses": [
+            "kmdgdf",
+            "kddjfd"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771256218,
+        "user_id": 1
+      },
+      {
+        "id": "konmnk",
+        "name": "fr-cta-links-alpha",
+        "settings": {
+          "_columnGap": "var(--content-gap, 30px)",
+          "_rowGap": "var(--content-gap, 30px)",
+          "_display": "flex",
+          "_flexWrap": "wrap",
+          "_cssCustom:mobile_portrait": ".fr-cta-links-alpha > * {\n  width: 100% !important;\n}",
+          "_direction": "row"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wbvnsl",
+        "name": "fr-background-alpha",
+        "settings": {
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_cssCustom": "/* \n\nTo use this frame correctly, ensure the parent container is set to position relative. It's also advisable to add the following code to the parent container's CSS tab:\n\n.fr-background-alpha {isolation: isolate;}\n\n*/",
+          "_zIndex": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "usirxg",
+        "name": "fr-background-alpha__image",
+        "settings": {
+          "_objectFit": "cover",
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_width": "100%",
+          "_zIndex": "-1",
+          "_height": "100%",
+          "_border": {
+            "radius": {
+              "top": "0",
+              "right": "0",
+              "bottom": "0",
+              "left": "0"
+            }
+          },
+          "_margin": {
+            "bottom": "0"
+          },
+          "_cssCustom": ".fr-background-alpha__image img {\n  height: 100%;\n}"
+        },
+        "modified": 1771256231,
+        "user_id": 1,
+        "_mappedId": "usirxg"
+      },
+      {
+        "id": "heyndn",
+        "name": "fr-background-alpha__overlay",
+        "settings": {
+          "_zIndex": "-1",
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_background": {
+            "color": {
+              "raw": "var(--overlay-bg, var(--neutral-ultra-dark-trans-60))"
+            }
+          }
+        },
+        "_mappedId": "heyndn",
+        "modified": 1771256231,
+        "user_id": 1
+      },
+      {
+        "id": "acss_import_bg--ultra-dark",
+        "name": "bg--ultra-dark",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "tooejv",
+        "name": "fr-hero-india",
+        "settings": {
+          "_position": "relative",
+          "_isolation": "isolate"
+        },
+        "_exists": false
+      },
+      {
+        "id": "jmaoto",
+        "name": "fr-hero-india__content-wrapper",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_alignItems": "flex-start",
+          "_justifyContent": "flex-end",
+          "_position": "relative",
+          "_zIndex": "1",
+          "_margin": {
+            "top": "400"
+          }
+        },
+        "modified": 1741643395,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "gbdhwx",
+        "name": "fr-hero-india__heading",
+        "settings": [],
+        "modified": 1741643395,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "kmdgdf",
+        "name": "fr-hero-india__lede",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

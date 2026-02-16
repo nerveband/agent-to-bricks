@@ -1,0 +1,199 @@
+{
+  "idx": 401,
+  "title": "Image Group Bravo",
+  "elementCount": 9,
+  "classCount": 3,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "83c194",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "28bb32",
+          "e7a904",
+          "8aa7f2",
+          "0d01b9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ygkjim"
+          ]
+        },
+        "label": "Image Group Bravo"
+      },
+      {
+        "id": "548db4",
+        "name": "image",
+        "parent": "28bb32",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure",
+          "_cssGlobalClasses": [
+            "jksepa"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Image"
+      },
+      {
+        "id": "089ea5",
+        "name": "image",
+        "parent": "e7a904",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure",
+          "_cssGlobalClasses": [
+            "jksepa"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Image"
+      },
+      {
+        "id": "8e3c36",
+        "name": "image",
+        "parent": "8aa7f2",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure",
+          "_cssGlobalClasses": [
+            "jksepa"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Image"
+      },
+      {
+        "id": "0c9af6",
+        "name": "image",
+        "parent": "0d01b9",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure",
+          "_cssGlobalClasses": [
+            "jksepa"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Image"
+      },
+      {
+        "id": "28bb32",
+        "name": "div",
+        "parent": "83c194",
+        "children": [
+          "548db4"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wk9ui9"
+          ]
+        },
+        "label": "Image Wrapper"
+      },
+      {
+        "id": "e7a904",
+        "name": "div",
+        "parent": "83c194",
+        "children": [
+          "089ea5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wk9ui9"
+          ]
+        },
+        "label": "Image Wrapper"
+      },
+      {
+        "id": "8aa7f2",
+        "name": "div",
+        "parent": "83c194",
+        "children": [
+          "8e3c36"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wk9ui9"
+          ]
+        },
+        "label": "Image Wrapper"
+      },
+      {
+        "id": "0d01b9",
+        "name": "div",
+        "parent": "83c194",
+        "children": [
+          "0c9af6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wk9ui9"
+          ]
+        },
+        "label": "Image Wrapper"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "ygkjim",
+        "name": "fr-image-group-bravo",
+        "settings": {
+          "_direction": "row",
+          "_flexWrap": "wrap",
+          "_justifyContent": "center",
+          "_rowGap": "1em",
+          "_columnGap": "1em",
+          "_alignItems": "baseline",
+          "_cssCustom": ".fr-image-group-bravo figure {\n\twidth: auto;\n  margin: 0\n}\n\n.fr-image-group-bravo img {\n\t-o-object-fit: cover;\n  object-fit: cover;\n}\n\n.fr-image-group-bravo > *:nth-child(1) {\n  aspect-ratio: 1;\n  width: 50%;\n  margin-top: auto;\n}\n.fr-image-group-bravo > *:nth-child(2) {\n  aspect-ratio: 1;\n  width: 45%;\n  margin-top: auto;\n}\n.fr-image-group-bravo > *:nth-child(3) {\n  aspect-ratio: 1;\n  width: 40%;\n  margin-bottom: auto;\n}\n.fr-image-group-bravo > *:nth-child(4) {\n  aspect-ratio: 0.8;\n  width: 50%;\n  margin-bottom: auto;\n}",
+          "_cssCustom:mobile_portrait": ".fr-image-group-bravo > *:nth-child(1),\n.fr-image-group-bravo > *:nth-child(2),\n.fr-image-group-bravo > *:nth-child(3),\n.fr-image-group-bravo > *:nth-child(4) {\n  width: 100%;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "jksepa",
+        "name": "fr-image-group-bravo__image",
+        "settings": {
+          "_objectFit": "cover"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wk9ui9",
+        "name": "fr-image-group-bravo__image-wrapper",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

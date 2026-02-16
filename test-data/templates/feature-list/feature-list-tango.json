@@ -1,0 +1,403 @@
+{
+  "idx": 228,
+  "title": "Feature List Tango",
+  "elementCount": 19,
+  "classCount": 8,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "119082",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "d71774",
+          "8f416b",
+          "831385"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "yvuylp",
+            "rktisp"
+          ],
+          "tag": "custom",
+          "customTag": "ul"
+        },
+        "label": "Feature List Tango (Controls)"
+      },
+      {
+        "id": "d71774",
+        "name": "block",
+        "parent": "119082",
+        "children": [
+          "ad7a49",
+          "fc80bf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fffxmb"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature Card Tango"
+      },
+      {
+        "id": "ad7a49",
+        "name": "block",
+        "parent": "d71774",
+        "children": [
+          "eb895a",
+          "433009"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kzjzee"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "eb895a",
+        "name": "heading",
+        "parent": "ad7a49",
+        "children": [],
+        "settings": {
+          "text": "Feature one",
+          "_cssGlobalClasses": [
+            "ffbmtc"
+          ]
+        }
+      },
+      {
+        "id": "433009",
+        "name": "text-basic",
+        "parent": "ad7a49",
+        "children": [],
+        "settings": {
+          "text": "This is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "odzweb"
+          ]
+        },
+        "label": "Text"
+      },
+      {
+        "id": "fc80bf",
+        "name": "block",
+        "parent": "d71774",
+        "children": [
+          "092eda"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fejrjb"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "092eda",
+        "name": "icon",
+        "parent": "fc80bf",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "wgltkg"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "8f416b",
+        "name": "block",
+        "parent": "119082",
+        "children": [
+          "97e3f8",
+          "be0036"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fffxmb"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature Card Tango"
+      },
+      {
+        "id": "97e3f8",
+        "name": "block",
+        "parent": "8f416b",
+        "children": [
+          "d6386a",
+          "e0d5be"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kzjzee"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "d6386a",
+        "name": "heading",
+        "parent": "97e3f8",
+        "children": [],
+        "settings": {
+          "text": "Feature two",
+          "_cssGlobalClasses": [
+            "ffbmtc"
+          ]
+        }
+      },
+      {
+        "id": "e0d5be",
+        "name": "text-basic",
+        "parent": "97e3f8",
+        "children": [],
+        "settings": {
+          "text": "This is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "odzweb"
+          ]
+        },
+        "label": "Text"
+      },
+      {
+        "id": "be0036",
+        "name": "block",
+        "parent": "8f416b",
+        "children": [
+          "d57d4b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fejrjb"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "d57d4b",
+        "name": "icon",
+        "parent": "be0036",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "wgltkg"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "831385",
+        "name": "block",
+        "parent": "119082",
+        "children": [
+          "0d3734",
+          "b41565"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fffxmb"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature Card Tango"
+      },
+      {
+        "id": "0d3734",
+        "name": "block",
+        "parent": "831385",
+        "children": [
+          "9641f0",
+          "441319"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kzjzee"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "9641f0",
+        "name": "heading",
+        "parent": "0d3734",
+        "children": [],
+        "settings": {
+          "text": "Feature three",
+          "_cssGlobalClasses": [
+            "ffbmtc"
+          ]
+        }
+      },
+      {
+        "id": "441319",
+        "name": "text-basic",
+        "parent": "0d3734",
+        "children": [],
+        "settings": {
+          "text": "This is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "odzweb"
+          ]
+        },
+        "label": "Text"
+      },
+      {
+        "id": "b41565",
+        "name": "block",
+        "parent": "831385",
+        "children": [
+          "532db4"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fejrjb"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "532db4",
+        "name": "icon",
+        "parent": "b41565",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "wgltkg"
+          ]
+        },
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "rktisp",
+        "name": "list--none",
+        "settings": {
+          "_padding": {
+            "left": "0"
+          },
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "acss_import_list--none",
+        "modified": 1771254455,
+        "user_id": 1
+      },
+      {
+        "id": "yvuylp",
+        "name": "fr-feature-list-tango",
+        "settings": {
+          "_justifyContent": "center",
+          "_cssCustom": ".fr-feature-list-tango {\n  --media-height: 4rem; /* Height of Media/Icon */\n  --accent-line-display: flex; /* Flex or none */\n  --accent-line-color: var(--neutral-ultra-dark-trans-10);\n  --accent-line-width: 2px;\n  --card-gap: calc(var(--content-gap) * 1.5);\n  \n  /* Ignore */\n\t--top: calc(var(--media-height) + (var(--card-gap) / 2));\n  \n  gap: var(--card-gap);\n  \n}\n\n.fr-feature-list-tango > *:not(:last-child) .fr-feature-card-tango__media-wrapper::after {\n\tcontent: \"\";\n  display: var(--accent-line-display);\n  position: absolute;\n  height: calc(100% - var(--media-height));\n  width: var(--accent-line-width);\n  background-color: var(--accent-line-color);\n  top: var(--top);\n  left: 50%;\n  transform: translateX(-50%);\n}",
+          "_cssCustom:tablet_portrait": ".fr-feature-list-tango {\n  --accent-line-display: none; /* Flex or none */\n\tdisplay: grid;\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: var(--grid-gap);\n}",
+          "_alignSelf": "stretch",
+          "_flexGrow": "1",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)"
+        },
+        "modified": 1724257896,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "fffxmb",
+        "name": "fr-feature-card-tango",
+        "settings": {
+          "_direction": "row",
+          "_alignItems": "stretch",
+          "_direction:tablet_portrait": "column",
+          "_rowGap": "var(--fr-card-gap)",
+          "_columnGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "kzjzee",
+        "name": "fr-feature-card-tango__content-wrapper",
+        "settings": {
+          "_rowGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ffbmtc",
+        "name": "fr-feature-card-tango__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "odzweb",
+        "name": "fr-feature-card-tango__text",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-s)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "fejrjb",
+        "name": "fr-feature-card-tango__media-wrapper",
+        "settings": {
+          "_width": "auto",
+          "_flexShrink": "0",
+          "_flexGrow": "1",
+          "_position": "relative",
+          "_order": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wgltkg",
+        "name": "fr-feature-card-tango__media",
+        "settings": {
+          "_height": "var(--media-height)",
+          "_width": "auto"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

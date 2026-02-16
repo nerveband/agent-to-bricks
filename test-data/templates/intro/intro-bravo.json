@@ -1,0 +1,100 @@
+{
+  "idx": 421,
+  "title": "Intro Bravo",
+  "elementCount": 3,
+  "classCount": 4,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "3c1c4d",
+        "name": "container",
+        "children": [
+          "222902",
+          "ecc08d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "slhmuz"
+          ]
+        },
+        "label": "Intro Bravo"
+      },
+      {
+        "id": "ecc08d",
+        "name": "text-basic",
+        "parent": "3c1c4d",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "cirgqc"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "222902",
+        "name": "heading",
+        "parent": "3c1c4d",
+        "children": [],
+        "settings": {
+          "text": "Your headline here",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "okkigb"
+          ]
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "slhmuz",
+        "name": "fr-intro-bravo",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 2)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "cirgqc",
+        "name": "fr-intro-bravo__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "okkigb",
+        "name": "fr-intro-bravo__heading",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

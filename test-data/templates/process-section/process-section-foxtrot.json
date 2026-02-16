@@ -1,0 +1,603 @@
+{
+  "idx": 99,
+  "title": "Process Section Foxtrot",
+  "elementCount": 28,
+  "classCount": 15,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "196222",
+        "name": "container",
+        "parent": "2cc6b1",
+        "children": [
+          "00f006",
+          "d4f99f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "q92ccd"
+          ]
+        },
+        "label": "Grid (CSS)"
+      },
+      {
+        "id": "00f006",
+        "name": "block",
+        "parent": "196222",
+        "children": [
+          "65d914"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wi9o9g"
+          ]
+        },
+        "label": "Content"
+      },
+      {
+        "id": "d4f99f",
+        "name": "block",
+        "parent": "196222",
+        "children": [
+          "2fb8db",
+          "8272cc",
+          "13c5a1",
+          "71060b",
+          "f1f766"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gmwye4"
+          ],
+          "tag": "ul"
+        },
+        "label": "Cards"
+      },
+      {
+        "id": "8d88b8",
+        "name": "heading",
+        "parent": "65d914",
+        "children": [],
+        "settings": {
+          "text": "Our Process",
+          "_cssGlobalClasses": [
+            "uruvtg"
+          ],
+          "tag": "h2",
+          "_cssCustom": "#brxe-8d88b8 {\n\tcounter-increment: step;\n}"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "0d1e27",
+        "name": "text-basic",
+        "parent": "65d914",
+        "children": [],
+        "settings": {
+          "text": "Sometimes it\u2019s nice to put in text just to get an idea of how text will fill in a space on your website.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "kfzths",
+            "kddjfd"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "e12c59",
+        "name": "button",
+        "parent": "65d914",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "_cssGlobalClasses": [
+            "smnuft"
+          ],
+          "style": "btn--primary"
+        },
+        "label": "Button"
+      },
+      {
+        "id": "2fb8db",
+        "name": "block",
+        "parent": "d4f99f",
+        "children": [
+          "dbbffc",
+          "feb75c",
+          "773ac4"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "p3pfuk"
+          ],
+          "tag": "li"
+        },
+        "label": "Card"
+      },
+      {
+        "id": "dbbffc",
+        "name": "heading",
+        "parent": "2fb8db",
+        "children": [],
+        "settings": {
+          "text": "Card heading",
+          "_cssGlobalClasses": [
+            "ywituk"
+          ],
+          "_cssCustom": "#brxe-dbbffc {\n\tcounter-increment: step;\n}"
+        },
+        "label": "Card Heading"
+      },
+      {
+        "id": "65d914",
+        "name": "block",
+        "parent": "00f006",
+        "children": [
+          "8d88b8",
+          "0d1e27",
+          "e12c59"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qqioyr",
+            "hegaqi"
+          ]
+        },
+        "label": "Sticky"
+      },
+      {
+        "id": "2cc6b1",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "196222"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "smozqh"
+          ]
+        },
+        "label": "Process Section Foxtrot"
+      },
+      {
+        "id": "feb75c",
+        "name": "div",
+        "parent": "2fb8db",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "04viax"
+          ]
+        },
+        "label": "Card Step"
+      },
+      {
+        "id": "773ac4",
+        "name": "text",
+        "parent": "2fb8db",
+        "children": [],
+        "settings": {
+          "text": "<p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text.</p>",
+          "_cssGlobalClasses": [
+            "brsetu",
+            "b9cu7j"
+          ]
+        },
+        "label": "Card Description"
+      },
+      {
+        "id": "f1f766",
+        "name": "block",
+        "parent": "d4f99f",
+        "children": [
+          "a3bada",
+          "99feab",
+          "b3802b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "p3pfuk"
+          ],
+          "tag": "li"
+        },
+        "label": "Card"
+      },
+      {
+        "id": "a3bada",
+        "name": "heading",
+        "parent": "f1f766",
+        "children": [],
+        "settings": {
+          "text": "Card heading",
+          "_cssGlobalClasses": [
+            "ywituk"
+          ],
+          "_cssCustom": "#brxe-a3bada {\n\tcounter-increment: step;\n}"
+        },
+        "label": "Card Heading"
+      },
+      {
+        "id": "99feab",
+        "name": "div",
+        "parent": "f1f766",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "04viax"
+          ]
+        },
+        "label": "Card Step"
+      },
+      {
+        "id": "b3802b",
+        "name": "text",
+        "parent": "f1f766",
+        "children": [],
+        "settings": {
+          "text": "<p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text.</p>",
+          "_cssGlobalClasses": [
+            "brsetu",
+            "b9cu7j"
+          ]
+        },
+        "label": "Card Description"
+      },
+      {
+        "id": "71060b",
+        "name": "block",
+        "parent": "d4f99f",
+        "children": [
+          "088535",
+          "09b5bd",
+          "fdc01c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "p3pfuk"
+          ],
+          "tag": "li"
+        },
+        "label": "Card"
+      },
+      {
+        "id": "088535",
+        "name": "heading",
+        "parent": "71060b",
+        "children": [],
+        "settings": {
+          "text": "Card heading",
+          "_cssGlobalClasses": [
+            "ywituk"
+          ],
+          "_cssCustom": "#brxe-088535 {\n\tcounter-increment: step;\n}"
+        },
+        "label": "Card Heading"
+      },
+      {
+        "id": "09b5bd",
+        "name": "div",
+        "parent": "71060b",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "04viax"
+          ]
+        },
+        "label": "Card Step"
+      },
+      {
+        "id": "fdc01c",
+        "name": "text",
+        "parent": "71060b",
+        "children": [],
+        "settings": {
+          "text": "<p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text.</p>",
+          "_cssGlobalClasses": [
+            "brsetu",
+            "b9cu7j"
+          ]
+        },
+        "label": "Card Description"
+      },
+      {
+        "id": "13c5a1",
+        "name": "block",
+        "parent": "d4f99f",
+        "children": [
+          "195bed",
+          "9b08bc",
+          "01b302"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "p3pfuk"
+          ],
+          "tag": "li"
+        },
+        "label": "Card"
+      },
+      {
+        "id": "195bed",
+        "name": "heading",
+        "parent": "13c5a1",
+        "children": [],
+        "settings": {
+          "text": "Card heading",
+          "_cssGlobalClasses": [
+            "ywituk"
+          ],
+          "_cssCustom": "#brxe-195bed {\n\tcounter-increment: step;\n}"
+        },
+        "label": "Card Heading"
+      },
+      {
+        "id": "9b08bc",
+        "name": "div",
+        "parent": "13c5a1",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "04viax"
+          ]
+        },
+        "label": "Card Step"
+      },
+      {
+        "id": "01b302",
+        "name": "text",
+        "parent": "13c5a1",
+        "children": [],
+        "settings": {
+          "text": "<p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text.</p>",
+          "_cssGlobalClasses": [
+            "brsetu",
+            "b9cu7j"
+          ]
+        },
+        "label": "Card Description"
+      },
+      {
+        "id": "8272cc",
+        "name": "block",
+        "parent": "d4f99f",
+        "children": [
+          "b2b4bb",
+          "e337e9",
+          "4d0df1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "p3pfuk"
+          ],
+          "tag": "li"
+        },
+        "label": "Card"
+      },
+      {
+        "id": "b2b4bb",
+        "name": "heading",
+        "parent": "8272cc",
+        "children": [],
+        "settings": {
+          "text": "Card heading",
+          "_cssGlobalClasses": [
+            "ywituk"
+          ],
+          "_cssCustom": "#brxe-b2b4bb {\n\tcounter-increment: step;\n}"
+        },
+        "label": "Card Heading"
+      },
+      {
+        "id": "e337e9",
+        "name": "div",
+        "parent": "8272cc",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "04viax"
+          ]
+        },
+        "label": "Card Step"
+      },
+      {
+        "id": "4d0df1",
+        "name": "text",
+        "parent": "8272cc",
+        "children": [],
+        "settings": {
+          "text": "<p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text.</p>",
+          "_cssGlobalClasses": [
+            "brsetu",
+            "b9cu7j"
+          ]
+        },
+        "label": "Card Description"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771253101,
+        "user_id": 1
+      },
+      {
+        "id": "q92ccd",
+        "name": "fr-process-section-foxtrot__grid",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridGap": "calc(var(--grid-gap) * 2)",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)",
+          "_cssCustom": ".fr-process-section-foxtrot__grid {\n \t--sticky-offset: calc(var(--header-height, 0) + 2em);\n\t--card-rotation: 0deg;\n}",
+          "_gridTemplateRows": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wi9o9g",
+        "name": "fr-process-section-foxtrot__content",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "gmwye4",
+        "name": "fr-process-section-foxtrot__cards",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_padding": {
+            "left": "0"
+          },
+          "_cssCustom": ".fr-process-section-foxtrot__cards {\n\tcounter-reset: step;\n  list-style-type: none;\n}",
+          "_gridAutoRows": "1fr",
+          "_display": "flex",
+          "_direction": "column",
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "uruvtg",
+        "name": "fr-process-card-foxtrot__heading",
+        "settings": {
+          "_cssCustom": ".fr-process-card-foxtrot__heading {\n\tcounter-increment: step;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "kfzths",
+        "name": "fr-process-section-foxtrot__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "smnuft",
+        "name": "fr-process-section-foxtrot__button",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "p3pfuk",
+        "name": "fr-process-section-foxtrot__card",
+        "settings": {
+          "_padding": {
+            "top": "var(--space-l)",
+            "right": "var(--space-l)",
+            "bottom": "var(--space-l)",
+            "left": "var(--space-l)"
+          },
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            },
+            "width": {
+              "top": "1",
+              "right": "1",
+              "bottom": "1",
+              "left": "1"
+            },
+            "style": "solid",
+            "color": {
+              "raw": "var(--neutral-ultra-dark-trans-10)"
+            }
+          },
+          "_rowGap": "calc(var(--content-gap) / 2)",
+          "_position": "sticky",
+          "_top": "var(--sticky-offset)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ywituk",
+        "name": "fr-process-section-foxtrot__card-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "qqioyr",
+        "name": "fr-process-grid-foxtrot__sticky-content",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_position": "sticky",
+          "_top": "var(--sticky-offset)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "hegaqi",
+        "name": "fr-process-section-foxtrot__sticky",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "smozqh",
+        "name": "fr-process-section-foxtrot",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "04viax",
+        "name": "fr-process-section-foxtrot__card-step",
+        "settings": {
+          "_order": "-1",
+          "_cssCustom": ".fr-process-section-foxtrot__card-step {\n  aspect-ratio: 1/1;\n  height: 1em;\n  min-width: 0;\n  min-height: 0;\n\tdisplay: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.fr-process-section-foxtrot__card-step::before {\n\tcontent: counter(step);\n  display: flex;\n  line-height: 1;\n}",
+          "_padding": {
+            "top": "1em",
+            "right": "1em",
+            "bottom": "1em",
+            "left": "1em"
+          },
+          "_width": "1em",
+          "_background": {
+            "color": {
+              "raw": "var(--black-trans-10)"
+            }
+          },
+          "_typography": {
+            "line-height": "1",
+            "font-weight": "600"
+          },
+          "_border": {
+            "radius": {
+              "top": "50vw",
+              "right": "50vw",
+              "bottom": "50vw",
+              "left": "50vw"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "brsetu",
+        "name": "fr-process-card-foxtrot__description",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "b9cu7j",
+        "name": "fr-process-section-foxtrot__card-description",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

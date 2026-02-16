@@ -1,0 +1,67 @@
+{
+  "idx": 275,
+  "title": "Icon Button Alpha",
+  "elementCount": 1,
+  "classCount": 2,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "865b03",
+        "name": "button",
+        "parent": 0,
+        "children": [],
+        "settings": {
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary",
+            "gplcab"
+          ],
+          "text": "Primary action",
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "fill": {
+              "raw": "var(--icon-color)"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)"
+          },
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Icon Button Alpha"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "gplcab",
+        "name": "fr-icon-button-alpha",
+        "settings": {
+          "_cssCustom": ".fr-icon-button-alpha {\n\t--icon-size: 1.5em;\n  --icon-color: var(--white);\n}\n\n.fr-icon-button-alpha:hover i,\n.fr-icon-button-alpha:hover svg {\n  -webkit-animation: iconMove ease-out .35s;\n  animation: iconMove ease-out .35s;\n}\n\n@-webkit-keyframes iconMove {\n    0% {\n        -webkit-transform: translateX(0);\n        transform:translateX(0)\n    }\n\n    30% {\n        opacity:0\n    }\n\n    31% {\n        -webkit-transform: translateX(1.25rem);\n        transform:translateX(1.25rem)\n    }\n\n    32% {\n        -webkit-transform: translateX(-1.25rem);\n        transform:translateX(-1.25rem)\n    }\n\n    84% {\n        opacity:1\n    }\n\n    100% {\n        -webkit-transform: translateX(0);\n        transform:translateX(0)\n    }\n}"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

@@ -1,0 +1,403 @@
+{
+  "idx": 84,
+  "title": "CTA Section Indigo",
+  "elementCount": 12,
+  "classCount": 15,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "e4e600",
+        "name": "container",
+        "parent": "62b038",
+        "children": [
+          "dd1d47",
+          "f91369"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zk9b7l"
+          ],
+          "_gridItemColumnSpan:tablet_portrait": "content",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)"
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "dd1d47",
+        "name": "block",
+        "parent": "e4e600",
+        "children": [
+          "160415"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "4s0k3f"
+          ],
+          "_attributes": [
+            {
+              "id": "xkwgrr",
+              "name": "data-media-grid"
+            }
+          ]
+        },
+        "label": "Media Grid"
+      },
+      {
+        "id": "f91369",
+        "name": "block",
+        "parent": "e4e600",
+        "children": [
+          "57eff0",
+          "e4aed1",
+          "e36e30",
+          "5f1df1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "aelovo"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "5f1df1",
+        "name": "div",
+        "parent": "f91369",
+        "children": [
+          "bb8065"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kwdtjx",
+            "cvg6l9"
+          ]
+        },
+        "label": "Icon Link Alpha Wrapper"
+      },
+      {
+        "id": "bb8065",
+        "name": "text-link",
+        "parent": "5f1df1",
+        "children": [],
+        "settings": {
+          "text": "Desired action",
+          "_cssGlobalClasses": [
+            "caehza",
+            "kxrajz"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)",
+            "fill": {
+              "raw": "var(--icon-color)"
+            }
+          }
+        },
+        "label": "Icon Link Alpha"
+      },
+      {
+        "id": "57eff0",
+        "name": "heading",
+        "parent": "f91369",
+        "children": [],
+        "settings": {
+          "text": "Call the visitor to action",
+          "_cssGlobalClasses": [
+            "z4m95i"
+          ],
+          "tag": "h2"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "e4aed1",
+        "name": "text-basic",
+        "parent": "f91369",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "nhgecv",
+            "qfdtjc"
+          ]
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "e36e30",
+        "name": "text-basic",
+        "parent": "f91369",
+        "children": [],
+        "settings": {
+          "text": "Fill the grid to the left with logos of companies, app integrations, headshots of customers, or any other type of visual social proof. It'll give significant impact to your call to action and increase conversion rates.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "idxr6f"
+          ]
+        },
+        "label": "Content"
+      },
+      {
+        "id": "160415",
+        "name": "block",
+        "parent": "dd1d47",
+        "children": [
+          "4ac060"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "6rnz1j"
+          ],
+          "hasLoop": true,
+          "query": {
+            "post_type": [
+              "attachment"
+            ],
+            "posts_per_page": "50",
+            "tax_query": [
+              "happyfiles_category::267"
+            ]
+          }
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "4ac060",
+        "name": "image",
+        "parent": "160415",
+        "children": [],
+        "settings": {
+          "tag": "figure",
+          "_cssGlobalClasses": [
+            "xpuw52"
+          ],
+          "image": {
+            "useDynamicData": "{post_id}",
+            "size": "large"
+          }
+        },
+        "label": "Media",
+        "themeStyles": []
+      },
+      {
+        "id": "cd9f3c",
+        "name": "code",
+        "parent": "62b038",
+        "children": [],
+        "settings": {
+          "executeCode": true,
+          "user_id": 2,
+          "time": 1762444265,
+          "noRoot": true,
+          "code": "<script type=\"module\">\n  \n  // Identify the container we want to manipulate\n    const mediaGrid = document.querySelector('[data-media-grid]');\n    if (!mediaGrid) {\n    \tconsole.error('No media grid exists');\n    }\n\n    // Identify the image to calculate its height\n    const mediaImg = document.querySelector('[data-media-grid] img');\n    if (!mediaImg) {\n    \tconsole.error('No media image exists');\n    }\n\n    // Assign its height to a variable\n    const mediaImgHeight = mediaImg.offsetHeight;\n    console.log('Media Img Height:', mediaImgHeight);\n    \n    // Get the computed style of the mediaGrid element\n    const mediaGridStyle = getComputedStyle(mediaGrid);\n    \n    // Get the computed value of the `gap` property\n    const mediaGridGap = parseFloat(mediaGridStyle.gap);\n    console.log('Computed Media Grid Gap:', mediaGridGap);\n    \n    // Calculate the media grid's max height\n    \n    let mediaGridHeight = (mediaImgHeight * 4) + (mediaGridGap * 3);\n    \n    let mediaGridHeightSm = (mediaImgHeight * 3) + (mediaGridGap * 2);\n\n    // Set a height variable on the media grid\n    mediaGrid.style.setProperty('--media-grid-height', mediaGridHeight + 'px');\n    // Set a height variable on the media grid\n    mediaGrid.style.setProperty('--media-grid-height-sm', mediaGridHeightSm + 'px');\n  \n</script>"
+        },
+        "label": "JS Height Control",
+        "themeStyles": []
+      },
+      {
+        "id": "62b038",
+        "name": "section",
+        "children": [
+          "e4e600",
+          "cd9f3c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "neswau",
+            "dl8w0l"
+          ]
+        },
+        "label": "Cta Section Indigo (CSS & Instructions)"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "neswau",
+        "name": "content-grid",
+        "settings": [],
+        "modified": 1771252915,
+        "user_id": 1,
+        "_mappedId": "acss_import_content-grid"
+      },
+      {
+        "id": "zk9b7l",
+        "name": "cta-section-indigo__inner",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridGap": "var(--grid-gap)",
+          "_gridItemColumnSpan": "full / content"
+        },
+        "_exists": false
+      },
+      {
+        "id": "4s0k3f",
+        "name": "cta-section-indigo__media-grid",
+        "settings": {
+          "_display": "grid",
+          "_transform:tablet_portrait": {
+            "translateX": "0"
+          },
+          "_alignItemsGrid": "center",
+          "_direction": "row",
+          "_overflow": "hidden",
+          "_gridAutoRows": "var(--media-height)",
+          "_justifyContentGrid:tablet_portrait": "center",
+          "_alignItemsGrid:tablet_portrait": "center",
+          "_border:tablet_portrait": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_justifyContentGrid": "flex-end",
+          "_gridTemplateColumns": "repeat(auto-fit, minmax(var(--media-size), 1fr))",
+          "_gridGap": "var(--grid-gap)",
+          "_heightMax": "var(--media-grid-height)",
+          "_transform": {
+            "translateX": "var(--media-grid-offset)"
+          },
+          "_heightMax:tablet_portrait": "var(--media-grid-height-sm)",
+          "_justifyItemsGrid": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "aelovo",
+        "name": "cta-section-indigo__content-wrapper",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_justifyContent": "center",
+          "_width": "40ch",
+          "_width:tablet_portrait": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "kwdtjx",
+        "name": "fr-icon-link-alpha-wrapper",
+        "settings": {
+          "_display": "flex"
+        },
+        "_exists": false
+      },
+      {
+        "id": "cvg6l9",
+        "name": "cta-section-indigo__icon-link-alpha-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "caehza",
+        "name": "fr-icon-link-alpha",
+        "settings": {
+          "_cssCustom": ".fr-icon-link-alpha {\n  --link-color: var(--black);\n  --link-color-hover: var(--primary);\n\t--icon-size: 1em;\n  --icon-color: var(--black);\n  --icon-color-hover: var(--black);\n  --icon-gap: .25em;\n  --icon-translate-distance: .25em;\n  --icon-transition-duration: 300ms;\n  --icon-transition-function: ease-in-out;\n  \n  /* Prevent Line Breaks */\n  white-space: nowrap;\n}\n\n/* Link */\n.fr-icon-link-alpha {\n\tcolor: var(--link-color);\n  text-decoration: underline;\n  text-underline-offset: var(--link-underline-offset, .25em);\n}\n\n.fr-icon-link-alpha:hover {\n\tcolor: var(--link-color-hover);\n}\n\n/* Icon */\n.fr-icon-link-alpha .icon {\n\ttransition: translate var(--icon-transition-duration) var(--icon-transition-function);\n\tfill: var(--icon-color);\n}\n\n.fr-icon-link-alpha:hover .icon {\n\ttranslate: var(--icon-translate-distance) 0;\n  fill: var(--icon-color-hover);\n}\n\n/* Light Version */\n.fr-icon-link-alpha--light {\n  --link-color: var(--white);\n  --link-color-hover: var(--primary);\n\t--icon-size: 1em;\n  --icon-color: var(--white);\n  --icon-color-hover: var(--primary);\n}",
+          "iconPosition": "right",
+          "gap": "var(--icon-gap)"
+        },
+        "modified": 1724413262,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "kxrajz",
+        "name": "cta-section-indigo__icon-link-alpha",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "z4m95i",
+        "name": "cta-section-indigo__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "nhgecv",
+        "name": "cta-section-indigo__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "idxr6f",
+        "name": "cta-section-indigo__content",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "6rnz1j",
+        "name": "cta-section-indigo__media-wrapper",
+        "settings": {
+          "_position": "relative",
+          "_aspectRatio": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "xpuw52",
+        "name": "cta-section-indigo__media",
+        "settings": {
+          "_width": "100%",
+          "_objectFit": "cover",
+          "_border": {
+            "radius": {
+              "top": "50vw",
+              "right": "50vw",
+              "bottom": "50vw",
+              "left": "50vw"
+            }
+          },
+          "_height": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "dl8w0l",
+        "name": "cta-section-indigo",
+        "settings": {
+          "_cssCustom": "/* \n\nNOTICE\n\nYou must sign and activate the JS code block for this\nsection to work properly. Also, Bricks can't render\ndata attribute-based code in the builder so you can only see the real effect on the front end.\n\nINSTRUCTIONS\n\n1. It's highly recommended to use a query loop to populate the image grid. You can do this from a CPT or a media gallery folder.\n\n2. To account for various screen sizes, you need to \"overfill\" the grid (load more images than is required). Else, you'll end up with a non-symmetrical grid on larger screens.\n\n3. The media grid must have a data attribute of data-media-grid or the JS will break. Don't remove it.\n\n*/\n\n.cta-section-indigo {\n\t--media-size: 80px;\n\t--media-grid-offset: -35px;\n}"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

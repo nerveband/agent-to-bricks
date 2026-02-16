@@ -1,0 +1,617 @@
+{
+  "idx": 74,
+  "title": "Feature Group Chicago",
+  "elementCount": 28,
+  "classCount": 11,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "ad76ef",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "226c52",
+          "6bf382",
+          "509bc2"
+        ],
+        "settings": {
+          "tag": "ul",
+          "_cssGlobalClasses": [
+            "ikzyle"
+          ]
+        },
+        "label": "Feature Group Chicago"
+      },
+      {
+        "id": "226c52",
+        "name": "block",
+        "parent": "ad76ef",
+        "children": [
+          "85905c",
+          "015b20"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "7bnvvg"
+          ],
+          "tag": "li"
+        },
+        "label": "Feature Card Chicago (CSS)"
+      },
+      {
+        "id": "85905c",
+        "name": "block",
+        "parent": "226c52",
+        "children": [
+          "46560b",
+          "2f0bff",
+          "f282f4"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eht6et"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "46560b",
+        "name": "heading",
+        "parent": "85905c",
+        "children": [],
+        "settings": {
+          "text": "Name of main feature",
+          "_cssGlobalClasses": [
+            "s2gg32"
+          ],
+          "tag": "h3"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "2f0bff",
+        "name": "text-basic",
+        "parent": "85905c",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text.",
+          "_cssGlobalClasses": [
+            "l5v8uh"
+          ],
+          "tag": "p"
+        },
+        "label": "Description"
+      },
+      {
+        "id": "f282f4",
+        "name": "block",
+        "parent": "85905c",
+        "children": [
+          "92501f",
+          "e031d4"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ir1t5g"
+          ]
+        },
+        "label": "Cta Wrapper"
+      },
+      {
+        "id": "92501f",
+        "name": "button",
+        "parent": "f282f4",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "84attl",
+            "dmlfsy"
+          ]
+        },
+        "label": "Button"
+      },
+      {
+        "id": "e031d4",
+        "name": "button",
+        "parent": "f282f4",
+        "children": [],
+        "settings": {
+          "text": "Secondary action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "84attl",
+            "btn--outline",
+            "dmlfsy"
+          ]
+        },
+        "label": "Button"
+      },
+      {
+        "id": "015b20",
+        "name": "block",
+        "parent": "226c52",
+        "children": [
+          "bb22fa"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "phhzr1"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "bb22fa",
+        "name": "image",
+        "parent": "015b20",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "41lojk"
+          ],
+          "tag": "figure"
+        },
+        "label": "Media",
+        "themeStyles": []
+      },
+      {
+        "id": "6bf382",
+        "name": "block",
+        "parent": "ad76ef",
+        "children": [
+          "07467c",
+          "bb581c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "7bnvvg"
+          ],
+          "tag": "li"
+        },
+        "label": "Feature Card Chicago"
+      },
+      {
+        "id": "07467c",
+        "name": "block",
+        "parent": "6bf382",
+        "children": [
+          "f0de0f",
+          "767d52",
+          "7243a4"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eht6et"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "f0de0f",
+        "name": "heading",
+        "parent": "07467c",
+        "children": [],
+        "settings": {
+          "text": "Name of main feature",
+          "_cssGlobalClasses": [
+            "s2gg32"
+          ],
+          "tag": "h3"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "767d52",
+        "name": "text-basic",
+        "parent": "07467c",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text.",
+          "_cssGlobalClasses": [
+            "l5v8uh"
+          ],
+          "tag": "p"
+        },
+        "label": "Description"
+      },
+      {
+        "id": "7243a4",
+        "name": "block",
+        "parent": "07467c",
+        "children": [
+          "f99a77",
+          "24334e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ir1t5g"
+          ]
+        },
+        "label": "Cta Wrapper"
+      },
+      {
+        "id": "f99a77",
+        "name": "button",
+        "parent": "7243a4",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "84attl",
+            "dmlfsy"
+          ]
+        },
+        "label": "Button"
+      },
+      {
+        "id": "24334e",
+        "name": "button",
+        "parent": "7243a4",
+        "children": [],
+        "settings": {
+          "text": "Secondary action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "84attl",
+            "btn--outline",
+            "dmlfsy"
+          ]
+        },
+        "label": "Button"
+      },
+      {
+        "id": "bb581c",
+        "name": "block",
+        "parent": "6bf382",
+        "children": [
+          "fffaad"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "phhzr1"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "fffaad",
+        "name": "image",
+        "parent": "bb581c",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "41lojk"
+          ],
+          "tag": "figure"
+        },
+        "label": "Media",
+        "themeStyles": []
+      },
+      {
+        "id": "509bc2",
+        "name": "block",
+        "parent": "ad76ef",
+        "children": [
+          "5e6aad",
+          "32c1a1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "7bnvvg"
+          ],
+          "tag": "li"
+        },
+        "label": "Feature Card Chicago"
+      },
+      {
+        "id": "5e6aad",
+        "name": "block",
+        "parent": "509bc2",
+        "children": [
+          "859069",
+          "84f424",
+          "11efc3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eht6et"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "859069",
+        "name": "heading",
+        "parent": "5e6aad",
+        "children": [],
+        "settings": {
+          "text": "Name of main feature",
+          "_cssGlobalClasses": [
+            "s2gg32"
+          ],
+          "tag": "h3"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "84f424",
+        "name": "text-basic",
+        "parent": "5e6aad",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text.",
+          "_cssGlobalClasses": [
+            "l5v8uh"
+          ],
+          "tag": "p"
+        },
+        "label": "Description"
+      },
+      {
+        "id": "11efc3",
+        "name": "block",
+        "parent": "5e6aad",
+        "children": [
+          "6d8158",
+          "e1e9fa"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ir1t5g"
+          ]
+        },
+        "label": "Cta Wrapper"
+      },
+      {
+        "id": "6d8158",
+        "name": "button",
+        "parent": "11efc3",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "84attl",
+            "dmlfsy"
+          ]
+        },
+        "label": "Button"
+      },
+      {
+        "id": "e1e9fa",
+        "name": "button",
+        "parent": "11efc3",
+        "children": [],
+        "settings": {
+          "text": "Secondary action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "84attl",
+            "btn--outline",
+            "dmlfsy"
+          ]
+        },
+        "label": "Button"
+      },
+      {
+        "id": "32c1a1",
+        "name": "block",
+        "parent": "509bc2",
+        "children": [
+          "10ac9a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "phhzr1"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "10ac9a",
+        "name": "image",
+        "parent": "32c1a1",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "41lojk"
+          ],
+          "tag": "figure"
+        },
+        "label": "Media",
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "btn--outline",
+        "name": "btn--outline",
+        "settings": [],
+        "_mappedId": "acss_import_btn--outline",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "dmlfsy",
+        "name": "btn--primary-light",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary-light",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "7bnvvg",
+        "name": "feature-card-chicago",
+        "settings": {
+          "_padding": {
+            "top": "var(--card-padding)",
+            "right": "var(--card-padding)",
+            "bottom": "var(--card-padding)",
+            "left": "var(--card-padding)"
+          },
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--content-column-width) var(--grid-1)",
+          "_cssCustom": ".feature-card-chicago {\n\t--card-padding: 16px;\n  --content-column-width: 30ch;\n  border-radius: calc(var(--radius) + (var(--card-padding) / 2));\n  max-inline-size: 100%;\n}\n\n@media (min-width: 991px) {\n  .feature-card-chicago:nth-of-type(even) {\n  \tgrid-template-columns: var(--grid-1) var(--content-column-width);\n  }\n  .feature-card-chicago:nth-of-type(even) > *:last-child {\n  \torder: -1;\n  }\n}",
+          "_alignItemsGrid": "stretch",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)",
+          "_gridGap": "0",
+          "_gradient": {
+            "colors": [
+              {
+                "id": "iockba",
+                "color": {
+                  "raw": "var(--black)"
+                },
+                "stop": "30"
+              },
+              {
+                "id": "nbqjnf",
+                "color": {
+                  "raw": "var(--neutral-dark)"
+                }
+              }
+            ],
+            "angle": "200"
+          }
+        },
+        "modified": 1737657560,
+        "user_id": 26,
+        "_exists": false
+      },
+      {
+        "id": "eht6et",
+        "name": "feature-card-chicago__content-wrapper",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          },
+          "_padding": {
+            "top": "var(--space-l)",
+            "right": "var(--space-l)",
+            "bottom": "var(--space-l)",
+            "left": "var(--space-l)"
+          },
+          "_justifyContent": "space-between",
+          "_padding:tablet_portrait": {
+            "top": "var(--space-m)",
+            "right": "var(--space-m)",
+            "bottom": "var(--space-m)",
+            "left": "var(--space-m)"
+          },
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "s2gg32",
+        "name": "feature-card-chicago__heading",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--h2)"
+          }
+        },
+        "modified": 1720814051,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "l5v8uh",
+        "name": "feature-card-chicago__description",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light-muted)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "ir1t5g",
+        "name": "feature-card-chicago__cta-wrapper",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 2)",
+          "_cssCustom": ".feature-card-chicago__cta-wrapper > * {\n\t--btn-min-width: 100%;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "84attl",
+        "name": "feature-card-chicago__button",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "phhzr1",
+        "name": "feature-card-chicago__media-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "41lojk",
+        "name": "feature-card-chicago__media",
+        "settings": {
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_cssCustom": ".feature-card-chicago__media {\n\tbox-shadow: var(--box-shadow-l);\n}\n\n.feature-card-chicago__media svg {\n\theight: 100%;\n}",
+          "_flexGrow": "1",
+          "_width": "100%",
+          "_height": "100%"
+        },
+        "modified": 1721267157,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "ikzyle",
+        "name": "feature-group-chicago",
+        "settings": {
+          "_cssCustom": ".feature-group-chicago {\n\tlist-style: none;\n}",
+          "_rowGap": "var(--content-gap)",
+          "_padding": {
+            "left": "0"
+          }
+        },
+        "modified": 1720812221,
+        "user_id": 1,
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

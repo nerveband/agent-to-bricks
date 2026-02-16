@@ -1,0 +1,376 @@
+{
+  "idx": 80,
+  "title": "CTA Section Papa",
+  "elementCount": 12,
+  "classCount": 9,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "1b1618",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "04efb1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "0oyvbp",
+            "acss_import_bg--ultra-light"
+          ]
+        },
+        "label": "CTA Section Papa"
+      },
+      {
+        "id": "04efb1",
+        "name": "container",
+        "parent": "1b1618",
+        "children": [
+          "bb0eec",
+          "3f3fdd"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hfbp8a"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "bb0eec",
+        "name": "block",
+        "parent": "04efb1",
+        "children": [
+          "8f1bff",
+          "8bb78c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "n5pfaj"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "3f3fdd",
+        "name": "block",
+        "parent": "04efb1",
+        "children": [
+          "a113f9",
+          "cdfd66",
+          "e4afc6"
+        ],
+        "settings": {
+          "tag": "ul",
+          "_cssGlobalClasses": [
+            "l5zk3a"
+          ]
+        },
+        "label": "Options Wrapper"
+      },
+      {
+        "id": "8f1bff",
+        "name": "heading",
+        "parent": "bb0eec",
+        "children": [],
+        "settings": {
+          "text": "Let's get started",
+          "_cssGlobalClasses": [
+            "lrx9n9"
+          ],
+          "tag": "h2"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "8bb78c",
+        "name": "text-basic",
+        "parent": "bb0eec",
+        "children": [],
+        "settings": {
+          "text": "Put the three most important links to the right so people can easily navigate to key areas of&nbsp; the site. It's really helpful for routing traffic.",
+          "_cssGlobalClasses": [
+            "9vnmav"
+          ]
+        },
+        "label": "Text-basic"
+      },
+      {
+        "id": "04a30e",
+        "name": "text-link",
+        "parent": "a113f9",
+        "children": [],
+        "settings": {
+          "text": "Option One",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_cssGlobalClasses": [
+            "90uddg"
+          ],
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "fill": {
+              "raw": "var(--icon-fill-color)"
+            },
+            "stroke": {
+              "raw": "var(--icon-stroke-color)"
+            }
+          },
+          "iconPosition": "right"
+        },
+        "label": "Link (Styled)",
+        "themeStyles": []
+      },
+      {
+        "id": "a113f9",
+        "name": "block",
+        "parent": "3f3fdd",
+        "children": [
+          "04a30e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fqyy2g"
+          ]
+        },
+        "label": "Option <li>"
+      },
+      {
+        "id": "e4afc6",
+        "name": "block",
+        "parent": "3f3fdd",
+        "children": [
+          "0a7983"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fqyy2g"
+          ]
+        },
+        "label": "Option <li>"
+      },
+      {
+        "id": "0a7983",
+        "name": "text-link",
+        "parent": "e4afc6",
+        "children": [],
+        "settings": {
+          "text": "Option Three",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_cssGlobalClasses": [
+            "90uddg"
+          ],
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "fill": {
+              "raw": "var(--icon-fill-color)"
+            },
+            "stroke": {
+              "raw": "var(--icon-stroke-color)"
+            }
+          },
+          "iconPosition": "right"
+        },
+        "label": "Link (Styled)",
+        "themeStyles": []
+      },
+      {
+        "id": "cdfd66",
+        "name": "block",
+        "parent": "3f3fdd",
+        "children": [
+          "0b6acb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fqyy2g"
+          ]
+        },
+        "label": "Option <li>"
+      },
+      {
+        "id": "0b6acb",
+        "name": "text-link",
+        "parent": "cdfd66",
+        "children": [],
+        "settings": {
+          "text": "Option Two",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_cssGlobalClasses": [
+            "90uddg"
+          ],
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "fill": {
+              "raw": "var(--icon-fill-color)"
+            },
+            "stroke": {
+              "raw": "var(--icon-stroke-color)"
+            }
+          },
+          "iconPosition": "right"
+        },
+        "label": "Link (Styled)",
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "acss_import_bg--ultra-light",
+        "name": "bg--ultra-light",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "0oyvbp",
+        "name": "cta-section-papa",
+        "settings": {
+          "_padding": {
+            "top": "var(--section-space-l)",
+            "bottom": "var(--section-space-l)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "hfbp8a",
+        "name": "cta-section-papa__inner",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridGap": "calc(var(--content-gap) * 3)",
+          "_width": "var(--width-xl)",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)",
+          "_gridGap:mobile_landscape": "calc(var(--content-gap) * 1.5)"
+        },
+        "modified": 1718755985,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "n5pfaj",
+        "name": "cta-section-papa__content-wrapper",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_justifyContent": "center"
+        },
+        "modified": 1718755418,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "l5zk3a",
+        "name": "cta-section-papa__options-wrapper",
+        "settings": {
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          },
+          "_padding": {
+            "left": "0"
+          },
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "lrx9n9",
+        "name": "cta-section-papa__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "9vnmav",
+        "name": "cta-section-papa__text-basic",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-l)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "90uddg",
+        "name": "cta-section-papa__link",
+        "settings": {
+          "_width": "100%",
+          "_padding": {
+            "top": "var(--space-s)",
+            "right": "var(--space-m)",
+            "bottom": "var(--space-s)",
+            "left": "var(--space-m)"
+          },
+          "_display": "flex",
+          "_alignItems": "center",
+          "_justifyContent": "space-between",
+          "_typography": {
+            "text-align": "center",
+            "font-size": "var(--text-l)",
+            "text-decoration": "none"
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            },
+            "width": {
+              "top": "1",
+              "right": "1",
+              "bottom": "1",
+              "left": "1"
+            },
+            "style": "solid",
+            "color": {
+              "raw": "var(--black)"
+            }
+          },
+          "iconSize": "var(--icon-size)",
+          "_cssCustom": ".cta-section-papa__link {\n  /* Icon */\n\t--icon-size: 1em;\n  --icon-fill-color: transparent;\n  --icon-stroke-color: var(--black);\n  /* Background */\n  --bg: transparent;\n  --bg-hover: var(--primary);\n  /* Foreground */\n  --fg: --black;\n  --fg-hover: var(--primary-ultra-light);\n  /* Transition */\n  --timing: .3s;\n  --function: ease;\n}\n\n.cta-section-papa__link {\n  background: var(--bg);\n\tcolor: var(--fg);\n  transition: background var(--timing) var(--function), color var(--timing) var(--function);\n}\n\n.cta-section-papa__link:hover {\n\tbackground-color: var(--bg-hover);\n  color: var(--fg-hover);\n  --icon-stroke-color: var(--primary-ultra-light);\n}"
+        },
+        "modified": 1718755860,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "fqyy2g",
+        "name": "cta-section-papa__option",
+        "settings": [],
+        "modified": 1718755418,
+        "user_id": 1,
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

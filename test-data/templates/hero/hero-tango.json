@@ -1,0 +1,359 @@
+{
+  "idx": 96,
+  "title": "Hero Tango",
+  "elementCount": 13,
+  "classCount": 12,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "486604",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "375505",
+          "5ad28c",
+          "67c3b1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "0qrpsh"
+          ]
+        },
+        "label": "Hero Tango"
+      },
+      {
+        "id": "375505",
+        "name": "container",
+        "parent": "486604",
+        "children": [
+          "237fe9",
+          "5a400c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pdcgtq"
+          ]
+        },
+        "label": "Intro Echo"
+      },
+      {
+        "id": "237fe9",
+        "name": "block",
+        "parent": "375505",
+        "children": [
+          "de5e9c",
+          "710ca3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cbghev"
+          ]
+        },
+        "label": "Heading Wrapper"
+      },
+      {
+        "id": "5a400c",
+        "name": "block",
+        "parent": "375505",
+        "children": [
+          "92a4da"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pdtwel"
+          ]
+        },
+        "label": "Lede Wrapper"
+      },
+      {
+        "id": "710ca3",
+        "name": "text-basic",
+        "parent": "237fe9",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "wbfkbf"
+          ]
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "de5e9c",
+        "name": "heading",
+        "parent": "237fe9",
+        "children": [],
+        "settings": {
+          "text": "This is a hero heading",
+          "tag": "h1",
+          "_cssGlobalClasses": [
+            "bkgkvg"
+          ]
+        }
+      },
+      {
+        "id": "92a4da",
+        "name": "text-basic",
+        "parent": "5a400c",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "wqqaxf"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "5ad28c",
+        "name": "container",
+        "parent": "486604",
+        "children": [
+          "4a6014",
+          "85d8da"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "yuypam"
+          ]
+        },
+        "label": "Image Group (CSS)"
+      },
+      {
+        "id": "89c6b8",
+        "name": "image",
+        "parent": "4a6014",
+        "children": [],
+        "settings": {
+          "tag": "figure",
+          "_cssGlobalClasses": [
+            "9ea0fv"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_objectPosition": "var(--image-1-object-position)",
+          "_width": "100%"
+        },
+        "label": "Image",
+        "themeStyles": []
+      },
+      {
+        "id": "b41daf",
+        "name": "image",
+        "parent": "85d8da",
+        "children": [],
+        "settings": {
+          "tag": "figure",
+          "_cssGlobalClasses": [
+            "9ea0fv"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_objectPosition": "var(--image-2-object-position)"
+        },
+        "label": "Image",
+        "themeStyles": []
+      },
+      {
+        "id": "4a6014",
+        "name": "block",
+        "parent": "5ad28c",
+        "children": [
+          "89c6b8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "j64xjq"
+          ]
+        },
+        "label": "Image Wrapper"
+      },
+      {
+        "id": "85d8da",
+        "name": "block",
+        "parent": "5ad28c",
+        "children": [
+          "b41daf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "j64xjq"
+          ]
+        },
+        "label": "Image Wrapper"
+      },
+      {
+        "id": "67c3b1",
+        "name": "code",
+        "parent": "486604",
+        "children": [],
+        "settings": {
+          "code": "<style>\n  /* Set overlap amount */\n  html {\n  \t--image-overlap: min(300px, 25vw); \n  }\n  /* Auto-space adjacent content */\n  .hero-tango + * {\n  \tpadding-block-start: calc(var(--section-space-m) + var(--image-overlap));\n  }\n</style>",
+          "executeCode": true,
+          "noRoot": true,
+          "user_id": 2,
+          "time": 1762444265
+        },
+        "label": "Overlap Code"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "pdcgtq",
+        "name": "fr-intro-echo",
+        "settings": {
+          "_cssCustom:mobile_landscape": ".fr-intro-echo {\n  grid-template-columns: 1fr;\n}",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns": "var(--grid-2-1)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_display": "grid",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)",
+          "_alignItemsGrid": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "cbghev",
+        "name": "fr-intro-echo__heading-wrapper",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 2)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wbfkbf",
+        "name": "fr-intro-echo__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "bkgkvg",
+        "name": "fr-intro-echo__heading",
+        "settings": {
+          "_cssCustom": ".fr-intro-echo__heading {\n  text-wrap: balance;\n}"
+        },
+        "_mappedId": "bkgkvg",
+        "modified": 1771253172,
+        "user_id": 1
+      },
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771253101,
+        "user_id": 1
+      },
+      {
+        "id": "pdtwel",
+        "name": "fr-intro-echo__lede-wrapper",
+        "settings": {
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wqqaxf",
+        "name": "fr-intro-echo__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "0qrpsh",
+        "name": "hero-tango",
+        "settings": {
+          "_rowGap": "var(--container-gap)",
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "_padding": {
+            "bottom": "0"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "yuypam",
+        "name": "hero-tango__image-group",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridGap": "var(--grid-gap)",
+          "_cssCustom": ".hero-tango__image-group {\n\t--image-1-object-position: 50% 50%;\n  --image-2-object-position: 90% 50%;\n  --image-offset: var(--space-xxl);\n}\n\n.hero-tango__image-group > *:first-child {\n\tmargin-block-start: var(--image-offset);\n}",
+          "_margin": {
+            "bottom": "calc(var(--image-overlap) * -1)"
+          },
+          "_position": "relative",
+          "_cssCustom:mobile_landscape": ".hero-section-tango__image-group > *:first-child {\n\tmargin: 0;\n}",
+          "_gridGap:mobile_landscape": "calc(var(--grid-gap) / 2)",
+          "_gridTemplateColumns:mobile_portrait": "var(--grid-1)",
+          "_zIndex": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "9ea0fv",
+        "name": "hero-tango__image",
+        "settings": {
+          "_aspectRatio": "3/3.5",
+          "_objectFit": "cover",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "j64xjq",
+        "name": "hero-tango__image-wrapper",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

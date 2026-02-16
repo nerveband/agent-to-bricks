@@ -1,0 +1,586 @@
+{
+  "idx": 8,
+  "title": "Slide Menu Alpha",
+  "elementCount": 30,
+  "classCount": 7,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "4beb2b",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "3a5337",
+          "c83118",
+          "348c6e",
+          "ce7b1d",
+          "8c6799"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "bmegdx"
+          ],
+          "tag": "custom",
+          "customTag": "nav",
+          "_attributes": [
+            {
+              "id": "vfzlav",
+              "name": "aria-label",
+              "value": "secondary"
+            },
+            {
+              "id": "pbsofv",
+              "name": "data-slide-navigation"
+            }
+          ]
+        },
+        "label": "Slide Navigation Alpha (CSS)"
+      },
+      {
+        "id": "ce7b1d",
+        "name": "code",
+        "parent": "4beb2b",
+        "children": [],
+        "settings": {
+          "javascriptCode": "const navigation = document.querySelector('[data-slide-navigation]');\nconst details = navigation.querySelectorAll('details');\n\ndetails.forEach(detail => {\n    if (detail.querySelector('a[aria-current=\"page\"]')) {\n        detail.setAttribute('open', '');\n    }\n});",
+          "executeCode": true,
+          "noRoot": true
+        },
+        "label": "Open if Current Page"
+      },
+      {
+        "id": "3a5337",
+        "name": "div",
+        "parent": "4beb2b",
+        "children": [
+          "ec57c9",
+          "620472"
+        ],
+        "settings": {
+          "tag": "custom",
+          "customTag": "details",
+          "_attributes": [
+            {
+              "id": "oqnour",
+              "name": "name",
+              "value": "slide-menu"
+            }
+          ],
+          "_cssGlobalClasses": [
+            "bnozku"
+          ]
+        },
+        "label": "Details"
+      },
+      {
+        "id": "ec57c9",
+        "name": "text-basic",
+        "parent": "3a5337",
+        "children": [],
+        "settings": {
+          "text": "Accordion 1",
+          "tag": "custom",
+          "customTag": "summary",
+          "_cssGlobalClasses": [
+            "bnaxpv"
+          ]
+        },
+        "label": "Summary"
+      },
+      {
+        "id": "620472",
+        "name": "block",
+        "parent": "3a5337",
+        "children": [
+          "89de9d",
+          "786b39",
+          "d44da3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fwkoqd"
+          ],
+          "tag": "ul"
+        },
+        "label": "List"
+      },
+      {
+        "id": "89de9d",
+        "name": "block",
+        "parent": "620472",
+        "children": [
+          "6e66aa"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mpqivu"
+          ],
+          "tag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "6e66aa",
+        "name": "text-link",
+        "parent": "89de9d",
+        "children": [],
+        "settings": {
+          "text": "Current Page (Auto Opens)",
+          "_cssGlobalClasses": [
+            "baluzb"
+          ],
+          "link": {
+            "type": "external",
+            "url": "/template/slide-navigation-alpha/"
+          }
+        },
+        "label": "List Item Link",
+        "themeStyles": []
+      },
+      {
+        "id": "786b39",
+        "name": "block",
+        "parent": "620472",
+        "children": [
+          "89ed7c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mpqivu"
+          ],
+          "tag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "89ed7c",
+        "name": "text-link",
+        "parent": "786b39",
+        "children": [],
+        "settings": {
+          "text": "Option #2",
+          "_cssGlobalClasses": [
+            "baluzb"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "List Item Link",
+        "themeStyles": []
+      },
+      {
+        "id": "d44da3",
+        "name": "block",
+        "parent": "620472",
+        "children": [
+          "6296fd"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mpqivu"
+          ],
+          "tag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "6296fd",
+        "name": "text-link",
+        "parent": "d44da3",
+        "children": [],
+        "settings": {
+          "text": "Option #3",
+          "_cssGlobalClasses": [
+            "baluzb"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "List Item Link"
+      },
+      {
+        "id": "c83118",
+        "name": "div",
+        "parent": "4beb2b",
+        "children": [
+          "2727c2",
+          "da8074"
+        ],
+        "settings": {
+          "tag": "custom",
+          "customTag": "details",
+          "_attributes": [
+            {
+              "id": "oqnour",
+              "name": "name",
+              "value": "slide-menu"
+            }
+          ],
+          "_cssGlobalClasses": [
+            "bnozku"
+          ]
+        },
+        "label": "Details"
+      },
+      {
+        "id": "2727c2",
+        "name": "text-basic",
+        "parent": "c83118",
+        "children": [],
+        "settings": {
+          "text": "Accordion 2",
+          "tag": "custom",
+          "customTag": "summary"
+        },
+        "label": "Summary"
+      },
+      {
+        "id": "da8074",
+        "name": "block",
+        "parent": "c83118",
+        "children": [
+          "109e2c",
+          "61ec9a",
+          "5fb7bf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fwkoqd"
+          ],
+          "tag": "ul"
+        },
+        "label": "List"
+      },
+      {
+        "id": "109e2c",
+        "name": "block",
+        "parent": "da8074",
+        "children": [
+          "00d7bd"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mpqivu"
+          ],
+          "tag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "00d7bd",
+        "name": "text-link",
+        "parent": "109e2c",
+        "children": [],
+        "settings": {
+          "text": "Option #1",
+          "_cssGlobalClasses": [
+            "baluzb"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "List Item Link",
+        "themeStyles": []
+      },
+      {
+        "id": "61ec9a",
+        "name": "block",
+        "parent": "da8074",
+        "children": [
+          "9955d1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mpqivu"
+          ],
+          "tag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "9955d1",
+        "name": "text-link",
+        "parent": "61ec9a",
+        "children": [],
+        "settings": {
+          "text": "Option #2",
+          "_cssGlobalClasses": [
+            "baluzb"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "List Item Link",
+        "themeStyles": []
+      },
+      {
+        "id": "5fb7bf",
+        "name": "block",
+        "parent": "da8074",
+        "children": [
+          "841ece"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mpqivu"
+          ],
+          "tag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "841ece",
+        "name": "text-link",
+        "parent": "5fb7bf",
+        "children": [],
+        "settings": {
+          "text": "Option #3",
+          "_cssGlobalClasses": [
+            "baluzb"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "List Item Link"
+      },
+      {
+        "id": "348c6e",
+        "name": "div",
+        "parent": "4beb2b",
+        "children": [
+          "4ae3ca",
+          "3eccc5"
+        ],
+        "settings": {
+          "tag": "custom",
+          "customTag": "details",
+          "_attributes": [
+            {
+              "id": "oqnour",
+              "name": "name",
+              "value": "slide-menu"
+            }
+          ],
+          "_cssGlobalClasses": [
+            "bnozku"
+          ]
+        },
+        "label": "Details"
+      },
+      {
+        "id": "4ae3ca",
+        "name": "text-basic",
+        "parent": "348c6e",
+        "children": [],
+        "settings": {
+          "text": "Accordion 3",
+          "tag": "custom",
+          "customTag": "summary"
+        },
+        "label": "Summary"
+      },
+      {
+        "id": "3eccc5",
+        "name": "block",
+        "parent": "348c6e",
+        "children": [
+          "f4f836",
+          "22c2cc",
+          "ca772a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fwkoqd"
+          ],
+          "tag": "ul"
+        },
+        "label": "List"
+      },
+      {
+        "id": "f4f836",
+        "name": "block",
+        "parent": "3eccc5",
+        "children": [
+          "a98466"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mpqivu"
+          ],
+          "tag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "a98466",
+        "name": "text-link",
+        "parent": "f4f836",
+        "children": [],
+        "settings": {
+          "text": "Option #1",
+          "_cssGlobalClasses": [
+            "baluzb"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "List Item Link",
+        "themeStyles": []
+      },
+      {
+        "id": "22c2cc",
+        "name": "block",
+        "parent": "3eccc5",
+        "children": [
+          "2269bc"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mpqivu"
+          ],
+          "tag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "2269bc",
+        "name": "text-link",
+        "parent": "22c2cc",
+        "children": [],
+        "settings": {
+          "text": "Option #2",
+          "_cssGlobalClasses": [
+            "baluzb"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "List Item Link",
+        "themeStyles": []
+      },
+      {
+        "id": "ca772a",
+        "name": "block",
+        "parent": "3eccc5",
+        "children": [
+          "11cf61"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mpqivu"
+          ],
+          "tag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "11cf61",
+        "name": "text-link",
+        "parent": "ca772a",
+        "children": [],
+        "settings": {
+          "text": "Option #3",
+          "_cssGlobalClasses": [
+            "baluzb"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "List Item Link"
+      },
+      {
+        "id": "8c6799",
+        "name": "fr-notes",
+        "parent": "4beb2b",
+        "children": [],
+        "settings": {
+          "notesContent": "<p>This is a pure JS slide menu. There's an optional code block that you should keep if you want the accordion with an active link to open by default. If you don't need this functionality, feel free to delete the code block.</p><h3>How to use:</h3><ol><li>All customization options exist as locally scoped variables on the Slide Navigation Alpha element.</li><li>Upload an svg icon that you want to use for the indicator. Take the relative path to this icon and paste it in the --icon-url variable.</li><li>Customize the locally scoped variables according to the look and feel you want to achieve. You can add your own custom CSS as well if needed.</li><li>Customize the aria-label attached to the Slide Navigation Alpha element. You should give the navigation a name this way to satisfy accessibility requirements.</li><li>This slide menu is query loop compatible. To use with query loops you'll first query the parents and then the children, or categories and then posts within each category using nested loops. These are the typical routes for querying navigation. If you're not sure how to configure query loops like this, it's a perfect question for the <a href=\"https://geary.co/inner-circle/\">Inner Circle</a>.</li></ol>",
+          "_cssGlobalClasses": [
+            "ieofwl"
+          ]
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "ieofwl",
+        "name": "fr-note",
+        "settings": {
+          "_cssCustom": ".fr-note {\n  padding: var(--card-padding, var(--space-m));\n  border-radius: var(--card-radius, var(--radius));\n  background: var(--warning-light, #FDEBB5);\n  color: var(--warning-ultra-dark, #544002);\n  margin-inline: auto;\n}\n\n.fr-note * + :is(h2, h3, h4) {\n  margin-top: var(--heading-spacing);\n  color: var(--text-dark);\n}\n\n.fr-note a {\n  text-decoration: underline;\n}",
+          "_width": "60ch",
+          "_typography": {
+            "color": {
+              "raw": "var(--text-dark-muted)"
+            }
+          }
+        },
+        "modified": 1744306417,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "bmegdx",
+        "name": "slide-navigation-alpha",
+        "settings": {
+          "_cssCustom": ".slide-navigation-alpha {\n  /* Accordion Spacing */\n  --item-gap: .75em;\n  /* Icon Styling */\n  --icon-url: url('/wp-content/uploads/arrow-right-01-stroke-sharp.svg');\n  --icon-size: 1.25em;\n  --icon-position: var(--icon-left);\n  --icon-gap: var(--icon-gap-right);\n  --icon-gap-offset: .25em;\n  --icon-color: currentColor;\n  --icon-start-rotation: 0deg;\n  --icon-rotation: 90deg;\n  --icon-order: 0;\n  /* List Styling */\n  --list-indent: calc(var(--icon-size) / 2);\n  /* Link Styling */\n  --link-font-size: var(--text-s);\n  --link-color: var(--text-dark-muted);\n  --link-color-hover: var(--primary-hover);\n  --link-border-width: 1px;\n  --link-border-style: solid;\n  --link-padding-inline: 1em;\n  --link-padding-block: var(--item-gap);\n  --link-line-height: 1.2;\n  --link-decoration: none;\n  /* Internal Use */\n  --icon-left: 50% auto auto 0;\n  --icon-gap-left: 0 calc(var(--icon-size) + var(--icon-gap-offset));\n  --icon-right: 50% 0 auto auto;\n  --icon-gap-right: calc(var(--icon-size) + var(--icon-gap-offset)) 0;\n  inline-size: 100%;\n  gap: var(--item-gap);\n  \n  /* Animate opening */\n  @media (prefers-reduced-motion: no-preference) {\n    interpolate-size: allow-keywords;\n  }\n  \n  \n  /* Add cursor to summary */\n  summary {\n  \tcursor: pointer;\n\t}\n  \n  /* Bullet style */\n  details > summary {\n    list-style: none;\n    position: relative;\n    padding-inline: var(--icon-gap);\n    line-height: 1.1;\n\t}\n  details > summary::before {\n    content: '';\n    position: absolute;\n    inset: var(--icon-position);\n    width: var(--icon-size); \n    height: var(--icon-size);\n    -webkit-mask-image: var(--icon-url);\n    mask-image: var(--icon-url);\n    -webkit-mask-repeat: no-repeat;\n    mask-repeat: no-repeat;\n    -webkit-mask-position: center;\n    mask-position: center;\n    -webkit-mask-size: contain;\n    mask-size: contain;\n    background-color: var(--icon-color, currentColor);\n    transition: transform calc(var(--transition-duration, .3s) / 1.5) var(--transition-timing, ease-in-out);\n    transform: translateY(-50%) rotate(var(--icon-start-rotation));\n\t}\n  details[open] > summary::before {\n    transform: translateY(-50%) rotate(var(--icon-rotation));\n\t}\n  \n  details > summary {\n    margin-block-end: var(--item-gap);\n  }\n}\n\n/* Hide marker style in Safari */\n.slide-navigation-alpha details > summary::-webkit-details-marker,\n.slide-navigation-alpha details > summary::marker {\n    display: none;\n    content: '';\n}\n\n/* Content opening styling */\n.slide-navigation-alpha {\n  /**\n   * only for Chromium browsers, cannot be nested\n   * or it breaks other styles for Safari\n   */\n  details::details-content {\n    opacity: 0;\n    block-size: 0;\n    overflow-y: clip; \n    transition: \n      content-visibility var(--transition-duration, .3s) allow-discrete,\n      opacity var(--transition-duration, .3s),\n      block-size var(--transition-duration, .3s);\n\t}\n  \n  details[open]::details-content {\n    opacity: 1;\n    block-size: auto;\n\t}\n  \n}\n\n\n/* List and Link Styling */\n\n.slide-navigation-alpha__list {\n  margin: 0;\n  padding-inline-start: var(--list-indent);\n\tgap: 0;\n}\n\n.slide-navigation-alpha__list-item-link {\n  font-size: var(--link-font-size);\n  border-left: var(--link-border-width) var(--link-border-style) var(--border-color-dark);\n  padding-block: var(--link-padding-block);\n  padding-inline: var(--link-padding-inline);\n  transition: border-color var(--transition-duration, .3s) var(--transition-timing, ease-in-out), \n    color var(--transition-duration, .3s) var(--transition-timing, ease-in-out);\n  line-height: var(--link-line-height);\n  \n  &:hover, &[aria-current=\"page\"] {\n    border-color: var(--link-color-hover);\n    --link-border-style: solid;\n  }\n}"
+        },
+        "modified": 1737439237,
+        "user_id": 26,
+        "_exists": false
+      },
+      {
+        "id": "bnozku",
+        "name": "slide-navigation-alpha__details",
+        "settings": [],
+        "modified": 1736971857,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "bnaxpv",
+        "name": "slide-navigation-alpha__details-summary",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "fwkoqd",
+        "name": "slide-navigation-alpha__list",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "mpqivu",
+        "name": "slide-navigation-alpha__list-item",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "baluzb",
+        "name": "slide-navigation-alpha__list-item-link",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

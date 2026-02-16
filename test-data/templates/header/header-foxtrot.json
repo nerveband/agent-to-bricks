@@ -1,0 +1,366 @@
+{
+  "idx": 348,
+  "title": "Header Foxtrot",
+  "elementCount": 9,
+  "classCount": 11,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "77d803",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "511551"
+        ],
+        "settings": {
+          "tag": "div",
+          "_cssGlobalClasses": [
+            "sjhbib"
+          ]
+        },
+        "label": "Header Foxtrot (Top)"
+      },
+      {
+        "id": "511551",
+        "name": "container",
+        "parent": "77d803",
+        "children": [
+          "22fffa",
+          "8e2d1b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "neerqn"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "22fffa",
+        "name": "logo",
+        "parent": "511551",
+        "children": [],
+        "settings": {
+          "logo": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "qdddlc",
+            "horpzc"
+          ],
+          "logoText": "{site_title}",
+          "logoLoading": "eager"
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "eb7c10",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "671a8a"
+        ],
+        "settings": {
+          "tag": "div",
+          "_cssGlobalClasses": [
+            "cejuod"
+          ]
+        },
+        "label": "Header Foxtrot (Main)"
+      },
+      {
+        "id": "671a8a",
+        "name": "container",
+        "parent": "eb7c10",
+        "children": [
+          "12c0a3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "piiawv"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "12c0a3",
+        "name": "nav-menu",
+        "parent": "671a8a",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xzqxtw"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Nav Alpha Menu"
+      },
+      {
+        "id": "ef44bd",
+        "name": "button",
+        "parent": "8e2d1b",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary",
+            "jwmjjy"
+          ]
+        },
+        "label": "CTA"
+      },
+      {
+        "id": "baa7aa",
+        "name": "text-basic",
+        "parent": "8e2d1b",
+        "children": [],
+        "settings": {
+          "text": "(123) 456-7890",
+          "_cssGlobalClasses": [
+            "gbzdcd"
+          ],
+          "link": {
+            "type": "external",
+            "url": "tel:"
+          }
+        },
+        "label": "Phone"
+      },
+      {
+        "id": "8e2d1b",
+        "name": "div",
+        "parent": "511551",
+        "children": [
+          "baa7aa",
+          "ef44bd"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "bixhzb"
+          ]
+        },
+        "label": "CTA Wrapper"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "horpzc",
+        "name": "fr-logo",
+        "settings": [],
+        "_mappedId": "horpzc",
+        "modified": 1771255588,
+        "user_id": 1
+      },
+      {
+        "id": "xzqxtw",
+        "name": "fr-nav-alpha",
+        "settings": {
+          "mobileMenuToggleColor": {
+            "raw": "var(--text-dark)"
+          },
+          "_typography:tablet_portrait": {
+            "line-height": "0"
+          },
+          "mobileMenuTypography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          },
+          "menuMargin": {
+            "left": "0"
+          },
+          "_cssCustom": ".fr-nav-alpha {\n  --link-color: \t\t\t\tvar(--primary);\n  --link-color-hover: \tvar(--primary-hover);\n  --link-color-active: \tvar(--primary);\n  --toggle-gap: \t\t\t\t.5em;\n  --border-color: \t\t\ttransparent;\n\n  /* Mobile Menu */\n  --mm-padding-block: 0;\n  --mm-padding-inline: 1.5em;\n  --mm-item-gap: 1em;\n}\n\n.fr-nav-alpha li {\n  white-space: nowrap;\n}\n\n.fr-nav-alpha ul.sub-menu li {\n  padding: var(--btn-padding-block) var(--btn-padding-inline);\n  border-block-end: 0;\n}\n\n.fr-nav-alpha ul.bricks-mobile-menu {\n  display: flex;\n  gap: var(--mm-item-gap);\n  padding-block: var(--space-xxl);  \n  align-items: center;  \n}\n\n.fr-nav-alpha ul.bricks-mobile-menu li {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: var(--mm-item-gap);\n  padding: var(--mm-padding-block) var(--mm-padding-inline);   border-block-end: 0;\n}\n\n.fr-nav-alpha .bricks-mobile-menu-wrapper .bricks-mobile-menu>li>.brx-submenu-toggle>*,\n.fr-nav-alpha .bricks-mobile-menu-wrapper .bricks-mobile-menu>li>a,\n.fr-nav-alpha .bricks-mobile-menu-wrapper .sub-menu li>a,\n.fr-nav-alpha .bricks-mobile-menu-wrapper .sub-menu li>.brx-submenu-toggle>* {\n  padding: 0;\n  max-width: max-content;\n  line-height: var(--btn-line-height);\n}\n\n.show-mobile-menu ul.bricks-mobile-menu {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n}\n\n.bricks-mobile-menu-toggle {\n  margin-inline-start: auto;\n}\n\n.fr-nav-alpha .brx-submenu-toggle {\n  display: flex;\n  flex-direction: row;\n  gap: var(--toggle-gap);\n}\n\n.fr-nav-alpha.fr-nav-alpha .brx-submenu-toggle button {\n  margin: 0;\n  padding: 0;\n}\n\n.fr-nav-alpha .bricks-mobile-menu.sub-menu {\n  min-width: auto;\n}\n\n.fr-nav-alpha.brxe-nav-menu .bricks-mobile-menu-wrapper li.open>.sub-menu {\n  display: flex;\n  flex-direction: column;\n  gap: var(--mm-item-gap);\n}",
+          "subMenuIconTypography": {
+            "color": {
+              "raw": "var(--link-color)"
+            },
+            "font-size": "var(--text-s)",
+            "line-height": "1"
+          },
+          "subMenuBackgroundList": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "subMenuTypography": {
+            "color": {
+              "raw": "var(--link-color)"
+            },
+            "text-decoration": "none"
+          },
+          "menuIconTypography": {
+            "font-size": "var(--icon-size)",
+            "color": {
+              "raw": "var(--icon-color)"
+            }
+          },
+          "mobileSubMenuTypography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          },
+          "mobileMenuIconTypography:mobile_landscape": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          },
+          "menuTypography:hover": {
+            "color": {
+              "raw": "var(--link-color-hover)"
+            }
+          },
+          "menuTypography": {
+            "color": {
+              "raw": "var(--link-color)"
+            },
+            "line-height": "1",
+            "text-decoration": "none"
+          },
+          "menuActiveTypography": {
+            "color": {
+              "raw": "var(--link-color-active)"
+            }
+          },
+          "subMenuTypography:hover": {
+            "color": {
+              "raw": "var(--link-color-hover)"
+            }
+          },
+          "subMenuIconTypography:hover": {
+            "color": {
+              "raw": "var(--link-color-hover)"
+            }
+          },
+          "subMenuIconTransformOpen": {
+            "rotateZ": "270"
+          },
+          "menuIconTransformOpen": {
+            "rotateZ": "180"
+          },
+          "_display:mobile_landscape": "flex",
+          "menuGap": "var(--content-gap)",
+          "subMenuPadding": {
+            "left": "0",
+            "right": "0"
+          },
+          "subMenuBoxShadow": {
+            "color": {
+              "raw": "var(--box-shadow-m)"
+            }
+          },
+          "menuPadding": {
+            "top": "var(--btn-padding-block)",
+            "bottom": "var(--btn-padding-block)"
+          },
+          "menuIconPadding": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "modified": 1771255588,
+        "user_id": 1,
+        "_mappedId": "xzqxtw"
+      },
+      {
+        "id": "sjhbib",
+        "name": "fr-header-foxtrot__top",
+        "settings": {
+          "_padding": {
+            "left": "var(--gutter)",
+            "right": "var(--gutter)",
+            "top": "var(--space-m)",
+            "bottom": "var(--space-m)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "neerqn",
+        "name": "fr-header-foxtrot__top-inner",
+        "settings": {
+          "_columnGap": "var(--fr-content-gap)",
+          "_justifyContent": "space-between",
+          "_direction": "row",
+          "_alignItems": "center",
+          "_rowGap": "var(--fr-content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "qdddlc",
+        "name": "fr-header-foxtrot__logo",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "cejuod",
+        "name": "fr-header-foxtrot",
+        "settings": {
+          "_padding": {
+            "left": "var(--gutter)",
+            "right": "var(--gutter)",
+            "top": "var(--space-s)",
+            "bottom": "var(--space-s)"
+          },
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "piiawv",
+        "name": "fr-header-foxtrot__inner",
+        "settings": {
+          "_display": "flex",
+          "_direction": "row"
+        },
+        "_exists": false
+      },
+      {
+        "id": "jwmjjy",
+        "name": "fr-header-foxtrot__cta-button",
+        "settings": {
+          "_display:mobile_landscape": "none"
+        },
+        "_exists": false
+      },
+      {
+        "id": "gbzdcd",
+        "name": "fr-header-foxtrot__phone",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "bixhzb",
+        "name": "fr-header-foxtrot__cta-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_alignItems": "center",
+          "_columnGap": "var(--content-gap)"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

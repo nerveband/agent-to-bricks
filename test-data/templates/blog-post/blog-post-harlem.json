@@ -1,0 +1,595 @@
+{
+  "idx": 17,
+  "title": "Blog Post Harlem",
+  "elementCount": 17,
+  "classCount": 18,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "ac64a4",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "1d7dab"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "87guq8"
+          ]
+        },
+        "label": "Blog Post Harlem (CSS)"
+      },
+      {
+        "id": "1d7dab",
+        "name": "container",
+        "parent": "ac64a4",
+        "children": [
+          "7618a9",
+          "282cd9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fxomeg"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "7618a9",
+        "name": "div",
+        "parent": "1d7dab",
+        "children": [
+          "850e81"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xyyvqt"
+          ]
+        },
+        "label": "Title Column"
+      },
+      {
+        "id": "850e81",
+        "name": "div",
+        "parent": "7618a9",
+        "children": [
+          "32f11c",
+          "f0065f",
+          "5db166",
+          "f79f41",
+          "43e512"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wz824t"
+          ],
+          "query": {
+            "posts_per_page": "1",
+            "is_archive_main_query": true
+          }
+        },
+        "label": "Content"
+      },
+      {
+        "id": "32f11c",
+        "name": "block",
+        "parent": "850e81",
+        "children": [
+          "5b6781",
+          "bd13db"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sprg9t"
+          ]
+        },
+        "label": "Title Heading Wrapper"
+      },
+      {
+        "id": "5b6781",
+        "name": "heading",
+        "parent": "32f11c",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vk0f6f"
+          ],
+          "tag": "h1",
+          "text": "{post_title}"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "bd13db",
+        "name": "text-basic",
+        "parent": "32f11c",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "zxvuoa"
+          ],
+          "customTag": "h1",
+          "text": "{post_date}",
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "f79f41",
+        "name": "div",
+        "parent": "850e81",
+        "children": [
+          "3b31c2",
+          "d15faa"
+        ],
+        "settings": {
+          "query": {
+            "post_type": [
+              "changelog"
+            ],
+            "posts_per_page": "1"
+          },
+          "_cssGlobalClasses": [
+            "lx1qeg"
+          ]
+        },
+        "label": "TOC Wrapper"
+      },
+      {
+        "id": "d15faa",
+        "name": "fr-table-of-contents",
+        "parent": "f79f41",
+        "children": [],
+        "settings": {
+          "frTocShowHeadingUpTo": "h3",
+          "frTocListType": "none",
+          "frTocSubListType": "none",
+          "frTocAccordionArrowIcon": {
+            "library": "themify",
+            "icon": "ti-angle-down"
+          },
+          "frTocAccHeaderIconBackgroundColor": {
+            "rgb": "rgba(0,0,0,.0)"
+          },
+          "frTocAccHeaderIconSize": "var(--text-m)",
+          "_cssCustom": "#brxe-d15faa .fr-toc__header {\n  display: none;\n}",
+          "_cssGlobalClasses": [
+            "tz1xjy"
+          ],
+          "frTocContentSelector": "[data-article]",
+          "frTocScrollOffset": "50"
+        },
+        "themeStyles": [],
+        "label": "TOC"
+      },
+      {
+        "id": "43e512",
+        "name": "block",
+        "parent": "850e81",
+        "children": [
+          "2d20d1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ki6syi"
+          ]
+        },
+        "label": "Title Footer"
+      },
+      {
+        "id": "2d20d1",
+        "name": "text-link",
+        "parent": "43e512",
+        "children": [],
+        "settings": {
+          "text": "All Articles",
+          "conversion_bridge": true,
+          "link": {
+            "type": "external",
+            "url": "/blog/"
+          },
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "9svklk"
+          ]
+        },
+        "label": "Title Footer Link",
+        "themeStyles": []
+      },
+      {
+        "id": "282cd9",
+        "name": "div",
+        "parent": "1d7dab",
+        "children": [
+          "930c40"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rgxh65"
+          ]
+        },
+        "label": "Body Column"
+      },
+      {
+        "id": "930c40",
+        "name": "div",
+        "parent": "282cd9",
+        "children": [
+          "c3ea89"
+        ],
+        "settings": {
+          "tag": "article",
+          "_cssGlobalClasses": [
+            "ebfl7k"
+          ]
+        },
+        "label": "Article"
+      },
+      {
+        "id": "c3ea89",
+        "name": "post-content",
+        "parent": "930c40",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ihlgno"
+          ],
+          "_attributes": [
+            {
+              "id": "nqloxs",
+              "name": "data-article"
+            }
+          ]
+        },
+        "themeStyles": [],
+        "label": "Article Content"
+      },
+      {
+        "id": "3b31c2",
+        "name": "text-basic",
+        "parent": "f79f41",
+        "children": [],
+        "settings": {
+          "text": "In this post...",
+          "_cssGlobalClasses": [
+            "lgprhm"
+          ],
+          "tag": "p"
+        },
+        "label": "TOC Heading"
+      },
+      {
+        "id": "f0065f",
+        "name": "image",
+        "parent": "850e81",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "odlqrj"
+          ],
+          "tag": "figure",
+          "image": {
+            "useDynamicData": "{featured_image}",
+            "size": "large",
+            "filename": "",
+            "id": 19683,
+            "url": "https://bricks.getframes.io/wp-content/uploads/placeholder0002-1024x683.jpg"
+          }
+        },
+        "label": "Featured Image",
+        "themeStyles": []
+      },
+      {
+        "id": "5db166",
+        "name": "text",
+        "parent": "850e81",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ylis4l"
+          ],
+          "text": "<p>This is a lead paragraph that serves as a catchy introduction to your blog post. You can easily make it dynamic for each blog post with a custom field.</p>"
+        },
+        "label": "Lede"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "87guq8",
+        "name": "blog-post-harlem",
+        "settings": {
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)",
+          "_cssCustom": ".blog-post-harlem {\n  --block-spacing: var(--section-space-m);\n  --gap: var(--space-xxl);\n  /* Scrollbars */\n  --scrollbar-width: 100;\n  --scrollbar-track: var(--neutral-dark-trans-10);\n  --scrollbar-thumb: var(--neutral-dark-trans-20);\n  --scrollbar-thumb-hover: var(--neutral-dark-trans-30);\n  --scrollbar-border-radius: var(--radius);\n}",
+          "_padding": {
+            "top": "0",
+            "right": "0",
+            "bottom": "0",
+            "left": "0"
+          },
+          "_cssCustom:tablet_portrait": "/* Title column -- revert to default (non-sticky) layout */\n.blog-post-harlem__title-column {\n  position: static;\n\n\t& .blog-post-harlem__content {\n    position: static;\n    max-height: unset;\n  }\n}"
+        },
+        "modified": 1739647996,
+        "user_id": 26,
+        "_exists": false
+      },
+      {
+        "id": "fxomeg",
+        "name": "blog-post-harlem__inner",
+        "settings": {
+          "_width": "100%",
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-2-3)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_alignItemsGrid": "stretch",
+          "_gridGap": "0",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)"
+        },
+        "modified": 1762434525,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "xyyvqt",
+        "name": "blog-post-harlem__title-column",
+        "settings": {
+          "_padding": {
+            "left": "var(--gutter)"
+          },
+          "_background": {
+            "color": {
+              "raw": "var(--bg-ultra-light)"
+            }
+          },
+          "_display": "flex",
+          "_direction": "column",
+          "_padding:tablet_portrait": {
+            "left": "0"
+          },
+          "_position": "sticky",
+          "_position:tablet_portrait": "static",
+          "_top": "0"
+        },
+        "modified": 1763325708,
+        "user_id": 26,
+        "_exists": false
+      },
+      {
+        "id": "wz824t",
+        "name": "blog-post-harlem__content",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "var(--content-gap)",
+          "_widthMax": "calc(var(--content-width) / 2)",
+          "_alignSelf": "flex-end",
+          "_justifyContent": "flex-start",
+          "_padding": {
+            "right": "var(--gap)",
+            "top": "var(--section-space-m)",
+            "bottom": "var(--section-space-m)"
+          },
+          "_heightMin": "100dvh",
+          "_widthMax:tablet_portrait": "100%",
+          "_padding:tablet_portrait": {
+            "right": "var(--gutter)",
+            "bottom": "var(--section-space-m)",
+            "top": "var(--section-space-m)",
+            "left": "var(--gutter)"
+          },
+          "_heightMin:tablet_portrait": "min-content",
+          "_heightMax": "100dvh",
+          "_cssCustom": "/* For Webkit browsers (Chrome, Safari, etc.) */\n.blog-post-harlem__content\t::-webkit-scrollbar {\n  width: var(--scrollbar-width);\n  height: var(--scrollbar-width);\n}\n\n.blog-post-harlem__content ::-webkit-scrollbar-track {\n  background: var(--scrollbar-track);\n}\n\n.blog-post-harlem__content ::-webkit-scrollbar-thumb {\n  background: var(--scrollbar-thumb);\n  border-radius: var(--scrollbar-border-radius);\n}\n\n.blog-post-harlem__content ::-webkit-scrollbar-thumb:hover {\n  background: var(--scrollbar-thumb-hover);\n}\n\n/* For Firefox */\n.blog-post-harlem__content * {\n  scrollbar-width: thin;\n  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);\n}",
+          "_height:tablet_portrait": "auto",
+          "_width:tablet_portrait": "100%",
+          "_top": "0",
+          "_position": "sticky",
+          "_overflow": "hidden scroll",
+          "_overflow:tablet_portrait": "initial",
+          "_position:tablet_portrait": "static"
+        },
+        "modified": 1741904588,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "sprg9t",
+        "name": "blog-post-harlem__title-heading-wrapper",
+        "settings": {
+          "_margin": {
+            "top": "auto"
+          },
+          "_rowGap": "var(--content-gap)"
+        },
+        "modified": 1734047463,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "vk0f6f",
+        "name": "blog-post-harlem__content-heading",
+        "settings": {
+          "_cssCustom": ".blog-post-harlem__content-heading {\n  text-wrap: balance;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "zxvuoa",
+        "name": "blog-post-harlem__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "lx1qeg",
+        "name": "blog-post-harlem__toc-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "calc(var(--content-gap) / 2)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "tz1xjy",
+        "name": "blog-post-harlem__toc",
+        "settings": {
+          "frTocBodyItemPadding": {
+            "top": ".25em",
+            "bottom": ".25em"
+          },
+          "frTocAccHeaderTextColor": {
+            "raw": "var(--text-dark)"
+          }
+        },
+        "modified": 1734039261,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "ki6syi",
+        "name": "blog-post-harlem__title-footer",
+        "settings": {
+          "_margin": {
+            "top": "auto"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "9svklk",
+        "name": "blog-post-harlem__title-footer-link",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "rgxh65",
+        "name": "blog-post-harlem__body-column",
+        "settings": {
+          "_position": "relative",
+          "_display": "flex",
+          "_direction": "column",
+          "_padding": {
+            "top": "var(--section-space-l)",
+            "bottom": "var(--section-space-l)",
+            "right": "var(--gutter)",
+            "left": "var(--gap)"
+          },
+          "_background": {
+            "color": {
+              "raw": "var(--white)"
+            }
+          },
+          "_heightMin": "100%",
+          "_padding:tablet_portrait": {
+            "left": "var(--gutter)",
+            "right": "var(--gutter)",
+            "top": "var(--section-space-m)",
+            "bottom": "var(--section-space-m)"
+          }
+        },
+        "modified": 1741186530,
+        "user_id": 26,
+        "_exists": false
+      },
+      {
+        "id": "ebfl7k",
+        "name": "blog-post-harlem__article",
+        "settings": {
+          "_width": "50ch"
+        },
+        "modified": 1734633937,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "ihlgno",
+        "name": "blog-post-harlem__article-content",
+        "settings": {
+          "_cssCustom": ".blog-post-harlem__article-content > p:first-of-type:first-letter {\n  font-size: 300%;\n  float: left;\n  font-weight: 700;\n  line-height: .95;\n  margin-inline-end: .5ex;\n  color: var(--primary);\n}",
+          "_margin": {
+            "bottom": "50vh"
+          },
+          "_margin:tablet_portrait": {
+            "bottom": "0"
+          }
+        },
+        "modified": 1734045417,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "lgprhm",
+        "name": "blog-post-harlem__toc-heading",
+        "settings": {
+          "_typography": {
+            "text-transform": "uppercase",
+            "font-size": "var(--text-xs)",
+            "letter-spacing": ".15em"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "odlqrj",
+        "name": "blog-post-harlem__featured-image",
+        "settings": {
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_aspectRatio": "16 / 9",
+          "_objectFit": "cover"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ylis4l",
+        "name": "blog-post-harlem__content-lede",
+        "settings": {
+          "_widthMax:tablet_portrait": "70ch"
+        },
+        "modified": 1739652577,
+        "user_id": 26,
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

@@ -1,0 +1,530 @@
+{
+  "idx": 429,
+  "title": "Header Bravo",
+  "elementCount": 14,
+  "classCount": 13,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "1de4cc",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "b19b71"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "epszir"
+          ]
+        },
+        "label": "Header Bravo Top (CSS)"
+      },
+      {
+        "id": "b19b71",
+        "name": "container",
+        "parent": "1de4cc",
+        "children": [
+          "bae5e8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gwduiu"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "78ff88",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "3835be"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "uohqns"
+          ]
+        },
+        "label": "Header Bravo (Main)"
+      },
+      {
+        "id": "3835be",
+        "name": "container",
+        "parent": "78ff88",
+        "children": [
+          "26f622",
+          "8bfff1",
+          "03d00b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iiumcp"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "bae5e8",
+        "name": "div",
+        "parent": "b19b71",
+        "children": [
+          "a5af82",
+          "9e9f77"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "yyqoks"
+          ]
+        },
+        "label": "Top Links (CSS)"
+      },
+      {
+        "id": "90053a",
+        "name": "text-basic",
+        "parent": "a5af82",
+        "children": [],
+        "settings": {
+          "text": "(123) 456-7890",
+          "_cssGlobalClasses": [
+            "mfljdg"
+          ],
+          "tag": "span"
+        },
+        "label": "Phone"
+      },
+      {
+        "id": "a5af82",
+        "name": "div",
+        "parent": "bae5e8",
+        "children": [
+          "c4a7f4",
+          "90053a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "yelzhm"
+          ],
+          "tag": "a",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Phone Link"
+      },
+      {
+        "id": "c4a7f4",
+        "name": "icon",
+        "parent": "a5af82",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "lssnrd"
+          ]
+        }
+      },
+      {
+        "id": "9e9f77",
+        "name": "div",
+        "parent": "bae5e8",
+        "children": [
+          "151fd3",
+          "074a63"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "yelzhm"
+          ],
+          "tag": "address"
+        },
+        "label": "Address Link"
+      },
+      {
+        "id": "151fd3",
+        "name": "icon",
+        "parent": "9e9f77",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "lssnrd"
+          ]
+        }
+      },
+      {
+        "id": "074a63",
+        "name": "text-basic",
+        "parent": "9e9f77",
+        "children": [],
+        "settings": {
+          "text": "123 Somewhere Drive",
+          "_cssGlobalClasses": [
+            "mfljdg"
+          ],
+          "tag": "span"
+        },
+        "label": "Address"
+      },
+      {
+        "id": "26f622",
+        "name": "image",
+        "parent": "3835be",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "link": "url",
+          "caption": "none",
+          "altText": "{site_title} logo",
+          "loading": "eager",
+          "_cssGlobalClasses": [
+            "horpzc",
+            "zbbsvo"
+          ],
+          "url": {
+            "type": "meta",
+            "useDynamicData": "{site_url}"
+          }
+        },
+        "label": "Logo",
+        "themeStyles": []
+      },
+      {
+        "id": "03d00b",
+        "name": "button",
+        "parent": "3835be",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "_cssGlobalClasses": [
+            "anccmw",
+            "btn--primary"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_display:mobile_portrait": "none"
+        }
+      },
+      {
+        "id": "8bfff1",
+        "name": "nav-menu",
+        "parent": "3835be",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xzqxtw"
+          ],
+          "mobileMenu": "tablet_portrait",
+          "subMenuIcon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "subMenuIconPosition": "right",
+          "menuIcon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "menu": "61"
+        },
+        "label": "Nav Menu Alpha (CSS Tab)",
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "uohqns",
+        "name": "fr-header-bravo",
+        "settings": {
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "_padding": {
+            "left": "var(--gutter)",
+            "top": "var(--space-s)",
+            "bottom": "var(--space-s)",
+            "right": "var(--gutter)"
+          }
+        },
+        "_mappedId": "uohqns",
+        "modified": 1771256221,
+        "user_id": 1
+      },
+      {
+        "id": "iiumcp",
+        "name": "fr-header-bravo__inner",
+        "settings": {
+          "_display": "flex",
+          "_direction": "row",
+          "_justifyContent": "space-between",
+          "_alignItems": "center",
+          "_rowGap": "var(--content-gap)",
+          "_columnGap": "var(--content-gap)",
+          "_flexWrap:mobile_landscape": "nowrap"
+        },
+        "_mappedId": "iiumcp",
+        "modified": 1771256221,
+        "user_id": 1
+      },
+      {
+        "id": "horpzc",
+        "name": "fr-logo",
+        "settings": [],
+        "_mappedId": "horpzc",
+        "modified": 1771256221,
+        "user_id": 1
+      },
+      {
+        "id": "zbbsvo",
+        "name": "fr-header-bravo__logo",
+        "settings": {
+          "_width": "10em"
+        },
+        "_mappedId": "zbbsvo",
+        "modified": 1771256221,
+        "user_id": 1
+      },
+      {
+        "id": "anccmw",
+        "name": "fr-header-bravo__cta",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "xzqxtw",
+        "name": "fr-nav-alpha",
+        "settings": {
+          "mobileMenuToggleColor": {
+            "raw": "var(--text-dark)"
+          },
+          "_typography:tablet_portrait": {
+            "line-height": "0"
+          },
+          "mobileMenuTypography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          },
+          "menuMargin": {
+            "left": "0"
+          },
+          "_cssCustom": ".fr-nav-alpha {\n  --link-color: \t\t\t\tvar(--primary);\n  --link-color-hover: \tvar(--primary-hover);\n  --link-color-active: \tvar(--primary);\n  --toggle-gap: \t\t\t\t.5em;\n  --border-color: \t\t\ttransparent;\n\n  /* Mobile Menu */\n  --mm-padding-block: 0;\n  --mm-padding-inline: 1.5em;\n  --mm-item-gap: 1em;\n}\n\n.fr-nav-alpha li {\n  white-space: nowrap;\n}\n\n.fr-nav-alpha ul.sub-menu li {\n  padding: var(--btn-padding-block) var(--btn-padding-inline);\n  border-block-end: 0;\n}\n\n.fr-nav-alpha ul.bricks-mobile-menu {\n  display: flex;\n  gap: var(--mm-item-gap);\n  padding-block: var(--space-xxl);  \n  align-items: center;  \n}\n\n.fr-nav-alpha ul.bricks-mobile-menu li {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: var(--mm-item-gap);\n  padding: var(--mm-padding-block) var(--mm-padding-inline);   border-block-end: 0;\n}\n\n.fr-nav-alpha .bricks-mobile-menu-wrapper .bricks-mobile-menu>li>.brx-submenu-toggle>*,\n.fr-nav-alpha .bricks-mobile-menu-wrapper .bricks-mobile-menu>li>a,\n.fr-nav-alpha .bricks-mobile-menu-wrapper .sub-menu li>a,\n.fr-nav-alpha .bricks-mobile-menu-wrapper .sub-menu li>.brx-submenu-toggle>* {\n  padding: 0;\n  max-width: max-content;\n  line-height: var(--btn-line-height);\n}\n\n.show-mobile-menu ul.bricks-mobile-menu {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n}\n\n.bricks-mobile-menu-toggle {\n  margin-inline-start: auto;\n}\n\n.fr-nav-alpha .brx-submenu-toggle {\n  display: flex;\n  flex-direction: row;\n  gap: var(--toggle-gap);\n}\n\n.fr-nav-alpha.fr-nav-alpha .brx-submenu-toggle button {\n  margin: 0;\n  padding: 0;\n}\n\n.fr-nav-alpha .bricks-mobile-menu.sub-menu {\n  min-width: auto;\n}\n\n.fr-nav-alpha.brxe-nav-menu .bricks-mobile-menu-wrapper li.open>.sub-menu {\n  display: flex;\n  flex-direction: column;\n  gap: var(--mm-item-gap);\n}",
+          "subMenuIconTypography": {
+            "color": {
+              "raw": "var(--link-color)"
+            },
+            "font-size": "var(--text-s)",
+            "line-height": "1"
+          },
+          "subMenuBackgroundList": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "subMenuTypography": {
+            "color": {
+              "raw": "var(--link-color)"
+            },
+            "text-decoration": "none"
+          },
+          "menuIconTypography": {
+            "font-size": "var(--icon-size)",
+            "color": {
+              "raw": "var(--icon-color)"
+            }
+          },
+          "mobileSubMenuTypography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          },
+          "mobileMenuIconTypography:mobile_landscape": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          },
+          "menuTypography:hover": {
+            "color": {
+              "raw": "var(--link-color-hover)"
+            }
+          },
+          "menuTypography": {
+            "color": {
+              "raw": "var(--link-color)"
+            },
+            "line-height": "1",
+            "text-decoration": "none"
+          },
+          "menuActiveTypography": {
+            "color": {
+              "raw": "var(--link-color-active)"
+            }
+          },
+          "subMenuTypography:hover": {
+            "color": {
+              "raw": "var(--link-color-hover)"
+            }
+          },
+          "subMenuIconTypography:hover": {
+            "color": {
+              "raw": "var(--link-color-hover)"
+            }
+          },
+          "subMenuIconTransformOpen": {
+            "rotateZ": "270"
+          },
+          "menuIconTransformOpen": {
+            "rotateZ": "180"
+          },
+          "_display:mobile_landscape": "flex",
+          "menuGap": "var(--content-gap)",
+          "subMenuPadding": {
+            "left": "0",
+            "right": "0"
+          },
+          "subMenuBoxShadow": {
+            "color": {
+              "raw": "var(--box-shadow-m)"
+            }
+          },
+          "menuPadding": {
+            "top": "var(--btn-padding-block)",
+            "bottom": "var(--btn-padding-block)"
+          },
+          "menuIconPadding": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "modified": 1771256221,
+        "user_id": 1,
+        "_mappedId": "xzqxtw"
+      },
+      {
+        "id": "epszir",
+        "name": "fr-header-bravo__top",
+        "settings": {
+          "_padding": {
+            "left": "var(--gutter)",
+            "right": "var(--gutter)",
+            "top": ".5em",
+            "bottom": ".5em"
+          },
+          "_cssCustom": "header {\n\t--header-top-height: 3em; \n}\n\nheader.scrolling { \n  /* Uncomment line below if you want to hide header top on scroll.\n  Make sure your Header template is set to Sticky  */\n\t/* transform: translateY(calc(var(--header-top-height) * -1)); */\n}",
+          "_justifyContent": "center",
+          "_typography": {
+            "font-size": "var(--text-s)"
+          },
+          "_heightMin": "var(--header-top-height)"
+        },
+        "modified": 1724411262,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "gwduiu",
+        "name": "fr-header-bravo__top-inner",
+        "settings": {
+          "_alignItems": "flex-end"
+        },
+        "_exists": false
+      },
+      {
+        "id": "yyqoks",
+        "name": "fr-header-bravo__top-links-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_alignItems": "center",
+          "_margin:mobile_portrait": {
+            "unit": {
+              "right": "auto"
+            }
+          },
+          "_flexWrap": "wrap",
+          "_rowGap": ".5em",
+          "_columnGap": "2em",
+          "_cssCustom": ".fr-header-bravo__top-links-wrapper {\n\t--icon-size: 1em;\n  --icon-fill-color: transparent;\n  --icon-stroke-color: var(--bg-dark);\n  --icon-fill-color-hover: transparent;  \n  --icon-stroke-color-hover: var(--bg-dark);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "mfljdg",
+        "name": "fr-header-bravo__top-link-text",
+        "settings": {
+          "_typography": {
+            "font-style": "normal"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "yelzhm",
+        "name": "fr-header-bravo__top-link",
+        "settings": {
+          "_display": "flex",
+          "_alignItems": "center",
+          "_columnGap": "0.5em",
+          "_typography": {
+            "text-decoration": "none"
+          },
+          "_cssCustom": ".fr-header-bravo__top-link svg {\n  height: var(--icon-size);\n  width: var(--icon-size);\n  fill: var(--icon-fill-color);\n  color: var(--icon-stroke-color);\n}\n\n.fr-header-bravo__top-link i {\n  color: var(--icon-fill-color);\n  font-size: var(--icon-size);\n}\n\n.fr-header-bravo__top-link svg:hover {\n  fill: var(--icon-fill-color-hover);\n  color: var(--icon-stroke-color);  \n}\n\n.fr-header-bravo__top-link i:hover {\n  color: var(--icon-fill-color-hover);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "lssnrd",
+        "name": "fr-hero-bravo__top-link-icon",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

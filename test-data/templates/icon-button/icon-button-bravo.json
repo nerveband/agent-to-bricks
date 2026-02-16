@@ -1,0 +1,157 @@
+{
+  "idx": 250,
+  "title": "Icon Button Bravo",
+  "elementCount": 4,
+  "classCount": 4,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "177c19",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "213142",
+          "41eb13"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "szalco"
+          ],
+          "tag": "a",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Icon Button Bravo (CSS)"
+      },
+      {
+        "id": "213142",
+        "name": "div",
+        "parent": "177c19",
+        "children": [
+          "d45d5e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mbboss"
+          ]
+        },
+        "label": "Icon Wrapper"
+      },
+      {
+        "id": "d45d5e",
+        "name": "icon",
+        "parent": "213142",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "fontawesomeSolid",
+            "icon": "fas fa-chevron-right"
+          },
+          "_cssGlobalClasses": [
+            "pmjjkr"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "41eb13",
+        "name": "text-basic",
+        "parent": "177c19",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "_cssGlobalClasses": [
+            "hrbclv"
+          ],
+          "tag": "span"
+        },
+        "label": "Label"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "szalco",
+        "name": "fr-icon-button-bravo",
+        "settings": {
+          "iconGap": "1em",
+          "iconSpace": true,
+          "_alignItems": "center",
+          "_border": {
+            "radius": {
+              "top": "var(--btn-radius)",
+              "right": "var(--btn-radius)",
+              "bottom": "var(--btn-radius)",
+              "left": "var(--btn-radius)"
+            }
+          },
+          "_widthMin": "var(--btn-min-width)",
+          "_widthMax": "100%",
+          "_overflow": "hidden",
+          "_cssCustom": ".fr-icon-button-bravo {\n  \n  /*\n  Change variable values to customize your button.\n  */\n  \n\t--speed: .2s; /* Set transition speed */\n  --button-color: var(--primary); /* Main button BG color */\n  --hover-color: var(--primary-hover); /* Button hover color * icon background color */\n  --icon-color: var(--btn-text-color); /* Icon text color */\n  --text-color: var(--btn-text-color); /* Button text color */\n  \n  display: inline-flex !important;\n  background-color: var(--button-color);\n  position: relative;\n}\n\n.fr-icon-button-bravo .fr-icon-button-bravo__icon-wrapper {\n\tbackground-color: var(--hover-color);\n  z-index: 1;\n}\n\n.fr-icon-button-bravo .fr-icon-button-bravo__label {\n  isolation: isolate;\n  transition: all var(--speed) ease;\n}\n\n.fr-icon-button-bravo .fr-icon-button-bravo__label::before {\n\tcontent: '';\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 100%;\n  background-color: var(--hover-color);\n  z-index: -1;\n  transition: all .5s ease;\n}\n\n.fr-icon-button-bravo:hover .fr-icon-button-bravo__label::before {\n  right: 0;\n}\n\n/* Remove below if you don't want button to shrink up */\n\n.fr-icon-button-bravo:hover .fr-icon-button-bravo__label {\n\tpadding-left: 0;\n}",
+          "_typography": {
+            "text-decoration": "none"
+          },
+          "_display": "flex",
+          "_padding": {
+            "right": "var(--btn-pad-y)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "mbboss",
+        "name": "fr-icon-button-bravo__icon-wrapper",
+        "settings": {
+          "_padding": {
+            "top": "var(--btn-pad-y)",
+            "bottom": "var(--btn-pad-y)",
+            "left": "var(--btn-pad-y)",
+            "right": "var(--btn-pad-y)"
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--btn-radius)",
+              "left": "var(--btn-radius)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "pmjjkr",
+        "name": "fr-icon-button-bravo__icon",
+        "settings": {
+          "iconSize": "var(--text-m)",
+          "_typography": {
+            "color": {
+              "hex": "#ffffff",
+              "raw": "var(--icon-color)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "hrbclv",
+        "name": "fr-icon-button-bravo__label",
+        "settings": {
+          "_typography": {
+            "color": {
+              "hex": "#ffffff",
+              "raw": "var(--text-color)"
+            },
+            "font-size": "var(--text-m)"
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

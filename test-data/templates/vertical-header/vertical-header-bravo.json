@@ -1,0 +1,682 @@
+{
+  "idx": 201,
+  "title": "Vertical Header Bravo",
+  "elementCount": 19,
+  "classCount": 10,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "719888",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "dd4a7c",
+          "f24672",
+          "ce6a31"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ssqaom"
+          ]
+        },
+        "label": "Vertical Header Bravo (CSS)"
+      },
+      {
+        "id": "dd4a7c",
+        "name": "div",
+        "parent": "719888",
+        "children": [
+          "69e040"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hxyvbb"
+          ]
+        },
+        "label": "Head"
+      },
+      {
+        "id": "69e040",
+        "name": "fr-trigger",
+        "parent": "dd4a7c",
+        "children": [],
+        "settings": {
+          "animation": "fr-hamburger--elastic",
+          "ariaLabel": "Toggle Menu",
+          "triggerText": "Menu",
+          "gap": "var(--space-xs)",
+          "_cssGlobalClasses": [
+            "afqcul"
+          ],
+          "triggerType": "burger"
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "ce6a31",
+        "name": "div",
+        "parent": "719888",
+        "children": [
+          "eecfd6",
+          "a9cda4",
+          "98692b",
+          "4b3dce"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dvwigo"
+          ]
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "f24672",
+        "name": "div",
+        "parent": "719888",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qgryaj"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "7a995f",
+        "name": "fr-modal",
+        "parent": 0,
+        "children": [
+          "0efc30"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "nazuoq"
+          ],
+          "triggerSelector": ".fr-vertical-header-bravo__trigger",
+          "fadeTime": "300",
+          "iconPlacement": "outside",
+          "icon": {
+            "library": "themify",
+            "icon": "ti-close"
+          },
+          "iconColor": {
+            "rgb": "var(--shade-ultra-dark)"
+          },
+          "iconBackgroundColor": {
+            "rgb": "var(--shade-white)"
+          },
+          "iconSize": "var(--text-m)",
+          "iconBackgroundSize": "var(--space-l)",
+          "iconPosTop": "var(--space-m)",
+          "iconPosRight": "var(--space-m)",
+          "iconPosLeft": "auto",
+          "iconPosBottom": "auto",
+          "isScroll": true,
+          "positionFor": "page",
+          "isScrollBar": true
+        },
+        "themeStyles": [],
+        "label": "Modal"
+      },
+      {
+        "id": "0efc30",
+        "name": "nav-menu",
+        "parent": "7a995f",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cukdax"
+          ],
+          "menu": "61",
+          "menuIcon": {
+            "library": "ionicons",
+            "icon": "ion-ios-arrow-forward"
+          },
+          "subMenuIcon": {
+            "library": "ionicons",
+            "icon": "ion-ios-arrow-forward"
+          },
+          "mobileMenuFadeIn": true,
+          "mobileMenuIcon": {
+            "library": "themify",
+            "icon": "ti-angle-right"
+          },
+          "submenuStatic": true,
+          "mobileMenu": "never"
+        },
+        "label": "Vertical Nav Alpha (CSS)",
+        "themeStyles": []
+      },
+      {
+        "id": "eecfd6",
+        "name": "div",
+        "parent": "ce6a31",
+        "children": [
+          "fce6e6",
+          "880973"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dnicwq"
+          ],
+          "tag": "a",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Facebook"
+      },
+      {
+        "id": "fce6e6",
+        "name": "icon",
+        "parent": "eecfd6",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "swiwsx"
+          ],
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          }
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "880973",
+        "name": "text-basic",
+        "parent": "eecfd6",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "acss_import_hidden-accessible"
+          ],
+          "text": "Follow us on Facebook"
+        },
+        "label": "Label (Hidden Accessible)"
+      },
+      {
+        "id": "a9cda4",
+        "name": "div",
+        "parent": "ce6a31",
+        "children": [
+          "b81d8d",
+          "d61e1d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dnicwq"
+          ],
+          "tag": "a",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Instagram"
+      },
+      {
+        "id": "b81d8d",
+        "name": "icon",
+        "parent": "a9cda4",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "swiwsx"
+          ],
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          }
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "d61e1d",
+        "name": "text-basic",
+        "parent": "a9cda4",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "acss_import_hidden-accessible"
+          ],
+          "text": "Follow us on Facebook"
+        },
+        "label": "Label (Hidden Accessible)"
+      },
+      {
+        "id": "98692b",
+        "name": "div",
+        "parent": "ce6a31",
+        "children": [
+          "559aa4",
+          "95acd3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dnicwq"
+          ],
+          "tag": "a",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "TikTok"
+      },
+      {
+        "id": "559aa4",
+        "name": "icon",
+        "parent": "98692b",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "swiwsx"
+          ],
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          }
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "95acd3",
+        "name": "text-basic",
+        "parent": "98692b",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "acss_import_hidden-accessible"
+          ],
+          "text": "Follow us on TikTok"
+        },
+        "label": "Label (Hidden Accessible)"
+      },
+      {
+        "id": "4b3dce",
+        "name": "div",
+        "parent": "ce6a31",
+        "children": [
+          "5bbd16",
+          "73ddc0"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dnicwq"
+          ],
+          "tag": "a",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "YouTube"
+      },
+      {
+        "id": "5bbd16",
+        "name": "icon",
+        "parent": "4b3dce",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "swiwsx"
+          ],
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          }
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "73ddc0",
+        "name": "text-basic",
+        "parent": "4b3dce",
+        "children": [],
+        "settings": {
+          "text": "Follow us on YouTube",
+          "_cssGlobalClasses": [
+            "acss_import_hidden-accessible"
+          ]
+        },
+        "label": "Label (Hidden Accessible)"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "dnicwq",
+        "name": "fr-social-alpha__icon-wrapper",
+        "settings": {
+          "_display": "flex"
+        },
+        "modified": 1751313761,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "swiwsx",
+        "name": "fr-social-alpha__icon",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "acss_import_hidden-accessible",
+        "name": "hidden-accessible",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "cukdax",
+        "name": "fr-vertical-nav-alpha",
+        "settings": {
+          "menuAlignment": "column",
+          "menuMargin": {
+            "left": "0"
+          },
+          "_cssCustom": ".fr-vertical-nav-alpha {\n  /* Link Styling */\n  --v-link-color: \t\t\t\tvar(--primary);\n  --v-link-color-hover: \tvar(--primary-hover);\n  \n  /* Menu Item Background */\n  --v-menu-item-bg:\t\t\t \ttransparent;\n  --v-menu-item-bg-hover: var(--primary-trans-10);\n  \n  /* Menu Item Padding */\n  --v-menu-item-pad-x:\t\t1em;\n  --v-menu-item-pad-y:\t\t.5em;\n\t\n  --v-item-gap: \t\t\t\t\t0;\n}",
+          "menuTypography": {
+            "color": {
+              "raw": "var(--v-link-color)"
+            },
+            "text-decoration": "none",
+            "line-height": "2em"
+          },
+          "subMenuTypography": {
+            "color": {
+              "raw": "var(--v-link-color)"
+            },
+            "text-decoration": "none",
+            "line-height": "2em"
+          },
+          "subMenuTypography:hover": {
+            "color": {
+              "raw": "var(--v-link-color-hover)"
+            }
+          },
+          "menuTypography:hover": {
+            "color": {
+              "raw": "var(--v-link-color-hover)"
+            }
+          },
+          "_typography:mobile_landscape": {
+            "line-height": "0"
+          },
+          "_width": "100%",
+          "menuBackground": {
+            "color": {
+              "raw": "var(--v-menu-item-bg)"
+            }
+          },
+          "menuBackground:hover": {
+            "color": {
+              "raw": "var(--v-menu-item-bg-hover)"
+            }
+          },
+          "menuActiveBorder": {
+            "radius": {
+              "top": "--btn-radius",
+              "right": "--btn-radius",
+              "bottom": "--btn-radius",
+              "left": "--btn-radius"
+            }
+          },
+          "menuPadding": {
+            "top": "var(--v-menu-item-pad-y)",
+            "bottom": "var(--v-menu-item-pad-y)",
+            "right": "var(--v-menu-item-pad-x)",
+            "left": "var(--v-menu-item-pad-x)"
+          },
+          "menuBorder": {
+            "radius": {
+              "top": "var(--btn-radius)",
+              "right": "var(--btn-radius)",
+              "bottom": "var(--btn-radius)",
+              "left": "var(--btn-radius)"
+            }
+          },
+          "subMenuBackground": {
+            "color": {
+              "raw": "var(--v-menu-item-bg)"
+            }
+          },
+          "subMenuBackground:hover": {
+            "color": {
+              "raw": "var(--v-menu-item-bg-hover)"
+            }
+          },
+          "subMenuBackgroundList:hover": {
+            "color": {
+              "raw": "transparent"
+            }
+          },
+          "subMenuBackgroundList": {
+            "color": {
+              "raw": "transparent"
+            }
+          },
+          "subMenuItemBorder": {
+            "radius": {
+              "top": "var(--btn-radius)",
+              "right": "var(--btn-radius)",
+              "bottom": "var(--btn-radius)",
+              "left": "var(--btn-radius)"
+            }
+          },
+          "mobileMenuBackground": {
+            "color": {
+              "raw": "var(--v-header-color)"
+            }
+          },
+          "mobileMenuWidth": "100vw",
+          "mobileMenuAlignment": "center",
+          "mobileMenuAlignItems": "center",
+          "mobileMenuTypography": {
+            "font-size": "var(--text-xl)",
+            "color": {
+              "raw": "var(--v-link-color)"
+            }
+          },
+          "mobileMenuTextAlign": "left",
+          "menuActiveBackground": {
+            "color": {
+              "raw": "var(--v-menu-item-bg-hover)"
+            }
+          },
+          "mobileMenuActiveTypography": {
+            "color": {
+              "raw": "var(--v-link-color)"
+            }
+          },
+          "mobileMenuIconTypography": {
+            "color": {
+              "raw": "var(--v-link-color)"
+            }
+          },
+          "mobileSubMenuTypography": {
+            "color": {
+              "raw": "var(--v-link-color)"
+            },
+            "font-size": "var(--text-l)"
+          },
+          "mobileMenuToggleColor": {
+            "raw": "var(--v-link-color)"
+          },
+          "mobileMenuToggleColorClose": {
+            "raw": "var(--v-link-color)"
+          },
+          "subMenuActiveBackground": {
+            "color": {
+              "raw": "var(--v-menu-item-bg-hover)"
+            }
+          },
+          "subMenuIconTransformOpen": {
+            "rotateZ": "90"
+          },
+          "menuIconTransformOpen": {
+            "rotateZ": "90"
+          },
+          "subMenuPadding": {
+            "top": "var(--v-menu-item-pad-y)",
+            "bottom": "var(--v-menu-item-pad-y)",
+            "left": "calc(var(--v-menu-item-pad-x) * 1.5)",
+            "right": "var(--v-menu-item-pad-x)"
+          },
+          "subMenuIconMargin": {
+            "left": "0"
+          },
+          "subMenuIconPadding": {
+            "right": "var(--space-s)"
+          },
+          "menuGap": "var(--v-item-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ssqaom",
+        "name": "fr-vertical-header-bravo",
+        "settings": {
+          "_cssCustom": ".fr-vertical-header-bravo, #brx-header, #brx-content, #brx-footer {\n  --header-width: 6em;\n  --header-color: var(--bg-light);\n  --burger-color: var(--text-dark);\n  --icon-size: 1.5em;\n  --icon-color: var(--primary);\n  --icon-color-hover: var(--primary-hover);\n}\n\n.fr-vertical-header-bravo {\n  background-color: var(--header-color);  \n}\n\n.fr-vertical-header-bravo .fr-vertical-header-bravo__body {\n  display: none;\n}\n\n/* Social Icon Styling */\n.fr-vertical-header-bravo .fr-vertical-header-bravo__footer svg {\n\tfill: var(--icon-color);\n  height: var(--icon-size);\n  width: var(--icon-size);\n}\n.fr-vertical-header-bravo .fr-vertical-header-bravo__footer svg:hover {\n\tfill: var(--icon-color-hover);\n}\n\n/* Set width when Mobile Toggle display */\n@media (min-width: 768px) {\n\n  .fr-vertical-header-bravo {\n    flex-direction: column!important;\n    justify-content: space-between;\n    align-items: center;\n    row-gap: var(--content-gap);  \n    padding: var(--space-xl) var(--space-xs)!important;\n  }\n\n  .fr-vertical-header-bravo .fr-vertical-header-bravo__head {\n    align-items: center;\n  }\n  \n  .fr-vertical-header-bravo .fr-vertical-header-bravo__body {\n    display: flex!important;\n  }  \n\n  .fr-vertical-header-bravo .fr-vertical-header-bravo__footer {\n    flex-direction: column!important;\n    margin-block-start: auto; \n  }\n\n  #brx-header {\n    display: flex;\n    position: fixed;\n    isolation: isolate;  \n    top: 0;\n    bottom: 0;  \n    left: 0;  \n    width: var(--header-width);\n    z-index: 1001;\n  }\n\n  #brx-content, #brx-footer {\n    margin-left: var(--header-width);\n    width: auto;\n  }\n\n}",
+          "_typography": {
+            "color": {
+              "raw": "var(--text-dark)"
+            }
+          },
+          "_flexWrap:mobile_landscape": "nowrap",
+          "_direction": "row",
+          "_display": "flex",
+          "_padding": {
+            "top": "var(--space-s)",
+            "bottom": "var(--space-s)",
+            "left": "var(--gutter)",
+            "right": "var(--gutter)"
+          },
+          "_position": "relative",
+          "_width": "100%",
+          "_justifyContent": "space-between"
+        },
+        "_exists": false
+      },
+      {
+        "id": "hxyvbb",
+        "name": "fr-vertical-header-bravo__head",
+        "settings": {
+          "_display": "flex",
+          "_alignSelf": "center",
+          "_width": "max-content"
+        },
+        "_exists": false
+      },
+      {
+        "id": "afqcul",
+        "name": "fr-vertical-header-bravo__trigger",
+        "settings": {
+          "backgroundColor": {
+            "raw": "transparent"
+          },
+          "triggerSize": "1",
+          "lineHeight": ".2em",
+          "lineColor": {
+            "raw": "var(--burger-color)"
+          },
+          "activeLinesColor": {
+            "raw": "var(--burger-color)"
+          },
+          "backgroundColorActive": {
+            "raw": "transparent"
+          },
+          "triggerSizeActive": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "dvwigo",
+        "name": "fr-vertical-header-bravo__footer",
+        "settings": {
+          "_display": "flex",
+          "_direction": "row",
+          "_alignItems": "center",
+          "_rowGap": "var(--fr-card-gap)",
+          "_columnGap": "var(--fr-card-gap)",
+          "_alignSelf": "center",
+          "_flexWrap": "nowrap"
+        },
+        "_exists": false
+      },
+      {
+        "id": "qgryaj",
+        "name": "fr-vertical-header-bravo__body",
+        "settings": {
+          "_interactions": [
+            {
+              "id": "nulosf",
+              "trigger": "click",
+              "action": "show",
+              "target": "custom",
+              "targetSelector": ".fr-vertical-header-alpha__trigger"
+            }
+          ],
+          "scrollMaxHeight": "100vh",
+          "width": "30em",
+          "_height": "100%",
+          "_alignItems": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "nazuoq",
+        "name": "fr-vertical-header-bravo__modal",
+        "settings": {
+          "verticalPosition": "flex-start",
+          "modalBodyOffsetVertical": "0",
+          "modalBodyOffsetHorizontal": "0",
+          "width": "15em",
+          "_background": {
+            "color": {
+              "raw": "var(--header-color)"
+            }
+          },
+          "_padding": {
+            "top": "var(--space-xl)",
+            "right": "var(--space-l)",
+            "bottom": "var(--space-xl)",
+            "left": "var(--space-l)"
+          },
+          "_width": "100%",
+          "_height": "100%",
+          "_cssCustom": "@media (min-width: 768px) {\n\n  .fr-vertical-header-bravo__modal {\n    z-index: -1!important;\n  }\n\n  .fr-vertical-header-bravo__modal .fr-modal__body::before {\n    content: '';\n    position: absolute;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    width: 0.01em;\n    background: var(--neutral-trans-10);\n  }\n\n  .fr-vertical-header-bravo__modal .fr-modal__body {\n    transform: scale(1) translateY(0) translateX(-100%)!important;\n    left: 0;\n  }\n\n  .fr-vertical-header-bravo__modal.fr-modal--open .fr-modal__body,\n  .bricks-area .fr-vertical-header-bravo__modal .fr-modal__body {\n    transform: translateY(0) translateX(var(--header-width))!important;\n  }  \n\n}",
+          "_cssCustom:mobile_landscape": ".fr-vertical-header-bravo__modal.fr-modal {\n\tposition: static!important;\n}\n.fr-vertical-header-bravo__modal .fr-modal__body {\n  position: absolute!important;\n  top: 90%;\n  left: 0;\n  width: 100%;\n  height: calc(100vh - 90%)!important;\n}",
+          "scrollMaxHeight:mobile_landscape": "100vh",
+          "width:mobile_landscape": "100%"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

@@ -1,0 +1,298 @@
+{
+  "idx": 286,
+  "title": "Testimonial Section Charlie",
+  "elementCount": 9,
+  "classCount": 10,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "fbc66e",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "567beb",
+          "329495",
+          "e0877f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "exfjct"
+          ]
+        },
+        "label": "Testimonial Section Charlie"
+      },
+      {
+        "id": "e0877f",
+        "name": "container",
+        "parent": "fbc66e",
+        "children": [
+          "f67391",
+          "74e35e",
+          "5b04b4",
+          "85b1a4"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jfdtgh"
+          ],
+          "tag": "custom",
+          "customTag": "blockquote",
+          "_attributes": [
+            {
+              "id": "ekqlrk",
+              "name": "cite",
+              "value": "Link_to_the_source_of_the_quotation_or_more_information_about_the_edit"
+            }
+          ]
+        },
+        "label": "Blockquote Alpha (CSS)"
+      },
+      {
+        "id": "f67391",
+        "name": "heading",
+        "parent": "e0877f",
+        "children": [],
+        "settings": {
+          "text": "Quote heading",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "ylvvfr"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "74e35e",
+        "name": "text-basic",
+        "parent": "e0877f",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "iilbtn"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "567beb",
+        "name": "image",
+        "parent": "fbc66e",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "ufikaq"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Background Image"
+      },
+      {
+        "id": "329495",
+        "name": "block",
+        "parent": "fbc66e",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "selcdq"
+          ]
+        },
+        "label": "Overlay"
+      },
+      {
+        "id": "5b04b4",
+        "name": "text-basic",
+        "parent": "e0877f",
+        "children": [],
+        "settings": {
+          "text": "Person's Name",
+          "_cssGlobalClasses": [
+            "ewyynb"
+          ],
+          "tag": "p"
+        },
+        "label": "Author"
+      },
+      {
+        "id": "268c86",
+        "name": "icon",
+        "parent": "85b1a4",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "hlfosk"
+          ]
+        },
+        "label": "Icon",
+        "themeStyles": []
+      },
+      {
+        "id": "85b1a4",
+        "name": "div",
+        "parent": "e0877f",
+        "children": [
+          "268c86"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "p0gwz3"
+          ]
+        },
+        "label": "Icon Wrapper"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771254981,
+        "user_id": 1
+      },
+      {
+        "id": "exfjct",
+        "name": "fr-testimonial-section-charlie",
+        "settings": {
+          "_position": "relative",
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "jfdtgh",
+        "name": "fr-quote-alpha",
+        "settings": {
+          "_position": "relative",
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            },
+            "text-align": "center",
+            "font-size": "inherit",
+            "font-family": "DM Sans"
+          },
+          "_rowGap": "var(--fr-content-gap)",
+          "_alignItems": "center",
+          "_border": {
+            "width": {
+              "top": "0",
+              "right": "0",
+              "bottom": "0",
+              "left": "0"
+            }
+          },
+          "_padding": {
+            "left": "0"
+          },
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          },
+          "_cssCustom": ".fr-quote-alpha {\n\t--icon-size: 5em;\n  --icon-fill-color: transparent;\n  --icon-stroke-color: var(--bg-light);\n  --icon-fill-color-hover: transparent;  \n  --icon-stroke-color-hover: var(--bg-light);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ylvvfr",
+        "name": "fr-quote-alpha__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "iilbtn",
+        "name": "fr-quote-alpha__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ufikaq",
+        "name": "fr-testimonial-section-charlie__bg-image",
+        "settings": {
+          "_width": "100%",
+          "_height": "100%",
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_objectFit": "cover"
+        },
+        "_exists": false
+      },
+      {
+        "id": "selcdq",
+        "name": "fr-testimonial-section-charlie__overlay",
+        "settings": {
+          "_position": "absolute",
+          "_top": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_background": {
+            "color": {
+              "raw": "var(--primary-trans-80)"
+            }
+          },
+          "_right": "0"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ewyynb",
+        "name": "fr-quote-alpha__author",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--h3)"
+          },
+          "_cssCustom": ".fr-quote-alpha__author::before {\n  content: \"-\";\n  margin-right: .5em;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "hlfosk",
+        "name": "fr-quote-alpha__icon",
+        "settings": {
+          "iconColor": {
+            "raw": "var(--text-light)"
+          },
+          "_zIndex": "1",
+          "iconSize": "5em",
+          "_order": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "p0gwz3",
+        "name": "fr-quote-alpha__icon-wrapper",
+        "settings": {
+          "_cssCustom": ".fr-quote-alpha__icon-wrapper svg {\n  height: var(--icon-size);\n  width: var(--icon-size);\n  fill: var(--icon-fill-color);\n  color: var(--icon-stroke-color);\n}\n\n.fr-quote-alpha__icon-wrapper i {\n  color: var(--icon-fill-color);\n  font-size: var(--icon-size);\n}\n\n.fr-quote-alpha__icon-wrapper svg:hover {\n  fill: var(--icon-fill-color-hover);\n  color: var(--icon-stroke-color-hover);  \n}\n\n.fr-quote-alpha__icon-wrapper i:hover {\n  color: var(--icon-fill-color-hover);\n}",
+          "_order": "-1"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

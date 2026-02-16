@@ -1,0 +1,184 @@
+{
+  "idx": 165,
+  "title": "Avatar Bravo",
+  "elementCount": 6,
+  "classCount": 6,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "b7e288",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "7f6f0f",
+          "253826"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wpsdpj"
+          ]
+        },
+        "label": "Avatar Bravo"
+      },
+      {
+        "id": "7f6f0f",
+        "name": "block",
+        "parent": "b7e288",
+        "children": [
+          "eebe4e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cmdxmf"
+          ]
+        },
+        "label": "Avatar Wrapper"
+      },
+      {
+        "id": "253826",
+        "name": "block",
+        "parent": "b7e288",
+        "children": [
+          "c6ea69",
+          "ea420a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mgdwxd"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "eebe4e",
+        "name": "image",
+        "parent": "7f6f0f",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "caption": "none",
+          "_cssGlobalClasses": [
+            "ubqmfs"
+          ]
+        },
+        "label": "Avatar"
+      },
+      {
+        "id": "c6ea69",
+        "name": "text-basic",
+        "parent": "253826",
+        "children": [],
+        "settings": {
+          "text": "Avatar Name",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "pnnkhh"
+          ]
+        },
+        "label": "Name"
+      },
+      {
+        "id": "ea420a",
+        "name": "text-basic",
+        "parent": "253826",
+        "children": [],
+        "settings": {
+          "text": "Label",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "xhhnyc"
+          ]
+        },
+        "label": "Label"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "wpsdpj",
+        "name": "fr-avatar-bravo",
+        "settings": {
+          "_width": "max-content",
+          "_display": "flex",
+          "_direction": "column",
+          "_alignItems": "center",
+          "_justifyContent": "center",
+          "_rowGap": "calc(var(--content-gap) / 2)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "cmdxmf",
+        "name": "fr-avatar-bravo__avatar-wrapper",
+        "settings": {
+          "_width": "auto"
+        },
+        "_exists": false
+      },
+      {
+        "id": "mgdwxd",
+        "name": "fr-avatar-bravo__content-wrapper",
+        "settings": {
+          "_typography": {
+            "text-align": "center"
+          },
+          "_width": "auto",
+          "_alignItems": "center",
+          "_rowGap": "calc(var(--content-gap) / 3)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ubqmfs",
+        "name": "fr-avatar-bravo__avatar",
+        "settings": {
+          "_width": "5em",
+          "_border": {
+            "radius": {
+              "top": "50vw",
+              "right": "50vw",
+              "bottom": "50vw",
+              "left": "50vw"
+            }
+          },
+          "_overflow": "hidden"
+        },
+        "_exists": false
+      },
+      {
+        "id": "pnnkhh",
+        "name": "fr-avatar-bravo__name",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "font-weight": "600"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "xhhnyc",
+        "name": "fr-avatar-bravo__label",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-s)",
+            "line-height": "1.1",
+            "color": {
+              "raw": "var(--neutral-trans-60)"
+            }
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

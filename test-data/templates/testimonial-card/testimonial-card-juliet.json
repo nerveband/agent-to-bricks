@@ -1,0 +1,182 @@
+{
+  "idx": 221,
+  "title": "Testimonial Card Juliet",
+  "elementCount": 6,
+  "classCount": 6,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "c336fa",
+        "name": "block",
+        "children": [
+          "493933",
+          "21d962"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lrcmed"
+          ]
+        },
+        "label": "Testimonial Card Juliet"
+      },
+      {
+        "id": "21d962",
+        "name": "div",
+        "parent": "c336fa",
+        "children": [
+          "9c84e6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gmdxox"
+          ]
+        },
+        "label": "Media"
+      },
+      {
+        "id": "9c84e6",
+        "name": "image",
+        "parent": "21d962",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fkuwdx"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure"
+        },
+        "themeStyles": [],
+        "label": "Avatar"
+      },
+      {
+        "id": "493933",
+        "name": "block",
+        "parent": "c336fa",
+        "children": [
+          "d961d9",
+          "87d40a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "oqsees"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "d961d9",
+        "name": "text-basic",
+        "parent": "493933",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "wzvjig"
+          ]
+        },
+        "label": "Text"
+      },
+      {
+        "id": "87d40a",
+        "name": "text-basic",
+        "parent": "493933",
+        "children": [],
+        "settings": {
+          "text": "Person's Name",
+          "_cssGlobalClasses": [
+            "aiskjc"
+          ],
+          "tag": "p"
+        },
+        "label": "Name"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "lrcmed",
+        "name": "fr-testimonial-card-juliet",
+        "settings": {
+          "_display": "flex",
+          "_direction": "row",
+          "_columnGap": "var(--fr-card-gap)",
+          "_rowGap": "var(--fr-card-gap)",
+          "_alignItems": "stretch",
+          "_flexWrap:mobile_landscape": "nowrap",
+          "_flexWrap:mobile_portrait": "wrap",
+          "_justifyContent:mobile_portrait": "flex-start",
+          "_overflow": "hidden",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "gmdxox",
+        "name": "fr-testimonial-card-juliet__media-wrapper",
+        "settings": {
+          "_order": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "fkuwdx",
+        "name": "fr-testimonial-card-juliet__avatar",
+        "settings": {
+          "_border": {
+            "radius": {
+              "top": "var(--fr-card-avatar-radius)",
+              "right": "var(--fr-card-avatar-radius)",
+              "bottom": "var(--fr-card-avatar-radius)",
+              "left": "var(--fr-card-avatar-radius)"
+            }
+          },
+          "_overflow": "hidden",
+          "_width": "3em",
+          "_objectFit": "cover"
+        },
+        "_exists": false
+      },
+      {
+        "id": "oqsees",
+        "name": "fr-testimonial-card-juliet__body",
+        "settings": {
+          "_rowGap": "var(--fr-card-gap)",
+          "_columnGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wzvjig",
+        "name": "fr-testimonial-card-juliet__text",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "aiskjc",
+        "name": "fr-testimonial-card-juliet__name",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-s)"
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

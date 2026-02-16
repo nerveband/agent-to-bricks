@@ -1,0 +1,550 @@
+{
+  "idx": 140,
+  "title": "Hero Quebec",
+  "elementCount": 19,
+  "classCount": 20,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "609d95",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "cc4084",
+          "fa9e3f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qhywaa"
+          ]
+        },
+        "label": "Hero Quebec"
+      },
+      {
+        "id": "02287a",
+        "name": "container",
+        "parent": "cc4084",
+        "children": [
+          "0cae09",
+          "ff8c0f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dq1bkj"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "fa9e3f",
+        "name": "container",
+        "parent": "609d95",
+        "children": [
+          "ea931d",
+          "87e839"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ijui91"
+          ]
+        },
+        "label": "Inner Bottom"
+      },
+      {
+        "id": "0cae09",
+        "name": "heading",
+        "parent": "02287a",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder headline,&nbsp;we will replace it when the final copy is ready",
+          "_cssGlobalClasses": [
+            "qjhrek"
+          ],
+          "tag": "h1"
+        },
+        "label": "Heading (CSS)"
+      },
+      {
+        "id": "ff8c0f",
+        "name": "text-basic",
+        "parent": "02287a",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space.",
+          "_cssGlobalClasses": [
+            "4ppi7h",
+            "kddjfd"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "4157b1",
+        "name": "block",
+        "parent": "ea931d",
+        "children": [
+          "4f9f50",
+          "505832",
+          "fd3984"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "1g9pnw"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "ea931d",
+        "name": "block",
+        "parent": "fa9e3f",
+        "children": [
+          "4157b1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "r3bzpd"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "4f9f50",
+        "name": "image",
+        "parent": "4157b1",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "j1skat"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "caption": "none",
+          "tag": "figure"
+        },
+        "label": "Media"
+      },
+      {
+        "id": "505832",
+        "name": "div",
+        "parent": "4157b1",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "z6nyrz"
+          ]
+        },
+        "label": "Overlay"
+      },
+      {
+        "id": "fd3984",
+        "name": "block",
+        "parent": "4157b1",
+        "children": [
+          "e1d860"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "4rs3nc"
+          ]
+        },
+        "label": "Media Overlay Content"
+      },
+      {
+        "id": "e1d860",
+        "name": "text-basic",
+        "parent": "fd3984",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "faew8f"
+          ],
+          "text": "More supporting text goes here.",
+          "tag": "p"
+        },
+        "label": "Overlay Text"
+      },
+      {
+        "id": "87e839",
+        "name": "block",
+        "parent": "fa9e3f",
+        "children": [
+          "15ad3f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wieeud"
+          ]
+        },
+        "label": "Sidebar"
+      },
+      {
+        "id": "15ad3f",
+        "name": "block",
+        "parent": "87e839",
+        "children": [
+          "bf6a36",
+          "f35fe3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "yha6i8"
+          ]
+        },
+        "label": "CTA"
+      },
+      {
+        "id": "f35fe3",
+        "name": "div",
+        "parent": "15ad3f",
+        "children": [
+          "603720"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kwdtjx"
+          ]
+        },
+        "label": "Icon Link Alpha Wrapper"
+      },
+      {
+        "id": "603720",
+        "name": "text-link",
+        "parent": "f35fe3",
+        "children": [],
+        "settings": {
+          "text": "Text link",
+          "_cssGlobalClasses": [
+            "caehza"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)"
+          }
+        },
+        "label": "Icon Link Alpha (CSS)"
+      },
+      {
+        "id": "bf6a36",
+        "name": "block",
+        "parent": "15ad3f",
+        "children": [
+          "c3ea4c",
+          "e388bb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "4o7tqj"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "c3ea4c",
+        "name": "heading",
+        "parent": "bf6a36",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "_cssGlobalClasses": [
+            "mcgd2p"
+          ],
+          "_typography": {
+            "text-align": "left"
+          },
+          "tag": "h2"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "cc4084",
+        "name": "container",
+        "parent": "609d95",
+        "children": [
+          "02287a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qsplwi"
+          ]
+        },
+        "label": "Inner Top"
+      },
+      {
+        "id": "e388bb",
+        "name": "text",
+        "parent": "bf6a36",
+        "children": [],
+        "settings": {
+          "text": "<p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet.</p><p>If you\u2019re curious, this is Website Ipsum. It was specifically developed for the use on development websites.</p>",
+          "_cssGlobalClasses": [
+            "ribrxf"
+          ]
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771253638,
+        "user_id": 1
+      },
+      {
+        "id": "kwdtjx",
+        "name": "fr-icon-link-alpha-wrapper",
+        "settings": {
+          "_display": "flex"
+        },
+        "_exists": false
+      },
+      {
+        "id": "caehza",
+        "name": "fr-icon-link-alpha",
+        "settings": {
+          "_cssCustom": ".fr-icon-link-alpha {\n  --link-color: var(--black);\n  --link-color-hover: var(--primary);\n\t--icon-size: 1em;\n  --icon-color: var(--black);\n  --icon-color-hover: var(--black);\n  --icon-gap: .25em;\n  --icon-translate-distance: .25em;\n  --icon-transition-duration: 300ms;\n  --icon-transition-function: ease-in-out;\n  \n  /* Prevent Line Breaks */\n  white-space: nowrap;\n}\n\n/* Link */\n.fr-icon-link-alpha {\n\tcolor: var(--link-color);\n  text-decoration: underline;\n  text-underline-offset: var(--link-underline-offset, .25em);\n}\n\n.fr-icon-link-alpha:hover {\n\tcolor: var(--link-color-hover);\n}\n\n/* Icon */\n.fr-icon-link-alpha .icon {\n\ttransition: translate var(--icon-transition-duration) var(--icon-transition-function);\n\tfill: var(--icon-color);\n}\n\n.fr-icon-link-alpha:hover .icon {\n\ttranslate: var(--icon-translate-distance) 0;\n  fill: var(--icon-color-hover);\n}\n\n/* Light Version */\n.fr-icon-link-alpha--light {\n  --link-color: var(--white);\n  --link-color-hover: var(--primary);\n\t--icon-size: 1em;\n  --icon-color: var(--white);\n  --icon-color-hover: var(--primary);\n}",
+          "iconPosition": "right",
+          "gap": "var(--icon-gap)"
+        },
+        "modified": 1724413262,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "qhywaa",
+        "name": "fr-hero-quebec",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_padding": {
+            "top": "var(--section-space-xl)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "dq1bkj",
+        "name": "fr-hero-quebec__header",
+        "settings": {
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ijui91",
+        "name": "fr-hero-quebec__inner-bottom",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-3-1)",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)",
+          "_alignItemsGrid": "stretch"
+        },
+        "_exists": false
+      },
+      {
+        "id": "qjhrek",
+        "name": "fr-hero-quebec__heading",
+        "settings": {
+          "_cssCustom": ".fr-hero-quebec__heading {\n\ttext-wrap: balance;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "4ppi7h",
+        "name": "fr-hero-quebec__lede",
+        "settings": {
+          "_width": "30ch",
+          "_widthMax": "100%",
+          "_width:mobile_portrait": "unset"
+        },
+        "_exists": false
+      },
+      {
+        "id": "1g9pnw",
+        "name": "fr-hero-quebec__media-wrapper",
+        "settings": {
+          "_position": "relative",
+          "_cssCustom": ".fr-hero-quebec__media-wrapper {\n\tisolation: isolate;\n}",
+          "_border": {
+            "radius": {
+              "top": "var(--radius-m)",
+              "right": "var(--radius-m)",
+              "bottom": "var(--radius-m)",
+              "left": "var(--radius-m)"
+            }
+          },
+          "_overflow": "hidden",
+          "_flexGrow": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "r3bzpd",
+        "name": "fr-hero-quebec__content-wrapper",
+        "settings": {
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "j1skat",
+        "name": "fr-hero-quebec__media",
+        "settings": {
+          "_zIndex": "-1",
+          "_objectFit": "cover",
+          "_aspectRatio": "16/7",
+          "_width": "100%",
+          "_height": "100%",
+          "_aspectRatio:mobile_landscape": "16/9"
+        },
+        "_exists": false
+      },
+      {
+        "id": "z6nyrz",
+        "name": "fr-hero-quebec__overlay",
+        "settings": {
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_gradient": {
+            "colors": [
+              {
+                "id": "ludxil",
+                "color": {
+                  "raw": "transparent"
+                }
+              },
+              {
+                "id": "ryqywj",
+                "color": {
+                  "raw": "var(--black-trans-60)"
+                }
+              }
+            ],
+            "applyTo": "background"
+          },
+          "_visibility": "visible",
+          "_zIndex": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "4rs3nc",
+        "name": "fr-hero-quebec__media-overlay-content",
+        "settings": {
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_padding": {
+            "top": "var(--space-l)",
+            "right": "var(--space-l)",
+            "bottom": "var(--space-l)",
+            "left": "var(--space-l)"
+          },
+          "_justifyContent": "flex-end",
+          "_padding:mobile_landscape": {
+            "top": "var(--space-m)",
+            "right": "var(--space-m)",
+            "bottom": "var(--space-m)",
+            "left": "var(--space-m)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "faew8f",
+        "name": "fr-hero-quebec__overlay-text",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--white)"
+            },
+            "font-size": "var(--text-l)",
+            "line-height": "1.1"
+          },
+          "_typography:mobile_landscape": {
+            "font-size": "var(--text-m)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "wieeud",
+        "name": "fr-hero-quebec__sidebar",
+        "settings": {
+          "_justifyContent": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "yha6i8",
+        "name": "fr-hero-quebec__cta",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 2)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "4o7tqj",
+        "name": "fr-hero-quebec__cta-content",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 2)",
+          "_margin": {
+            "bottom": "1em"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "mcgd2p",
+        "name": "fr-hero-quebec__cta-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "qsplwi",
+        "name": "fr-hero-quebec__inner-top",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-3-1)",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ribrxf",
+        "name": "fr-hero-quebec__cta-text",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

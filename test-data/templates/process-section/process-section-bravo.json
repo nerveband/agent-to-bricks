@@ -1,0 +1,682 @@
+{
+  "idx": 352,
+  "title": "Process Section Bravo",
+  "elementCount": 30,
+  "classCount": 19,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "aea6df",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "f7f182",
+          "0d4433",
+          "ad2529"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zsgapk"
+          ]
+        },
+        "label": "Process Section Bravo"
+      },
+      {
+        "id": "f7f182",
+        "name": "container",
+        "parent": "aea6df",
+        "children": [
+          "076ea1",
+          "b14f21",
+          "22ebe2"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xgmzei"
+          ]
+        },
+        "label": "Intro Alpha"
+      },
+      {
+        "id": "076ea1",
+        "name": "text-basic",
+        "parent": "f7f182",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "blgfqd"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "b14f21",
+        "name": "heading",
+        "parent": "f7f182",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder headline",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "tkbujj"
+          ]
+        }
+      },
+      {
+        "id": "22ebe2",
+        "name": "text-basic",
+        "parent": "f7f182",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "dizast"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "0d4433",
+        "name": "container",
+        "parent": "aea6df",
+        "children": [
+          "03bb3e",
+          "63e040",
+          "959126"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "icydak",
+            "rktisp"
+          ],
+          "tag": "custom",
+          "customTag": "ol"
+        },
+        "label": "Process Grid Bravo"
+      },
+      {
+        "id": "ad2529",
+        "name": "div",
+        "parent": "aea6df",
+        "children": [
+          "f98e49",
+          "efdf71"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "grnfcp"
+          ]
+        },
+        "label": "CTA Group"
+      },
+      {
+        "id": "f98e49",
+        "name": "button",
+        "parent": "ad2529",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ]
+        },
+        "label": "CTA"
+      },
+      {
+        "id": "efdf71",
+        "name": "button",
+        "parent": "ad2529",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary",
+            "btn--outline"
+          ]
+        },
+        "label": "CTA"
+      },
+      {
+        "id": "03bb3e",
+        "name": "block",
+        "parent": "0d4433",
+        "children": [
+          "5b4126",
+          "67f855"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xnwznc"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Process Card Bravo"
+      },
+      {
+        "id": "5b4126",
+        "name": "block",
+        "parent": "03bb3e",
+        "children": [
+          "518ad1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xiqwkz"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "67f855",
+        "name": "block",
+        "parent": "03bb3e",
+        "children": [
+          "0b8dc1",
+          "56581d",
+          "0db945"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pyudrk"
+          ],
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "label": "Body"
+      },
+      {
+        "id": "518ad1",
+        "name": "image",
+        "parent": "5b4126",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ermcup"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "56581d",
+        "name": "heading",
+        "parent": "67f855",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "misshd"
+          ]
+        }
+      },
+      {
+        "id": "0db945",
+        "name": "text-basic",
+        "parent": "67f855",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. It's just here to fill up space until we have real copy.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "gpdiwu"
+          ]
+        },
+        "label": "Text"
+      },
+      {
+        "id": "0b8dc1",
+        "name": "div",
+        "parent": "67f855",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pporbm"
+          ]
+        },
+        "label": "Step"
+      },
+      {
+        "id": "959126",
+        "name": "block",
+        "parent": "0d4433",
+        "children": [
+          "36d337",
+          "e58d77"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xnwznc"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Process Card Bravo"
+      },
+      {
+        "id": "36d337",
+        "name": "block",
+        "parent": "959126",
+        "children": [
+          "c92ec6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xiqwkz"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "e58d77",
+        "name": "block",
+        "parent": "959126",
+        "children": [
+          "624b0a",
+          "ef526e",
+          "33933e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pyudrk"
+          ],
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "label": "Body"
+      },
+      {
+        "id": "c92ec6",
+        "name": "image",
+        "parent": "36d337",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ermcup"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "624b0a",
+        "name": "div",
+        "parent": "e58d77",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pporbm"
+          ]
+        },
+        "label": "Step"
+      },
+      {
+        "id": "ef526e",
+        "name": "heading",
+        "parent": "e58d77",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "misshd"
+          ]
+        }
+      },
+      {
+        "id": "33933e",
+        "name": "text-basic",
+        "parent": "e58d77",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. It's just here to fill up space until we have real copy.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "gpdiwu"
+          ]
+        },
+        "label": "Text"
+      },
+      {
+        "id": "63e040",
+        "name": "block",
+        "parent": "0d4433",
+        "children": [
+          "8b2393",
+          "73e2b6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xnwznc"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Process Card Bravo"
+      },
+      {
+        "id": "8b2393",
+        "name": "block",
+        "parent": "63e040",
+        "children": [
+          "670638"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xiqwkz"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "73e2b6",
+        "name": "block",
+        "parent": "63e040",
+        "children": [
+          "01ad03",
+          "cfce4a",
+          "a18050"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pyudrk"
+          ],
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "label": "Body"
+      },
+      {
+        "id": "670638",
+        "name": "image",
+        "parent": "8b2393",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ermcup"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "01ad03",
+        "name": "div",
+        "parent": "73e2b6",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pporbm"
+          ]
+        },
+        "label": "Step"
+      },
+      {
+        "id": "cfce4a",
+        "name": "heading",
+        "parent": "73e2b6",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "misshd"
+          ]
+        }
+      },
+      {
+        "id": "a18050",
+        "name": "text-basic",
+        "parent": "73e2b6",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. It's just here to fill up space until we have real copy.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "gpdiwu"
+          ]
+        },
+        "label": "Text"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771255637,
+        "user_id": 1
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "btn--outline",
+        "name": "btn--outline",
+        "settings": [],
+        "_mappedId": "acss_import_btn--outline",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "xgmzei",
+        "name": "fr-intro-alpha",
+        "settings": {
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_alignItems:mobile_landscape": "flex-start",
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "blgfqd",
+        "name": "fr-intro-alpha__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "tkbujj",
+        "name": "fr-intro-alpha__heading",
+        "settings": {
+          "_typography:mobile_landscape": {
+            "font-size": "var(--h1)"
+          }
+        },
+        "modified": 1734899474,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "dizast",
+        "name": "fr-intro-alpha__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "rktisp",
+        "name": "list--none",
+        "settings": {
+          "_padding": {
+            "left": "0"
+          },
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "acss_import_list--none",
+        "modified": 1771255637,
+        "user_id": 1
+      },
+      {
+        "id": "zsgapk",
+        "name": "fr-process-section-bravo",
+        "settings": {
+          "_rowGap": "var(--fr-container-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "icydak",
+        "name": "fr-process-grid-bravo",
+        "settings": {
+          "_cssCustom": ".fr-process-grid-bravo {\n  counter-reset: process-counter 0;\n}",
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-3)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "grnfcp",
+        "name": "fr-process-cta-bravo",
+        "settings": {
+          "_direction": "row",
+          "_direction:tablet_portrait": "column",
+          "_display:tablet_portrait": "flex",
+          "_display": "flex",
+          "_columnGap": "var(--content-gap)",
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "xnwznc",
+        "name": "fr-process-card-bravo",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "xiqwkz",
+        "name": "fr-process-card-bravo__media-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "pyudrk",
+        "name": "fr-process-card-bravo__body",
+        "settings": {
+          "_padding": {
+            "top": "var(--fr-card-padding)",
+            "right": "var(--fr-card-padding)",
+            "bottom": "var(--fr-card-padding)",
+            "left": "var(--fr-card-padding)"
+          },
+          "_rowGap": "var(--fr-card-gap)",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_alignItems": "center",
+          "_alignItems:mobile_landscape": "flex-start",
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_cssCustom": "\n"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ermcup",
+        "name": "fr-process-card-bravo__media",
+        "settings": {
+          "_objectFit": "cover",
+          "_width": "100%",
+          "_height": "16em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "misshd",
+        "name": "fr-process-card-bravo__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "gpdiwu",
+        "name": "fr-process-card-bravo__text",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "pporbm",
+        "name": "fr-process-card-bravo__step",
+        "settings": {
+          "_cssCustom": ".fr-process-card-bravo__step::after {counter-increment: process-counter;content: counter(process-counter)'. ';\n}\n\n.fr-process-card-bravo__step:where(.brx-draggable:empty) {\n  min-height: unset;\n  min-width: unset;\n}",
+          "_cssCustom:mobile_portrait": ".fr-process-card-bravo__step::after {content: \"\" counter(process-counter); counter-increment: process-counter;}"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

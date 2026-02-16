@@ -1,0 +1,152 @@
+{
+  "idx": 409,
+  "title": "Contact Info Alpha",
+  "elementCount": 4,
+  "classCount": 4,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "aef98a",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "b1eb71",
+          "6434c8",
+          "604e7c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "faxtxz"
+          ],
+          "tag": "address"
+        },
+        "label": "Contact Info Alpha (CSS)"
+      },
+      {
+        "id": "604e7c",
+        "name": "icon",
+        "parent": "aef98a",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "czmrit"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "b1eb71",
+        "name": "heading",
+        "parent": "aef98a",
+        "children": [],
+        "settings": {
+          "text": "Phone",
+          "_cssGlobalClasses": [
+            "omqphb"
+          ],
+          "tag": "h4"
+        }
+      },
+      {
+        "id": "6434c8",
+        "name": "text-basic",
+        "parent": "aef98a",
+        "children": [],
+        "settings": {
+          "text": "(123) 456 789",
+          "_cssGlobalClasses": [
+            "pomwlj"
+          ],
+          "link": {
+            "type": "external",
+            "url": "tel:(123) 456 789"
+          }
+        },
+        "label": "Description"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "faxtxz",
+        "name": "fr-contact-info-alpha",
+        "settings": {
+          "_typography": {
+            "font-style": "normal"
+          },
+          "_display": "flex",
+          "_direction": "column",
+          "_alignItems": "flex-start",
+          "_justifyContent": "flex-start",
+          "_rowGap": "0.35em",
+          "_cssCustom": ".fr-contact-info-alpha {\n\t--icon-size: 2em;\n  --icon-fill-color: transparent;\n  --icon-stroke-color: var(--bg-dark);\n  --icon-fill-color-hover: transparent;  \n  --icon-stroke-color-hover: var(--bg-dark);\n}\n\n.fr-contact-info-alpha svg {\n  height: var(--icon-size);\n  width: var(--icon-size);\n  fill: var(--icon-fill-color);\n  color: var(--icon-stroke-color);\n}\n\n.fr-contact-info-alpha i {\n  color: var(--icon-fill-color);\n  font-size: var(--icon-size);\n}\n\n.fr-contact-info-alpha svg:hover {\n  fill: var(--icon-fill-color-hover);\n  color: var(--icon-stroke-color-hover);  \n}\n\n.fr-contact-info-alpha i:hover {\n  color: var(--icon-fill-color-hover);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "czmrit",
+        "name": "fr-contact-info-alpha__icon",
+        "settings": {
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "_border": {
+            "radius": {
+              "top": "50%",
+              "right": "50%",
+              "bottom": "50%",
+              "left": "50%"
+            }
+          },
+          "_cssCustom": ".fr-contact-info-alpha__icon{\n  aspect-ratio: 1;\n  display: flex; \n  justify-content: center; \n  align-items: center\n}",
+          "_alignSelf": "flex-start",
+          "_order": "-1",
+          "_padding": {
+            "top": ".5em",
+            "right": ".5em",
+            "bottom": ".5em",
+            "left": ".5em"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "omqphb",
+        "name": "fr-contact-info-alpha__heading",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-m)",
+            "font-weight": "700"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "pomwlj",
+        "name": "fr-contact-info-alpha__details",
+        "settings": {
+          "_typography": {
+            "text-decoration": "none",
+            "font-size": "var(--text-s)"
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

@@ -1,0 +1,309 @@
+{
+  "idx": 427,
+  "title": "Content Section Bravo",
+  "elementCount": 12,
+  "classCount": 11,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "eed8ca",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "c9aeea"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "urkwyp"
+          ]
+        },
+        "label": "Content Section Bravo"
+      },
+      {
+        "id": "c9aeea",
+        "name": "container",
+        "parent": "eed8ca",
+        "children": [
+          "797c25",
+          "cc257c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kwkuak"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "797c25",
+        "name": "block",
+        "parent": "c9aeea",
+        "children": [
+          "62fa68"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wqtheq"
+          ]
+        },
+        "label": "Content Column"
+      },
+      {
+        "id": "cc257c",
+        "name": "block",
+        "parent": "c9aeea",
+        "children": [
+          "816a24",
+          "5b4b33",
+          "05cf1d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vqrtfh"
+          ]
+        },
+        "label": "Media Column"
+      },
+      {
+        "id": "62fa68",
+        "name": "block",
+        "parent": "797c25",
+        "children": [
+          "4f2a93",
+          "58ae8c",
+          "101da7",
+          "47929d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ggbwhz"
+          ]
+        },
+        "label": "Content (Sticky)"
+      },
+      {
+        "id": "58ae8c",
+        "name": "text-basic",
+        "parent": "62fa68",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "_cssGlobalClasses": [
+            "qfdtjc"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "4f2a93",
+        "name": "heading",
+        "parent": "62fa68",
+        "children": [],
+        "settings": {
+          "text": "I am a heading",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "sisaql"
+          ]
+        }
+      },
+      {
+        "id": "47929d",
+        "name": "button",
+        "parent": "62fa68",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ]
+        }
+      },
+      {
+        "id": "101da7",
+        "name": "text-basic",
+        "parent": "62fa68",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "rcvtzn"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "816a24",
+        "name": "image",
+        "parent": "cc257c",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rhcvya"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "05cf1d",
+        "name": "image",
+        "parent": "cc257c",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rhcvya"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "5b4b33",
+        "name": "image",
+        "parent": "cc257c",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "_cssGlobalClasses": [
+            "rhcvya"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        },
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771256146,
+        "user_id": 1
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "urkwyp",
+        "name": "fr-content-section-bravo",
+        "settings": {
+          "_rowGap": "var(--fr-container-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "kwkuak",
+        "name": "fr-content-section-bravo__inner",
+        "settings": {
+          "_cssCustom:mobile_landscape": ".fr-content-section-bravo__inner {\n\tgrid-template-columns: 1fr;\n  gap: var(--fr-content-gap);\n}",
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_gridGap": "var(--grid-gap)",
+          "_alignItemsGrid": "stretch"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wqtheq",
+        "name": "fr-content-section-bravo__content-column",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "vqrtfh",
+        "name": "fr-content-section-bravo__media-column",
+        "settings": {
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ggbwhz",
+        "name": "fr-content-section-bravo__content-wrapper",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_position": "sticky",
+          "_top": "0"
+        },
+        "_exists": false
+      },
+      {
+        "id": "sisaql",
+        "name": "fr-content-section-bravo__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "rcvtzn",
+        "name": "fr-content-section-bravo__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "rhcvya",
+        "name": "fr-content-section-bravo__media",
+        "settings": {
+          "_width": "100%",
+          "_cssCustom": ".fr-content-section-bravo__media {\n\taspect-ratio: 4/3;\n}",
+          "_objectFit": "cover"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

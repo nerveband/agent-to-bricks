@@ -1,0 +1,93 @@
+{
+  "idx": 194,
+  "title": "Testimonial Card Lima",
+  "elementCount": 2,
+  "classCount": 2,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "0cee0f",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "147085"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iorcjr"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Lima"
+      },
+      {
+        "id": "147085",
+        "name": "text-basic",
+        "parent": "0cee0f",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "auylqx"
+          ],
+          "text": "This is a short callout quote.",
+          "tag": "custom",
+          "customTag": "q"
+        },
+        "label": "Callout"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "iorcjr",
+        "name": "fr-testimonial-card-lima",
+        "settings": {
+          "_typography": {
+            "text-align": "center"
+          },
+          "_padding": {
+            "top": "var(--space-s)",
+            "right": "var(--space-s)",
+            "bottom": "var(--space-s)",
+            "left": "var(--space-s)"
+          },
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_width:mobile_portrait": "100%",
+          "_width:mobile_landscape": "100%",
+          "_display": "flex",
+          "_justifyContent": "center",
+          "_direction": "column",
+          "_alignItems": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "auylqx",
+        "name": "fr-testimonial-card-lima__callout",
+        "settings": {
+          "_typography": {
+            "font-weight": "600"
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

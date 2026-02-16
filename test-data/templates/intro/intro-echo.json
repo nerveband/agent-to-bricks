@@ -1,0 +1,185 @@
+{
+  "idx": 370,
+  "title": "Intro Echo",
+  "elementCount": 6,
+  "classCount": 8,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "4e1776",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "3f3936",
+          "df424f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pdcgtq"
+          ]
+        },
+        "label": "Intro Echo"
+      },
+      {
+        "id": "3f3936",
+        "name": "block",
+        "parent": "4e1776",
+        "children": [
+          "6f6cb7",
+          "345527"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cbghev"
+          ]
+        },
+        "label": "Heading Wrapper"
+      },
+      {
+        "id": "df424f",
+        "name": "block",
+        "parent": "4e1776",
+        "children": [
+          "08121b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pdtwel"
+          ]
+        },
+        "label": "Lede Wrapper"
+      },
+      {
+        "id": "345527",
+        "name": "text-basic",
+        "parent": "3f3936",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "wbfkbf"
+          ]
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "6f6cb7",
+        "name": "heading",
+        "parent": "3f3936",
+        "children": [],
+        "settings": {
+          "text": "Intro heading",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "bkgkvg"
+          ]
+        }
+      },
+      {
+        "id": "08121b",
+        "name": "text-basic",
+        "parent": "df424f",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "wqqaxf"
+          ]
+        },
+        "label": "Lede"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "pdcgtq",
+        "name": "fr-intro-echo",
+        "settings": {
+          "_cssCustom:mobile_landscape": ".fr-intro-echo {\n  grid-template-columns: 1fr;\n}",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns": "var(--grid-2-1)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_display": "grid",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)",
+          "_alignItemsGrid": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "cbghev",
+        "name": "fr-intro-echo__heading-wrapper",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 2)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wbfkbf",
+        "name": "fr-intro-echo__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "bkgkvg",
+        "name": "fr-intro-echo__heading",
+        "settings": {
+          "_cssCustom": ".fr-intro-echo__heading {\n  text-wrap: balance;\n}"
+        },
+        "_mappedId": "bkgkvg",
+        "modified": 1771255753,
+        "user_id": 1
+      },
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771255737,
+        "user_id": 1
+      },
+      {
+        "id": "pdtwel",
+        "name": "fr-intro-echo__lede-wrapper",
+        "settings": {
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wqqaxf",
+        "name": "fr-intro-echo__lede",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

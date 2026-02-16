@@ -1,0 +1,196 @@
+{
+  "idx": 260,
+  "title": "Event Meta Bravo",
+  "elementCount": 7,
+  "classCount": 7,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "133015",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "08c52e",
+          "c20ec2"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ubnicc"
+          ]
+        },
+        "label": "Event Meta Bravo"
+      },
+      {
+        "id": "08c52e",
+        "name": "div",
+        "parent": "133015",
+        "children": [
+          "f8ba8f",
+          "cec821"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hvllzd"
+          ]
+        },
+        "label": "When Wrapper"
+      },
+      {
+        "id": "f8ba8f",
+        "name": "text-basic",
+        "parent": "08c52e",
+        "children": [],
+        "settings": {
+          "text": "January 01, 2023",
+          "tag": "custom",
+          "customTag": "time",
+          "_attributes": [
+            {
+              "id": "rofhru",
+              "name": "datetime"
+            }
+          ],
+          "_cssGlobalClasses": [
+            "zdfbls"
+          ]
+        },
+        "label": "Date"
+      },
+      {
+        "id": "cec821",
+        "name": "div",
+        "parent": "08c52e",
+        "children": [
+          "56f414",
+          "1ce47a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hbfewd"
+          ]
+        },
+        "label": "Start & End Wrapper"
+      },
+      {
+        "id": "56f414",
+        "name": "text-basic",
+        "parent": "cec821",
+        "children": [],
+        "settings": {
+          "text": "12:00",
+          "_cssGlobalClasses": [
+            "sgoeam"
+          ],
+          "tag": "custom",
+          "customTag": "time",
+          "_attributes": [
+            {
+              "id": "wubbom",
+              "name": "datetime"
+            }
+          ]
+        },
+        "label": "Start Time"
+      },
+      {
+        "id": "1ce47a",
+        "name": "text-basic",
+        "parent": "cec821",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sidpvy"
+          ],
+          "text": "13:00",
+          "tag": "custom",
+          "customTag": "time",
+          "_attributes": [
+            {
+              "id": "sesmoy",
+              "name": "datetime"
+            }
+          ]
+        },
+        "label": "End Time"
+      },
+      {
+        "id": "c20ec2",
+        "name": "text-basic",
+        "parent": "133015",
+        "children": [],
+        "settings": {
+          "text": "Free",
+          "tag": "span",
+          "_cssGlobalClasses": [
+            "phbdst"
+          ]
+        },
+        "label": "Price"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "ubnicc",
+        "name": "fr-event-meta-bravo",
+        "settings": {
+          "_direction": "row",
+          "_rowGap": "var(--fr-card-gap)",
+          "_columnGap": "var(--fr-card-gap)",
+          "_justifyContent": "space-between",
+          "_order": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "hvllzd",
+        "name": "fr-event-meta-bravo__when-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_columnGap": "var(--fr-card-gap)",
+          "_rowGap": "var(--fr-card-gap)",
+          "_flexWrap": "wrap"
+        },
+        "_exists": false
+      },
+      {
+        "id": "zdfbls",
+        "name": "fr-event-meta-bravo__date",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "hbfewd",
+        "name": "fr-event-meta-bravo__start-end-wrapper",
+        "settings": {
+          "_display": "flex"
+        },
+        "_exists": false
+      },
+      {
+        "id": "sgoeam",
+        "name": "fr-event-meta-bravo__start-time",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "sidpvy",
+        "name": "fr-event-meta-bravo__end-time",
+        "settings": {
+          "_cssCustom": ".fr-event-meta-bravo__end-time::before {\n\tcontent: \"-\";\n  margin: 0 .25em 0 .25em;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "phbdst",
+        "name": "fr-event-meta-bravo__price",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

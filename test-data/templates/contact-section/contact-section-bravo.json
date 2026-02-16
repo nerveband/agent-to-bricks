@@ -1,0 +1,552 @@
+{
+  "idx": 389,
+  "title": "Contact Section Bravo",
+  "elementCount": 24,
+  "classCount": 12,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "f6ac88",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "aca111"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "epdasu"
+          ]
+        },
+        "label": "Contact Section Bravo"
+      },
+      {
+        "id": "aca111",
+        "name": "container",
+        "parent": "f6ac88",
+        "children": [
+          "3d949a",
+          "c4b371"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xijfhp"
+          ]
+        },
+        "label": "Inner Container"
+      },
+      {
+        "id": "638fda",
+        "name": "map",
+        "parent": "3d949a",
+        "children": [],
+        "settings": {
+          "addresses": [
+            {
+              "latitude": "52.5164154966524",
+              "longitude": "13.377643715349544",
+              "id": "wdrlvm"
+            }
+          ],
+          "scrollwheel": true,
+          "draggable": true,
+          "streetViewControl": true,
+          "zoomControl": true,
+          "_cssGlobalClasses": [
+            "sggbol"
+          ],
+          "_heightMin:mobile_landscape": "rem"
+        }
+      },
+      {
+        "id": "c4b371",
+        "name": "div",
+        "parent": "aca111",
+        "children": [
+          "99069f",
+          "f6f30f",
+          "076d50",
+          "915c54"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "igacmy"
+          ],
+          "tag": "address"
+        },
+        "label": "Info Wrapper"
+      },
+      {
+        "id": "f6f30f",
+        "name": "div",
+        "parent": "c4b371",
+        "children": [
+          "fddf52",
+          "153dae"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "svfpre"
+          ],
+          "tag": "div"
+        },
+        "label": "Contact Info Bravo (CSS)"
+      },
+      {
+        "id": "1b2645",
+        "name": "heading",
+        "parent": "fddf52",
+        "children": [],
+        "settings": {
+          "text": "Address",
+          "_cssGlobalClasses": [
+            "uputxu"
+          ],
+          "tag": "h4"
+        }
+      },
+      {
+        "id": "eeec1e",
+        "name": "text-basic",
+        "parent": "fddf52",
+        "children": [],
+        "settings": {
+          "text": "123 Your Address Drive, Your City, State, 12345",
+          "_cssGlobalClasses": [
+            "vqnerm"
+          ],
+          "tag": "p"
+        },
+        "label": "Details"
+      },
+      {
+        "id": "fddf52",
+        "name": "div",
+        "parent": "f6f30f",
+        "children": [
+          "1b2645",
+          "eeec1e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hlmnio"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "99069f",
+        "name": "heading",
+        "parent": "c4b371",
+        "children": [],
+        "settings": {
+          "text": "Contact Us",
+          "_cssGlobalClasses": [
+            "vdsjzp"
+          ]
+        }
+      },
+      {
+        "id": "915c54",
+        "name": "div",
+        "parent": "c4b371",
+        "children": [
+          "63fb22",
+          "1d1b09"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "svfpre"
+          ],
+          "tag": "div"
+        },
+        "label": "Contact Info Bravo (CSS)"
+      },
+      {
+        "id": "63fb22",
+        "name": "div",
+        "parent": "915c54",
+        "children": [
+          "ff5b3b",
+          "8efb88"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hlmnio"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "ff5b3b",
+        "name": "heading",
+        "parent": "63fb22",
+        "children": [],
+        "settings": {
+          "text": "Email",
+          "_cssGlobalClasses": [
+            "uputxu"
+          ],
+          "tag": "h4"
+        }
+      },
+      {
+        "id": "4e8cfd",
+        "name": "text-basic",
+        "parent": "b8f3a0",
+        "children": [],
+        "settings": {
+          "text": "(123) 456 789",
+          "_cssGlobalClasses": [
+            "vqnerm"
+          ],
+          "link": {
+            "type": "external",
+            "url": "tel:(123) 456 789"
+          }
+        },
+        "label": "Details"
+      },
+      {
+        "id": "076d50",
+        "name": "div",
+        "parent": "c4b371",
+        "children": [
+          "b8f3a0",
+          "e0e247"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "svfpre"
+          ],
+          "tag": "div"
+        },
+        "label": "Contact Info Bravo (CSS)"
+      },
+      {
+        "id": "b8f3a0",
+        "name": "div",
+        "parent": "076d50",
+        "children": [
+          "e7a629",
+          "4e8cfd"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hlmnio"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "e7a629",
+        "name": "heading",
+        "parent": "b8f3a0",
+        "children": [],
+        "settings": {
+          "text": "Phone",
+          "_cssGlobalClasses": [
+            "uputxu"
+          ],
+          "tag": "h4"
+        }
+      },
+      {
+        "id": "8efb88",
+        "name": "text-basic",
+        "parent": "63fb22",
+        "children": [],
+        "settings": {
+          "text": "youremail@yourdomain.com",
+          "_cssGlobalClasses": [
+            "vqnerm"
+          ],
+          "link": {
+            "type": "external",
+            "url": "mailto:youremail@yourdomain.com"
+          }
+        },
+        "label": "Details"
+      },
+      {
+        "id": "3d949a",
+        "name": "div",
+        "parent": "aca111",
+        "children": [
+          "638fda"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "innfey"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "228065",
+        "name": "icon",
+        "parent": "153dae",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "xdmusy"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "153dae",
+        "name": "div",
+        "parent": "f6f30f",
+        "children": [
+          "228065"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xszafw"
+          ]
+        },
+        "label": "Icon Wrapper"
+      },
+      {
+        "id": "e0e247",
+        "name": "div",
+        "parent": "076d50",
+        "children": [
+          "1a524a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xszafw"
+          ]
+        },
+        "label": "Icon Wrapper"
+      },
+      {
+        "id": "1a524a",
+        "name": "icon",
+        "parent": "e0e247",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "xdmusy"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "1d1b09",
+        "name": "div",
+        "parent": "915c54",
+        "children": [
+          "1d66cf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xszafw"
+          ]
+        },
+        "label": "Icon Wrapper"
+      },
+      {
+        "id": "1d66cf",
+        "name": "icon",
+        "parent": "1d1b09",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "xdmusy"
+          ]
+        },
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "svfpre",
+        "name": "fr-contact-info-bravo",
+        "settings": {
+          "_typography": {
+            "font-style": "normal"
+          },
+          "_display": "flex",
+          "_direction": "row",
+          "_alignItems": "flex-start",
+          "_justifyContent": "flex-start",
+          "_columnGap": "var(--fr-card-gap)",
+          "_cssCustom": ".fr-contact-info-bravo {\n\t--icon-size: 1.5em;\n  --icon-fill-color: transparent;\n  --icon-stroke-color: var(--bg-dark);\n  --icon-fill-color-hover: transparent;  \n  --icon-stroke-color-hover: var(--bg-dark);\n}"
+        },
+        "modified": 1723325879,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "uputxu",
+        "name": "fr-contact-info-bravo__heading",
+        "settings": {
+          "_typography": {
+            "font-weight": "700",
+            "font-size": "var(--text-m)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "vqnerm",
+        "name": "fr-contact-info-bravo__details",
+        "settings": {
+          "_typography": {
+            "text-decoration": "none",
+            "font-size": "var(--text-s)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "hlmnio",
+        "name": "fr-contact-info-bravo__content-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column"
+        },
+        "_exists": false
+      },
+      {
+        "id": "xszafw",
+        "name": "fr-contact-info-bravo__icon-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_cssCustom": ".fr-contact-info-bravo__icon-wrapper svg {\n  height: var(--icon-size);\n  width: var(--icon-size);\n  fill: var(--icon-fill-color);\n  color: var(--icon-stroke-color);\n}\n\n.fr-contact-info-bravo__icon-wrapper i {\n  color: var(--icon-fill-color);\n  font-size: var(--icon-size);\n}\n\n.fr-contact-info-bravo__icon-wrapper svg:hover {\n  fill: var(--icon-fill-color-hover);\n  color: var(--icon-stroke-color-hover);  \n}\n\n.fr-contact-info-bravo__icon-wrapper i:hover {\n  color: var(--icon-fill-color-hover);\n}",
+          "_alignItems": "center",
+          "_order": "-1",
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "_padding": {
+            "top": ".5em",
+            "right": ".5em",
+            "bottom": ".5em",
+            "left": ".5em"
+          },
+          "_border": {
+            "radius": {
+              "top": "50%",
+              "right": "50%",
+              "bottom": "50%",
+              "left": "50%"
+            }
+          },
+          "_alignSelf": "center",
+          "_justifyContent": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "xdmusy",
+        "name": "fr-contact-info-bravo__icon",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "epdasu",
+        "name": "fr-contact-section-bravo",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "xijfhp",
+        "name": "fr-contact-section-bravo__inner",
+        "settings": {
+          "_cssCustom:mobile_landscape": ".fr-contact-section-bravo__inner {\n  grid-template-columns: 1fr;\n}",
+          "_display": "grid",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_alignItemsGrid": "stretch"
+        },
+        "_exists": false
+      },
+      {
+        "id": "sggbol",
+        "name": "fr-contact-section-bravo__map",
+        "settings": {
+          "height": "100%",
+          "_heightMin": "30rem",
+          "_height": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "igacmy",
+        "name": "fr-contact-section-bravo__info-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "var(--content-gap)",
+          "_typography:mobile_landscape": {
+            "font-style": "normal"
+          },
+          "_typography": {
+            "font-style": "normal"
+          },
+          "_justifyContent": "center",
+          "_padding:mobile_landscape": {
+            "unit": {
+              "left": "px",
+              "right": "px"
+            },
+            "left": 0,
+            "right": 0
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "vdsjzp",
+        "name": "fr-contact-section-bravo__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "innfey",
+        "name": "fr-contact-section-bravo__media-wrapper",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

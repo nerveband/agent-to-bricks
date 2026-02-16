@@ -1,0 +1,456 @@
+{
+  "idx": 106,
+  "title": "Content Section Oscar",
+  "elementCount": 17,
+  "classCount": 15,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "e9464b",
+        "name": "container",
+        "parent": "1175f1",
+        "children": [
+          "aa11e9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dliabf",
+            "xgmzei"
+          ]
+        },
+        "label": "Intro Alpha"
+      },
+      {
+        "id": "1175f1",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "e9464b",
+          "0d2cbb",
+          "177be8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "3jodni"
+          ]
+        },
+        "label": "Content Section Oscar"
+      },
+      {
+        "id": "aa11e9",
+        "name": "heading",
+        "parent": "e9464b",
+        "children": [],
+        "settings": {
+          "text": "A Big Bold Headline Goes Here",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "tkbujj",
+            "sauwyz"
+          ]
+        }
+      },
+      {
+        "id": "0d2cbb",
+        "name": "container",
+        "parent": "1175f1",
+        "children": [
+          "e040e8",
+          "e5e8c1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tuukwm"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "177be8",
+        "name": "container",
+        "parent": "1175f1",
+        "children": [
+          "0aff3c",
+          "465a8c",
+          "c27bcc"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "oddjai"
+          ]
+        },
+        "label": "Image Group Kilo"
+      },
+      {
+        "id": "0aff3c",
+        "name": "div",
+        "parent": "177be8",
+        "children": [
+          "de40c4"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "22lot6"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "de40c4",
+        "name": "image",
+        "parent": "0aff3c",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "5scaeg"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure",
+          "caption": "custom",
+          "captionCustom": "Caption this photo"
+        },
+        "label": "Media",
+        "themeStyles": []
+      },
+      {
+        "id": "c27bcc",
+        "name": "div",
+        "parent": "177be8",
+        "children": [
+          "93cf31"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "22lot6"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "93cf31",
+        "name": "image",
+        "parent": "c27bcc",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "5scaeg"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "caption": "custom",
+          "captionCustom": "Caption this photo"
+        },
+        "label": "Media",
+        "themeStyles": []
+      },
+      {
+        "id": "465a8c",
+        "name": "div",
+        "parent": "177be8",
+        "children": [
+          "36c537"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "22lot6"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "36c537",
+        "name": "image",
+        "parent": "465a8c",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "5scaeg"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "caption": "custom",
+          "captionCustom": "Caption this photo"
+        },
+        "label": "Media",
+        "themeStyles": []
+      },
+      {
+        "id": "e040e8",
+        "name": "block",
+        "parent": "0d2cbb",
+        "children": [
+          "e87d86",
+          "aa71a2"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mbxigj"
+          ]
+        },
+        "label": "Left"
+      },
+      {
+        "id": "e5e8c1",
+        "name": "block",
+        "parent": "0d2cbb",
+        "children": [
+          "8ae7a8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "nocrkk"
+          ]
+        },
+        "label": "Right"
+      },
+      {
+        "id": "e87d86",
+        "name": "text-basic",
+        "parent": "e040e8",
+        "children": [],
+        "settings": {
+          "text": "This is a larger marketing headline that introduces the next column.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "sbnwlt"
+          ]
+        },
+        "label": "Marketing Headline"
+      },
+      {
+        "id": "aa71a2",
+        "name": "div",
+        "parent": "e040e8",
+        "children": [
+          "fabde8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kwdtjx"
+          ]
+        },
+        "label": "Icon Link Alpha Wrapper"
+      },
+      {
+        "id": "fabde8",
+        "name": "text-link",
+        "parent": "aa71a2",
+        "children": [],
+        "settings": {
+          "text": "Text link",
+          "_cssGlobalClasses": [
+            "caehza"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)",
+            "fill": {
+              "raw": "var(--icon-color)"
+            }
+          }
+        },
+        "label": "Icon Link Alpha (CSS)"
+      },
+      {
+        "id": "8ae7a8",
+        "name": "text",
+        "parent": "e5e8c1",
+        "children": [],
+        "settings": {
+          "text": "<h3>Point #1 goes here</h3><p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.</p><p>Sometimes it\u2019s nice to put in text just to get an idea of how text will fill in a space on your website.</p><h3>Point #2 goes here</h3><p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.</p><p>Sometimes it\u2019s nice to put in text just to get an idea of how text will fill in a space on your website.</p>",
+          "_cssGlobalClasses": [
+            "aprwbq"
+          ]
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "dliabf",
+        "name": "fr-intro",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "xgmzei",
+        "name": "fr-intro-alpha",
+        "settings": {
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_alignItems:mobile_landscape": "flex-start",
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "tkbujj",
+        "name": "fr-intro-alpha__heading",
+        "settings": {
+          "_typography:mobile_landscape": {
+            "font-size": "var(--h1)"
+          }
+        },
+        "modified": 1734899474,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "3jodni",
+        "name": "fr-content-section-oscar",
+        "settings": {
+          "_rowGap": "calc(var(--container-gap) * 1.25)",
+          "_rowGap:mobile_landscape": "var(--content-gap)",
+          "_background": {
+            "color": {
+              "raw": "var(--neutral-ultra-light)"
+            }
+          },
+          "_isolation": "isolate",
+          "_padding": {
+            "top": "var(--section-space-l)",
+            "bottom": "var(--section-space-l)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "sauwyz",
+        "name": "fr-content-section-oscar__heading",
+        "settings": {
+          "_typography": {
+            "font-size": "calc(var(--h1) * 2)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "tuukwm",
+        "name": "fr-content-section-oscar__inner",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridGap": "var(--grid-gap)",
+          "_width": "75ch",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)",
+          "_gridGap:tablet_portrait": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "oddjai",
+        "name": "fr-image-group-kilo",
+        "settings": {
+          "_cssCustom": ".fr-image-group-kilo {\n\t--image-aspect-ratio: 3/4;\n  --offset: var(--section-space-m);\n  --image-radius: var(--radius);\n  --caption-font-size: var(--text-s);\n  --caption-font-color: var(--black-trans-80);\n  --caption-align: left;\n  --caption-order: -1; /* 1 = above & 0 = below */\n  --caption-gap: var(--text-xs);\n}\n\n.fr-image-group-kilo__media {\n\taspect-ratio: var(--image-aspect-ratio);\n}\n\n@media (min-width: 767px) {\n  .fr-image-group-kilo__media-wrapper:nth-child(2) {\n\t\tmargin-block-start: var(--offset);\n\t}\n}\n\n.fr-image-group-kilo__media img {\n\tborder-radius: var(--image-radius);\n}\n\n.fr-image-group-kilo figure {\n\tdisplay: flex;\n  flex-direction: column;\n  gap: var(--caption-gap);\n}\n \n.fr-image-group-kilo .bricks-image-caption {\n  position: static !important;\n  color: var(--caption-font-color);\n  background: transparent;\n  font-size: var(--caption-font-size);\n  text-align: var(--caption-align);\n  padding: 0;\n  order: var(--caption-order);\n}",
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-3)",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)",
+          "_gridTemplateRows": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "22lot6",
+        "name": "fr-image-group-kilo__media-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "var(--space-xs)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "5scaeg",
+        "name": "fr-image-group-kilo__media",
+        "settings": {
+          "_objectFit": "cover"
+        },
+        "_exists": false
+      },
+      {
+        "id": "mbxigj",
+        "name": "fr-content-section-oscar__inner-left",
+        "settings": {
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "nocrkk",
+        "name": "fr-content-section-oscar__inner-right",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "sbnwlt",
+        "name": "fr-content-section-oscar__marketing-headline",
+        "settings": {
+          "_typography": {
+            "font-size": "calc(var(--h2) / 1.1)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "kwdtjx",
+        "name": "fr-icon-link-alpha-wrapper",
+        "settings": {
+          "_display": "flex"
+        },
+        "_exists": false
+      },
+      {
+        "id": "caehza",
+        "name": "fr-icon-link-alpha",
+        "settings": {
+          "_cssCustom": ".fr-icon-link-alpha {\n  --link-color: var(--black);\n  --link-color-hover: var(--primary);\n\t--icon-size: 1em;\n  --icon-color: var(--black);\n  --icon-color-hover: var(--black);\n  --icon-gap: .25em;\n  --icon-translate-distance: .25em;\n  --icon-transition-duration: 300ms;\n  --icon-transition-function: ease-in-out;\n  \n  /* Prevent Line Breaks */\n  white-space: nowrap;\n}\n\n/* Link */\n.fr-icon-link-alpha {\n\tcolor: var(--link-color);\n  text-decoration: underline;\n  text-underline-offset: var(--link-underline-offset, .25em);\n}\n\n.fr-icon-link-alpha:hover {\n\tcolor: var(--link-color-hover);\n}\n\n/* Icon */\n.fr-icon-link-alpha .icon {\n\ttransition: translate var(--icon-transition-duration) var(--icon-transition-function);\n\tfill: var(--icon-color);\n}\n\n.fr-icon-link-alpha:hover .icon {\n\ttranslate: var(--icon-translate-distance) 0;\n  fill: var(--icon-color-hover);\n}\n\n/* Light Version */\n.fr-icon-link-alpha--light {\n  --link-color: var(--white);\n  --link-color-hover: var(--primary);\n\t--icon-size: 1em;\n  --icon-color: var(--white);\n  --icon-color-hover: var(--primary);\n}",
+          "iconPosition": "right",
+          "gap": "var(--icon-gap)"
+        },
+        "modified": 1724413262,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "aprwbq",
+        "name": "fr-content-section-oscar__main-content",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

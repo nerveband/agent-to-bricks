@@ -1,0 +1,173 @@
+{
+  "idx": 443,
+  "title": "Profile Card Bravo",
+  "elementCount": 6,
+  "classCount": 6,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "3c3357",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "fbf66e",
+          "01be6b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "womdag"
+          ]
+        },
+        "label": "Profile Card Bravo"
+      },
+      {
+        "id": "fbf66e",
+        "name": "div",
+        "parent": "3c3357",
+        "children": [
+          "362d8d",
+          "029320"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rbtwll"
+          ],
+          "_display": "flex",
+          "_direction": "column"
+        },
+        "label": "Body"
+      },
+      {
+        "id": "01be6b",
+        "name": "div",
+        "parent": "3c3357",
+        "children": [
+          "11adad"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mkkvdo"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "11adad",
+        "name": "image",
+        "parent": "01be6b",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ueenyh"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "caption": "none"
+        },
+        "label": "Avatar"
+      },
+      {
+        "id": "362d8d",
+        "name": "text-basic",
+        "parent": "fbf66e",
+        "children": [],
+        "settings": {
+          "text": "Indiana Jones",
+          "_cssGlobalClasses": [
+            "zretuo"
+          ],
+          "tag": "custom",
+          "customTag": "strong"
+        },
+        "label": "Name"
+      },
+      {
+        "id": "029320",
+        "name": "text-basic",
+        "parent": "fbf66e",
+        "children": [],
+        "settings": {
+          "text": "Archeologist",
+          "_cssGlobalClasses": [
+            "qjnbam"
+          ],
+          "tag": "p"
+        },
+        "label": "Title"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "womdag",
+        "name": "fr-profile-card-bravo",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "0"
+        },
+        "_exists": false
+      },
+      {
+        "id": "rbtwll",
+        "name": "fr-profile-card-bravo__body",
+        "settings": {
+          "_padding": {
+            "top": "var(--fr-card-padding)",
+            "right": "var(--fr-card-padding)",
+            "bottom": "var(--fr-card-padding)",
+            "left": "var(--fr-card-padding)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "mkkvdo",
+        "name": "fr-profile-card-bravo__header",
+        "settings": {
+          "_order": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ueenyh",
+        "name": "fr-profile-card-bravo__avatar",
+        "settings": {
+          "_width": "100%",
+          "_objectFit": "cover",
+          "_flexGrow": "1",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_overflow": "hidden",
+          "_height": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "zretuo",
+        "name": "fr-profile-card-bravo__name",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "qjnbam",
+        "name": "fr-profile-card-bravo__title",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

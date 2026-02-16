@@ -1,0 +1,1671 @@
+{
+  "idx": 234,
+  "title": "Slider Grid Bravo",
+  "elementCount": 85,
+  "classCount": 18,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "859c81",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "76de18",
+          "2a9bf9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "itjoyc"
+          ]
+        },
+        "label": "Slider Grid Bravo"
+      },
+      {
+        "id": "76de18",
+        "name": "div",
+        "parent": "859c81",
+        "children": [
+          "5acc7b",
+          "f123c0",
+          "accf31",
+          "ecff0d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eexxfd"
+          ]
+        },
+        "label": "Sidebar"
+      },
+      {
+        "id": "5acc7b",
+        "name": "heading",
+        "parent": "76de18",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "aluxdt"
+          ]
+        }
+      },
+      {
+        "id": "f123c0",
+        "name": "text-basic",
+        "parent": "76de18",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "gxiwte"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "accf31",
+        "name": "text-basic",
+        "parent": "76de18",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.<br>",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "dcnhay"
+          ],
+          "tag": "p",
+          "_padding": {
+            "bottom": "0"
+          }
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "ecff0d",
+        "name": "fr-slider-controls",
+        "parent": "76de18",
+        "children": [],
+        "settings": {
+          "type": "nextPrev",
+          "progressHeight": ".5rem",
+          "progressWidth": "100%",
+          "arrows": true,
+          "prevArrow": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "prevArrowAriaLabel": "Previous slide",
+          "nextArrow": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "nextArrowAriaLabel": "Next slide",
+          "_cssGlobalClasses": [
+            "wbvcbg"
+          ],
+          "syncId": "fr-slider-bravo"
+        }
+      },
+      {
+        "id": "2a9bf9",
+        "name": "fr-slider",
+        "parent": "859c81",
+        "children": [
+          "d91b6e",
+          "d76747",
+          "0adfb9",
+          "d75302",
+          "009bf1",
+          "6aa868"
+        ],
+        "settings": {
+          "height": "50vh",
+          "playButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-play"
+          },
+          "pauseButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-pause"
+          },
+          "arrowSize": "var(--space-l)",
+          "prevArrow": {
+            "library": "themify",
+            "icon": "ti-arrow-left"
+          },
+          "prevArrowTop": "50%",
+          "prevArrowLeft": "var(--space-xs)",
+          "nextArrow": {
+            "library": "themify",
+            "icon": "ti-arrow-right"
+          },
+          "nextArrowTop": "50%",
+          "nextArrowRight": "var(--space-xs)",
+          "sliderTag": "div",
+          "listTag": "ul",
+          "ariaCarousel": "Carousel",
+          "_cssGlobalClasses": [
+            "vsuwbx"
+          ],
+          "fixedWidth": "var(--width-m)",
+          "gap": "var(--grid-gap)",
+          "isSync": true,
+          "syncId": "fr-slider-bravo",
+          "fixedHeight": "auto",
+          "breakout": true,
+          "clipToContainer": "inset(-100vw -100vw -100vw 0)"
+        },
+        "label": "Slider Bravo"
+      },
+      {
+        "id": "41f448",
+        "name": "div",
+        "parent": "d91b6e",
+        "children": [
+          "1585d9",
+          "7510f7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pqnnmh"
+          ],
+          "tag": "article",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Echo"
+      },
+      {
+        "id": "1585d9",
+        "name": "block",
+        "parent": "41f448",
+        "children": [
+          "98927c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vpjayo"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "98927c",
+        "name": "text-basic",
+        "parent": "1585d9",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "_cssGlobalClasses": [
+            "dsmrae"
+          ],
+          "tag": "p"
+        },
+        "label": "Quote"
+      },
+      {
+        "id": "7510f7",
+        "name": "block",
+        "parent": "41f448",
+        "children": [
+          "2d949f",
+          "f2fd72"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jfhtwk"
+          ]
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "2d949f",
+        "name": "div",
+        "parent": "7510f7",
+        "children": [
+          "d344e4",
+          "4ef894",
+          "16e229",
+          "fe489c",
+          "22e236",
+          "81c888"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kndlyw"
+          ],
+          "_attributes": [
+            {
+              "id": "bcpeoi",
+              "name": "data-rating",
+              "value": "4.5"
+            }
+          ],
+          "tag": "custom",
+          "customTag": "span"
+        },
+        "label": "Rating Alpha (Set Data Attr)"
+      },
+      {
+        "id": "d344e4",
+        "name": "icon",
+        "parent": "2d949f",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star-half"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn",
+            "tshuyw"
+          ]
+        },
+        "label": "Half (Don't Delete)"
+      },
+      {
+        "id": "4ef894",
+        "name": "icon",
+        "parent": "2d949f",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "themeStyles": [],
+        "label": "1"
+      },
+      {
+        "id": "16e229",
+        "name": "icon",
+        "parent": "2d949f",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "2"
+      },
+      {
+        "id": "fe489c",
+        "name": "icon",
+        "parent": "2d949f",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "3"
+      },
+      {
+        "id": "22e236",
+        "name": "icon",
+        "parent": "2d949f",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "4"
+      },
+      {
+        "id": "81c888",
+        "name": "icon",
+        "parent": "2d949f",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "5"
+      },
+      {
+        "id": "f2fd72",
+        "name": "text-basic",
+        "parent": "7510f7",
+        "children": [],
+        "settings": {
+          "text": "Reviewer Name",
+          "_cssGlobalClasses": [
+            "qehxjw"
+          ],
+          "tag": "p"
+        },
+        "label": "Reviewer Name"
+      },
+      {
+        "id": "1ad560",
+        "name": "div",
+        "parent": "6aa868",
+        "children": [
+          "4a29c5",
+          "005bdd"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pqnnmh"
+          ],
+          "tag": "article",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Echo"
+      },
+      {
+        "id": "4a29c5",
+        "name": "block",
+        "parent": "1ad560",
+        "children": [
+          "42868f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vpjayo"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "42868f",
+        "name": "text-basic",
+        "parent": "4a29c5",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "_cssGlobalClasses": [
+            "dsmrae"
+          ],
+          "tag": "p"
+        },
+        "label": "Quote"
+      },
+      {
+        "id": "005bdd",
+        "name": "block",
+        "parent": "1ad560",
+        "children": [
+          "657522",
+          "ce3177"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jfhtwk"
+          ]
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "657522",
+        "name": "div",
+        "parent": "005bdd",
+        "children": [
+          "22179b",
+          "c23657",
+          "bd75f2",
+          "ee6e73",
+          "26e9ae",
+          "0ed718"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kndlyw"
+          ],
+          "_attributes": [
+            {
+              "id": "bcpeoi",
+              "name": "data-rating",
+              "value": "4.5"
+            }
+          ],
+          "tag": "custom",
+          "customTag": "span"
+        },
+        "label": "Rating Alpha (Set Data Attr)"
+      },
+      {
+        "id": "22179b",
+        "name": "icon",
+        "parent": "657522",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star-half"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn",
+            "tshuyw"
+          ]
+        },
+        "label": "Half (Don't Delete)"
+      },
+      {
+        "id": "c23657",
+        "name": "icon",
+        "parent": "657522",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "themeStyles": [],
+        "label": "1"
+      },
+      {
+        "id": "bd75f2",
+        "name": "icon",
+        "parent": "657522",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "2"
+      },
+      {
+        "id": "ee6e73",
+        "name": "icon",
+        "parent": "657522",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "3"
+      },
+      {
+        "id": "26e9ae",
+        "name": "icon",
+        "parent": "657522",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "4"
+      },
+      {
+        "id": "0ed718",
+        "name": "icon",
+        "parent": "657522",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "5"
+      },
+      {
+        "id": "ce3177",
+        "name": "text-basic",
+        "parent": "005bdd",
+        "children": [],
+        "settings": {
+          "text": "Reviewer Name",
+          "_cssGlobalClasses": [
+            "qehxjw"
+          ],
+          "tag": "p"
+        },
+        "label": "Reviewer Name"
+      },
+      {
+        "id": "d91b6e",
+        "name": "div",
+        "parent": "2a9bf9",
+        "children": [
+          "41f448"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wbzwwb"
+          ],
+          "tag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "6aa868",
+        "name": "div",
+        "parent": "2a9bf9",
+        "children": [
+          "1ad560"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wbzwwb"
+          ],
+          "tag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "009bf1",
+        "name": "div",
+        "parent": "2a9bf9",
+        "children": [
+          "b7f5d4"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wbzwwb"
+          ],
+          "tag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "b7f5d4",
+        "name": "div",
+        "parent": "009bf1",
+        "children": [
+          "6d7537",
+          "f5eb96"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pqnnmh"
+          ],
+          "tag": "article",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Echo"
+      },
+      {
+        "id": "6d7537",
+        "name": "block",
+        "parent": "b7f5d4",
+        "children": [
+          "7de98c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vpjayo"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "7de98c",
+        "name": "text-basic",
+        "parent": "6d7537",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "_cssGlobalClasses": [
+            "dsmrae"
+          ],
+          "tag": "p"
+        },
+        "label": "Quote"
+      },
+      {
+        "id": "f5eb96",
+        "name": "block",
+        "parent": "b7f5d4",
+        "children": [
+          "d295e5",
+          "b6ae1e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jfhtwk"
+          ]
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "d295e5",
+        "name": "div",
+        "parent": "f5eb96",
+        "children": [
+          "eaa952",
+          "25cdbf",
+          "dd60c1",
+          "4881c3",
+          "846923",
+          "4a213f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kndlyw"
+          ],
+          "_attributes": [
+            {
+              "id": "bcpeoi",
+              "name": "data-rating",
+              "value": "4.5"
+            }
+          ],
+          "tag": "custom",
+          "customTag": "span"
+        },
+        "label": "Rating Alpha (Set Data Attr)"
+      },
+      {
+        "id": "eaa952",
+        "name": "icon",
+        "parent": "d295e5",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star-half"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn",
+            "tshuyw"
+          ]
+        },
+        "label": "Half (Don't Delete)"
+      },
+      {
+        "id": "25cdbf",
+        "name": "icon",
+        "parent": "d295e5",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "themeStyles": [],
+        "label": "1"
+      },
+      {
+        "id": "dd60c1",
+        "name": "icon",
+        "parent": "d295e5",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "2"
+      },
+      {
+        "id": "4881c3",
+        "name": "icon",
+        "parent": "d295e5",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "3"
+      },
+      {
+        "id": "846923",
+        "name": "icon",
+        "parent": "d295e5",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "4"
+      },
+      {
+        "id": "4a213f",
+        "name": "icon",
+        "parent": "d295e5",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "5"
+      },
+      {
+        "id": "b6ae1e",
+        "name": "text-basic",
+        "parent": "f5eb96",
+        "children": [],
+        "settings": {
+          "text": "Reviewer Name",
+          "_cssGlobalClasses": [
+            "qehxjw"
+          ],
+          "tag": "p"
+        },
+        "label": "Reviewer Name"
+      },
+      {
+        "id": "d75302",
+        "name": "div",
+        "parent": "2a9bf9",
+        "children": [
+          "66a5c5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wbzwwb"
+          ],
+          "tag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "66a5c5",
+        "name": "div",
+        "parent": "d75302",
+        "children": [
+          "f8243e",
+          "0f324d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pqnnmh"
+          ],
+          "tag": "article",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Echo"
+      },
+      {
+        "id": "f8243e",
+        "name": "block",
+        "parent": "66a5c5",
+        "children": [
+          "fff0dd"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vpjayo"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "fff0dd",
+        "name": "text-basic",
+        "parent": "f8243e",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "_cssGlobalClasses": [
+            "dsmrae"
+          ],
+          "tag": "p"
+        },
+        "label": "Quote"
+      },
+      {
+        "id": "0f324d",
+        "name": "block",
+        "parent": "66a5c5",
+        "children": [
+          "01f00f",
+          "bf6a80"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jfhtwk"
+          ]
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "01f00f",
+        "name": "div",
+        "parent": "0f324d",
+        "children": [
+          "16f9d7",
+          "120a8a",
+          "dc9c2a",
+          "9ddbb3",
+          "b10100",
+          "dd2fe9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kndlyw"
+          ],
+          "_attributes": [
+            {
+              "id": "bcpeoi",
+              "name": "data-rating",
+              "value": "4.5"
+            }
+          ],
+          "tag": "custom",
+          "customTag": "span"
+        },
+        "label": "Rating Alpha (Set Data Attr)"
+      },
+      {
+        "id": "16f9d7",
+        "name": "icon",
+        "parent": "01f00f",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star-half"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn",
+            "tshuyw"
+          ]
+        },
+        "label": "Half (Don't Delete)"
+      },
+      {
+        "id": "120a8a",
+        "name": "icon",
+        "parent": "01f00f",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "themeStyles": [],
+        "label": "1"
+      },
+      {
+        "id": "dc9c2a",
+        "name": "icon",
+        "parent": "01f00f",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "2"
+      },
+      {
+        "id": "9ddbb3",
+        "name": "icon",
+        "parent": "01f00f",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "3"
+      },
+      {
+        "id": "b10100",
+        "name": "icon",
+        "parent": "01f00f",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "4"
+      },
+      {
+        "id": "dd2fe9",
+        "name": "icon",
+        "parent": "01f00f",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "5"
+      },
+      {
+        "id": "bf6a80",
+        "name": "text-basic",
+        "parent": "0f324d",
+        "children": [],
+        "settings": {
+          "text": "Reviewer Name",
+          "_cssGlobalClasses": [
+            "qehxjw"
+          ],
+          "tag": "p"
+        },
+        "label": "Reviewer Name"
+      },
+      {
+        "id": "0adfb9",
+        "name": "div",
+        "parent": "2a9bf9",
+        "children": [
+          "c56988"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wbzwwb"
+          ],
+          "tag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "c56988",
+        "name": "div",
+        "parent": "0adfb9",
+        "children": [
+          "61aa55",
+          "1d88db"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pqnnmh"
+          ],
+          "tag": "article",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Echo"
+      },
+      {
+        "id": "61aa55",
+        "name": "block",
+        "parent": "c56988",
+        "children": [
+          "9bf8ca"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vpjayo"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "9bf8ca",
+        "name": "text-basic",
+        "parent": "61aa55",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "_cssGlobalClasses": [
+            "dsmrae"
+          ],
+          "tag": "p"
+        },
+        "label": "Quote"
+      },
+      {
+        "id": "1d88db",
+        "name": "block",
+        "parent": "c56988",
+        "children": [
+          "fe4e30",
+          "513a6a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jfhtwk"
+          ]
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "fe4e30",
+        "name": "div",
+        "parent": "1d88db",
+        "children": [
+          "b9955b",
+          "522291",
+          "8f8cb5",
+          "2ad72b",
+          "14ed1d",
+          "9df55d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kndlyw"
+          ],
+          "_attributes": [
+            {
+              "id": "bcpeoi",
+              "name": "data-rating",
+              "value": "4.5"
+            }
+          ],
+          "tag": "custom",
+          "customTag": "span"
+        },
+        "label": "Rating Alpha (Set Data Attr)"
+      },
+      {
+        "id": "b9955b",
+        "name": "icon",
+        "parent": "fe4e30",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star-half"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn",
+            "tshuyw"
+          ]
+        },
+        "label": "Half (Don't Delete)"
+      },
+      {
+        "id": "522291",
+        "name": "icon",
+        "parent": "fe4e30",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "themeStyles": [],
+        "label": "1"
+      },
+      {
+        "id": "8f8cb5",
+        "name": "icon",
+        "parent": "fe4e30",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "2"
+      },
+      {
+        "id": "2ad72b",
+        "name": "icon",
+        "parent": "fe4e30",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "3"
+      },
+      {
+        "id": "14ed1d",
+        "name": "icon",
+        "parent": "fe4e30",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "4"
+      },
+      {
+        "id": "9df55d",
+        "name": "icon",
+        "parent": "fe4e30",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "5"
+      },
+      {
+        "id": "513a6a",
+        "name": "text-basic",
+        "parent": "1d88db",
+        "children": [],
+        "settings": {
+          "text": "Reviewer Name",
+          "_cssGlobalClasses": [
+            "qehxjw"
+          ],
+          "tag": "p"
+        },
+        "label": "Reviewer Name"
+      },
+      {
+        "id": "d76747",
+        "name": "div",
+        "parent": "2a9bf9",
+        "children": [
+          "1a131e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wbzwwb"
+          ],
+          "tag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "1a131e",
+        "name": "div",
+        "parent": "d76747",
+        "children": [
+          "bed273",
+          "83a6c7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pqnnmh"
+          ],
+          "tag": "article",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Echo"
+      },
+      {
+        "id": "bed273",
+        "name": "block",
+        "parent": "1a131e",
+        "children": [
+          "83bbbd"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vpjayo"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "83bbbd",
+        "name": "text-basic",
+        "parent": "bed273",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "_cssGlobalClasses": [
+            "dsmrae"
+          ],
+          "tag": "p"
+        },
+        "label": "Quote"
+      },
+      {
+        "id": "83a6c7",
+        "name": "block",
+        "parent": "1a131e",
+        "children": [
+          "c6e619",
+          "00981f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jfhtwk"
+          ]
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "c6e619",
+        "name": "div",
+        "parent": "83a6c7",
+        "children": [
+          "8ac269",
+          "a7bc4f",
+          "33ad64",
+          "dd56b7",
+          "b68cbd",
+          "f2ccf9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kndlyw"
+          ],
+          "_attributes": [
+            {
+              "id": "bcpeoi",
+              "name": "data-rating",
+              "value": "4.5"
+            }
+          ],
+          "tag": "custom",
+          "customTag": "span"
+        },
+        "label": "Rating Alpha (Set Data Attr)"
+      },
+      {
+        "id": "8ac269",
+        "name": "icon",
+        "parent": "c6e619",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star-half"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn",
+            "tshuyw"
+          ]
+        },
+        "label": "Half (Don't Delete)"
+      },
+      {
+        "id": "a7bc4f",
+        "name": "icon",
+        "parent": "c6e619",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "themeStyles": [],
+        "label": "1"
+      },
+      {
+        "id": "33ad64",
+        "name": "icon",
+        "parent": "c6e619",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "2"
+      },
+      {
+        "id": "dd56b7",
+        "name": "icon",
+        "parent": "c6e619",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "3"
+      },
+      {
+        "id": "b68cbd",
+        "name": "icon",
+        "parent": "c6e619",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "4"
+      },
+      {
+        "id": "f2ccf9",
+        "name": "icon",
+        "parent": "c6e619",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "ionicons",
+            "icon": "ion-md-star"
+          },
+          "_cssGlobalClasses": [
+            "lwaybn"
+          ]
+        },
+        "label": "5"
+      },
+      {
+        "id": "00981f",
+        "name": "text-basic",
+        "parent": "83a6c7",
+        "children": [],
+        "settings": {
+          "text": "Reviewer Name",
+          "_cssGlobalClasses": [
+            "qehxjw"
+          ],
+          "tag": "p"
+        },
+        "label": "Reviewer Name"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771254446,
+        "user_id": 1
+      },
+      {
+        "id": "kndlyw",
+        "name": "fr-rating-alpha",
+        "settings": {
+          "_display": "flex",
+          "_rowGap": ".25em",
+          "_columnGap": ".25em",
+          "_cssCustom": "/* RATINGS WON'T RENDER IN BUILDER */\n\n/* To change the star rating, change the value of the data attribute in the attributes tab on this element. If you want the rating to be generated dynamically, create a \"rating\" custom field for your parent element and then inject the value of that field dynamically into the data attribute value field. */\n\n.fr-rating-alpha {\n\t--icon-size: 1.5em;\n  --icon-fill-color: var(--primary);\n  --icon-stroke-color: var(--primary);\n  --icon-fill-color-hover: var(--primary);  \n  --icon-stroke-color-hover: var(--primary);\n}\n\n.fr-rating-alpha > *:first-child {display: none;} /* Hide half star by default */\n\n[data-rating*=\".\"] > *:first-child {display: flex;} /* Show half star for decimal ratings */\n\n[data-rating*=\".0\"] > *:first-child {display: none !important;} /* Hide half star for .0 ratings */\n\n/* Support for half star rating */\n[data-rating*=\".5\"] > *:first-child {display: flex !important;}\n\n[data-rating=\".5\"] > *:not(:first-child),\n[data-rating=\"0.5\"] > *:not(:first-child) {\n\tdisplay: none;\n}\n\n/* The Rest */\n\n[data-rating^=\"1\"] > *:nth-child(n+3) {\n display: none;\n}\n\n[data-rating^=\"2\"] > *:nth-child(n+4) {\n display: none;\n}\n\n[data-rating^=\"3\"] > *:nth-child(n+5) {\n display: none;\n}\n\n[data-rating^=\"4\"] > *:nth-child(n+6) {\n display: none;\n}\n\n.fr-rating-alpha svg {\n  height: var(--icon-size);\n  width: var(--icon-size);\n  fill: var(--icon-fill-color);\n  color: var(--icon-stroke-color);\n}\n\n.fr-rating-alpha i {\n  color: var(--icon-fill-color);\n  font-size: var(--icon-size);\n}\n\n.fr-rating-alpha svg:hover {\n  fill: var(--icon-fill-color-hover);\n  color: var(--icon-stroke-color-hover);  \n}\n\n.fr-rating-alpha i:hover {\n  color: var(--icon-fill-color-hover);\n}",
+          "_alignItems": "flex-start"
+        },
+        "modified": 1737998108,
+        "user_id": 26,
+        "_exists": false
+      },
+      {
+        "id": "lwaybn",
+        "name": "fr-rating-alpha__icon",
+        "settings": [],
+        "modified": 1726775024,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "tshuyw",
+        "name": "fr-rating-alpha__icon-half",
+        "settings": {
+          "_order": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "itjoyc",
+        "name": "fr-slider-grid-bravo",
+        "settings": {
+          "_position": "relative",
+          "_display": "grid",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns": "var(--grid-1-3)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1-2)",
+          "_alignItemsGrid": "center"
+        },
+        "modified": 1742494440,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "vsuwbx",
+        "name": "fr-slider-bravo",
+        "settings": {
+          "clipToContainer": "inset(-100vw -100vw -100vw 0)"
+        },
+        "modified": 1738224226,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "wbzwwb",
+        "name": "fr-slider-bravo__list-item",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "pqnnmh",
+        "name": "fr-testimonial-card-bravo",
+        "settings": {
+          "_rowGap": "var(--fr-card-gap)",
+          "_padding": {
+            "top": "var(--fr-card-padding)",
+            "right": "var(--fr-card-padding)",
+            "bottom": "var(--fr-card-padding)",
+            "left": "var(--fr-card-padding)"
+          },
+          "_background": {
+            "color": {
+              "raw": "var(--bg-ultra-light)"
+            }
+          },
+          "_justifyContent": "space-between",
+          "_display": "flex",
+          "_direction": "column",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          }
+        },
+        "modified": 1728404617,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "vpjayo",
+        "name": "fr-testimonial-card-bravo__body",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "dsmrae",
+        "name": "fr-testimonial-card-bravo__quote",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "jfhtwk",
+        "name": "fr-testimonial-card-bravo__footer",
+        "settings": {
+          "_direction": "row",
+          "_alignItems": "center",
+          "_justifyContent": "space-between",
+          "_columnGap": "1em",
+          "_rowGap": "0.5em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "qehxjw",
+        "name": "fr-testimonial-card-bravo__name",
+        "settings": {
+          "_order": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "eexxfd",
+        "name": "fr-slider-grid-bravo__sidebar",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_display": "flex",
+          "_direction": "column"
+        },
+        "_exists": false
+      },
+      {
+        "id": "gxiwte",
+        "name": "fr-slider-grid-bravo__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "aluxdt",
+        "name": "fr-slider-grid-bravo__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "dcnhay",
+        "name": "fr-slider-grid-bravo__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "wbvcbg",
+        "name": "fr-slider-bravo__controls",
+        "settings": {
+          "_widthMax": "max-content",
+          "arrowsGap": "var(--grid-gap)",
+          "arrowsFlexDirection": "row",
+          "_cssCustom": ".fr-slider-bravo__controls {\n\t--icon-size: 3em;\n  --icon-color: var(--text-dark);\n}\n\n.fr-slider-bravo__controls button :is(svg, i) {\n\theight: var(--icon-size);\n  width: var(--icon-size);\n  fill: var(--icon-color);\n}",
+          "arrowHeight": "var(--icon-size)",
+          "arrowWidth": "var(--icon-size)"
+        },
+        "modified": 1742408409,
+        "user_id": 9,
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

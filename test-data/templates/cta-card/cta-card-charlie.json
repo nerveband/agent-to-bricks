@@ -1,0 +1,193 @@
+{
+  "idx": 231,
+  "title": "CTA Card Charlie",
+  "elementCount": 6,
+  "classCount": 6,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "5dc7a5",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "6e07a5",
+          "108dda"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "udntvv"
+          ]
+        },
+        "label": "CTA Card Charlie"
+      },
+      {
+        "id": "6e07a5",
+        "name": "block",
+        "parent": "5dc7a5",
+        "children": [
+          "bd5d9b",
+          "c92110"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rmtlcm"
+          ]
+        },
+        "label": "Main"
+      },
+      {
+        "id": "bd5d9b",
+        "name": "heading",
+        "parent": "6e07a5",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "ipqbrb"
+          ],
+          "tag": "h3"
+        }
+      },
+      {
+        "id": "c92110",
+        "name": "text-basic",
+        "parent": "6e07a5",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "_cssGlobalClasses": [
+            "fyelqi"
+          ],
+          "tag": "p"
+        },
+        "label": "Text"
+      },
+      {
+        "id": "108dda",
+        "name": "block",
+        "parent": "5dc7a5",
+        "children": [
+          "ae2772"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dtgenu"
+          ]
+        },
+        "label": "Side"
+      },
+      {
+        "id": "ae2772",
+        "name": "button",
+        "parent": "108dda",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "CTA"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "udntvv",
+        "name": "fr-cta-card-charlie",
+        "settings": {
+          "_padding": {
+            "top": "var(--fr-card-padding)",
+            "right": "var(--fr-card-padding)",
+            "bottom": "var(--fr-card-padding)",
+            "left": "var(--fr-card-padding)"
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_width": "var(--content-width)",
+          "_widthMax": "100%",
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-3-1)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_gridGap": "var(--grid-gap)",
+          "_alignItemsGrid": "stretch",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "rmtlcm",
+        "name": "fr-cta-card-charlie__main",
+        "settings": {
+          "_justifyContent": "center",
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ipqbrb",
+        "name": "fr-cta-card-charlie__heading",
+        "settings": {
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "modified": 1728035186,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "fyelqi",
+        "name": "fr-cta-card-charlie__text",
+        "settings": {
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "modified": 1728035186,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "dtgenu",
+        "name": "fr-cta-card-charlie__side",
+        "settings": {
+          "_justifyContent": "center",
+          "_alignItems": "flex-end",
+          "_alignItems:mobile_landscape": "flex-start"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

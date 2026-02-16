@@ -1,0 +1,732 @@
+{
+  "idx": 170,
+  "title": "Process Grid Delta",
+  "elementCount": 33,
+  "classCount": 8,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "747f1e",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "b54956",
+          "916647"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "znfbjy"
+          ]
+        },
+        "label": "Process Grid Delta (CSS)"
+      },
+      {
+        "id": "b54956",
+        "name": "fr-slider",
+        "parent": "747f1e",
+        "children": [
+          "092ff6",
+          "335595",
+          "03225e",
+          "9ea9fc",
+          "3c2a92",
+          "43ff5c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ujeimv"
+          ],
+          "height": "50vh",
+          "type": "slide",
+          "rewindByDrag": true,
+          "arrowSize": "var(--space-l)",
+          "prevArrow": {
+            "library": "themify",
+            "icon": "ti-arrow-left"
+          },
+          "prevArrowTop": "50%",
+          "prevArrowLeft": "var(--space-xs)",
+          "nextArrow": {
+            "library": "themify",
+            "icon": "ti-arrow-right"
+          },
+          "nextArrowTop": "50%",
+          "nextArrowRight": "var(--space-xs)",
+          "listTag": "ul",
+          "sliderTag": "div",
+          "ariaCarousel": "Carousel",
+          "gap": "var(--slides-gap)",
+          "perPage:tablet_portrait": "2",
+          "isSync": true,
+          "syncId": "process-slider-delta",
+          "perPage:mobile_landscape": "1",
+          "perPage": "3"
+        },
+        "themeStyles": [],
+        "label": "Slider (CSS)"
+      },
+      {
+        "id": "092ff6",
+        "name": "block",
+        "parent": "b54956",
+        "children": [
+          "9a48e7",
+          "f44849"
+        ],
+        "settings": {
+          "_alignItems": "center",
+          "_direction": "column",
+          "_justifyContent": "center",
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "_cssGlobalClasses": [
+            "vcivkr"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Process Card Delta"
+      },
+      {
+        "id": "9a48e7",
+        "name": "heading",
+        "parent": "092ff6",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "xwwbza"
+          ]
+        }
+      },
+      {
+        "id": "f44849",
+        "name": "div",
+        "parent": "092ff6",
+        "children": [
+          "9afc9e",
+          "58dd8d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sitpnk"
+          ]
+        },
+        "label": "Image Wrapper (CSS)"
+      },
+      {
+        "id": "58dd8d",
+        "name": "image",
+        "parent": "f44849",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ncdoup"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure"
+        }
+      },
+      {
+        "id": "916647",
+        "name": "fr-slider-controls",
+        "parent": "747f1e",
+        "children": [],
+        "settings": {
+          "type": "nextPrev",
+          "progressHeight": ".5rem",
+          "progressWidth": "100%",
+          "arrows": true,
+          "arrowsGap": "var(--space-l)",
+          "prevArrow": {
+            "library": "themify",
+            "icon": "ti-angle-left"
+          },
+          "nextArrow": {
+            "library": "themify",
+            "icon": "ti-angle-right"
+          },
+          "syncId": "process-slider-delta",
+          "_cssGlobalClasses": [
+            "ptoozi"
+          ]
+        }
+      },
+      {
+        "id": "9afc9e",
+        "name": "div",
+        "parent": "f44849",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iftmwc"
+          ]
+        },
+        "label": "Step"
+      },
+      {
+        "id": "43ff5c",
+        "name": "block",
+        "parent": "b54956",
+        "children": [
+          "b11721",
+          "d75aab"
+        ],
+        "settings": {
+          "_alignItems": "center",
+          "_direction": "column",
+          "_justifyContent": "center",
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "_cssGlobalClasses": [
+            "vcivkr"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Process Card Delta"
+      },
+      {
+        "id": "b11721",
+        "name": "heading",
+        "parent": "43ff5c",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "xwwbza"
+          ]
+        }
+      },
+      {
+        "id": "d75aab",
+        "name": "div",
+        "parent": "43ff5c",
+        "children": [
+          "d50b45",
+          "6adf96"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sitpnk"
+          ]
+        },
+        "label": "Image Wrapper (CSS)"
+      },
+      {
+        "id": "d50b45",
+        "name": "div",
+        "parent": "d75aab",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iftmwc"
+          ]
+        },
+        "label": "Step"
+      },
+      {
+        "id": "6adf96",
+        "name": "image",
+        "parent": "d75aab",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ncdoup"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure"
+        }
+      },
+      {
+        "id": "3c2a92",
+        "name": "block",
+        "parent": "b54956",
+        "children": [
+          "111514",
+          "c7019a"
+        ],
+        "settings": {
+          "_alignItems": "center",
+          "_direction": "column",
+          "_justifyContent": "center",
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "_cssGlobalClasses": [
+            "vcivkr"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Process Card Delta"
+      },
+      {
+        "id": "111514",
+        "name": "heading",
+        "parent": "3c2a92",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "xwwbza"
+          ]
+        }
+      },
+      {
+        "id": "c7019a",
+        "name": "div",
+        "parent": "3c2a92",
+        "children": [
+          "bf114c",
+          "cd2d3a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sitpnk"
+          ]
+        },
+        "label": "Image Wrapper (CSS)"
+      },
+      {
+        "id": "bf114c",
+        "name": "div",
+        "parent": "c7019a",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iftmwc"
+          ]
+        },
+        "label": "Step"
+      },
+      {
+        "id": "cd2d3a",
+        "name": "image",
+        "parent": "c7019a",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ncdoup"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure"
+        }
+      },
+      {
+        "id": "9ea9fc",
+        "name": "block",
+        "parent": "b54956",
+        "children": [
+          "5ba636",
+          "7ba012"
+        ],
+        "settings": {
+          "_alignItems": "center",
+          "_direction": "column",
+          "_justifyContent": "center",
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "_cssGlobalClasses": [
+            "vcivkr"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Process Card Delta"
+      },
+      {
+        "id": "5ba636",
+        "name": "heading",
+        "parent": "9ea9fc",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "xwwbza"
+          ]
+        }
+      },
+      {
+        "id": "7ba012",
+        "name": "div",
+        "parent": "9ea9fc",
+        "children": [
+          "fb53d6",
+          "930e09"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sitpnk"
+          ]
+        },
+        "label": "Image Wrapper (CSS)"
+      },
+      {
+        "id": "fb53d6",
+        "name": "div",
+        "parent": "7ba012",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iftmwc"
+          ]
+        },
+        "label": "Step"
+      },
+      {
+        "id": "930e09",
+        "name": "image",
+        "parent": "7ba012",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ncdoup"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure"
+        }
+      },
+      {
+        "id": "03225e",
+        "name": "block",
+        "parent": "b54956",
+        "children": [
+          "ad6abd",
+          "19208a"
+        ],
+        "settings": {
+          "_alignItems": "center",
+          "_direction": "column",
+          "_justifyContent": "center",
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "_cssGlobalClasses": [
+            "vcivkr"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Process Card Delta"
+      },
+      {
+        "id": "ad6abd",
+        "name": "heading",
+        "parent": "03225e",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "xwwbza"
+          ]
+        }
+      },
+      {
+        "id": "19208a",
+        "name": "div",
+        "parent": "03225e",
+        "children": [
+          "2de7ff",
+          "c3c314"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sitpnk"
+          ]
+        },
+        "label": "Image Wrapper (CSS)"
+      },
+      {
+        "id": "2de7ff",
+        "name": "div",
+        "parent": "19208a",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iftmwc"
+          ]
+        },
+        "label": "Step"
+      },
+      {
+        "id": "c3c314",
+        "name": "image",
+        "parent": "19208a",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ncdoup"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure"
+        }
+      },
+      {
+        "id": "335595",
+        "name": "block",
+        "parent": "b54956",
+        "children": [
+          "05c9ad",
+          "ea77a8"
+        ],
+        "settings": {
+          "_alignItems": "center",
+          "_direction": "column",
+          "_justifyContent": "center",
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "_cssGlobalClasses": [
+            "vcivkr"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Process Card Delta"
+      },
+      {
+        "id": "05c9ad",
+        "name": "heading",
+        "parent": "335595",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "xwwbza"
+          ]
+        }
+      },
+      {
+        "id": "ea77a8",
+        "name": "div",
+        "parent": "335595",
+        "children": [
+          "df1fbb",
+          "39a0fc"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sitpnk"
+          ]
+        },
+        "label": "Image Wrapper (CSS)"
+      },
+      {
+        "id": "df1fbb",
+        "name": "div",
+        "parent": "ea77a8",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iftmwc"
+          ]
+        },
+        "label": "Step"
+      },
+      {
+        "id": "39a0fc",
+        "name": "image",
+        "parent": "ea77a8",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ncdoup"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure"
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "znfbjy",
+        "name": "fr-process-grid-delta",
+        "settings": {
+          "_cssCustom": ".fr-process-grid-delta {  \n  /* Gap between Slides */\n  --slides-gap: calc(var(--space-xxl) * 2.5);\n\n  /* Width + height of Step */\n  --step-dimension: 80px;\n  --step-font-size: var(--h3);\n  \n  /* Arrow Styling */\n  --arrow-width: .2em;\n\t--arrow-color: var(--neutral-light);\n}"
+        },
+        "modified": 1750322285,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "ujeimv",
+        "name": "fr-process-slider-delta",
+        "settings": {
+          "_cssCustom": ".fr-process-slider-delta {\n  counter-reset: process-counter 0;\n}\n\n/* Fix so that step is not truncated by overflow */\n.fr-slider__track {\n\tpadding-inline: 0 calc(var(--step-dimension) / 2)!important;\n}\n\n/* Arrow */\n.fr-process-slider-delta li:not(:last-child) .fr-process-card-delta__media-wrapper::before {\n\tcontent: '';\n  position: absolute;\n  left: calc((100% + var(--slides-gap) - var(--grid-gap)) - (var(--arrow-width) * 4));\n  border: solid var(--arrow-color);\n  border-width: 0 var(--arrow-width) var(--arrow-width) 0;\n  display: inline-block;\n  padding: var(--arrow-width);\n  transform: rotate(-45deg);\n  -webkit-transform: rotate(-45deg);  \n  z-index: 1;\n}\n\n.fr-process-slider-delta li:not(:last-child) .fr-process-card-delta__media-wrapper::after {\n  content: '';  \n  position: absolute;\n\tleft: calc(100% + var(--grid-gap));\n  border-bottom: var(--arrow-width) dashed var(--arrow-color);\n  width: calc((var(--slides-gap) - (var(--grid-gap) * 2) - (var(--arrow-width) * 4)));\n}",
+          "sliderPaddingEnd:mobile_landscape": "var(--space-xxl)",
+          "sliderPaddingStart:mobile_landscape": "var(--space-xxl)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "vcivkr",
+        "name": "fr-process-card-delta",
+        "settings": {
+          "_cssCustom": ".fr-process-card-delta:nth-child(-n + 9) .fr-process-card-delta__step::before {\n  content: '0';\n  font-size: var(--step-font-size);\n}",
+          "_rowGap": "var(--fr-card-gap)",
+          "_position": "relative",
+          "_display": "flex",
+          "_direction": "column",
+          "_justifyContent": "flex-start"
+        },
+        "modified": 1718710294,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "xwwbza",
+        "name": "fr-process-card-delta__heading",
+        "settings": {
+          "_typography": {
+            "text-align": "center"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "sitpnk",
+        "name": "fr-process-card-delta__media-wrapper",
+        "settings": {
+          "_position": "relative",
+          "_display": "flex",
+          "_alignSelf": "center",
+          "_justifyContent": "center",
+          "_alignItems": "center",
+          "_order": "-1",
+          "_width": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ncdoup",
+        "name": "fr-process-card-delta__image",
+        "settings": {
+          "_cssCustom": ".fr-process-card-delta__image {\n\taspect-ratio: 1/1;\n}",
+          "_objectFit": "cover",
+          "_border": {
+            "radius": {
+              "top": "var(--fr-card-avatar-radius)",
+              "right": "var(--fr-card-avatar-radius)",
+              "bottom": "var(--fr-card-avatar-radius)",
+              "left": "var(--fr-card-avatar-radius)"
+            }
+          },
+          "_overflow": "hidden",
+          "_width": "100%",
+          "_height": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ptoozi",
+        "name": "fr-process-slider-delta__controls",
+        "settings": {
+          "_display": "flex",
+          "_justifyContent": "center",
+          "_alignItems": "center",
+          "arrowSize": "28",
+          "arrowBackground": {
+            "raw": "transparent"
+          },
+          "_alignItems:mobile_landscape": "center",
+          "_justifyContent:mobile_landscape": "flex-start",
+          "_margin": {
+            "top": "var(--container-gap)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "iftmwc",
+        "name": "fr-process-card-delta__step",
+        "settings": {
+          "_position": "absolute",
+          "_display": "flex",
+          "_justifyContent": "center",
+          "_alignItems": "center",
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            },
+            "line-height": "1"
+          },
+          "_cssCustom": ".fr-process-card-delta__step::after {\n  counter-increment: process-counter;\n  content: counter(process-counter);\n\tfont-size: var(--step-font-size);\n}",
+          "_zIndex": "1",
+          "_background": {
+            "color": {
+              "raw": "var(--bg-dark)"
+            }
+          },
+          "_heightMin": "var(--step-dimension)",
+          "_border": {
+            "radius": {
+              "top": "var(--fr-card-avatar-radius)",
+              "right": "var(--fr-card-avatar-radius)",
+              "bottom": "var(--fr-card-avatar-radius)",
+              "left": "var(--fr-card-avatar-radius)"
+            },
+            "width": {
+              "top": ".25em",
+              "right": ".25em",
+              "bottom": ".25em",
+              "left": ".25em"
+            },
+            "style": "solid",
+            "color": {
+              "raw": "var(--neutral-ultra-light)"
+            }
+          },
+          "_right": "0",
+          "_transform": {
+            "translateX": "25%"
+          },
+          "_widthMin": "var(--step-dimension)",
+          "_rowGap": "0",
+          "_columnGap": "0"
+        },
+        "modified": 1750322285,
+        "user_id": 9,
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

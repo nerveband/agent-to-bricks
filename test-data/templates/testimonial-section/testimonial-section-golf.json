@@ -1,0 +1,718 @@
+{
+  "idx": 353,
+  "title": "Testimonial Section Golf",
+  "elementCount": 27,
+  "classCount": 15,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "d2fc1f",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "2bbb44",
+          "82c7c1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xwsnuw"
+          ]
+        },
+        "label": "Testimonial Section Golf (CSS)"
+      },
+      {
+        "id": "2bbb44",
+        "name": "container",
+        "parent": "d2fc1f",
+        "children": [
+          "b8c615"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vvuxtz"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "82c7c1",
+        "name": "div",
+        "parent": "d2fc1f",
+        "children": [
+          "7083cb",
+          "155315"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wbvnsl"
+          ]
+        },
+        "label": "Background Alpha (Read CSS Tab)"
+      },
+      {
+        "id": "7083cb",
+        "name": "image",
+        "parent": "82c7c1",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "usirxg"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_objectPosition": "50% 50%",
+          "_objectFit": "cover"
+        }
+      },
+      {
+        "id": "155315",
+        "name": "div",
+        "parent": "82c7c1",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "heyndn"
+          ]
+        },
+        "label": "Overlay"
+      },
+      {
+        "id": "b8c615",
+        "name": "fr-slider",
+        "parent": "2bbb44",
+        "children": [
+          "fd837c",
+          "5949ad",
+          "77000d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "inxjqz"
+          ],
+          "height": "50vh",
+          "playButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-play"
+          },
+          "pauseButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-pause"
+          },
+          "arrowSize": "var(--space-l)",
+          "prevArrow": {
+            "library": "themify",
+            "icon": "ti-arrow-left"
+          },
+          "prevArrowTop": "50%",
+          "prevArrowLeft": "var(--space-xs)",
+          "nextArrow": {
+            "library": "themify",
+            "icon": "ti-arrow-right"
+          },
+          "nextArrowTop": "50%",
+          "nextArrowRight": "var(--space-xs)",
+          "pagination": true,
+          "sliderTag": "div",
+          "listTag": "ul",
+          "ariaCarousel": "Carousel",
+          "fixedHeight": "auto",
+          "type": "loop",
+          "ariaNext": "Next slide",
+          "ariaPrev": "previous slide",
+          "ariaSlideX": "Go to Slide %s",
+          "ariaPageX": "Go to page %s",
+          "ariaSlide": "Slide",
+          "ariaSlideLabel": "%s of %s",
+          "ariaSelect": "Select a Slide to Show"
+        },
+        "label": "Testimonial Slider Golf"
+      },
+      {
+        "id": "607c82",
+        "name": "block",
+        "parent": "fd837c",
+        "children": [
+          "cee876",
+          "91863d",
+          "dfd6fb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tihnka",
+            "ppexuy"
+          ],
+          "tag": "custom",
+          "customTag": "article",
+          "_direction": "column",
+          "_alignItems": "flex-start"
+        },
+        "label": "Testimonial Card Golf"
+      },
+      {
+        "id": "dfd6fb",
+        "name": "image",
+        "parent": "607c82",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "konger"
+          ],
+          "tag": "figure",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "caption": "none"
+        },
+        "label": "Avatar",
+        "themeStyles": []
+      },
+      {
+        "id": "cee876",
+        "name": "text-basic",
+        "parent": "607c82",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "faiuty"
+          ],
+          "tag": "p",
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content."
+        },
+        "label": "Quote"
+      },
+      {
+        "id": "91863d",
+        "name": "div",
+        "parent": "607c82",
+        "children": [
+          "2a1a20",
+          "e7826a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "klepoo"
+          ],
+          "tag": "custom",
+          "customTag": "footer"
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "2a1a20",
+        "name": "text-basic",
+        "parent": "91863d",
+        "children": [],
+        "settings": {
+          "text": "Person's Name",
+          "_cssGlobalClasses": [
+            "silbnj"
+          ],
+          "tag": "p"
+        },
+        "label": "Name"
+      },
+      {
+        "id": "e7826a",
+        "name": "text-basic",
+        "parent": "91863d",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "akpmxd"
+          ],
+          "tag": "p",
+          "text": "Person's Title"
+        },
+        "label": "Title"
+      },
+      {
+        "id": "b411b6",
+        "name": "block",
+        "parent": "77000d",
+        "children": [
+          "5f6822",
+          "3c15c5",
+          "d3ba88"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tihnka",
+            "ppexuy"
+          ],
+          "tag": "custom",
+          "customTag": "article",
+          "_direction": "column",
+          "_alignItems": "flex-start"
+        },
+        "label": "Testimonial Card Golf"
+      },
+      {
+        "id": "5f6822",
+        "name": "image",
+        "parent": "b411b6",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "konger"
+          ],
+          "tag": "figure",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "caption": "none"
+        },
+        "label": "Avatar",
+        "themeStyles": []
+      },
+      {
+        "id": "3c15c5",
+        "name": "text-basic",
+        "parent": "b411b6",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "faiuty"
+          ],
+          "tag": "p",
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content."
+        },
+        "label": "Quote"
+      },
+      {
+        "id": "d3ba88",
+        "name": "div",
+        "parent": "b411b6",
+        "children": [
+          "191631",
+          "f069ec"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "klepoo"
+          ],
+          "tag": "custom",
+          "customTag": "footer"
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "191631",
+        "name": "text-basic",
+        "parent": "d3ba88",
+        "children": [],
+        "settings": {
+          "text": "Person's Name",
+          "_cssGlobalClasses": [
+            "silbnj"
+          ],
+          "tag": "p"
+        },
+        "label": "Name"
+      },
+      {
+        "id": "f069ec",
+        "name": "text-basic",
+        "parent": "d3ba88",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "akpmxd"
+          ],
+          "tag": "p",
+          "text": "Person's Title"
+        },
+        "label": "Title"
+      },
+      {
+        "id": "9ce61f",
+        "name": "block",
+        "parent": "5949ad",
+        "children": [
+          "8a66bf",
+          "643033",
+          "93d64a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tihnka",
+            "ppexuy"
+          ],
+          "tag": "custom",
+          "customTag": "article",
+          "_direction": "column",
+          "_alignItems": "flex-start"
+        },
+        "label": "Testimonial Card Golf"
+      },
+      {
+        "id": "8a66bf",
+        "name": "image",
+        "parent": "9ce61f",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "konger"
+          ],
+          "tag": "figure",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "caption": "none"
+        },
+        "label": "Avatar",
+        "themeStyles": []
+      },
+      {
+        "id": "643033",
+        "name": "text-basic",
+        "parent": "9ce61f",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "faiuty"
+          ],
+          "tag": "p",
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content."
+        },
+        "label": "Quote"
+      },
+      {
+        "id": "93d64a",
+        "name": "div",
+        "parent": "9ce61f",
+        "children": [
+          "d9ea0d",
+          "120e11"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "klepoo"
+          ],
+          "tag": "custom",
+          "customTag": "footer"
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "d9ea0d",
+        "name": "text-basic",
+        "parent": "93d64a",
+        "children": [],
+        "settings": {
+          "text": "Person's Name",
+          "_cssGlobalClasses": [
+            "silbnj"
+          ],
+          "tag": "p"
+        },
+        "label": "Name"
+      },
+      {
+        "id": "120e11",
+        "name": "text-basic",
+        "parent": "93d64a",
+        "children": [],
+        "settings": {
+          "text": "Person's Title",
+          "_cssGlobalClasses": [
+            "akpmxd"
+          ],
+          "tag": "p"
+        },
+        "label": "Title"
+      },
+      {
+        "id": "fd837c",
+        "name": "div",
+        "parent": "b8c615",
+        "children": [
+          "607c82"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qetzdc",
+            "rktisp"
+          ],
+          "tag": "li"
+        },
+        "label": "List item"
+      },
+      {
+        "id": "5949ad",
+        "name": "div",
+        "parent": "b8c615",
+        "children": [
+          "9ce61f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qetzdc",
+            "rktisp"
+          ],
+          "tag": "li"
+        },
+        "label": "List item"
+      },
+      {
+        "id": "77000d",
+        "name": "div",
+        "parent": "b8c615",
+        "children": [
+          "b411b6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qetzdc",
+            "rktisp"
+          ],
+          "tag": "li"
+        },
+        "label": "List item"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "wbvnsl",
+        "name": "fr-background-alpha",
+        "settings": {
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_cssCustom": "/* \n\nTo use this frame correctly, ensure the parent container is set to position relative. It's also advisable to add the following code to the parent container's CSS tab:\n\n.fr-background-alpha {isolation: isolate;}\n\n*/",
+          "_zIndex": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "usirxg",
+        "name": "fr-background-alpha__image",
+        "settings": {
+          "_objectFit": "cover",
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_width": "100%",
+          "_zIndex": "-1",
+          "_height": "100%",
+          "_border": {
+            "radius": {
+              "top": "0",
+              "right": "0",
+              "bottom": "0",
+              "left": "0"
+            }
+          },
+          "_margin": {
+            "bottom": "0"
+          },
+          "_cssCustom": ".fr-background-alpha__image img {\n  height: 100%;\n}"
+        },
+        "modified": 1771255639,
+        "user_id": 1,
+        "_mappedId": "usirxg"
+      },
+      {
+        "id": "heyndn",
+        "name": "fr-background-alpha__overlay",
+        "settings": {
+          "_zIndex": "-1",
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_background": {
+            "color": {
+              "raw": "var(--overlay-bg, var(--neutral-ultra-dark-trans-60))"
+            }
+          }
+        },
+        "_mappedId": "heyndn",
+        "modified": 1771255639,
+        "user_id": 1
+      },
+      {
+        "id": "rktisp",
+        "name": "list--none",
+        "settings": {
+          "_padding": {
+            "left": "0"
+          },
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "acss_import_list--none",
+        "modified": 1771255637,
+        "user_id": 1
+      },
+      {
+        "id": "xwsnuw",
+        "name": "fr-testimonial-section-golf",
+        "settings": {
+          "_position": "relative",
+          "_isolation": "isolate",
+          "_padding": {
+            "top": "var(--section-space-xxl)",
+            "bottom": "var(--section-space-m)"
+          },
+          "_cssCustom": ".fr-testimonial-section-golf {\n  --overlay-bg: transparent;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "vvuxtz",
+        "name": "fr-testimonial-section-golf__inner",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "inxjqz",
+        "name": "fr-testimonial-section-golf__slider",
+        "settings": {
+          "_width": "32.5em",
+          "speed": "300",
+          "paginationColor": {
+            "raw": "var(--neutral-light-trans-40)"
+          },
+          "paginationColorActive": {
+            "raw": "var(--neutral-light)"
+          },
+          "_cssCustom": ".fr-testimonial-section-golf__slider .splide__pagination li {\n  width: auto;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "tihnka",
+        "name": "fr-testimonial-card-golf",
+        "settings": {
+          "_padding": {
+            "top": "var(--space-l)",
+            "right": "var(--space-l)",
+            "bottom": "var(--space-l)",
+            "left": "var(--space-l)"
+          },
+          "_rowGap": "var(--fr-card-gap)",
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_cssCustom": ".fr-testimonial-card-golf {\n  border: var(--border-light);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ppexuy",
+        "name": "fr-testimonial-card-golf--dark",
+        "settings": {
+          "_background": {
+            "color": {
+              "raw": "var(--bg-dark)"
+            }
+          },
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "konger",
+        "name": "fr-testimonial-card-golf__avatar",
+        "settings": {
+          "_objectFit": "cover",
+          "_width": "3.5em",
+          "_border": {
+            "radius": {
+              "top": "var(--fr-card-avatar-radius)",
+              "right": "var(--fr-card-avatar-radius)",
+              "bottom": "var(--fr-card-avatar-radius)",
+              "left": "var(--fr-card-avatar-radius)"
+            }
+          },
+          "_overflow": "hidden",
+          "_height": "3.5em",
+          "_order": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "faiuty",
+        "name": "fr-testimonial-card-golf__quote",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "klepoo",
+        "name": "fr-testimonial-card-golf__footer",
+        "settings": {
+          "_display": "flex",
+          "_width": "100%",
+          "_direction": "column",
+          "_rowGap": ".5em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "silbnj",
+        "name": "fr-testimonial-card-golf__name",
+        "settings": {
+          "_typography": {
+            "line-height": "1"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "akpmxd",
+        "name": "fr-testimonial-card-golf__title",
+        "settings": {
+          "_typography": {
+            "line-height": "1",
+            "font-size": "var(--text-s)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "qetzdc",
+        "name": "fr-testimonial-section-golf__list-item",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

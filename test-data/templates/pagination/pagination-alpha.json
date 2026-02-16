@@ -1,0 +1,119 @@
+{
+  "idx": 239,
+  "title": "Pagination Alpha",
+  "elementCount": 2,
+  "classCount": 2,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "aeb720",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "ae4aca"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ylrnlc"
+          ]
+        },
+        "label": "Pagination Alpha Wrapper"
+      },
+      {
+        "id": "ae4aca",
+        "name": "pagination",
+        "parent": "aeb720",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dtoopu"
+          ],
+          "queryId": "main",
+          "prevIcon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)"
+          },
+          "nextIcon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)"
+          },
+          "ajax": true
+        },
+        "themeStyles": [],
+        "label": "Pagination Alpha (CSS)"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "ylrnlc",
+        "name": "fr-pagination-alpha-wrapper",
+        "settings": {
+          "_display": "flex"
+        },
+        "_exists": false
+      },
+      {
+        "id": "dtoopu",
+        "name": "fr-pagination-alpha",
+        "settings": {
+          "justifyContent": "center",
+          "navigationWidth": "auto",
+          "_width": "auto",
+          "navigationBackground": {
+            "raw": "var(--bg-light)"
+          },
+          "_cssCustom": ".fr-pagination-alpha {\n\t--box-size: 3ch; /* Width & height of page number */\n  --border-radius: var(--radius);\n  --icon-size: 1.55em;\n}\n\n.fr-pagination-alpha a {\n\ttext-decoration: none;\n}\n\n.fr-pagination-alpha li {\n\twidth: var(--box-size);\n  height: var(--box-size);\n}",
+          "navigationBackgroundActive": {
+            "raw": "var(--primary)"
+          },
+          "navigationTypographyActive": {
+            "color": {
+              "raw": "var(--primary-ultra-light)"
+            }
+          },
+          "navigationBackground:hover": {
+            "raw": "var(--primary-hover)"
+          },
+          "navigationTypography:hover": {
+            "color": {
+              "raw": "var(--primary-ultra-light)"
+            }
+          },
+          "_cssTransition": "all .3s ease",
+          "navigationBorder": {
+            "radius": {
+              "top": "var(--border-radius)",
+              "right": "var(--border-radius)",
+              "bottom": "var(--border-radius)",
+              "left": "var(--border-radius)"
+            }
+          },
+          "navigationTypography": {
+            "line-height": "1"
+          },
+          "gap": "calc(var(--content-gap) / 2)"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

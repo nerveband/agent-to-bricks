@@ -1,0 +1,935 @@
+{
+  "idx": 230,
+  "title": "Feature Section Tango",
+  "elementCount": 39,
+  "classCount": 24,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "5c9bc7",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "d14856",
+          "def046"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ekxohg"
+          ]
+        },
+        "label": "Feature Section Tango"
+      },
+      {
+        "id": "def046",
+        "name": "container",
+        "parent": "5c9bc7",
+        "children": [
+          "54734a",
+          "63d64a",
+          "50c9d1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "omtpgr"
+          ]
+        },
+        "label": "Feature Grid Tango"
+      },
+      {
+        "id": "d14856",
+        "name": "container",
+        "parent": "5c9bc7",
+        "children": [
+          "4a1765",
+          "4ccc80"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pdcgtq"
+          ]
+        },
+        "label": "Intro Echo"
+      },
+      {
+        "id": "4a1765",
+        "name": "block",
+        "parent": "d14856",
+        "children": [
+          "536a1d",
+          "497c5a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cbghev"
+          ]
+        },
+        "label": "Left"
+      },
+      {
+        "id": "4ccc80",
+        "name": "block",
+        "parent": "d14856",
+        "children": [
+          "490884"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pdtwel"
+          ]
+        },
+        "label": "Right"
+      },
+      {
+        "id": "497c5a",
+        "name": "text-basic",
+        "parent": "4a1765",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "wbfkbf"
+          ]
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "536a1d",
+        "name": "heading",
+        "parent": "4a1765",
+        "children": [],
+        "settings": {
+          "text": "Intro heading",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "bkgkvg"
+          ]
+        }
+      },
+      {
+        "id": "490884",
+        "name": "text-basic",
+        "parent": "4ccc80",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "wqqaxf"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "54734a",
+        "name": "block",
+        "parent": "def046",
+        "children": [
+          "31d6ff",
+          "aa82ba",
+          "44a932"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "yvuylp",
+            "rktisp"
+          ],
+          "tag": "custom",
+          "customTag": "ul"
+        },
+        "label": "Feature List Tango (Controls)"
+      },
+      {
+        "id": "63d64a",
+        "name": "block",
+        "parent": "def046",
+        "children": [
+          "bc3b62"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "unwsbo"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "bc3b62",
+        "name": "image",
+        "parent": "63d64a",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "ikdskb"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        }
+      },
+      {
+        "id": "31d6ff",
+        "name": "block",
+        "parent": "54734a",
+        "children": [
+          "cea5eb",
+          "b5659d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fffxmb"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature Card Tango"
+      },
+      {
+        "id": "b5659d",
+        "name": "block",
+        "parent": "31d6ff",
+        "children": [
+          "11f327"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fejrjb"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "cea5eb",
+        "name": "block",
+        "parent": "31d6ff",
+        "children": [
+          "4adecf",
+          "192907"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kzjzee"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "11f327",
+        "name": "icon",
+        "parent": "b5659d",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "wgltkg"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "4adecf",
+        "name": "heading",
+        "parent": "cea5eb",
+        "children": [],
+        "settings": {
+          "text": "Feature one",
+          "_cssGlobalClasses": [
+            "ffbmtc"
+          ]
+        }
+      },
+      {
+        "id": "192907",
+        "name": "text-basic",
+        "parent": "cea5eb",
+        "children": [],
+        "settings": {
+          "text": "This is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "odzweb"
+          ]
+        },
+        "label": "Text"
+      },
+      {
+        "id": "50c9d1",
+        "name": "div",
+        "parent": "def046",
+        "children": [
+          "ec22d9",
+          "4adecd",
+          "cb6e8e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "niaafj"
+          ],
+          "tag": "custom",
+          "customTag": "ul"
+        },
+        "label": "Talking Points (Controls)"
+      },
+      {
+        "id": "ec22d9",
+        "name": "block",
+        "parent": "50c9d1",
+        "children": [
+          "8a6e61",
+          "4ff09f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mqmizx"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Talking Point"
+      },
+      {
+        "id": "8a6e61",
+        "name": "text-basic",
+        "parent": "ec22d9",
+        "children": [],
+        "settings": {
+          "text": "10",
+          "_cssGlobalClasses": [
+            "secszm"
+          ],
+          "tag": "span"
+        },
+        "label": "Stat"
+      },
+      {
+        "id": "4ff09f",
+        "name": "text-basic",
+        "parent": "ec22d9",
+        "children": [],
+        "settings": {
+          "text": "Years of Experience",
+          "_cssGlobalClasses": [
+            "exusap"
+          ],
+          "tag": "p"
+        },
+        "label": "Label"
+      },
+      {
+        "id": "44a932",
+        "name": "block",
+        "parent": "54734a",
+        "children": [
+          "2ee235",
+          "7ac20a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fffxmb"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature Card Tango"
+      },
+      {
+        "id": "7ac20a",
+        "name": "block",
+        "parent": "44a932",
+        "children": [
+          "3ee95a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fejrjb"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "2ee235",
+        "name": "block",
+        "parent": "44a932",
+        "children": [
+          "2737ac",
+          "14265c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kzjzee"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "3ee95a",
+        "name": "icon",
+        "parent": "7ac20a",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "wgltkg"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "2737ac",
+        "name": "heading",
+        "parent": "2ee235",
+        "children": [],
+        "settings": {
+          "text": "Feature three",
+          "_cssGlobalClasses": [
+            "ffbmtc"
+          ]
+        }
+      },
+      {
+        "id": "14265c",
+        "name": "text-basic",
+        "parent": "2ee235",
+        "children": [],
+        "settings": {
+          "text": "This is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "odzweb"
+          ]
+        },
+        "label": "Text"
+      },
+      {
+        "id": "aa82ba",
+        "name": "block",
+        "parent": "54734a",
+        "children": [
+          "35d732",
+          "b2c2a9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fffxmb"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature Card Tango"
+      },
+      {
+        "id": "b2c2a9",
+        "name": "block",
+        "parent": "aa82ba",
+        "children": [
+          "103d61"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fejrjb"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "35d732",
+        "name": "block",
+        "parent": "aa82ba",
+        "children": [
+          "38c711",
+          "ffdea5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kzjzee"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "103d61",
+        "name": "icon",
+        "parent": "b2c2a9",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "wgltkg"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "38c711",
+        "name": "heading",
+        "parent": "35d732",
+        "children": [],
+        "settings": {
+          "text": "Feature two",
+          "_cssGlobalClasses": [
+            "ffbmtc"
+          ]
+        }
+      },
+      {
+        "id": "ffdea5",
+        "name": "text-basic",
+        "parent": "35d732",
+        "children": [],
+        "settings": {
+          "text": "This is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "odzweb"
+          ]
+        },
+        "label": "Text"
+      },
+      {
+        "id": "cb6e8e",
+        "name": "block",
+        "parent": "50c9d1",
+        "children": [
+          "b1bb2b",
+          "c3dccf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mqmizx"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Talking Point"
+      },
+      {
+        "id": "b1bb2b",
+        "name": "text-basic",
+        "parent": "cb6e8e",
+        "children": [],
+        "settings": {
+          "text": "10",
+          "_cssGlobalClasses": [
+            "secszm"
+          ],
+          "tag": "span"
+        },
+        "label": "Stat"
+      },
+      {
+        "id": "c3dccf",
+        "name": "text-basic",
+        "parent": "cb6e8e",
+        "children": [],
+        "settings": {
+          "text": "Years of Experience",
+          "_cssGlobalClasses": [
+            "exusap"
+          ],
+          "tag": "p"
+        },
+        "label": "Label"
+      },
+      {
+        "id": "4adecd",
+        "name": "block",
+        "parent": "50c9d1",
+        "children": [
+          "7adba4",
+          "4cd41b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mqmizx"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Talking Point"
+      },
+      {
+        "id": "7adba4",
+        "name": "text-basic",
+        "parent": "4adecd",
+        "children": [],
+        "settings": {
+          "text": "10",
+          "_cssGlobalClasses": [
+            "secszm"
+          ],
+          "tag": "span"
+        },
+        "label": "Stat"
+      },
+      {
+        "id": "4cd41b",
+        "name": "text-basic",
+        "parent": "4adecd",
+        "children": [],
+        "settings": {
+          "text": "Years of Experience",
+          "_cssGlobalClasses": [
+            "exusap"
+          ],
+          "tag": "p"
+        },
+        "label": "Label"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "pdcgtq",
+        "name": "fr-intro-echo",
+        "settings": {
+          "_cssCustom:mobile_landscape": ".fr-intro-echo {\n  grid-template-columns: 1fr;\n}",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns": "var(--grid-2-1)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_display": "grid",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)",
+          "_alignItemsGrid": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "cbghev",
+        "name": "fr-intro-echo__heading-wrapper",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 2)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wbfkbf",
+        "name": "fr-intro-echo__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "bkgkvg",
+        "name": "fr-intro-echo__heading",
+        "settings": {
+          "_cssCustom": ".fr-intro-echo__heading {\n  text-wrap: balance;\n}"
+        },
+        "_mappedId": "bkgkvg",
+        "modified": 1771254467,
+        "user_id": 1
+      },
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771254446,
+        "user_id": 1
+      },
+      {
+        "id": "pdtwel",
+        "name": "fr-intro-echo__lede-wrapper",
+        "settings": {
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wqqaxf",
+        "name": "fr-intro-echo__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "rktisp",
+        "name": "list--none",
+        "settings": {
+          "_padding": {
+            "left": "0"
+          },
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "acss_import_list--none",
+        "modified": 1771254455,
+        "user_id": 1
+      },
+      {
+        "id": "yvuylp",
+        "name": "fr-feature-list-tango",
+        "settings": {
+          "_justifyContent": "center",
+          "_cssCustom": ".fr-feature-list-tango {\n  --media-height: 4rem; /* Height of Media/Icon */\n  --accent-line-display: flex; /* Flex or none */\n  --accent-line-color: var(--neutral-ultra-dark-trans-10);\n  --accent-line-width: 2px;\n  --card-gap: calc(var(--content-gap) * 1.5);\n  \n  /* Ignore */\n\t--top: calc(var(--media-height) + (var(--card-gap) / 2));\n  \n  gap: var(--card-gap);\n  \n}\n\n.fr-feature-list-tango > *:not(:last-child) .fr-feature-card-tango__media-wrapper::after {\n\tcontent: \"\";\n  display: var(--accent-line-display);\n  position: absolute;\n  height: calc(100% - var(--media-height));\n  width: var(--accent-line-width);\n  background-color: var(--accent-line-color);\n  top: var(--top);\n  left: 50%;\n  transform: translateX(-50%);\n}",
+          "_cssCustom:tablet_portrait": ".fr-feature-list-tango {\n  --accent-line-display: none; /* Flex or none */\n\tdisplay: grid;\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: var(--grid-gap);\n}",
+          "_alignSelf": "stretch",
+          "_flexGrow": "1",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)"
+        },
+        "modified": 1724257896,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "fffxmb",
+        "name": "fr-feature-card-tango",
+        "settings": {
+          "_direction": "row",
+          "_alignItems": "stretch",
+          "_direction:tablet_portrait": "column",
+          "_rowGap": "var(--fr-card-gap)",
+          "_columnGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "kzjzee",
+        "name": "fr-feature-card-tango__content-wrapper",
+        "settings": {
+          "_rowGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ffbmtc",
+        "name": "fr-feature-card-tango__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "odzweb",
+        "name": "fr-feature-card-tango__text",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-s)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "fejrjb",
+        "name": "fr-feature-card-tango__media-wrapper",
+        "settings": {
+          "_width": "auto",
+          "_flexShrink": "0",
+          "_flexGrow": "1",
+          "_position": "relative",
+          "_order": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wgltkg",
+        "name": "fr-feature-card-tango__media",
+        "settings": {
+          "_height": "var(--media-height)",
+          "_width": "auto"
+        },
+        "_exists": false
+      },
+      {
+        "id": "omtpgr",
+        "name": "fr-feature-grid-tango",
+        "settings": {
+          "_cssCustom": ".fr-feature-grid-tango {\n  \n  --features-span: 3; /* Width of Features Column */\n  \n  \n\tdisplay: grid;\n  grid-template-columns: repeat(12, minmax(0, 1fr));\n  grid-template-rows: 1fr;\n  gap: var(--grid-gap);\n}\n\n.fr-feature-grid-tango > *:first-child {\n\tgrid-column: span var(--features-span);\n}\n\n.fr-feature-grid-tango > *:nth-child(2) {\n\tgrid-column: span calc(12 - var(--features-span));\n}",
+          "_cssCustom:tablet_portrait": ".fr-feature-grid-tango {\n\tgrid-template-columns: repeat(1, minmax(0, 1fr));\n}\n\n.fr-feature-grid-tango > *:first-child,\n.fr-feature-grid-tango > *:nth-child(2){\n\tgrid-column: 1;\n}",
+          "_gridGap:tablet_portrait": "var(--container-gap)",
+          "_position": "relative",
+          "_margin": {
+            "top": "var(--container-gap)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "unwsbo",
+        "name": "fr-feature-grid-tango__media-wrapper",
+        "settings": {
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_overflow": "hidden",
+          "_order:tablet_portrait": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ikdskb",
+        "name": "fr-feature-grid-tango__media",
+        "settings": {
+          "_width": "100%",
+          "_flexGrow": "1",
+          "_objectFit": "cover",
+          "_aspectRatio": "16/9"
+        },
+        "_exists": false
+      },
+      {
+        "id": "niaafj",
+        "name": "fr-feature-grid-tango__talking-points",
+        "settings": {
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "_right": "var(--space-xl)",
+          "_display": "flex",
+          "_padding": {
+            "top": "var(--fr-card-padding)",
+            "right": "var(--fr-card-padding)",
+            "bottom": "var(--fr-card-padding)",
+            "left": "var(--fr-card-padding)"
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_top": "-3.5em",
+          "_order:tablet_portrait": "-2",
+          "_flexWrap": "nowrap",
+          "_cssCustom": ".fr-feature-grid-tango__talking-points {\n  --divider-display: flex; /* Flex or none */\n  --divider-color: var(--neutral-ultra-dark-trans-10);\n  --divider-thickness: 1px;\n  --divider-span: 100%; /* Height on desktop & width on mobile */\n  --divider-spacing: var(--grid-gap);\n}\n\n.fr-feature-grid-tango__talking-points > *:not(:last-child)::after {\n\tcontent: \"\";\n  height: var(--divider-span);\n  width: var(--divider-thickness);\n  background-color: var(--divider-color);\n  margin-inline: var(--divider-spacing);\n  display: var(--divider-display);\n}",
+          "_position:tablet_portrait": "static",
+          "_top:tablet_portrait": "0",
+          "_right:tablet_portrait": "0",
+          "_margin:tablet_portrait": {
+            "left": "auto",
+            "right": "auto",
+            "bottom": "calc(var(--container-gap) * -1.85)"
+          },
+          "_zIndex:tablet_portrait": "1",
+          "_widthMax:tablet_portrait": "90%",
+          "_cssCustom:mobile_landscape": ".fr-feature-grid-tango__talking-points > *:not(:last-child)::after {\n\tcontent: \"\";\n  width: var(--divider-span);\n  height: var(--divider-thickness);\n  margin-inline: auto;\n  margin-block: var(--divider-spacing);\n  display: var(--divider-display);\n}",
+          "_margin:mobile_landscape": {
+            "bottom": "0"
+          },
+          "_flexWrap:mobile_landscape": "wrap",
+          "_direction:mobile_landscape": "column",
+          "_width:mobile_landscape": "100%",
+          "_widthMax:mobile_landscape": "100%",
+          "_position": "absolute",
+          "_margin": {
+            "top": "0",
+            "right": "0",
+            "bottom": "0",
+            "left": "0"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "mqmizx",
+        "name": "fr-feature-grid-tango__talking-point",
+        "settings": {
+          "_direction": "row",
+          "_flexWrap": "nowrap",
+          "_columnGap": ".5em",
+          "_alignItems": "center",
+          "_position": "relative",
+          "_width": "auto",
+          "_width:mobile_portrait": "100%",
+          "_direction:mobile_landscape": "column",
+          "_alignItems:mobile_landscape": "flex-start"
+        },
+        "_exists": false
+      },
+      {
+        "id": "secszm",
+        "name": "fr-feature-grid-tango__talking-point-stat",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--h1)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "exusap",
+        "name": "fr-feature-grid-tango__talking-point-label",
+        "settings": {
+          "_width": "10ch",
+          "_widthMax": "100%",
+          "_typography": {
+            "line-height": "1.2",
+            "font-size": "var(--text-s)"
+          },
+          "_width:mobile_portrait": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ekxohg",
+        "name": "fr-feature-section-tango",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

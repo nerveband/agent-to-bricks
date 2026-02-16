@@ -1,0 +1,275 @@
+{
+  "idx": 289,
+  "title": "CTA Card Lima",
+  "elementCount": 9,
+  "classCount": 9,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "2e545c",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "67b179",
+          "fdde8e",
+          "627558"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rzwxzo"
+          ]
+        },
+        "label": "CTA Card Lima (CSS)"
+      },
+      {
+        "id": "67b179",
+        "name": "block",
+        "parent": "2e545c",
+        "children": [
+          "f9bd35",
+          "17b8bd"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iysjjf"
+          ]
+        },
+        "label": "Head"
+      },
+      {
+        "id": "17b8bd",
+        "name": "text-basic",
+        "parent": "67b179",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "qfdtjc"
+          ]
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "f9bd35",
+        "name": "heading",
+        "parent": "67b179",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder headline, we will replace it once your website copy is finalized.",
+          "_cssGlobalClasses": [
+            "bxqjnk"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "fdde8e",
+        "name": "block",
+        "parent": "2e545c",
+        "children": [
+          "6eb847",
+          "83954b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "nnjwrm"
+          ],
+          "tag": "a",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "83954b",
+        "name": "icon",
+        "parent": "fdde8e",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)"
+          },
+          "_cssGlobalClasses": [
+            "nbtfrx"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "627558",
+        "name": "block",
+        "parent": "2e545c",
+        "children": [
+          "ebb3cf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hlfrxm"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "ebb3cf",
+        "name": "image",
+        "parent": "627558",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "szteej"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        },
+        "label": "Media",
+        "themeStyles": []
+      },
+      {
+        "id": "6eb847",
+        "name": "text-basic",
+        "parent": "fdde8e",
+        "children": [],
+        "settings": {
+          "text": "Download",
+          "_cssGlobalClasses": [
+            "tvzisf"
+          ],
+          "tag": "p"
+        },
+        "label": "Label"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "rzwxzo",
+        "name": "fr-cta-card-lima",
+        "settings": {
+          "_cssCustom": ".fr-cta-card-lima {\n  --icon-size: 2em;\n}\n\n.fr-cta-card-lima svg {\n  width: var(--icon-size);\n  height: var(--icon-size);\n}",
+          "_gridTemplateColumns": "minmax(0,1fr) minmax(0,4fr) minmax(0,1fr);",
+          "_display": "grid",
+          "_alignItemsGrid": "center",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)"
+        },
+        "modified": 1748384959,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "iysjjf",
+        "name": "fr-cta-card-lima__head",
+        "settings": {
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "bxqjnk",
+        "name": "fr-cta-card-lima__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "nnjwrm",
+        "name": "fr-cta-card-lima__footer",
+        "settings": {
+          "_alignItems": "center",
+          "_position": "relative",
+          "_justifyContent": "center",
+          "_typography": {
+            "text-decoration": "none"
+          },
+          "_direction": "column",
+          "_direction:mobile_landscape": "row",
+          "_justifyContent:mobile_landscape": "flex-start",
+          "_flexWrap:mobile_landscape": "nowrap",
+          "_rowGap": "var(--space-xs)",
+          "_columnGap": "var(--space-xs)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "nbtfrx",
+        "name": "fr-cta-card-lima__icon",
+        "settings": {
+          "_order": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "hlfrxm",
+        "name": "fr-cta-card-lima__media-wrapper",
+        "settings": {
+          "_order": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "szteej",
+        "name": "fr-cta-card-lima__media",
+        "settings": {
+          "_objectFit": "cover",
+          "_width": "100%",
+          "_flexGrow": "1",
+          "_overflow": "hidden"
+        },
+        "_exists": false
+      },
+      {
+        "id": "tvzisf",
+        "name": "fr-cta-card-lima__cta-label",
+        "settings": {
+          "_typography": {
+            "line-height": "1",
+            "text-align": "center"
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

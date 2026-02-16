@@ -1,0 +1,390 @@
+{
+  "idx": 36,
+  "title": "Search Results Alpha",
+  "elementCount": 13,
+  "classCount": 14,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "2f0891",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "853656"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qsbnna"
+          ]
+        },
+        "label": "Search Results Section Alpha"
+      },
+      {
+        "id": "853656",
+        "name": "container",
+        "parent": "2f0891",
+        "children": [
+          "b8a23f",
+          "2bc366",
+          "4f26e2",
+          "511ef9",
+          "55e152"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "yrtixu"
+          ]
+        },
+        "label": "Search Results Alpha"
+      },
+      {
+        "id": "ff5562",
+        "name": "block",
+        "parent": "2bc366",
+        "children": [
+          "a2a56b",
+          "a8c5e3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zrztwh",
+            "iae7w8"
+          ],
+          "hasLoop": true,
+          "query": {
+            "posts_per_page": "3",
+            "is_archive_main_query": true,
+            "no_results_text": "No search results",
+            "order": "asc"
+          },
+          "_attributes": [
+            {
+              "id": "tnxqoc",
+              "name": "data-content-type",
+              "value": "{echo:frames_get_current_post_type}"
+            }
+          ],
+          "tag": "li"
+        },
+        "label": "Search Results Card"
+      },
+      {
+        "id": "a2a56b",
+        "name": "heading",
+        "parent": "ff5562",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "acss_import_clickable-parent",
+            "gslmhd",
+            "w7hk88"
+          ],
+          "text": "{post_title}",
+          "link": {
+            "type": "meta",
+            "useDynamicData": "{post_url}"
+          }
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "a8c5e3",
+        "name": "block",
+        "parent": "ff5562",
+        "children": [
+          "7d11f0"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xghykp",
+            "zu1uck"
+          ]
+        },
+        "label": "Label Wrapper"
+      },
+      {
+        "id": "7d11f0",
+        "name": "text-basic",
+        "parent": "a8c5e3",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "1ledbs",
+            "ep9aav"
+          ],
+          "tag": "span",
+          "text": "{echo:frames_get_current_post_type}",
+          "_order": "0"
+        },
+        "label": "Label"
+      },
+      {
+        "id": "511ef9",
+        "name": "block",
+        "parent": "853656",
+        "children": [
+          "11ca67",
+          "f97ddf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qghngw",
+            "vhmeos"
+          ]
+        },
+        "label": "Search Form Wrapper"
+      },
+      {
+        "id": "11ca67",
+        "name": "text-basic",
+        "parent": "511ef9",
+        "children": [],
+        "settings": {
+          "text": "Search again:",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "znsjmw",
+            "lknsbo"
+          ]
+        },
+        "label": "Search Label"
+      },
+      {
+        "id": "f97ddf",
+        "name": "search",
+        "parent": "511ef9",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rmkbhx",
+            "fvchph",
+            "6mz6s1",
+            "tdlzxc"
+          ],
+          "searchOverlayTitle": "Search site",
+          "searchType": "input"
+        },
+        "themeStyles": [],
+        "label": "Search"
+      },
+      {
+        "id": "55e152",
+        "name": "code",
+        "parent": "853656",
+        "children": [],
+        "settings": {
+          "code": "STOP STOP STOP: DO NOT ACTIVATE THIS CODE BLOCK. COPY THE CODE BELOW AND PASTE IN YOUR FUNCTIONS.PHP FILE. ONCE YOU'VE ADDED IT TO FUNCTIONS.PHP, DELETE THIS CODE BLOCK.\n\n/**\nIdentify search results by content type\n**/\n\nadd_filter( 'bricks/code/echo_function_names', function() {\n  return [\n    'frames_get_current_post_type',\n  ];\n} );\n\nif ( ! function_exists( 'frames_get_custom_post_type' ) ) {\n \n\tfunction frames_get_current_post_type() {\n        global $post;\n\n        return $post ? get_post_type_object(get_post_type($post))->labels->singular_name : \"post\";\n    }\n}",
+          "user_id": 2,
+          "time": 1762444265
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "4f26e2",
+        "name": "button",
+        "parent": "853656",
+        "children": [],
+        "settings": {
+          "text": "Load More",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ],
+          "_interactions": [
+            {
+              "id": "yasmir",
+              "trigger": "click",
+              "action": "loadMore",
+              "loadMoreQuery": "ff5562"
+            }
+          ],
+          "tag": "button"
+        }
+      },
+      {
+        "id": "2bc366",
+        "name": "block",
+        "parent": "853656",
+        "children": [
+          "ff5562"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ujnuvz"
+          ],
+          "tag": "ul"
+        },
+        "label": "Results List"
+      },
+      {
+        "id": "b8a23f",
+        "name": "heading",
+        "parent": "853656",
+        "children": [],
+        "settings": {
+          "text": "Search Results",
+          "tag": "h1"
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "fvchph",
+        "name": "form--light",
+        "settings": [],
+        "_mappedId": "acss_import_form--light",
+        "modified": 1771252148,
+        "user_id": 1
+      },
+      {
+        "id": "acss_import_clickable-parent",
+        "name": "clickable-parent",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "qsbnna",
+        "name": "search-results-section-alpha",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) * 2)"
+        },
+        "modified": 1728336969,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "yrtixu",
+        "name": "search-results-alpha",
+        "settings": {
+          "_width": "80ch",
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "zrztwh",
+        "name": "search-results-alpha__card",
+        "settings": {
+          "_position": "relative",
+          "_display": "grid",
+          "_gridTemplateColumns": "minmax(0, 1fr) auto",
+          "_gridGap": "var(--content-gap)",
+          "_alignItemsGrid": "center",
+          "_cssCustom": ".search-results-alpha__card {\n  --card-padding: var(--space-xs);\n\t--label-bg-color: var(--bg-ultra-light);\n  --label-bg-color-hover: var(--bg-light);\n  --label-fg-color: var(--text-dark-muted);\n  --divider-color-hover: var(--primary);\n}\n\n.search-results-alpha__card:not(:last-of-type, :only-of-type) {\n\tborder-bottom: var(--divider);\n}\n.search-results-alpha__card:hover {\n\tborder-color: var(--divider-color-hover);\n}\n.search-results-alpha__card:hover .search-results-alpha__card-label {\n\tbackground-color: var(--label-bg-color-hover);\n}\n.search-results-alpha__card {\n\tpadding: var(--card-padding);\n}",
+          "_cssTransition": "border-color .3s ease-out"
+        },
+        "_exists": false
+      },
+      {
+        "id": "gslmhd",
+        "name": "search-results-alpha__card-heading",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--h4)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "xghykp",
+        "name": "search-results-alpha__card-label-wrapper",
+        "settings": {
+          "_direction": "row"
+        },
+        "_exists": false
+      },
+      {
+        "id": "1ledbs",
+        "name": "search-results-alpha__card-label",
+        "settings": {
+          "_typography": {
+            "line-height": "1",
+            "font-size": "var(--text-s)",
+            "text-transform": "capitalize",
+            "color": {
+              "raw": "var(--label-fg-color)"
+            }
+          },
+          "_padding": {
+            "top": ".5em",
+            "bottom": ".5em",
+            "left": "1em",
+            "right": "1em"
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_background": {
+            "color": {
+              "raw": "var(--label-bg-color)"
+            }
+          },
+          "_cssTransition": "var(--transition)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "vhmeos",
+        "name": "search-results-alpha__search-wrapper",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "auto var(--grid-1)",
+          "_alignItemsGrid": "center",
+          "_gridGap": "var(--space-xs)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "lknsbo",
+        "name": "search-results-alpha__search-label",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "rmkbhx",
+        "name": "search",
+        "settings": {
+          "_width": "100%",
+          "_cssCustom": ".search.search input {\n\twidth: 100%;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "tdlzxc",
+        "name": "search-results-alpha__search-form",
+        "settings": {
+          "_width": "30ch"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ujnuvz",
+        "name": "search-results-alpha__results-list",
+        "settings": {
+          "_padding": {
+            "left": "0"
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

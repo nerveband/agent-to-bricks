@@ -1,0 +1,652 @@
+{
+  "idx": 284,
+  "title": "Pricing Card Lima",
+  "elementCount": 25,
+  "classCount": 19,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "e39c63",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "b61242",
+          "fb2a75",
+          "ce4b54"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ybwzki"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Pricing Card Lima <li> CSS"
+      },
+      {
+        "id": "b61242",
+        "name": "block",
+        "parent": "e39c63",
+        "children": [
+          "4734af"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mlzruc"
+          ],
+          "tag": "custom",
+          "customTag": "header"
+        },
+        "label": "Header"
+      },
+      {
+        "id": "4734af",
+        "name": "heading",
+        "parent": "b61242",
+        "children": [],
+        "settings": {
+          "text": "Standard",
+          "_cssGlobalClasses": [
+            "fwpfkx"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "fb2a75",
+        "name": "block",
+        "parent": "e39c63",
+        "children": [
+          "a10918",
+          "e3f8aa",
+          "70f2c9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dvzqqk"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "a10918",
+        "name": "block",
+        "parent": "fb2a75",
+        "children": [
+          "431bd4",
+          "4e127e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "oabged"
+          ]
+        },
+        "label": "Price Wrapper"
+      },
+      {
+        "id": "431bd4",
+        "name": "div",
+        "parent": "a10918",
+        "children": [
+          "10514a",
+          "967dd2"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lydoum"
+          ],
+          "_alignItems": "center"
+        },
+        "label": "Price"
+      },
+      {
+        "id": "10514a",
+        "name": "text-basic",
+        "parent": "431bd4",
+        "children": [],
+        "settings": {
+          "text": "$",
+          "_cssGlobalClasses": [
+            "oioioh"
+          ],
+          "tag": "custom",
+          "customTag": "sup"
+        },
+        "label": "Currency"
+      },
+      {
+        "id": "967dd2",
+        "name": "text-basic",
+        "parent": "431bd4",
+        "children": [],
+        "settings": {
+          "text": "5",
+          "_cssGlobalClasses": [
+            "gixeet"
+          ],
+          "tag": "custom",
+          "customTag": "strong"
+        },
+        "label": "Amount"
+      },
+      {
+        "id": "4e127e",
+        "name": "text-basic",
+        "parent": "a10918",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dolonn"
+          ],
+          "tag": "custom",
+          "text": "Annually",
+          "customTag": "sub"
+        },
+        "label": "Period"
+      },
+      {
+        "id": "e3f8aa",
+        "name": "text-basic",
+        "parent": "fb2a75",
+        "children": [],
+        "settings": {
+          "text": "This is a description of the pricing package.",
+          "_cssGlobalClasses": [
+            "mqvwcw"
+          ],
+          "tag": "p"
+        },
+        "label": "Description"
+      },
+      {
+        "id": "70f2c9",
+        "name": "block",
+        "parent": "fb2a75",
+        "children": [
+          "4a265a",
+          "e6e6a1",
+          "0a7749",
+          "7b7838"
+        ],
+        "settings": {
+          "tag": "custom",
+          "customTag": "ul",
+          "_cssGlobalClasses": [
+            "shhlow",
+            "rktisp"
+          ]
+        },
+        "label": "Feature List <ul>"
+      },
+      {
+        "id": "4a265a",
+        "name": "block",
+        "parent": "70f2c9",
+        "children": [
+          "3646ae",
+          "e4da30"
+        ],
+        "settings": {
+          "tag": "custom",
+          "customTag": "li",
+          "_cssGlobalClasses": [
+            "lflkgb"
+          ]
+        },
+        "label": "List Item <li>"
+      },
+      {
+        "id": "3646ae",
+        "name": "icon",
+        "parent": "4a265a",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "ozaamn"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Icon"
+      },
+      {
+        "id": "e4da30",
+        "name": "text-basic",
+        "parent": "4a265a",
+        "children": [],
+        "settings": {
+          "text": "Awesome Feature",
+          "_cssGlobalClasses": [
+            "otmwnw"
+          ],
+          "tag": "p"
+        },
+        "label": "Label"
+      },
+      {
+        "id": "e6e6a1",
+        "name": "block",
+        "parent": "70f2c9",
+        "children": [
+          "a28a37",
+          "e0eba8"
+        ],
+        "settings": {
+          "tag": "custom",
+          "customTag": "li",
+          "_cssGlobalClasses": [
+            "lflkgb"
+          ]
+        },
+        "label": "List Item <li>"
+      },
+      {
+        "id": "a28a37",
+        "name": "icon",
+        "parent": "e6e6a1",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "ozaamn"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Icon"
+      },
+      {
+        "id": "e0eba8",
+        "name": "text-basic",
+        "parent": "e6e6a1",
+        "children": [],
+        "settings": {
+          "text": "Awesome Feature",
+          "_cssGlobalClasses": [
+            "otmwnw"
+          ],
+          "tag": "p"
+        },
+        "label": "Label"
+      },
+      {
+        "id": "0a7749",
+        "name": "block",
+        "parent": "70f2c9",
+        "children": [
+          "e3f559",
+          "b1a2c2"
+        ],
+        "settings": {
+          "tag": "custom",
+          "customTag": "li",
+          "_cssGlobalClasses": [
+            "lflkgb",
+            "hmtsbi"
+          ]
+        },
+        "label": "List Item <li>"
+      },
+      {
+        "id": "e3f559",
+        "name": "icon",
+        "parent": "0a7749",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "ozaamn"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Icon"
+      },
+      {
+        "id": "b1a2c2",
+        "name": "text-basic",
+        "parent": "0a7749",
+        "children": [],
+        "settings": {
+          "text": "Awesome Feature",
+          "_cssGlobalClasses": [
+            "otmwnw"
+          ],
+          "tag": "p"
+        },
+        "label": "Label"
+      },
+      {
+        "id": "7b7838",
+        "name": "block",
+        "parent": "70f2c9",
+        "children": [
+          "eb8be5",
+          "2a9b35"
+        ],
+        "settings": {
+          "tag": "custom",
+          "customTag": "li",
+          "_cssGlobalClasses": [
+            "lflkgb",
+            "hmtsbi"
+          ]
+        },
+        "label": "List Item <li>"
+      },
+      {
+        "id": "eb8be5",
+        "name": "icon",
+        "parent": "7b7838",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "ozaamn"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Icon"
+      },
+      {
+        "id": "2a9b35",
+        "name": "text-basic",
+        "parent": "7b7838",
+        "children": [],
+        "settings": {
+          "text": "Awesome Feature",
+          "_cssGlobalClasses": [
+            "otmwnw"
+          ],
+          "tag": "p"
+        },
+        "label": "Label"
+      },
+      {
+        "id": "ce4b54",
+        "name": "block",
+        "parent": "e39c63",
+        "children": [
+          "2c4da0"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ctlina"
+          ],
+          "tag": "custom",
+          "customTag": "footer"
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "2c4da0",
+        "name": "button",
+        "parent": "ce4b54",
+        "children": [],
+        "settings": {
+          "text": "Select plan",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary",
+            "atmgkc"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Button"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "rktisp",
+        "name": "list--none",
+        "settings": {
+          "_padding": {
+            "left": "0"
+          },
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "acss_import_list--none",
+        "modified": 1771254981,
+        "user_id": 1
+      },
+      {
+        "id": "ybwzki",
+        "name": "fr-pricing-card-lima",
+        "settings": {
+          "_padding": {
+            "top": "var(--space-l)",
+            "right": "var(--space-l)",
+            "bottom": "var(--space-l)",
+            "left": "var(--space-l)"
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_rowGap": "var(--content-gap)",
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "mlzruc",
+        "name": "fr-pricing-card-lima__header",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "fwpfkx",
+        "name": "fr-pricing-card-lima__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "dvzqqk",
+        "name": "fr-pricing-card-lima__body",
+        "settings": {
+          "_rowGap": "1em",
+          "_flexWrap:mobile_landscape": "nowrap"
+        },
+        "_exists": false
+      },
+      {
+        "id": "oabged",
+        "name": "fr-pricing-card-lima__price-wrapper",
+        "settings": {
+          "_direction": "column",
+          "_display": "flex",
+          "_alignItems": "flex-start",
+          "_rowGap": ".5em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "lydoum",
+        "name": "fr-pricing-card-lima__price",
+        "settings": {
+          "_display": "flex",
+          "_typography": {
+            "line-height": "1",
+            "font-size": "calc(var(--h1) * 1.5)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "oioioh",
+        "name": "fr-pricing-card-lima__price-currency",
+        "settings": {
+          "_top": "-.25em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "gixeet",
+        "name": "fr-pricing-card-lima__price-amount",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "dolonn",
+        "name": "fr-pricing-card-lima__price-period",
+        "settings": {
+          "_background": {
+            "color": {
+              "raw": "var(--neutral-light-trans-40)"
+            }
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_padding": {
+            "top": ".75em",
+            "right": "1.5em",
+            "bottom": ".75em",
+            "left": "1.5em"
+          },
+          "_typography": {
+            "font-size": "var(--text-s)",
+            "line-height": "1"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "mqvwcw",
+        "name": "fr-pricing-card-lima__description",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "shhlow",
+        "name": "fr-pricing-card-lima__feature-list",
+        "settings": {
+          "_rowGap": ".25em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "lflkgb",
+        "name": "fr-pricing-card-lima__feature-item",
+        "settings": {
+          "_flexWrap:mobile_landscape": "nowrap",
+          "_display": "grid",
+          "_gridTemplateColumns": "minmax(0, 1.5em) minmax(0, 1fr);",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_gridGap": ".75em",
+          "_alignItemsGrid": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ozaamn",
+        "name": "fr-pricing-card-lima__feature-icon",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "otmwnw",
+        "name": "fr-pricing-card-lima__feature-label",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-s)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "hmtsbi",
+        "name": "fr-price-card-lima__feature-item--disabled",
+        "settings": {
+          "_opacity": ".5"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ctlina",
+        "name": "fr-pricing-card-lima__footer",
+        "settings": {
+          "_margin": {
+            "top": "auto"
+          },
+          "_direction": "column",
+          "_alignItems": "stretch"
+        },
+        "_exists": false
+      },
+      {
+        "id": "atmgkc",
+        "name": "fr-pricing-card-lima__button",
+        "settings": {
+          "_width": "100%",
+          "_widthMax": "100%",
+          "_widthMin": "unset"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

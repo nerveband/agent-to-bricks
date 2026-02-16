@@ -1,0 +1,232 @@
+{
+  "idx": 131,
+  "title": "CTA Indigo",
+  "elementCount": 7,
+  "classCount": 8,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "9c4c60",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "862078",
+          "33e882",
+          "5650a8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "8whrv1"
+          ]
+        },
+        "label": "CTA Indigo (CSS)"
+      },
+      {
+        "id": "862078",
+        "name": "block",
+        "parent": "9c4c60",
+        "children": [
+          "a8f8f3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fjldqn"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "a8f8f3",
+        "name": "block",
+        "parent": "862078",
+        "children": [
+          "bc5382",
+          "6004e9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "epkkxe"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "bc5382",
+        "name": "heading",
+        "parent": "a8f8f3",
+        "children": [],
+        "settings": {
+          "text": "Your call to action text goes here. It shouldn't be too long.",
+          "_cssGlobalClasses": [
+            "yhrxlk"
+          ],
+          "tag": "custom",
+          "customTag": "p"
+        }
+      },
+      {
+        "id": "6004e9",
+        "name": "button",
+        "parent": "a8f8f3",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "kszdfb",
+            "btn--white"
+          ]
+        }
+      },
+      {
+        "id": "33e882",
+        "name": "image",
+        "parent": "9c4c60",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "_cssGlobalClasses": [
+            "d4teff"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Image"
+      },
+      {
+        "id": "5650a8",
+        "name": "div",
+        "parent": "9c4c60",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lj5nid"
+          ]
+        },
+        "label": "Gradient"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "btn--white",
+        "name": "btn--white",
+        "settings": {
+          "_cssCustom": ".btn--white {\n\t--btn-background-hover: var(--neutral-light);\n  --btn-text-color-hover: var(--black);\n  --btn-border-color-hover: var(--neutral-light);\n}\n"
+        },
+        "_mappedId": "acss_import_btn--white",
+        "modified": 1771253605,
+        "user_id": 1
+      },
+      {
+        "id": "8whrv1",
+        "name": "fr-cta-indigo",
+        "settings": {
+          "_position": "relative",
+          "_cssCustom": ".fr-cta-indigo {\n\t--min-height: 60rem;\n  /* Main Gradient Styling */\n  --gradient-start-color: var(--primary);\n  --gradient-stripe-color: var(--primary-trans-50);\n  --gradient-angle: 75deg;\n  /* Content Protection */\n  --safe-area: 24em;\n  --safe-area-padding: var(--space-l);\n  /* Use 100% for boxed effect and 100vw for full width */\n  --image-width: 100%;\n  /* Accent Styling */\n  --accent-offset: 2em;\n  --accent-opacity: .25;\n}\n\n:has(> .fr-cta-indigo) {\n\toverflow: hidden;\n}\n\n.fr-cta-indigo__gradient {\n    position: absolute;\n    inset: 0;\n}\n\n.fr-cta-indigo__image {\n\tposition: absolute;\n  inset: 0;\n}\n\n/* Main Gradient */\n\n@media (min-width: 767px) {\n  .fr-cta-indigo__gradient {\n    background-image: linear-gradient(\n      var(--gradient-angle), \n      var(--gradient-start-color) 0%, \n      var(--gradient-start-color) var(--safe-area), \n      var(--gradient-stripe-color) var(--safe-area), \n      var(--gradient-stripe-color) calc(var(--safe-area) + 8vw),\n      transparent calc(var(--safe-area) + 8vw) \n    );\n    }\n  \n  /* Gradient Extension to Left Edge */\n  .fr-cta-indigo::after {\n    content: '';\n    width: 100%;\n    height: 100%;\n    background-color: var(--gradient-start-color);\n    position: absolute;\n    top: 0;\n    left: -100%;\n  }\n  \n  /* Angled Accent */\n  .fr-cta-indigo::before {\n    content: '';\n    width: 80vw;\n    height: calc(100% + var(--accent-offset));\n    background-image: linear-gradient(var(--gradient-angle), var(--gradient-stripe-color) 80%, transparent 80%);\n    position: absolute;\n    top: calc(var(--accent-offset) / 2 * -1);\n    left: -50%;\n    opacity: var(--accent-opacity);\n  }\n  \n  /* Image Styling */\n  .fr-cta-indigo__image {\n    width: var(--image-width);\n    max-width: var(--image-width);\n\t}\n}",
+          "_alignItems": "flex-start",
+          "_heightMin": "var(--min-height)",
+          "_justifyContent": "flex-end",
+          "_padding": {
+            "top": "var(--space-xl)",
+            "bottom": "var(--space-xl)"
+          },
+          "_heightMin:mobile_landscape": "auto",
+          "_padding:mobile_landscape": {
+            "top": "var(--space-l)",
+            "bottom": "var(--space-l)"
+          },
+          "_padding:mobile_portrait": {
+            "top": "var(--space-m)",
+            "bottom": "var(--space-m)"
+          },
+          "_padding:tablet_portrait": {
+            "left": "var(--gutter)",
+            "right": "var(--gutter)"
+          }
+        },
+        "modified": 1723652119,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "fjldqn",
+        "name": "fr-cta-indigo__content-wrapper",
+        "settings": {
+          "_zIndex": "1",
+          "_rowGap": "var(--content-gap)",
+          "_width": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "epkkxe",
+        "name": "fr-cta-indigo__inner",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_width": "100%",
+          "_widthMax": "calc(var(--safe-area) - var(--safe-area-padding) * 2)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "yhrxlk",
+        "name": "fr-cta-indigo__heading",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--white)"
+            },
+            "font-size": "var(--h3)",
+            "line-height": "1.4"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "kszdfb",
+        "name": "fr-cta-indigo__button",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "d4teff",
+        "name": "fr-cta-indigo__image",
+        "settings": {
+          "_height": "100%",
+          "_objectFit": "cover",
+          "_objectPosition": "0% 60%",
+          "_border": {
+            "radius": {
+              "top": "var(--radius-m)",
+              "right": "var(--radius-m)",
+              "bottom": "var(--radius-m)",
+              "left": "var(--radius-m)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "lj5nid",
+        "name": "fr-cta-indigo__gradient",
+        "settings": {
+          "_background:mobile_landscape": {
+            "color": {
+              "raw": "var(--black-trans-70)"
+            }
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

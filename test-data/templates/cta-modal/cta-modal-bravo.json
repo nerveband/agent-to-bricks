@@ -1,0 +1,418 @@
+{
+  "idx": 34,
+  "title": "CTA Modal Bravo",
+  "elementCount": 11,
+  "classCount": 10,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "8918b6",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "19e2e7",
+          "b7dfe7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tszdtj"
+          ],
+          "_cssClasses": "fr-trigger-modal-charlie"
+        },
+        "label": "CTA Modal Charlie"
+      },
+      {
+        "id": "e90017",
+        "name": "image",
+        "parent": "19e2e7",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "n62xd3"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure"
+        },
+        "label": "Image"
+      },
+      {
+        "id": "b7dfe7",
+        "name": "fr-modal",
+        "parent": "8918b6",
+        "children": [
+          "faa12a"
+        ],
+        "settings": {
+          "positionFor": "trigger",
+          "positionRelatedToTrigger": "top",
+          "placeFromTriggers": "left",
+          "modalBodyOffsetVertical": "50px",
+          "modalBodyOffsetHorizontal": "50px",
+          "iconPlacement": "inside",
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "closeIconAriaLabel": "Close Modal",
+          "offsetFromTrigger": "20px",
+          "_cssGlobalClasses": [
+            "phasrk"
+          ],
+          "isCloseButton": "icon",
+          "triggerSelector": ".fr-trigger-modal-charlie",
+          "fadeTime": "0",
+          "triggerType": "selector",
+          "sameClose": true
+        },
+        "label": "Modal"
+      },
+      {
+        "id": "bba43f",
+        "name": "heading",
+        "parent": "faa12a",
+        "children": [],
+        "settings": {
+          "text": "Hey, I'm John Doe. What are you most interested in?",
+          "_cssGlobalClasses": [
+            "f1ic1l"
+          ],
+          "tag": "h2"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "29935d",
+        "name": "text-basic",
+        "parent": "faa12a",
+        "children": [],
+        "settings": {
+          "text": "You can use this modal to segment your audience, direct visitors to popular places, or use an optin form to collect leads.",
+          "_cssGlobalClasses": [
+            "vizmzf"
+          ],
+          "tag": "p"
+        },
+        "label": "Text"
+      },
+      {
+        "id": "faa12a",
+        "name": "block",
+        "parent": "b7dfe7",
+        "children": [
+          "bba43f",
+          "29935d",
+          "b973bb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cvvgvj"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "19e2e7",
+        "name": "div",
+        "parent": "8918b6",
+        "children": [
+          "e90017"
+        ],
+        "settings": {
+          "tag": "custom",
+          "customTag": "button",
+          "_cssGlobalClasses": [
+            "zygdsk"
+          ],
+          "_attributes": [
+            {
+              "id": "nqlijk",
+              "name": "aria-label",
+              "value": "Open Message From {site_title}"
+            }
+          ]
+        },
+        "label": "Button (Arial Label)"
+      },
+      {
+        "id": "8876c8",
+        "name": "button",
+        "parent": "b973bb",
+        "children": [],
+        "settings": {
+          "text": "Option #1",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary",
+            "msmbmc"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "1em",
+            "width": "1em",
+            "fill": {
+              "raw": "currentColor"
+            }
+          },
+          "iconPosition": "right"
+        },
+        "label": "Button"
+      },
+      {
+        "id": "b973bb",
+        "name": "div",
+        "parent": "faa12a",
+        "children": [
+          "8876c8",
+          "449011",
+          "47e4a1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kvzrnt"
+          ]
+        },
+        "label": "CTA Wrapper"
+      },
+      {
+        "id": "47e4a1",
+        "name": "button",
+        "parent": "b973bb",
+        "children": [],
+        "settings": {
+          "text": "Option #3",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary",
+            "msmbmc"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "1em",
+            "width": "1em",
+            "fill": {
+              "raw": "currentColor"
+            }
+          },
+          "iconPosition": "right"
+        },
+        "label": "Button"
+      },
+      {
+        "id": "449011",
+        "name": "button",
+        "parent": "b973bb",
+        "children": [],
+        "settings": {
+          "text": "Option #2",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary",
+            "msmbmc"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "1em",
+            "width": "1em",
+            "fill": {
+              "raw": "currentColor"
+            }
+          },
+          "iconPosition": "right"
+        },
+        "label": "Button"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "tszdtj",
+        "name": "fr-cta-modal-charlie",
+        "settings": {
+          "_width": "fit-content",
+          "_position": "fixed",
+          "_bottom": "20px",
+          "_right": "20px",
+          "_background": {
+            "color": {
+              "raw": "transparent"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "n62xd3",
+        "name": "fr-cta-modal-charlie__image",
+        "settings": {
+          "_aspectRatio": "1/1",
+          "_objectFit": "cover",
+          "_width": "60",
+          "_border": {
+            "radius": {
+              "top": "var(--radius-circle)",
+              "right": "var(--radius-circle)",
+              "bottom": "var(--radius-circle)",
+              "left": "var(--radius-circle)"
+            },
+            "width": {
+              "top": "2",
+              "right": "2",
+              "bottom": "2",
+              "left": "2"
+            },
+            "style": "solid",
+            "color": {
+              "raw": "var(--primary)"
+            }
+          },
+          "_overflow": "hidden"
+        },
+        "_exists": false
+      },
+      {
+        "id": "phasrk",
+        "name": "fr-cta-modal-charlie__modal",
+        "settings": {
+          "_boxShadow": {
+            "values": {
+              "offsetX": "2",
+              "offsetY": "2",
+              "blur": "40",
+              "spread": "-2"
+            },
+            "color": {
+              "raw": "var(--neutral-ultra-dark-trans-10)"
+            }
+          },
+          "width": "400px",
+          "padding": {
+            "top": "var(--space-m)",
+            "right": "var(--space-m)",
+            "bottom": "var(--space-m)",
+            "left": "var(--space-m)"
+          },
+          "iconBackgroundSize": "0",
+          "iconSize": "var(--text-l)",
+          "iconPosTop": "5px",
+          "iconPosRight": "25px"
+        },
+        "_exists": false
+      },
+      {
+        "id": "f1ic1l",
+        "name": "fr-cta-modal-charlie__heading",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--h3)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "vizmzf",
+        "name": "fr-cta-modal-charlie__text",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "cvvgvj",
+        "name": "fr-cta-modal-charlie__modal-inner",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 2)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "zygdsk",
+        "name": "fr-cta-modal-charlie__button",
+        "settings": {
+          "_background": {
+            "color": {
+              "raw": "transparent"
+            }
+          },
+          "_zIndex": "99999",
+          "_position": "relative"
+        },
+        "_exists": false
+      },
+      {
+        "id": "msmbmc",
+        "name": "fr-cta-modal-charlie__cta",
+        "settings": {
+          "_cssCustom": ".fr-cta-modal-charlie__cta {\n  --btn-min-width: 100%;\n  --btn-text-align: left;\n  --btn-justify-content: space-between;\n}"
+        },
+        "modified": 1728329994,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "kvzrnt",
+        "name": "fr-cta-modal-charlie__cta-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_flexWrap": "nowrap",
+          "_rowGap": "calc(var(--content-gap) / 3)",
+          "_width": "100%",
+          "_margin": {
+            "top": "calc(var(--content-gap) / 2)"
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "idx": 392,
+  "title": "CTA Section Bravo",
+  "elementCount": 10,
+  "classCount": 9,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "a0e3be",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "592428",
+          "c58865",
+          "3245c7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hqwxlf"
+          ]
+        },
+        "label": "CTA Bravo"
+      },
+      {
+        "id": "592428",
+        "name": "container",
+        "parent": "a0e3be",
+        "children": [
+          "613223",
+          "df8a3d",
+          "b1658a",
+          "0b90ef"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sqwdmp"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "df8a3d",
+        "name": "text-basic",
+        "parent": "592428",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "_cssGlobalClasses": [
+            "qfdtjc"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "613223",
+        "name": "heading",
+        "parent": "592428",
+        "children": [],
+        "settings": {
+          "text": "Call to action heading",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "wlvaip"
+          ]
+        }
+      },
+      {
+        "id": "b1658a",
+        "name": "text-basic",
+        "parent": "592428",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "isuytv"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "0b90ef",
+        "name": "div",
+        "parent": "592428",
+        "children": [
+          "a86080",
+          "8fa8bf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kyklzj"
+          ]
+        },
+        "label": "Buttons"
+      },
+      {
+        "id": "a86080",
+        "name": "button",
+        "parent": "0b90ef",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "style": "btn--neutral-light"
+        }
+      },
+      {
+        "id": "8fa8bf",
+        "name": "button",
+        "parent": "0b90ef",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "style": "btn--neutral-light",
+          "outline": true
+        }
+      },
+      {
+        "id": "c58865",
+        "name": "image",
+        "parent": "a0e3be",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "_cssGlobalClasses": [
+            "uxzgai"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        }
+      },
+      {
+        "id": "3245c7",
+        "name": "block",
+        "parent": "a0e3be",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "nhlssq"
+          ],
+          "tag": "custom",
+          "customTag": "span"
+        },
+        "label": "Overlay"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771255840,
+        "user_id": 1
+      },
+      {
+        "id": "hqwxlf",
+        "name": "fr-cta-bravo",
+        "settings": {
+          "_padding": {
+            "top": "var(--fr-hero-padding)",
+            "bottom": "var(--fr-hero-padding)"
+          },
+          "_position": "relative"
+        },
+        "_exists": false
+      },
+      {
+        "id": "sqwdmp",
+        "name": "fr-cta-bravo__inner",
+        "settings": {
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center",
+            "color": {
+              "raw": "var(--text-light-muted)"
+            }
+          },
+          "_rowGap": "var(--content-gap)",
+          "_alignItems:mobile_landscape": "flex-start",
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_position": "relative",
+          "_zIndex": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wlvaip",
+        "name": "fr-cta-section-alpha__heading",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--h1)",
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          }
+        },
+        "modified": 1741817303,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "isuytv",
+        "name": "fr-cta-bravo__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "kyklzj",
+        "name": "fr-cta-bravo__buttons",
+        "settings": {
+          "_display": "flex",
+          "_columnGap": "var(--content-gap)",
+          "_direction:mobile_portrait": "column",
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "uxzgai",
+        "name": "fr-cta-bravo__image",
+        "settings": {
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_width": "100%",
+          "_height": "100%",
+          "_objectFit": "cover"
+        },
+        "_exists": false
+      },
+      {
+        "id": "nhlssq",
+        "name": "fr-cta-bravo__overlay",
+        "settings": {
+          "_position": "absolute",
+          "_top": "0px",
+          "_right": "0px",
+          "_bottom": "0px",
+          "_left": "0px",
+          "_background": {
+            "color": {
+              "raw": "var(--neutral-ultra-dark-trans-80)"
+            }
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

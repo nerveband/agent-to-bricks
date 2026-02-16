@@ -1,0 +1,826 @@
+{
+  "idx": 343,
+  "title": "Contact Section Echo",
+  "elementCount": 32,
+  "classCount": 18,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "a1a749",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "a87f47"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "flermp"
+          ]
+        },
+        "label": "Contact Section Echo"
+      },
+      {
+        "id": "a87f47",
+        "name": "container",
+        "parent": "a1a749",
+        "children": [
+          "812091",
+          "3500d7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dzsoqv"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "812091",
+        "name": "block",
+        "parent": "a87f47",
+        "children": [
+          "ef7047",
+          "2624ae",
+          "c5434e",
+          "88c44b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mevyms"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "3500d7",
+        "name": "block",
+        "parent": "a87f47",
+        "children": [
+          "0f5060"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "genroh"
+          ]
+        },
+        "label": "Form Wrapper"
+      },
+      {
+        "id": "ef7047",
+        "name": "heading",
+        "parent": "812091",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "kxcamf"
+          ]
+        }
+      },
+      {
+        "id": "2624ae",
+        "name": "text-basic",
+        "parent": "812091",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "olzjai"
+          ]
+        },
+        "label": "Lede Text"
+      },
+      {
+        "id": "0f5060",
+        "name": "form",
+        "parent": "3500d7",
+        "children": [],
+        "settings": {
+          "fields": [
+            {
+              "type": "text",
+              "label": "Name",
+              "placeholder": "Your Name",
+              "id": "74f5f7"
+            },
+            {
+              "type": "email",
+              "label": "Email",
+              "placeholder": "Your Email",
+              "required": true,
+              "id": "42ac96"
+            },
+            {
+              "type": "textarea",
+              "label": "Message",
+              "placeholder": "Your Message",
+              "required": true,
+              "id": "4dd6b4"
+            }
+          ],
+          "submitButtonStyle": "primary",
+          "actions": [
+            "email"
+          ],
+          "successMessage": "Message successfully sent. We will get back to you as soon as possible.",
+          "emailSubject": "Contact form request",
+          "emailTo": "admin_email",
+          "fromName": "Frames (Bricks)",
+          "emailErrorMessage": "Submission failed. Please reload the page and try to submit the form again.",
+          "htmlEmail": true,
+          "mailchimpPendingMessage": "Please check your email to confirm your subscription.",
+          "mailchimpErrorMessage": "Sorry, but we could not subscribe you.",
+          "sendgridErrorMessage": "Sorry, but we could not subscribe you.",
+          "_cssGlobalClasses": [
+            "mithno",
+            "sgxbii",
+            "swsgnh",
+            "fvchph"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "c5434e",
+        "name": "div",
+        "parent": "812091",
+        "children": [
+          "46b26c",
+          "cca7a5",
+          "660020",
+          "771544",
+          "8d5f6c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "woidrf"
+          ],
+          "tag": "ul"
+        },
+        "label": "List Alpha (CSS)"
+      },
+      {
+        "id": "46b26c",
+        "name": "div",
+        "parent": "c5434e",
+        "children": [
+          "bbdffc",
+          "98f156"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qyyvjt"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "bbdffc",
+        "name": "icon",
+        "parent": "46b26c",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--text-l)",
+            "width": "var(--text-l)"
+          },
+          "_cssGlobalClasses": [
+            "oimttb"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "98f156",
+        "name": "text-basic",
+        "parent": "46b26c",
+        "children": [],
+        "settings": {
+          "text": "This is a list item.",
+          "tag": "span",
+          "_cssGlobalClasses": [
+            "rekwpw"
+          ]
+        },
+        "label": "Text"
+      },
+      {
+        "id": "cca7a5",
+        "name": "div",
+        "parent": "c5434e",
+        "children": [
+          "438145",
+          "eca9e9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qyyvjt"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "438145",
+        "name": "icon",
+        "parent": "cca7a5",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--text-l)",
+            "width": "var(--text-l)"
+          },
+          "_cssGlobalClasses": [
+            "oimttb"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "eca9e9",
+        "name": "text-basic",
+        "parent": "cca7a5",
+        "children": [],
+        "settings": {
+          "text": "This is a list item.",
+          "tag": "span",
+          "_cssGlobalClasses": [
+            "rekwpw"
+          ]
+        },
+        "label": "Text"
+      },
+      {
+        "id": "660020",
+        "name": "div",
+        "parent": "c5434e",
+        "children": [
+          "d9f73d",
+          "1d31dd"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qyyvjt"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "d9f73d",
+        "name": "icon",
+        "parent": "660020",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--text-l)",
+            "width": "var(--text-l)"
+          },
+          "_cssGlobalClasses": [
+            "oimttb"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "1d31dd",
+        "name": "text-basic",
+        "parent": "660020",
+        "children": [],
+        "settings": {
+          "text": "This is a list item.",
+          "tag": "span",
+          "_cssGlobalClasses": [
+            "rekwpw"
+          ]
+        },
+        "label": "Text"
+      },
+      {
+        "id": "771544",
+        "name": "div",
+        "parent": "c5434e",
+        "children": [
+          "5706dd",
+          "fb1a88"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qyyvjt"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "5706dd",
+        "name": "icon",
+        "parent": "771544",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--text-l)",
+            "width": "var(--text-l)"
+          },
+          "_cssGlobalClasses": [
+            "oimttb"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "fb1a88",
+        "name": "text-basic",
+        "parent": "771544",
+        "children": [],
+        "settings": {
+          "text": "This is a list item.",
+          "tag": "span",
+          "_cssGlobalClasses": [
+            "rekwpw"
+          ]
+        },
+        "label": "Text"
+      },
+      {
+        "id": "8d5f6c",
+        "name": "div",
+        "parent": "c5434e",
+        "children": [
+          "8e9ece",
+          "99c809"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qyyvjt"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "List Item"
+      },
+      {
+        "id": "8e9ece",
+        "name": "icon",
+        "parent": "8d5f6c",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--text-l)",
+            "width": "var(--text-l)"
+          },
+          "_cssGlobalClasses": [
+            "oimttb"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "99c809",
+        "name": "text-basic",
+        "parent": "8d5f6c",
+        "children": [],
+        "settings": {
+          "text": "This is a list item.",
+          "tag": "span",
+          "_cssGlobalClasses": [
+            "rekwpw"
+          ]
+        },
+        "label": "Text"
+      },
+      {
+        "id": "88c44b",
+        "name": "div",
+        "parent": "812091",
+        "children": [
+          "3cab2b",
+          "02c35a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wughmh"
+          ]
+        },
+        "label": "Badge Group Alpha"
+      },
+      {
+        "id": "02c35a",
+        "name": "div",
+        "parent": "88c44b",
+        "children": [
+          "7d378a",
+          "1b5c9c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cogkhk"
+          ],
+          "_attributes": [
+            {
+              "id": "kkadiw",
+              "name": "role",
+              "value": "img"
+            },
+            {
+              "id": "yvbrgb",
+              "name": "aria-label",
+              "value": "4.8 out of 5 stars on Yelp"
+            }
+          ]
+        },
+        "label": "Badge Alpha (CSS)"
+      },
+      {
+        "id": "7d378a",
+        "name": "div",
+        "parent": "02c35a",
+        "children": [
+          "8ede6d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "axkvcb"
+          ],
+          "_attributes": [
+            {
+              "id": "crxchn",
+              "name": "data-badge-value",
+              "value": "4.8"
+            }
+          ]
+        },
+        "label": "Icon Wrapper (Attr)"
+      },
+      {
+        "id": "8ede6d",
+        "name": "icon",
+        "parent": "7d378a",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "fill": {
+              "raw": "var(--icon-color)"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)"
+          },
+          "_cssGlobalClasses": [
+            "gsmrgo"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Icon"
+      },
+      {
+        "id": "1b5c9c",
+        "name": "text-basic",
+        "parent": "02c35a",
+        "children": [],
+        "settings": {
+          "text": "on Yelp",
+          "_cssGlobalClasses": [
+            "uxsnwg"
+          ],
+          "tag": "span"
+        },
+        "label": "Label"
+      },
+      {
+        "id": "3cab2b",
+        "name": "div",
+        "parent": "88c44b",
+        "children": [
+          "91c277",
+          "224092"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cogkhk"
+          ],
+          "_attributes": [
+            {
+              "id": "kkadiw",
+              "name": "role",
+              "value": "img"
+            },
+            {
+              "id": "yvbrgb",
+              "name": "aria-label",
+              "value": "4.8 out of 5 stars on Google"
+            }
+          ]
+        },
+        "label": "Badge Alpha (CSS)"
+      },
+      {
+        "id": "91c277",
+        "name": "div",
+        "parent": "3cab2b",
+        "children": [
+          "e4dc3c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "axkvcb"
+          ],
+          "_attributes": [
+            {
+              "id": "crxchn",
+              "name": "data-badge-value",
+              "value": "4.8"
+            }
+          ]
+        },
+        "label": "Icon Wrapper (Attr)"
+      },
+      {
+        "id": "e4dc3c",
+        "name": "icon",
+        "parent": "91c277",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "fill": {
+              "raw": "var(--icon-color)"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)"
+          },
+          "_cssGlobalClasses": [
+            "gsmrgo"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Icon"
+      },
+      {
+        "id": "224092",
+        "name": "text-basic",
+        "parent": "3cab2b",
+        "children": [],
+        "settings": {
+          "text": "on Google",
+          "_cssGlobalClasses": [
+            "uxsnwg"
+          ],
+          "tag": "span"
+        },
+        "label": "Label"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771255527,
+        "user_id": 1
+      },
+      {
+        "id": "woidrf",
+        "name": "fr-list-alpha",
+        "settings": {
+          "_rowGap": ".5em",
+          "_cssCustom": ".fr-list-alpha {\n  list-style-type: none;\n}",
+          "_display": "flex",
+          "_direction": "column",
+          "_padding": {
+            "left": "0"
+          },
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "qyyvjt",
+        "name": "fr-list-alpha__li",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "auto minmax(0, 1fr)",
+          "_alignItemsGrid": "flex-start",
+          "_gridGap": ".5em"
+        },
+        "modified": 1721154587,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "oimttb",
+        "name": "fr-list-alpha__icon",
+        "settings": [],
+        "modified": 1730996748,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "rekwpw",
+        "name": "fr-list-alpha__text",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "fvchph",
+        "name": "form--light",
+        "settings": [],
+        "_mappedId": "acss_import_form--light",
+        "modified": 1771255557,
+        "user_id": 1
+      },
+      {
+        "id": "flermp",
+        "name": "fr-contact-section-echo",
+        "settings": {
+          "_rowGap": "var(--fr-container-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "dzsoqv",
+        "name": "fr-contact-section-echo__inner",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_gridGap": "var(--grid-gap)",
+          "_alignItemsGrid": "center",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)"
+        },
+        "modified": 1728408882,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "mevyms",
+        "name": "fr-contact-section-echo__content-wrapper",
+        "settings": {
+          "_rowGap": "var(--fr-content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "genroh",
+        "name": "fr-form-alpha__wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "kxcamf",
+        "name": "fr-contact-section-echo__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "olzjai",
+        "name": "fr-contact-section-echo__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "mithno",
+        "name": "fr-contact-card-alpha__form",
+        "settings": {
+          "_width": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wughmh",
+        "name": "fr-badge-group-alpha",
+        "settings": {
+          "_direction": "row",
+          "_display": "flex",
+          "_rowGap": "var(--content-gap)",
+          "_columnGap": "var(--content-gap)",
+          "_direction:mobile_portrait": "column"
+        },
+        "_exists": false
+      },
+      {
+        "id": "cogkhk",
+        "name": "fr-badge-alpha",
+        "settings": {
+          "_display": "flex",
+          "_alignItems": "center",
+          "_columnGap": "0.5em",
+          "_cssCustom": ".fr-badge-alpha {\n\t--icon-size: 1.5em;\n  --icon-fill-color: transparent;\n  --icon-stroke-color: var(--text-dark);\n  --icon-fill-color-hover: transparent;  \n  --icon-stroke-color-hover: var(--text-dark);\n}\n\n/* \nAttribute value is set via data attribute\non the icon wrapper. The value may not render\ninside the editor, but will render on front end.\n*/\n\n.fr-badge-alpha__icon-wrapper::after {\n  content: attr(data-badge-value);\n  position: relative;\n  display: flex;\n  color: var(--text-dark);\n}",
+          "_typography": {
+            "line-height": "1"
+          },
+          "_width": "max-content"
+        },
+        "modified": 1754048894,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "axkvcb",
+        "name": "fr-badge-alpha__icon-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_alignItems": "center",
+          "_columnGap": ".25em",
+          "_background": {
+            "color": {
+              "raw": "var(--bg-ultra-light)"
+            }
+          },
+          "_padding": {
+            "top": ".5em",
+            "right": ".5em",
+            "bottom": ".5em",
+            "left": ".5em"
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_cssCustom": ".fr-badge-alpha__icon-wrapper :is(svg, i) {\n  height: var(--icon-size);\n  width: var(--icon-size);\n  fill: var(--icon-fill-color);\n  color: var(--icon-stroke-color);\n}\n\n.fr-badge-alpha__icon-wrapper :is(svg, i):hover {\n  fill: var(--icon-fill-color-hover);\n  color: var(--icon-stroke-color);  \n}\n\n/* Bricks Canvas fix */\n:where(.brx-draggable:empty) {\n  min-height: unset;\n  min-width: unset;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "gsmrgo",
+        "name": "fr-badge-alpha__icon",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "uxsnwg",
+        "name": "fr-badge-alpha__label",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

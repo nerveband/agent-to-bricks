@@ -1,0 +1,128 @@
+{
+  "idx": 161,
+  "title": "Logo Charlie",
+  "elementCount": 3,
+  "classCount": 3,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "bca26b",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "3dcbe7",
+          "493c13"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "aepzzm"
+          ],
+          "tag": "li"
+        },
+        "label": "Logo Charlie"
+      },
+      {
+        "id": "3dcbe7",
+        "name": "image",
+        "parent": "bca26b",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vdbxrd"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure"
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "493c13",
+        "name": "text-basic",
+        "parent": "bca26b",
+        "children": [],
+        "settings": {
+          "text": "Brand Name",
+          "_cssGlobalClasses": [
+            "bxonru"
+          ],
+          "tag": "span"
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "aepzzm",
+        "name": "fr-logo-charlie",
+        "settings": {
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_rowGap": "calc(var(--content-gap) / 2)",
+          "_padding": {
+            "top": "var(--space-s)",
+            "right": "var(--space-s)",
+            "bottom": "var(--space-s)",
+            "left": "var(--space-s)"
+          },
+          "_background": {
+            "color": {
+              "raw": "var(--white)"
+            }
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius-m)",
+              "right": "var(--radius-m)",
+              "bottom": "var(--radius-m)",
+              "left": "var(--radius-m)"
+            }
+          },
+          "_flexBasis": "0",
+          "_cssCustom": ".fr-logo-charlie {\n  --logo-width: 6em;\n  --logo-height: 2em;\n}",
+          "_flexShrink": "0",
+          "_justifyContent": "space-evenly"
+        },
+        "modified": 1740453847,
+        "user_id": 26,
+        "_exists": false
+      },
+      {
+        "id": "vdbxrd",
+        "name": "fr-logo-charlie__logo",
+        "settings": {
+          "_height": "var(--logo-height)",
+          "_width": "var(--logo-width)",
+          "_widthMax": "100%",
+          "_objectFit": "contain"
+        },
+        "modified": 1740453847,
+        "user_id": 26,
+        "_exists": false
+      },
+      {
+        "id": "bxonru",
+        "name": "fr-logo-charlie__label",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1"
+          },
+          "_widthMin": "10ch"
+        },
+        "modified": 1740453847,
+        "user_id": 26,
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

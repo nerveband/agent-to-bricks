@@ -1,0 +1,227 @@
+{
+  "idx": 182,
+  "title": "Location Card Alpha",
+  "elementCount": 7,
+  "classCount": 7,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "d0e2f0",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "47a2c6",
+          "18b384"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rkfyji"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Location Card Alpha"
+      },
+      {
+        "id": "47a2c6",
+        "name": "block",
+        "parent": "d0e2f0",
+        "children": [
+          "f7f88d",
+          "fd7bc1",
+          "b72127"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kzlnbf"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "f7f88d",
+        "name": "heading",
+        "parent": "47a2c6",
+        "children": [],
+        "settings": {
+          "text": "Location Name",
+          "_cssGlobalClasses": [
+            "rcyrzg"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "fd7bc1",
+        "name": "text-basic",
+        "parent": "47a2c6",
+        "children": [],
+        "settings": {
+          "text": "123 West Atlanta Street<br>Atlanta, GA 12345",
+          "tag": "address",
+          "_cssGlobalClasses": [
+            "srafzh"
+          ]
+        },
+        "label": "Address"
+      },
+      {
+        "id": "b72127",
+        "name": "text-basic",
+        "parent": "47a2c6",
+        "children": [],
+        "settings": {
+          "text": "(123) 456-7890",
+          "_cssGlobalClasses": [
+            "qlunxs"
+          ],
+          "link": {
+            "type": "external",
+            "url": "tel:123-456-7890"
+          }
+        },
+        "label": "Phone"
+      },
+      {
+        "id": "18b384",
+        "name": "block",
+        "parent": "d0e2f0",
+        "children": [
+          "6a4b7a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "henndz"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "6a4b7a",
+        "name": "image",
+        "parent": "18b384",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qwqobs"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "label": "Media"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "rkfyji",
+        "name": "fr-location-card-alpha",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-2-1)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_background": {
+            "color": {
+              "raw": "var(--white)",
+              "id": "kieovu",
+              "name": "Color #6"
+            }
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_overflow": "hidden",
+          "_gridTemplateColumns:mobile_portrait": "var(--grid-1)",
+          "_gridTemplateRows:mobile_portrait": "auto",
+          "_cssCustom": ".fr-location-card-alpha:hover,\n.fr-location-card-alpha.highlighted {\n  background-color: var(--neutral-trans-10);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "kzlnbf",
+        "name": "fr-location-card-alpha__body",
+        "settings": {
+          "_rowGap": ".45em",
+          "_padding": {
+            "top": "var(--fr-card-padding)",
+            "right": "var(--fr-card-padding)",
+            "bottom": "var(--fr-card-padding)",
+            "left": "var(--fr-card-padding)"
+          },
+          "_justifyContent": "center",
+          "_flexWrap": "nowrap",
+          "_direction": "column"
+        },
+        "modified": 1744202138,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "rcyrzg",
+        "name": "fr-location-card-alpha__heading",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--h4)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "srafzh",
+        "name": "fr-location-card-alpha__address",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-s)",
+            "font-style": "normal"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "qlunxs",
+        "name": "fr-location-card-alpha__phone",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-s)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "henndz",
+        "name": "fr-location-card-alpha__media-wrapper",
+        "settings": {
+          "_order:mobile_portrait": "-1",
+          "_cssCustom:mobile_portrait": ".fr-location-card-alpha__media-wrapper {\n\taspect-ratio: 20/10;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "qwqobs",
+        "name": "fr-location-card-alpha__media",
+        "settings": {
+          "_objectFit": "cover",
+          "_flexGrow": "1",
+          "_width": "100%",
+          "_height": "100%"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

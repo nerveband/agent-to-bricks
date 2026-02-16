@@ -1,0 +1,161 @@
+{
+  "idx": 333,
+  "title": "Process Card Charlie",
+  "elementCount": 6,
+  "classCount": 6,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "47d614",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "acda1e",
+          "a300fe"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "yotcnj"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Process Card Charlie"
+      },
+      {
+        "id": "acda1e",
+        "name": "block",
+        "parent": "47d614",
+        "children": [
+          "93c486",
+          "018d17"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wykrhu"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "93c486",
+        "name": "heading",
+        "parent": "acda1e",
+        "children": [],
+        "settings": {
+          "text": "Process heading",
+          "_cssGlobalClasses": [
+            "cgpovy"
+          ]
+        }
+      },
+      {
+        "id": "a300fe",
+        "name": "block",
+        "parent": "47d614",
+        "children": [
+          "61647e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "psodlo"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "61647e",
+        "name": "text-basic",
+        "parent": "a300fe",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "_cssGlobalClasses": [
+            "pywhgr"
+          ],
+          "tag": "p"
+        },
+        "label": "Text"
+      },
+      {
+        "id": "018d17",
+        "name": "div",
+        "parent": "acda1e",
+        "children": [],
+        "settings": {
+          "tag": "custom",
+          "customTag": "span",
+          "_cssGlobalClasses": [
+            "tvwbho"
+          ]
+        },
+        "label": "Step"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "yotcnj",
+        "name": "fr-process-card-charlie",
+        "settings": {
+          "_rowGap": "var(--fr-card-gap)",
+          "_cssCustom": ".fr-process-card-charlie:nth-child(-n + 9) .fr-process-card-charlie__step::before {\n  content: '0';\n}",
+          "_display": "flex",
+          "_direction": "column"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wykrhu",
+        "name": "fr-process-card-charlie__header",
+        "settings": {
+          "_rowGap": "var(--fr-card-gap)",
+          "_display": "flex",
+          "_direction": "column",
+          "_alignItems": "flex-start"
+        },
+        "_exists": false
+      },
+      {
+        "id": "cgpovy",
+        "name": "fr-process-card-charlie__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "psodlo",
+        "name": "fr-process-card-charlie__body",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column"
+        },
+        "_exists": false
+      },
+      {
+        "id": "pywhgr",
+        "name": "fr-process-card-charlie__text",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "tvwbho",
+        "name": "fr-process-card-charlie__step",
+        "settings": {
+          "_cssCustom": ".fr-process-card-charlie__step::after {\n  counter-increment: process-counter;\n  content: counter(process-counter);\n}\n\n.fr-process-card-charlie__step:where(.brx-draggable:empty) {\n  min-height: unset;\n  min-width: unset;\n}",
+          "_order": "-1",
+          "_display": "flex",
+          "_direction": "row",
+          "_rowGap": "0",
+          "_columnGap": "0"
+        },
+        "modified": 1718714564,
+        "user_id": 1,
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

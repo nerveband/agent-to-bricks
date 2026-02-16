@@ -1,0 +1,319 @@
+{
+  "idx": 256,
+  "title": "Taxonomy Section Alpha",
+  "elementCount": 8,
+  "classCount": 9,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "6c7580",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "0b6dd9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hxllsi"
+          ]
+        },
+        "label": "Taxonomy Section Alpha"
+      },
+      {
+        "id": "0b6dd9",
+        "name": "container",
+        "parent": "6c7580",
+        "children": [
+          "6e4272",
+          "9f90d8",
+          "4a038c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xiulzc"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "6e4272",
+        "name": "heading",
+        "parent": "0b6dd9",
+        "children": [],
+        "settings": {
+          "text": "Taxonomy heading",
+          "_cssGlobalClasses": [
+            "bmrfvb"
+          ]
+        }
+      },
+      {
+        "id": "773958",
+        "name": "block",
+        "parent": "9f90d8",
+        "children": [
+          "15d080",
+          "2742a6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "yhmtnv"
+          ],
+          "tag": "article",
+          "hasLoop": true,
+          "query": {
+            "objectType": "term",
+            "taxonomy": [
+              "product_cat"
+            ]
+          }
+        },
+        "label": "Taxonomy Card"
+      },
+      {
+        "id": "15d080",
+        "name": "heading",
+        "parent": "773958",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "acss_import_clickable-parent",
+            "uhtwya"
+          ],
+          "link": {
+            "type": "meta",
+            "useDynamicData": "{term_url}"
+          },
+          "text": "{term_name}"
+        }
+      },
+      {
+        "id": "2742a6",
+        "name": "image",
+        "parent": "773958",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "esqjyv"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "useDynamicData": "{woo_product_cat_image}",
+            "size": "large"
+          }
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "4a038c",
+        "name": "fr-slider-controls",
+        "parent": "0b6dd9",
+        "children": [],
+        "settings": {
+          "type": "nextPrev",
+          "progressHeight": ".5rem",
+          "progressWidth": "100%",
+          "arrows": true,
+          "arrowsGap": "var(--space-l)",
+          "prevArrow": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)",
+            "fill": {
+              "raw": "var(--icon-color)"
+            }
+          },
+          "prevArrowAriaLabel": "Previous slide",
+          "nextArrow": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)",
+            "fill": {
+              "raw": "var(--icon-color)"
+            }
+          },
+          "nextArrowAriaLabel": "Next slide",
+          "_cssGlobalClasses": [
+            "iwpchf"
+          ],
+          "syncId": "fr-taxonomy-slider"
+        },
+        "label": "Taxonomy Arrows (CSS)"
+      },
+      {
+        "id": "9f90d8",
+        "name": "fr-slider",
+        "parent": "0b6dd9",
+        "children": [
+          "773958"
+        ],
+        "settings": {
+          "height": "50vh",
+          "playButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-play"
+          },
+          "pauseButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-pause"
+          },
+          "arrowSize": "var(--space-l)",
+          "prevArrow": {
+            "library": "themify",
+            "icon": "ti-arrow-left"
+          },
+          "prevArrowTop": "50%",
+          "prevArrowLeft": "var(--space-xs)",
+          "nextArrow": {
+            "library": "themify",
+            "icon": "ti-arrow-right"
+          },
+          "nextArrowTop": "50%",
+          "nextArrowRight": "var(--space-xs)",
+          "sliderTag": "div",
+          "listTag": "ul",
+          "ariaCarousel": "Carousel",
+          "_cssGlobalClasses": [
+            "lwswwy"
+          ],
+          "type": "loop",
+          "perPage": "6",
+          "gap": "var(--grid-gap)",
+          "isSync": true,
+          "syncId": "fr-taxonomy-slider",
+          "fixedHeight": "auto",
+          "perPage:mobile_portrait": "2",
+          "perPage:mobile_landscape": "3",
+          "perPage:tablet_portrait": "4"
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "acss_import_clickable-parent",
+        "name": "clickable-parent",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "hxllsi",
+        "name": "fr-taxonomy-section-alpha",
+        "settings": {
+          "_overflow": "hidden"
+        },
+        "_exists": false
+      },
+      {
+        "id": "xiulzc",
+        "name": "fr-taxonomy-section-alpha__inner",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_position": "relative"
+        },
+        "_exists": false
+      },
+      {
+        "id": "bmrfvb",
+        "name": "fr-taxonomy-section-alpha__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "yhmtnv",
+        "name": "fr-taxonomy-card-alpha",
+        "settings": {
+          "_rowGap": "var(--fr-card-gap)",
+          "_position": "relative",
+          "_display": "flex",
+          "_direction": "column",
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "uhtwya",
+        "name": "fr-taxonomy-card-alpha__heading",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--h4)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "esqjyv",
+        "name": "fr-taxonomy-card-alpha__image",
+        "settings": {
+          "_border": {
+            "radius": {
+              "top": "50%",
+              "right": "50%",
+              "bottom": "50%",
+              "left": "50%"
+            }
+          },
+          "_order": "-1",
+          "_overflow": "hidden",
+          "_objectFit": "cover",
+          "_width": "100%",
+          "_position": "static",
+          "_aspectRatio": "1/1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "iwpchf",
+        "name": "fr-taxonomy-slider-alpha__controls",
+        "settings": {
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_flexDirection": "row",
+          "_widthMax": "max-content",
+          "arrowSize": "var(--text-xl)",
+          "arrowBackground": {
+            "raw": "transparent"
+          },
+          "arrowsGap": "var(--space-xl)",
+          "_cssCustom": ".fr-taxonomy-slider-alpha__controls {\n\t--icon-size: 1.55em;\n  --icon-color: var(--neutral);\n}",
+          "_position:mobile_portrait": "static",
+          "_display:mobile_portrait": "none"
+        },
+        "_exists": false
+      },
+      {
+        "id": "lwswwy",
+        "name": "fr-taxonomy-slider-alpha",
+        "settings": {
+          "speed": "300",
+          "_cssCustom:mobile_portrait": ".fr-taxonomy-slider-alpha {\n\t--gradient-bg-color: var(--white); /* Color of fade */\n  --gradient-width: 10%; /* Amount of fade */\n  --fade-display: flex; /* Flex or none */\n  \n  inline-size: 100vw !important;\n  max-inline-size: 100vw !important;\n  margin-inline: calc(-50vw + 50%) !important;\n  align-self: flex-start;\n}\n\n.fr-taxonomy-slider-alpha .fr-slider__track {\n\tpadding-inline-end: 25%!important;\n}\n\n.fr-taxonomy-slider-alpha::after {\n\tcontent: '';\n  height: 100%;\n  width: var(--gradient-width);\n  display: var(--fade-display);\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  z-index: 1;\n  background: linear-gradient(90deg, transparent, var(--gradient-bg-color) 100%);\n}",
+          "_padding:mobile_portrait": {
+            "left": "var(--gutter)"
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

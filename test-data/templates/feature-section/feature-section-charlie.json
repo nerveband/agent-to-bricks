@@ -1,0 +1,643 @@
+{
+  "idx": 460,
+  "title": "Feature Section Charlie",
+  "elementCount": 30,
+  "classCount": 14,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "4f2d1b",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "438437",
+          "7c24e9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gkhnmf"
+          ]
+        },
+        "label": "Feature Section Charlie"
+      },
+      {
+        "id": "438437",
+        "name": "container",
+        "parent": "4f2d1b",
+        "children": [
+          "a3e98f",
+          "e02e00",
+          "9f9c8a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xgmzei"
+          ]
+        },
+        "label": "Intro Alpha"
+      },
+      {
+        "id": "e02e00",
+        "name": "text-basic",
+        "parent": "438437",
+        "children": [],
+        "settings": {
+          "text": "Accent heading",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "blgfqd"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "a3e98f",
+        "name": "heading",
+        "parent": "438437",
+        "children": [],
+        "settings": {
+          "text": "Your heading",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "tkbujj"
+          ]
+        }
+      },
+      {
+        "id": "9f9c8a",
+        "name": "text-basic",
+        "parent": "438437",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "dizast"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "7c24e9",
+        "name": "container",
+        "parent": "4f2d1b",
+        "children": [
+          "e34814",
+          "4eb21a",
+          "97ef95",
+          "1ffa41"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sangpf"
+          ],
+          "tag": "ul"
+        },
+        "label": "Feature Grid Charlie"
+      },
+      {
+        "id": "e34814",
+        "name": "div",
+        "parent": "7c24e9",
+        "children": [
+          "d072ee",
+          "57439c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eavwud"
+          ],
+          "tag": "li"
+        },
+        "label": "Feature Card Charlie"
+      },
+      {
+        "id": "d072ee",
+        "name": "div",
+        "parent": "e34814",
+        "children": [
+          "41ee4f",
+          "d6347b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dkvffe"
+          ],
+          "_display": "flex"
+        },
+        "label": "Body"
+      },
+      {
+        "id": "41ee4f",
+        "name": "heading",
+        "parent": "d072ee",
+        "children": [],
+        "settings": {
+          "text": "Awesome Feature",
+          "_cssGlobalClasses": [
+            "glhqrm"
+          ],
+          "tag": "h3"
+        }
+      },
+      {
+        "id": "d6347b",
+        "name": "text-basic",
+        "parent": "d072ee",
+        "children": [],
+        "settings": {
+          "text": "Short yet extremely creative and catchy description of the feature.",
+          "tag": "p",
+          "_attributes": [],
+          "_cssGlobalClasses": [
+            "jrtbxt"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "57439c",
+        "name": "div",
+        "parent": "e34814",
+        "children": [
+          "55b7c5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zmiyrz"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "55b7c5",
+        "name": "image",
+        "parent": "57439c",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "caption": "none",
+          "_cssGlobalClasses": [
+            "qnicyz"
+          ],
+          "tag": "figure"
+        },
+        "themeStyles": [],
+        "label": "Media"
+      },
+      {
+        "id": "1ffa41",
+        "name": "div",
+        "parent": "7c24e9",
+        "children": [
+          "a902d0",
+          "a55fef"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eavwud"
+          ],
+          "tag": "li"
+        },
+        "label": "Feature Card Charlie"
+      },
+      {
+        "id": "a902d0",
+        "name": "div",
+        "parent": "1ffa41",
+        "children": [
+          "223ea5",
+          "3b373f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dkvffe"
+          ],
+          "_display": "flex"
+        },
+        "label": "Body"
+      },
+      {
+        "id": "a55fef",
+        "name": "div",
+        "parent": "1ffa41",
+        "children": [
+          "fe15e5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zmiyrz"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "223ea5",
+        "name": "heading",
+        "parent": "a902d0",
+        "children": [],
+        "settings": {
+          "text": "Awesome Feature",
+          "_cssGlobalClasses": [
+            "glhqrm"
+          ],
+          "tag": "h3"
+        }
+      },
+      {
+        "id": "3b373f",
+        "name": "text-basic",
+        "parent": "a902d0",
+        "children": [],
+        "settings": {
+          "text": "Short yet extremely creative and catchy description of the feature.",
+          "tag": "p",
+          "_attributes": [],
+          "_cssGlobalClasses": [
+            "jrtbxt"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "fe15e5",
+        "name": "image",
+        "parent": "a55fef",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "caption": "none",
+          "_cssGlobalClasses": [
+            "qnicyz"
+          ],
+          "tag": "figure"
+        },
+        "themeStyles": [],
+        "label": "Media"
+      },
+      {
+        "id": "97ef95",
+        "name": "div",
+        "parent": "7c24e9",
+        "children": [
+          "59cc4c",
+          "6be1de"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eavwud"
+          ],
+          "tag": "li"
+        },
+        "label": "Feature Card Charlie"
+      },
+      {
+        "id": "59cc4c",
+        "name": "div",
+        "parent": "97ef95",
+        "children": [
+          "ef21eb",
+          "1d0490"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dkvffe"
+          ],
+          "_display": "flex"
+        },
+        "label": "Body"
+      },
+      {
+        "id": "6be1de",
+        "name": "div",
+        "parent": "97ef95",
+        "children": [
+          "102224"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zmiyrz"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "ef21eb",
+        "name": "heading",
+        "parent": "59cc4c",
+        "children": [],
+        "settings": {
+          "text": "Awesome Feature",
+          "_cssGlobalClasses": [
+            "glhqrm"
+          ],
+          "tag": "h3"
+        }
+      },
+      {
+        "id": "1d0490",
+        "name": "text-basic",
+        "parent": "59cc4c",
+        "children": [],
+        "settings": {
+          "text": "Short yet extremely creative and catchy description of the feature.",
+          "tag": "p",
+          "_attributes": [],
+          "_cssGlobalClasses": [
+            "jrtbxt"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "102224",
+        "name": "image",
+        "parent": "6be1de",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "caption": "none",
+          "_cssGlobalClasses": [
+            "qnicyz"
+          ],
+          "tag": "figure"
+        },
+        "themeStyles": [],
+        "label": "Media"
+      },
+      {
+        "id": "4eb21a",
+        "name": "div",
+        "parent": "7c24e9",
+        "children": [
+          "ef9991",
+          "7f9378"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eavwud"
+          ],
+          "tag": "li"
+        },
+        "label": "Feature Card Charlie"
+      },
+      {
+        "id": "ef9991",
+        "name": "div",
+        "parent": "4eb21a",
+        "children": [
+          "db624d",
+          "833600"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dkvffe"
+          ],
+          "_display": "flex"
+        },
+        "label": "Body"
+      },
+      {
+        "id": "7f9378",
+        "name": "div",
+        "parent": "4eb21a",
+        "children": [
+          "21b03b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zmiyrz"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "db624d",
+        "name": "heading",
+        "parent": "ef9991",
+        "children": [],
+        "settings": {
+          "text": "Awesome Feature",
+          "_cssGlobalClasses": [
+            "glhqrm"
+          ],
+          "tag": "h3"
+        }
+      },
+      {
+        "id": "833600",
+        "name": "text-basic",
+        "parent": "ef9991",
+        "children": [],
+        "settings": {
+          "text": "Short yet extremely creative and catchy description of the feature.",
+          "tag": "p",
+          "_attributes": [],
+          "_cssGlobalClasses": [
+            "jrtbxt"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "21b03b",
+        "name": "image",
+        "parent": "7f9378",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "caption": "none",
+          "_cssGlobalClasses": [
+            "qnicyz"
+          ],
+          "tag": "figure"
+        },
+        "themeStyles": [],
+        "label": "Media"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771256438,
+        "user_id": 1
+      },
+      {
+        "id": "xgmzei",
+        "name": "fr-intro-alpha",
+        "settings": {
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_alignItems:mobile_landscape": "flex-start",
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "blgfqd",
+        "name": "fr-intro-alpha__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "tkbujj",
+        "name": "fr-intro-alpha__heading",
+        "settings": {
+          "_typography:mobile_landscape": {
+            "font-size": "var(--h1)"
+          }
+        },
+        "modified": 1734899474,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "dizast",
+        "name": "fr-intro-alpha__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "eavwud",
+        "name": "fr-feature-card-charlie",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "dkvffe",
+        "name": "fr-feature-card-charlie__body",
+        "settings": {
+          "_width": "100%",
+          "_rowGap": "var(--fr-card-gap)",
+          "_display": "flex",
+          "_direction": "column"
+        },
+        "_exists": false
+      },
+      {
+        "id": "glhqrm",
+        "name": "fr-feature-card-charlie__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "jrtbxt",
+        "name": "fr-feature-card-charlie__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "qnicyz",
+        "name": "fr-feature-card-charlie__media",
+        "settings": {
+          "_objectFit": "cover",
+          "_width": "100%",
+          "_aspectRatio": "16/9",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "zmiyrz",
+        "name": "fr-feature-card-charlie__media-wrapper",
+        "settings": {
+          "_order": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "gkhnmf",
+        "name": "fr-feature-section-charlie",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "sangpf",
+        "name": "fr-feature-grid-charlie",
+        "settings": {
+          "_display": "grid",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns": "var(--grid-4)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_alignItemsGrid": "stretch",
+          "_padding": {
+            "left": "0"
+          },
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-2)",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)",
+          "_cssCustom": ".fr-feature-grid-charlie {\n\tlist-style: none;\n}"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

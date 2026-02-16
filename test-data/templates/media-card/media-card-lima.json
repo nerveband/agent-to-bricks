@@ -1,0 +1,200 @@
+{
+  "idx": 290,
+  "title": "Media Card Lima",
+  "elementCount": 6,
+  "classCount": 7,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "dfeaa9",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "188560",
+          "88883c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pmxspl"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Media Card Lima <CSS>"
+      },
+      {
+        "id": "188560",
+        "name": "block",
+        "parent": "dfeaa9",
+        "children": [
+          "c614c7",
+          "b1dffb"
+        ],
+        "settings": {
+          "_direction": "row",
+          "_display": "flex",
+          "_flexWrap": "nowrap",
+          "_alignSelf": "center",
+          "_justifyContent": "space-between",
+          "_columnGap": "1em",
+          "_rowGap": "1em",
+          "_cssGlobalClasses": [
+            "qjnimt"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "c614c7",
+        "name": "heading",
+        "parent": "188560",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder headline, we will replace it once your website copy is finalized.",
+          "_cssGlobalClasses": [
+            "acss_import_clickable-parent",
+            "mxlfar"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "b1dffb",
+        "name": "icon",
+        "parent": "188560",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "xxnpgb"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Play Icon"
+      },
+      {
+        "id": "88883c",
+        "name": "block",
+        "parent": "dfeaa9",
+        "children": [
+          "152037"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeeahh"
+          ]
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "152037",
+        "name": "text-basic",
+        "parent": "88883c",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rmghvh"
+          ],
+          "tag": "span",
+          "customTag": "span",
+          "text": "1"
+        },
+        "label": "Episode"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "acss_import_clickable-parent",
+        "name": "clickable-parent",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "pmxspl",
+        "name": "fr-media-card-lima",
+        "settings": {
+          "_cssCustom": ".fr-media-card-lima {\n\t--icon-size: 2em;\n  --icon-fill-color: transparent;\n  --icon-stroke-color: var(--text-dark-muted);\n  --icon-fill-color-hover: transparent;  \n  --icon-stroke-color-hover: var(--text-dark);\n}\n\n/* Separator Styling */\n.fr-media-card-lima:not(:first-child)::before {\n  content: '';\n  position: absolute;\n  width: 100%;\n  inset-block-start: calc(var(--media-card-spacing) / 2 * -1);\n  inset-inline-start: 0;\n  height: 1px;\n  background-color: var(--neutral-light);\n}\n\n/* Hover Effect */\n.fr-media-card-lima:hover .fr-media-card-lima__heading  {\n  color: var(--primary-hover);\n}\n.fr-media-card-lima:hover .fr-media-card-lima__header {\n  margin-inline-start: -.5em;\n}",
+          "_position": "relative",
+          "_display": "grid",
+          "_gridTemplateColumns": "minmax(0,1fr) minmax(0,10fr);",
+          "_alignItemsGrid": "center",
+          "_gridGap": "var(--space-xs)",
+          "_gridTemplateRows": "var(--grid-1)"
+        },
+        "modified": 1748386080,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "qjnimt",
+        "name": "fr-media-card-lima__header",
+        "settings": {
+          "_direction": "row",
+          "_display": "flex",
+          "_flexWrap": "nowrap",
+          "_alignSelf": "center",
+          "_justifyContent": "space-between",
+          "_columnGap": "1em",
+          "_rowGap": "1em",
+          "_alignItems": "center",
+          "_cssTransition": "margin 0.3s ease-in-out",
+          "_cssCustom": ".fr-media-card-lima__header :is(svg, i) {\n  min-height: var(--icon-size);\n  min-width: var(--icon-size);\n  fill: var(--icon-fill-color);\n  color: var(--icon-stroke-color);\n  transition: all var(--transition-duration) var(--transition-timing) var(--transition-delay)\n}\n\n.fr-media-card-lima__header:hover :is(svg, i) {\n  fill: var(--icon-fill-color-hover);\n  color: var(--icon-stroke-color-hover);  \n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "mxlfar",
+        "name": "fr-media-card-lima__heading",
+        "settings": {
+          "_typography:mobile_portrait": {
+            "font-size": "var(--h4)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "xxnpgb",
+        "name": "fr-media-card-lima__icon",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "xeeahh",
+        "name": "fr-media-card-lima__footer",
+        "settings": {
+          "_order": "-1",
+          "_justifyContent": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "rmghvh",
+        "name": "fr-media-card-lima__episode",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--primary)"
+            }
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

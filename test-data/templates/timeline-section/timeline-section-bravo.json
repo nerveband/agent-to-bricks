@@ -1,0 +1,1068 @@
+{
+  "idx": 111,
+  "title": "Timeline Section Bravo",
+  "elementCount": 50,
+  "classCount": 18,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "433422",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "7ecaa0",
+          "ee123c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "idfqzk"
+          ]
+        },
+        "label": "Timeline Section Bravo"
+      },
+      {
+        "id": "ee123c",
+        "name": "container",
+        "parent": "433422",
+        "children": [
+          "cc0812",
+          "cf4acf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gxnhuv"
+          ],
+          "_direction": "column"
+        },
+        "label": "Timeline Bravo (CSS)"
+      },
+      {
+        "id": "cc0812",
+        "name": "fr-slider",
+        "parent": "ee123c",
+        "children": [
+          "c8ee3a",
+          "08db21",
+          "ba19bf",
+          "df84b4",
+          "58aca3",
+          "88b05b"
+        ],
+        "settings": {
+          "height": "50vh",
+          "playButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-play"
+          },
+          "pauseButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-pause"
+          },
+          "arrowSize": "var(--space-l)",
+          "prevArrow": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "15",
+            "width": "15"
+          },
+          "prevArrowTop": "50%",
+          "prevArrowLeft": "var(--space-xs)",
+          "nextArrowTop": "50%",
+          "nextArrowRight": "var(--space-xs)",
+          "sliderTag": "div",
+          "listTag": "ol",
+          "ariaCarousel": "Carousel",
+          "fixedHeight": "auto",
+          "_cssGlobalClasses": [
+            "slbjqb"
+          ],
+          "gap": "var(--grid-gap)",
+          "type": "loop",
+          "focus": "center",
+          "nextArrow": {
+            "library": "themify",
+            "icon": "ti-arrow-right"
+          },
+          "drag": "false",
+          "isSync": true,
+          "syncId": "fr-timeline-bravo",
+          "perPage:tablet_portrait": "3",
+          "perPage": "5",
+          "perPage:mobile_landscape": "1"
+        }
+      },
+      {
+        "id": "cf4acf",
+        "name": "fr-slider-controls",
+        "parent": "ee123c",
+        "children": [],
+        "settings": {
+          "type": "nextPrev",
+          "progressHeight": ".5rem",
+          "progressWidth": "100%",
+          "arrows": true,
+          "prevArrow": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "fill": {
+              "raw": "var(--action)"
+            }
+          },
+          "prevArrowAriaLabel": "Previous slide",
+          "nextArrow": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "fill": {
+              "raw": "var(--action)"
+            }
+          },
+          "nextArrowAriaLabel": "Next slide",
+          "_cssGlobalClasses": [
+            "fvqril"
+          ],
+          "syncId": "fr-timeline-bravo"
+        }
+      },
+      {
+        "id": "c8ee3a",
+        "name": "block",
+        "parent": "cc0812",
+        "children": [
+          "814d4d",
+          "f021f3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eu2kdc"
+          ],
+          "tag": "li"
+        },
+        "label": "Timeline Card"
+      },
+      {
+        "id": "814d4d",
+        "name": "block",
+        "parent": "c8ee3a",
+        "children": [
+          "4c1fc7",
+          "a0c174",
+          "399d4b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "y5096o"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "f021f3",
+        "name": "block",
+        "parent": "c8ee3a",
+        "children": [
+          "8b2dee"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "41y54k"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "4c1fc7",
+        "name": "heading",
+        "parent": "814d4d",
+        "children": [],
+        "settings": {
+          "text": "Placeholder headline",
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "mge3t9"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "a0c174",
+        "name": "text-basic",
+        "parent": "814d4d",
+        "children": [],
+        "settings": {
+          "text": "Here goes your text ... Select any part of your text to access the formatting toolbar.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "ao4enh"
+          ]
+        },
+        "label": "Description"
+      },
+      {
+        "id": "399d4b",
+        "name": "text-basic",
+        "parent": "814d4d",
+        "children": [],
+        "settings": {
+          "text": "2007",
+          "tag": "custom",
+          "customTag": "time",
+          "_cssGlobalClasses": [
+            "3qye36"
+          ]
+        },
+        "label": "Date"
+      },
+      {
+        "id": "8b2dee",
+        "name": "image",
+        "parent": "f021f3",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zkj6ef"
+          ],
+          "caption": "none",
+          "tag": "figure",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "loading": "eager"
+        },
+        "label": "Image"
+      },
+      {
+        "id": "88b05b",
+        "name": "block",
+        "parent": "cc0812",
+        "children": [
+          "1546ef",
+          "8c16a9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eu2kdc"
+          ],
+          "tag": "li"
+        },
+        "label": "Timeline Card"
+      },
+      {
+        "id": "1546ef",
+        "name": "block",
+        "parent": "88b05b",
+        "children": [
+          "5f6a6b",
+          "fee3fe",
+          "4ca023"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "y5096o"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "8c16a9",
+        "name": "block",
+        "parent": "88b05b",
+        "children": [
+          "bf5858"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "41y54k"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "5f6a6b",
+        "name": "heading",
+        "parent": "1546ef",
+        "children": [],
+        "settings": {
+          "text": "Placeholder headline",
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "mge3t9"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "fee3fe",
+        "name": "text-basic",
+        "parent": "1546ef",
+        "children": [],
+        "settings": {
+          "text": "Here goes your text ... Select any part of your text to access the formatting toolbar.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "ao4enh"
+          ]
+        },
+        "label": "Description"
+      },
+      {
+        "id": "4ca023",
+        "name": "text-basic",
+        "parent": "1546ef",
+        "children": [],
+        "settings": {
+          "text": "2006",
+          "tag": "custom",
+          "customTag": "time",
+          "_cssGlobalClasses": [
+            "3qye36"
+          ]
+        },
+        "label": "Date"
+      },
+      {
+        "id": "58aca3",
+        "name": "block",
+        "parent": "cc0812",
+        "children": [
+          "f0e3c4",
+          "3e783d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eu2kdc"
+          ],
+          "tag": "li"
+        },
+        "label": "Timeline Card"
+      },
+      {
+        "id": "f0e3c4",
+        "name": "block",
+        "parent": "58aca3",
+        "children": [
+          "3aa8ed",
+          "10d0f9",
+          "f827ee"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "y5096o"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "3e783d",
+        "name": "block",
+        "parent": "58aca3",
+        "children": [
+          "612196"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "41y54k"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "3aa8ed",
+        "name": "heading",
+        "parent": "f0e3c4",
+        "children": [],
+        "settings": {
+          "text": "Placeholder headline",
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "mge3t9"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "10d0f9",
+        "name": "text-basic",
+        "parent": "f0e3c4",
+        "children": [],
+        "settings": {
+          "text": "Here goes your text ... Select any part of your text to access the formatting toolbar.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "ao4enh"
+          ]
+        },
+        "label": "Description"
+      },
+      {
+        "id": "f827ee",
+        "name": "text-basic",
+        "parent": "f0e3c4",
+        "children": [],
+        "settings": {
+          "text": "2005",
+          "tag": "custom",
+          "customTag": "time",
+          "_cssGlobalClasses": [
+            "3qye36"
+          ]
+        },
+        "label": "Date"
+      },
+      {
+        "id": "df84b4",
+        "name": "block",
+        "parent": "cc0812",
+        "children": [
+          "5b0fad",
+          "dbd65b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eu2kdc"
+          ],
+          "tag": "li"
+        },
+        "label": "Timeline Card"
+      },
+      {
+        "id": "5b0fad",
+        "name": "block",
+        "parent": "df84b4",
+        "children": [
+          "b00f44",
+          "7f62d2",
+          "fa44fc"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "y5096o"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "dbd65b",
+        "name": "block",
+        "parent": "df84b4",
+        "children": [
+          "56bb56"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "41y54k"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "b00f44",
+        "name": "heading",
+        "parent": "5b0fad",
+        "children": [],
+        "settings": {
+          "text": "Placeholder headline",
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "mge3t9"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "7f62d2",
+        "name": "text-basic",
+        "parent": "5b0fad",
+        "children": [],
+        "settings": {
+          "text": "Here goes your text ... Select any part of your text to access the formatting toolbar.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "ao4enh"
+          ]
+        },
+        "label": "Description"
+      },
+      {
+        "id": "fa44fc",
+        "name": "text-basic",
+        "parent": "5b0fad",
+        "children": [],
+        "settings": {
+          "text": "2004",
+          "tag": "custom",
+          "customTag": "time",
+          "_cssGlobalClasses": [
+            "3qye36"
+          ]
+        },
+        "label": "Date"
+      },
+      {
+        "id": "56bb56",
+        "name": "image",
+        "parent": "dbd65b",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "_cssGlobalClasses": [
+            "zkj6ef"
+          ],
+          "caption": "none",
+          "tag": "figure",
+          "loading": "eager"
+        },
+        "label": "Image"
+      },
+      {
+        "id": "ba19bf",
+        "name": "block",
+        "parent": "cc0812",
+        "children": [
+          "57f26f",
+          "55955f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eu2kdc"
+          ],
+          "tag": "li"
+        },
+        "label": "Timeline Card"
+      },
+      {
+        "id": "57f26f",
+        "name": "block",
+        "parent": "ba19bf",
+        "children": [
+          "9f024b",
+          "8f11a6",
+          "f58ddf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "y5096o"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "55955f",
+        "name": "block",
+        "parent": "ba19bf",
+        "children": [
+          "8a3c39"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "41y54k"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "9f024b",
+        "name": "heading",
+        "parent": "57f26f",
+        "children": [],
+        "settings": {
+          "text": "Placeholder headline",
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "mge3t9"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "8f11a6",
+        "name": "text-basic",
+        "parent": "57f26f",
+        "children": [],
+        "settings": {
+          "text": "Here goes your text ... Select any part of your text to access the formatting toolbar.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "ao4enh"
+          ]
+        },
+        "label": "Description"
+      },
+      {
+        "id": "f58ddf",
+        "name": "text-basic",
+        "parent": "57f26f",
+        "children": [],
+        "settings": {
+          "text": "2009",
+          "tag": "custom",
+          "customTag": "time",
+          "_cssGlobalClasses": [
+            "3qye36"
+          ]
+        },
+        "label": "Date"
+      },
+      {
+        "id": "612196",
+        "name": "image",
+        "parent": "3e783d",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zkj6ef"
+          ],
+          "caption": "none",
+          "tag": "figure",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "loading": "eager"
+        },
+        "label": "Image"
+      },
+      {
+        "id": "08db21",
+        "name": "block",
+        "parent": "cc0812",
+        "children": [
+          "84c7ee",
+          "29e34b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eu2kdc"
+          ],
+          "tag": "li"
+        },
+        "label": "Timeline Card"
+      },
+      {
+        "id": "84c7ee",
+        "name": "block",
+        "parent": "08db21",
+        "children": [
+          "00f83a",
+          "4c64f4",
+          "606783"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "y5096o"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "29e34b",
+        "name": "block",
+        "parent": "08db21",
+        "children": [
+          "12e020"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "41y54k"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "00f83a",
+        "name": "heading",
+        "parent": "84c7ee",
+        "children": [],
+        "settings": {
+          "text": "Placeholder headline",
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "mge3t9"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "4c64f4",
+        "name": "text-basic",
+        "parent": "84c7ee",
+        "children": [],
+        "settings": {
+          "text": "Here goes your text ... Select any part of your text to access the formatting toolbar.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "ao4enh"
+          ]
+        },
+        "label": "Description"
+      },
+      {
+        "id": "606783",
+        "name": "text-basic",
+        "parent": "84c7ee",
+        "children": [],
+        "settings": {
+          "text": "2008",
+          "tag": "custom",
+          "customTag": "time",
+          "_cssGlobalClasses": [
+            "3qye36"
+          ]
+        },
+        "label": "Date"
+      },
+      {
+        "id": "12e020",
+        "name": "image",
+        "parent": "29e34b",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zkj6ef"
+          ],
+          "caption": "none",
+          "tag": "figure",
+          "loading": "eager",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          }
+        },
+        "label": "Image"
+      },
+      {
+        "id": "7ecaa0",
+        "name": "container",
+        "parent": "433422",
+        "children": [
+          "24a6f5",
+          "78e070",
+          "8cd76e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dliabf",
+            "xgmzei"
+          ]
+        },
+        "label": "Intro Alpha"
+      },
+      {
+        "id": "78e070",
+        "name": "text-basic",
+        "parent": "7ecaa0",
+        "children": [],
+        "settings": {
+          "text": "Accent heading",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "blgfqd"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "24a6f5",
+        "name": "heading",
+        "parent": "7ecaa0",
+        "children": [],
+        "settings": {
+          "text": "Your heading",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "tkbujj"
+          ]
+        }
+      },
+      {
+        "id": "8cd76e",
+        "name": "text-basic",
+        "parent": "7ecaa0",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "dizast"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "8a3c39",
+        "name": "image",
+        "parent": "55955f",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zkj6ef"
+          ],
+          "caption": "none",
+          "tag": "figure",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "loading": "eager"
+        },
+        "label": "Image"
+      },
+      {
+        "id": "bf5858",
+        "name": "image",
+        "parent": "8c16a9",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zkj6ef"
+          ],
+          "caption": "none",
+          "tag": "figure",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "loading": "eager"
+        },
+        "label": "Image"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771253290,
+        "user_id": 1
+      },
+      {
+        "id": "dliabf",
+        "name": "fr-intro",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "xgmzei",
+        "name": "fr-intro-alpha",
+        "settings": {
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_alignItems:mobile_landscape": "flex-start",
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "blgfqd",
+        "name": "fr-intro-alpha__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "tkbujj",
+        "name": "fr-intro-alpha__heading",
+        "settings": {
+          "_typography:mobile_landscape": {
+            "font-size": "var(--h1)"
+          }
+        },
+        "modified": 1734899474,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "dizast",
+        "name": "fr-intro-alpha__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "gxnhuv",
+        "name": "fr-timeline-bravo",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_position": "relative",
+          "_cssCustom": ".fr-timeline-bravo {\n\t--channel-height: 80px;\n  --channel-line-color: var(--neutral-light);\n  --channel-indicator-size: 20px;\n  --channel-indicator-color: var(--primary);\n}\n\n.fr-timeline-bravo__slider::before {\n\tcontent: '';\n  width: 100vw;\n  height: var(--channel-line-height, 2px);\n  background-color: var(--channel-line-color, var(--neutral-light));\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  translate: -50% -50%;\n}\n\n.fr-timeline-bravo__content-wrapper::after {\n  content: '';\n  width: var(--channel-indicator-size, 20px);\n  height: var(--channel-indicator-size, 20px);\n  background-color: var(--channel-indicator-color, var(--primary));\n  border-radius: 50vw;\n  position: absolute;\n  inset-block-start: 50%;\n  translate: 0 -50%;\n  z-index: 1;\n}\n\n.fr-timeline-bravo__timeline-card:nth-child(even) .fr-timeline-bravo__media-wrapper,\n.fr-timeline-bravo__timeline-card:nth-child(even) .fr-timeline-bravo__date {\n\torder: -1;\n}",
+          "_direction": "row",
+          "_columnGap": "var(--grid-gap)",
+          "_padding": {
+            "left": "0"
+          },
+          "_width": "calc(100% - 200px)",
+          "_width:tablet_portrait": "var(--content-width)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "slbjqb",
+        "name": "fr-timeline-bravo__slider",
+        "settings": {
+          "speed": "300",
+          "_cssCustom:mobile_landscape": "/* Padding left/right */\n.fr-timeline-bravo__slider .fr-slider__track {\n  padding-inline: 20%!important;\n}\n/* Breakout */\n.fr-timeline-bravo__slider {\n  inline-size: 100vw !important;\n  max-inline-size: 100vw !important;\n  margin-inline: calc(-50vw + 50%) !important;\n  align-self: flex-start;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "eu2kdc",
+        "name": "fr-timeline-bravo__timeline-card",
+        "settings": {
+          "_alignItems": "center",
+          "_rowGap": "var(--channel-height)",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_display": "grid",
+          "_gridTemplateRows": "var(--grid-2)",
+          "_position": "relative",
+          "_gridTemplateColumns": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "y5096o",
+        "name": "fr-timeline-bravo__content-wrapper",
+        "settings": {
+          "_alignItems": "center",
+          "_justifyContent": "center",
+          "_rowGap": "calc(var(--content-gap) / 2)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "mge3t9",
+        "name": "fr-timeline-bravo__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ao4enh",
+        "name": "fr-timeline-bravo__description",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "3qye36",
+        "name": "fr-timeline-bravo__date",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-xxl)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "41y54k",
+        "name": "fr-timeline-bravo__media-wrapper",
+        "settings": {
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_overflow": "hidden",
+          "_aspectRatio": "4/3"
+        },
+        "modified": 1733757164,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "zkj6ef",
+        "name": "fr-timeline-bravo__image",
+        "settings": {
+          "_objectFit": "cover",
+          "_height": "100%",
+          "_width": "100%"
+        },
+        "modified": 1733757164,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "fvqril",
+        "name": "fr-timeline-bravo__slider-controls",
+        "settings": {
+          "arrowSize": "35",
+          "arrowBackground": {
+            "raw": "transparent"
+          },
+          "arrowsGap": "var(--content-gap)",
+          "_display": "flex",
+          "_alignItems": "center",
+          "_justifyContent": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "idfqzk",
+        "name": "fr-timeline-section-bravo",
+        "settings": {
+          "_rowGap": "calc(var(--container-gap) * 1.5)",
+          "_overflow": "hidden"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

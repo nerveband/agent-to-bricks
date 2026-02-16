@@ -1,0 +1,274 @@
+{
+  "idx": 445,
+  "title": "Pricing Card Bravo",
+  "elementCount": 10,
+  "classCount": 11,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "4115bc",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "e14f5e",
+          "462cc2",
+          "bac025"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xgilkk"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Price Card Bravo"
+      },
+      {
+        "id": "e14f5e",
+        "name": "div",
+        "parent": "4115bc",
+        "children": [
+          "fb253c"
+        ],
+        "settings": {
+          "tag": "custom",
+          "_cssGlobalClasses": [
+            "vovcbp"
+          ],
+          "customTag": "header"
+        },
+        "label": "Header"
+      },
+      {
+        "id": "bac025",
+        "name": "div",
+        "parent": "4115bc",
+        "children": [
+          "53cbec"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pyxkof"
+          ],
+          "tag": "custom",
+          "customTag": "footer"
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "462cc2",
+        "name": "div",
+        "parent": "4115bc",
+        "children": [
+          "9eac9b",
+          "8c6220"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "raudar"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "53cbec",
+        "name": "button",
+        "parent": "bac025",
+        "children": [],
+        "settings": {
+          "text": "Choose this plan",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "gcnmcw",
+            "btn--primary"
+          ]
+        },
+        "label": "CTA Button"
+      },
+      {
+        "id": "9eac9b",
+        "name": "div",
+        "parent": "462cc2",
+        "children": [
+          "9a51a4",
+          "738fdc"
+        ],
+        "settings": {
+          "tag": "custom",
+          "customTag": "p",
+          "_display": "flex",
+          "_alignItems": "center",
+          "_justifyContent": "flex-start",
+          "_cssGlobalClasses": [
+            "zacadw"
+          ]
+        },
+        "label": "Price Wrapper"
+      },
+      {
+        "id": "9a51a4",
+        "name": "text-basic",
+        "parent": "9eac9b",
+        "children": [],
+        "settings": {
+          "text": "$",
+          "tag": "custom",
+          "customTag": "sup",
+          "_cssGlobalClasses": [
+            "krzhik"
+          ]
+        },
+        "label": "Currency"
+      },
+      {
+        "id": "738fdc",
+        "name": "text-basic",
+        "parent": "9eac9b",
+        "children": [],
+        "settings": {
+          "text": "49",
+          "tag": "custom",
+          "customTag": "strong",
+          "_cssGlobalClasses": [
+            "ziwvqm"
+          ]
+        },
+        "label": "Amount"
+      },
+      {
+        "id": "fb253c",
+        "name": "heading",
+        "parent": "e14f5e",
+        "children": [],
+        "settings": {
+          "text": "Plan name",
+          "_cssGlobalClasses": [
+            "kdewvi"
+          ]
+        }
+      },
+      {
+        "id": "8c6220",
+        "name": "text-basic",
+        "parent": "462cc2",
+        "children": [],
+        "settings": {
+          "text": "per month",
+          "tag": "p",
+          "customTag": "sub",
+          "_cssGlobalClasses": [
+            "irvmyq"
+          ]
+        },
+        "label": "Period"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "xgilkk",
+        "name": "fr-price-card-bravo",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "var(--fr-card-gap)",
+          "_alignItems": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "vovcbp",
+        "name": "fr-price-card-bravo__header",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "pyxkof",
+        "name": "fr-price-card-bravo__footer",
+        "settings": {
+          "_margin": {
+            "top": "auto"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "raudar",
+        "name": "fr-price-card-bravo__body",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_alignItems": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "gcnmcw",
+        "name": "fr-price-card-bravo__button",
+        "settings": {
+          "_margin": {
+            "top": "var(--space-s)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "zacadw",
+        "name": "fr-price-card-bravo__price-wrapper",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-xl)",
+            "line-height": "1.5"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "krzhik",
+        "name": "fr-price-card-bravo__price-currency",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ziwvqm",
+        "name": "fr-price-card-bravo__price-amount",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--h1)",
+            "line-height": "1"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "kdewvi",
+        "name": "fr-price-card-bravo__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "irvmyq",
+        "name": "fr-price-card-bravo__price-period",
+        "settings": {
+          "_typography": {
+            "line-height": "1"
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

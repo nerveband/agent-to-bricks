@@ -1,0 +1,284 @@
+{
+  "idx": 226,
+  "title": "Feature Card Quebec",
+  "elementCount": 9,
+  "classCount": 10,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "cee9de",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "897a3b",
+          "20ed32",
+          "a3d75f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cusncz"
+          ]
+        },
+        "label": "Feature Card Quebec (CSS Tab)"
+      },
+      {
+        "id": "20ed32",
+        "name": "block",
+        "parent": "cee9de",
+        "children": [
+          "9fa7aa"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qhiqjy",
+            "yuhpeb"
+          ]
+        },
+        "label": "Wrapper (Left)"
+      },
+      {
+        "id": "a3d75f",
+        "name": "block",
+        "parent": "cee9de",
+        "children": [
+          "8dee5d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gqsvfd",
+            "qhiqjy"
+          ]
+        },
+        "label": "Wrapper (Right)"
+      },
+      {
+        "id": "9fa7aa",
+        "name": "image",
+        "parent": "20ed32",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ejrsbh"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure",
+          "caption": "none"
+        }
+      },
+      {
+        "id": "8dee5d",
+        "name": "image",
+        "parent": "a3d75f",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ejrsbh"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "caption": "none"
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "897a3b",
+        "name": "block",
+        "parent": "cee9de",
+        "children": [
+          "d39ac6",
+          "b6f834",
+          "abeb9e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mgzbxa"
+          ]
+        },
+        "label": "Content"
+      },
+      {
+        "id": "d39ac6",
+        "name": "heading",
+        "parent": "897a3b",
+        "children": [],
+        "settings": {
+          "text": "I am a heading",
+          "_cssGlobalClasses": [
+            "stcgac"
+          ]
+        }
+      },
+      {
+        "id": "abeb9e",
+        "name": "button",
+        "parent": "897a3b",
+        "children": [],
+        "settings": {
+          "text": "I am a button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ]
+        }
+      },
+      {
+        "id": "b6f834",
+        "name": "text-basic",
+        "parent": "897a3b",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real&nbsp;content.",
+          "_cssGlobalClasses": [
+            "xabnvi",
+            "kddjfd"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771254446,
+        "user_id": 1
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "cusncz",
+        "name": "fr-feature-card-quebec",
+        "settings": {
+          "_cssCustom": ".fr-feature-card-quebec {\n  --content-position: 1; /* 1 or 2 */\n  --card-height: 24em; /* Set min-height of your card */\n  \n\tdisplay: grid;\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n  grid-template-rows: minmax(var(--card-height), 1fr);\n  align-items: stretch;\n  isolation: isolate;\n}\n\n.fr-feature-card-quebec > * {\n\tgrid-row: 1;\n}",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_overflow": "hidden",
+          "_cssCustom:mobile_landscape": ".fr-feature-card-quebec {\n\tgrid-template-columns: repeat(1, minmax(5em, 1fr));\n}\n\n.fr-feature-card-quebec > *:last-child {\n  z-index: 1;\n  grid-row: 2;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "qhiqjy",
+        "name": "fr-feature-card-quebec__wrapper",
+        "settings": {
+          "_position": "relative",
+          "_zIndex": "-1"
+        },
+        "modified": 1739093995,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "yuhpeb",
+        "name": "fr-feature-card-quebec__wrapper-left",
+        "settings": {
+          "_cssCustom": ".fr-feature-card-quebec__wrapper-left {\n\tgrid-column: 1;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "gqsvfd",
+        "name": "fr-feature-card-quebec__wrapper-right",
+        "settings": {
+          "_cssCustom": ".fr-feature-card-quebec__wrapper-right {\n\tgrid-column: 2/-1;\n}",
+          "_cssCustom:mobile_landscape": ".fr-feature-card-quebec__wrapper-right {\n\tgrid-column: 1;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ejrsbh",
+        "name": "fr-feature-card-quebec__media",
+        "settings": {
+          "_objectFit": "cover",
+          "_width": "100%",
+          "_position": "absolute",
+          "_height": "100%",
+          "_top": "0",
+          "_left": "0",
+          "_flexGrow": "1"
+        },
+        "modified": 1739093995,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "mgzbxa",
+        "name": "fr-feature-card-quebec__content",
+        "settings": {
+          "_justifyContent": "center",
+          "_padding": {
+            "top": "var(--space-xl)",
+            "right": "var(--space-xl)",
+            "bottom": "var(--space-xl)",
+            "left": "var(--space-xl)"
+          },
+          "_rowGap": "var(--fr-card-gap)",
+          "_cssCustom": ".fr-feature-card-quebec__content {\n\tgrid-column: var(--content-position)/2;\n}",
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          },
+          "_zIndex": "0",
+          "_background": {
+            "color": {
+              "raw": "var(--neutral-ultra-dark-trans-60)"
+            }
+          },
+          "_cssCustom:mobile_landscape": ".fr-feature-card-quebec__content {\n  grid-column: 1;\n\tgrid-row: var(--content-position);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "stcgac",
+        "name": "fr-feature-card-quebec__heading",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          }
+        },
+        "modified": 1739093995,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "xabnvi",
+        "name": "fr-feature-card-quebec__lede",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

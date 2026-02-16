@@ -1,0 +1,226 @@
+{
+  "idx": 214,
+  "title": "Pricing Card Delta",
+  "elementCount": 7,
+  "classCount": 8,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "62b917",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "0feb6b",
+          "530918"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wsffld"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Pricing Card Delta"
+      },
+      {
+        "id": "0feb6b",
+        "name": "block",
+        "parent": "62b917",
+        "children": [
+          "7d0a3c",
+          "0aa523"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gdqxqw"
+          ]
+        },
+        "label": "Main"
+      },
+      {
+        "id": "7d0a3c",
+        "name": "heading",
+        "parent": "0feb6b",
+        "children": [],
+        "settings": {
+          "text": "Price option",
+          "_cssGlobalClasses": [
+            "mgjzrr",
+            "acss_import_clickable-parent"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "0aa523",
+        "name": "text-basic",
+        "parent": "0feb6b",
+        "children": [],
+        "settings": {
+          "text": "Don\u2019t be alarmed, this is just here to fill up space since your copy isn\u2019t ready yet.",
+          "_cssGlobalClasses": [
+            "tihmov"
+          ],
+          "tag": "p"
+        },
+        "label": "Description"
+      },
+      {
+        "id": "530918",
+        "name": "block",
+        "parent": "62b917",
+        "children": [
+          "c85b82",
+          "7264a4"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "uqosxd"
+          ]
+        },
+        "label": "Price Wrapper"
+      },
+      {
+        "id": "c85b82",
+        "name": "text-basic",
+        "parent": "530918",
+        "children": [],
+        "settings": {
+          "text": "<sup>$</sup>49",
+          "_cssGlobalClasses": [
+            "tiqnas"
+          ],
+          "tag": "span"
+        },
+        "label": "Price"
+      },
+      {
+        "id": "7264a4",
+        "name": "text-basic",
+        "parent": "530918",
+        "children": [],
+        "settings": {
+          "text": "per month",
+          "_cssGlobalClasses": [
+            "ahepls"
+          ],
+          "tag": "span"
+        },
+        "label": "Term"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "acss_import_clickable-parent",
+        "name": "clickable-parent",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "wsffld",
+        "name": "fr-price-card-delta",
+        "settings": {
+          "_display": "flex",
+          "_direction": "row",
+          "_alignItems": "stretch",
+          "_rowGap": "var(--fr-card-gap)",
+          "_columnGap": "var(--fr-card-gap)",
+          "_padding": {
+            "top": "var(--fr-card-padding)",
+            "right": "var(--fr-card-padding)",
+            "bottom": "var(--fr-card-padding)",
+            "left": "var(--fr-card-padding)"
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "_flexWrap:mobile_landscape": "wrap",
+          "_position": "relative",
+          "_cssTransition": "all .3s ease",
+          "_cssCustom": ".fr-price-card-delta:hover {\n\ttransform: translateX(-.5em);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "gdqxqw",
+        "name": "fr-price-card-delta__main",
+        "settings": {
+          "_rowGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "mgjzrr",
+        "name": "fr-price-card-delta__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "tihmov",
+        "name": "fr-price-card-delta__description",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "uqosxd",
+        "name": "fr-price-card-delta__price-wrapper",
+        "settings": {
+          "_width": "30%",
+          "_widthMax": "100%",
+          "_display": "flex",
+          "_direction": "column",
+          "_alignItems": "center",
+          "_justifyContent": "center",
+          "_rowGap": ".25em",
+          "_order:mobile_landscape": "-1",
+          "_alignItems:mobile_landscape": "flex-start",
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "tiqnas",
+        "name": "fr-price-card-delta__price",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--h1)",
+            "line-height": "1"
+          },
+          "_cssCustom": ".fr-price-card-delta__price {\n\tposition: relative;\n  display: flex;\n  align-items: center;\n}\n\n.fr-price-card-delta__price sup {\n\tfont-size: 50%;\n}\n"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ahepls",
+        "name": "fr-price-card-delta__price-term",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-s)",
+            "line-height": "1.1"
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

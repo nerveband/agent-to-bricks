@@ -1,0 +1,116 @@
+{
+  "idx": 223,
+  "title": "Blog Meta Alpha",
+  "elementCount": 4,
+  "classCount": 2,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "ed4497",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "a83e1c",
+          "4b6003",
+          "c28c23"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ofuxrk"
+          ]
+        },
+        "label": "Blog Meta Alpha"
+      },
+      {
+        "id": "a83e1c",
+        "name": "text-basic",
+        "parent": "ed4497",
+        "children": [],
+        "settings": {
+          "text": "{author_name}",
+          "_cssGlobalClasses": [
+            "nmyktx"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#post-author",
+            "rel": "author"
+          },
+          "tag": "custom",
+          "customTag": "p"
+        },
+        "label": "Author"
+      },
+      {
+        "id": "4b6003",
+        "name": "text-basic",
+        "parent": "ed4497",
+        "children": [],
+        "settings": {
+          "text": "{post_date}",
+          "_cssGlobalClasses": [
+            "nmyktx"
+          ],
+          "tag": "custom",
+          "customTag": "time",
+          "_attributes": [
+            {
+              "id": "zcttps",
+              "name": "datetime",
+              "value": "{post_date}"
+            },
+            {
+              "id": "gmyfyu",
+              "name": "pubdate"
+            }
+          ]
+        },
+        "label": "Date"
+      },
+      {
+        "id": "c28c23",
+        "name": "text-basic",
+        "parent": "ed4497",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "nmyktx"
+          ],
+          "text": "{post_comments_count} comments"
+        },
+        "label": "Comment Count"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "ofuxrk",
+        "name": "fr-blog-meta-alpha",
+        "settings": {
+          "_display": "flex",
+          "_alignItems": "center",
+          "_cssCustom": ".fr-blog-meta-alpha > *:not(:first-child)::before {\n\tcontent: '\u2022';\n  margin-inline: .5em;\n}",
+          "_flexWrap": "wrap"
+        },
+        "_exists": false
+      },
+      {
+        "id": "nmyktx",
+        "name": "fr-blog-meta-alpha__meta-link",
+        "settings": {
+          "_typography:hover": {
+            "color": {
+              "raw": "var(--neutral-light)"
+            }
+          },
+          "_cssCustom:mobile_portrait": ".fr-blog-meta-alpha__meta-link ~ .fr-blog-meta-alpha__meta-link:before {\n   display: none;\n}"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

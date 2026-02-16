@@ -1,0 +1,192 @@
+{
+  "idx": 428,
+  "title": "Content Section Alpha",
+  "elementCount": 7,
+  "classCount": 8,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "f2e5c9",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "11b263"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mtfmbl"
+          ]
+        },
+        "label": "Content Section Alpha"
+      },
+      {
+        "id": "11b263",
+        "name": "container",
+        "parent": "f2e5c9",
+        "children": [
+          "034987",
+          "128410"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qgckrd"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "034987",
+        "name": "block",
+        "parent": "11b263",
+        "children": [
+          "bdfc8c",
+          "448084",
+          "445658"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mypuav"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "bdfc8c",
+        "name": "heading",
+        "parent": "034987",
+        "children": [],
+        "settings": {
+          "text": "Your headline here",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "jnkpqs"
+          ]
+        }
+      },
+      {
+        "id": "448084",
+        "name": "text-basic",
+        "parent": "034987",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "cysnzv"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "445658",
+        "name": "button",
+        "parent": "034987",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ]
+        }
+      },
+      {
+        "id": "128410",
+        "name": "image",
+        "parent": "11b263",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "arewjy"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        },
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771256218,
+        "user_id": 1
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "mtfmbl",
+        "name": "fr-content-section-alpha",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "qgckrd",
+        "name": "fr-content-section-alpha__inner",
+        "settings": {
+          "_display": "grid",
+          "_gridGap": "var(--space-xl)",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_alignItemsGrid": "center",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)",
+          "_gridGap:tablet_portrait": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "mypuav",
+        "name": "fr-content-section-alpha__content-wrapper",
+        "settings": {
+          "_rowGap": "var(--fr-content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "jnkpqs",
+        "name": "fr-content-section-alpha__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "cysnzv",
+        "name": "fr-content-section-alpha__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "arewjy",
+        "name": "fr-content-section-alpha__media",
+        "settings": {
+          "_objectFit": "cover",
+          "_width": "100%",
+          "_height": "100%"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

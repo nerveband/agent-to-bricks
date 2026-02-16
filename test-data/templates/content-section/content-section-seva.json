@@ -1,0 +1,1198 @@
+{
+  "idx": 30,
+  "title": "Content Section Seva",
+  "elementCount": 62,
+  "classCount": 14,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "5b5984",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "c09068",
+          "0ad2e5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "acss_import_bg--dark",
+            "upyhxa",
+            "neswau"
+          ]
+        },
+        "label": "Content Section Seva"
+      },
+      {
+        "id": "c09068",
+        "name": "container",
+        "parent": "5b5984",
+        "children": [
+          "d80893",
+          "69269e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mskniz"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "d80893",
+        "name": "heading",
+        "parent": "c09068",
+        "children": [],
+        "settings": {
+          "text": "This is a big bold heading. Shoot for three lines.",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "hzumme"
+          ]
+        }
+      },
+      {
+        "id": "69269e",
+        "name": "text",
+        "parent": "c09068",
+        "children": [],
+        "settings": {
+          "text": "<p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.</p><p>The slider below is designed to show buyers, users, etc. It's just quick social proof rather than full testimonials.</p>",
+          "_cssGlobalClasses": [
+            "xudvaf"
+          ]
+        },
+        "label": "Content"
+      },
+      {
+        "id": "0ad2e5",
+        "name": "block",
+        "parent": "5b5984",
+        "children": [
+          "896e98"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cfmizr"
+          ]
+        },
+        "label": "Slider Wrapper"
+      },
+      {
+        "id": "896e98",
+        "name": "fr-slider",
+        "parent": "0ad2e5",
+        "children": [
+          "8b39e8",
+          "94440b",
+          "946161",
+          "99946d",
+          "7ad5af",
+          "e67b66",
+          "0c6d68",
+          "5a581e"
+        ],
+        "settings": {
+          "height": "50vh",
+          "speed": 300,
+          "playButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-play"
+          },
+          "pauseButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-pause"
+          },
+          "arrowSize": "var(--space-l)",
+          "arrowDisabled": "0.5",
+          "prevArrow": {
+            "library": "themify",
+            "icon": "ti-arrow-left"
+          },
+          "prevArrowTop": "50%",
+          "prevArrowLeft": "var(--space-xs)",
+          "nextArrow": {
+            "library": "themify",
+            "icon": "ti-arrow-right"
+          },
+          "nextArrowTop": "50%",
+          "nextArrowRight": "var(--space-xs)",
+          "sliderTag": "div",
+          "listTag": "ul",
+          "ariaCarousel": "Carousel",
+          "_cssGlobalClasses": [
+            "omqeem"
+          ],
+          "gap": "var(--content-gap)",
+          "breakout": true,
+          "clipToContainer": "inset(-100vw -100vw -100vw 0)",
+          "type": "loop",
+          "fixedHeight": "unset",
+          "focus": "3",
+          "autoScroll": true,
+          "autoScrollSpeed": "1",
+          "autoScrollAutoStart": true,
+          "autoScrollPauseOnHover": true,
+          "perPage:mobile_landscape": "3",
+          "fixedWidth": "min(33vw, 220px)"
+        },
+        "label": "Slider Kilo",
+        "themeStyles": []
+      },
+      {
+        "id": "8b39e8",
+        "name": "div",
+        "parent": "896e98",
+        "children": [
+          "356b71"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "query": {
+            "tax_query": [
+              "happyfiles_category::267"
+            ]
+          }
+        },
+        "label": "Slide"
+      },
+      {
+        "id": "356b71",
+        "name": "block",
+        "parent": "8b39e8",
+        "children": [
+          "d94121",
+          "c156aa"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "du3div"
+          ]
+        },
+        "label": "Testimonial Card Seva"
+      },
+      {
+        "id": "d94121",
+        "name": "block",
+        "parent": "356b71",
+        "children": [
+          "669e17"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ongmon"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "c156aa",
+        "name": "block",
+        "parent": "356b71",
+        "children": [
+          "0467cc",
+          "caea62"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tqb6hf"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "0467cc",
+        "name": "text-basic",
+        "parent": "c156aa",
+        "children": [],
+        "settings": {
+          "text": "Jane Doe",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "dptdlu"
+          ]
+        },
+        "label": "Name"
+      },
+      {
+        "id": "caea62",
+        "name": "text-basic",
+        "parent": "c156aa",
+        "children": [],
+        "settings": {
+          "text": "Customer of XYZ service",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "qf2hh4"
+          ]
+        },
+        "label": "Title"
+      },
+      {
+        "id": "669e17",
+        "name": "image",
+        "parent": "d94121",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "agz56c"
+          ],
+          "tag": "figure",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "loading": "eager"
+        },
+        "label": "Image",
+        "themeStyles": []
+      },
+      {
+        "id": "5a581e",
+        "name": "div",
+        "parent": "896e98",
+        "children": [
+          "ca78c8"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "query": {
+            "tax_query": [
+              "happyfiles_category::267"
+            ]
+          }
+        },
+        "label": "Slide"
+      },
+      {
+        "id": "ca78c8",
+        "name": "block",
+        "parent": "5a581e",
+        "children": [
+          "755477",
+          "0526f3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "du3div"
+          ]
+        },
+        "label": "Testimonial Card Seva"
+      },
+      {
+        "id": "755477",
+        "name": "block",
+        "parent": "ca78c8",
+        "children": [
+          "a224c5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ongmon"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "a224c5",
+        "name": "image",
+        "parent": "755477",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "agz56c"
+          ],
+          "tag": "figure",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "loading": "eager"
+        },
+        "label": "Image",
+        "themeStyles": []
+      },
+      {
+        "id": "0526f3",
+        "name": "block",
+        "parent": "ca78c8",
+        "children": [
+          "5dc3f2",
+          "689167"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tqb6hf"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "5dc3f2",
+        "name": "text-basic",
+        "parent": "0526f3",
+        "children": [],
+        "settings": {
+          "text": "Jane Doe",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "dptdlu"
+          ]
+        },
+        "label": "Name"
+      },
+      {
+        "id": "689167",
+        "name": "text-basic",
+        "parent": "0526f3",
+        "children": [],
+        "settings": {
+          "text": "Customer of XYZ service",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "qf2hh4"
+          ]
+        },
+        "label": "Title"
+      },
+      {
+        "id": "0c6d68",
+        "name": "div",
+        "parent": "896e98",
+        "children": [
+          "d37aa0"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "query": {
+            "tax_query": [
+              "happyfiles_category::267"
+            ]
+          }
+        },
+        "label": "Slide"
+      },
+      {
+        "id": "d37aa0",
+        "name": "block",
+        "parent": "0c6d68",
+        "children": [
+          "5e5425",
+          "2ebbac"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "du3div"
+          ]
+        },
+        "label": "Testimonial Card Seva"
+      },
+      {
+        "id": "5e5425",
+        "name": "block",
+        "parent": "d37aa0",
+        "children": [
+          "bf7a1e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ongmon"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "bf7a1e",
+        "name": "image",
+        "parent": "5e5425",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "agz56c"
+          ],
+          "tag": "figure",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "loading": "eager"
+        },
+        "label": "Image",
+        "themeStyles": []
+      },
+      {
+        "id": "2ebbac",
+        "name": "block",
+        "parent": "d37aa0",
+        "children": [
+          "d99549",
+          "595945"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tqb6hf"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "d99549",
+        "name": "text-basic",
+        "parent": "2ebbac",
+        "children": [],
+        "settings": {
+          "text": "Jane Doe",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "dptdlu"
+          ]
+        },
+        "label": "Name"
+      },
+      {
+        "id": "595945",
+        "name": "text-basic",
+        "parent": "2ebbac",
+        "children": [],
+        "settings": {
+          "text": "Customer of XYZ service",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "qf2hh4"
+          ]
+        },
+        "label": "Title"
+      },
+      {
+        "id": "e67b66",
+        "name": "div",
+        "parent": "896e98",
+        "children": [
+          "d94902"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "query": {
+            "tax_query": [
+              "happyfiles_category::267"
+            ]
+          }
+        },
+        "label": "Slide"
+      },
+      {
+        "id": "d94902",
+        "name": "block",
+        "parent": "e67b66",
+        "children": [
+          "d7280f",
+          "c2b7ba"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "du3div"
+          ]
+        },
+        "label": "Testimonial Card Seva"
+      },
+      {
+        "id": "d7280f",
+        "name": "block",
+        "parent": "d94902",
+        "children": [
+          "3b5c55"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ongmon"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "3b5c55",
+        "name": "image",
+        "parent": "d7280f",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "agz56c"
+          ],
+          "tag": "figure",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "loading": "eager"
+        },
+        "label": "Image",
+        "themeStyles": []
+      },
+      {
+        "id": "c2b7ba",
+        "name": "block",
+        "parent": "d94902",
+        "children": [
+          "263582",
+          "367650"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tqb6hf"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "263582",
+        "name": "text-basic",
+        "parent": "c2b7ba",
+        "children": [],
+        "settings": {
+          "text": "Jane Doe",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "dptdlu"
+          ]
+        },
+        "label": "Name"
+      },
+      {
+        "id": "367650",
+        "name": "text-basic",
+        "parent": "c2b7ba",
+        "children": [],
+        "settings": {
+          "text": "Customer of XYZ service",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "qf2hh4"
+          ]
+        },
+        "label": "Title"
+      },
+      {
+        "id": "7ad5af",
+        "name": "div",
+        "parent": "896e98",
+        "children": [
+          "1fa070"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "query": {
+            "tax_query": [
+              "happyfiles_category::267"
+            ]
+          }
+        },
+        "label": "Slide"
+      },
+      {
+        "id": "1fa070",
+        "name": "block",
+        "parent": "7ad5af",
+        "children": [
+          "283688",
+          "813365"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "du3div"
+          ]
+        },
+        "label": "Testimonial Card Seva"
+      },
+      {
+        "id": "283688",
+        "name": "block",
+        "parent": "1fa070",
+        "children": [
+          "8bc0d0"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ongmon"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "8bc0d0",
+        "name": "image",
+        "parent": "283688",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "agz56c"
+          ],
+          "tag": "figure",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "loading": "eager"
+        },
+        "label": "Image",
+        "themeStyles": []
+      },
+      {
+        "id": "813365",
+        "name": "block",
+        "parent": "1fa070",
+        "children": [
+          "b285ee",
+          "ee69e7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tqb6hf"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "b285ee",
+        "name": "text-basic",
+        "parent": "813365",
+        "children": [],
+        "settings": {
+          "text": "Jane Doe",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "dptdlu"
+          ]
+        },
+        "label": "Name"
+      },
+      {
+        "id": "ee69e7",
+        "name": "text-basic",
+        "parent": "813365",
+        "children": [],
+        "settings": {
+          "text": "Customer of XYZ service",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "qf2hh4"
+          ]
+        },
+        "label": "Title"
+      },
+      {
+        "id": "99946d",
+        "name": "div",
+        "parent": "896e98",
+        "children": [
+          "17fa6a"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "query": {
+            "tax_query": [
+              "happyfiles_category::267"
+            ]
+          }
+        },
+        "label": "Slide"
+      },
+      {
+        "id": "17fa6a",
+        "name": "block",
+        "parent": "99946d",
+        "children": [
+          "7b6abb",
+          "b99127"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "du3div"
+          ]
+        },
+        "label": "Testimonial Card Seva"
+      },
+      {
+        "id": "7b6abb",
+        "name": "block",
+        "parent": "17fa6a",
+        "children": [
+          "d517b7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ongmon"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "d517b7",
+        "name": "image",
+        "parent": "7b6abb",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "agz56c"
+          ],
+          "tag": "figure",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "loading": "eager"
+        },
+        "label": "Image",
+        "themeStyles": []
+      },
+      {
+        "id": "b99127",
+        "name": "block",
+        "parent": "17fa6a",
+        "children": [
+          "3b9939",
+          "1d7286"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tqb6hf"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "3b9939",
+        "name": "text-basic",
+        "parent": "b99127",
+        "children": [],
+        "settings": {
+          "text": "Jane Doe",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "dptdlu"
+          ]
+        },
+        "label": "Name"
+      },
+      {
+        "id": "1d7286",
+        "name": "text-basic",
+        "parent": "b99127",
+        "children": [],
+        "settings": {
+          "text": "Customer of XYZ service",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "qf2hh4"
+          ]
+        },
+        "label": "Title"
+      },
+      {
+        "id": "946161",
+        "name": "div",
+        "parent": "896e98",
+        "children": [
+          "404929"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "query": {
+            "tax_query": [
+              "happyfiles_category::267"
+            ]
+          }
+        },
+        "label": "Slide"
+      },
+      {
+        "id": "404929",
+        "name": "block",
+        "parent": "946161",
+        "children": [
+          "fd197c",
+          "63c416"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "du3div"
+          ]
+        },
+        "label": "Testimonial Card Seva"
+      },
+      {
+        "id": "fd197c",
+        "name": "block",
+        "parent": "404929",
+        "children": [
+          "d56cdb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ongmon"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "d56cdb",
+        "name": "image",
+        "parent": "fd197c",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "agz56c"
+          ],
+          "tag": "figure",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "loading": "eager"
+        },
+        "label": "Image",
+        "themeStyles": []
+      },
+      {
+        "id": "63c416",
+        "name": "block",
+        "parent": "404929",
+        "children": [
+          "133c19",
+          "390511"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tqb6hf"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "133c19",
+        "name": "text-basic",
+        "parent": "63c416",
+        "children": [],
+        "settings": {
+          "text": "Jane Doe",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "dptdlu"
+          ]
+        },
+        "label": "Name"
+      },
+      {
+        "id": "390511",
+        "name": "text-basic",
+        "parent": "63c416",
+        "children": [],
+        "settings": {
+          "text": "Customer of XYZ service",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "qf2hh4"
+          ]
+        },
+        "label": "Title"
+      },
+      {
+        "id": "94440b",
+        "name": "div",
+        "parent": "896e98",
+        "children": [
+          "cdc515"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "query": {
+            "tax_query": [
+              "happyfiles_category::267"
+            ]
+          }
+        },
+        "label": "Slide"
+      },
+      {
+        "id": "cdc515",
+        "name": "block",
+        "parent": "94440b",
+        "children": [
+          "05a7c0",
+          "025002"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "du3div"
+          ]
+        },
+        "label": "Testimonial Card Seva"
+      },
+      {
+        "id": "05a7c0",
+        "name": "block",
+        "parent": "cdc515",
+        "children": [
+          "d2861e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ongmon"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "d2861e",
+        "name": "image",
+        "parent": "05a7c0",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "agz56c"
+          ],
+          "tag": "figure",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "loading": "eager"
+        },
+        "label": "Image",
+        "themeStyles": []
+      },
+      {
+        "id": "025002",
+        "name": "block",
+        "parent": "cdc515",
+        "children": [
+          "01c272",
+          "843893"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tqb6hf"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "01c272",
+        "name": "text-basic",
+        "parent": "025002",
+        "children": [],
+        "settings": {
+          "text": "Jane Doe",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "dptdlu"
+          ]
+        },
+        "label": "Name"
+      },
+      {
+        "id": "843893",
+        "name": "text-basic",
+        "parent": "025002",
+        "children": [],
+        "settings": {
+          "text": "Customer of XYZ service",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "qf2hh4"
+          ]
+        },
+        "label": "Title"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "neswau",
+        "name": "content-grid",
+        "settings": [],
+        "modified": 1771252039,
+        "user_id": 1,
+        "_mappedId": "acss_import_content-grid"
+      },
+      {
+        "id": "acss_import_bg--dark",
+        "name": "bg--dark",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "upyhxa",
+        "name": "content-section-seva",
+        "settings": {
+          "_rowGap": "var(--container-gap)",
+          "_padding": {
+            "top": "var(--section-padding)",
+            "bottom": "var(--section-padding)"
+          },
+          "_gridGap": "calc(var(--container-gap) * 2)",
+          "_cssCustom": ".content-section-seva {\n  --accent-block-height: 48.5%;\n  --accent-block-width: 90%;\n  --accent-block-bg: linear-gradient(90deg, transparent, var(--bg-ultra-dark) 40%);\n  --heading-size: calc(var(--h1) * 1.5);\n  --section-padding: var(--section-space-l);\n  position: relative;\n  isolation: isolate;\n  /* Section font size let's us use ex to position the accent block accurately */\n  font-size: var(--heading-size);\n}\n\n.content-section-seva::before {\n  content: '';\n  background: var(--accent-block-bg);\n  position: absolute;\n  height: var(--accent-block-height);\n  width: var(--accent-block-width);\n  inset-block-start: calc(var(--section-padding) + 4ex);\n  inset-inline-start: 0;\n  z-index: -1;\n  border-radius: var(--radius);\n}",
+          "_cssCustom:mobile_landscape": ".content-section-seva {\n  --accent-block-height: 56.5%;\n  --accent-block-width: 70%;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "mskniz",
+        "name": "content-section-seva__content-wrapper",
+        "settings": {
+          "_display": "grid",
+          "_gridGap": "var(--container-gap)",
+          "_cssCustom": "@media (min-width: 768px) {\n  .content-section-seva__content-wrapper {\n    grid-template-columns: var(--grid-12);\n    grid-template-rows: 1fr;\n  }\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "hzumme",
+        "name": "content-section-seva__heading",
+        "settings": {
+          "_cssCustom": ".content-section-seva__heading {\n  grid-column: 1 / 9;\n  text-wrap: wrap;\n}",
+          "_typography": {
+            "font-size": "var(--heading-size)"
+          },
+          "_cssCustom:tablet_portrait": ".content-section-seva__heading {\n  grid-column: 1 / 10;\n}",
+          "_cssCustom:mobile_landscape": ".content-section-seva__heading {\n  grid-column: 1 / -1;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "xudvaf",
+        "name": "content-section-seva__content",
+        "settings": {
+          "_cssCustom": ".content-section-seva__content {\n  grid-column: 7 / -1;\n  grid-row: 2;\n  position: relative;\n  isolation: isolate;\n}",
+          "_typography": {
+            "font-size": "var(--text-l)"
+          },
+          "_cssCustom:tablet_portrait": ".content-section-seva__content {\n  grid-column: 3 / -1;\n}",
+          "_cssCustom:mobile_landscape": ".content-section-seva__content {\n  grid-column: 1 / -1;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "cfmizr",
+        "name": "content-section-seva__slider-wrapper",
+        "settings": {
+          "_gridItemColumnSpan": "full",
+          "_overflow": "clip"
+        },
+        "_exists": false
+      },
+      {
+        "id": "omqeem",
+        "name": "slider-kilo",
+        "settings": {
+          "speed": "300"
+        },
+        "_exists": false
+      },
+      {
+        "id": "du3div",
+        "name": "testimonial-card-seva",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 1.5)",
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_alignItems:mobile_landscape": "flex-start"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ongmon",
+        "name": "testimonial-card-seva__media-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "tqb6hf",
+        "name": "testimonial-card-seva__content-wrapper",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 3)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "dptdlu",
+        "name": "testimonial-card-seva__name",
+        "settings": {
+          "_typography": {
+            "line-height": "1",
+            "color": {
+              "raw": "var(--text-light)"
+            },
+            "font-size": "var(--text-m)"
+          },
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "qf2hh4",
+        "name": "testimonial-card-seva__title",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light-muted)"
+            },
+            "font-size": "var(--text-s)",
+            "line-height": "1.3"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "agz56c",
+        "name": "testimonial-card-seva__image",
+        "settings": {
+          "_aspectRatio": "1/1",
+          "_objectFit": "cover",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

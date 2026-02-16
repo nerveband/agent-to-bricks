@@ -1,0 +1,430 @@
+{
+  "idx": 86,
+  "title": "Hero Victor",
+  "elementCount": 18,
+  "classCount": 13,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "f7cf96",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "4cc141",
+          "3b43e3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "3qm9qf"
+          ]
+        },
+        "label": "Hero Victor"
+      },
+      {
+        "id": "4cc141",
+        "name": "container",
+        "parent": "f7cf96",
+        "children": [
+          "60c7cf",
+          "4d963d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hekpk4"
+          ]
+        },
+        "label": "Main Row"
+      },
+      {
+        "id": "3b43e3",
+        "name": "container",
+        "parent": "f7cf96",
+        "children": [
+          "8a576f",
+          "57916a",
+          "bfd0c4"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mycg6g"
+          ],
+          "tag": "ul"
+        },
+        "label": "Feature Row"
+      },
+      {
+        "id": "8a576f",
+        "name": "block",
+        "parent": "3b43e3",
+        "children": [
+          "e8664a",
+          "4fc621"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ocw4wi"
+          ],
+          "tag": "li"
+        },
+        "label": "Feature"
+      },
+      {
+        "id": "e8664a",
+        "name": "heading",
+        "parent": "8a576f",
+        "children": [],
+        "settings": {
+          "text": "Selling Point 1",
+          "_cssGlobalClasses": [
+            "jl7meg"
+          ],
+          "tag": "h2"
+        },
+        "label": "Feature Heading"
+      },
+      {
+        "id": "4fc621",
+        "name": "text-basic",
+        "parent": "8a576f",
+        "children": [],
+        "settings": {
+          "text": "This is your chance to list the three most important things that convince people to convert.",
+          "_cssGlobalClasses": [
+            "nmmug7"
+          ],
+          "tag": "p"
+        },
+        "label": "Feature Description"
+      },
+      {
+        "id": "60c7cf",
+        "name": "block",
+        "parent": "4cc141",
+        "children": [
+          "f66e87",
+          "5dcdea",
+          "d9363c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "2fpo4f"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "4d963d",
+        "name": "block",
+        "parent": "4cc141",
+        "children": [
+          "4237d7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "n4gaiq"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "4237d7",
+        "name": "image",
+        "parent": "4d963d",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "bxe069"
+          ],
+          "tag": "figure"
+        },
+        "label": "Media",
+        "themeStyles": []
+      },
+      {
+        "id": "f66e87",
+        "name": "heading",
+        "parent": "60c7cf",
+        "children": [],
+        "settings": {
+          "text": "Write a compelling headline that sells",
+          "_cssGlobalClasses": [
+            "cx7i9q"
+          ],
+          "tag": "h1"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "5dcdea",
+        "name": "text-basic",
+        "parent": "60c7cf",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gi1vh5"
+          ],
+          "tag": "p",
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content."
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "d9363c",
+        "name": "button",
+        "parent": "60c7cf",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "8hz93o",
+            "btn--primary"
+          ]
+        },
+        "label": "Button"
+      },
+      {
+        "id": "bfd0c4",
+        "name": "block",
+        "parent": "3b43e3",
+        "children": [
+          "6bb153",
+          "3921e8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ocw4wi"
+          ],
+          "tag": "li"
+        },
+        "label": "Feature"
+      },
+      {
+        "id": "6bb153",
+        "name": "heading",
+        "parent": "bfd0c4",
+        "children": [],
+        "settings": {
+          "text": "Selling Point 3",
+          "_cssGlobalClasses": [
+            "jl7meg"
+          ],
+          "tag": "h2"
+        },
+        "label": "Feature Heading"
+      },
+      {
+        "id": "3921e8",
+        "name": "text-basic",
+        "parent": "bfd0c4",
+        "children": [],
+        "settings": {
+          "text": "This is your chance to list the three most important things that convince people to convert.",
+          "_cssGlobalClasses": [
+            "nmmug7"
+          ],
+          "tag": "p"
+        },
+        "label": "Feature Description"
+      },
+      {
+        "id": "57916a",
+        "name": "block",
+        "parent": "3b43e3",
+        "children": [
+          "680c88",
+          "d6cd97"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ocw4wi"
+          ],
+          "tag": "li"
+        },
+        "label": "Feature"
+      },
+      {
+        "id": "680c88",
+        "name": "heading",
+        "parent": "57916a",
+        "children": [],
+        "settings": {
+          "text": "Selling Point 2",
+          "_cssGlobalClasses": [
+            "jl7meg"
+          ],
+          "tag": "h2"
+        },
+        "label": "Feature Heading"
+      },
+      {
+        "id": "d6cd97",
+        "name": "text-basic",
+        "parent": "57916a",
+        "children": [],
+        "settings": {
+          "text": "This is your chance to list the three most important things that convince people to convert.",
+          "_cssGlobalClasses": [
+            "nmmug7"
+          ],
+          "tag": "p"
+        },
+        "label": "Feature Description"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "3qm9qf",
+        "name": "hero-victor",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "hekpk4",
+        "name": "hero-victor__main-row",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "mycg6g",
+        "name": "hero-victor__feature-row",
+        "settings": {
+          "_padding": {
+            "left": "0"
+          },
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-3)",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)",
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          },
+          "_cssCustom": ".hero-victor__feature-row {\n\tlist-style: none;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ocw4wi",
+        "name": "hero-victor__feature",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 2)",
+          "_padding": {
+            "top": "var(--space-m)"
+          },
+          "_border": {
+            "width": {
+              "top": "1.5"
+            },
+            "style": "solid",
+            "color": {
+              "raw": "var(--neutral-dark)"
+            }
+          }
+        },
+        "modified": 1718740163,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "jl7meg",
+        "name": "hero-victor__feature-heading",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--h3)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "nmmug7",
+        "name": "hero-victor__feature-description",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "2fpo4f",
+        "name": "hero-victor__content-wrapper",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_justifyContent": "center",
+          "_width": "50ch"
+        },
+        "_exists": false
+      },
+      {
+        "id": "n4gaiq",
+        "name": "hero-victor__media-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "bxe069",
+        "name": "hero-victor__media",
+        "settings": {
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_flexGrow": "1",
+          "_objectFit": "cover",
+          "_aspectRatio": "5/4"
+        },
+        "_exists": false
+      },
+      {
+        "id": "cx7i9q",
+        "name": "hero-victor__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "gi1vh5",
+        "name": "hero-victor__lede",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-l)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "8hz93o",
+        "name": "hero-victor__button",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

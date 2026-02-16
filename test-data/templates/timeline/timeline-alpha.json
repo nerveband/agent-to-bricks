@@ -1,0 +1,622 @@
+{
+  "idx": 251,
+  "title": "Timeline Alpha",
+  "elementCount": 29,
+  "classCount": 12,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "fabfe6",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "fb71de"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rtvyhl"
+          ]
+        },
+        "label": "Timeline Alpha (CSS Tab)"
+      },
+      {
+        "id": "fb71de",
+        "name": "block",
+        "parent": "fabfe6",
+        "children": [
+          "6c72c6",
+          "46c287",
+          "6c1d8a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rvqmtc",
+            "rktisp"
+          ],
+          "tag": "custom",
+          "customTag": "ol"
+        },
+        "label": "List <ul>"
+      },
+      {
+        "id": "6c72c6",
+        "name": "block",
+        "parent": "fb71de",
+        "children": [
+          "b83163",
+          "7d27ac"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hbgrpr"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "List Item <li>"
+      },
+      {
+        "id": "b83163",
+        "name": "block",
+        "parent": "6c72c6",
+        "children": [
+          "70d37c",
+          "206215"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hltzoz"
+          ]
+        },
+        "label": "Content"
+      },
+      {
+        "id": "70d37c",
+        "name": "block",
+        "parent": "b83163",
+        "children": [
+          "cea7e6",
+          "7b7cfc"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vkvvxv"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "cea7e6",
+        "name": "text-basic",
+        "parent": "70d37c",
+        "children": [],
+        "settings": {
+          "text": "December 23, 2022",
+          "_cssGlobalClasses": [
+            "kzuaqm"
+          ],
+          "tag": "custom",
+          "customTag": "time",
+          "_attributes": [
+            {
+              "id": "zcttps",
+              "name": "datetime",
+              "value": "{post_date}"
+            },
+            {
+              "id": "gmyfyu",
+              "name": "pubdate"
+            }
+          ]
+        },
+        "label": "Date"
+      },
+      {
+        "id": "7b7cfc",
+        "name": "heading",
+        "parent": "70d37c",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "rrwnwd"
+          ]
+        }
+      },
+      {
+        "id": "206215",
+        "name": "block",
+        "parent": "b83163",
+        "children": [
+          "d659fc"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eztltz"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "d659fc",
+        "name": "text-basic",
+        "parent": "206215",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.\n\nSometimes it\u2019s nice to put in text just to get an idea of how text will fill in a space on your website.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "fzetfv"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "7d27ac",
+        "name": "div",
+        "parent": "6c72c6",
+        "children": [
+          "76bb0b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "strgkx"
+          ]
+        },
+        "label": "Icon Wrapper"
+      },
+      {
+        "id": "76bb0b",
+        "name": "icon",
+        "parent": "7d27ac",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "themify",
+            "icon": "ti-control-record"
+          },
+          "_cssGlobalClasses": [
+            "qwzvdg"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "46c287",
+        "name": "block",
+        "parent": "fb71de",
+        "children": [
+          "476492",
+          "190bfb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hbgrpr"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "List Item <li>"
+      },
+      {
+        "id": "476492",
+        "name": "block",
+        "parent": "46c287",
+        "children": [
+          "17160b",
+          "908a44"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hltzoz"
+          ]
+        },
+        "label": "Content"
+      },
+      {
+        "id": "17160b",
+        "name": "block",
+        "parent": "476492",
+        "children": [
+          "c9ecbf",
+          "c23142"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vkvvxv"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "c9ecbf",
+        "name": "text-basic",
+        "parent": "17160b",
+        "children": [],
+        "settings": {
+          "text": "January 1, 2023",
+          "_cssGlobalClasses": [
+            "kzuaqm"
+          ],
+          "tag": "custom",
+          "customTag": "time",
+          "_attributes": [
+            {
+              "id": "zcttps",
+              "name": "datetime",
+              "value": "{post_date}"
+            },
+            {
+              "id": "gmyfyu",
+              "name": "pubdate"
+            }
+          ]
+        },
+        "label": "Date"
+      },
+      {
+        "id": "c23142",
+        "name": "heading",
+        "parent": "17160b",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "rrwnwd"
+          ]
+        }
+      },
+      {
+        "id": "908a44",
+        "name": "block",
+        "parent": "476492",
+        "children": [
+          "65b651"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eztltz"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "65b651",
+        "name": "text-basic",
+        "parent": "908a44",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.\n\nSometimes it\u2019s nice to put in text just to get an idea of how text will fill in a space on your website.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "fzetfv"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "190bfb",
+        "name": "block",
+        "parent": "46c287",
+        "children": [
+          "1a4b48"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "strgkx"
+          ]
+        },
+        "label": "Icon Wrapper"
+      },
+      {
+        "id": "1a4b48",
+        "name": "icon",
+        "parent": "190bfb",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "themify",
+            "icon": "ti-control-record"
+          },
+          "_cssGlobalClasses": [
+            "qwzvdg"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "6c1d8a",
+        "name": "block",
+        "parent": "fb71de",
+        "children": [
+          "adeb6c",
+          "8025fe"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hbgrpr"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "List Item <li>"
+      },
+      {
+        "id": "adeb6c",
+        "name": "block",
+        "parent": "6c1d8a",
+        "children": [
+          "e2586e",
+          "e07e0d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hltzoz"
+          ]
+        },
+        "label": "Content"
+      },
+      {
+        "id": "e2586e",
+        "name": "block",
+        "parent": "adeb6c",
+        "children": [
+          "0a2a00",
+          "b43451"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vkvvxv"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "0a2a00",
+        "name": "text-basic",
+        "parent": "e2586e",
+        "children": [],
+        "settings": {
+          "text": "January 11, 2023",
+          "_cssGlobalClasses": [
+            "kzuaqm"
+          ],
+          "tag": "custom",
+          "customTag": "time",
+          "_attributes": [
+            {
+              "id": "zcttps",
+              "name": "datetime",
+              "value": "{post_date}"
+            },
+            {
+              "id": "gmyfyu",
+              "name": "pubdate"
+            }
+          ]
+        },
+        "label": "Date"
+      },
+      {
+        "id": "b43451",
+        "name": "heading",
+        "parent": "e2586e",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "rrwnwd"
+          ]
+        }
+      },
+      {
+        "id": "e07e0d",
+        "name": "block",
+        "parent": "adeb6c",
+        "children": [
+          "7edba0"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eztltz"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "7edba0",
+        "name": "text-basic",
+        "parent": "e07e0d",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.\n\nSometimes it\u2019s nice to put in text just to get an idea of how text will fill in a space on your website.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "fzetfv"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "8025fe",
+        "name": "block",
+        "parent": "6c1d8a",
+        "children": [
+          "ff6ae3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "strgkx"
+          ]
+        },
+        "label": "Icon Wrapper"
+      },
+      {
+        "id": "ff6ae3",
+        "name": "icon",
+        "parent": "8025fe",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "themify",
+            "icon": "ti-control-record"
+          },
+          "_cssGlobalClasses": [
+            "qwzvdg"
+          ]
+        },
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "rktisp",
+        "name": "list--none",
+        "settings": {
+          "_padding": {
+            "left": "0"
+          },
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "acss_import_list--none",
+        "modified": 1771254552,
+        "user_id": 1
+      },
+      {
+        "id": "rtvyhl",
+        "name": "fr-timeline-alpha",
+        "settings": {
+          "_rowGap": "var(--container-gap)",
+          "_position": "relative",
+          "_cssCustom": ".fr-timeline-alpha {\n  --timeline-gap: var(--container-gap);\n  --center-line-color: var(--neutral-light);\n  --center-line-width: 0.125em;\n  --icon-size: 1.5em;\n}\n\n/* Main Structure */\n.fr-timeline-alpha .fr-timeline-alpha__list-item {\n  display: grid;\n  grid-template-columns: repeat(11, 1fr);\n\tgrid-template-rows: var(--grid-1);\n  align-items: stretch;\n}\n\n@media (min-width: 768px) {\n\n  /* Left */\n  .fr-timeline-alpha .fr-timeline-alpha__list-item > *:first-child {\n    grid-column: 1 / 6;\n  }\n  /* Icon Wrapper */\n  .fr-timeline-alpha .fr-timeline-alpha__list-item:nth-child(2n) > *:last-child {\n    grid-column: 6;\n    grid-row: 1;\n  }\n \n\t/* right */  \n  .fr-timeline-alpha .fr-timeline-alpha__list-item:nth-child(2n) > *:first-child {\n    grid-column: 7 / end;\n    text-align: left;\n  }\n  \n  .fr-timeline-alpha .fr-timeline-alpha__list-item:nth-child(2n) .fr-timeline-alpha__body {\n    align-items: start;\n  }\n  \n}\n\n/* Line Styling */\n.fr-timeline-alpha li:not(:last-child) .fr-timeline-alpha__icon-wrapper::before {\n  width: var(--center-line-width);\n  content: \"\";\n  background-color: var(--center-line-color);\n  background-size: cover;\n  position: absolute;\n  top: 0;\n  bottom: calc(var(--timeline-gap) * -1);\n}\n\n/* Visual Fix inside the Builder */\n.brx-draggable.is-empty {\n  min-width: unset;\n  min-height: unset;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "rvqmtc",
+        "name": "fr-timeline-alpha__list",
+        "settings": {
+          "_rowGap": "var(--timeline-gap)",
+          "_cssCustom:mobile_landscape": ".fr-timeline-alpha__list .fr-timeline-alpha__list-item > *:first-child {\n  order: -1;  \n \tgrid-column: 2 / end;\n}\n\n.fr-timeline-alpha__list .fr-timeline-alpha__list-item > *:last-child {\n \tgrid-column:1;\n \tgrid-row:1;   \n}",
+          "_zIndex": "1",
+          "_columnGap": "0"
+        },
+        "modified": 1722455451,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "hbgrpr",
+        "name": "fr-timeline-alpha__list-item",
+        "settings": {
+          "_gridGap": "0"
+        },
+        "modified": 1722456026,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "hltzoz",
+        "name": "fr-timeline-alpha__content",
+        "settings": {
+          "_rowGap": "var(--grid-gap)",
+          "_display": "flex",
+          "_direction": "column",
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_typography": {
+            "text-align": "right"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "vkvvxv",
+        "name": "fr-timeline-alpha__header",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "kzuaqm",
+        "name": "fr-timeline-alpha__date",
+        "settings": {
+          "_width": "100%",
+          "_order": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "rrwnwd",
+        "name": "fr-timeline-alpha__heading",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--h2)"
+          },
+          "_width": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "eztltz",
+        "name": "fr-timeline-alpha__body",
+        "settings": {
+          "_alignItems": "flex-end"
+        },
+        "_exists": false
+      },
+      {
+        "id": "fzetfv",
+        "name": "fr.timeline-alpha__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "strgkx",
+        "name": "fr-timeline-alpha__icon-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_alignItems": "center",
+          "_flexGrow": "1",
+          "_height": "100%",
+          "_position": "relative"
+        },
+        "_exists": false
+      },
+      {
+        "id": "qwzvdg",
+        "name": "fr-timeline-alpha__icon",
+        "settings": {
+          "iconSize": "var(--text-xl)",
+          "_background": {
+            "color": {
+              "raw": "var(--neutral-light)"
+            }
+          },
+          "_border": {
+            "radius": {
+              "top": "100%",
+              "right": "100%",
+              "bottom": "100%",
+              "left": "100%"
+            }
+          },
+          "_zIndex": "1",
+          "iconColor": {
+            "raw": "var(--text-dark)"
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

@@ -1,0 +1,535 @@
+{
+  "idx": 224,
+  "title": "CTA Card Bravo",
+  "elementCount": 20,
+  "classCount": 17,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "a9a0e8",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "f1e870",
+          "04024b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tnousf"
+          ]
+        },
+        "label": "CTA Card Bravo (CSS Tab)"
+      },
+      {
+        "id": "c6ea81",
+        "name": "block",
+        "parent": "f1e870",
+        "children": [
+          "1dd623"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ihwexs"
+          ]
+        },
+        "label": "Image Wrapper"
+      },
+      {
+        "id": "8fb049",
+        "name": "block",
+        "parent": "f1e870",
+        "children": [
+          "2eb7ab",
+          "e3d941",
+          "15725a",
+          "bbaab9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gvhsvi"
+          ]
+        },
+        "label": "Intro"
+      },
+      {
+        "id": "1dd623",
+        "name": "image",
+        "parent": "c6ea81",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ezpyke"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "15725a",
+        "name": "block",
+        "parent": "8fb049",
+        "children": [
+          "eeb520"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ruzafx"
+          ]
+        },
+        "label": "Form Wrapper"
+      },
+      {
+        "id": "eeb520",
+        "name": "form",
+        "parent": "15725a",
+        "children": [],
+        "settings": {
+          "fields": [
+            {
+              "type": "text",
+              "label": "First Name",
+              "placeholder": "First Name",
+              "id": "5ccc98",
+              "width": "40",
+              "width:mobile_portrait": "100"
+            },
+            {
+              "type": "email",
+              "label": "Email",
+              "placeholder": "Your Email",
+              "required": true,
+              "id": "9f5557",
+              "width": "58",
+              "width:mobile_portrait": "100"
+            }
+          ],
+          "submitButtonStyle": "primary",
+          "actions": [
+            "email"
+          ],
+          "successMessage": "Message successfully sent. We will get back to you as soon as possible.",
+          "emailSubject": "Contact form request",
+          "emailTo": "admin_email",
+          "fromName": "Frames (Bricks)",
+          "emailErrorMessage": "Submission failed. Please reload the page and try to submit the form again.",
+          "htmlEmail": true,
+          "mailchimpPendingMessage": "Please check your email to confirm your subscription.",
+          "mailchimpErrorMessage": "Sorry, but we could not subscribe you.",
+          "sendgridErrorMessage": "Sorry, but we could not subscribe you.",
+          "_cssGlobalClasses": [
+            "fvchph",
+            "qvcfbn"
+          ],
+          "submitButtonText": "Call to action"
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "2eb7ab",
+        "name": "heading",
+        "parent": "8fb049",
+        "children": [],
+        "settings": {
+          "text": "CTA Headline",
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "lyvzhw"
+          ]
+        }
+      },
+      {
+        "id": "e3d941",
+        "name": "text-basic",
+        "parent": "8fb049",
+        "children": [],
+        "settings": {
+          "text": "If you\u2019re curious, this is Website Ipsum. It was specifically developed for the use on development websites. Other than being less confusing than other Ipsum\u2019s, Website Ipsum is also formatted in patterns more similar to how real copy is formatted on the web today.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "upjziz"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "bbaab9",
+        "name": "text-basic",
+        "parent": "8fb049",
+        "children": [],
+        "settings": {
+          "text": "No spam, ever.",
+          "_cssGlobalClasses": [
+            "xjulsq"
+          ],
+          "tag": "p"
+        },
+        "label": "Notice"
+      },
+      {
+        "id": "3931f6",
+        "name": "block",
+        "parent": "04024b",
+        "children": [
+          "bfe07e",
+          "381d26"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "krouyx"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature"
+      },
+      {
+        "id": "bfe07e",
+        "name": "heading",
+        "parent": "3931f6",
+        "children": [],
+        "settings": {
+          "text": "Feature headline",
+          "_cssGlobalClasses": [
+            "kjlmej"
+          ]
+        }
+      },
+      {
+        "id": "381d26",
+        "name": "text-basic",
+        "parent": "3931f6",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "trxned"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "f1e870",
+        "name": "block",
+        "parent": "a9a0e8",
+        "children": [
+          "8fb049",
+          "c6ea81"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vkxdqw"
+          ]
+        },
+        "label": "Content"
+      },
+      {
+        "id": "04024b",
+        "name": "block",
+        "parent": "a9a0e8",
+        "children": [
+          "3931f6",
+          "1e2a39",
+          "06e716"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gqgwrk",
+            "rktisp"
+          ],
+          "tag": "custom",
+          "customTag": "ul"
+        },
+        "label": "Features Grid"
+      },
+      {
+        "id": "06e716",
+        "name": "block",
+        "parent": "04024b",
+        "children": [
+          "2d0fb2",
+          "1f5559"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "krouyx"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature"
+      },
+      {
+        "id": "2d0fb2",
+        "name": "heading",
+        "parent": "06e716",
+        "children": [],
+        "settings": {
+          "text": "Feature headline",
+          "_cssGlobalClasses": [
+            "kjlmej"
+          ]
+        }
+      },
+      {
+        "id": "1f5559",
+        "name": "text-basic",
+        "parent": "06e716",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "trxned"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "1e2a39",
+        "name": "block",
+        "parent": "04024b",
+        "children": [
+          "045617",
+          "abd5a4"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "krouyx"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature"
+      },
+      {
+        "id": "045617",
+        "name": "heading",
+        "parent": "1e2a39",
+        "children": [],
+        "settings": {
+          "text": "Feature headline",
+          "_cssGlobalClasses": [
+            "kjlmej"
+          ]
+        }
+      },
+      {
+        "id": "abd5a4",
+        "name": "text-basic",
+        "parent": "1e2a39",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "trxned"
+          ]
+        },
+        "label": "Lede"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771254332,
+        "user_id": 1
+      },
+      {
+        "id": "fvchph",
+        "name": "form--light",
+        "settings": [],
+        "_mappedId": "acss_import_form--light",
+        "modified": 1771254412,
+        "user_id": 1
+      },
+      {
+        "id": "rktisp",
+        "name": "list--none",
+        "settings": {
+          "_padding": {
+            "left": "0"
+          },
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "acss_import_list--none",
+        "modified": 1771254344,
+        "user_id": 1
+      },
+      {
+        "id": "tnousf",
+        "name": "fr-cta-card-bravo",
+        "settings": {
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "_padding": {
+            "top": "calc(var(--fr-card-padding) * 2)",
+            "right": "calc(var(--fr-card-padding) * 2)",
+            "bottom": "calc(var(--fr-card-padding) * 2)",
+            "left": "calc(var(--fr-card-padding) * 2)"
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_rowGap": "var(--container-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ihwexs",
+        "name": "fr-cta-card-bravo__image-wrapper",
+        "settings": {
+          "_order": "-1",
+          "_overflow": "hidden",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "gvhsvi",
+        "name": "fr-cta-card-bravo__intro",
+        "settings": {
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ezpyke",
+        "name": "fr-cta-card-bravo__image",
+        "settings": {
+          "_objectFit": "cover",
+          "_height": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ruzafx",
+        "name": "fr-cta-card-bravo__form-wrapper",
+        "settings": {
+          "_width:mobile_landscape": "100%",
+          "_margin": {
+            "top": "auto"
+          },
+          "_width": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "qvcfbn",
+        "name": "fr-cta-card-bravo__form",
+        "settings": {
+          "_width": "100%",
+          "horizontalAlignFields": "space-between",
+          "_cssCustom": ".fr-cta-card-bravo__form .bricks-button { margin-top: 0 !important; }"
+        },
+        "_exists": false
+      },
+      {
+        "id": "lyvzhw",
+        "name": "fr-cta-card-bravo__heading",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--h2)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "upjziz",
+        "name": "fr-cta-card-bravo__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "xjulsq",
+        "name": "fr-cta-card-bravo__notice",
+        "settings": {
+          "_typography:mobile_landscape": {
+            "font-size": "var(--text-s)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "krouyx",
+        "name": "fr-cta-card-bravo__feature",
+        "settings": {
+          "_rowGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "kjlmej",
+        "name": "fr-cta-card-bravo__feature-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "trxned",
+        "name": "fr-cta-card-bravo__feature-lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "vkxdqw",
+        "name": "fr-cta-card-bravo__content",
+        "settings": {
+          "_display": "grid",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_alignItemsGrid": "flex-start",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "gqgwrk",
+        "name": "fr-cta-card-bravo__features",
+        "settings": {
+          "_display": "grid",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns": "var(--grid-3)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_alignItemsGrid": "stretch",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

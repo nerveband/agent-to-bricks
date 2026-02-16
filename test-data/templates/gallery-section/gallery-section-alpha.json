@@ -1,0 +1,157 @@
+{
+  "idx": 359,
+  "title": "Gallery Section Alpha",
+  "elementCount": 3,
+  "classCount": 3,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "f3ad57",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "6b2643"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "yqevdb"
+          ]
+        },
+        "label": "Gallery Section Alpha"
+      },
+      {
+        "id": "6b2643",
+        "name": "container",
+        "parent": "f3ad57",
+        "children": [
+          "e40dfb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xfedpi"
+          ]
+        },
+        "label": "Gallery Alpha Wrapper"
+      },
+      {
+        "id": "e40dfb",
+        "name": "image-gallery",
+        "parent": "6b2643",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "bwdgrs"
+          ],
+          "link": "lightbox",
+          "imageRatio": "ratio-square",
+          "layout": "grid",
+          "items": {
+            "images": [
+              {
+                "id": 2411,
+                "full": "https://bricks.getframes.io/wp-content/uploads/scott-walsh-jm2apwe2sza-scaled.jpg",
+                "url": "https://bricks.getframes.io/wp-content/uploads/scott-walsh-jm2apwe2sza-1024x683.jpg"
+              },
+              {
+                "id": 2410,
+                "full": "https://bricks.getframes.io/wp-content/uploads/sergey-zolkin-hosser_14ri-scaled.jpg",
+                "url": "https://bricks.getframes.io/wp-content/uploads/sergey-zolkin-hosser_14ri-1024x683.jpg"
+              },
+              {
+                "id": 2409,
+                "full": "https://bricks.getframes.io/wp-content/uploads/jakob-owens-n-mkaaiq8xa-scaled.jpg",
+                "url": "https://bricks.getframes.io/wp-content/uploads/jakob-owens-n-mkaaiq8xa-1024x701.jpg"
+              },
+              {
+                "id": 2408,
+                "full": "https://bricks.getframes.io/wp-content/uploads/le-tan-he4uacut3r8-scaled.jpg",
+                "url": "https://bricks.getframes.io/wp-content/uploads/le-tan-he4uacut3r8-1024x683.jpg"
+              },
+              {
+                "id": 2407,
+                "full": "https://bricks.getframes.io/wp-content/uploads/artur-nasyrov-poyw_gljluu-scaled.jpg",
+                "url": "https://bricks.getframes.io/wp-content/uploads/artur-nasyrov-poyw_gljluu-1024x681.jpg"
+              },
+              {
+                "id": 2406,
+                "full": "https://bricks.getframes.io/wp-content/uploads/jakob-owens-ue_n2i6-trm-scaled.jpg",
+                "url": "https://bricks.getframes.io/wp-content/uploads/jakob-owens-ue_n2i6-trm-1024x683.jpg"
+              },
+              {
+                "id": 2241,
+                "full": "https://bricks.getframes.io/wp-content/uploads/sonnie-hiles-9n-usdehihy-scaled.jpg",
+                "url": "https://bricks.getframes.io/wp-content/uploads/sonnie-hiles-9n-usdehihy-683x1024.jpg"
+              },
+              {
+                "id": 2240,
+                "full": "https://bricks.getframes.io/wp-content/uploads/drew-colins-lieqsu5juom-scaled.jpg",
+                "url": "https://bricks.getframes.io/wp-content/uploads/drew-colins-lieqsu5juom-731x1024.jpg"
+              },
+              {
+                "id": 2239,
+                "full": "https://bricks.getframes.io/wp-content/uploads/rowan-kyle-smas_uxg4l0-scaled.jpg",
+                "url": "https://bricks.getframes.io/wp-content/uploads/rowan-kyle-smas_uxg4l0-683x1024.jpg"
+              },
+              {
+                "id": 2238,
+                "full": "https://bricks.getframes.io/wp-content/uploads/gian-cescon-00byexkcska-scaled.jpg",
+                "url": "https://bricks.getframes.io/wp-content/uploads/gian-cescon-00byexkcska-683x1024.jpg"
+              },
+              {
+                "id": 1624,
+                "full": "https://bricks.getframes.io/wp-content/uploads/photo-1477346611705-65d1883cee1e.jpeg",
+                "url": "https://bricks.getframes.io/wp-content/uploads/photo-1477346611705-65d1883cee1e-1024x683.jpeg"
+              },
+              {
+                "id": 1623,
+                "full": "https://bricks.getframes.io/wp-content/uploads/photo-1453791052107-5c843da62d97.jpeg",
+                "url": "https://bricks.getframes.io/wp-content/uploads/photo-1453791052107-5c843da62d97-1024x683.jpeg"
+              }
+            ],
+            "size": "large"
+          }
+        },
+        "label": "Gallery Alpha"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "xfedpi",
+        "name": "fr-gallery-alpha__wrapper",
+        "settings": {
+          "_width": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "bwdgrs",
+        "name": "fr-gallery-alpha",
+        "settings": {
+          "_width": "100%",
+          "columns": "6",
+          "gutter": "0",
+          "columns:tablet_portrait": "4",
+          "columns:mobile_landscape": "3",
+          "columns:mobile_portrait": "2",
+          "_cssCustom": ".fr-gallery-alpha {\n  --radius: 0;\n}"
+        },
+        "modified": 1734264483,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "yqevdb",
+        "name": "fr-gallery-section-alpha",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

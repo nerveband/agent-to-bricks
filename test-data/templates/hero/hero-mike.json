@@ -1,0 +1,456 @@
+{
+  "idx": 347,
+  "title": "Hero Mike",
+  "elementCount": 18,
+  "classCount": 13,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "b0de50",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "c0cd05",
+          "ba9b45",
+          "27232a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "evelpy"
+          ]
+        },
+        "label": "Hero Mike (Video Embed)"
+      },
+      {
+        "id": "c0cd05",
+        "name": "container",
+        "parent": "b0de50",
+        "children": [
+          "b67e38",
+          "ea2cd4",
+          "4e3966",
+          "214617"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "uwcerd"
+          ]
+        },
+        "label": "Content"
+      },
+      {
+        "id": "beee55",
+        "name": "image",
+        "parent": "4fdee1",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "dpeykq"
+          ],
+          "caption": "none",
+          "_attributes": [
+            {
+              "id": "quentl",
+              "name": "loading",
+              "value": "eager"
+            }
+          ],
+          "tag": "figure"
+        },
+        "themeStyles": [],
+        "label": "Background Image"
+      },
+      {
+        "id": "ea2cd4",
+        "name": "text-basic",
+        "parent": "c0cd05",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "kqvkqo",
+            "qfdtjc"
+          ]
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "b67e38",
+        "name": "heading",
+        "parent": "c0cd05",
+        "children": [],
+        "settings": {
+          "text": "I am a heading",
+          "tag": "h1",
+          "_cssGlobalClasses": [
+            "eenznw"
+          ]
+        }
+      },
+      {
+        "id": "4e3966",
+        "name": "text-basic",
+        "parent": "c0cd05",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "nrdrzx"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "4fdee1",
+        "name": "block",
+        "parent": "ba9b45",
+        "children": [
+          "beee55"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xxhcjw"
+          ]
+        },
+        "label": "Image Wrapper (Color)"
+      },
+      {
+        "id": "214617",
+        "name": "div",
+        "parent": "c0cd05",
+        "children": [
+          "ecdfc8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "bjvdrb"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "ecdfc8",
+        "name": "video",
+        "parent": "214617",
+        "children": [],
+        "settings": {
+          "videoType": "youtube",
+          "youTubeId": "NpEaa2P7qZI",
+          "vimeoByline": true,
+          "vimeoTitle": true,
+          "vimeoPortrait": true,
+          "fileControls": true,
+          "_cssGlobalClasses": [
+            "bhjldr"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "27232a",
+        "name": "block",
+        "parent": "b0de50",
+        "children": [
+          "151857",
+          "eee7de",
+          "07aa40",
+          "cf8048",
+          "c0f07f",
+          "f8b444",
+          "aa582a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kgeazr"
+          ]
+        },
+        "label": "Tiles (Edit CSS Tab)"
+      },
+      {
+        "id": "151857",
+        "name": "div",
+        "parent": "27232a",
+        "children": [],
+        "settings": {
+          "tag": "custom",
+          "customTag": "span"
+        },
+        "label": "Tile"
+      },
+      {
+        "id": "aa582a",
+        "name": "div",
+        "parent": "27232a",
+        "children": [],
+        "settings": {
+          "tag": "custom",
+          "customTag": "span"
+        },
+        "label": "Tile"
+      },
+      {
+        "id": "f8b444",
+        "name": "div",
+        "parent": "27232a",
+        "children": [],
+        "settings": {
+          "tag": "custom",
+          "customTag": "span"
+        },
+        "label": "Tile"
+      },
+      {
+        "id": "c0f07f",
+        "name": "div",
+        "parent": "27232a",
+        "children": [],
+        "settings": {
+          "tag": "custom",
+          "customTag": "span"
+        },
+        "label": "Tile"
+      },
+      {
+        "id": "cf8048",
+        "name": "div",
+        "parent": "27232a",
+        "children": [],
+        "settings": {
+          "tag": "custom",
+          "customTag": "span"
+        },
+        "label": "Tile"
+      },
+      {
+        "id": "07aa40",
+        "name": "div",
+        "parent": "27232a",
+        "children": [],
+        "settings": {
+          "tag": "custom",
+          "customTag": "span"
+        },
+        "label": "Tile"
+      },
+      {
+        "id": "eee7de",
+        "name": "div",
+        "parent": "27232a",
+        "children": [],
+        "settings": {
+          "tag": "custom",
+          "customTag": "span"
+        },
+        "label": "Tile"
+      },
+      {
+        "id": "ba9b45",
+        "name": "block",
+        "parent": "b0de50",
+        "children": [
+          "4fdee1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "sapeqn"
+          ]
+        },
+        "label": "Background"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771255527,
+        "user_id": 1
+      },
+      {
+        "id": "evelpy",
+        "name": "fr-hero-mike",
+        "settings": {
+          "_position": "relative",
+          "_padding": {
+            "bottom": "0"
+          },
+          "_isolation": "isolate"
+        },
+        "_exists": false
+      },
+      {
+        "id": "uwcerd",
+        "name": "fr-hero-mike__inner",
+        "settings": {
+          "_alignItems": "center",
+          "_alignItems:mobile_landscape": "flex-start",
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_typography": {
+            "text-align": "center",
+            "color": {
+              "raw": "var(--text-light-muted)"
+            }
+          },
+          "_rowGap": "var(--fr-content-gap)",
+          "_position": "relative",
+          "_zIndex": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "dpeykq",
+        "name": "fr-hero-mike__bg-image",
+        "settings": {
+          "_objectFit": "cover",
+          "_width": "100%",
+          "_height": "100%",
+          "_opacity": ".3"
+        },
+        "_exists": false
+      },
+      {
+        "id": "kqvkqo",
+        "name": "fr-hero-mike__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "eenznw",
+        "name": "fr-hero-mike__heading",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "nrdrzx",
+        "name": "fr-hero-mike__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "xxhcjw",
+        "name": "fr-hero-mike__bg-image-wrapper",
+        "settings": {
+          "_transform": {
+            "skewY": "-10"
+          },
+          "_position": "relative",
+          "_width": "100%",
+          "_height": "100%",
+          "_background": {
+            "color": {
+              "raw": "var(--bg-dark)"
+            }
+          },
+          "_transformOrigin": "0"
+        },
+        "_exists": false
+      },
+      {
+        "id": "bjvdrb",
+        "name": "fr-hero-mike__media-wrapper",
+        "settings": {
+          "_width": "var(--width-l)",
+          "_transformOrigin": "0",
+          "_margin": {
+            "top": "2em"
+          },
+          "_overflow": "hidden"
+        },
+        "_exists": false
+      },
+      {
+        "id": "bhjldr",
+        "name": "fr-hero-mike__media",
+        "settings": {
+          "_background": {
+            "color": {
+              "raw": "var(--bg-dark)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "kgeazr",
+        "name": "fr-hero-mike__tiles",
+        "settings": {
+          "_cssCustom": "/* Change Tile Color 1 and Tile Color 2 */\n\n.fr-hero-mike__tiles {\n \t--tile-color-1: var(--neutral-light);\n  --tile-color-2: var(--neutral-ultra-light);\n}\n\n/* Don't edit below this line */\n\n.fr-hero-mike__tiles {\n\tdisplay: grid;\n  grid-template-columns: var(--grid-12);\n  grid-template-rows: var(--grid-10);\n  gap: 0;\n  min-height: 30vw;\n  align-items: stretch;\n  align-content: stretch;\n}\n\n.fr-hero-mike__tiles span:nth-child(1) {\n\tgrid-column: 1 / span 1;\n  grid-row: 1;\n  background-color: var(--tile-color-1);\n}\n\n.fr-hero-mike__tiles span:nth-child(2) {\n\tgrid-column: 3 / span 3;\n  grid-row: 5;\n  background-color: var(--tile-color-2);\n}\n\n.fr-hero-mike__tiles span:nth-child(3) {\n\tgrid-column: span 2;\n  grid-row: 6;\n  background-color: var(--tile-color-1);\n}\n\n.fr-hero-mike__tiles span:nth-child(4) {\n\tgrid-column: 11 / span 2;\n  grid-row: 5;\n  background-color: var(--tile-color-2);\n}\n\n.fr-hero-mike__tiles span:nth-child(5) {\n\tgrid-column: 8 / span 3;\n  grid-row: 6;\n  background-color: var(--tile-color-1);\n}\n\n.fr-hero-mike__tiles span:nth-child(6) {\n\tgrid-column: 10 / span 3;\n  grid-row: 9;\n  background-color: var(--tile-color-2);\n}\n\n.fr-hero-mike__tiles span:nth-child(7) {\n\tgrid-column: 11 / span 2;\n  grid-row: 10;\n  background-color: var(--tile-color-1);\n}",
+          "_position": "absolute",
+          "_left": "0",
+          "_bottom": "0",
+          "_zIndex": "0",
+          "_transformOrigin": "0",
+          "_transform": {
+            "skewX": "0",
+            "skewY": "-10"
+          },
+          "_margin": {
+            "bottom": "-15vw"
+          },
+          "_padding": {
+            "left": "0"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "sapeqn",
+        "name": "fr-hero-mike__bg-container",
+        "settings": {
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_zIndex": "-1",
+          "_overflow": "hidden"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "idx": 400,
+  "title": "Feature Card Foxtrot",
+  "elementCount": 6,
+  "classCount": 6,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "62f758",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "204150",
+          "bbead1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xtodmg"
+          ]
+        },
+        "label": "Feature Card Foxtrot"
+      },
+      {
+        "id": "204150",
+        "name": "block",
+        "parent": "62f758",
+        "children": [
+          "11657a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ngmkpl"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "11657a",
+        "name": "icon",
+        "parent": "204150",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--text-xl)",
+            "width": "var(--text-xl)"
+          },
+          "_cssGlobalClasses": [
+            "aybarc"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "bbead1",
+        "name": "block",
+        "parent": "62f758",
+        "children": [
+          "af93fc",
+          "029177"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dfsgzp"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "af93fc",
+        "name": "heading",
+        "parent": "bbead1",
+        "children": [],
+        "settings": {
+          "text": "Feature heading",
+          "_cssGlobalClasses": [
+            "zzlqtr"
+          ]
+        }
+      },
+      {
+        "id": "029177",
+        "name": "text-basic",
+        "parent": "bbead1",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "oronuy"
+          ]
+        },
+        "label": "Text"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "xtodmg",
+        "name": "fr-feature-card-foxtrot",
+        "settings": {
+          "_direction": "row",
+          "_columnGap": "var(--fr-card-gap)",
+          "_rowGap": "var(--fr-card-gap)",
+          "_flexWrap:mobile_landscape": "nowrap",
+          "_cssCustom": ".fr-feature-card-foxtrot {\n\t--icon-size: 1.5em;\n  --icon-color: var(--neutral);\n}\n\n.fr-feature-card-foxtrot :is(svg, i) {\n  color: var(--icon-color);\n  height: var(--icon-size);\n  width: var(--icon-size);\n}",
+          "_display": "flex",
+          "_alignItems": "flex-start"
+        },
+        "modified": 1734008811,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "ngmkpl",
+        "name": "fr-feature-card-foxtrot__media-wrapper",
+        "settings": {
+          "_width": "auto",
+          "_order": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "aybarc",
+        "name": "fr-feature-card-foxtrot__icon",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "dfsgzp",
+        "name": "fr-feature-card-foxtrot__body",
+        "settings": {
+          "_rowGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "zzlqtr",
+        "name": "fr-feature-card-foxtrot__heading",
+        "settings": {
+          "_width": "100%",
+          "_cssCustom": ".fr-feature-card-foxtrot__heading {\n  font-size: var(--h3);\n  font-weight: var(--heading-font-weight);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "oronuy",
+        "name": "fr-feature-card-foxtrot__text",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

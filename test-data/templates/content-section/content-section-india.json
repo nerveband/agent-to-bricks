@@ -1,0 +1,197 @@
+{
+  "idx": 413,
+  "title": "Content Section India",
+  "elementCount": 8,
+  "classCount": 8,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "5c54ca",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "e38d25"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gfpxeb"
+          ]
+        },
+        "label": "Content Section India"
+      },
+      {
+        "id": "e38d25",
+        "name": "container",
+        "parent": "5c54ca",
+        "children": [
+          "a558c0",
+          "f9385c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ibqwwt"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "a558c0",
+        "name": "block",
+        "parent": "e38d25",
+        "children": [
+          "91e163",
+          "1b8f6b",
+          "4bcbf5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kimybs"
+          ]
+        },
+        "label": "Left"
+      },
+      {
+        "id": "f9385c",
+        "name": "block",
+        "parent": "e38d25",
+        "children": [
+          "c58c40"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qazlnt"
+          ]
+        },
+        "label": "Right"
+      },
+      {
+        "id": "1b8f6b",
+        "name": "text-basic",
+        "parent": "a558c0",
+        "children": [],
+        "settings": {
+          "text": "Ut sed semper velit commodo, tortor malesuada. Malesuada nisl pharetra a sit augue nec bibendum morbi. Ac et, porttitor est elit mauris scelerisque et lobortis eget.\n\n",
+          "_cssGlobalClasses": [
+            "lnxsam"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "4bcbf5",
+        "name": "text-basic",
+        "parent": "a558c0",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_cssGlobalClasses": [
+            "pxivih"
+          ]
+        },
+        "label": "Link"
+      },
+      {
+        "id": "c58c40",
+        "name": "text-basic",
+        "parent": "f9385c",
+        "children": [],
+        "settings": {
+          "text": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "_cssGlobalClasses": [
+            "mlgheg"
+          ],
+          "tag": "p"
+        },
+        "label": "Large Callout"
+      },
+      {
+        "id": "91e163",
+        "name": "heading",
+        "parent": "a558c0",
+        "children": [],
+        "settings": {
+          "text": "I am a heading",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "xuamki"
+          ]
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "gfpxeb",
+        "name": "fr-content-section-india",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ibqwwt",
+        "name": "fr-content-section-india__inner",
+        "settings": {
+          "_cssCustom:mobile_landscape": ".fr-content-section-india__inner {\n  grid-template-columns: 1fr;\n  gap: var(--fr-content-gap);\n}",
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-2-3)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_alignItemsGrid": "stretch",
+          "_gridGap": "var(--space-xl)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "kimybs",
+        "name": "fr-content-section-india__inner-left",
+        "settings": {
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "qazlnt",
+        "name": "fr-content-section-india__inner-right",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "lnxsam",
+        "name": "fr-content-section-india__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "pxivih",
+        "name": "fr-content-section-india__link",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "mlgheg",
+        "name": "fr-content-section-india__callout",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-xl)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "xuamki",
+        "name": "fr-content-section-india__heading",
+        "settings": [],
+        "modified": 1728402677,
+        "user_id": 9,
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

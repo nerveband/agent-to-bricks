@@ -1,0 +1,280 @@
+{
+  "idx": 160,
+  "title": "Toggle Button Alpha",
+  "elementCount": 8,
+  "classCount": 9,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "fa6169",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "750ee9",
+          "c6bccc",
+          "d49445"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "yfgmzf"
+          ],
+          "tag": "custom",
+          "customTag": "button",
+          "text": "OPen C",
+          "_alignItems": "center",
+          "_rowGap": "calc(var(--content-gap) / 3)",
+          "_columnGap": "calc(var(--content-gap) / 3)",
+          "_attributes": [
+            {
+              "id": "nkvwiu",
+              "name": "aria-expanded",
+              "value": "false"
+            }
+          ]
+        },
+        "label": "Toggle Button Alpha (CSS)"
+      },
+      {
+        "id": "750ee9",
+        "name": "block",
+        "parent": "fa6169",
+        "children": [
+          "125623",
+          "e10815"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "aliznl"
+          ]
+        },
+        "label": "Icon Wrapper"
+      },
+      {
+        "id": "125623",
+        "name": "icon",
+        "parent": "750ee9",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)"
+          },
+          "_cssGlobalClasses": [
+            "fbukoc",
+            "sfpyvf"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Icon (Open)"
+      },
+      {
+        "id": "e10815",
+        "name": "icon",
+        "parent": "750ee9",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)"
+          },
+          "_cssGlobalClasses": [
+            "fbukoc",
+            "onsjsw"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Icon (Close)"
+      },
+      {
+        "id": "c6bccc",
+        "name": "block",
+        "parent": "fa6169",
+        "children": [
+          "82d5a8",
+          "fcfdea"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "bbdcte"
+          ]
+        },
+        "label": "Label Wrapper"
+      },
+      {
+        "id": "82d5a8",
+        "name": "text-basic",
+        "parent": "c6bccc",
+        "children": [],
+        "settings": {
+          "text": "Open",
+          "tag": "span",
+          "_cssGlobalClasses": [
+            "gjaeiz",
+            "qimdgb"
+          ]
+        },
+        "label": "Label (Open)"
+      },
+      {
+        "id": "fcfdea",
+        "name": "text-basic",
+        "parent": "c6bccc",
+        "children": [],
+        "settings": {
+          "text": "Close",
+          "tag": "span",
+          "_cssGlobalClasses": [
+            "gjaeiz",
+            "vfaqzh"
+          ]
+        },
+        "label": "Label (Close)"
+      },
+      {
+        "id": "d49445",
+        "name": "code",
+        "parent": "fa6169",
+        "children": [],
+        "settings": {
+          "code": "<script>\n  // Get a reference to the button element\n  const button = document.querySelector('.fr-toggle-button-alpha');\n\n  // Add a click event listener to the button\n  button.addEventListener('click', function () {\n    // Get the current value of the aria-expanded attribute\n    const currentAriaValue = button.getAttribute('aria-expanded');\n\n    // Toggle the aria-expanded attribute value\n    if (currentAriaValue === 'true') {\n      button.setAttribute('aria-expanded', 'false');\n    } else {\n      button.setAttribute('aria-expanded', 'true');\n    }\n  });\n</script>",
+          "executeCode": true,
+          "noRoot": true,
+          "_cssCustom": "#brxe-d49445 {\n\tdisplay: none;\n}",
+          "user_id": 2,
+          "time": 1762444265
+        },
+        "label": "Aria Toggle"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "yfgmzf",
+        "name": "fr-toggle-button-alpha",
+        "settings": {
+          "_padding": {
+            "top": "var(--btn-pad-y)",
+            "bottom": "var(--btn-pad-y)",
+            "left": "var(--btn-pad-x)",
+            "right": "var(--btn-pad-x)"
+          },
+          "_justifyContent": "center",
+          "_alignItems": "center",
+          "_typography": {
+            "color": {
+              "raw": "var(--white)"
+            },
+            "line-height": "var(--btn-line-height)"
+          },
+          "_cssCustom": ".fr-toggle-button-alpha {\n  /* Button Style */\n  --button-background-color: var(--primary);\n  --button-background-color-hover: var(--primary-hover);\n  --gap: calc(var(--content-gap) / 3);\n  /* Icon Style */\n  --icon-size: var(--text-l);\n  --icon-color: var(--white-trans-70);\n  --icon-color-hover: var(--white);\n  /* Label Style */\n  --label-color: var(--white-trans-70);\n  --label-color-hover: var(--white);\n  /* Animation */\n  --transition-duration: .25s;\n}\n\n/* Button Styling */\n\n.fr-toggle-button-alpha {\n  background: var(--button-background-color);\n\tposition: relative;\n  display: grid;\n  grid-template-columns: auto minmax(0, 1fr);\n  gap: var(--gap);\n  align-items: center;\n  border-color: var(--button-background-color);\n}\n\n.fr-toggle-button-alpha:hover {\n\tbackground: var(--button-background-color-hover);\n  border-color: var(--button-background-color-hover);\n}\n\n/* Icon & Label Styling */\n\n.fr-toggle-button-alpha .fr-toggle-button-alpha__icon {\n\tfill: var(--icon-color);\n}\n.fr-toggle-button-alpha:hover .fr-toggle-button-alpha__icon {\n\tfill: var(--icon-color-hover);\n}\n\n.fr-toggle-button-alpha .fr-toggle-button-alpha__label {\n\tcolor: var(--label-color);\n}\n.fr-toggle-button-alpha:hover .fr-toggle-button-alpha__label {\n\tcolor: var(--label-color-hover);\n}\n\n/* Animate */\n\n.fr-toggle-button-alpha .fr-toggle-button-alpha__icon--close,\n.fr-toggle-button-alpha .fr-toggle-button-alpha__label--close,\n.fr-toggle-button-alpha .fr-toggle-button-alpha__icon--open,\n.fr-toggle-button-alpha .fr-toggle-button-alpha__label--open {\n\ttransition: translate var(--transition-duration) ease;\n}\n\n/* Is Closed */\n\n.fr-toggle-button-alpha .fr-toggle-button-alpha__icon--close {\n\tposition: absolute;\n  translate: 0 -200%;\n  opacity: 0;\n}\n\n.fr-toggle-button-alpha .fr-toggle-button-alpha__label--close {\n\tposition: absolute;\n  translate: 0 200%;\n  opacity: 0;\n}\n\n/* Is Open */\n\n.fr-toggle-button-alpha.is-open .fr-toggle-button-alpha__icon--open {\n\tposition: absolute;\n  translate: 0 200%;\n  opacity: 0;\n}\n\n.fr-toggle-button-alpha.is-open .fr-toggle-button-alpha__label--open {\n\tposition: absolute;\n  translate: 0 -200%;\n  opacity: 0;\n}\n\n.fr-toggle-button-alpha.is-open .fr-toggle-button-alpha__icon--close,\n.fr-toggle-button-alpha.is-open .fr-toggle-button-alpha__label--close {\n\tposition: relative;\n  translate: 0% 0%;\n  opacity: 1;\n}",
+          "_border": {
+            "radius": {
+              "top": "var(--btn-radius)",
+              "right": "var(--btn-radius)",
+              "bottom": "var(--btn-radius)",
+              "left": "var(--btn-radius)"
+            },
+            "width": {
+              "top": "var(--btn-border-width)",
+              "right": "var(--btn-border-width)",
+              "bottom": "var(--btn-border-width)",
+              "left": "var(--btn-border-width)"
+            },
+            "style": "solid"
+          },
+          "_interactions": [
+            {
+              "id": "ehxyfi",
+              "trigger": "click",
+              "action": "toggleAttribute",
+              "actionAttributeKey": "class",
+              "actionAttributeValue": "is-open"
+            }
+          ],
+          "_overflow": "hidden"
+        },
+        "_exists": false
+      },
+      {
+        "id": "aliznl",
+        "name": "fr-toggle-button-alpha__icon-wrapper",
+        "settings": {
+          "_direction": "row",
+          "_justifyContent": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "fbukoc",
+        "name": "fr-toggle-button-alpha__icon",
+        "settings": {
+          "_cssTransition": "transform .3s ease"
+        },
+        "_exists": false
+      },
+      {
+        "id": "sfpyvf",
+        "name": "fr-toggle-button-alpha__icon--open",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "onsjsw",
+        "name": "fr-toggle-button-alpha__icon--close",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "bbdcte",
+        "name": "fr-toggle-button-alpha__label-wrapper",
+        "settings": {
+          "_direction": "row",
+          "_display": "flex",
+          "_justifyContentGrid": "center",
+          "_alignItemsGrid": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "gjaeiz",
+        "name": "fr-toggle-button-alpha__label",
+        "settings": {
+          "_typography": {
+            "line-height": "var(--btn-line-height)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "qimdgb",
+        "name": "fr-toggle-button-alpha__label--open",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "vfaqzh",
+        "name": "fr-toggle-button-alpha__label--close",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

@@ -1,0 +1,3788 @@
+{
+  "idx": 24,
+  "title": "(UI) Buttons Links Alpha",
+  "elementCount": 188,
+  "classCount": 30,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "b9e3dd",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "3507b9",
+          "106106",
+          "fc9145",
+          "b5d5ba",
+          "eeed33",
+          "c8272d",
+          "8df8c7",
+          "24e621",
+          "f6b423"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "myjzqp"
+          ]
+        },
+        "label": "UI Buttons & Links Section Alpha"
+      },
+      {
+        "id": "b76317",
+        "name": "container",
+        "parent": "106106",
+        "children": [
+          "c31196",
+          "ece2c9",
+          "c61c6b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mmbmey"
+          ]
+        },
+        "label": "Buttons Grid"
+      },
+      {
+        "id": "c31196",
+        "name": "block",
+        "parent": "b76317",
+        "children": [
+          "e0fc91",
+          "00e06e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cineii"
+          ],
+          "_attributes": [
+            {
+              "id": "tgstih",
+              "name": "data-ui-button-theme",
+              "value": "main"
+            }
+          ],
+          "_typography": {
+            "color": {
+              "raw": "var(--neutral-dark)"
+            }
+          }
+        },
+        "label": "Buttons"
+      },
+      {
+        "id": "e0fc91",
+        "name": "block",
+        "parent": "c31196",
+        "children": [
+          "0d5021",
+          "0e6ea1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "zogtkx",
+              "name": "data-ui-button-style",
+              "value": "main"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "0d5021",
+        "name": "button",
+        "parent": "e0fc91",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "wpxhbi",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "0e6ea1",
+        "name": "block",
+        "parent": "e0fc91",
+        "children": [
+          "315bd5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "315bd5",
+        "name": "text-basic",
+        "parent": "0e6ea1",
+        "children": [],
+        "settings": {
+          "text": "Primary",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "00e06e",
+        "name": "block",
+        "parent": "c31196",
+        "children": [
+          "2f8e86",
+          "202293"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "jeglpn",
+              "name": "data-ui-button-style",
+              "value": "outline"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "2f8e86",
+        "name": "button",
+        "parent": "00e06e",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary",
+            "btn--outline"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "eutjkq",
+              "name": "[data-ui-button]"
+            }
+          ]
+        }
+      },
+      {
+        "id": "202293",
+        "name": "block",
+        "parent": "00e06e",
+        "children": [
+          "3bb606"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "3bb606",
+        "name": "text-basic",
+        "parent": "202293",
+        "children": [],
+        "settings": {
+          "text": "Primary Outline",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "c61c6b",
+        "name": "block",
+        "parent": "b76317",
+        "children": [
+          "444086",
+          "8b0aec"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cineii"
+          ],
+          "_attributes": [
+            {
+              "id": "qwctiy",
+              "name": "data-ui-button-theme",
+              "value": "dark"
+            }
+          ]
+        },
+        "label": "Buttons"
+      },
+      {
+        "id": "444086",
+        "name": "block",
+        "parent": "c61c6b",
+        "children": [
+          "74c0aa",
+          "7e4efb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "loelos",
+              "name": "data-ui-button-style",
+              "value": "main"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "74c0aa",
+        "name": "button",
+        "parent": "444086",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "fxqiyf"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "kgqvir",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "7e4efb",
+        "name": "block",
+        "parent": "444086",
+        "children": [
+          "126679"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "126679",
+        "name": "text-basic",
+        "parent": "7e4efb",
+        "children": [],
+        "settings": {
+          "text": "Primary Dark",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "8b0aec",
+        "name": "block",
+        "parent": "c61c6b",
+        "children": [
+          "bce5b3",
+          "1b58fd"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "xarkaw",
+              "name": "data-ui-button-style",
+              "value": "outline"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "bce5b3",
+        "name": "button",
+        "parent": "8b0aec",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--outline",
+            "fxqiyf"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "jyqzld",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "1b58fd",
+        "name": "block",
+        "parent": "8b0aec",
+        "children": [
+          "1addf1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "1addf1",
+        "name": "text-basic",
+        "parent": "1b58fd",
+        "children": [],
+        "settings": {
+          "text": "Primary Dark Outline",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "ece2c9",
+        "name": "block",
+        "parent": "b76317",
+        "children": [
+          "2fc79f",
+          "207481"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cineii"
+          ],
+          "_attributes": [
+            {
+              "id": "znnfdj",
+              "name": "data-ui-button-theme",
+              "value": "light"
+            }
+          ]
+        },
+        "label": "Buttons"
+      },
+      {
+        "id": "2fc79f",
+        "name": "block",
+        "parent": "ece2c9",
+        "children": [
+          "154d65",
+          "e99cd7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "ieigum",
+              "name": "data-ui-button-style",
+              "value": "main"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "154d65",
+        "name": "button",
+        "parent": "2fc79f",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "dmlfsy"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "fluyfd",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "e99cd7",
+        "name": "block",
+        "parent": "2fc79f",
+        "children": [
+          "07f7d7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "07f7d7",
+        "name": "text-basic",
+        "parent": "e99cd7",
+        "children": [],
+        "settings": {
+          "text": "Primary Light",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "207481",
+        "name": "block",
+        "parent": "ece2c9",
+        "children": [
+          "e2a2ac",
+          "798eed"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "jlspuv",
+              "name": "data-ui-button-style",
+              "value": "outline"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "e2a2ac",
+        "name": "button",
+        "parent": "207481",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--outline",
+            "dmlfsy"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "cxluxl",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "798eed",
+        "name": "block",
+        "parent": "207481",
+        "children": [
+          "52c591"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "52c591",
+        "name": "text-basic",
+        "parent": "798eed",
+        "children": [],
+        "settings": {
+          "text": "Primary Light Outline",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "106106",
+        "name": "container",
+        "parent": "b9e3dd",
+        "children": [
+          "c1b2d1",
+          "b76317"
+        ],
+        "settings": {
+          "_attributes": [
+            {
+              "id": "bwwfan",
+              "name": "data-ui-button-group",
+              "value": "primary"
+            }
+          ],
+          "_cssGlobalClasses": [
+            "nmkryo"
+          ]
+        },
+        "label": "Buttons (Primary)"
+      },
+      {
+        "id": "3507b9",
+        "name": "container",
+        "parent": "b9e3dd",
+        "children": [
+          "7e0764",
+          "23aded"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "slhmuz"
+          ]
+        },
+        "label": "Intro Bravo"
+      },
+      {
+        "id": "23aded",
+        "name": "text-basic",
+        "parent": "3507b9",
+        "children": [],
+        "settings": {
+          "text": "Action elements",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "cirgqc"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "7e0764",
+        "name": "heading",
+        "parent": "3507b9",
+        "children": [],
+        "settings": {
+          "text": "Buttons &amp; Links",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "okkigb"
+          ]
+        }
+      },
+      {
+        "id": "c1b2d1",
+        "name": "text-basic",
+        "parent": "106106",
+        "children": [],
+        "settings": {
+          "text": "Primary",
+          "_cssGlobalClasses": [
+            "qfdtjc"
+          ]
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "f6b423",
+        "name": "code",
+        "parent": "b9e3dd",
+        "children": [],
+        "settings": {
+          "code": "<!-- Activate & Sign -->",
+          "javascriptCode": "document.addEventListener('DOMContentLoaded', function() {\n    const buttonThemes = document.querySelectorAll('[data-ui-button-theme]');\n    const buttonGroups = document.querySelectorAll('[data-ui-button-group]');\n\n    function updateVisibility() {\n        buttonThemes.forEach(theme => {\n            const button = theme.querySelector('[data-ui-button]');\n            if (button) {\n                const computedStyle = window.getComputedStyle(button);\n                const backgroundColor = computedStyle.backgroundColor;\n                const isTransparent = backgroundColor === 'rgba(0, 0, 0, 0)' || backgroundColor === 'transparent';\n                const buttonStyle = button.getAttribute('data-ui-button-style');\n                \n                if (isTransparent && buttonStyle === 'outline') {\n                    theme.style.display = 'none';\n                } else {\n                    theme.style.display = isTransparent ? 'none' : '';\n                }\n            }\n        });\n\n        buttonGroups.forEach(group => {\n            const visibleThemes = group.querySelectorAll('[data-ui-button-theme]:not([style*=\"display: none\"])');\n            group.style.display = visibleThemes.length === 0 ? 'none' : '';\n        });\n\n        const groupTypes = ['primary', 'secondary', 'tertiary', 'accent', 'base', 'neutral'];\n        \n        groupTypes.forEach(type => {\n            const group = document.querySelector(`[data-ui-button-group=\"${type}\" i]`);\n            if (group) {\n                const optionBtnOutline = getComputedStyle(document.documentElement).getPropertyValue(`--option-${type}-btn-outline`).trim();\n\n                if (optionBtnOutline !== 'on') {\n                    const outlineButtons = group.querySelectorAll('[data-ui-button-style=\"outline\"]');\n                    outlineButtons.forEach(button => {\n                        button.style.display = 'none';\n                    });\n                } else {\n                    const outlineButtons = group.querySelectorAll('[data-ui-button-style=\"outline\"]');\n                    outlineButtons.forEach(button => {\n                        button.style.display = '';\n                    });\n                }\n            }\n        });\n    }\n\n    const resizeObserver = new ResizeObserver(updateVisibility);\n    buttonThemes.forEach(theme => resizeObserver.observe(theme));\n\n    updateVisibility(); // Initial update\n});",
+          "executeCode": true,
+          "noRoot": true,
+          "user_id": 2,
+          "time": 1762444265,
+          "_cssCustom": "document.addEventListener('DOMContentLoaded', function() {\n    const buttonThemes = document.querySelectorAll('[data-ui-button-theme]');\n    const buttonGroups = document.querySelectorAll('[data-ui-button-group]');\n\n    function updateVisibility() {\n        buttonThemes.forEach(theme => {\n            const button = theme.querySelector('[data-ui-button]');\n            if (button) {\n                const computedStyle = window.getComputedStyle(button);\n                const backgroundColor = computedStyle.backgroundColor;\n                const isTransparent = backgroundColor === 'rgba(0, 0, 0, 0)' || backgroundColor === 'transparent';\n                const buttonStyle = button.getAttribute('data-ui-button-style');\n                \n                if (isTransparent && buttonStyle === 'outline') {\n                    theme.style.display = 'none';\n                } else {\n                    theme.style.display = isTransparent ? 'none' : '';\n                }\n            }\n        });\n\n        buttonGroups.forEach(group => {\n            const visibleThemes = group.querySelectorAll('[data-ui-button-theme]:not([style*=\"display: none\"])');\n            group.style.display = visibleThemes.length === 0 ? 'none' : '';\n        });\n\n        const groupTypes = ['primary', 'secondary', 'tertiary', 'accent', 'base', 'neutral'];\n        \n        groupTypes.forEach(type => {\n            const group = document.querySelector(`[data-ui-button-group=\"${type}\" i]`);\n            if (group) {\n                const optionBtnOutline = getComputedStyle(document.documentElement).getPropertyValue(`--option-${type}-btn-outline`);\n\n                if (optionBtnOutline.trim() !== 'on') {\n                    const outlineButtons = group.querySelectorAll('[data-ui-button-style=\"outline\" i]');\n                    outlineButtons.forEach(button => {\n                        button.style.display = 'none';\n                    });\n                } else {\n                    const outlineButtons = group.querySelectorAll('[data-ui-button-style=\"outline\" i]');\n                    outlineButtons.forEach(button => {\n                        button.style.display = '';\n                    });\n                }\n            }\n        });\n    }\n\n    const resizeObserver = new ResizeObserver(updateVisibility);\n    buttonThemes.forEach(theme => resizeObserver.observe(theme));\n\n    updateVisibility(); // Initial update\n});"
+        }
+      },
+      {
+        "id": "fc9145",
+        "name": "container",
+        "parent": "b9e3dd",
+        "children": [
+          "40c035",
+          "0b0bcb"
+        ],
+        "settings": {
+          "_attributes": [
+            {
+              "id": "bwwfan",
+              "name": "data-ui-button-group",
+              "value": "secondary"
+            }
+          ],
+          "_cssGlobalClasses": [
+            "nmkryo"
+          ]
+        },
+        "label": "Buttons (Secondary)"
+      },
+      {
+        "id": "40c035",
+        "name": "text-basic",
+        "parent": "fc9145",
+        "children": [],
+        "settings": {
+          "text": "SEcondary",
+          "_cssGlobalClasses": [
+            "qfdtjc"
+          ]
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "0b0bcb",
+        "name": "container",
+        "parent": "fc9145",
+        "children": [
+          "b515ac",
+          "556773",
+          "7b986d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mmbmey"
+          ]
+        },
+        "label": "Buttons Grid"
+      },
+      {
+        "id": "b515ac",
+        "name": "block",
+        "parent": "0b0bcb",
+        "children": [
+          "8773dd",
+          "7970a7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cineii"
+          ],
+          "_attributes": [
+            {
+              "id": "tgstih",
+              "name": "data-ui-button-theme",
+              "value": "main"
+            }
+          ]
+        },
+        "label": "Buttons"
+      },
+      {
+        "id": "8773dd",
+        "name": "block",
+        "parent": "b515ac",
+        "children": [
+          "debcce",
+          "e4e2e7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "zogtkx",
+              "name": "data-ui-button-style",
+              "value": "main"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "debcce",
+        "name": "button",
+        "parent": "8773dd",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--secondary"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "wpxhbi",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "e4e2e7",
+        "name": "block",
+        "parent": "8773dd",
+        "children": [
+          "f81428"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "f81428",
+        "name": "text-basic",
+        "parent": "e4e2e7",
+        "children": [],
+        "settings": {
+          "text": "Secondary",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "7970a7",
+        "name": "block",
+        "parent": "b515ac",
+        "children": [
+          "0668d4",
+          "2bfbbb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "jeglpn",
+              "name": "data-ui-button-style",
+              "value": "outline"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "0668d4",
+        "name": "button",
+        "parent": "7970a7",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--outline",
+            "btn--secondary"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "eutjkq",
+              "name": "[data-ui-button]"
+            }
+          ]
+        }
+      },
+      {
+        "id": "2bfbbb",
+        "name": "block",
+        "parent": "7970a7",
+        "children": [
+          "1eba50"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "1eba50",
+        "name": "text-basic",
+        "parent": "2bfbbb",
+        "children": [],
+        "settings": {
+          "text": "Secondary Outline",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "556773",
+        "name": "block",
+        "parent": "0b0bcb",
+        "children": [
+          "73edfc",
+          "dbbfc1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cineii"
+          ],
+          "_attributes": [
+            {
+              "id": "znnfdj",
+              "name": "data-ui-button-theme",
+              "value": "light"
+            }
+          ]
+        },
+        "label": "Buttons"
+      },
+      {
+        "id": "73edfc",
+        "name": "block",
+        "parent": "556773",
+        "children": [
+          "414f6f",
+          "bbbb3b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "ieigum",
+              "name": "data-ui-button-style",
+              "value": "main"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "414f6f",
+        "name": "button",
+        "parent": "73edfc",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "dllsye"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "fluyfd",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "bbbb3b",
+        "name": "block",
+        "parent": "73edfc",
+        "children": [
+          "21a775"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "21a775",
+        "name": "text-basic",
+        "parent": "bbbb3b",
+        "children": [],
+        "settings": {
+          "text": "Secondary Light",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "dbbfc1",
+        "name": "block",
+        "parent": "556773",
+        "children": [
+          "7eb707",
+          "56af56"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "jlspuv",
+              "name": "data-ui-button-style",
+              "value": "outline"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "7eb707",
+        "name": "button",
+        "parent": "dbbfc1",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--outline",
+            "dllsye"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "cxluxl",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "56af56",
+        "name": "block",
+        "parent": "dbbfc1",
+        "children": [
+          "d36e95"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "d36e95",
+        "name": "text-basic",
+        "parent": "56af56",
+        "children": [],
+        "settings": {
+          "text": "Secondary Light Outline",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "7b986d",
+        "name": "block",
+        "parent": "0b0bcb",
+        "children": [
+          "c0b39a",
+          "0ec596"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cineii"
+          ],
+          "_attributes": [
+            {
+              "id": "qwctiy",
+              "name": "data-ui-button-theme",
+              "value": "dark"
+            }
+          ]
+        },
+        "label": "Buttons"
+      },
+      {
+        "id": "c0b39a",
+        "name": "block",
+        "parent": "7b986d",
+        "children": [
+          "76c825",
+          "baf4c0"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "loelos",
+              "name": "data-ui-button-style",
+              "value": "main"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "76c825",
+        "name": "button",
+        "parent": "c0b39a",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "hjhsql"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "kgqvir",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "baf4c0",
+        "name": "block",
+        "parent": "c0b39a",
+        "children": [
+          "519414"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "519414",
+        "name": "text-basic",
+        "parent": "baf4c0",
+        "children": [],
+        "settings": {
+          "text": "Secondary Dark",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "0ec596",
+        "name": "block",
+        "parent": "7b986d",
+        "children": [
+          "c0c22e",
+          "33c761"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "xarkaw",
+              "name": "data-ui-button-style",
+              "value": "outline"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "c0c22e",
+        "name": "button",
+        "parent": "0ec596",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--outline",
+            "hjhsql"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "jyqzld",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "33c761",
+        "name": "block",
+        "parent": "0ec596",
+        "children": [
+          "7d8d45"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "7d8d45",
+        "name": "text-basic",
+        "parent": "33c761",
+        "children": [],
+        "settings": {
+          "text": "Secondary Dark Outline",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "b5d5ba",
+        "name": "container",
+        "parent": "b9e3dd",
+        "children": [
+          "931334",
+          "572777"
+        ],
+        "settings": {
+          "_attributes": [
+            {
+              "id": "bwwfan",
+              "name": "data-ui-button-group",
+              "value": "tertiary"
+            }
+          ],
+          "_cssGlobalClasses": [
+            "nmkryo"
+          ]
+        },
+        "label": "Buttons (Secondary)"
+      },
+      {
+        "id": "931334",
+        "name": "text-basic",
+        "parent": "b5d5ba",
+        "children": [],
+        "settings": {
+          "text": "Tertiary",
+          "_cssGlobalClasses": [
+            "qfdtjc"
+          ]
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "572777",
+        "name": "container",
+        "parent": "b5d5ba",
+        "children": [
+          "a6c422",
+          "581aa3",
+          "c344b6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mmbmey"
+          ]
+        },
+        "label": "Buttons Grid"
+      },
+      {
+        "id": "a6c422",
+        "name": "block",
+        "parent": "572777",
+        "children": [
+          "7ee710",
+          "017c59"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cineii"
+          ],
+          "_attributes": [
+            {
+              "id": "tgstih",
+              "name": "data-ui-button-theme",
+              "value": "main"
+            }
+          ]
+        },
+        "label": "Buttons"
+      },
+      {
+        "id": "7ee710",
+        "name": "block",
+        "parent": "a6c422",
+        "children": [
+          "66a582",
+          "bb99e5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "zogtkx",
+              "name": "data-ui-button-style",
+              "value": "main"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "66a582",
+        "name": "button",
+        "parent": "7ee710",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--tertiary"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "wpxhbi",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "bb99e5",
+        "name": "block",
+        "parent": "7ee710",
+        "children": [
+          "4e6b3b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "4e6b3b",
+        "name": "text-basic",
+        "parent": "bb99e5",
+        "children": [],
+        "settings": {
+          "text": "Tertiary",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "017c59",
+        "name": "block",
+        "parent": "a6c422",
+        "children": [
+          "58fa08",
+          "901731"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "jeglpn",
+              "name": "data-ui-button-style",
+              "value": "outline"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "58fa08",
+        "name": "button",
+        "parent": "017c59",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--outline",
+            "btn--tertiary"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "eutjkq",
+              "name": "[data-ui-button]"
+            }
+          ]
+        }
+      },
+      {
+        "id": "901731",
+        "name": "block",
+        "parent": "017c59",
+        "children": [
+          "df59d3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "df59d3",
+        "name": "text-basic",
+        "parent": "901731",
+        "children": [],
+        "settings": {
+          "text": "Tertiary Outline",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "581aa3",
+        "name": "block",
+        "parent": "572777",
+        "children": [
+          "254d71",
+          "59ed6e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cineii"
+          ],
+          "_attributes": [
+            {
+              "id": "znnfdj",
+              "name": "data-ui-button-theme",
+              "value": "light"
+            }
+          ]
+        },
+        "label": "Buttons"
+      },
+      {
+        "id": "254d71",
+        "name": "block",
+        "parent": "581aa3",
+        "children": [
+          "190cc4",
+          "4b847c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "ieigum",
+              "name": "data-ui-button-style",
+              "value": "main"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "190cc4",
+        "name": "button",
+        "parent": "254d71",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "qvjohc"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "fluyfd",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "4b847c",
+        "name": "block",
+        "parent": "254d71",
+        "children": [
+          "aba383"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "aba383",
+        "name": "text-basic",
+        "parent": "4b847c",
+        "children": [],
+        "settings": {
+          "text": "Tertiary Light",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "59ed6e",
+        "name": "block",
+        "parent": "581aa3",
+        "children": [
+          "842932",
+          "484b30"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "jlspuv",
+              "name": "data-ui-button-style",
+              "value": "outline"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "842932",
+        "name": "button",
+        "parent": "59ed6e",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--outline",
+            "qvjohc"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "cxluxl",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "484b30",
+        "name": "block",
+        "parent": "59ed6e",
+        "children": [
+          "01061d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "01061d",
+        "name": "text-basic",
+        "parent": "484b30",
+        "children": [],
+        "settings": {
+          "text": "Tertiary Light Outline",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "c344b6",
+        "name": "block",
+        "parent": "572777",
+        "children": [
+          "6333bb",
+          "e5eb20"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cineii"
+          ],
+          "_attributes": [
+            {
+              "id": "qwctiy",
+              "name": "data-ui-button-theme",
+              "value": "dark"
+            }
+          ]
+        },
+        "label": "Buttons"
+      },
+      {
+        "id": "6333bb",
+        "name": "block",
+        "parent": "c344b6",
+        "children": [
+          "ce428e",
+          "3b3e22"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "loelos",
+              "name": "data-ui-button-style",
+              "value": "main"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "ce428e",
+        "name": "button",
+        "parent": "6333bb",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "swqjqw"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "kgqvir",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "3b3e22",
+        "name": "block",
+        "parent": "6333bb",
+        "children": [
+          "886a30"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "886a30",
+        "name": "text-basic",
+        "parent": "3b3e22",
+        "children": [],
+        "settings": {
+          "text": "Tertiary Dark",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "e5eb20",
+        "name": "block",
+        "parent": "c344b6",
+        "children": [
+          "6d9400",
+          "e09b1e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "xarkaw",
+              "name": "data-ui-button-style",
+              "value": "outline"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "6d9400",
+        "name": "button",
+        "parent": "e5eb20",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--outline",
+            "swqjqw"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "jyqzld",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "e09b1e",
+        "name": "block",
+        "parent": "e5eb20",
+        "children": [
+          "513163"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "513163",
+        "name": "text-basic",
+        "parent": "e09b1e",
+        "children": [],
+        "settings": {
+          "text": "Tertiary Dark Outline",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "eeed33",
+        "name": "container",
+        "parent": "b9e3dd",
+        "children": [
+          "be0698",
+          "c8eb24"
+        ],
+        "settings": {
+          "_attributes": [
+            {
+              "id": "bwwfan",
+              "name": "data-ui-button-group",
+              "value": "accent"
+            }
+          ],
+          "_cssGlobalClasses": [
+            "nmkryo"
+          ]
+        },
+        "label": "Buttons (Secondary)"
+      },
+      {
+        "id": "be0698",
+        "name": "text-basic",
+        "parent": "eeed33",
+        "children": [],
+        "settings": {
+          "text": "Accent",
+          "_cssGlobalClasses": [
+            "qfdtjc"
+          ]
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "c8eb24",
+        "name": "container",
+        "parent": "eeed33",
+        "children": [
+          "f0958c",
+          "4f90a8",
+          "3caaa1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mmbmey"
+          ]
+        },
+        "label": "Buttons Grid"
+      },
+      {
+        "id": "f0958c",
+        "name": "block",
+        "parent": "c8eb24",
+        "children": [
+          "022fbf",
+          "c89b0c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cineii"
+          ],
+          "_attributes": [
+            {
+              "id": "tgstih",
+              "name": "data-ui-button-theme",
+              "value": "main"
+            }
+          ]
+        },
+        "label": "Buttons"
+      },
+      {
+        "id": "022fbf",
+        "name": "block",
+        "parent": "f0958c",
+        "children": [
+          "36a197",
+          "da953e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "zogtkx",
+              "name": "data-ui-button-style",
+              "value": "main"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "36a197",
+        "name": "button",
+        "parent": "022fbf",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--accent"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "wpxhbi",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "da953e",
+        "name": "block",
+        "parent": "022fbf",
+        "children": [
+          "b786ee"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "b786ee",
+        "name": "text-basic",
+        "parent": "da953e",
+        "children": [],
+        "settings": {
+          "text": "Accent",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "c89b0c",
+        "name": "block",
+        "parent": "f0958c",
+        "children": [
+          "5d2bf4",
+          "1ef154"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "jeglpn",
+              "name": "data-ui-button-style",
+              "value": "outline"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "5d2bf4",
+        "name": "button",
+        "parent": "c89b0c",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--outline",
+            "btn--accent"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "eutjkq",
+              "name": "[data-ui-button]"
+            }
+          ]
+        }
+      },
+      {
+        "id": "1ef154",
+        "name": "block",
+        "parent": "c89b0c",
+        "children": [
+          "ef7799"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "ef7799",
+        "name": "text-basic",
+        "parent": "1ef154",
+        "children": [],
+        "settings": {
+          "text": "Accent Outline",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "4f90a8",
+        "name": "block",
+        "parent": "c8eb24",
+        "children": [
+          "509a07",
+          "7876a7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cineii"
+          ],
+          "_attributes": [
+            {
+              "id": "znnfdj",
+              "name": "data-ui-button-theme",
+              "value": "light"
+            }
+          ]
+        },
+        "label": "Buttons"
+      },
+      {
+        "id": "509a07",
+        "name": "block",
+        "parent": "4f90a8",
+        "children": [
+          "3b7401",
+          "fc6664"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "ieigum",
+              "name": "data-ui-button-style",
+              "value": "main"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "3b7401",
+        "name": "button",
+        "parent": "509a07",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "wmzwal"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "fluyfd",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "fc6664",
+        "name": "block",
+        "parent": "509a07",
+        "children": [
+          "37e1fa"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "37e1fa",
+        "name": "text-basic",
+        "parent": "fc6664",
+        "children": [],
+        "settings": {
+          "text": "Accent Light",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "7876a7",
+        "name": "block",
+        "parent": "4f90a8",
+        "children": [
+          "7d9a04",
+          "94f1d3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "jlspuv",
+              "name": "data-ui-button-style",
+              "value": "outline"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "7d9a04",
+        "name": "button",
+        "parent": "7876a7",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--outline",
+            "wmzwal"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "cxluxl",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "94f1d3",
+        "name": "block",
+        "parent": "7876a7",
+        "children": [
+          "aeea77"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "aeea77",
+        "name": "text-basic",
+        "parent": "94f1d3",
+        "children": [],
+        "settings": {
+          "text": "Accent Light Outline",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "3caaa1",
+        "name": "block",
+        "parent": "c8eb24",
+        "children": [
+          "e3f31c",
+          "052da5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cineii"
+          ],
+          "_attributes": [
+            {
+              "id": "qwctiy",
+              "name": "data-ui-button-theme",
+              "value": "dark"
+            }
+          ]
+        },
+        "label": "Buttons"
+      },
+      {
+        "id": "e3f31c",
+        "name": "block",
+        "parent": "3caaa1",
+        "children": [
+          "71179d",
+          "a57566"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "loelos",
+              "name": "data-ui-button-style",
+              "value": "main"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "71179d",
+        "name": "button",
+        "parent": "e3f31c",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "kfitby"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "kgqvir",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "a57566",
+        "name": "block",
+        "parent": "e3f31c",
+        "children": [
+          "d16342"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "d16342",
+        "name": "text-basic",
+        "parent": "a57566",
+        "children": [],
+        "settings": {
+          "text": "Accent Dark",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "052da5",
+        "name": "block",
+        "parent": "3caaa1",
+        "children": [
+          "07df6a",
+          "f3442e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "xarkaw",
+              "name": "data-ui-button-style",
+              "value": "outline"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "07df6a",
+        "name": "button",
+        "parent": "052da5",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--outline",
+            "kfitby"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "jyqzld",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "f3442e",
+        "name": "block",
+        "parent": "052da5",
+        "children": [
+          "88a18d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "88a18d",
+        "name": "text-basic",
+        "parent": "f3442e",
+        "children": [],
+        "settings": {
+          "text": "Accent Dark Outline",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "c8272d",
+        "name": "container",
+        "parent": "b9e3dd",
+        "children": [
+          "b76286",
+          "0db7dd"
+        ],
+        "settings": {
+          "_attributes": [
+            {
+              "id": "bwwfan",
+              "name": "data-ui-button-group",
+              "value": "base"
+            }
+          ],
+          "_cssGlobalClasses": [
+            "nmkryo"
+          ]
+        },
+        "label": "Buttons (Secondary)"
+      },
+      {
+        "id": "b76286",
+        "name": "text-basic",
+        "parent": "c8272d",
+        "children": [],
+        "settings": {
+          "text": "Base",
+          "_cssGlobalClasses": [
+            "qfdtjc"
+          ]
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "0db7dd",
+        "name": "container",
+        "parent": "c8272d",
+        "children": [
+          "332c90",
+          "427624",
+          "7ef14d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mmbmey"
+          ]
+        },
+        "label": "Buttons Grid"
+      },
+      {
+        "id": "332c90",
+        "name": "block",
+        "parent": "0db7dd",
+        "children": [
+          "718b8f",
+          "669094"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cineii"
+          ],
+          "_attributes": [
+            {
+              "id": "tgstih",
+              "name": "data-ui-button-theme",
+              "value": "main"
+            }
+          ]
+        },
+        "label": "Buttons"
+      },
+      {
+        "id": "718b8f",
+        "name": "block",
+        "parent": "332c90",
+        "children": [
+          "d6db6a",
+          "24e8e1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "zogtkx",
+              "name": "data-ui-button-style",
+              "value": "main"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "d6db6a",
+        "name": "button",
+        "parent": "718b8f",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--base"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "wpxhbi",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "24e8e1",
+        "name": "block",
+        "parent": "718b8f",
+        "children": [
+          "459fe4"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "459fe4",
+        "name": "text-basic",
+        "parent": "24e8e1",
+        "children": [],
+        "settings": {
+          "text": "Base",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "669094",
+        "name": "block",
+        "parent": "332c90",
+        "children": [
+          "e65d31",
+          "ff82f8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "jeglpn",
+              "name": "data-ui-button-style",
+              "value": "outline"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "e65d31",
+        "name": "button",
+        "parent": "669094",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--outline",
+            "btn--base"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "eutjkq",
+              "name": "[data-ui-button]"
+            }
+          ]
+        }
+      },
+      {
+        "id": "ff82f8",
+        "name": "block",
+        "parent": "669094",
+        "children": [
+          "388808"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "388808",
+        "name": "text-basic",
+        "parent": "ff82f8",
+        "children": [],
+        "settings": {
+          "text": "Base Outline",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "427624",
+        "name": "block",
+        "parent": "0db7dd",
+        "children": [
+          "4b0c51",
+          "193438"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cineii"
+          ],
+          "_attributes": [
+            {
+              "id": "znnfdj",
+              "name": "data-ui-button-theme",
+              "value": "light"
+            }
+          ]
+        },
+        "label": "Buttons"
+      },
+      {
+        "id": "4b0c51",
+        "name": "block",
+        "parent": "427624",
+        "children": [
+          "dd8372",
+          "2a9cba"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "ieigum",
+              "name": "data-ui-button-style",
+              "value": "main"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "dd8372",
+        "name": "button",
+        "parent": "4b0c51",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "hzmktu"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "fluyfd",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "2a9cba",
+        "name": "block",
+        "parent": "4b0c51",
+        "children": [
+          "b59a8a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "b59a8a",
+        "name": "text-basic",
+        "parent": "2a9cba",
+        "children": [],
+        "settings": {
+          "text": "Base Light",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "193438",
+        "name": "block",
+        "parent": "427624",
+        "children": [
+          "6592e5",
+          "8bb942"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "jlspuv",
+              "name": "data-ui-button-style",
+              "value": "outline"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "6592e5",
+        "name": "button",
+        "parent": "193438",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--outline",
+            "hzmktu"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "cxluxl",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "8bb942",
+        "name": "block",
+        "parent": "193438",
+        "children": [
+          "484bbb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "484bbb",
+        "name": "text-basic",
+        "parent": "8bb942",
+        "children": [],
+        "settings": {
+          "text": "Base Light Outline",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "7ef14d",
+        "name": "block",
+        "parent": "0db7dd",
+        "children": [
+          "bb3259",
+          "62e7a7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cineii"
+          ],
+          "_attributes": [
+            {
+              "id": "qwctiy",
+              "name": "data-ui-button-theme",
+              "value": "dark"
+            }
+          ]
+        },
+        "label": "Buttons"
+      },
+      {
+        "id": "bb3259",
+        "name": "block",
+        "parent": "7ef14d",
+        "children": [
+          "f5ad96",
+          "c41082"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "loelos",
+              "name": "data-ui-button-style",
+              "value": "main"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "f5ad96",
+        "name": "button",
+        "parent": "bb3259",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "kzqsyz"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "kgqvir",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "c41082",
+        "name": "block",
+        "parent": "bb3259",
+        "children": [
+          "b1ab1d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "b1ab1d",
+        "name": "text-basic",
+        "parent": "c41082",
+        "children": [],
+        "settings": {
+          "text": "Base Dark",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "62e7a7",
+        "name": "block",
+        "parent": "7ef14d",
+        "children": [
+          "bc551e",
+          "3b9b0a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "xarkaw",
+              "name": "data-ui-button-style",
+              "value": "outline"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "bc551e",
+        "name": "button",
+        "parent": "62e7a7",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--outline",
+            "kzqsyz"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "jyqzld",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "3b9b0a",
+        "name": "block",
+        "parent": "62e7a7",
+        "children": [
+          "88fc7e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "88fc7e",
+        "name": "text-basic",
+        "parent": "3b9b0a",
+        "children": [],
+        "settings": {
+          "text": "Base Dark Outline",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "8df8c7",
+        "name": "container",
+        "parent": "b9e3dd",
+        "children": [
+          "6127e1",
+          "234fe8"
+        ],
+        "settings": {
+          "_attributes": [
+            {
+              "id": "bwwfan",
+              "name": "data-ui-button-group",
+              "value": "neutral"
+            }
+          ],
+          "_cssGlobalClasses": [
+            "nmkryo"
+          ]
+        },
+        "label": "Buttons (Secondary)"
+      },
+      {
+        "id": "6127e1",
+        "name": "text-basic",
+        "parent": "8df8c7",
+        "children": [],
+        "settings": {
+          "text": "Neutral",
+          "_cssGlobalClasses": [
+            "qfdtjc"
+          ]
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "234fe8",
+        "name": "container",
+        "parent": "8df8c7",
+        "children": [
+          "a6db6c",
+          "7a0355",
+          "2bf45d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "mmbmey"
+          ]
+        },
+        "label": "Buttons Grid"
+      },
+      {
+        "id": "a6db6c",
+        "name": "block",
+        "parent": "234fe8",
+        "children": [
+          "49ba3a",
+          "cbcac5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cineii"
+          ],
+          "_attributes": [
+            {
+              "id": "tgstih",
+              "name": "data-ui-button-theme",
+              "value": "main"
+            }
+          ]
+        },
+        "label": "Buttons"
+      },
+      {
+        "id": "49ba3a",
+        "name": "block",
+        "parent": "a6db6c",
+        "children": [
+          "7b6bfa",
+          "242817"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "zogtkx",
+              "name": "data-ui-button-style",
+              "value": "main"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "7b6bfa",
+        "name": "button",
+        "parent": "49ba3a",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "zxhu4m"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "wpxhbi",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "242817",
+        "name": "block",
+        "parent": "49ba3a",
+        "children": [
+          "77ecb4"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "77ecb4",
+        "name": "text-basic",
+        "parent": "242817",
+        "children": [],
+        "settings": {
+          "text": "Neutral",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "cbcac5",
+        "name": "block",
+        "parent": "a6db6c",
+        "children": [
+          "5f5e9c",
+          "092f8c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "jeglpn",
+              "name": "data-ui-button-style",
+              "value": "outline"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "5f5e9c",
+        "name": "button",
+        "parent": "cbcac5",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--outline",
+            "zxhu4m"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "eutjkq",
+              "name": "[data-ui-button]"
+            }
+          ]
+        }
+      },
+      {
+        "id": "092f8c",
+        "name": "block",
+        "parent": "cbcac5",
+        "children": [
+          "e7b789"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "e7b789",
+        "name": "text-basic",
+        "parent": "092f8c",
+        "children": [],
+        "settings": {
+          "text": "Neutral Outline",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "7a0355",
+        "name": "block",
+        "parent": "234fe8",
+        "children": [
+          "a5db1f",
+          "ca1daf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cineii"
+          ],
+          "_attributes": [
+            {
+              "id": "znnfdj",
+              "name": "data-ui-button-theme",
+              "value": "light"
+            }
+          ]
+        },
+        "label": "Buttons"
+      },
+      {
+        "id": "a5db1f",
+        "name": "block",
+        "parent": "7a0355",
+        "children": [
+          "731881",
+          "dd04c4"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "ieigum",
+              "name": "data-ui-button-style",
+              "value": "main"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "731881",
+        "name": "button",
+        "parent": "a5db1f",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "lkavco"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "fluyfd",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "dd04c4",
+        "name": "block",
+        "parent": "a5db1f",
+        "children": [
+          "f5e759"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "f5e759",
+        "name": "text-basic",
+        "parent": "dd04c4",
+        "children": [],
+        "settings": {
+          "text": "Neutral Light",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "ca1daf",
+        "name": "block",
+        "parent": "7a0355",
+        "children": [
+          "f9a42a",
+          "841f87"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "jlspuv",
+              "name": "data-ui-button-style",
+              "value": "outline"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "f9a42a",
+        "name": "button",
+        "parent": "ca1daf",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--outline",
+            "lkavco"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "cxluxl",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "841f87",
+        "name": "block",
+        "parent": "ca1daf",
+        "children": [
+          "a0e2e8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "a0e2e8",
+        "name": "text-basic",
+        "parent": "841f87",
+        "children": [],
+        "settings": {
+          "text": "Neutral Light Outline",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "2bf45d",
+        "name": "block",
+        "parent": "234fe8",
+        "children": [
+          "7c4941",
+          "326379"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cineii"
+          ],
+          "_attributes": [
+            {
+              "id": "qwctiy",
+              "name": "data-ui-button-theme",
+              "value": "dark"
+            }
+          ]
+        },
+        "label": "Buttons"
+      },
+      {
+        "id": "7c4941",
+        "name": "block",
+        "parent": "2bf45d",
+        "children": [
+          "ddd535",
+          "ee7177"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "loelos",
+              "name": "data-ui-button-style",
+              "value": "main"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "ddd535",
+        "name": "button",
+        "parent": "7c4941",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "uenuas"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "kgqvir",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "ee7177",
+        "name": "block",
+        "parent": "7c4941",
+        "children": [
+          "7ca87d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "7ca87d",
+        "name": "text-basic",
+        "parent": "ee7177",
+        "children": [],
+        "settings": {
+          "text": "Neutral Dark",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "326379",
+        "name": "block",
+        "parent": "2bf45d",
+        "children": [
+          "b33a43",
+          "d57fd5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xeegdw"
+          ],
+          "_attributes": [
+            {
+              "id": "xarkaw",
+              "name": "data-ui-button-style",
+              "value": "outline"
+            }
+          ]
+        },
+        "label": "Row"
+      },
+      {
+        "id": "b33a43",
+        "name": "button",
+        "parent": "326379",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--outline",
+            "uenuas"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_attributes": [
+            {
+              "id": "jyqzld",
+              "name": "data-ui-button"
+            }
+          ]
+        }
+      },
+      {
+        "id": "d57fd5",
+        "name": "block",
+        "parent": "326379",
+        "children": [
+          "863e86"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "atvpzb"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "863e86",
+        "name": "text-basic",
+        "parent": "d57fd5",
+        "children": [],
+        "settings": {
+          "text": "Neutral Dark Outline",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "tixabs"
+          ]
+        },
+        "label": "Label"
+      },
+      {
+        "id": "24e621",
+        "name": "container",
+        "parent": "b9e3dd",
+        "children": [
+          "8bb2a8",
+          "c6091d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "nmkryo"
+          ]
+        },
+        "label": "Buttons (Secondary)"
+      },
+      {
+        "id": "8bb2a8",
+        "name": "text-basic",
+        "parent": "24e621",
+        "children": [],
+        "settings": {
+          "text": "Links",
+          "_cssGlobalClasses": [
+            "qfdtjc"
+          ]
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "c6091d",
+        "name": "text-link",
+        "parent": "24e621",
+        "children": [],
+        "settings": {
+          "text": "Example link",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "myjzqp",
+        "name": "ui-buttons-links-alpha",
+        "settings": {
+          "_cssCustom": "[data-ui-button-group=\"primary\" i]::before {\n  content: var(--option-primary-btn-outline);\n  display: none;\n}\n[data-ui-button-group=\"secondary\" i]::before {\n  content: var(--option-secondary-btn-outline);\n  display: none;\n}\n[data-ui-button-group=\"tertiary\" i]::before {\n  content: var(--option-tertiary-btn-outline);\n  display: none;\n}\n[data-ui-button-group=\"accent\" i]::before {\n  content: var(--option-accent-btn-outline);\n  display: none;\n}\n[data-ui-button-group=\"base\" i]::before {\n  content: var(--option-base-btn-outline);\n  display: none;\n}\n[data-ui-button-group=\"neutral\" i]::before {\n  content: var(--option-neutral-btn-outline);\n  display: none;\n}",
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "mmbmey",
+        "name": "ui-buttons-links-alpha__buttons-grid",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-3)",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "cineii",
+        "name": "ui-buttons-links-alpha__buttons",
+        "settings": {
+          "_rowGap": "var(--card-gap, var(--card-padding, var(--content-gap)))",
+          "_padding": {
+            "top": "var(--card-padding, var(--space-m))",
+            "right": "var(--card-padding, var(--space-m))",
+            "bottom": "var(--card-padding, var(--space-m))",
+            "left": "var(--card-padding, var(--space-m))"
+          },
+          "_cssCustom": ".ui-buttons-links-alpha__buttons {\n  border: var(--border);\n  border-radius: var(--card-radius, var(--radius));\n}\n\n.ui-buttons-links-alpha__buttons[data-ui-button-theme=\"light\" i] {\n  background: var(--neutral-dark);\n  color: var(--neutral-light);\n}",
+          "_background": {
+            "color": {
+              "raw": "var(--white)"
+            }
+          },
+          "_typography": {
+            "color": {
+              "raw": "var(--text-dark)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "xeegdw",
+        "name": "ui-buttons-links-alpha__row",
+        "settings": {
+          "_display": "flex",
+          "_flexWrap": "wrap",
+          "_direction": "row",
+          "_columnGap": "var(--space-xs)",
+          "_alignItems": "center",
+          "_rowGap": "var(--space-xs)",
+          "_direction:mobile_portrait": "column",
+          "_justifyContent:mobile_portrait": "flex-start",
+          "_alignItems:mobile_portrait": "flex-start"
+        },
+        "_exists": false
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "atvpzb",
+        "name": "ui-buttons-links-alpha__row-content-wrapper",
+        "settings": {
+          "_width": "max-content",
+          "_rowGap": ".25em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "tixabs",
+        "name": "ui-buttons-links-alpha__row-label",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "btn--outline",
+        "name": "btn--outline",
+        "settings": [],
+        "_mappedId": "acss_import_btn--outline",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "fxqiyf",
+        "name": "btn--primary-dark",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary-dark",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "dmlfsy",
+        "name": "btn--primary-light",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary-light",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "nmkryo",
+        "name": "ui-buttons-links-alpha__button-group",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 2)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "slhmuz",
+        "name": "fr-intro-bravo",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 2)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "cirgqc",
+        "name": "fr-intro-bravo__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "okkigb",
+        "name": "fr-intro-bravo__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "btn--secondary",
+        "name": "btn--secondary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--secondary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "dllsye",
+        "name": "btn--secondary-light",
+        "settings": [],
+        "_mappedId": "acss_import_btn--secondary-light",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "hjhsql",
+        "name": "btn--secondary-dark",
+        "settings": [],
+        "_mappedId": "acss_import_btn--secondary-dark",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "btn--tertiary",
+        "name": "btn--tertiary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--tertiary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "qvjohc",
+        "name": "btn--tertiary-light",
+        "settings": [],
+        "_mappedId": "acss_import_btn--tertiary-light",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "swqjqw",
+        "name": "btn--tertiary-dark",
+        "settings": [],
+        "_mappedId": "acss_import_btn--tertiary-dark",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "btn--accent",
+        "name": "btn--accent",
+        "settings": [],
+        "_mappedId": "acss_import_btn--accent",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "wmzwal",
+        "name": "btn--accent-light",
+        "settings": [],
+        "_mappedId": "acss_import_btn--accent-light",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "kfitby",
+        "name": "btn--accent-dark",
+        "settings": [],
+        "_mappedId": "acss_import_btn--accent-dark",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "btn--base",
+        "name": "btn--base",
+        "settings": [],
+        "_mappedId": "acss_import_btn--base",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "hzmktu",
+        "name": "btn--base-light",
+        "settings": [],
+        "_mappedId": "acss_import_btn--base-light",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "kzqsyz",
+        "name": "btn--base-dark",
+        "settings": [],
+        "_mappedId": "acss_import_btn--base-dark",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "zxhu4m",
+        "name": "btn--neutral",
+        "settings": [],
+        "_mappedId": "acss_import_btn--neutral",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "lkavco",
+        "name": "btn--neutral-light",
+        "settings": [],
+        "_mappedId": "acss_import_btn--neutral-light",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "uenuas",
+        "name": "btn--neutral-dark",
+        "settings": [],
+        "_mappedId": "acss_import_btn--neutral-dark",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

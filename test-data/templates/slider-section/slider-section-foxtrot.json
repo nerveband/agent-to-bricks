@@ -1,0 +1,238 @@
+{
+  "idx": 168,
+  "title": "Slider Section Foxtrot",
+  "elementCount": 9,
+  "classCount": 5,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "9fbc7a",
+        "name": "container",
+        "parent": "fe9882",
+        "children": [
+          "49a709"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pylzsp"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "49a709",
+        "name": "fr-slider",
+        "parent": "9fbc7a",
+        "children": [
+          "c85d0c",
+          "656fcf",
+          "15233e"
+        ],
+        "settings": {
+          "height": "50vh",
+          "playButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-play"
+          },
+          "pauseButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-pause"
+          },
+          "arrowSize": "var(--space-l)",
+          "prevArrow": {
+            "library": "themify",
+            "icon": "ti-arrow-left"
+          },
+          "prevArrowTop": "50%",
+          "prevArrowLeft": "var(--space-xs)",
+          "nextArrow": {
+            "library": "themify",
+            "icon": "ti-arrow-right"
+          },
+          "nextArrowTop": "50%",
+          "nextArrowRight": "var(--space-xs)",
+          "sliderTag": "div",
+          "listTag": "ul",
+          "ariaCarousel": "Carousel",
+          "_cssGlobalClasses": [
+            "hzrbyl"
+          ],
+          "fixedHeight": "0",
+          "gap": "var(--grid-gap)",
+          "type": "loop",
+          "autoScrollSpeed": "1",
+          "autoScrollAutoStart": true,
+          "perPage:tablet_portrait": "3",
+          "perPage:mobile_landscape": "2",
+          "updateOnMove": "afterMove",
+          "autoScroll": true,
+          "perPage": "5"
+        },
+        "themeStyles": [],
+        "label": "Slider <ul>"
+      },
+      {
+        "id": "c85d0c",
+        "name": "div",
+        "parent": "49a709",
+        "children": [
+          "46a9de"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jwtvpe"
+          ],
+          "tag": "li"
+        },
+        "label": "Item Wrapper <li>"
+      },
+      {
+        "id": "46a9de",
+        "name": "text-basic",
+        "parent": "c85d0c",
+        "children": [],
+        "settings": {
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "uufijh"
+          ],
+          "text": "Ticker Item"
+        },
+        "label": "Item"
+      },
+      {
+        "id": "15233e",
+        "name": "div",
+        "parent": "49a709",
+        "children": [
+          "24e034"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jwtvpe"
+          ],
+          "tag": "li"
+        },
+        "label": "Item Wrapper <li>"
+      },
+      {
+        "id": "24e034",
+        "name": "text-basic",
+        "parent": "15233e",
+        "children": [],
+        "settings": {
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "uufijh"
+          ],
+          "text": "Ticker Item"
+        },
+        "label": "Item"
+      },
+      {
+        "id": "656fcf",
+        "name": "div",
+        "parent": "49a709",
+        "children": [
+          "b7827a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jwtvpe"
+          ],
+          "tag": "li"
+        },
+        "label": "Item Wrapper <li>"
+      },
+      {
+        "id": "b7827a",
+        "name": "text-basic",
+        "parent": "656fcf",
+        "children": [],
+        "settings": {
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "uufijh"
+          ],
+          "text": "Ticker Item"
+        },
+        "label": "Item"
+      },
+      {
+        "id": "fe9882",
+        "name": "section",
+        "children": [
+          "9fbc7a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vkktxd"
+          ],
+          "tag": "div"
+        },
+        "label": "Slider Section Foxtrot"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "pylzsp",
+        "name": "fr-slider-section-foxtrot__inner",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "hzrbyl",
+        "name": "fr-slider-foxtrot",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "jwtvpe",
+        "name": "fr-slider-section-foxtrot__item-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "uufijh",
+        "name": "fr-slider-section-foxtrot__item",
+        "settings": {
+          "_typography": {
+            "text-align": "center",
+            "text-transform": "uppercase",
+            "line-height": "1",
+            "font-weight": "700"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "vkktxd",
+        "name": "fr-slider-section-foxtrot",
+        "settings": {
+          "_padding": {
+            "bottom": "var(--space-s)",
+            "top": "var(--space-s)"
+          },
+          "_background": {
+            "color": {
+              "raw": "var(--bg-dark)"
+            }
+          },
+          "_overflow": "hidden",
+          "_zIndex": "10",
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "idx": 459,
+  "title": "Feature Card Charlie",
+  "elementCount": 6,
+  "classCount": 6,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "577102",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "9e6efb",
+          "d106c9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eavwud"
+          ],
+          "tag": "li"
+        },
+        "label": "Feature Card Charlie"
+      },
+      {
+        "id": "9e6efb",
+        "name": "div",
+        "parent": "577102",
+        "children": [
+          "3ec2d4",
+          "5d31a9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dkvffe"
+          ],
+          "_display": "flex"
+        },
+        "label": "Body"
+      },
+      {
+        "id": "3ec2d4",
+        "name": "heading",
+        "parent": "9e6efb",
+        "children": [],
+        "settings": {
+          "text": "Awesome Feature",
+          "_cssGlobalClasses": [
+            "glhqrm"
+          ],
+          "tag": "h3"
+        }
+      },
+      {
+        "id": "5d31a9",
+        "name": "text-basic",
+        "parent": "9e6efb",
+        "children": [],
+        "settings": {
+          "text": "Short yet extremely creative and catchy description of the feature.",
+          "tag": "p",
+          "_attributes": [],
+          "_cssGlobalClasses": [
+            "jrtbxt"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "85e4bd",
+        "name": "image",
+        "parent": "d106c9",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "caption": "none",
+          "_cssGlobalClasses": [
+            "qnicyz"
+          ],
+          "tag": "figure"
+        },
+        "themeStyles": [],
+        "label": "Media"
+      },
+      {
+        "id": "d106c9",
+        "name": "div",
+        "parent": "577102",
+        "children": [
+          "85e4bd"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zmiyrz"
+          ]
+        },
+        "label": "Media Wrapper"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "eavwud",
+        "name": "fr-feature-card-charlie",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "dkvffe",
+        "name": "fr-feature-card-charlie__body",
+        "settings": {
+          "_width": "100%",
+          "_rowGap": "var(--fr-card-gap)",
+          "_display": "flex",
+          "_direction": "column"
+        },
+        "_exists": false
+      },
+      {
+        "id": "glhqrm",
+        "name": "fr-feature-card-charlie__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "jrtbxt",
+        "name": "fr-feature-card-charlie__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "qnicyz",
+        "name": "fr-feature-card-charlie__media",
+        "settings": {
+          "_objectFit": "cover",
+          "_width": "100%",
+          "_aspectRatio": "16/9",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "zmiyrz",
+        "name": "fr-feature-card-charlie__media-wrapper",
+        "settings": {
+          "_order": "-1"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

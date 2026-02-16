@@ -1,0 +1,309 @@
+{
+  "idx": 199,
+  "title": "Content Section Foxtrot",
+  "elementCount": 10,
+  "classCount": 10,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "1fdf9d",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "90ba2a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "bdkqny",
+            "bwlyto"
+          ]
+        },
+        "label": "Content Section Foxtrot (CSS)"
+      },
+      {
+        "id": "90ba2a",
+        "name": "container",
+        "parent": "1fdf9d",
+        "children": [
+          "9fdeb3",
+          "83ec81"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fkdqbf",
+            "wihuzj"
+          ]
+        },
+        "label": "Content Grid Foxtrot"
+      },
+      {
+        "id": "9fdeb3",
+        "name": "block",
+        "parent": "90ba2a",
+        "children": [
+          "9a2ba9",
+          "773faf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rulqut",
+            "upjyww"
+          ]
+        },
+        "label": "Image Group (CSS)"
+      },
+      {
+        "id": "83ec81",
+        "name": "block",
+        "parent": "90ba2a",
+        "children": [
+          "ca4e60",
+          "854e4d",
+          "0e7f74",
+          "11e56f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ryoxgm",
+            "camrmw"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "ca4e60",
+        "name": "heading",
+        "parent": "83ec81",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder headline, we will replace it once your website copy is finalized",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "rqzqrx",
+            "yddilo"
+          ]
+        }
+      },
+      {
+        "id": "854e4d",
+        "name": "text-basic",
+        "parent": "83ec81",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "vfucvk",
+            "rjndzr"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "0e7f74",
+        "name": "text",
+        "parent": "83ec81",
+        "children": [],
+        "settings": {
+          "text": "<p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.</p><p>Sometimes it\u2019s nice to put in text just to get an idea of how text will fill in a space on your website.</p><p>Traditionally our industry has used Lorem Ipsum, which is placeholder text written in Latin. Unfortunately, not everyone is familiar with Lorem Ipsum and that can lead to confusion. I can\u2019t tell you how many times clients have asked me why their website is in another language!</p>",
+          "_cssGlobalClasses": [
+            "klpjmy",
+            "osimvw"
+          ]
+        },
+        "label": "Main Text"
+      },
+      {
+        "id": "11e56f",
+        "name": "button",
+        "parent": "83ec81",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ]
+        }
+      },
+      {
+        "id": "9a2ba9",
+        "name": "image",
+        "parent": "9fdeb3",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "fsxvke",
+            "nffotg"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        }
+      },
+      {
+        "id": "773faf",
+        "name": "image",
+        "parent": "9fdeb3",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "fsxvke",
+            "nffotg"
+          ],
+          "tag": "figure",
+          "caption": "none"
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "bwlyto",
+        "name": "fr-content-section-foxtrot",
+        "settings": {
+          "_cssCustom": ".fr-content-section-foxtrot {\n\t--section-padding: var(--section-space-l);\n}",
+          "_padding": {
+            "top": "var(--section-padding)",
+            "bottom": "var(--section-padding)"
+          },
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "wihuzj",
+        "name": "fr-content-grid-foxtrot",
+        "settings": {
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)",
+          "_gridGap:tablet_portrait": "calc(var(--grid-gap) * 2)",
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-3-2)",
+          "_gridTemplateRows": "1fr",
+          "_gridGap": "calc(var(--grid-gap) * 3)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "upjyww",
+        "name": "fr-content-grid-foxtrot__image-group",
+        "settings": {
+          "_cssCustom": ".fr-content-grid-foxtrot__image-group {\n\t--image-aspect-ratio: 3/4;\n  --image-width: 24em;\n  --image-block-offset: 1em;\n  --image-inline-offset: 5em;\n  --image-rotation: 7deg;\n}\n\n.fr-content-grid-foxtrot__image-group > * {\n\tposition: absolute;\n  width: var(--image-width);\n  aspect-ratio: var(--image-aspect-ratio);\n}\n\n.fr-content-grid-foxtrot__image-group > *:first-child {\n\tleft: calc(50% + var(--image-inline-offset));\n  transform: \n    rotate(var(--image-rotation)) \n    translate(-50%);\n  top: calc((var(--section-padding) + var(--image-block-offset)) * -1)\n}\n\n.fr-content-grid-foxtrot__image-group > *:last-child {\n\tleft: calc(50% + var(--image-inline-offset) * -1);\n  transform: \n    rotate(calc(var(--image-rotation) * -1)) \n    translate(-50%);\n  bottom: calc((var(--section-padding) + var(--image-block-offset)) * -1)\n}",
+          "_position": "relative",
+          "_cssCustom:tablet_portrait": ".fr-content-grid-foxtrot__image-group {\n\t--image-rotation: 0;\n}\n\n.fr-content-grid-foxtrot__image-group > * {\n\tposition: static;\n  width: var(--image-width);\n  aspect-ratio: var(--image-aspect-ratio);\n}\n\n.fr-content-grid-foxtrot__image-group > *:first-child {\n  transform: \n    rotate(var(--image-rotation)) \n    translate(0);\n}\n\n.fr-content-grid-foxtrot__image-group > *:last-child {\n  transform: \n    rotate(calc(var(--image-rotation) * -1))\n    translate(0);\n}",
+          "_display:tablet_portrait": "grid",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-2)",
+          "_gridGap:tablet_portrait": "var(--grid-gap)",
+          "_order:tablet_portrait": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "camrmw",
+        "name": "fr-content-grid-foxtrot__content-wrapper",
+        "settings": {
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "yddilo",
+        "name": "fr-content-grid-foxtrot__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "rjndzr",
+        "name": "fr-content-grid-foxtrot__accent-heading",
+        "settings": {
+          "_order": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "osimvw",
+        "name": "fr-content-grid-foxtrot__main-text",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "nffotg",
+        "name": "fr-content-grid-foxtrot__image",
+        "settings": {
+          "_objectFit": "cover",
+          "_overflow": "hidden",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_boxShadow": {
+            "values": {
+              "offsetX": "2",
+              "offsetY": "2",
+              "blur": "40",
+              "spread": "-5"
+            },
+            "color": {
+              "raw": "var(--neutral-ultra-dark-trans-10)"
+            }
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

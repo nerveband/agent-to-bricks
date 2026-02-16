@@ -1,0 +1,754 @@
+{
+  "idx": 419,
+  "title": "Hero Kilo",
+  "elementCount": 35,
+  "classCount": 15,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "bddae4",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "eeb69b",
+          "e42cec"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cuapqy",
+            "vtwwtv"
+          ]
+        },
+        "label": "Hero Kilo"
+      },
+      {
+        "id": "eeb69b",
+        "name": "container",
+        "parent": "bddae4",
+        "children": [
+          "de85e0",
+          "c01800",
+          "a39ecc"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pndqqh"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "e42cec",
+        "name": "container",
+        "parent": "bddae4",
+        "children": [
+          "80c18b",
+          "ed4da1",
+          "cca04c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qifmeq"
+          ],
+          "tag": "custom",
+          "customTag": "ul"
+        },
+        "label": "Testimonials"
+      },
+      {
+        "id": "de85e0",
+        "name": "heading",
+        "parent": "eeb69b",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+          "tag": "h1",
+          "_cssGlobalClasses": [
+            "etqlsx"
+          ]
+        }
+      },
+      {
+        "id": "c01800",
+        "name": "text-basic",
+        "parent": "eeb69b",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "aiiahn"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "80c18b",
+        "name": "block",
+        "parent": "e42cec",
+        "children": [
+          "b6b9ad",
+          "c7cfb3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qusutm"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Delta"
+      },
+      {
+        "id": "b6b9ad",
+        "name": "block",
+        "parent": "80c18b",
+        "children": [
+          "9d1110",
+          "ab5ae1",
+          "5d4603",
+          "75002d",
+          "165fa7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "nzncow"
+          ]
+        },
+        "label": "Stars Wrapper"
+      },
+      {
+        "id": "c7cfb3",
+        "name": "block",
+        "parent": "80c18b",
+        "children": [
+          "a9044b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "szdmfn"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "9d1110",
+        "name": "icon",
+        "parent": "b6b9ad",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "fontawesomeSolid",
+            "icon": "fas fa-star"
+          },
+          "_cssGlobalClasses": [
+            "rbbksc"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Star"
+      },
+      {
+        "id": "ab5ae1",
+        "name": "icon",
+        "parent": "b6b9ad",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "fontawesomeSolid",
+            "icon": "fas fa-star"
+          },
+          "_cssGlobalClasses": [
+            "rbbksc"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Star"
+      },
+      {
+        "id": "5d4603",
+        "name": "icon",
+        "parent": "b6b9ad",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "fontawesomeSolid",
+            "icon": "fas fa-star"
+          },
+          "_cssGlobalClasses": [
+            "rbbksc"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Star"
+      },
+      {
+        "id": "75002d",
+        "name": "icon",
+        "parent": "b6b9ad",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "fontawesomeSolid",
+            "icon": "fas fa-star"
+          },
+          "_cssGlobalClasses": [
+            "rbbksc"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Star"
+      },
+      {
+        "id": "165fa7",
+        "name": "icon",
+        "parent": "b6b9ad",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "fontawesomeSolid",
+            "icon": "fas fa-star"
+          },
+          "_cssGlobalClasses": [
+            "rbbksc"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Star"
+      },
+      {
+        "id": "a9044b",
+        "name": "text-basic",
+        "parent": "c7cfb3",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "_cssGlobalClasses": [
+            "cslzqq"
+          ],
+          "tag": "p"
+        },
+        "label": "Text"
+      },
+      {
+        "id": "cca04c",
+        "name": "block",
+        "parent": "e42cec",
+        "children": [
+          "d711da",
+          "d66952"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qusutm"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Delta"
+      },
+      {
+        "id": "d711da",
+        "name": "block",
+        "parent": "cca04c",
+        "children": [
+          "7bfd27",
+          "d3ce19",
+          "a778f7",
+          "b55c55",
+          "4084bb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "nzncow"
+          ]
+        },
+        "label": "Stars Wrapper"
+      },
+      {
+        "id": "d66952",
+        "name": "block",
+        "parent": "cca04c",
+        "children": [
+          "6dbe56"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "szdmfn"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "7bfd27",
+        "name": "icon",
+        "parent": "d711da",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "fontawesomeSolid",
+            "icon": "fas fa-star"
+          },
+          "_cssGlobalClasses": [
+            "rbbksc"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Star"
+      },
+      {
+        "id": "d3ce19",
+        "name": "icon",
+        "parent": "d711da",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "fontawesomeSolid",
+            "icon": "fas fa-star"
+          },
+          "_cssGlobalClasses": [
+            "rbbksc"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Star"
+      },
+      {
+        "id": "a778f7",
+        "name": "icon",
+        "parent": "d711da",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "fontawesomeSolid",
+            "icon": "fas fa-star"
+          },
+          "_cssGlobalClasses": [
+            "rbbksc"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Star"
+      },
+      {
+        "id": "b55c55",
+        "name": "icon",
+        "parent": "d711da",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "fontawesomeSolid",
+            "icon": "fas fa-star"
+          },
+          "_cssGlobalClasses": [
+            "rbbksc"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Star"
+      },
+      {
+        "id": "4084bb",
+        "name": "icon",
+        "parent": "d711da",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "fontawesomeSolid",
+            "icon": "fas fa-star"
+          },
+          "_cssGlobalClasses": [
+            "rbbksc"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Star"
+      },
+      {
+        "id": "6dbe56",
+        "name": "text-basic",
+        "parent": "d66952",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "_cssGlobalClasses": [
+            "cslzqq"
+          ],
+          "tag": "p"
+        },
+        "label": "Text"
+      },
+      {
+        "id": "ed4da1",
+        "name": "block",
+        "parent": "e42cec",
+        "children": [
+          "c53cca",
+          "0d41d3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qusutm"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Testimonial Card Delta"
+      },
+      {
+        "id": "c53cca",
+        "name": "block",
+        "parent": "ed4da1",
+        "children": [
+          "f3b0b4",
+          "716857",
+          "5e02aa",
+          "ace5e9",
+          "49d5ad"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "nzncow"
+          ]
+        },
+        "label": "Stars Wrapper"
+      },
+      {
+        "id": "0d41d3",
+        "name": "block",
+        "parent": "ed4da1",
+        "children": [
+          "35117d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "szdmfn"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "f3b0b4",
+        "name": "icon",
+        "parent": "c53cca",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "fontawesomeSolid",
+            "icon": "fas fa-star"
+          },
+          "_cssGlobalClasses": [
+            "rbbksc"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Star"
+      },
+      {
+        "id": "716857",
+        "name": "icon",
+        "parent": "c53cca",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "fontawesomeSolid",
+            "icon": "fas fa-star"
+          },
+          "_cssGlobalClasses": [
+            "rbbksc"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Star"
+      },
+      {
+        "id": "5e02aa",
+        "name": "icon",
+        "parent": "c53cca",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "fontawesomeSolid",
+            "icon": "fas fa-star"
+          },
+          "_cssGlobalClasses": [
+            "rbbksc"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Star"
+      },
+      {
+        "id": "ace5e9",
+        "name": "icon",
+        "parent": "c53cca",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "fontawesomeSolid",
+            "icon": "fas fa-star"
+          },
+          "_cssGlobalClasses": [
+            "rbbksc"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Star"
+      },
+      {
+        "id": "49d5ad",
+        "name": "icon",
+        "parent": "c53cca",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "fontawesomeSolid",
+            "icon": "fas fa-star"
+          },
+          "_cssGlobalClasses": [
+            "rbbksc"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Star"
+      },
+      {
+        "id": "35117d",
+        "name": "text-basic",
+        "parent": "0d41d3",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "_cssGlobalClasses": [
+            "cslzqq"
+          ],
+          "tag": "p"
+        },
+        "label": "Text"
+      },
+      {
+        "id": "a39ecc",
+        "name": "div",
+        "parent": "eeb69b",
+        "children": [
+          "8bf5b5",
+          "e63989"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "konmnk"
+          ]
+        },
+        "label": "CTA Links Alpha"
+      },
+      {
+        "id": "8bf5b5",
+        "name": "button",
+        "parent": "a39ecc",
+        "children": [],
+        "settings": {
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ],
+          "text": "Call to action"
+        },
+        "label": "Primary Action"
+      },
+      {
+        "id": "e63989",
+        "name": "button",
+        "parent": "a39ecc",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary",
+            "btn--outline"
+          ]
+        },
+        "label": "Sectiondary Action"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771256146,
+        "user_id": 1
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "btn--outline",
+        "name": "btn--outline",
+        "settings": [],
+        "_mappedId": "acss_import_btn--outline",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "vtwwtv",
+        "name": "fr-hero",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_mappedId": "vtwwtv",
+        "modified": 1771256146,
+        "user_id": 1
+      },
+      {
+        "id": "konmnk",
+        "name": "fr-cta-links-alpha",
+        "settings": {
+          "_columnGap": "var(--content-gap, 30px)",
+          "_rowGap": "var(--content-gap, 30px)",
+          "_display": "flex",
+          "_flexWrap": "wrap",
+          "_cssCustom:mobile_portrait": ".fr-cta-links-alpha > * {\n  width: 100% !important;\n}",
+          "_direction": "row"
+        },
+        "_exists": false
+      },
+      {
+        "id": "qusutm",
+        "name": "fr-testimonial-card-delta",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_alignItems:mobile_landscape": "flex-start",
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_alignItems": "center",
+          "_display": "flex",
+          "_direction": "column"
+        },
+        "_exists": false
+      },
+      {
+        "id": "szdmfn",
+        "name": "fr-testimonial-card-delta__body",
+        "settings": {
+          "_alignItems:mobile_landscape": "flex-start",
+          "_display": "flex",
+          "_direction": "column",
+          "_alignItems": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "cslzqq",
+        "name": "fr-testimonial-card-delta__text",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-s)",
+            "text-align": "center",
+            "font-style": "normal"
+          },
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_cssCustom": ".fr-testimonial-card-delta__text {\n  /* Blockquote reset */\n\tborder: 0;\n  padding: 0;\n  margin: 0;\n  font-family: inherit;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "cuapqy",
+        "name": "fr-hero-kilo",
+        "settings": {
+          "_padding": {
+            "top": "var(--section-space-xl)",
+            "bottom": "var(--section-space-xl)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "pndqqh",
+        "name": "fr-hero-kilo__content-wrapper",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center",
+            "font-family": "\"DM Sans\""
+          },
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_alignItems:mobile_landscape": "flex-start",
+          "_order:mobile_landscape": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "qifmeq",
+        "name": "fr-testimonial-grid-delta",
+        "settings": {
+          "_gridTemplateColumns": "var(--grid-3)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_gridGap": "var(--grid-gap)",
+          "_alignItemsGrid": "stretch",
+          "_display": "grid",
+          "_order": "-1",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-2)",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)",
+          "_padding": {
+            "left": "0"
+          },
+          "_cssCustom": ".fr-testimonial-grid-delta {\n  --grid-gap: var(--space-xl);\n\tlist-style: none;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "etqlsx",
+        "name": "fr-hero-kilo__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "aiiahn",
+        "name": "fr-hero-kilo__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "nzncow",
+        "name": "fr-testimonial-card-delta__stars-wrapper",
+        "settings": {
+          "_direction": "row",
+          "_alignItems": "center",
+          "_justifyContent": "center",
+          "_columnGap": "0.5em",
+          "_justifyContent:mobile_landscape": "flex-start"
+        },
+        "_exists": false
+      },
+      {
+        "id": "rbbksc",
+        "name": "fr-testimonial-card-delta__star",
+        "settings": {
+          "iconSize": "var(--text-l)"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

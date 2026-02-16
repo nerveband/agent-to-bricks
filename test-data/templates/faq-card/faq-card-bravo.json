@@ -1,0 +1,120 @@
+{
+  "idx": 241,
+  "title": "FAQ Card Bravo",
+  "elementCount": 5,
+  "classCount": 5,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "01cb09",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "5ea490",
+          "f714cf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "bvmoej"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "FAQ Card Bravo"
+      },
+      {
+        "id": "5ea490",
+        "name": "block",
+        "parent": "01cb09",
+        "children": [
+          "15e593"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "phqmqc"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "15e593",
+        "name": "heading",
+        "parent": "5ea490",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder question, we will replace it once your website copy is finalized",
+          "_cssGlobalClasses": [
+            "nbtlyj"
+          ]
+        },
+        "label": "Question"
+      },
+      {
+        "id": "f714cf",
+        "name": "block",
+        "parent": "01cb09",
+        "children": [
+          "eabaa3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "oboavx"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "eabaa3",
+        "name": "text",
+        "parent": "f714cf",
+        "children": [],
+        "settings": {
+          "text": "<p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.</p>",
+          "_cssGlobalClasses": [
+            "zwrqph"
+          ]
+        },
+        "label": "Answer"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "bvmoej",
+        "name": "fr-faq-card-bravo",
+        "settings": {
+          "_rowGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "phqmqc",
+        "name": "fr-faq-card-bravo__header",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "nbtlyj",
+        "name": "fr-faq-card-bravo__question",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "oboavx",
+        "name": "fr-faq-card-bravo__body",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "zwrqph",
+        "name": "fr-faq-card-bravo__answer",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "idx": 255,
+  "title": "Taxonomy Slider",
+  "elementCount": 4,
+  "classCount": 5,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "3d01f1",
+        "name": "slider-nested",
+        "parent": 0,
+        "children": [
+          "53e3bb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lwswwy"
+          ],
+          "arrows": true,
+          "type": "loop",
+          "optionsType": "default",
+          "perPage": "8",
+          "gap": "var(--grid-gap)",
+          "height": "auto",
+          "prevArrow": {
+            "library": "themify",
+            "icon": "ti-angle-left"
+          },
+          "nextArrow": {
+            "library": "themify",
+            "icon": "ti-angle-right"
+          },
+          "perPage:mobile_landscape": "4",
+          "perPage:mobile_portrait": "2"
+        },
+        "label": "Taxonomy Slider",
+        "themeStyles": []
+      },
+      {
+        "id": "53e3bb",
+        "name": "block",
+        "parent": "3d01f1",
+        "children": [
+          "5c17ac",
+          "9403ab"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "yhmtnv"
+          ],
+          "tag": "article"
+        },
+        "label": "Taxonomy Card"
+      },
+      {
+        "id": "5c17ac",
+        "name": "heading",
+        "parent": "53e3bb",
+        "children": [],
+        "settings": {
+          "text": "Placeholder",
+          "_cssGlobalClasses": [
+            "acss_import_clickable-parent",
+            "uhtwya"
+          ],
+          "link": {
+            "type": "meta",
+            "useDynamicData": "{term_url}"
+          }
+        }
+      },
+      {
+        "id": "9403ab",
+        "name": "image",
+        "parent": "53e3bb",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "esqjyv"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure",
+          "caption": "none"
+        },
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "acss_import_clickable-parent",
+        "name": "clickable-parent",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "yhmtnv",
+        "name": "fr-taxonomy-card-alpha",
+        "settings": {
+          "_rowGap": "var(--fr-card-gap)",
+          "_position": "relative",
+          "_display": "flex",
+          "_direction": "column",
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "uhtwya",
+        "name": "fr-taxonomy-card-alpha__heading",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--h4)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "esqjyv",
+        "name": "fr-taxonomy-card-alpha__image",
+        "settings": {
+          "_border": {
+            "radius": {
+              "top": "50%",
+              "right": "50%",
+              "bottom": "50%",
+              "left": "50%"
+            }
+          },
+          "_order": "-1",
+          "_overflow": "hidden",
+          "_objectFit": "cover",
+          "_width": "100%",
+          "_position": "static",
+          "_aspectRatio": "1/1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "lwswwy",
+        "name": "fr-taxonomy-slider-alpha",
+        "settings": {
+          "speed": "300",
+          "_cssCustom:mobile_portrait": ".fr-taxonomy-slider-alpha {\n\t--gradient-bg-color: var(--white); /* Color of fade */\n  --gradient-width: 10%; /* Amount of fade */\n  --fade-display: flex; /* Flex or none */\n  \n  inline-size: 100vw !important;\n  max-inline-size: 100vw !important;\n  margin-inline: calc(-50vw + 50%) !important;\n  align-self: flex-start;\n}\n\n.fr-taxonomy-slider-alpha .fr-slider__track {\n\tpadding-inline-end: 25%!important;\n}\n\n.fr-taxonomy-slider-alpha::after {\n\tcontent: '';\n  height: 100%;\n  width: var(--gradient-width);\n  display: var(--fade-display);\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  z-index: 1;\n  background: linear-gradient(90deg, transparent, var(--gradient-bg-color) 100%);\n}",
+          "_padding:mobile_portrait": {
+            "left": "var(--gutter)"
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

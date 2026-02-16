@@ -95,6 +95,12 @@
       </div>
     `;
 
+    // Add resize handle.
+    const resizeHandle = document.createElement('div');
+    resizeHandle.className = 'bai-resize-handle';
+    panel.appendChild(resizeHandle);
+    panel.style.position = 'fixed'; // ensure positioned for absolute child
+
     document.querySelector('.brx-body').appendChild(panel);
 
     // ---- Cache DOM refs ----
@@ -234,21 +240,39 @@
         try {
           const data = JSON.parse(evt.target.result);
 
-          // Support both formats:
+          // Support multiple formats:
           // 1. Plain array: [{id, name, parent, ...}, ...]
           // 2. Bricks copy format: {content: [...], globalClasses: [...], source: "bricksCopiedElements"}
+          // 3. Template DB format: {templateName: "...", bricksExport: {content: [...], globalClasses: [...]}}
+          // 4. Template DB with top-level elements: {templateName: "...", elements: [...], globalClasses: [...]}
           let flatArray;
           let importGlobalClasses = null;
+          let templateLabel = null;
 
           if (Array.isArray(data)) {
             flatArray = data;
+          } else if (data && data.bricksExport && Array.isArray(data.bricksExport.content)) {
+            // Template DB format with nested bricksExport
+            flatArray = data.bricksExport.content;
+            if (Array.isArray(data.bricksExport.globalClasses)) {
+              importGlobalClasses = data.bricksExport.globalClasses;
+            }
+            templateLabel = data.templateName || data.title || null;
           } else if (data && Array.isArray(data.content)) {
             flatArray = data.content;
             if (Array.isArray(data.globalClasses)) {
               importGlobalClasses = data.globalClasses;
             }
+            templateLabel = data.templateName || data.title || null;
+          } else if (data && Array.isArray(data.elements)) {
+            // Template DB format with top-level elements array
+            flatArray = data.elements;
+            if (Array.isArray(data.globalClasses)) {
+              importGlobalClasses = data.globalClasses;
+            }
+            templateLabel = data.templateName || data.title || null;
           } else {
-            setStatus('Invalid format — expected Bricks element array or copy data', 'error');
+            setStatus('Invalid format — expected Bricks element array, copy data, or template DB file', 'error');
             return;
           }
 
@@ -281,7 +305,8 @@
             insertedCount += ids.length;
           }
 
-          setStatus(`Imported ${insertedCount} elements from ${file.name} (Ctrl+Z to undo)`, 'success');
+          const label = templateLabel || file.name;
+          setStatus(`Imported ${insertedCount} elements from ${label} (Ctrl+Z to undo)`, 'success');
         } catch (err) {
           setStatus('Failed to parse JSON: ' + err.message, 'error');
         }
@@ -320,14 +345,15 @@
     function onDragEnd() {
       document.removeEventListener('mousemove', onDrag);
       document.removeEventListener('mouseup', onDragEnd);
-      // Save position.
+      // Save position (and preserve width).
       localStorage.setItem('bricksAIPanelPos', JSON.stringify({
         left: panel.style.left,
         top: panel.style.top,
+        width: panel.style.width,
       }));
     }
 
-    // Restore position.
+    // Restore position and size.
     const savedPos = localStorage.getItem('bricksAIPanelPos');
     if (savedPos) {
       try {
@@ -335,7 +361,42 @@
         panel.style.left = pos.left;
         panel.style.top = pos.top;
         panel.style.right = 'auto';
+        if (pos.width) panel.style.width = pos.width;
       } catch (e) { /* ignore */ }
+    }
+
+    // ---- Resize Handle ----
+
+    let resizeStart = { x: 0, y: 0, w: 0 };
+
+    resizeHandle.addEventListener('mousedown', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      resizeStart.x = e.clientX;
+      resizeStart.w = panel.offsetWidth;
+      panel.classList.add('bai-resizing');
+      document.addEventListener('mousemove', onResize);
+      document.addEventListener('mouseup', onResizeEnd);
+    });
+
+    function onResize(e) {
+      const newW = resizeStart.w + (e.clientX - resizeStart.x);
+      // Clamp between 300 and 600.
+      const clamped = Math.max(300, Math.min(600, newW));
+      panel.style.width = clamped + 'px';
+    }
+
+    function onResizeEnd() {
+      panel.classList.remove('bai-resizing');
+      document.removeEventListener('mousemove', onResize);
+      document.removeEventListener('mouseup', onResizeEnd);
+      // Save size alongside position.
+      const posData = {
+        left: panel.style.left,
+        top: panel.style.top,
+        width: panel.style.width,
+      };
+      localStorage.setItem('bricksAIPanelPos', JSON.stringify(posData));
     }
 
     // ---- Context Updater ----

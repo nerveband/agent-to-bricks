@@ -1,0 +1,302 @@
+{
+  "idx": 174,
+  "title": "Feature Card Uniform",
+  "elementCount": 8,
+  "classCount": 9,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "7f721e",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "8fb5e7",
+          "9c31b5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vxmybl"
+          ]
+        },
+        "label": "Feature Card Uniform (CSS)"
+      },
+      {
+        "id": "8fb5e7",
+        "name": "div",
+        "parent": "7f721e",
+        "children": [
+          "2b992b",
+          "ec40b8",
+          "e63e0b",
+          "d4d3d4"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jpttxx"
+          ]
+        },
+        "label": "Content"
+      },
+      {
+        "id": "2b992b",
+        "name": "heading",
+        "parent": "8fb5e7",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "tubtjt"
+          ],
+          "tag": "h3"
+        }
+      },
+      {
+        "id": "ec40b8",
+        "name": "text-basic",
+        "parent": "8fb5e7",
+        "children": [],
+        "settings": {
+          "text": "Accent Heading",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "xdmwbu"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "e63e0b",
+        "name": "text",
+        "parent": "8fb5e7",
+        "children": [],
+        "settings": {
+          "text": "<p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.</p>",
+          "_cssGlobalClasses": [
+            "gbufwb"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "d4d3d4",
+        "name": "button",
+        "parent": "8fb5e7",
+        "children": [],
+        "settings": {
+          "text": "Call to Action",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "9c31b5",
+        "name": "div",
+        "parent": "7f721e",
+        "children": [
+          "73b644"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "bjdtas"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "73b644",
+        "name": "image",
+        "parent": "9c31b5",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "awtktj"
+          ],
+          "tag": "figure",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "caption": "none"
+        },
+        "label": "Media"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "vxmybl",
+        "name": "fr-feature-card-uniform",
+        "settings": {
+          "_background": {
+            "color": {
+              "raw": "var(--bg-dark)"
+            }
+          },
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light-muted)"
+            }
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_display": "grid",
+          "_gridGap": "calc(var(--grid-gap) * 2)",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_alignItemsGrid": "center",
+          "_padding": {
+            "right": "calc(var(--image-overlap) * 2)",
+            "left": "calc(var(--image-overlap) * 2)"
+          },
+          "_cssCustom": ".fr-feature-card-uniform {\n  --image-overlap: var(--space-m);\n}",
+          "_alignItemsGrid:mobile_landscape": "flex-end",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)",
+          "_gridGap:tablet_portrait": "var(--grid-gap)",
+          "_padding:mobile_landscape": {
+            "left": "var(--space-m)",
+            "right": "var(--space-m)"
+          }
+        },
+        "modified": 1734086599,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "jpttxx",
+        "name": "fr-feature-card-uniform__content",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "var(--content-gap)",
+          "_padding": {
+            "top": "var(--space-xxl)",
+            "bottom": "var(--space-xxl)"
+          },
+          "_padding:mobile_landscape": {
+            "top": "0"
+          },
+          "_alignItems": "flex-start",
+          "_padding:tablet_portrait": {
+            "top": "var(--space-l)",
+            "bottom": "var(--space-l)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "tubtjt",
+        "name": "fr-feature-card-uniform__heading",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--h2)",
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "xdmwbu",
+        "name": "fr-feature-card-uniform__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "gbufwb",
+        "name": "fr-feature-card-uniform__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "awtktj",
+        "name": "fr-feature-card-uniform__media",
+        "settings": {
+          "_order": "-1",
+          "_objectFit": "cover",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_overflow": "hidden",
+          "_height": "100%",
+          "_heightMin:mobile_landscape": "calc(100% + var(--image-overlap))",
+          "_flexGrow": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "bjdtas",
+        "name": "fr-feature-card-uniform__media-wrapper",
+        "settings": {
+          "_overflow": "hidden",
+          "_order": "-1",
+          "_objectFit": "cover",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_heightMin": "calc(100% + (var(--image-overlap) * 2))",
+          "_height": "100%",
+          "_heightMin:mobile_landscape": "calc(100% + var(--image-overlap))"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

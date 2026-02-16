@@ -1,0 +1,1042 @@
+{
+  "idx": 202,
+  "title": "Menu Section Alpha",
+  "elementCount": 54,
+  "classCount": 18,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "d4de27",
+        "name": "section",
+        "children": [
+          "9ee0fc",
+          "961c86"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rkshvl"
+          ]
+        },
+        "label": "Menu Section Alpha"
+      },
+      {
+        "id": "961c86",
+        "name": "container",
+        "parent": "d4de27",
+        "children": [
+          "18999a",
+          "75c0f0",
+          "122146",
+          "cd7537",
+          "577471",
+          "288788"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gnjcgf",
+            "rktisp"
+          ],
+          "tag": "custom",
+          "customTag": "ul"
+        },
+        "label": "Menu Grid Alpha <ul> (CSS)"
+      },
+      {
+        "id": "18999a",
+        "name": "block",
+        "parent": "961c86",
+        "children": [
+          "bc1b2c",
+          "1b145d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ezrxjf"
+          ],
+          "tag": "custom",
+          "customTag": "li",
+          "_attributes": [
+            {
+              "id": "wshmfs",
+              "name": "data-featured-text",
+              "value": "Chef's Selection"
+            }
+          ]
+        },
+        "label": "Menu Card Alpha <li> (CSS)"
+      },
+      {
+        "id": "bc1b2c",
+        "name": "block",
+        "parent": "18999a",
+        "children": [
+          "89782e",
+          "dd477d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vwolfk"
+          ]
+        },
+        "label": "Head"
+      },
+      {
+        "id": "1b145d",
+        "name": "block",
+        "parent": "18999a",
+        "children": [
+          "db01cf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "edckpd"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "89782e",
+        "name": "heading",
+        "parent": "bc1b2c",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "wijjue"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "db01cf",
+        "name": "text-basic",
+        "parent": "1b145d",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "rxehnm"
+          ]
+        },
+        "label": "Description"
+      },
+      {
+        "id": "dd477d",
+        "name": "div",
+        "parent": "bc1b2c",
+        "children": [
+          "b2bbcd",
+          "758612"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gplfpd"
+          ],
+          "_alignItems": "center"
+        },
+        "label": "Price"
+      },
+      {
+        "id": "b2bbcd",
+        "name": "text-basic",
+        "parent": "dd477d",
+        "children": [],
+        "settings": {
+          "text": "$",
+          "tag": "custom",
+          "customTag": "sup",
+          "_cssGlobalClasses": [
+            "qckmkq"
+          ]
+        },
+        "label": "Currency"
+      },
+      {
+        "id": "758612",
+        "name": "text-basic",
+        "parent": "dd477d",
+        "children": [],
+        "settings": {
+          "text": "14.90",
+          "_cssGlobalClasses": [
+            "lpaffi"
+          ],
+          "tag": "custom",
+          "customTag": "strong"
+        },
+        "label": "Amount"
+      },
+      {
+        "id": "9ee0fc",
+        "name": "container",
+        "parent": "d4de27",
+        "children": [
+          "7cdb18",
+          "33c1e4",
+          "4ef3de"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dliabf",
+            "xgmzei"
+          ]
+        },
+        "label": "Intro Alpha"
+      },
+      {
+        "id": "33c1e4",
+        "name": "text-basic",
+        "parent": "9ee0fc",
+        "children": [],
+        "settings": {
+          "text": "Accent heading",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "blgfqd"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "7cdb18",
+        "name": "heading",
+        "parent": "9ee0fc",
+        "children": [],
+        "settings": {
+          "text": "Your heading",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "tkbujj"
+          ]
+        }
+      },
+      {
+        "id": "4ef3de",
+        "name": "text-basic",
+        "parent": "9ee0fc",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "dizast"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "75c0f0",
+        "name": "block",
+        "parent": "961c86",
+        "children": [
+          "c5fbc0",
+          "8fafe4"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ezrxjf"
+          ],
+          "tag": "custom",
+          "customTag": "li",
+          "_attributes": [
+            {
+              "id": "mwrorh",
+              "name": "data-featured-text"
+            }
+          ]
+        },
+        "label": "Menu Card Alpha <li> (CSS)"
+      },
+      {
+        "id": "c5fbc0",
+        "name": "block",
+        "parent": "75c0f0",
+        "children": [
+          "c09c12",
+          "c5e232"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vwolfk"
+          ]
+        },
+        "label": "Head"
+      },
+      {
+        "id": "8fafe4",
+        "name": "block",
+        "parent": "75c0f0",
+        "children": [
+          "49eb23"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "edckpd"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "c09c12",
+        "name": "heading",
+        "parent": "c5fbc0",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "wijjue"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "c5e232",
+        "name": "div",
+        "parent": "c5fbc0",
+        "children": [
+          "dcbc11",
+          "c1222e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gplfpd"
+          ],
+          "_alignItems": "center"
+        },
+        "label": "Price"
+      },
+      {
+        "id": "49eb23",
+        "name": "text-basic",
+        "parent": "8fafe4",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "rxehnm"
+          ]
+        },
+        "label": "Description"
+      },
+      {
+        "id": "dcbc11",
+        "name": "text-basic",
+        "parent": "c5e232",
+        "children": [],
+        "settings": {
+          "text": "$",
+          "tag": "custom",
+          "customTag": "sup",
+          "_cssGlobalClasses": [
+            "qckmkq"
+          ]
+        },
+        "label": "Currency"
+      },
+      {
+        "id": "c1222e",
+        "name": "text-basic",
+        "parent": "c5e232",
+        "children": [],
+        "settings": {
+          "text": "14.90",
+          "_cssGlobalClasses": [
+            "lpaffi"
+          ],
+          "tag": "custom",
+          "customTag": "strong"
+        },
+        "label": "Amount"
+      },
+      {
+        "id": "288788",
+        "name": "block",
+        "parent": "961c86",
+        "children": [
+          "a3969d",
+          "5e5622"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ezrxjf"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Menu Card Alpha <li> (CSS)"
+      },
+      {
+        "id": "a3969d",
+        "name": "block",
+        "parent": "288788",
+        "children": [
+          "965356",
+          "fd7073"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vwolfk"
+          ]
+        },
+        "label": "Head"
+      },
+      {
+        "id": "5e5622",
+        "name": "block",
+        "parent": "288788",
+        "children": [
+          "e610b5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "edckpd"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "965356",
+        "name": "heading",
+        "parent": "a3969d",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "wijjue"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "fd7073",
+        "name": "div",
+        "parent": "a3969d",
+        "children": [
+          "ab47a2",
+          "3daab9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gplfpd"
+          ],
+          "_alignItems": "center"
+        },
+        "label": "Price"
+      },
+      {
+        "id": "e610b5",
+        "name": "text-basic",
+        "parent": "5e5622",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "rxehnm"
+          ]
+        },
+        "label": "Description"
+      },
+      {
+        "id": "ab47a2",
+        "name": "text-basic",
+        "parent": "fd7073",
+        "children": [],
+        "settings": {
+          "text": "$",
+          "tag": "custom",
+          "customTag": "sup",
+          "_cssGlobalClasses": [
+            "qckmkq"
+          ]
+        },
+        "label": "Currency"
+      },
+      {
+        "id": "3daab9",
+        "name": "text-basic",
+        "parent": "fd7073",
+        "children": [],
+        "settings": {
+          "text": "14.90",
+          "_cssGlobalClasses": [
+            "lpaffi"
+          ],
+          "tag": "custom",
+          "customTag": "strong"
+        },
+        "label": "Amount"
+      },
+      {
+        "id": "577471",
+        "name": "block",
+        "parent": "961c86",
+        "children": [
+          "1ce064",
+          "4ddec7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ezrxjf"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Menu Card Alpha <li> (CSS)"
+      },
+      {
+        "id": "1ce064",
+        "name": "block",
+        "parent": "577471",
+        "children": [
+          "fae4d9",
+          "c889b8"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vwolfk"
+          ]
+        },
+        "label": "Head"
+      },
+      {
+        "id": "4ddec7",
+        "name": "block",
+        "parent": "577471",
+        "children": [
+          "290ebd"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "edckpd"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "fae4d9",
+        "name": "heading",
+        "parent": "1ce064",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "wijjue"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "c889b8",
+        "name": "div",
+        "parent": "1ce064",
+        "children": [
+          "889e07",
+          "dcf9c1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gplfpd"
+          ],
+          "_alignItems": "center"
+        },
+        "label": "Price"
+      },
+      {
+        "id": "290ebd",
+        "name": "text-basic",
+        "parent": "4ddec7",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "rxehnm"
+          ]
+        },
+        "label": "Description"
+      },
+      {
+        "id": "889e07",
+        "name": "text-basic",
+        "parent": "c889b8",
+        "children": [],
+        "settings": {
+          "text": "$",
+          "tag": "custom",
+          "customTag": "sup",
+          "_cssGlobalClasses": [
+            "qckmkq"
+          ]
+        },
+        "label": "Currency"
+      },
+      {
+        "id": "dcf9c1",
+        "name": "text-basic",
+        "parent": "c889b8",
+        "children": [],
+        "settings": {
+          "text": "14.90",
+          "_cssGlobalClasses": [
+            "lpaffi"
+          ],
+          "tag": "custom",
+          "customTag": "strong"
+        },
+        "label": "Amount"
+      },
+      {
+        "id": "cd7537",
+        "name": "block",
+        "parent": "961c86",
+        "children": [
+          "046548",
+          "258931"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ezrxjf"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Menu Card Alpha <li> (CSS)"
+      },
+      {
+        "id": "046548",
+        "name": "block",
+        "parent": "cd7537",
+        "children": [
+          "86ba51",
+          "3f8743"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vwolfk"
+          ]
+        },
+        "label": "Head"
+      },
+      {
+        "id": "258931",
+        "name": "block",
+        "parent": "cd7537",
+        "children": [
+          "7742b1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "edckpd"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "86ba51",
+        "name": "heading",
+        "parent": "046548",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "wijjue"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "3f8743",
+        "name": "div",
+        "parent": "046548",
+        "children": [
+          "700896",
+          "6bae20"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gplfpd"
+          ],
+          "_alignItems": "center"
+        },
+        "label": "Price"
+      },
+      {
+        "id": "7742b1",
+        "name": "text-basic",
+        "parent": "258931",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "rxehnm"
+          ]
+        },
+        "label": "Description"
+      },
+      {
+        "id": "700896",
+        "name": "text-basic",
+        "parent": "3f8743",
+        "children": [],
+        "settings": {
+          "text": "$",
+          "tag": "custom",
+          "customTag": "sup",
+          "_cssGlobalClasses": [
+            "qckmkq"
+          ]
+        },
+        "label": "Currency"
+      },
+      {
+        "id": "6bae20",
+        "name": "text-basic",
+        "parent": "3f8743",
+        "children": [],
+        "settings": {
+          "text": "14.90",
+          "_cssGlobalClasses": [
+            "lpaffi"
+          ],
+          "tag": "custom",
+          "customTag": "strong"
+        },
+        "label": "Amount"
+      },
+      {
+        "id": "122146",
+        "name": "block",
+        "parent": "961c86",
+        "children": [
+          "25f809",
+          "5665a6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ezrxjf"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Menu Card Alpha <li> (CSS)"
+      },
+      {
+        "id": "25f809",
+        "name": "block",
+        "parent": "122146",
+        "children": [
+          "9ac1f5",
+          "f7e8ee"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vwolfk"
+          ]
+        },
+        "label": "Head"
+      },
+      {
+        "id": "5665a6",
+        "name": "block",
+        "parent": "122146",
+        "children": [
+          "d7abd6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "edckpd"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "9ac1f5",
+        "name": "heading",
+        "parent": "25f809",
+        "children": [],
+        "settings": {
+          "text": "This is just a placeholder",
+          "_cssGlobalClasses": [
+            "wijjue"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "f7e8ee",
+        "name": "div",
+        "parent": "25f809",
+        "children": [
+          "1b8977",
+          "4f07fe"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gplfpd"
+          ],
+          "_alignItems": "center"
+        },
+        "label": "Price"
+      },
+      {
+        "id": "d7abd6",
+        "name": "text-basic",
+        "parent": "5665a6",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "rxehnm"
+          ]
+        },
+        "label": "Description"
+      },
+      {
+        "id": "1b8977",
+        "name": "text-basic",
+        "parent": "f7e8ee",
+        "children": [],
+        "settings": {
+          "text": "$",
+          "tag": "custom",
+          "customTag": "sup",
+          "_cssGlobalClasses": [
+            "qckmkq"
+          ]
+        },
+        "label": "Currency"
+      },
+      {
+        "id": "4f07fe",
+        "name": "text-basic",
+        "parent": "f7e8ee",
+        "children": [],
+        "settings": {
+          "text": "14.90",
+          "_cssGlobalClasses": [
+            "lpaffi"
+          ],
+          "tag": "custom",
+          "customTag": "strong"
+        },
+        "label": "Amount"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771254219,
+        "user_id": 1
+      },
+      {
+        "id": "dliabf",
+        "name": "fr-intro",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "xgmzei",
+        "name": "fr-intro-alpha",
+        "settings": {
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_alignItems:mobile_landscape": "flex-start",
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "blgfqd",
+        "name": "fr-intro-alpha__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "tkbujj",
+        "name": "fr-intro-alpha__heading",
+        "settings": {
+          "_typography:mobile_landscape": {
+            "font-size": "var(--h1)"
+          }
+        },
+        "modified": 1734899474,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "dizast",
+        "name": "fr-intro-alpha__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "rktisp",
+        "name": "list--none",
+        "settings": {
+          "_padding": {
+            "left": "0"
+          },
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "acss_import_list--none",
+        "modified": 1771254184,
+        "user_id": 1
+      },
+      {
+        "id": "rkshvl",
+        "name": "fr-menu-section-alpha",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "gnjcgf",
+        "name": "fr-menu-grid-alpha",
+        "settings": {
+          "_cssCustom": ".fr-menu-grid-alpha {\n  --row-gap: var(--grid-gap);\n  --col-gap: var(--space-xl);\n  --featured-box-offset: .75em;\n}\n\n/* Featured Item Styling */\n\n.fr-menu-grid-alpha {\n\tposition: relative;\n  isolation: isolate;\n  gap: calc(var(--row-gap) + var(--featured-box-offset)) var(--col-gap);\n}",
+          "_cssCustom:mobile_landscape": ".fr-menu-grid-alpha {\n  grid-template-columns: 1fr;\n}",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridTemplateRows": "1fr",
+          "_display": "grid",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ezrxjf",
+        "name": "fr-menu-card-alpha",
+        "settings": {
+          "_columnGap": "var(--fr-card-gap)",
+          "_rowGap": "calc(var(--fr-card-gap) / 2)",
+          "_flexWrap:mobile_landscape": "nowrap",
+          "_position": "relative",
+          "_cssCustom": ".fr-menu-card-alpha {\n  /* Set the featured box size by editing Menu Grid Alpha */\n  --featured-box-offset-top-adjustment: 1.5;\n  --featured-box-radius: var(--radius);\n  --featured-box-background: var(--bg-light);\n  --featured-box-border-width: 1px;\n  --featured-box-border-color: var(--neutral-ultra-dark-trans-10);\n  --featured-label-height: 26px;\n  --featured-label-nudge: 2px;\n  --featured-label-background: var(--bg-dark);\n  --featured-label-text-color: var(--text-light);\n  --featured-label-font-size: var(--text-xs);\n  --featured-label-inline-padding: .5em;\n  --featured-label-radius: var(--radius);\n\t--line-style: dashed; /* Accepts any border style */\n  --line-color: var(--neutral-ultra-dark-trans-20);\n  --line-nudge: 5px;\n  position: relative;\n}\n\n/* \nAdd the attribute \"data-menu-item-style\" and set its value to \"featured\" to make a menu item featured. Additionally, you need to add the attribute \"data-featured-text\" to your featured menu item to control the featured label text. As of the creation of this frame, featured label text will not render in the builder, but will display correctly on the front end.\n*/\n\n\n/* Box */\n.fr-menu-card-alpha[data-featured-text]:not([data-featured-text=\"\"])::before {\n\tcontent: \"\";\n \tposition: absolute;\n  inset: calc(var(--featured-box-offset) * var(--featured-box-offset-top-adjustment) * -1) calc(var(--featured-box-offset) * -1) calc(var(--featured-box-offset) * -1) calc(var(--featured-box-offset) * -1);\n  background: var(--featured-box-background);\n  z-index: -1;\n  border-radius: var(--featured-box-radius);\n  border-width: var(--featured-box-border-width);\n  border-style: solid;\n  border-color: var(--featured-box-border-color);\n}\n\n/* Label */\n.fr-menu-card-alpha[data-featured-text]:not([data-featured-text=\"\"])::after {\n  --half-label-height: calc(var(--featured-label-height) / 2);\n\tcontent: attr(data-featured-text);\n  block-size: var(--featured-label-height);\n  display: flex;\n  align-items: center;\n  position: absolute;\n  padding-inline: var(--featured-label-inline-padding);\n  inset-block-start: calc(((var(--featured-box-offset) * var(--featured-box-offset-top-adjustment)) + var(--half-label-height) + var(--featured-label-nudge, 0)) * -1);\n  inset-inline-start: 0;\n  background: var(--featured-label-background);\n  color: var(--featured-label-text-color);\n  font-size: var(--featured-label-font-size);\n  line-height: 1;\n  border-radius: var(--featured-label-radius);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "vwolfk",
+        "name": "fr-menu-card-alpha__head",
+        "settings": {
+          "_rowGap": "var(--fr-card-gap)",
+          "_direction": "row",
+          "_justifyContent": "space-between",
+          "_columnGap": "var(--fr-card-gap)",
+          "_alignItems": "flex-end",
+          "_display": "flex",
+          "_flexGrow::before": "1",
+          "_flexShrink::before": "1",
+          "_flexBasis::before": "1",
+          "_order::before": "2",
+          "_content::before": "''",
+          "_cssCustom": ".fr-menu-card-alpha__head::before {\n\tcontent: \"\";\n  flex: 1;\n  order: 2;\n  border-block-end: 1px var(--line-style) var(--line-color);\n  position: relative;\n  inset-block-end: var(--line-nudge);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "edckpd",
+        "name": "fr-menu-card-alpha__body",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "wijjue",
+        "name": "fr-menu-card-alpha__heading",
+        "settings": {
+          "_widthMax": "60%",
+          "_width": "auto",
+          "_flexGrow": "0",
+          "_flexShrink": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "rxehnm",
+        "name": "fr-menu-card-alpha__description",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-dark-muted)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "gplfpd",
+        "name": "fr-menu-card-alpha__price",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--h3)"
+          },
+          "_order": "3"
+        },
+        "_exists": false
+      },
+      {
+        "id": "qckmkq",
+        "name": "fr-menu-card-alpha__price-currency",
+        "settings": {
+          "_top": "-.5em",
+          "_left": "-.15em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "lpaffi",
+        "name": "fr-menu-card-alpha__price-amount",
+        "settings": {
+          "_margin": {
+            "right": ".15em"
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

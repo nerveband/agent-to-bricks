@@ -1,0 +1,396 @@
+{
+  "idx": 237,
+  "title": "Article Grid India",
+  "elementCount": 11,
+  "classCount": 13,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "2b1c11",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "c0d90e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xddgnb",
+            "rktisp"
+          ],
+          "tag": "custom",
+          "customTag": "ul"
+        },
+        "label": "Article Grid India"
+      },
+      {
+        "id": "c0d90e",
+        "name": "block",
+        "parent": "2b1c11",
+        "children": [
+          "9bdef8",
+          "61ada2",
+          "41dda0"
+        ],
+        "settings": {
+          "tag": "custom",
+          "customTag": "li",
+          "_cssGlobalClasses": [
+            "mxcpbw"
+          ],
+          "hasLoop": true,
+          "query": {
+            "posts_per_page": "3"
+          }
+        },
+        "label": "Article Card India"
+      },
+      {
+        "id": "9bdef8",
+        "name": "block",
+        "parent": "c0d90e",
+        "children": [
+          "becacd",
+          "9a7096",
+          "fb4688"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "oaivpr"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "becacd",
+        "name": "heading",
+        "parent": "9bdef8",
+        "children": [],
+        "settings": {
+          "text": "{post_title}",
+          "_cssGlobalClasses": [
+            "vkuwyd",
+            "acss_import_clickable-parent"
+          ],
+          "link": {
+            "type": "meta",
+            "useDynamicData": "{post_url}"
+          }
+        }
+      },
+      {
+        "id": "9a7096",
+        "name": "text-basic",
+        "parent": "9bdef8",
+        "children": [],
+        "settings": {
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "ardvqz"
+          ],
+          "text": "{post_terms_category}"
+        },
+        "label": "Category"
+      },
+      {
+        "id": "fb4688",
+        "name": "text-basic",
+        "parent": "9bdef8",
+        "children": [],
+        "settings": {
+          "text": "{post_date}",
+          "tag": "custom",
+          "customTag": "time",
+          "_cssGlobalClasses": [
+            "vzqbvh"
+          ],
+          "_attributes": [
+            {
+              "id": "dpnmkl",
+              "name": "datettime",
+              "value": "{post_date:Y-m-d}"
+            }
+          ]
+        },
+        "label": "Date"
+      },
+      {
+        "id": "61ada2",
+        "name": "block",
+        "parent": "c0d90e",
+        "children": [
+          "325b3e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "labfaz"
+          ]
+        },
+        "label": "Footer"
+      },
+      {
+        "id": "325b3e",
+        "name": "block",
+        "parent": "61ada2",
+        "children": [
+          "c66016",
+          "60bee0"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "trxkhe"
+          ]
+        },
+        "label": "Author"
+      },
+      {
+        "id": "c66016",
+        "name": "image",
+        "parent": "325b3e",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wmmvgo"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "useDynamicData": "{author_avatar}",
+            "size": "thumbnail"
+          }
+        },
+        "label": "Avatar",
+        "themeStyles": []
+      },
+      {
+        "id": "60bee0",
+        "name": "text-basic",
+        "parent": "325b3e",
+        "children": [],
+        "settings": {
+          "_margin": {
+            "right": "0"
+          },
+          "_cssGlobalClasses": [
+            "lplfgy"
+          ],
+          "text": "{author_name}"
+        },
+        "label": "Author Name"
+      },
+      {
+        "id": "41dda0",
+        "name": "image",
+        "parent": "c0d90e",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fzbupp"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "useDynamicData": "{featured_image}",
+            "size": "large"
+          }
+        },
+        "label": "Featured Image (Opacity)",
+        "themeStyles": []
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "rktisp",
+        "name": "list--none",
+        "settings": {
+          "_padding": {
+            "left": "0"
+          },
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "acss_import_list--none",
+        "modified": 1771254455,
+        "user_id": 1
+      },
+      {
+        "id": "acss_import_clickable-parent",
+        "name": "clickable-parent",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "mxcpbw",
+        "name": "fr-article-card-india",
+        "settings": {
+          "_padding": {
+            "top": "var(--fr-card-padding)",
+            "right": "var(--fr-card-padding)",
+            "bottom": "var(--fr-card-padding)",
+            "left": "var(--fr-card-padding)"
+          },
+          "_alignSelf": "stretch",
+          "_position": "relative",
+          "_cssCustom": ".fr-article-card-india {\n  /* Opacity of media / featured image */\n  --media-opacity: .2;\n  /* Increase or decrease hover effect (plus or minus) */\n  --media-opacity-operator: +;\n  /* Opacity shift on hover (must be decimal adjustment) */\n  --media-opacity-shift: .2;\n  /* Transition of opacity */\n  --media-transition: all .3s ease;\n  /* Adjust scale amount on hover */\n  --media-hover-scale: 1.1;\n  /* Footer Divider thickness */\n  --divider-thickness: 1px;\n  /* Footer Divider color */\n  --divider-color: var(--neutral-light-trans-20);\n  /* Divider Gap */\n  --divider-gap: var(--fr-card-gap);\n  \n\tisolation: isolate;\n}\n\n.fr-article-card-india:hover > .brxe-image {\n\topacity: calc(var(--media-opacity) var(--media-opacity-operator) var(--media-opacity-shift));\n  transform: scale(var(--media-hover-scale));\n}",
+          "_background": {
+            "color": {
+              "raw": "var(--neutral-ultra-dark)"
+            }
+          },
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          },
+          "_rowGap": "var(--fr-card-gap)",
+          "_cssTransition": "all .3s ease",
+          "_overflow": "hidden",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_direction": "column",
+          "_display": "flex",
+          "_justifyContent": "space-between",
+          "_heightMin": "18em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "oaivpr",
+        "name": "fr-article-card-india__header",
+        "settings": {
+          "_rowGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "vkuwyd",
+        "name": "fr-article-card-india__heading",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          }
+        },
+        "modified": 1731625072,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "ardvqz",
+        "name": "fr-article-card-india__category-badge",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            },
+            "text-decoration": "none",
+            "font-size": "var(--text-s)"
+          },
+          "_cssCustom": ".fr-article-card-india__category-badge > a {\n\tcolor: var(--text-light);\n  text-decoration: none;\n}",
+          "_order": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "vzqbvh",
+        "name": "fr-article-card-india__date",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-s)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "labfaz",
+        "name": "fr-article-card-india__footer",
+        "settings": {
+          "_cssCustom": ".fr-article-card-india__footer::before {\n\tcontent: '';\n  width: 100%;\n  height: var(--divider-thickness);\n  display: flex;\n  background-color: var(--divider-color);\n  margin-bottom: var(--divider-gap);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "trxkhe",
+        "name": "fr-article-card-india__author",
+        "settings": {
+          "_direction": "row",
+          "_columnGap": "var(--fr-card-gap)",
+          "_rowGap": "var(--fr-card-gap)",
+          "_alignItems": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wmmvgo",
+        "name": "fr-article-card-india__author-avatar",
+        "settings": {
+          "_objectFit": "cover",
+          "_width": "2.5em",
+          "_height": "2.5em",
+          "_border": {
+            "radius": {
+              "top": "50%",
+              "right": "50%",
+              "bottom": "50%",
+              "left": "50%"
+            }
+          },
+          "_overflow": "hidden"
+        },
+        "_exists": false
+      },
+      {
+        "id": "lplfgy",
+        "name": "fr-article-card-india__author-name",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "fzbupp",
+        "name": "fr-article-card-india__media",
+        "settings": {
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_width": "100%",
+          "_height": "100%",
+          "_objectFit": "cover",
+          "_zIndex": "-1",
+          "_opacity": "var(--media-opacity)",
+          "_cssTransition": "var(--media-transition)",
+          "_display": "flex"
+        },
+        "_exists": false
+      },
+      {
+        "id": "xddgnb",
+        "name": "fr-article-grid-india",
+        "settings": {
+          "_gridGap": "var(--grid-gap)",
+          "_cssCustom:tablet_portrait": ".fr-article-grid-india {\n\tgrid-template-columns: repeat(2, 1fr);\n}",
+          "_cssCustom:mobile_landscape": ".fr-article-grid-india {\n\tgrid-template-columns: repeat(1, 1fr);\n}",
+          "_gridTemplateColumns": "var(--grid-3)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_alignItemsGrid": "stretch",
+          "_display": "grid"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

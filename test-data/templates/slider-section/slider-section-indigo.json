@@ -1,0 +1,706 @@
+{
+  "idx": 83,
+  "title": "Slider Section Indigo",
+  "elementCount": 19,
+  "classCount": 22,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "5fdc22",
+        "name": "fr-notes",
+        "parent": 0,
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ieofwl"
+          ],
+          "notesContent": "<p class=\"my-2 [&amp;+p]:mt-4 [&amp;_strong:has(+br)]:inline-block [&amp;_strong:has(+br)]:pb-2\">This slider uses a query loop by default and must be adjusted or removed after import. Otherwise, no slides will appear on the frontend.</p><p class=\"my-2 [&amp;+p]:mt-4 [&amp;_strong:has(+br)]:inline-block [&amp;_strong:has(+br)]:pb-2\">You can delete this note after reading and following the instructions.</p>"
+        }
+      },
+      {
+        "id": "bd65a6",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "75b005",
+          "eb6eba"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "frimiz"
+          ]
+        },
+        "label": "Slider Section Indigo"
+      },
+      {
+        "id": "5ea4d8",
+        "name": "fr-slider",
+        "parent": "9b284a",
+        "children": [
+          "924d81"
+        ],
+        "settings": {
+          "height": "50vh",
+          "speed": 300,
+          "playButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-play"
+          },
+          "pauseButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-pause"
+          },
+          "sliderTag": "div",
+          "listTag": "ul",
+          "ariaCarousel": "Carousel",
+          "isSync": true,
+          "syncId": "Slider Indigo",
+          "_cssGlobalClasses": [
+            "4ipsce"
+          ],
+          "fixedHeight": "auto",
+          "type": "slide",
+          "gap": "var(--grid-gap)"
+        },
+        "label": "Slider Main Indigo"
+      },
+      {
+        "id": "924d81",
+        "name": "block",
+        "parent": "5ea4d8",
+        "children": [
+          "7de4d8",
+          "77c24d"
+        ],
+        "settings": {
+          "_alignItems": "center",
+          "_direction": "column",
+          "_justifyContent": "center",
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "hasLoop": true,
+          "query": {
+            "objectType": "post",
+            "post_type": [
+              "slider"
+            ]
+          },
+          "_cssGlobalClasses": [
+            "0qmhcq"
+          ],
+          "tag": "li"
+        },
+        "label": "Slide"
+      },
+      {
+        "id": "8d5351",
+        "name": "heading",
+        "parent": "7de4d8",
+        "children": [],
+        "settings": {
+          "text": "{post_title}",
+          "_cssGlobalClasses": [
+            "88ci52"
+          ],
+          "tag": "h2"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "40e862",
+        "name": "fr-slider-controls",
+        "parent": "9b284a",
+        "children": [],
+        "settings": {
+          "type": "nextPrev",
+          "progressHeight": ".5rem",
+          "arrows": true,
+          "arrowTypography": "var(--neutral-ultra-dark)",
+          "arrowsGap": "var(--space-l)",
+          "prevArrow": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "stroke": {
+              "raw": "var(--icon-color)"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)"
+          },
+          "prevArrowAriaLabel": "Previous slide",
+          "nextArrow": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)",
+            "stroke": {
+              "raw": "var(--icon-color)"
+            }
+          },
+          "nextArrowAriaLabel": "Next slide",
+          "syncId": "Slider Indigo",
+          "_cssGlobalClasses": [
+            "chftxu"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Frames Slider Controls (CSS)"
+      },
+      {
+        "id": "75b005",
+        "name": "container",
+        "parent": "bd65a6",
+        "children": [
+          "3666d8",
+          "95cfd1",
+          "e39768"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dliabf",
+            "xgmzei"
+          ]
+        },
+        "label": "Intro Alpha"
+      },
+      {
+        "id": "95cfd1",
+        "name": "text-basic",
+        "parent": "75b005",
+        "children": [],
+        "settings": {
+          "text": "Accent heading",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "blgfqd"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "3666d8",
+        "name": "heading",
+        "parent": "75b005",
+        "children": [],
+        "settings": {
+          "text": "Your heading",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "tkbujj"
+          ]
+        }
+      },
+      {
+        "id": "e39768",
+        "name": "text-basic",
+        "parent": "75b005",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "dizast"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "06d04e",
+        "name": "fr-slider",
+        "parent": "eb6eba",
+        "children": [
+          "7d8198"
+        ],
+        "settings": {
+          "height": "50vh",
+          "speed": 300,
+          "playButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-play"
+          },
+          "pauseButtonIcon": {
+            "library": "themify",
+            "icon": "ti-control-pause"
+          },
+          "sliderTag": "nav",
+          "listTag": "ul",
+          "ariaCarousel": "Carousel",
+          "fixedWidth": "fit-content",
+          "gap": "calc(var(--grid-gap)/2)",
+          "isSync": true,
+          "syncId": "Slider Indigo",
+          "isNavigation": true,
+          "_cssGlobalClasses": [
+            "siflaj"
+          ],
+          "updateOnMove": "afterMove",
+          "type": "slide",
+          "fixedHeight": "auto",
+          "perPage": "2",
+          "focus": "1"
+        },
+        "label": "Slider Navigation",
+        "themeStyles": []
+      },
+      {
+        "id": "7d8198",
+        "name": "block",
+        "parent": "06d04e",
+        "children": [
+          "3b6ceb"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-slide splide__slide"
+          },
+          "hasLoop": true,
+          "query": {
+            "objectType": "post",
+            "post_type": [
+              "slider"
+            ]
+          },
+          "_cssGlobalClasses": [
+            "09pw3l"
+          ],
+          "tag": "li"
+        },
+        "label": "Slide"
+      },
+      {
+        "id": "8d1816",
+        "name": "image",
+        "parent": "77c24d",
+        "children": [],
+        "settings": {
+          "image": {
+            "useDynamicData": "{featured_image}",
+            "size": "large"
+          },
+          "_cssGlobalClasses": [
+            "ulf77x"
+          ],
+          "tag": "figure",
+          "loading": "eager"
+        },
+        "label": "Image",
+        "themeStyles": []
+      },
+      {
+        "id": "3b6ceb",
+        "name": "text-basic",
+        "parent": "7d8198",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "7m5hxh"
+          ],
+          "text": "{post_title}",
+          "tag": "p"
+        },
+        "label": "Title"
+      },
+      {
+        "id": "7de4d8",
+        "name": "div",
+        "parent": "924d81",
+        "children": [
+          "8d5351",
+          "bc1efc"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "56q344"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "77c24d",
+        "name": "div",
+        "parent": "924d81",
+        "children": [
+          "8d1816"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "m6v15a"
+          ]
+        },
+        "label": "Image Wrapper"
+      },
+      {
+        "id": "bc1efc",
+        "name": "text",
+        "parent": "7de4d8",
+        "children": [],
+        "settings": {
+          "text": "<p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.</p><p>Sometimes it\u2019s nice to put in text just to get an idea of how text will fill in a space on your website.</p>",
+          "_cssGlobalClasses": [
+            "f9kgej"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "eb6eba",
+        "name": "container",
+        "parent": "bd65a6",
+        "children": [
+          "06d04e",
+          "9b284a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "nfrfey"
+          ]
+        },
+        "label": "Slider Indigo (CSS)"
+      },
+      {
+        "id": "9b284a",
+        "name": "div",
+        "parent": "eb6eba",
+        "children": [
+          "5ea4d8",
+          "40e862"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zhhmkw"
+          ]
+        },
+        "label": "Slider Content"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771252828,
+        "user_id": 1
+      },
+      {
+        "id": "ieofwl",
+        "name": "fr-note",
+        "settings": {
+          "_cssCustom": ".fr-note {\n  padding: var(--card-padding, var(--space-m));\n  border-radius: var(--card-radius, var(--radius));\n  background: var(--warning-light, #FDEBB5);\n  color: var(--warning-ultra-dark, #544002);\n  margin-inline: auto;\n}\n\n.fr-note * + :is(h2, h3, h4) {\n  margin-top: var(--heading-spacing);\n  color: var(--text-dark);\n}\n\n.fr-note a {\n  text-decoration: underline;\n}",
+          "_width": "60ch",
+          "_typography": {
+            "color": {
+              "raw": "var(--text-dark-muted)"
+            }
+          }
+        },
+        "modified": 1744306417,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "dliabf",
+        "name": "fr-intro",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "xgmzei",
+        "name": "fr-intro-alpha",
+        "settings": {
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_alignItems:mobile_landscape": "flex-start",
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "blgfqd",
+        "name": "fr-intro-alpha__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "tkbujj",
+        "name": "fr-intro-alpha__heading",
+        "settings": {
+          "_typography:mobile_landscape": {
+            "font-size": "var(--h1)"
+          }
+        },
+        "modified": 1734899474,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "dizast",
+        "name": "fr-intro-alpha__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "nfrfey",
+        "name": "fr-slider-indigo",
+        "settings": {
+          "_cssCustom": ".fr-slider-indigo {\n\t--icon-size: 2em;\n  --icon-color: var(--neutral);\n  --slide-bg: var(--neutral-ultra-light);\n  --active-slide-bg: var(--neutral-light);\n}",
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "var(--content-gap)",
+          "_alignItems": "center"
+        },
+        "modified": 1720280612,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "siflaj",
+        "name": "fr-slider-nav-indigo",
+        "settings": {
+          "activeBackgroundColor": {
+            "raw": "var(--active-slide-bg)"
+          },
+          "_width": "var(--width-l)",
+          "slideBackgroundColor": {
+            "raw": "var(--slide-bg)"
+          },
+          "slideBorder": {
+            "width": {
+              "top": "var(--btn-border-width)",
+              "right": "var(--btn-border-width)",
+              "bottom": "var(--btn-border-width)",
+              "left": "var(--btn-border-width)"
+            },
+            "style": "solid",
+            "color": {
+              "raw": "var(--neutral-ultra-light)"
+            }
+          },
+          "_cssCustom": "/* Focus fix */\n.fr-slider-nav-indigo .splide__track {\n\tpadding: .35em!important;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "09pw3l",
+        "name": "fr-slider-nav-indigo__slide",
+        "settings": {
+          "_padding": {
+            "top": "var(--btn-padding-block)",
+            "right": "var(--btn-padding-inline)",
+            "bottom": "var(--btn-padding-block)",
+            "left": "var(--btn-padding-inline)"
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--btn-border-radius)",
+              "right": "var(--btn-border-radius)",
+              "bottom": "var(--btn-border-radius)",
+              "left": "var(--btn-border-radius)"
+            },
+            "width": {
+              "top": "var(--btn-border-width)",
+              "right": "var(--btn-border-width)",
+              "bottom": "var(--btn-border-width)",
+              "left": "var(--btn-border-width)"
+            },
+            "style": "solid",
+            "color": {
+              "raw": "var(--neutral-ultra-light)"
+            }
+          },
+          "_cursor": "pointer"
+        },
+        "_exists": false
+      },
+      {
+        "id": "7m5hxh",
+        "name": "fr-slider-navigation-indigo__title",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "zhhmkw",
+        "name": "fr-slider-indigo__content",
+        "settings": {
+          "_display": "flex",
+          "_padding": {
+            "top": "var(--space-l)",
+            "bottom": "var(--space-l)",
+            "left": "var(--space-l)",
+            "right": "var(--space-l)"
+          },
+          "_background": {
+            "color": {
+              "raw": "var(--slide-bg)"
+            }
+          },
+          "_direction": "column",
+          "_rowGap": "var(--content-gap)",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "4ipsce",
+        "name": "fr-slider-main-indigo",
+        "settings": {
+          "_cssCustom": ".fr-slider-main-indigo .fr-slider__list {\n\ttransition: transform .5s cubic-bezier(0.77, 0, 0.175, 1) 0s!important;\n}",
+          "slideBackgroundColor": {
+            "raw": "var(--slide-bg)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "0qmhcq",
+        "name": "fr-slider-main-indigo__slide",
+        "settings": {
+          "_display": "grid",
+          "_direction": "column",
+          "_alignItems": "center",
+          "_justifyContent": "center",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_alignItemsGrid": "stretch",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)",
+          "_cssCustom": ".fr-slider-main-indigo__slide {\n  max-inline-size: 100%;\n}"
+        },
+        "modified": 1763668020,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "56q344",
+        "name": "fr-slider-main-indigo__content-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "88ci52",
+        "name": "fr-slider-main-indigo__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "f9kgej",
+        "name": "fr-slider-main-indigo__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "m6v15a",
+        "name": "fr-slider-main-indigo__image-wrapper",
+        "settings": {
+          "_height": "100%",
+          "_width": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ulf77x",
+        "name": "fr-slider-main-indigo__image",
+        "settings": {
+          "_objectFit": "cover",
+          "_height": "100%",
+          "_width": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "chftxu",
+        "name": "fr-slider-controls-indigo",
+        "settings": {
+          "_cssCustom": ".fr-slider-controls-indigo :disabled {\n  opacity: 0.25;\n  cursor: not-allowed;\n}\n",
+          "arrowBackground": {
+            "raw": "transparent"
+          },
+          "arrowBorder": {
+            "radius": {
+              "top": "50vmax",
+              "right": "50vmax",
+              "bottom": "50vmax",
+              "left": "50vmax"
+            },
+            "width": {
+              "top": "var(--btn-border-width)",
+              "right": "var(--btn-border-width)",
+              "bottom": "var(--btn-border-width)",
+              "left": "var(--btn-border-width)"
+            },
+            "style": "solid",
+            "color": {
+              "raw": "var(--neutral)"
+            }
+          },
+          "arrowHeight": "3em",
+          "arrowWidth": "3em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "frimiz",
+        "name": "fr-slider-section-indigo",
+        "settings": {
+          "_direction": "column",
+          "_rowGap": "var(--container-gap)"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

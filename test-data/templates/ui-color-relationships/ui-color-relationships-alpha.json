@@ -1,0 +1,781 @@
+{
+  "idx": 28,
+  "title": "(UI) Color Relationships Alpha",
+  "elementCount": 37,
+  "classCount": 22,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "558300",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "55eb10",
+          "b126c7",
+          "3e6160"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "uwhmlh"
+          ]
+        },
+        "label": "UI Color Relationships Alpha"
+      },
+      {
+        "id": "3e6160",
+        "name": "container",
+        "parent": "558300",
+        "children": [
+          "74bf5f",
+          "ff5635"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "3hesxo"
+          ]
+        },
+        "label": "Color Row"
+      },
+      {
+        "id": "74bf5f",
+        "name": "heading",
+        "parent": "3e6160",
+        "children": [],
+        "settings": {
+          "text": "Auto Color Relationships",
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "q1j4kl"
+          ]
+        },
+        "label": "Color Row Heading"
+      },
+      {
+        "id": "ff5635",
+        "name": "block",
+        "parent": "3e6160",
+        "children": [
+          "9c5eb6",
+          "ab25e9",
+          "a1bce1",
+          "951261"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kyfmmv"
+          ],
+          "_cssCustom": "#brxe-ff5635 {\n  --min: 500px;\n}"
+        },
+        "label": "Swatch Row"
+      },
+      {
+        "id": "9c5eb6",
+        "name": "block",
+        "parent": "ff5635",
+        "children": [
+          "91b166",
+          "895ce4",
+          "8de096"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hktuyp",
+            "acss_import_bg--ultra-light"
+          ]
+        },
+        "label": "Swatch"
+      },
+      {
+        "id": "55eb10",
+        "name": "container",
+        "parent": "558300",
+        "children": [
+          "4b46c1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "slhmuz"
+          ]
+        },
+        "label": "Intro Bravo"
+      },
+      {
+        "id": "4b46c1",
+        "name": "heading",
+        "parent": "55eb10",
+        "children": [],
+        "settings": {
+          "text": "Color Relationships",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "okkigb"
+          ]
+        }
+      },
+      {
+        "id": "951261",
+        "name": "block",
+        "parent": "ff5635",
+        "children": [
+          "206b97",
+          "7de620",
+          "1563fa"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hktuyp",
+            "acss_import_bg--ultra-dark"
+          ]
+        },
+        "label": "Swatch"
+      },
+      {
+        "id": "206b97",
+        "name": "heading",
+        "parent": "951261",
+        "children": [],
+        "settings": {
+          "text": "Sample heading",
+          "_cssGlobalClasses": [
+            "fhbopo"
+          ],
+          "tag": "h3"
+        }
+      },
+      {
+        "id": "1563fa",
+        "name": "button",
+        "parent": "951261",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ]
+        }
+      },
+      {
+        "id": "7de620",
+        "name": "text-basic",
+        "parent": "951261",
+        "children": [],
+        "settings": {
+          "text": "This is what text will look like on <b>ultra dark</b> background areas. You can also control <a href=\"#\">link color relationships</a> and there's an example button below.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "nblhdi"
+          ],
+          "_typography": []
+        },
+        "label": "Sample Text"
+      },
+      {
+        "id": "a1bce1",
+        "name": "block",
+        "parent": "ff5635",
+        "children": [
+          "87ff62",
+          "114687",
+          "854d22"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hktuyp",
+            "acss_import_bg--dark"
+          ]
+        },
+        "label": "Swatch"
+      },
+      {
+        "id": "87ff62",
+        "name": "heading",
+        "parent": "a1bce1",
+        "children": [],
+        "settings": {
+          "text": "Sample heading",
+          "_cssGlobalClasses": [
+            "fhbopo"
+          ],
+          "tag": "h3"
+        }
+      },
+      {
+        "id": "854d22",
+        "name": "button",
+        "parent": "a1bce1",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ]
+        }
+      },
+      {
+        "id": "114687",
+        "name": "text-basic",
+        "parent": "a1bce1",
+        "children": [],
+        "settings": {
+          "text": "This is what text will look like on <b>dark</b> background areas. You can also control <a href=\"#\">link color relationships</a> and there's an example button below.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "nblhdi"
+          ],
+          "_typography": []
+        },
+        "label": "Sample Text"
+      },
+      {
+        "id": "ab25e9",
+        "name": "block",
+        "parent": "ff5635",
+        "children": [
+          "a7b817",
+          "b2922d",
+          "304cf1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hktuyp",
+            "acss_import_bg--light"
+          ]
+        },
+        "label": "Swatch"
+      },
+      {
+        "id": "a7b817",
+        "name": "heading",
+        "parent": "ab25e9",
+        "children": [],
+        "settings": {
+          "text": "Sample heading",
+          "_cssGlobalClasses": [
+            "fhbopo"
+          ],
+          "tag": "h3"
+        }
+      },
+      {
+        "id": "304cf1",
+        "name": "button",
+        "parent": "ab25e9",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ]
+        }
+      },
+      {
+        "id": "b2922d",
+        "name": "text-basic",
+        "parent": "ab25e9",
+        "children": [],
+        "settings": {
+          "text": "This is what text will look like on <b>light</b> background areas. You can also control <a href=\"#\">link color relationships</a> and there's an example button below.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "nblhdi"
+          ],
+          "_typography": []
+        },
+        "label": "Sample Text"
+      },
+      {
+        "id": "b126c7",
+        "name": "container",
+        "parent": "558300",
+        "children": [
+          "0cea06",
+          "eaa0e1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "3hesxo"
+          ]
+        },
+        "label": "Color Row"
+      },
+      {
+        "id": "0cea06",
+        "name": "heading",
+        "parent": "b126c7",
+        "children": [],
+        "settings": {
+          "text": "Text",
+          "tag": "h3",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "q1j4kl"
+          ]
+        },
+        "label": "Color Row Heading"
+      },
+      {
+        "id": "eaa0e1",
+        "name": "block",
+        "parent": "b126c7",
+        "children": [
+          "1a3323",
+          "9d94a6",
+          "47386a",
+          "df28f1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kyfmmv"
+          ]
+        },
+        "label": "Swatch Row"
+      },
+      {
+        "id": "1a3323",
+        "name": "block",
+        "parent": "eaa0e1",
+        "children": [
+          "5794f8",
+          "d2b4b0"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hktuyp",
+            "acss_import_text--dark"
+          ],
+          "_attributes": [
+            {
+              "id": "hmlvak",
+              "name": "data-swatch-type",
+              "value": "text"
+            }
+          ]
+        },
+        "label": "Swatch"
+      },
+      {
+        "id": "d2b4b0",
+        "name": "text-basic",
+        "parent": "1a3323",
+        "children": [],
+        "settings": {
+          "text": "Dark",
+          "_cssGlobalClasses": [
+            "oedhhb"
+          ]
+        },
+        "label": "Swatch Label"
+      },
+      {
+        "id": "5794f8",
+        "name": "text-basic",
+        "parent": "1a3323",
+        "children": [],
+        "settings": {
+          "text": "Aa",
+          "tag": "span",
+          "_cssGlobalClasses": [
+            "aoiqut"
+          ]
+        },
+        "label": "Swatch Text Sample"
+      },
+      {
+        "id": "47386a",
+        "name": "block",
+        "parent": "eaa0e1",
+        "children": [
+          "6c6075",
+          "4b5052"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hktuyp",
+            "acss_import_bg--neutral-ultra-dark",
+            "acss_import_text--light"
+          ],
+          "_attributes": [
+            {
+              "id": "hmlvak",
+              "name": "data-swatch-type",
+              "value": "text"
+            }
+          ]
+        },
+        "label": "Swatch"
+      },
+      {
+        "id": "4b5052",
+        "name": "text-basic",
+        "parent": "47386a",
+        "children": [],
+        "settings": {
+          "text": "Light",
+          "_cssGlobalClasses": [
+            "oedhhb"
+          ]
+        },
+        "label": "Swatch Label"
+      },
+      {
+        "id": "6c6075",
+        "name": "text-basic",
+        "parent": "47386a",
+        "children": [],
+        "settings": {
+          "text": "Aa",
+          "tag": "span",
+          "_cssGlobalClasses": [
+            "aoiqut"
+          ]
+        },
+        "label": "Swatch Text Sample"
+      },
+      {
+        "id": "df28f1",
+        "name": "block",
+        "parent": "eaa0e1",
+        "children": [
+          "99241b",
+          "9c62fc"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hktuyp",
+            "acss_import_text--light-muted",
+            "acss_import_bg--neutral-ultra-dark"
+          ],
+          "_attributes": [
+            {
+              "id": "hmlvak",
+              "name": "data-swatch-type",
+              "value": "text"
+            }
+          ]
+        },
+        "label": "Swatch"
+      },
+      {
+        "id": "9c62fc",
+        "name": "text-basic",
+        "parent": "df28f1",
+        "children": [],
+        "settings": {
+          "text": "Light Muted",
+          "_cssGlobalClasses": [
+            "oedhhb"
+          ]
+        },
+        "label": "Swatch Label"
+      },
+      {
+        "id": "99241b",
+        "name": "text-basic",
+        "parent": "df28f1",
+        "children": [],
+        "settings": {
+          "text": "Aa",
+          "tag": "span",
+          "_cssGlobalClasses": [
+            "aoiqut"
+          ]
+        },
+        "label": "Swatch Text Sample"
+      },
+      {
+        "id": "9d94a6",
+        "name": "block",
+        "parent": "eaa0e1",
+        "children": [
+          "119acf",
+          "2da983"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hktuyp",
+            "acss_import_text--dark-muted"
+          ],
+          "_attributes": [
+            {
+              "id": "hmlvak",
+              "name": "data-swatch-type",
+              "value": "text"
+            }
+          ]
+        },
+        "label": "Swatch"
+      },
+      {
+        "id": "119acf",
+        "name": "text-basic",
+        "parent": "9d94a6",
+        "children": [],
+        "settings": {
+          "text": "Aa",
+          "tag": "span",
+          "_cssGlobalClasses": [
+            "aoiqut"
+          ]
+        },
+        "label": "Swatch Text Sample"
+      },
+      {
+        "id": "2da983",
+        "name": "text-basic",
+        "parent": "9d94a6",
+        "children": [],
+        "settings": {
+          "text": "Dark Muted",
+          "_cssGlobalClasses": [
+            "oedhhb"
+          ]
+        },
+        "label": "Swatch Label"
+      },
+      {
+        "id": "895ce4",
+        "name": "text-basic",
+        "parent": "9c5eb6",
+        "children": [],
+        "settings": {
+          "text": "This is what text will look like on <b>ultra light</b> background areas. You can also control <a href=\"#\">link color relationships</a> and there's an example button below.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "nblhdi"
+          ]
+        },
+        "label": "Sample Text"
+      },
+      {
+        "id": "8de096",
+        "name": "button",
+        "parent": "9c5eb6",
+        "children": [],
+        "settings": {
+          "text": "Button",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ]
+        }
+      },
+      {
+        "id": "91b166",
+        "name": "heading",
+        "parent": "9c5eb6",
+        "children": [],
+        "settings": {
+          "text": "Sample heading",
+          "_cssGlobalClasses": [
+            "fhbopo"
+          ],
+          "tag": "h3"
+        },
+        "label": "Sample Heading"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "slhmuz",
+        "name": "fr-intro-bravo",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 2)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "okkigb",
+        "name": "fr-intro-bravo__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "uwhmlh",
+        "name": "ui-color-relationships-alpha",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "3hesxo",
+        "name": "ui-color-relationships-alpha__row",
+        "settings": {
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "q1j4kl",
+        "name": "ui-color-relationships-alpha__row-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "kyfmmv",
+        "name": "ui-color-relationships-alpha__swatch-row",
+        "settings": {
+          "_cssCustom": ".ui-color-relationships-alpha__swatch-row[data-swatch-row] {\n  gap: var(--space-xs);\n}\n\n.ui-color-relationships-alpha__swatch-row[data-swatch-row=\"primary\" i] {\n  \n  > * {\n    background-color: var(--swatch-color, var(--black-trans-10));\n  }\n  \n  > :nth-child(1) {\n    --swatch-color: var(--primary);\n  }\n  > :nth-child(2) {\n    --swatch-color: var(--primary-hover);\n  }\n  > :nth-child(3) {\n    --swatch-color: var(--primary-ultra-light);\n  }\n  > :nth-child(4) {\n    --swatch-color: var(--primary-light);\n  }\n  > :nth-child(5) {\n    --swatch-color: var(--primary-semi-light);\n  }\n  > :nth-child(6) {\n    --swatch-color: var(--primary-semi-dark);\n  }\n  > :nth-child(7) {\n    --swatch-color: var(--primary-dark);\n  }\n  > :nth-child(8) {\n    --swatch-color: var(--primary-ultra-dark);\n  }\n  \n}",
+          "_gridGap": "var(--grid-gap)",
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-auto-2)"
+        },
+        "modified": 1732136459,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "hktuyp",
+        "name": "ui-color-relationships-alpha__swatch",
+        "settings": {
+          "_cssCustom": ".ui-color-relationships-alpha__swatch[data-swatch-type=\"text\" i] {\n  border: var(--border);\n  padding: var(--space-m);\n  justify-content: center;\n  align-items: center;\n  font-size: var(--h1);\n}",
+          "_heightMin": "150",
+          "_justifyContent": "flex-end",
+          "_alignItems": "flex-start",
+          "_padding": {
+            "top": "var(--space-m)",
+            "right": "var(--space-m)",
+            "bottom": "var(--space-m)",
+            "left": "var(--space-m)"
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_position": "relative",
+          "_flexGrow": "1",
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "fhbopo",
+        "name": "ui-color-section-alpha__swatch-sample-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "nblhdi",
+        "name": "ui-color-section-alpha__swatch-sample-text",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "oedhhb",
+        "name": "ui-color-relationships-alpha__swatch-label",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-s)"
+          },
+          "_position": "absolute",
+          "_bottom": "var(--space-xs)",
+          "_right": "var(--space-s)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "aoiqut",
+        "name": "ui-color-relationships-alpha__swatch-text-sample",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "acss_import_text--dark",
+        "name": "text--dark",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "acss_import_text--dark-muted",
+        "name": "text--dark-muted",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "acss_import_text--light",
+        "name": "text--light",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "acss_import_text--light-muted",
+        "name": "text--light-muted",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "acss_import_bg--ultra-dark",
+        "name": "bg--ultra-dark",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "acss_import_bg--dark",
+        "name": "bg--dark",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "acss_import_bg--light",
+        "name": "bg--light",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "acss_import_bg--ultra-light",
+        "name": "bg--ultra-light",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "acss_import_bg--neutral-ultra-dark",
+        "name": "bg--neutral-ultra-dark",
+        "settings": [],
+        "category": "acss"
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

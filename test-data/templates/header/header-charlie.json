@@ -1,0 +1,247 @@
+{
+  "idx": 300,
+  "title": "Header Charlie",
+  "elementCount": 4,
+  "classCount": 4,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "738587",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "c72cbf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tbynwe"
+          ],
+          "tag": "div"
+        },
+        "label": "Header Charlie"
+      },
+      {
+        "id": "c72cbf",
+        "name": "container",
+        "parent": "738587",
+        "children": [
+          "fe2829",
+          "0a3551"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "zgnpwl"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "fe2829",
+        "name": "image",
+        "parent": "c72cbf",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eikisk",
+            "mjxisl"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "loading": "eager",
+          "link": "url",
+          "url": {
+            "type": "external",
+            "url": "/"
+          }
+        },
+        "label": "Logo"
+      },
+      {
+        "id": "0a3551",
+        "name": "nav-menu",
+        "parent": "c72cbf",
+        "children": [],
+        "settings": {
+          "mobileMenu": "mobile_landscape",
+          "_cssGlobalClasses": [
+            "xzqxtw"
+          ],
+          "menu": "61",
+          "menuIcon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "subMenuIcon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          }
+        },
+        "themeStyles": [],
+        "label": "Nav Menu Alpha (CSS Tab)"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "xzqxtw",
+        "name": "fr-nav-alpha",
+        "settings": {
+          "mobileMenuToggleColor": {
+            "raw": "var(--text-dark)"
+          },
+          "_typography:tablet_portrait": {
+            "line-height": "0"
+          },
+          "mobileMenuTypography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          },
+          "menuMargin": {
+            "left": "0"
+          },
+          "_cssCustom": ".fr-nav-alpha {\n  --link-color: \t\t\t\tvar(--primary);\n  --link-color-hover: \tvar(--primary-hover);\n  --link-color-active: \tvar(--primary);\n  --toggle-gap: \t\t\t\t.5em;\n  --border-color: \t\t\ttransparent;\n\n  /* Mobile Menu */\n  --mm-padding-block: 0;\n  --mm-padding-inline: 1.5em;\n  --mm-item-gap: 1em;\n}\n\n.fr-nav-alpha li {\n  white-space: nowrap;\n}\n\n.fr-nav-alpha ul.sub-menu li {\n  padding: var(--btn-padding-block) var(--btn-padding-inline);\n  border-block-end: 0;\n}\n\n.fr-nav-alpha ul.bricks-mobile-menu {\n  display: flex;\n  gap: var(--mm-item-gap);\n  padding-block: var(--space-xxl);  \n  align-items: center;  \n}\n\n.fr-nav-alpha ul.bricks-mobile-menu li {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: var(--mm-item-gap);\n  padding: var(--mm-padding-block) var(--mm-padding-inline);   border-block-end: 0;\n}\n\n.fr-nav-alpha .bricks-mobile-menu-wrapper .bricks-mobile-menu>li>.brx-submenu-toggle>*,\n.fr-nav-alpha .bricks-mobile-menu-wrapper .bricks-mobile-menu>li>a,\n.fr-nav-alpha .bricks-mobile-menu-wrapper .sub-menu li>a,\n.fr-nav-alpha .bricks-mobile-menu-wrapper .sub-menu li>.brx-submenu-toggle>* {\n  padding: 0;\n  max-width: max-content;\n  line-height: var(--btn-line-height);\n}\n\n.show-mobile-menu ul.bricks-mobile-menu {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n}\n\n.bricks-mobile-menu-toggle {\n  margin-inline-start: auto;\n}\n\n.fr-nav-alpha .brx-submenu-toggle {\n  display: flex;\n  flex-direction: row;\n  gap: var(--toggle-gap);\n}\n\n.fr-nav-alpha.fr-nav-alpha .brx-submenu-toggle button {\n  margin: 0;\n  padding: 0;\n}\n\n.fr-nav-alpha .bricks-mobile-menu.sub-menu {\n  min-width: auto;\n}\n\n.fr-nav-alpha.brxe-nav-menu .bricks-mobile-menu-wrapper li.open>.sub-menu {\n  display: flex;\n  flex-direction: column;\n  gap: var(--mm-item-gap);\n}",
+          "subMenuIconTypography": {
+            "color": {
+              "raw": "var(--link-color)"
+            },
+            "font-size": "var(--text-s)",
+            "line-height": "1"
+          },
+          "subMenuBackgroundList": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "subMenuTypography": {
+            "color": {
+              "raw": "var(--link-color)"
+            },
+            "text-decoration": "none"
+          },
+          "menuIconTypography": {
+            "font-size": "var(--icon-size)",
+            "color": {
+              "raw": "var(--icon-color)"
+            }
+          },
+          "mobileSubMenuTypography": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          },
+          "mobileMenuIconTypography:mobile_landscape": {
+            "color": {
+              "raw": "var(--text-light)"
+            }
+          },
+          "menuTypography:hover": {
+            "color": {
+              "raw": "var(--link-color-hover)"
+            }
+          },
+          "menuTypography": {
+            "color": {
+              "raw": "var(--link-color)"
+            },
+            "line-height": "1",
+            "text-decoration": "none"
+          },
+          "menuActiveTypography": {
+            "color": {
+              "raw": "var(--link-color-active)"
+            }
+          },
+          "subMenuTypography:hover": {
+            "color": {
+              "raw": "var(--link-color-hover)"
+            }
+          },
+          "subMenuIconTypography:hover": {
+            "color": {
+              "raw": "var(--link-color-hover)"
+            }
+          },
+          "subMenuIconTransformOpen": {
+            "rotateZ": "270"
+          },
+          "menuIconTransformOpen": {
+            "rotateZ": "180"
+          },
+          "_display:mobile_landscape": "flex",
+          "menuGap": "var(--content-gap)",
+          "subMenuPadding": {
+            "left": "0",
+            "right": "0"
+          },
+          "subMenuBoxShadow": {
+            "color": {
+              "raw": "var(--box-shadow-m)"
+            }
+          },
+          "menuPadding": {
+            "top": "var(--btn-padding-block)",
+            "bottom": "var(--btn-padding-block)"
+          },
+          "menuIconPadding": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "modified": 1771255151,
+        "user_id": 1,
+        "_mappedId": "xzqxtw"
+      },
+      {
+        "id": "tbynwe",
+        "name": "fr-header-charlie",
+        "settings": {
+          "_padding": {
+            "left": "var(--gutter)",
+            "right": "var(--gutter)",
+            "top": "var(--space-m)",
+            "bottom": "var(--space-m)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "zgnpwl",
+        "name": "fr-header-charlie__inner",
+        "settings": {
+          "_alignItems": "center",
+          "_rowGap": "var(--content-gap)",
+          "_direction:mobile_landscape": "row",
+          "_justifyContent:mobile_landscape": "space-between"
+        },
+        "_exists": false
+      },
+      {
+        "id": "mjxisl",
+        "name": "fr-header-charlie__logo",
+        "settings": {
+          "logoWidth": "8em"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "idx": 467,
+  "title": "Hero Golf",
+  "elementCount": 7,
+  "classCount": 11,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "c807ac",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "118314",
+          "334f30"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "jsukkl",
+            "vtwwtv"
+          ]
+        },
+        "label": "Hero Golf"
+      },
+      {
+        "id": "334f30",
+        "name": "container",
+        "parent": "c807ac",
+        "children": [
+          "c83918"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "auuvib"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "c83918",
+        "name": "image",
+        "parent": "334f30",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "dlezbx"
+          ],
+          "caption": "none",
+          "tag": "figure",
+          "loading": "eager"
+        },
+        "themeStyles": [],
+        "label": "Media"
+      },
+      {
+        "id": "118314",
+        "name": "container",
+        "parent": "c807ac",
+        "children": [
+          "cef3ed",
+          "1e5d58",
+          "23c914"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dliabf",
+            "xgmzei"
+          ]
+        },
+        "label": "Intro Alpha"
+      },
+      {
+        "id": "1e5d58",
+        "name": "text-basic",
+        "parent": "118314",
+        "children": [],
+        "settings": {
+          "text": "Accent heading",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "blgfqd"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "cef3ed",
+        "name": "heading",
+        "parent": "118314",
+        "children": [],
+        "settings": {
+          "text": "Your heading",
+          "tag": "h1",
+          "_cssGlobalClasses": [
+            "tkbujj"
+          ]
+        }
+      },
+      {
+        "id": "23c914",
+        "name": "text-basic",
+        "parent": "118314",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "dizast"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771256438,
+        "user_id": 1
+      },
+      {
+        "id": "vtwwtv",
+        "name": "fr-hero",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_mappedId": "vtwwtv",
+        "modified": 1771256483,
+        "user_id": 1
+      },
+      {
+        "id": "dliabf",
+        "name": "fr-intro",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "xgmzei",
+        "name": "fr-intro-alpha",
+        "settings": {
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_alignItems:mobile_landscape": "flex-start",
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "blgfqd",
+        "name": "fr-intro-alpha__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "tkbujj",
+        "name": "fr-intro-alpha__heading",
+        "settings": {
+          "_typography:mobile_landscape": {
+            "font-size": "var(--h1)"
+          }
+        },
+        "modified": 1734899474,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "dizast",
+        "name": "fr-intro-alpha__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "jsukkl",
+        "name": "fr-hero-golf",
+        "settings": {
+          "_rowGap": "var(--container-gap)",
+          "_padding": {
+            "bottom": 0
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "auuvib",
+        "name": "fr-hero-golf__media-wrapper",
+        "settings": {
+          "_widthMax": "100%",
+          "_border": {
+            "radius": {
+              "top": "var(--radius, var(--radius-m))",
+              "right": "var(--radius, var(--radius-m))"
+            }
+          },
+          "_overflow": "hidden"
+        },
+        "_exists": false
+      },
+      {
+        "id": "dlezbx",
+        "name": "fr-hero-golf__media",
+        "settings": {
+          "_width": "100%",
+          "_objectFit": "cover",
+          "_height": "100%",
+          "_aspectRatio": "16/9"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

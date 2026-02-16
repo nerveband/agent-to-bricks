@@ -1,0 +1,103 @@
+{
+  "idx": 253,
+  "title": "Featured Media Alpha",
+  "elementCount": 3,
+  "classCount": 3,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "0b1b9e",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "1784a9",
+          "c1aa91"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fsyjgy"
+          ]
+        },
+        "label": "Featured Media Alpha"
+      },
+      {
+        "id": "c1aa91",
+        "name": "image",
+        "parent": "0b1b9e",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure",
+          "caption": "none",
+          "_cssGlobalClasses": [
+            "oetemb"
+          ]
+        },
+        "themeStyles": [],
+        "label": "Media"
+      },
+      {
+        "id": "1784a9",
+        "name": "block",
+        "parent": "0b1b9e",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fkxqxx"
+          ]
+        },
+        "label": "Background"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "fsyjgy",
+        "name": "fr-featured-media-alpha",
+        "settings": {
+          "_width": "100%",
+          "_cssCustom": ".fr-featured-media-alpha > * {\n  grid-area: 1 / 1;\n}",
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-1)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_alignItemsGrid": "center",
+          "_justifyItemsGrid": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "oetemb",
+        "name": "fr-featured-media-alpha__media",
+        "settings": {
+          "_width": "95%",
+          "_widthMax": "var(--content-width)",
+          "_objectFit": "cover",
+          "_cssCustom": ".fr-featured-media-alpha__media {\n\taspect-ratio: 16/9;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "fkxqxx",
+        "name": "fr-featured-media-alpha__background",
+        "settings": {
+          "_background": {
+            "color": {
+              "raw": "var(--bg-light)"
+            }
+          },
+          "_height": "75%"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

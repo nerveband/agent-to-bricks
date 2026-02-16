@@ -1,0 +1,749 @@
+{
+  "idx": 190,
+  "title": "Contact Section Foxtrot",
+  "elementCount": 23,
+  "classCount": 24,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "d9da27",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "1348a2",
+          "5f1616"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rvrywh"
+          ]
+        },
+        "label": "Contact Section Foxtrot"
+      },
+      {
+        "id": "5f1616",
+        "name": "container",
+        "parent": "d9da27",
+        "children": [
+          "8bb501",
+          "2443d2"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "glsprx"
+          ]
+        },
+        "label": "Locations Grid Alpha"
+      },
+      {
+        "id": "8bb501",
+        "name": "block",
+        "parent": "5f1616",
+        "children": [
+          "e32599",
+          "9361f2"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wohgxe"
+          ]
+        },
+        "label": "Slider Wrapper"
+      },
+      {
+        "id": "9361f2",
+        "name": "fr-slider-controls",
+        "parent": "8bb501",
+        "children": [],
+        "settings": {
+          "type": "nextPrev",
+          "progressHeight": ".5rem",
+          "arrows": true,
+          "prevArrow": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "prevArrowAriaLabel": "Previous slide",
+          "nextArrow": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "nextArrowAriaLabel": "Next slide",
+          "syncId": "fr-locations-slider-alpha",
+          "progressWidth": "100%",
+          "_cssGlobalClasses": [
+            "poxpir"
+          ]
+        },
+        "label": "Slider Controls (CSS)"
+      },
+      {
+        "id": "e32599",
+        "name": "fr-slider",
+        "parent": "8bb501",
+        "children": [
+          "cd6985"
+        ],
+        "settings": {
+          "type": "slide",
+          "rewindByDrag": true,
+          "arrowSize": "var(--space-l)",
+          "prevArrow": {
+            "library": "themify",
+            "icon": "ti-arrow-left"
+          },
+          "prevArrowTop": "50%",
+          "prevArrowLeft": "var(--space-xs)",
+          "nextArrow": {
+            "library": "themify",
+            "icon": "ti-arrow-right"
+          },
+          "nextArrowTop": "50%",
+          "nextArrowRight": "var(--space-xs)",
+          "listTag": "ul",
+          "sliderTag": "div",
+          "ariaCarousel": "Carousel",
+          "_cssGlobalClasses": [
+            "piwwdg"
+          ],
+          "direction": "ttb",
+          "height": "650px",
+          "gap": "calc(var(--content-gap) / 2)",
+          "isSync": true,
+          "syncId": "fr-locations-slider-alpha",
+          "perPage:mobile_portrait": "3",
+          "perPage": "4",
+          "fixedHeight:mobile_portrait": "auto"
+        }
+      },
+      {
+        "id": "cd6985",
+        "name": "block",
+        "parent": "e32599",
+        "children": [
+          "a2e669",
+          "7404dc"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rkfyji"
+          ],
+          "tag": "custom",
+          "customTag": "li",
+          "hasLoop": true,
+          "query": {
+            "objectType": "post",
+            "post_type": [
+              "locations"
+            ],
+            "orderby": "title",
+            "order": "asc"
+          },
+          "_attributes": [
+            {
+              "id": "efnfsz",
+              "name": "data-post-id",
+              "value": "{post_id}"
+            }
+          ]
+        },
+        "label": "Location Card Alpha"
+      },
+      {
+        "id": "a2e669",
+        "name": "block",
+        "parent": "cd6985",
+        "children": [
+          "139669",
+          "78f3b7",
+          "fbfabe"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kzlnbf"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "139669",
+        "name": "heading",
+        "parent": "a2e669",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rcyrzg"
+          ],
+          "text": "{post_title}"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "78f3b7",
+        "name": "text-basic",
+        "parent": "a2e669",
+        "children": [],
+        "settings": {
+          "tag": "address",
+          "_cssGlobalClasses": [
+            "srafzh"
+          ],
+          "text": "123 West Atlanta Street<br>Atlanta, GA 12345"
+        },
+        "label": "Address"
+      },
+      {
+        "id": "fbfabe",
+        "name": "text-basic",
+        "parent": "a2e669",
+        "children": [],
+        "settings": {
+          "text": "(123) 456-7890",
+          "_cssGlobalClasses": [
+            "qlunxs"
+          ],
+          "link": {
+            "type": "external",
+            "url": "tel:123-456-7890"
+          }
+        },
+        "label": "Phone"
+      },
+      {
+        "id": "7404dc",
+        "name": "block",
+        "parent": "cd6985",
+        "children": [
+          "2aed1a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "henndz"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "2aed1a",
+        "name": "image",
+        "parent": "7404dc",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qwqobs"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        },
+        "label": "Media"
+      },
+      {
+        "id": "2443d2",
+        "name": "div",
+        "parent": "5f1616",
+        "children": [
+          "703513",
+          "82d8c0",
+          "772390"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ysason"
+          ],
+          "tag": "figure",
+          "_order:tablet_portrait": "-1"
+        },
+        "label": "World Map Alpha (figure)"
+      },
+      {
+        "id": "82d8c0",
+        "name": "div",
+        "parent": "2443d2",
+        "children": [
+          "cc363b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ihtqpb"
+          ],
+          "_attributes": [
+            {
+              "id": "mubtko",
+              "name": "data-marker-label",
+              "value": "{post_title}"
+            },
+            {
+              "id": "bqdyti",
+              "name": "aria-label",
+              "value": "Location: {post_title}"
+            },
+            {
+              "id": "caaenw",
+              "name": "data-marker-inset-top",
+              "value": "{mb_locations_top_position}"
+            },
+            {
+              "id": "grcvhl",
+              "name": "data-marker-inset-left",
+              "value": "{mb_locations_left_position}"
+            },
+            {
+              "id": "yeaile",
+              "name": "data-post-id",
+              "value": "{post_id}"
+            }
+          ],
+          "hasLoop": true,
+          "query": {
+            "objectType": "post",
+            "orderby": "title",
+            "posts_per_page": "99",
+            "post_type": [
+              "locations"
+            ],
+            "order": "asc"
+          }
+        },
+        "label": "Marker (CSS)"
+      },
+      {
+        "id": "cc363b",
+        "name": "div",
+        "parent": "82d8c0",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "bjhaal"
+          ]
+        },
+        "label": "Marker Icon"
+      },
+      {
+        "id": "772390",
+        "name": "code",
+        "parent": "2443d2",
+        "children": [],
+        "settings": {
+          "executeCode": true,
+          "noRoot": true,
+          "user_id": 1,
+          "time": 1731706213,
+          "javascriptCode": "window.addEventListener(\"load\", () => {\n  // Fetch Splide instance\n  const splideInstances = window.bricksData?.splideInstances || {};\n  const targetId = \"fr-locations-slider-alpha\";\n  const splide = splideInstances[targetId] || null;\n\n  // Ensure Splide is available before proceeding\n  if (!splide) {\n    console.warn(`No Splide instance found with ID: ${targetId}`);\n    return;\n  }\n\n  // Select all location cards and map markers\n  const locationCards = document.querySelectorAll(\".fr-location-card-alpha\");\n  const mapMarkers = document.querySelectorAll(\".fr-world-map-alpha__marker\");\n\n  // Handle location card hover effects\n  locationCards.forEach((card) => {\n    const postId = card.dataset.postId;\n\n    card.addEventListener(\"mouseover\", () => {\n      document.querySelector(`.fr-world-map-alpha__marker[data-post-id=\"${postId}\"]`)?.classList.add(\"hovered\");\n    });\n\n    card.addEventListener(\"mouseout\", () => {\n      document.querySelector(`.fr-world-map-alpha__marker[data-post-id=\"${postId}\"]`)?.classList.remove(\"hovered\");\n    });\n  });\n\n  // Handle map marker interactions\n  mapMarkers.forEach((marker) => {\n    const postId = marker.dataset.postId;\n\n    marker.addEventListener(\"mouseover\", () => {\n      document.querySelector(`.fr-location-card-alpha[data-post-id=\"${postId}\"]`)?.classList.add(\"highlighted\");\n    });\n\n    marker.addEventListener(\"mouseout\", () => {\n      document.querySelector(`.fr-location-card-alpha[data-post-id=\"${postId}\"]`)?.classList.remove(\"highlighted\");\n    });\n\n    marker.addEventListener(\"click\", () => {\n      // Find the index of the clicked marker's corresponding location card\n      const cards = [...document.querySelectorAll(\".fr-location-card-alpha\")];\n      const index = cards.findIndex((card) => card.dataset.postId === postId);\n\n      if (index !== -1) {\n        splide.go(index); // Navigate to the corresponding slide\n      }\n    });\n\n    // Set CSS variables for marker positioning\n    marker.style.setProperty(\"--marker-inset-top\", `${marker.dataset.markerInsetTop}%`);\n    marker.style.setProperty(\"--marker-inset-left\", `${marker.dataset.markerInsetLeft}%`);\n  });\n\n  // Make all markers visible\n  mapMarkers.forEach((marker) => (marker.style.opacity = \"1\"));\n});\n"
+        },
+        "label": "Pull Marker Positions + Hover Effect"
+      },
+      {
+        "id": "703513",
+        "name": "icon",
+        "parent": "2443d2",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_cssGlobalClasses": [
+            "jtwvvz"
+          ]
+        },
+        "label": "SVG"
+      },
+      {
+        "id": "1348a2",
+        "name": "container",
+        "parent": "d9da27",
+        "children": [
+          "ce9cc6",
+          "70aa9c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ocfpyi"
+          ]
+        },
+        "label": "Intro Charlie"
+      },
+      {
+        "id": "ce9cc6",
+        "name": "block",
+        "parent": "1348a2",
+        "children": [
+          "5d580f",
+          "716ee7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dyluos"
+          ]
+        },
+        "label": "Left"
+      },
+      {
+        "id": "5d580f",
+        "name": "heading",
+        "parent": "ce9cc6",
+        "children": [],
+        "settings": {
+          "text": "Section heading",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "glrfij"
+          ]
+        }
+      },
+      {
+        "id": "716ee7",
+        "name": "text-basic",
+        "parent": "ce9cc6",
+        "children": [],
+        "settings": {
+          "text": "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "ydlvhj"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "70aa9c",
+        "name": "block",
+        "parent": "1348a2",
+        "children": [
+          "5b7afc"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ekdrak"
+          ]
+        },
+        "label": "Sidebar"
+      },
+      {
+        "id": "5b7afc",
+        "name": "button",
+        "parent": "70aa9c",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--outline",
+            "btn--primary"
+          ]
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771254061,
+        "user_id": 1
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "btn--outline",
+        "name": "btn--outline",
+        "settings": [],
+        "_mappedId": "acss_import_btn--outline",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "rkfyji",
+        "name": "fr-location-card-alpha",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-2-1)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_background": {
+            "color": {
+              "raw": "var(--white)",
+              "id": "kieovu",
+              "name": "Color #6"
+            }
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_overflow": "hidden",
+          "_gridTemplateColumns:mobile_portrait": "var(--grid-1)",
+          "_gridTemplateRows:mobile_portrait": "auto",
+          "_cssCustom": ".fr-location-card-alpha:hover,\n.fr-location-card-alpha.highlighted {\n  background-color: var(--neutral-trans-10);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "kzlnbf",
+        "name": "fr-location-card-alpha__body",
+        "settings": {
+          "_rowGap": ".45em",
+          "_padding": {
+            "top": "var(--fr-card-padding)",
+            "right": "var(--fr-card-padding)",
+            "bottom": "var(--fr-card-padding)",
+            "left": "var(--fr-card-padding)"
+          },
+          "_justifyContent": "center",
+          "_flexWrap": "nowrap",
+          "_direction": "column"
+        },
+        "modified": 1744202138,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "rcyrzg",
+        "name": "fr-location-card-alpha__heading",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--h4)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "srafzh",
+        "name": "fr-location-card-alpha__address",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-s)",
+            "font-style": "normal"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "qlunxs",
+        "name": "fr-location-card-alpha__phone",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-s)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "henndz",
+        "name": "fr-location-card-alpha__media-wrapper",
+        "settings": {
+          "_order:mobile_portrait": "-1",
+          "_cssCustom:mobile_portrait": ".fr-location-card-alpha__media-wrapper {\n\taspect-ratio: 20/10;\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "qwqobs",
+        "name": "fr-location-card-alpha__media",
+        "settings": {
+          "_objectFit": "cover",
+          "_flexGrow": "1",
+          "_width": "100%",
+          "_height": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "glsprx",
+        "name": "fr-locations-grid-alpha",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "minmax(360px, 1fr) minmax(0, 2fr)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_background": {
+            "color": {
+              "raw": "var(--neutral-ultra-light)"
+            }
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_gridGap": "calc(var(--grid-gap) * 2)",
+          "_padding": {
+            "top": "var(--space-l)",
+            "right": "var(--space-l)",
+            "bottom": "var(--space-l)",
+            "left": "var(--space-l)"
+          },
+          "_width": "1600",
+          "_widthMax": "100%",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)",
+          "_alignItemsGrid": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ysason",
+        "name": "fr-world-map-alpha",
+        "settings": {
+          "_width": "100%",
+          "_position": "relative",
+          "_display": "flex",
+          "_direction": "column",
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "jtwvvz",
+        "name": "fr-world-map-alpha__svg",
+        "settings": {
+          "iconColor": {
+            "raw": "var(--neutral-light)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "ihtqpb",
+        "name": "fr-world-map-alpha__marker",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_cssCustom": ".fr-world-map-alpha__marker {\n  --marker-color: var(--primary);\n  --marker-max-size: 1em;\n  --marker-min-size: .75em;\n  --marker-accent-color: var(--primary-ultra-dark-trans-10);\n  --label-offset-block-start: 1em;\n  --label-offset-block-end: auto;\n  --label-offset-inline-start: 1em;\n  --label-offset-inline-end: auto;\n  --label-background-color: var(--bg-dark);\n  --label-font-color: var(--white);\n  --label-font-size: var(--text-s);\n  --label-radius: var(--radius);\n  --label-pulse-color: var(--primary-trans-40);\n}\n\n.fr-world-map-alpha__marker {\n\tposition: absolute;\n  inset-block-start: var(--marker-inset-top);\n  inset-inline-start: var(--marker-inset-left);\n  cursor: pointer;\n  opacity: 0; /* Initial opacity set to 0; it will be changed to 1 via JavaScript once the page has loaded */\n  transition: opacity 0.5s ease-in-out; /* smooth transition for the opacity change */\n}\n\n.fr-world-map-alpha__marker-icon {\n  min-width: auto !important;\n  min-height: auto !important;\n\twidth: clamp(var(--marker-min-size), 2vw, var(--marker-max-size));\n  height: clamp(var(--marker-min-size), 2vw, var(--marker-max-size));\n  background-color: var(--marker-color);\n  border-radius: 50%; \n}\n\n.fr-world-map-alpha__marker-icon::before {\n\tcontent: \"\";\n  position: absolute;\n  background-color: var(--marker-accent-color);\n  border-radius: 50%;\n  width: calc(100% + 6px);\n  height: calc(100% + 6px);\n  inset: 50%;\n  transform: translate(-50%, -50%);\n  z-index: -1;\n}\n\n.fr-world-map-alpha__marker-label {\n\topacity: 0;\n  transition: opacity .3s ease; \n}\n\n.fr-world-map-alpha__marker .fr-world-map-alpha__marker-icon {\n  animation: pulse 2.5s;\n  animation-iteration-count: infinite;\n  box-shadow: 0 0 0 1em transparent;\n}\n\n@keyframes pulse {\n  0% { box-shadow: 0 0 0 0 var(--label-pulse-color); }\n}\n\n.fr-world-map-alpha__marker::after {\n  content: attr(data-marker-label);\n  position: absolute;\n  display: flex;\n  inset-block-start: var(--label-offset-block-start);\n  inset-block-end: var(--label-offset-block-end);\n  inset-inline-start: var(--label-offset-inline-start);\n  inset-inline-end: var(--label-offset-inline-end);\n  background-color: var(--label-background-color);\n  color: var(--label-font-color);\n  line-height: 1;\n  padding: .5em .75em;\n  border-radius: var(--label-radius);\n  font-size: var(--label-font-size);\n  inline-size: max-content;\n  max-inline-size: 200px;\n  justify-content: center;\n\tpointer-events: none;\n  opacity: 0;\n  transition: opacity .3s ease;\n  z-index: 1;\n}\n\n.fr-world-map-alpha__marker.hovered::after,\n.fr-world-map-alpha__marker:hover::after,\n.fr-world-map-alpha__marker:focus::after {\n\topacity: 1;\n}",
+          "_rowGap": ".5em",
+          "_alignItems": "flex-start",
+          "_width": "auto"
+        },
+        "modified": 1730311949,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "bjhaal",
+        "name": "fr-world-map-alpha__marker-icon",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "wohgxe",
+        "name": "fr-locations-grid__slider-wrapper",
+        "settings": {
+          "_direction": "column",
+          "_rowGap": "calc(var(--content-gap) / 2)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "piwwdg",
+        "name": "fr-locations-grid-alpha__slider",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "poxpir",
+        "name": "fr-locations-grid-alpha__slider-controls",
+        "settings": {
+          "arrowsFlexDirection": "row",
+          "arrowsGap": "var(--grid-gap)",
+          "_cssCustom": ".fr-locations-grid-alpha__slider-controls {\n\t--icon-size: 1.5em;\n  --icon-fill-color: transparent;\n  --icon-stroke-color: var(--text-dark);\n  --icon-fill-color-hover: transparent;  \n  --icon-stroke-color-hover: var(--text-dark);\n}\n\n.fr-locations-grid-alpha__slider-controls > * {\n\tjustify-content: center;\n}\n\n.fr-locations-grid-alpha__slider-controls :is(svg, i) {\n  height: var(--icon-size);\n  width: var(--icon-size);\n  fill: var(--icon-fill-color);\n  color: var(--icon-stroke-color);\n}\n\n\n.fr-locations-grid-alpha__slider-controls :is(svg, i):hover {\n  fill: var(--icon-fill-color-hover);\n  color: var(--icon-stroke-color);  \n}"
+        },
+        "modified": 1743100606,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "rvrywh",
+        "name": "fr-contact-section-foxtrot",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ocfpyi",
+        "name": "fr-intro-charlie",
+        "settings": {
+          "_display": "flex",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)",
+          "_direction": "row",
+          "_alignItems": "center",
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "dyluos",
+        "name": "fr-intro-charlie__content-wrapper",
+        "settings": {
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "glrfij",
+        "name": "fr-intro-charlie__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ydlvhj",
+        "name": "fr-intro-charlie__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ekdrak",
+        "name": "fr-intro-charlie__sidebar",
+        "settings": {
+          "_alignItems": "flex-end",
+          "_alignItems:tablet_portrait": "flex-start",
+          "_justifyContent": "center"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

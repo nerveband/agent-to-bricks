@@ -1,0 +1,208 @@
+{
+  "idx": 436,
+  "title": "Hero Foxtrot",
+  "elementCount": 7,
+  "classCount": 10,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "507468",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "907094"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ejgpea",
+            "vtwwtv",
+            "acss_import_bg--light"
+          ]
+        },
+        "label": "Hero Foxtrot"
+      },
+      {
+        "id": "907094",
+        "name": "container",
+        "parent": "507468",
+        "children": [
+          "443c28",
+          "a28128",
+          "f6b694"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tupxol"
+          ],
+          "tag": "article"
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "443c28",
+        "name": "heading",
+        "parent": "907094",
+        "children": [],
+        "settings": {
+          "text": "Placeholder heading",
+          "_cssGlobalClasses": [
+            "playdj"
+          ],
+          "tag": "h1"
+        }
+      },
+      {
+        "id": "a28128",
+        "name": "text-basic",
+        "parent": "907094",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "hzsfhn",
+            "kddjfd"
+          ],
+          "tag": "p",
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content."
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "f6b694",
+        "name": "div",
+        "parent": "907094",
+        "children": [
+          "7c7447",
+          "6036c6"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "konmnk"
+          ]
+        },
+        "label": "CTA Links Alpha"
+      },
+      {
+        "id": "7c7447",
+        "name": "button",
+        "parent": "f6b694",
+        "children": [],
+        "settings": {
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ],
+          "text": "Call to action"
+        },
+        "label": "Primary Action"
+      },
+      {
+        "id": "6036c6",
+        "name": "button",
+        "parent": "f6b694",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "btn--primary",
+            "btn--outline"
+          ]
+        },
+        "label": "Sectiondary Action"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771256218,
+        "user_id": 1
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "btn--outline",
+        "name": "btn--outline",
+        "settings": [],
+        "_mappedId": "acss_import_btn--outline",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "vtwwtv",
+        "name": "fr-hero",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_mappedId": "vtwwtv",
+        "modified": 1771256250,
+        "user_id": 1
+      },
+      {
+        "id": "konmnk",
+        "name": "fr-cta-links-alpha",
+        "settings": {
+          "_columnGap": "var(--content-gap, 30px)",
+          "_rowGap": "var(--content-gap, 30px)",
+          "_display": "flex",
+          "_flexWrap": "wrap",
+          "_cssCustom:mobile_portrait": ".fr-cta-links-alpha > * {\n  width: 100% !important;\n}",
+          "_direction": "row"
+        },
+        "_exists": false
+      },
+      {
+        "id": "acss_import_bg--light",
+        "name": "bg--light",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "ejgpea",
+        "name": "fr-hero-foxtrot",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "tupxol",
+        "name": "fr-hero-foxtrot__content-wrapper",
+        "settings": {
+          "_rowGap": "var(--fr-content-gap)",
+          "_alignItems": "flex-start",
+          "_justifyContent": "flex-end",
+          "_margin": {
+            "top": "300"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "playdj",
+        "name": "fr-hero-foxtrot__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "hzsfhn",
+        "name": "fr-hero-foxtrot__lede",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

@@ -1,0 +1,290 @@
+{
+  "idx": 90,
+  "title": "Content Section Romeo",
+  "elementCount": 8,
+  "classCount": 8,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "8e18f0",
+        "name": "section",
+        "children": [
+          "fbe93f"
+        ],
+        "settings": {
+          "tag": "div",
+          "_cssGlobalClasses": [
+            "ytkfvn"
+          ]
+        },
+        "label": "Content Section Romeo"
+      },
+      {
+        "id": "fbe93f",
+        "name": "container",
+        "parent": "8e18f0",
+        "children": [
+          "988298"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "0b0cyl"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "ec90e9",
+        "name": "image",
+        "parent": "988298",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "660rdx"
+          ],
+          "tag": "figure"
+        },
+        "label": "Thumbnail",
+        "themeStyles": []
+      },
+      {
+        "id": "e7c176",
+        "name": "icon",
+        "parent": "7b9454",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)",
+            "fill": {
+              "raw": "var(--icon-color)"
+            }
+          },
+          "_cssGlobalClasses": [
+            "o9j74j"
+          ]
+        },
+        "label": "Play Icon"
+      },
+      {
+        "id": "988298",
+        "name": "block",
+        "parent": "fbe93f",
+        "children": [
+          "ec90e9",
+          "7b9454",
+          "ba121a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "e8ifkh"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "ba121a",
+        "name": "fr-modal",
+        "parent": "988298",
+        "children": [
+          "ade7ce"
+        ],
+        "settings": {
+          "fadeTime": "300",
+          "overlayColor": {
+            "raw": "var(--neutral-ultra-dark-trans-80)"
+          },
+          "positionFor": "page",
+          "positionRelatedToTrigger": "bottom",
+          "placeFromTriggers": "bottom",
+          "fromTriggerCenterOnBreakpoint": "mobile_portrait",
+          "isCloseButton": true,
+          "iconPlacement": "outside",
+          "icon": {
+            "library": "themify",
+            "icon": "ti-close"
+          },
+          "iconColor": {
+            "rgb": "var(--neutral-ultra-dark)",
+            "raw": "var(--white)"
+          },
+          "iconBackgroundColor": {
+            "rgb": "var(--white)",
+            "raw": "var(--neutral-ultra-dark)"
+          },
+          "iconSize": "var(--text-m)",
+          "iconBackgroundSize": "var(--space-l)",
+          "iconPosTop": "var(--space-m)",
+          "iconPosRight": "var(--space-m)",
+          "iconPosBottom": "auto",
+          "iconPosLeft": "auto",
+          "closeIconAriaLabel": "Close Modal",
+          "_cssGlobalClasses": [
+            "mxdlbm"
+          ],
+          "triggerSelector": ".content-section-romeo__play-button",
+          "hideModal": true
+        },
+        "label": "Media Modal",
+        "themeStyles": []
+      },
+      {
+        "id": "ade7ce",
+        "name": "video",
+        "parent": "ba121a",
+        "children": [],
+        "settings": {
+          "videoType": "youtube",
+          "youTubeId": "u31qwQUeGuM",
+          "youtubeShowinfo": true,
+          "vimeoByline": true,
+          "vimeoTitle": true,
+          "vimeoPortrait": true,
+          "fileControls": true,
+          "_cssGlobalClasses": [
+            "nxpdwr"
+          ]
+        },
+        "label": "Media"
+      },
+      {
+        "id": "7b9454",
+        "name": "div",
+        "parent": "988298",
+        "children": [
+          "e7c176"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "bxdfny"
+          ],
+          "tag": "custom",
+          "customTag": "button"
+        },
+        "label": "Play Button"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "ytkfvn",
+        "name": "content-section-romeo",
+        "settings": {
+          "_direction": "column",
+          "_alignItems": "center",
+          "_cssCustom": ".content-section-romeo {\n\t--scale-start: .8;\n  --scale-end: 1;\n}\n\n@media (prefers-reduced-motion: no-preference) {\n  .content-section-romeo__inner {\n    animation: grow linear forwards;\n    animation-timeline: view();\n    animation-range-start: cover;\n    animation-range-end: contain;\n\t}\n\n  @keyframes grow {\n    from {\n        scale: var(--scale-start);\n    }\n    to {\n        scale: var(--scale-end);\n    }\n  }\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "0b0cyl",
+        "name": "content-section-romeo__inner",
+        "settings": {
+          "_width": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "660rdx",
+        "name": "content-section-romeo__thumbnail",
+        "settings": {
+          "_width": "100%",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_aspectRatio": "16/9",
+          "_objectFit": "cover"
+        },
+        "_exists": false
+      },
+      {
+        "id": "o9j74j",
+        "name": "content-section-romeo__play-button-icon",
+        "settings": {
+          "_position": "absolute",
+          "_top": "50%",
+          "_left": "50%",
+          "_transform": {
+            "translateX": "-50%",
+            "translateY": "-50%"
+          },
+          "_cssCustom": ".content-section-romeo__play-button-icon {\n\t--icon-size: 5em;\n  --icon-color: var(--white);\n  filter: drop-shadow(0 0 20px var(--neutral-dark-trans-30));\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "e8ifkh",
+        "name": "content-section-romeo__media-wrapper",
+        "settings": {
+          "_position": "relative"
+        },
+        "_exists": false
+      },
+      {
+        "id": "mxdlbm",
+        "name": "content-section-romeo__media-modal",
+        "settings": {
+          "padding": {
+            "top": "0",
+            "right": "0",
+            "bottom": "0",
+            "left": "0"
+          },
+          "width": "var(--width-l)",
+          "modalBodyOffsetVertical": "50px",
+          "modalBodyOffsetHorizontal": "50px"
+        },
+        "_exists": false
+      },
+      {
+        "id": "nxpdwr",
+        "name": "content-section-romeo__media",
+        "settings": {
+          "_background": {
+            "color": {
+              "raw": "transparent"
+            }
+          },
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_overflow": "hidden"
+        },
+        "_exists": false
+      },
+      {
+        "id": "bxdfny",
+        "name": "content-section-romeo__play-button",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

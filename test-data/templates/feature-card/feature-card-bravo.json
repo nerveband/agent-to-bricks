@@ -1,0 +1,163 @@
+{
+  "idx": 457,
+  "title": "Feature Card Bravo",
+  "elementCount": 6,
+  "classCount": 6,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "01ffd0",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "aacbcc",
+          "91011b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eiwjrc"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature Card Bravo"
+      },
+      {
+        "id": "aacbcc",
+        "name": "div",
+        "parent": "01ffd0",
+        "children": [
+          "b4bfcf",
+          "753923"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dismgo"
+          ]
+        },
+        "label": "Head"
+      },
+      {
+        "id": "91011b",
+        "name": "div",
+        "parent": "01ffd0",
+        "children": [
+          "4c4e75"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ufjoii"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "b4bfcf",
+        "name": "icon",
+        "parent": "aacbcc",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--text-xl)",
+            "width": "var(--text-xl)"
+          },
+          "_cssGlobalClasses": [
+            "irvolo"
+          ]
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "753923",
+        "name": "heading",
+        "parent": "aacbcc",
+        "children": [],
+        "settings": {
+          "text": "Awesome Feature",
+          "_cssGlobalClasses": [
+            "vpjzjq"
+          ]
+        }
+      },
+      {
+        "id": "4c4e75",
+        "name": "text-basic",
+        "parent": "91011b",
+        "children": [],
+        "settings": {
+          "text": "Short yet extremely creative and catchy description of the feature.",
+          "_cssGlobalClasses": [
+            "ktlicc"
+          ],
+          "tag": "p"
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "eiwjrc",
+        "name": "fr-feature-card-bravo",
+        "settings": {
+          "_display": "flex",
+          "_direction": "column",
+          "_columnGap": "var(--fr-card-gap)",
+          "_rowGap": "var(--fr-card-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "dismgo",
+        "name": "fr-feature-card-bravo__head",
+        "settings": {
+          "_display": "flex",
+          "_columnGap": "calc(var(--content-gap) / 2)",
+          "_rowGap": "calc(var(--content-gap) / 2)",
+          "_flexWrap": "wrap",
+          "_alignItems": "center",
+          "_direction": "row",
+          "_justifyContent": "flex-start",
+          "_cssCustom": ".fr-feature-card-bravo__head svg {\n  height: var(--icon-size);\n  width: var(--icon-size);\n  fill: var(--icon-fill-color);\n  color: var(--icon-stroke-color);\n}\n\n.fr-feature-card-bravo__head i {\n  color: var(--icon-fill-color);\n  font-size: var(--icon-size);\n}\n\n.fr-feature-card-bravo__head svg:hover {\n  fill: var(--icon-fill-color-hover);\n  color: var(--icon-stroke-color-hover);  \n}\n\n.fr-feature-card-bravo__head i:hover {\n  color: var(--icon-fill-color-hover);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ufjoii",
+        "name": "fr-feature-card-bravo__body",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "irvolo",
+        "name": "fr-feature-card-bravo__icon",
+        "settings": {
+          "_width": "var(--text-l)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "vpjzjq",
+        "name": "fr-feature-card-bravo__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ktlicc",
+        "name": "fr-feature-card-bravo__lede",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

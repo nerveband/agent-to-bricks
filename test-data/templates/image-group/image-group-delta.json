@@ -1,0 +1,165 @@
+{
+  "idx": 309,
+  "title": "Image Group Delta",
+  "elementCount": 7,
+  "classCount": 3,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "8bd8c8",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "597773",
+          "6c5f22",
+          "a11c2e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qlkuxe"
+          ]
+        },
+        "label": "Image Group Delta (CSS ML)"
+      },
+      {
+        "id": "597773",
+        "name": "block",
+        "parent": "8bd8c8",
+        "children": [
+          "ee233c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "oaubbb"
+          ]
+        },
+        "label": "Image Wrapper"
+      },
+      {
+        "id": "ee233c",
+        "name": "image",
+        "parent": "597773",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "htmcjg"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "6c5f22",
+        "name": "block",
+        "parent": "8bd8c8",
+        "children": [
+          "d3146d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "oaubbb"
+          ]
+        },
+        "label": "Image Wrapper"
+      },
+      {
+        "id": "d3146d",
+        "name": "image",
+        "parent": "6c5f22",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "htmcjg"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "a11c2e",
+        "name": "block",
+        "parent": "8bd8c8",
+        "children": [
+          "323690"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "oaubbb"
+          ]
+        },
+        "label": "Image Wrapper"
+      },
+      {
+        "id": "323690",
+        "name": "image",
+        "parent": "a11c2e",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "htmcjg"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        }
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qlkuxe",
+        "name": "fr-image-group-delta",
+        "settings": {
+          "_cssCustom:mobile_landscape": ".fr-image-group-delta > *:nth-child(1), .fr-image-group-delta > *:nth-child(3) {\n  display: none;\n}",
+          "_display": "grid",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns": "var(--grid-3)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_alignItemsGrid": "stretch",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "oaubbb",
+        "name": "fr-image-group-delta__image-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "htmcjg",
+        "name": "fr-image-group-delta__image",
+        "settings": {
+          "_objectFit": "cover",
+          "_cssCustom": ".fr-image-group-delta__image {aspect-ratio: 4 / 5;}",
+          "_flexGrow": "1",
+          "_cssCustom:mobile_landscape": ".fr-image-group-delta__image {aspect-ratio: 4 / 3;}"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

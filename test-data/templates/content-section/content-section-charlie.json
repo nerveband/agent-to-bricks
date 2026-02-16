@@ -1,0 +1,258 @@
+{
+  "idx": 426,
+  "title": "Content Section Charlie",
+  "elementCount": 10,
+  "classCount": 10,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "981ca9",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "7b2278"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "bjyylg"
+          ]
+        },
+        "label": "Content Section Charlie"
+      },
+      {
+        "id": "7b2278",
+        "name": "container",
+        "parent": "981ca9",
+        "children": [
+          "4e416c",
+          "a33053"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "egjdrj"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "4e416c",
+        "name": "block",
+        "parent": "7b2278",
+        "children": [
+          "16be77"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "tzxfjy"
+          ]
+        },
+        "label": "Sidebar"
+      },
+      {
+        "id": "a33053",
+        "name": "block",
+        "parent": "7b2278",
+        "children": [
+          "5dc6cc",
+          "9c390d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dhibut"
+          ]
+        },
+        "label": "Main"
+      },
+      {
+        "id": "16be77",
+        "name": "block",
+        "parent": "4e416c",
+        "children": [
+          "447fe6",
+          "8c2eaa",
+          "a981a5"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "xejatn"
+          ],
+          "_padding": {
+            "top": "0"
+          }
+        },
+        "label": "Content (Sticky)"
+      },
+      {
+        "id": "447fe6",
+        "name": "heading",
+        "parent": "16be77",
+        "children": [],
+        "settings": {
+          "tag": "h2",
+          "text": "This is a great spot for a longer heading with more words",
+          "_cssGlobalClasses": [
+            "huhomx"
+          ]
+        }
+      },
+      {
+        "id": "a981a5",
+        "name": "button",
+        "parent": "16be77",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ]
+        }
+      },
+      {
+        "id": "5dc6cc",
+        "name": "text-basic",
+        "parent": "a33053",
+        "children": [],
+        "settings": {
+          "text": "Nihil ad rem! Ne sit sane; Quis Aristidem non mortuum diligit? Res enim concurrent contrariae. Primum in nostrane potestate est, quid meminerimus?\n",
+          "_cssGlobalClasses": [
+            "yinngu"
+          ],
+          "tag": "p"
+        },
+        "label": "Large Intro"
+      },
+      {
+        "id": "9c390d",
+        "name": "text",
+        "parent": "a33053",
+        "children": [],
+        "settings": {
+          "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duo Reges: constructio interrete. Non semper, inquam; Num quid tale Democritus? Quis Aristidem non mortuum diligit? Quippe: habes enim a rhetoribus; Quaerimus enim finem bonorum. Nullus est igitur cuiusquam dies natalis. At enim hic etiam dolore.</p><p>Nihil ad rem! Ne sit sane; Quis Aristidem non mortuum diligit? Res enim concurrent contrariae. Primum in nostrane potestate est, quid meminerimus? Memini vero, inquam; Non laboro, inquit, de nomine. Id tilius factum negabat.</p><h2>Sed haec nihil sane ad rem</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duo Reges: constructio interrete. Non semper, inquam; Num quid tale Democritus? Quis Aristidem non mortuum diligit? Quippe: habes enim a rhetoribus; Quaerimus enim finem bonorum. Nullus est igitur cuiusquam dies natalis. At enim hic etiam dolore.</p><p>Nihil ad rem! Ne sit sane; Quis Aristidem non mortuum diligit? Res enim concurrent contrariae. Primum in nostrane potestate est, quid meminerimus? Memini vero, inquam; Non laboro, inquit, de nomine. Id\u00a0<i>[redacted]</i>tilius factum negabat.</p>",
+          "_cssGlobalClasses": [
+            "hcuhjx"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "8c2eaa",
+        "name": "text-basic",
+        "parent": "16be77",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "_cssGlobalClasses": [
+            "qfdtjc"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "bjyylg",
+        "name": "fr-content-section-charlie",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "egjdrj",
+        "name": "fr-content-section-charlie__inner",
+        "settings": {
+          "_display": "grid",
+          "_gridGap": "var(--container-gap)",
+          "_gridTemplateColumns": "var(--grid-2-3)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_alignItemsGrid": "stretch",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)",
+          "_gridGap:mobile_landscape": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "tzxfjy",
+        "name": "fr-content-section-charlie__sidebar",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "dhibut",
+        "name": "fr-content-section-charlie__main",
+        "settings": {
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "xejatn",
+        "name": "fr-content-section-charlie__sidebar-content",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_position": "sticky",
+          "_top": "var(--header-height)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "huhomx",
+        "name": "fr-content-section-charlie__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "yinngu",
+        "name": "fr-content-section-charlie__intro",
+        "settings": {
+          "_typography": {
+            "font-size": "var(--text-l)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "hcuhjx",
+        "name": "fr-content-section-charlie__main-text",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

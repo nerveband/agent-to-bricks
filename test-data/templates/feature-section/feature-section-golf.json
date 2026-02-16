@@ -1,0 +1,619 @@
+{
+  "idx": 398,
+  "title": "Feature Section Golf",
+  "elementCount": 23,
+  "classCount": 17,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "2b768e",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "2a5d5c",
+          "d306b0"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "qqhygm"
+          ]
+        },
+        "label": "Feature Section Golf"
+      },
+      {
+        "id": "d306b0",
+        "name": "container",
+        "parent": "2b768e",
+        "children": [
+          "2765bf",
+          "8b2af1",
+          "80f713"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gdumak",
+            "rktisp"
+          ],
+          "tag": "custom",
+          "customTag": "ul"
+        },
+        "label": "Feature Grid Golf"
+      },
+      {
+        "id": "2a5d5c",
+        "name": "container",
+        "parent": "2b768e",
+        "children": [
+          "99152d",
+          "79caae"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pdcgtq"
+          ]
+        },
+        "label": "Intro Echo"
+      },
+      {
+        "id": "99152d",
+        "name": "block",
+        "parent": "2a5d5c",
+        "children": [
+          "1aa815",
+          "dcddd3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cbghev"
+          ]
+        },
+        "label": "Left"
+      },
+      {
+        "id": "79caae",
+        "name": "block",
+        "parent": "2a5d5c",
+        "children": [
+          "9de79c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pdtwel"
+          ]
+        },
+        "label": "Right"
+      },
+      {
+        "id": "dcddd3",
+        "name": "text-basic",
+        "parent": "99152d",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "wbfkbf"
+          ]
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "1aa815",
+        "name": "heading",
+        "parent": "99152d",
+        "children": [],
+        "settings": {
+          "text": "Intro heading",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "bkgkvg"
+          ]
+        }
+      },
+      {
+        "id": "9de79c",
+        "name": "text-basic",
+        "parent": "79caae",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "wqqaxf"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "2765bf",
+        "name": "block",
+        "parent": "d306b0",
+        "children": [
+          "e3949c",
+          "a6d6c7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "detwjp"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature Card Golf"
+      },
+      {
+        "id": "a6d6c7",
+        "name": "image",
+        "parent": "2765bf",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "qehqal",
+            "xqpgve"
+          ],
+          "tag": "figure"
+        }
+      },
+      {
+        "id": "e3949c",
+        "name": "block",
+        "parent": "2765bf",
+        "children": [
+          "1afaca",
+          "0a212d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fqkktd",
+            "ksbyei"
+          ]
+        },
+        "label": "Overlay"
+      },
+      {
+        "id": "1afaca",
+        "name": "heading",
+        "parent": "e3949c",
+        "children": [],
+        "settings": {
+          "text": "Feature heading",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_cssGlobalClasses": [
+            "acss_import_clickable-parent",
+            "yntgsh",
+            "gurmcj"
+          ],
+          "tag": "h3"
+        },
+        "label": "Heading (Link)"
+      },
+      {
+        "id": "0a212d",
+        "name": "text-basic",
+        "parent": "e3949c",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space until your copy is ready.",
+          "_cssGlobalClasses": [
+            "ejmzee",
+            "blmwpz"
+          ],
+          "tag": "p"
+        },
+        "label": "Description"
+      },
+      {
+        "id": "80f713",
+        "name": "block",
+        "parent": "d306b0",
+        "children": [
+          "90f205",
+          "64156c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "detwjp"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature Card Golf"
+      },
+      {
+        "id": "64156c",
+        "name": "image",
+        "parent": "80f713",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "qehqal",
+            "xqpgve"
+          ],
+          "tag": "figure"
+        }
+      },
+      {
+        "id": "90f205",
+        "name": "block",
+        "parent": "80f713",
+        "children": [
+          "d05dd4",
+          "bbd45e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fqkktd",
+            "ksbyei"
+          ]
+        },
+        "label": "Overlay"
+      },
+      {
+        "id": "d05dd4",
+        "name": "heading",
+        "parent": "90f205",
+        "children": [],
+        "settings": {
+          "text": "Feature heading",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_cssGlobalClasses": [
+            "acss_import_clickable-parent",
+            "yntgsh",
+            "gurmcj"
+          ],
+          "tag": "h3"
+        },
+        "label": "Heading (Link)"
+      },
+      {
+        "id": "bbd45e",
+        "name": "text-basic",
+        "parent": "90f205",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space until your copy is ready.",
+          "_cssGlobalClasses": [
+            "ejmzee",
+            "blmwpz"
+          ],
+          "tag": "p"
+        },
+        "label": "Description"
+      },
+      {
+        "id": "8b2af1",
+        "name": "block",
+        "parent": "d306b0",
+        "children": [
+          "3ed733",
+          "45bfde"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "detwjp"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature Card Golf"
+      },
+      {
+        "id": "45bfde",
+        "name": "image",
+        "parent": "8b2af1",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "qehqal",
+            "xqpgve"
+          ],
+          "tag": "figure"
+        }
+      },
+      {
+        "id": "3ed733",
+        "name": "block",
+        "parent": "8b2af1",
+        "children": [
+          "b25f25",
+          "97a99e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "fqkktd",
+            "ksbyei"
+          ]
+        },
+        "label": "Overlay"
+      },
+      {
+        "id": "b25f25",
+        "name": "heading",
+        "parent": "3ed733",
+        "children": [],
+        "settings": {
+          "text": "Feature heading",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_cssGlobalClasses": [
+            "acss_import_clickable-parent",
+            "yntgsh",
+            "gurmcj"
+          ],
+          "tag": "h3"
+        },
+        "label": "Heading (Link)"
+      },
+      {
+        "id": "97a99e",
+        "name": "text-basic",
+        "parent": "3ed733",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space until your copy is ready.",
+          "_cssGlobalClasses": [
+            "ejmzee",
+            "blmwpz"
+          ],
+          "tag": "p"
+        },
+        "label": "Description"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "pdcgtq",
+        "name": "fr-intro-echo",
+        "settings": {
+          "_cssCustom:mobile_landscape": ".fr-intro-echo {\n  grid-template-columns: 1fr;\n}",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns": "var(--grid-2-1)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_display": "grid",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)",
+          "_alignItemsGrid": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "cbghev",
+        "name": "fr-intro-echo__heading-wrapper",
+        "settings": {
+          "_rowGap": "calc(var(--content-gap) / 2)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wbfkbf",
+        "name": "fr-intro-echo__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "bkgkvg",
+        "name": "fr-intro-echo__heading",
+        "settings": {
+          "_cssCustom": ".fr-intro-echo__heading {\n  text-wrap: balance;\n}"
+        },
+        "_mappedId": "bkgkvg",
+        "modified": 1771255946,
+        "user_id": 1
+      },
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771255946,
+        "user_id": 1
+      },
+      {
+        "id": "pdtwel",
+        "name": "fr-intro-echo__lede-wrapper",
+        "settings": {
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "wqqaxf",
+        "name": "fr-intro-echo__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "rktisp",
+        "name": "list--none",
+        "settings": {
+          "_padding": {
+            "left": "0"
+          },
+          "_margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "acss_import_list--none",
+        "modified": 1771255943,
+        "user_id": 1
+      },
+      {
+        "id": "acss_import_clickable-parent",
+        "name": "clickable-parent",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "qqhygm",
+        "name": "fr-feature-section-golf",
+        "settings": {
+          "_rowGap": "var(--container-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "gdumak",
+        "name": "fr-feature-grid-golf",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-3)",
+          "_gridGap": "var(--grid-gap)",
+          "_alignItemsGrid": "stretch",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-2)",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)",
+          "_gridTemplateRows": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "detwjp",
+        "name": "fr-feature-card-golf",
+        "settings": {
+          "_heightMin": "25em",
+          "_overflow": "hidden",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_transform:hover": {
+            "translateY": "-0.75em"
+          },
+          "_cssTransition": "transform .6s ease",
+          "_position": "relative",
+          "_cssCustom": ".fr-feature-card-golf:hover .feature-card-golf__image {\n\tfilter: blur(25px);\n}",
+          "_isolation": "isolate"
+        },
+        "modified": 1747477688,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "xqpgve",
+        "name": "fr-feature-card-golf__media",
+        "settings": {
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_width": "100%",
+          "_height": "100%",
+          "_objectFit": "cover",
+          "_zIndex": "-1"
+        },
+        "modified": 1747477688,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "ksbyei",
+        "name": "fr-feature-card-golf__overlay",
+        "settings": {
+          "_typography": {
+            "text-align": "center",
+            "color": {
+              "raw": "var(--white)"
+            }
+          },
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_padding": {
+            "top": "var(--space-l)",
+            "right": "var(--space-l)",
+            "bottom": "var(--space-l)",
+            "left": "var(--space-l)"
+          },
+          "_rowGap": "calc(var(--content-gap) / 2)",
+          "_alignItems": "center",
+          "_justifyContent": "center",
+          "_background": {
+            "color": {
+              "raw": "var(--black-trans-60)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "gurmcj",
+        "name": "fr-feature-card-golf__heading",
+        "settings": {
+          "_typography": {
+            "text-align": "center",
+            "color": {
+              "raw": "var(--white)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "blmwpz",
+        "name": "fr-feature-card-golf__description",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

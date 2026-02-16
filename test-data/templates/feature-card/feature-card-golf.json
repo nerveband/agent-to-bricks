@@ -1,0 +1,200 @@
+{
+  "idx": 414,
+  "title": "Feature Card Golf",
+  "elementCount": 5,
+  "classCount": 6,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "5608a1",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "dbaa5d",
+          "fd549f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "detwjp"
+          ],
+          "tag": "custom",
+          "customTag": "li"
+        },
+        "label": "Feature Card Golf"
+      },
+      {
+        "id": "dbaa5d",
+        "name": "image",
+        "parent": "5608a1",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "_cssGlobalClasses": [
+            "xqpgve"
+          ],
+          "tag": "figure"
+        }
+      },
+      {
+        "id": "fd549f",
+        "name": "block",
+        "parent": "5608a1",
+        "children": [
+          "cb8abb",
+          "1e76b7"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ksbyei"
+          ]
+        },
+        "label": "Overlay"
+      },
+      {
+        "id": "cb8abb",
+        "name": "heading",
+        "parent": "fd549f",
+        "children": [],
+        "settings": {
+          "text": "Feature heading",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_cssGlobalClasses": [
+            "acss_import_clickable-parent",
+            "gurmcj"
+          ],
+          "tag": "h3"
+        }
+      },
+      {
+        "id": "1e76b7",
+        "name": "text-basic",
+        "parent": "fd549f",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space until your copy is ready.",
+          "_cssGlobalClasses": [
+            "blmwpz"
+          ],
+          "tag": "p"
+        },
+        "label": "Description"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "acss_import_clickable-parent",
+        "name": "clickable-parent",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "detwjp",
+        "name": "fr-feature-card-golf",
+        "settings": {
+          "_heightMin": "25em",
+          "_overflow": "hidden",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_transform:hover": {
+            "translateY": "-0.75em"
+          },
+          "_cssTransition": "transform .6s ease",
+          "_position": "relative",
+          "_cssCustom": ".fr-feature-card-golf:hover .feature-card-golf__image {\n\tfilter: blur(25px);\n}",
+          "_isolation": "isolate"
+        },
+        "modified": 1747477688,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "xqpgve",
+        "name": "fr-feature-card-golf__media",
+        "settings": {
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_width": "100%",
+          "_height": "100%",
+          "_objectFit": "cover",
+          "_zIndex": "-1"
+        },
+        "modified": 1747477688,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "ksbyei",
+        "name": "fr-feature-card-golf__overlay",
+        "settings": {
+          "_typography": {
+            "text-align": "center",
+            "color": {
+              "raw": "var(--white)"
+            }
+          },
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_padding": {
+            "top": "var(--space-l)",
+            "right": "var(--space-l)",
+            "bottom": "var(--space-l)",
+            "left": "var(--space-l)"
+          },
+          "_rowGap": "calc(var(--content-gap) / 2)",
+          "_alignItems": "center",
+          "_justifyContent": "center",
+          "_background": {
+            "color": {
+              "raw": "var(--black-trans-60)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "gurmcj",
+        "name": "fr-feature-card-golf__heading",
+        "settings": {
+          "_typography": {
+            "text-align": "center",
+            "color": {
+              "raw": "var(--white)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "blmwpz",
+        "name": "fr-feature-card-golf__description",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

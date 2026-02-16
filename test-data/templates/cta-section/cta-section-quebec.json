@@ -1,0 +1,393 @@
+{
+  "idx": 41,
+  "title": "CTA Section Quebec",
+  "elementCount": 12,
+  "classCount": 14,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "a56a56",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "bffcf5",
+          "de2b63"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ayu9j7"
+          ]
+        },
+        "label": "CTA Section Quebec"
+      },
+      {
+        "id": "bffcf5",
+        "name": "container",
+        "parent": "a56a56",
+        "children": [
+          "377bca",
+          "be4ee3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "gijflg"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "de2b63",
+        "name": "div",
+        "parent": "a56a56",
+        "children": [
+          "daf439",
+          "1fcfcf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wbvnsl"
+          ]
+        },
+        "label": "Background Alpha (Read CSS Tab)"
+      },
+      {
+        "id": "daf439",
+        "name": "image",
+        "parent": "de2b63",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "usirxg"
+          ],
+          "tag": "figure",
+          "caption": "none",
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        },
+        "themeStyles": []
+      },
+      {
+        "id": "1fcfcf",
+        "name": "div",
+        "parent": "de2b63",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "heyndn"
+          ]
+        },
+        "label": "Overlay"
+      },
+      {
+        "id": "377bca",
+        "name": "block",
+        "parent": "bffcf5",
+        "children": [
+          "0e7b50",
+          "140505",
+          "772e33",
+          "dab1ff"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "d15t5m"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "be4ee3",
+        "name": "block",
+        "parent": "bffcf5",
+        "children": [
+          "146241"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "rpg0n5"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "146241",
+        "name": "image",
+        "parent": "be4ee3",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "41nofj"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure"
+        },
+        "label": "Media",
+        "themeStyles": []
+      },
+      {
+        "id": "0e7b50",
+        "name": "heading",
+        "parent": "377bca",
+        "children": [],
+        "settings": {
+          "text": "Write a compelling heading that will convert",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "cqyo2q"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "140505",
+        "name": "text-basic",
+        "parent": "377bca",
+        "children": [],
+        "settings": {
+          "text": "accent heading",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "28ingf"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "772e33",
+        "name": "text-basic",
+        "parent": "377bca",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "fke33z"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "dab1ff",
+        "name": "button",
+        "parent": "377bca",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "style": "primary",
+          "_cssGlobalClasses": [
+            "lkavco",
+            "x6p1fn"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Button"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "lkavco",
+        "name": "btn--neutral-light",
+        "settings": [],
+        "_mappedId": "acss_import_btn--neutral-light",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "wbvnsl",
+        "name": "fr-background-alpha",
+        "settings": {
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_cssCustom": "/* \n\nTo use this frame correctly, ensure the parent container is set to position relative. It's also advisable to add the following code to the parent container's CSS tab:\n\n.fr-background-alpha {isolation: isolate;}\n\n*/",
+          "_zIndex": "-1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "usirxg",
+        "name": "fr-background-alpha__image",
+        "settings": {
+          "_objectFit": "cover",
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_width": "100%",
+          "_zIndex": "-1",
+          "_height": "100%",
+          "_border": {
+            "radius": {
+              "top": "0",
+              "right": "0",
+              "bottom": "0",
+              "left": "0"
+            }
+          },
+          "_margin": {
+            "bottom": "0"
+          },
+          "_cssCustom": ".fr-background-alpha__image img {\n  height: 100%;\n}"
+        },
+        "modified": 1771252201,
+        "user_id": 1,
+        "_mappedId": "usirxg"
+      },
+      {
+        "id": "heyndn",
+        "name": "fr-background-alpha__overlay",
+        "settings": {
+          "_zIndex": "-1",
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0",
+          "_background": {
+            "color": {
+              "raw": "var(--overlay-bg, var(--neutral-ultra-dark-trans-60))"
+            }
+          }
+        },
+        "_mappedId": "heyndn",
+        "modified": 1771252201,
+        "user_id": 1
+      },
+      {
+        "id": "ayu9j7",
+        "name": "cta-section-quebec",
+        "settings": {
+          "_position": "relative",
+          "_typography": {
+            "color": {
+              "raw": "var(--white)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "gijflg",
+        "name": "cta-section-quebec__inner",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-3-2)",
+          "_gridGap": "var(--grid-gap)",
+          "_width": "var(--width-xl)",
+          "_gridTemplateColumns:mobile_landscape": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "d15t5m",
+        "name": "cta-section-quebec__content-wrapper",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_justifyContent": "center",
+          "_width": "100%",
+          "_widthMax": "45ch"
+        },
+        "_exists": false
+      },
+      {
+        "id": "rpg0n5",
+        "name": "cta-section-quebec__media-wrapper",
+        "settings": {
+          "_position": "relative"
+        },
+        "_exists": false
+      },
+      {
+        "id": "41nofj",
+        "name": "cta-section-quebec__media",
+        "settings": {
+          "_alignSelf": "center",
+          "_cssCustom": ".cta-section-quebec__media {\n  /* Add additional media height */\n  --media-height-offset: 60px;\n  /* No touchey */\n  position: absolute;\n  inset-block-start: 50%;\n  inset-inline-start: 50%;\n  translate: -50% -50%;\n}",
+          "_objectFit": "contain",
+          "_height": "calc(100% + var(--media-height-offset))",
+          "_width": "100%",
+          "_height:mobile_landscape": "auto",
+          "_position:mobile_landscape": "relative"
+        },
+        "_exists": false
+      },
+      {
+        "id": "cqyo2q",
+        "name": "cta-section-quebec__heading",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--white)"
+            }
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "28ingf",
+        "name": "cta-section-quebec__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "fke33z",
+        "name": "cta-section-quebec__lede",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "x6p1fn",
+        "name": "cta-section-quebec__button",
+        "settings": {
+          "_margin": {
+            "top": "var(--space-xs)"
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

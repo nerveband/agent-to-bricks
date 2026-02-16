@@ -1,0 +1,307 @@
+{
+  "idx": 62,
+  "title": "Testimonial Card Mike",
+  "elementCount": 10,
+  "classCount": 10,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "b27e58",
+        "name": "block",
+        "parent": 0,
+        "children": [
+          "90030d",
+          "0cddd0"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "glzt5e"
+          ],
+          "tag": "li"
+        },
+        "label": "Testimonial Card Mike"
+      },
+      {
+        "id": "90030d",
+        "name": "block",
+        "parent": "b27e58",
+        "children": [
+          "691072",
+          "154706"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lfwgf4"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "691072",
+        "name": "div",
+        "parent": "90030d",
+        "children": [
+          "b8e552",
+          "bab47d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "5v2bdu"
+          ]
+        },
+        "label": "User"
+      },
+      {
+        "id": "b8e552",
+        "name": "image",
+        "parent": "691072",
+        "children": [],
+        "settings": {
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-image-800x600.jpg",
+            "isPlaceholder": true
+          },
+          "tag": "figure",
+          "_cssGlobalClasses": [
+            "sigfgk"
+          ]
+        },
+        "themeStyles": [],
+        "label": "User Thumbnail"
+      },
+      {
+        "id": "bab47d",
+        "name": "block",
+        "parent": "691072",
+        "children": [
+          "543541",
+          "694d25"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "obml75"
+          ]
+        },
+        "label": "User Content"
+      },
+      {
+        "id": "543541",
+        "name": "text-basic",
+        "parent": "bab47d",
+        "children": [],
+        "settings": {
+          "text": "James Dean",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "fic82f"
+          ]
+        },
+        "label": "User Name"
+      },
+      {
+        "id": "694d25",
+        "name": "text-basic",
+        "parent": "bab47d",
+        "children": [],
+        "settings": {
+          "text": "Customer",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "gneqbb"
+          ]
+        },
+        "label": "User Title"
+      },
+      {
+        "id": "154706",
+        "name": "icon",
+        "parent": "90030d",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "width": "var(--icon-size)",
+            "height": "var(--icon-size)"
+          },
+          "_cssGlobalClasses": [
+            "zb0t0j"
+          ]
+        },
+        "label": "Social Icon",
+        "themeStyles": []
+      },
+      {
+        "id": "0cddd0",
+        "name": "block",
+        "parent": "b27e58",
+        "children": [
+          "c465bb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pzf44y"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "c465bb",
+        "name": "text-basic",
+        "parent": "0cddd0",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "2bhtu4"
+          ]
+        },
+        "label": "Testimonial"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "glzt5e",
+        "name": "testimonial-card-mike",
+        "settings": {
+          "_padding": {
+            "top": "var(--space-m)",
+            "right": "var(--space-m)",
+            "bottom": "var(--space-m)",
+            "left": "var(--space-m)"
+          },
+          "_rowGap": "var(--content-gap)",
+          "_background": {
+            "color": {
+              "raw": "var(--white)"
+            }
+          },
+          "_cssCustom": ".testimonial-card-mike {\n  --thumb-size: 50px;\n  border-radius: var(--radius);\n}"
+        },
+        "_exists": false
+      },
+      {
+        "id": "lfwgf4",
+        "name": "testimonial-card-mike__header",
+        "settings": {
+          "_direction": "row",
+          "_columnGap": "var(--space-s)",
+          "_justifyContent": "space-between"
+        },
+        "_exists": false
+      },
+      {
+        "id": "5v2bdu",
+        "name": "testimonial-card-mike__user",
+        "settings": {
+          "_display": "grid",
+          "_direction": "column",
+          "_gridTemplateColumns": "var(--thumb-size) var(--grid-1)",
+          "_gridGap": "var(--space-xs)",
+          "_alignItemsGrid": "center",
+          "_gridTemplateColumns:mobile_portrait": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "sigfgk",
+        "name": "testimonial-card-mike__user-thumbnail",
+        "settings": {
+          "_border": {
+            "radius": {
+              "top": "var(--radius-circle)",
+              "right": "var(--radius-circle)",
+              "bottom": "var(--radius-circle)",
+              "left": "var(--radius-circle)"
+            }
+          },
+          "_width": "var(--thumb-size)",
+          "_height": "var(--thumb-size)",
+          "_aspectRatio": "1"
+        },
+        "_exists": false
+      },
+      {
+        "id": "obml75",
+        "name": "testimonial-card-mike__user-content",
+        "settings": {
+          "_rowGap": ".25em"
+        },
+        "_exists": false
+      },
+      {
+        "id": "fic82f",
+        "name": "testimonial-card-mike__user-name",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-dark)"
+            },
+            "line-height": "1",
+            "font-weight": "700"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "gneqbb",
+        "name": "testimonial-card-mike__user-title",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-dark-muted)"
+            },
+            "font-size": "var(--text-s)",
+            "line-height": "1"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "zb0t0j",
+        "name": "testimonial-card-mike__social-icon",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-dark-muted)"
+            }
+          },
+          "_cssCustom": ".testimonial-card-mike__social-icon {\n  --icon-size: 24px;\n}"
+        },
+        "modified": 1726324349,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "pzf44y",
+        "name": "testimonial-card-mike__body",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "2bhtu4",
+        "name": "testimonial-card-mike__testimonial",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-dark-muted)"
+            }
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

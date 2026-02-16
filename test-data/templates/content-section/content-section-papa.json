@@ -1,0 +1,292 @@
+{
+  "idx": 93,
+  "title": "Content Section Papa",
+  "elementCount": 9,
+  "classCount": 11,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "8b563c",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "4f322e",
+          "0b7acc"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "u41k52"
+          ]
+        },
+        "label": "Content Section Papa"
+      },
+      {
+        "id": "0b7acc",
+        "name": "container",
+        "parent": "8b563c",
+        "children": [
+          "765677",
+          "894665"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "iqktfj"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "4f322e",
+        "name": "container",
+        "parent": "8b563c",
+        "children": [
+          "c879c0",
+          "b9d43a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "dliabf",
+            "xgmzei"
+          ]
+        },
+        "label": "Intro Alpha"
+      },
+      {
+        "id": "b9d43a",
+        "name": "text-basic",
+        "parent": "4f322e",
+        "children": [],
+        "settings": {
+          "text": "Accent heading",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "blgfqd"
+          ],
+          "tag": "p"
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "c879c0",
+        "name": "heading",
+        "parent": "4f322e",
+        "children": [],
+        "settings": {
+          "text": "Your heading",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "tkbujj"
+          ]
+        }
+      },
+      {
+        "id": "765677",
+        "name": "block",
+        "parent": "0b7acc",
+        "children": [
+          "64f64c"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ko9d8x"
+          ]
+        },
+        "label": "Media Wrapper"
+      },
+      {
+        "id": "894665",
+        "name": "block",
+        "parent": "0b7acc",
+        "children": [
+          "dafa18"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "y6e1e6"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "64f64c",
+        "name": "image",
+        "parent": "765677",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ts2z4q"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          },
+          "tag": "figure"
+        },
+        "label": "Media",
+        "themeStyles": []
+      },
+      {
+        "id": "dafa18",
+        "name": "text",
+        "parent": "894665",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ml84q3"
+          ],
+          "text": "<p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.</p><p>Sometimes it\u2019s nice to put in text just to get an idea of how text will fill in a space on your website.</p><p>Traditionally our industry has used Lorem Ipsum, which is placeholder text written in Latin. Unfortunately, not everyone is familiar with Lorem Ipsum and that can lead to confusion. I can\u2019t tell you how many times clients have asked me why their website is in another language!</p><p>There are other placeholder text alternatives like Hipster Ipsum, Zombie Ipsum, Bacon Ipsum, and many more. While often hilarious, these placeholder passages can also lead to much of the same confusion.</p><p>Notice, too, that the image on the left conforms to the amount of text in this space. That's pretty nice.</p>"
+        },
+        "label": "Content"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "dliabf",
+        "name": "fr-intro",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "xgmzei",
+        "name": "fr-intro-alpha",
+        "settings": {
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_alignItems:mobile_landscape": "flex-start",
+          "_rowGap": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "blgfqd",
+        "name": "fr-intro-alpha__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "tkbujj",
+        "name": "fr-intro-alpha__heading",
+        "settings": {
+          "_typography:mobile_landscape": {
+            "font-size": "var(--h1)"
+          }
+        },
+        "modified": 1734899474,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "u41k52",
+        "name": "fr-content-section-papa",
+        "settings": {
+          "_rowGap": "var(--container-gap)",
+          "_rowGap:mobile_landscape": "var(--content-gap)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "iqktfj",
+        "name": "fr-content-section-papa__inner",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-2)",
+          "_gridGap": "var(--grid-gap)",
+          "_alignItemsGrid": "stretch",
+          "_justifyContentGrid": "flex-start",
+          "_width": "1000px",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ko9d8x",
+        "name": "fr-content-section-papa__media-wrapper",
+        "settings": {
+          "_flexGrow": "1",
+          "_position": "relative"
+        },
+        "_exists": false
+      },
+      {
+        "id": "y6e1e6",
+        "name": "fr-content-section-papa__content-wrapper",
+        "settings": {
+          "_padding": {
+            "top": "var(--space-m)",
+            "bottom": "var(--space-m)"
+          },
+          "_padding:tablet_portrait": {
+            "top": "0",
+            "bottom": "0"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "ts2z4q",
+        "name": "fr-content-section-papa__media",
+        "settings": {
+          "_objectFit": "cover",
+          "_width": "100%",
+          "_border": {
+            "radius": {
+              "top": "var(--radius)",
+              "right": "var(--radius)",
+              "bottom": "var(--radius)",
+              "left": "var(--radius)"
+            }
+          },
+          "_position:tablet_portrait": "relative",
+          "_flexGrow": "1",
+          "_heightMin": "0",
+          "_height": "100%",
+          "_position": "absolute",
+          "_top": "0",
+          "_right": "0",
+          "_bottom": "0",
+          "_left": "0"
+        },
+        "_exists": false
+      },
+      {
+        "id": "ml84q3",
+        "name": "fr-content-section-papa__content",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

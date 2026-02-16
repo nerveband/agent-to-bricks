@@ -1,0 +1,1019 @@
+{
+  "idx": 396,
+  "title": "FAQ Section Alpha",
+  "elementCount": 49,
+  "classCount": 18,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "ac21d9",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "f664f9"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "cyspam"
+          ]
+        },
+        "label": "FAQ Section Alpha"
+      },
+      {
+        "id": "f664f9",
+        "name": "container",
+        "parent": "ac21d9",
+        "children": [
+          "646d4f",
+          "504e6a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "ebicef"
+          ]
+        },
+        "label": "FAQ Grid Alpha"
+      },
+      {
+        "id": "646d4f",
+        "name": "block",
+        "parent": "f664f9",
+        "children": [
+          "071eeb"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "vuelmk"
+          ]
+        },
+        "label": "Left"
+      },
+      {
+        "id": "504e6a",
+        "name": "block",
+        "parent": "f664f9",
+        "children": [
+          "d64cc1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "lzqcxn"
+          ]
+        },
+        "label": "Right"
+      },
+      {
+        "id": "071eeb",
+        "name": "block",
+        "parent": "646d4f",
+        "children": [
+          "e86c5b",
+          "4f4642",
+          "058675"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "eqgpav"
+          ]
+        },
+        "label": "Sticky"
+      },
+      {
+        "id": "e86c5b",
+        "name": "heading",
+        "parent": "071eeb",
+        "children": [],
+        "settings": {
+          "text": "Frequently asked questions",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "skqvou"
+          ]
+        }
+      },
+      {
+        "id": "4f4642",
+        "name": "text-basic",
+        "parent": "071eeb",
+        "children": [],
+        "settings": {
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "bpvrjb"
+          ]
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "058675",
+        "name": "button",
+        "parent": "071eeb",
+        "children": [],
+        "settings": {
+          "text": "Contact us",
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ]
+        }
+      },
+      {
+        "id": "d64cc1",
+        "name": "fr-accordion",
+        "parent": "504e6a",
+        "children": [
+          "b60e8f",
+          "43267e",
+          "baa41e",
+          "398339",
+          "bb970a"
+        ],
+        "settings": {
+          "closePreviousItem": true,
+          "showDuration": 300,
+          "tag": "ul",
+          "iconActiveTransformTest": {
+            "rotateZ": "180"
+          },
+          "_cssGlobalClasses": [
+            "qvacsc"
+          ],
+          "firstItemOpened": true,
+          "scrollToHash": true,
+          "addFaqSchema": true,
+          "scrollToHeading": true
+        }
+      },
+      {
+        "id": "b60e8f",
+        "name": "block",
+        "parent": "d64cc1",
+        "children": [
+          "9fcdda",
+          "9dffce"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "awqzzs"
+          ],
+          "tag": "li"
+        },
+        "label": "Item"
+      },
+      {
+        "id": "9fcdda",
+        "name": "div",
+        "parent": "b60e8f",
+        "children": [
+          "7fbe5e",
+          "908564"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-accordion__header"
+          },
+          "_cssGlobalClasses": [
+            "xxbjxz"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "7fbe5e",
+        "name": "heading",
+        "parent": "9fcdda",
+        "children": [],
+        "settings": {
+          "tag": "h3",
+          "text": "What's the question?",
+          "_hidden": {
+            "_cssClasses": "fr-accordion__title"
+          },
+          "_cssGlobalClasses": [
+            "binpwn"
+          ]
+        },
+        "label": "Question"
+      },
+      {
+        "id": "908564",
+        "name": "div",
+        "parent": "9fcdda",
+        "children": [
+          "ce1999"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-accordion__icon-wrapper"
+          },
+          "tag": "span",
+          "_cssGlobalClasses": [
+            "unupdr"
+          ]
+        },
+        "label": "Icon Wrapper"
+      },
+      {
+        "id": "ce1999",
+        "name": "icon",
+        "parent": "908564",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_hidden": {
+            "_cssClasses": "fr-accordion__icon"
+          },
+          "_cssGlobalClasses": [
+            "udwneg"
+          ]
+        },
+        "label": "Icon"
+      },
+      {
+        "id": "9dffce",
+        "name": "div",
+        "parent": "b60e8f",
+        "children": [
+          "05bd0d"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-accordion__body"
+          },
+          "_cssGlobalClasses": [
+            "gbsxaf"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "05bd0d",
+        "name": "block",
+        "parent": "9dffce",
+        "children": [
+          "22de13"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-accordion__content-wrapper"
+          },
+          "_cssGlobalClasses": [
+            "uadmmf"
+          ]
+        },
+        "label": "Answer Wrapper"
+      },
+      {
+        "id": "22de13",
+        "name": "text",
+        "parent": "05bd0d",
+        "children": [],
+        "settings": {
+          "text": "<p>Lorem ipsum dolor ist amte, consectetuer adipiscing eilt. Aenean commodo ligula egget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quak felis, ultricies nec, pellentesque eu, pretium quid, sem.</p>",
+          "_cssGlobalClasses": [
+            "ycnvsy"
+          ]
+        },
+        "label": "Answer"
+      },
+      {
+        "id": "bb970a",
+        "name": "block",
+        "parent": "d64cc1",
+        "children": [
+          "caf551",
+          "77be78"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "awqzzs"
+          ],
+          "tag": "li"
+        },
+        "label": "Item"
+      },
+      {
+        "id": "caf551",
+        "name": "div",
+        "parent": "bb970a",
+        "children": [
+          "5ecef4",
+          "a4141a"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-accordion__header"
+          },
+          "_cssGlobalClasses": [
+            "xxbjxz"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "77be78",
+        "name": "div",
+        "parent": "bb970a",
+        "children": [
+          "ebe2c3"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-accordion__body"
+          },
+          "_cssGlobalClasses": [
+            "gbsxaf"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "5ecef4",
+        "name": "heading",
+        "parent": "caf551",
+        "children": [],
+        "settings": {
+          "tag": "h3",
+          "text": "What's the question?",
+          "_hidden": {
+            "_cssClasses": "fr-accordion__title"
+          },
+          "_cssGlobalClasses": [
+            "binpwn"
+          ]
+        },
+        "label": "Question"
+      },
+      {
+        "id": "a4141a",
+        "name": "div",
+        "parent": "caf551",
+        "children": [
+          "698867"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-accordion__icon-wrapper"
+          },
+          "tag": "span",
+          "_cssGlobalClasses": [
+            "unupdr"
+          ]
+        },
+        "label": "Icon Wrapper"
+      },
+      {
+        "id": "ebe2c3",
+        "name": "block",
+        "parent": "77be78",
+        "children": [
+          "900a48"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-accordion__content-wrapper"
+          },
+          "_cssGlobalClasses": [
+            "uadmmf"
+          ]
+        },
+        "label": "Answer Wrapper"
+      },
+      {
+        "id": "698867",
+        "name": "icon",
+        "parent": "a4141a",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_hidden": {
+            "_cssClasses": "fr-accordion__icon"
+          },
+          "_cssGlobalClasses": [
+            "udwneg"
+          ]
+        },
+        "label": "Icon"
+      },
+      {
+        "id": "900a48",
+        "name": "text",
+        "parent": "ebe2c3",
+        "children": [],
+        "settings": {
+          "text": "<p>Lorem ipsum dolor ist amte, consectetuer adipiscing eilt. Aenean commodo ligula egget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quak felis, ultricies nec, pellentesque eu, pretium quid, sem.</p>",
+          "_cssGlobalClasses": [
+            "ycnvsy"
+          ]
+        },
+        "label": "Answer"
+      },
+      {
+        "id": "398339",
+        "name": "block",
+        "parent": "d64cc1",
+        "children": [
+          "32422c",
+          "ced31f"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "awqzzs"
+          ],
+          "tag": "li"
+        },
+        "label": "Item"
+      },
+      {
+        "id": "32422c",
+        "name": "div",
+        "parent": "398339",
+        "children": [
+          "7aa4ab",
+          "6a96a1"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-accordion__header"
+          },
+          "_cssGlobalClasses": [
+            "xxbjxz"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "ced31f",
+        "name": "div",
+        "parent": "398339",
+        "children": [
+          "26af1f"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-accordion__body"
+          },
+          "_cssGlobalClasses": [
+            "gbsxaf"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "7aa4ab",
+        "name": "heading",
+        "parent": "32422c",
+        "children": [],
+        "settings": {
+          "tag": "h3",
+          "text": "What's the question?",
+          "_hidden": {
+            "_cssClasses": "fr-accordion__title"
+          },
+          "_cssGlobalClasses": [
+            "binpwn"
+          ]
+        },
+        "label": "Question"
+      },
+      {
+        "id": "6a96a1",
+        "name": "div",
+        "parent": "32422c",
+        "children": [
+          "868962"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-accordion__icon-wrapper"
+          },
+          "tag": "span",
+          "_cssGlobalClasses": [
+            "unupdr"
+          ]
+        },
+        "label": "Icon Wrapper"
+      },
+      {
+        "id": "26af1f",
+        "name": "block",
+        "parent": "ced31f",
+        "children": [
+          "760d51"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-accordion__content-wrapper"
+          },
+          "_cssGlobalClasses": [
+            "uadmmf"
+          ]
+        },
+        "label": "Answer Wrapper"
+      },
+      {
+        "id": "868962",
+        "name": "icon",
+        "parent": "6a96a1",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_hidden": {
+            "_cssClasses": "fr-accordion__icon"
+          },
+          "_cssGlobalClasses": [
+            "udwneg"
+          ]
+        },
+        "label": "Icon"
+      },
+      {
+        "id": "760d51",
+        "name": "text",
+        "parent": "26af1f",
+        "children": [],
+        "settings": {
+          "text": "<p>Lorem ipsum dolor ist amte, consectetuer adipiscing eilt. Aenean commodo ligula egget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quak felis, ultricies nec, pellentesque eu, pretium quid, sem.</p>",
+          "_cssGlobalClasses": [
+            "ycnvsy"
+          ]
+        },
+        "label": "Answer"
+      },
+      {
+        "id": "baa41e",
+        "name": "block",
+        "parent": "d64cc1",
+        "children": [
+          "cdfd9d",
+          "9d2a6d"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "awqzzs"
+          ],
+          "tag": "li"
+        },
+        "label": "Item"
+      },
+      {
+        "id": "cdfd9d",
+        "name": "div",
+        "parent": "baa41e",
+        "children": [
+          "fde924",
+          "14a7f4"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-accordion__header"
+          },
+          "_cssGlobalClasses": [
+            "xxbjxz"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "9d2a6d",
+        "name": "div",
+        "parent": "baa41e",
+        "children": [
+          "161afd"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-accordion__body"
+          },
+          "_cssGlobalClasses": [
+            "gbsxaf"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "fde924",
+        "name": "heading",
+        "parent": "cdfd9d",
+        "children": [],
+        "settings": {
+          "tag": "h3",
+          "text": "What's the question?",
+          "_hidden": {
+            "_cssClasses": "fr-accordion__title"
+          },
+          "_cssGlobalClasses": [
+            "binpwn"
+          ]
+        },
+        "label": "Question"
+      },
+      {
+        "id": "14a7f4",
+        "name": "div",
+        "parent": "cdfd9d",
+        "children": [
+          "0e57e1"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-accordion__icon-wrapper"
+          },
+          "tag": "span",
+          "_cssGlobalClasses": [
+            "unupdr"
+          ]
+        },
+        "label": "Icon Wrapper"
+      },
+      {
+        "id": "161afd",
+        "name": "block",
+        "parent": "9d2a6d",
+        "children": [
+          "b92682"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-accordion__content-wrapper"
+          },
+          "_cssGlobalClasses": [
+            "uadmmf"
+          ]
+        },
+        "label": "Answer Wrapper"
+      },
+      {
+        "id": "0e57e1",
+        "name": "icon",
+        "parent": "14a7f4",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_hidden": {
+            "_cssClasses": "fr-accordion__icon"
+          },
+          "_cssGlobalClasses": [
+            "udwneg"
+          ]
+        },
+        "label": "Icon"
+      },
+      {
+        "id": "b92682",
+        "name": "text",
+        "parent": "161afd",
+        "children": [],
+        "settings": {
+          "text": "<p>Lorem ipsum dolor ist amte, consectetuer adipiscing eilt. Aenean commodo ligula egget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quak felis, ultricies nec, pellentesque eu, pretium quid, sem.</p>",
+          "_cssGlobalClasses": [
+            "ycnvsy"
+          ]
+        },
+        "label": "Answer"
+      },
+      {
+        "id": "43267e",
+        "name": "block",
+        "parent": "d64cc1",
+        "children": [
+          "01dea1",
+          "676bf3"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "awqzzs"
+          ],
+          "tag": "li"
+        },
+        "label": "Item"
+      },
+      {
+        "id": "01dea1",
+        "name": "div",
+        "parent": "43267e",
+        "children": [
+          "64b799",
+          "ae97c4"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-accordion__header"
+          },
+          "_cssGlobalClasses": [
+            "xxbjxz"
+          ]
+        },
+        "label": "Header"
+      },
+      {
+        "id": "676bf3",
+        "name": "div",
+        "parent": "43267e",
+        "children": [
+          "5d37ff"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-accordion__body"
+          },
+          "_cssGlobalClasses": [
+            "gbsxaf"
+          ]
+        },
+        "label": "Body"
+      },
+      {
+        "id": "64b799",
+        "name": "heading",
+        "parent": "01dea1",
+        "children": [],
+        "settings": {
+          "tag": "h3",
+          "text": "What's the question?",
+          "_hidden": {
+            "_cssClasses": "fr-accordion__title"
+          },
+          "_cssGlobalClasses": [
+            "binpwn"
+          ]
+        },
+        "label": "Question"
+      },
+      {
+        "id": "ae97c4",
+        "name": "div",
+        "parent": "01dea1",
+        "children": [
+          "2ec8be"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-accordion__icon-wrapper"
+          },
+          "tag": "span",
+          "_cssGlobalClasses": [
+            "unupdr"
+          ]
+        },
+        "label": "Icon Wrapper"
+      },
+      {
+        "id": "5d37ff",
+        "name": "block",
+        "parent": "676bf3",
+        "children": [
+          "9dc3dd"
+        ],
+        "settings": {
+          "_hidden": {
+            "_cssClasses": "fr-accordion__content-wrapper"
+          },
+          "_cssGlobalClasses": [
+            "uadmmf"
+          ]
+        },
+        "label": "Answer Wrapper"
+      },
+      {
+        "id": "2ec8be",
+        "name": "icon",
+        "parent": "ae97c4",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            }
+          },
+          "_hidden": {
+            "_cssClasses": "fr-accordion__icon"
+          },
+          "_cssGlobalClasses": [
+            "udwneg"
+          ]
+        },
+        "label": "Icon"
+      },
+      {
+        "id": "9dc3dd",
+        "name": "text",
+        "parent": "5d37ff",
+        "children": [],
+        "settings": {
+          "text": "<p>Lorem ipsum dolor ist amte, consectetuer adipiscing eilt. Aenean commodo ligula egget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quak felis, ultricies nec, pellentesque eu, pretium quid, sem.</p>",
+          "_cssGlobalClasses": [
+            "ycnvsy"
+          ]
+        },
+        "label": "Answer"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771255840,
+        "user_id": 1
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "qvacsc",
+        "name": "fr-faq-accordion-alpha",
+        "settings": {
+          "headPadding": {
+            "top": ".5em",
+            "bottom": ".5em",
+            "right": "1em",
+            "left": "1em"
+          },
+          "iconActiveTransformTest": {
+            "rotateZ": "180"
+          },
+          "bodyPadding": {
+            "top": "1em",
+            "right": "1em",
+            "bottom": "1em",
+            "left": "1em"
+          },
+          "headBackgroundColor": {
+            "raw": "var(--bg-light)"
+          },
+          "headFont": {
+            "color": {
+              "raw": "var(--text-dark)"
+            }
+          },
+          "iconActiveTransform": {
+            "rotateZ": "180"
+          },
+          "iconDefaultSize": "2em",
+          "itemGap": "0"
+        },
+        "_exists": false
+      },
+      {
+        "id": "awqzzs",
+        "name": "fr-faq-accordion-alpha__item",
+        "settings": {
+          "_rowGap": "0"
+        },
+        "_exists": false
+      },
+      {
+        "id": "xxbjxz",
+        "name": "fr-faq-accordion-alpha__header",
+        "settings": {
+          "_justifyContent": "space-between",
+          "_alignSelf": "center"
+        },
+        "_exists": false
+      },
+      {
+        "id": "binpwn",
+        "name": "fr-faq-accordion-alpha__question",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "unupdr",
+        "name": "fr-faq-accordion-alpha__icon-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "udwneg",
+        "name": "fr-faq-accordion-alpha__icon",
+        "settings": {
+          "_cssTransition": "transform 0.2s ease-in-out"
+        },
+        "_exists": false
+      },
+      {
+        "id": "gbsxaf",
+        "name": "faq-accordion-alpha__body",
+        "settings": {
+          "_width": "100%"
+        },
+        "_exists": false
+      },
+      {
+        "id": "uadmmf",
+        "name": "fr-faq-accordion-alpha__answer-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ycnvsy",
+        "name": "fr-faq-accordion-alpha__answer",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "cyspam",
+        "name": "fr-faq-section-alpha",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "ebicef",
+        "name": "fr-faq-grid-alpha",
+        "settings": {
+          "_display": "grid",
+          "_gridGap": "var(--space-xxl)",
+          "_gridTemplateColumns": "var(--grid-2-3)",
+          "_gridTemplateRows": "var(--grid-1)",
+          "_alignItemsGrid": "stretch",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "vuelmk",
+        "name": "fr-faq-section-alpha__left",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "lzqcxn",
+        "name": "fr-faq-section-alpha__right",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "eqgpav",
+        "name": "fr-faq-section-alpha__sticky",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_position": "sticky",
+          "_top": "var(--header-height)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "skqvou",
+        "name": "fr-faq-section-alpha__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "bpvrjb",
+        "name": "fr-faq-section-alpha__lede",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

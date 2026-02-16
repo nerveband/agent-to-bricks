@@ -1,0 +1,250 @@
+{
+  "idx": 307,
+  "title": "CTA Banner Alpha",
+  "elementCount": 7,
+  "classCount": 8,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "e2f847",
+        "name": "div",
+        "parent": 0,
+        "children": [
+          "a54d05"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "aucrop"
+          ]
+        },
+        "label": "CTA Banner Alpha"
+      },
+      {
+        "id": "a54d05",
+        "name": "container",
+        "parent": "e2f847",
+        "children": [
+          "31213a",
+          "f186f3",
+          "33811a"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "yndvoz"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "31213a",
+        "name": "text-basic",
+        "parent": "a54d05",
+        "children": [],
+        "settings": {
+          "text": "Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet.",
+          "_cssGlobalClasses": [
+            "novahj"
+          ],
+          "tag": "p"
+        },
+        "label": "Message"
+      },
+      {
+        "id": "33811a",
+        "name": "div",
+        "parent": "a54d05",
+        "children": [
+          "20d37e",
+          "35aee1"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "bpedrv"
+          ],
+          "tag": "custom",
+          "customTag": "button"
+        },
+        "label": "Close Wrapper (CSS)"
+      },
+      {
+        "id": "20d37e",
+        "name": "icon",
+        "parent": "33811a",
+        "children": [],
+        "settings": {
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)",
+            "fill": {
+              "raw": "var(--fr-text-light)"
+            }
+          },
+          "_cssGlobalClasses": [
+            "shdngd"
+          ]
+        },
+        "label": "Close Icon"
+      },
+      {
+        "id": "35aee1",
+        "name": "text-basic",
+        "parent": "33811a",
+        "children": [],
+        "settings": {
+          "text": "Close Banner",
+          "_cssGlobalClasses": [
+            "mefmsf",
+            "acss_import_hidden-accessible"
+          ],
+          "tag": "span"
+        },
+        "label": "Label"
+      },
+      {
+        "id": "f186f3",
+        "name": "text-basic",
+        "parent": "a54d05",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "_cssGlobalClasses": [
+            "uhwjhd"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Call to action"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "acss_import_hidden-accessible",
+        "name": "hidden-accessible",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "aucrop",
+        "name": "fr-cta-banner-alpha",
+        "settings": {
+          "_padding": {
+            "left": "var(--gutter)",
+            "right": "var(--gutter)",
+            "top": "var(--space-xs)",
+            "bottom": "var(--space-xs)"
+          },
+          "_background": {
+            "color": {
+              "raw": "var(--bg-dark)"
+            }
+          },
+          "_position": "sticky",
+          "_top": "0"
+        },
+        "_exists": false
+      },
+      {
+        "id": "yndvoz",
+        "name": "fr-cta-banner-alpha__inner",
+        "settings": {
+          "_flexWrap": "wrap",
+          "_direction": "row",
+          "_alignItems": "center",
+          "_justifyContent": "space-between",
+          "_columnGap": "var(--space-xs)",
+          "_rowGap": "var(--space-xs)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "novahj",
+        "name": "fr-cta-banner-alpha__message",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            },
+            "font-size": "var(--text-s)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "bpedrv",
+        "name": "fr-cta-banner-alpha__close-wrapper",
+        "settings": {
+          "_display": "flex",
+          "_alignItems": "center",
+          "_columnGap": ".5em",
+          "_rowGap": ".5em",
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)",
+              "id": "ualjvt",
+              "name": "Color #3"
+            }
+          },
+          "_background": {
+            "color": {
+              "hex": "#ff0000",
+              "rgb": "rgba(255, 0, 0, 0)",
+              "hsl": "hsla(0, 100%, 50%, 0)",
+              "id": "uqvhzw",
+              "name": "No Color"
+            }
+          },
+          "_position": "absolute",
+          "_top": "50%",
+          "_right": "1em",
+          "_transform": {
+            "translateY": "-50%"
+          },
+          "_cssCustom": ".fr-cta-banner-alpha__close-wrapper:hover {\n\ttransform: translateY(-50%) scale(1.125);\n  opacity: .8;\n}",
+          "_cssTransition": "transform .3s ease-in-out"
+        },
+        "_exists": false
+      },
+      {
+        "id": "shdngd",
+        "name": "fr-cta-banner-alpha__close-icon",
+        "settings": {
+          "iconSize": "var(--text-m)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "mefmsf",
+        "name": "fr-cta-banner-alpha__close-label",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "uhwjhd",
+        "name": "fr-cta-banner-alpha__link",
+        "settings": {
+          "_typography": {
+            "color": {
+              "raw": "var(--text-light)"
+            },
+            "font-size": "var(--text-s)"
+          }
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

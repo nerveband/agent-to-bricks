@@ -1,0 +1,232 @@
+{
+  "idx": 61,
+  "title": "Intro Foxtrot",
+  "elementCount": 7,
+  "classCount": 9,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "a080db",
+        "name": "container",
+        "parent": 0,
+        "children": [
+          "828a6b",
+          "c9fffe",
+          "f8655b",
+          "5f126e"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kfsrng"
+          ]
+        },
+        "label": "Intro Foxtrot"
+      },
+      {
+        "id": "828a6b",
+        "name": "heading",
+        "parent": "a080db",
+        "children": [],
+        "settings": {
+          "text": "I am a heading",
+          "tag": "h2",
+          "_cssGlobalClasses": [
+            "fs98tf"
+          ]
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "c9fffe",
+        "name": "text-basic",
+        "parent": "a080db",
+        "children": [],
+        "settings": {
+          "text": "Accent Heading",
+          "tag": "p",
+          "_cssGlobalClasses": [
+            "qfdtjc",
+            "luvynj"
+          ]
+        },
+        "label": "Accent Heading"
+      },
+      {
+        "id": "f8655b",
+        "name": "text-basic",
+        "parent": "a080db",
+        "children": [],
+        "settings": {
+          "text": "This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.",
+          "_cssGlobalClasses": [
+            "kddjfd",
+            "utn55l"
+          ],
+          "tag": "p"
+        },
+        "label": "Lede"
+      },
+      {
+        "id": "5f126e",
+        "name": "div",
+        "parent": "a080db",
+        "children": [
+          "c42f1e",
+          "29fb21"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "glrhvz"
+          ]
+        },
+        "label": "CTA Links Bravo"
+      },
+      {
+        "id": "c42f1e",
+        "name": "button",
+        "parent": "5f126e",
+        "children": [],
+        "settings": {
+          "_cssGlobalClasses": [
+            "btn--primary"
+          ],
+          "text": "Primary action",
+          "link": {
+            "type": "external",
+            "url": "#"
+          }
+        },
+        "label": "Primary Action"
+      },
+      {
+        "id": "29fb21",
+        "name": "text-basic",
+        "parent": "5f126e",
+        "children": [],
+        "settings": {
+          "text": "Secondary action",
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "_cssGlobalClasses": [
+            "aekezk"
+          ]
+        },
+        "label": "Secondary Action"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "qfdtjc",
+        "name": "fr-accent-heading",
+        "settings": {
+          "_typography": {
+            "line-height": "1.1",
+            "text-transform": "uppercase",
+            "letter-spacing": ".095em",
+            "font-size": "var(--text-s)",
+            "font-weight": "400"
+          },
+          "_order": "-1",
+          "_margin": {
+            "bottom": "0"
+          }
+        },
+        "_mappedId": "qfdtjc",
+        "modified": 1750209684,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "kfsrng",
+        "name": "intro-foxtrot",
+        "settings": {
+          "_rowGap": "var(--content-gap)",
+          "_alignItems": "center",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_typography:mobile_landscape": {
+            "text-align": "left"
+          },
+          "_alignItems:mobile_landscape": "flex-start"
+        },
+        "_exists": false
+      },
+      {
+        "id": "fs98tf",
+        "name": "intro-foxtrot__heading",
+        "settings": [],
+        "_mappedId": "fs98tf",
+        "modified": 1750209707,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "luvynj",
+        "name": "intro-foxtrot__accent-heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "kddjfd",
+        "name": "fr-lede",
+        "settings": [],
+        "_mappedId": "kddjfd",
+        "modified": 1771252473,
+        "user_id": 1
+      },
+      {
+        "id": "utn55l",
+        "name": "intro-foxtrot__lede",
+        "settings": [],
+        "_mappedId": "utn55l",
+        "modified": 1750209707,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "btn--primary",
+        "name": "btn--primary",
+        "settings": [],
+        "_mappedId": "acss_import_btn--primary",
+        "modified": 1750209725,
+        "user_id": 1,
+        "_exists": false
+      },
+      {
+        "id": "glrhvz",
+        "name": "fr-cta-links-bravo",
+        "settings": {
+          "_display": "flex",
+          "_flexWrap": "wrap",
+          "_alignItems": "center",
+          "_rowGap": "var(--content-gap)",
+          "_columnGap": "var(--content-gap)",
+          "_direction:mobile_portrait": "column",
+          "_width:mobile_portrait": "100%",
+          "_cssCustom:mobile_portrait": ".fr-cta-links-bravo > * {\n\twidth: 100% !important;\n}",
+          "_typography": {
+            "text-align": "center"
+          },
+          "_margin": {
+            "top": "var(--space-s)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "aekezk",
+        "name": "fr-cta-links-bravo__link",
+        "settings": [],
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}

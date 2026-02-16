@@ -1,0 +1,328 @@
+{
+  "idx": 91,
+  "title": "Content Section Quebec",
+  "elementCount": 10,
+  "classCount": 13,
+  "bricksExport": {
+    "content": [
+      {
+        "id": "32112c",
+        "name": "section",
+        "parent": 0,
+        "children": [
+          "df1eae"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "pzaykp",
+            "acss_import_bg--dark",
+            "neswau"
+          ]
+        },
+        "label": "Content Section Quebec"
+      },
+      {
+        "id": "df1eae",
+        "name": "container",
+        "parent": "32112c",
+        "children": [
+          "fa349d",
+          "242ef4"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "wmt8ww"
+          ]
+        },
+        "label": "Inner"
+      },
+      {
+        "id": "fa349d",
+        "name": "block",
+        "parent": "df1eae",
+        "children": [
+          "f0000d",
+          "43177c",
+          "2d1583"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "2qzjqa"
+          ]
+        },
+        "label": "Content Wrapper"
+      },
+      {
+        "id": "242ef4",
+        "name": "block",
+        "parent": "df1eae",
+        "children": [
+          "da0ef1",
+          "b7bb7b"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "1f2un5"
+          ]
+        },
+        "label": "Image Group"
+      },
+      {
+        "id": "da0ef1",
+        "name": "image",
+        "parent": "242ef4",
+        "children": [],
+        "settings": {
+          "tag": "figure",
+          "_cssGlobalClasses": [
+            "613dlg"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        },
+        "label": "Image",
+        "themeStyles": []
+      },
+      {
+        "id": "b7bb7b",
+        "name": "image",
+        "parent": "242ef4",
+        "children": [],
+        "settings": {
+          "tag": "figure",
+          "_cssGlobalClasses": [
+            "613dlg"
+          ],
+          "image": {
+            "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+            "isPlaceholder": true,
+            "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+          }
+        },
+        "label": "Image",
+        "themeStyles": []
+      },
+      {
+        "id": "f0000d",
+        "name": "heading",
+        "parent": "fa349d",
+        "children": [],
+        "settings": {
+          "text": "Placeholder headline",
+          "_cssGlobalClasses": [
+            "y65vag"
+          ],
+          "tag": "h2"
+        },
+        "label": "Heading"
+      },
+      {
+        "id": "43177c",
+        "name": "text",
+        "parent": "fa349d",
+        "children": [],
+        "settings": {
+          "text": "<p>This is just placeholder text. Don\u2019t be alarmed, this is just here to fill up space since your finalized copy isn\u2019t ready yet. Once we have your content finalized, we\u2019ll replace this placeholder text with your real content.</p><p>Sometimes it\u2019s nice to put in text just to get an idea of how text will fill in a space on your website.</p><p>Traditionally our industry has used Lorem Ipsum, which is placeholder text written in Latin. Unfortunately, not everyone is familiar with Lorem Ipsum and that can lead to confusion. I can\u2019t tell you how many times clients have asked me why their website is in another language!</p>",
+          "_cssGlobalClasses": [
+            "0gw9lq"
+          ]
+        },
+        "label": "Text"
+      },
+      {
+        "id": "2d1583",
+        "name": "div",
+        "parent": "fa349d",
+        "children": [
+          "b4f0bf"
+        ],
+        "settings": {
+          "_cssGlobalClasses": [
+            "kwdtjx",
+            "s2lpyj"
+          ]
+        },
+        "label": "Icon Link Alpha Wrapper"
+      },
+      {
+        "id": "b4f0bf",
+        "name": "text-link",
+        "parent": "2d1583",
+        "children": [],
+        "settings": {
+          "text": "Call to action",
+          "_cssGlobalClasses": [
+            "caehza",
+            "dgxwga"
+          ],
+          "link": {
+            "type": "external",
+            "url": "#"
+          },
+          "icon": {
+            "library": "svg",
+            "svg": {
+              "url": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "full": "https://ts-staging.wavedepth.com/wp-content/themes/bricks/assets/images/placeholder-svg.svg",
+              "isPlaceholder": true,
+              "path": "/home/runcloud/webapps/TS-Staging/wp-content/themes/bricks/assets/images/placeholder-svg.svg"
+            },
+            "height": "var(--icon-size)",
+            "width": "var(--icon-size)",
+            "fill": {
+              "raw": "var(--icon-color)"
+            }
+          }
+        },
+        "label": "Icon Link Alpha (CSS)"
+      }
+    ],
+    "source": "bricksCopiedElements",
+    "sourceUrl": "https://ts-staging.wavedepth.com",
+    "version": "2.2",
+    "globalClasses": [
+      {
+        "id": "neswau",
+        "name": "content-grid",
+        "settings": [],
+        "modified": 1771253133,
+        "user_id": 1,
+        "_mappedId": "acss_import_content-grid"
+      },
+      {
+        "id": "acss_import_bg--dark",
+        "name": "bg--dark",
+        "settings": [],
+        "category": "acss"
+      },
+      {
+        "id": "pzaykp",
+        "name": "content-section-quebec",
+        "settings": {
+          "_padding": {
+            "top": "0",
+            "bottom": "0",
+            "right": "var(--gutter)"
+          },
+          "_padding:tablet_portrait": {
+            "right": "0"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "wmt8ww",
+        "name": "content-section-quebec__inner",
+        "settings": {
+          "_display": "grid",
+          "_gridTemplateColumns": "var(--grid-2-3)",
+          "_gridGap": "var(--grid-gap)",
+          "_gridTemplateColumns:tablet_portrait": "var(--grid-1)",
+          "_gridGap:tablet_portrait": "var(--content-gap)",
+          "_gridItemColumnSpan": "content / full",
+          "_gridItemColumnSpan:tablet_portrait": "content",
+          "_gridTemplateRows": "var(--grid-1)"
+        },
+        "_exists": false
+      },
+      {
+        "id": "2qzjqa",
+        "name": "content-section-quebec__content-wrapper",
+        "settings": {
+          "_width": "40ch",
+          "_rowGap": "var(--content-gap)",
+          "_justifyContent": "center",
+          "_padding": {
+            "top": "var(--section-space-l)",
+            "bottom": "var(--section-space-l)"
+          },
+          "_width:tablet_portrait": "100%",
+          "_padding:tablet_portrait": {
+            "bottom": "0",
+            "top": "var(--section-space-m)"
+          }
+        },
+        "_exists": false
+      },
+      {
+        "id": "1f2un5",
+        "name": "content-section-quebec__image-group",
+        "settings": {
+          "_direction": "row",
+          "_justifyContent": "space-between",
+          "_cssCustom": ".content-section-quebec__image-group > *:first-child {\n\talign-self: start;\n}\n.content-section-quebec__image-group > *:first-child, \n.content-section-quebec__image-group > *:first-child img {\n  border-radius: 0 0 var(--radius) var(--radius);\n}\n\n.content-section-quebec__image-group > *:last-child {\n\talign-self: end;\n}\n.content-section-quebec__image-group > *:last-child,\n.content-section-quebec__image-group > *:last-child img {\n  border-radius: var(--radius) var(--radius) 0 0;\n}",
+          "_columnGap": "var(--content-gap)",
+          "_cssCustom:tablet_portrait": ".content-section-quebec__image-group > *:first-child,\n.content-section-quebec__image-group > *:first-child img {\n\tborder-radius: var(--radius);\n}",
+          "_flexWrap:mobile_landscape": "wrap",
+          "_rowGap": "var(--content-gap)"
+        },
+        "modified": 1740486276,
+        "user_id": 26,
+        "_exists": false
+      },
+      {
+        "id": "613dlg",
+        "name": "content-section-quebec__image",
+        "settings": {
+          "_height": "90%",
+          "_objectFit": "cover",
+          "_height:mobile_landscape": "auto"
+        },
+        "_exists": false
+      },
+      {
+        "id": "y65vag",
+        "name": "content-section-quebec__heading",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "0gw9lq",
+        "name": "content-section-quebec__text",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "kwdtjx",
+        "name": "fr-icon-link-alpha-wrapper",
+        "settings": {
+          "_display": "flex"
+        },
+        "_exists": false
+      },
+      {
+        "id": "s2lpyj",
+        "name": "content-section-quebec__icon-link-alpha-wrapper",
+        "settings": [],
+        "_exists": false
+      },
+      {
+        "id": "caehza",
+        "name": "fr-icon-link-alpha",
+        "settings": {
+          "_cssCustom": ".fr-icon-link-alpha {\n  --link-color: var(--black);\n  --link-color-hover: var(--primary);\n\t--icon-size: 1em;\n  --icon-color: var(--black);\n  --icon-color-hover: var(--black);\n  --icon-gap: .25em;\n  --icon-translate-distance: .25em;\n  --icon-transition-duration: 300ms;\n  --icon-transition-function: ease-in-out;\n  \n  /* Prevent Line Breaks */\n  white-space: nowrap;\n}\n\n/* Link */\n.fr-icon-link-alpha {\n\tcolor: var(--link-color);\n  text-decoration: underline;\n  text-underline-offset: var(--link-underline-offset, .25em);\n}\n\n.fr-icon-link-alpha:hover {\n\tcolor: var(--link-color-hover);\n}\n\n/* Icon */\n.fr-icon-link-alpha .icon {\n\ttransition: translate var(--icon-transition-duration) var(--icon-transition-function);\n\tfill: var(--icon-color);\n}\n\n.fr-icon-link-alpha:hover .icon {\n\ttranslate: var(--icon-translate-distance) 0;\n  fill: var(--icon-color-hover);\n}\n\n/* Light Version */\n.fr-icon-link-alpha--light {\n  --link-color: var(--white);\n  --link-color-hover: var(--primary);\n\t--icon-size: 1em;\n  --icon-color: var(--white);\n  --icon-color-hover: var(--primary);\n}",
+          "iconPosition": "right",
+          "gap": "var(--icon-gap)"
+        },
+        "modified": 1724413262,
+        "user_id": 9,
+        "_exists": false
+      },
+      {
+        "id": "dgxwga",
+        "name": "fr-icon-link-alpha--light",
+        "settings": {
+          "_cssCustom": "/* Styles declared on unmodified block class */"
+        },
+        "_exists": false
+      }
+    ],
+    "components": [],
+    "globalElements": []
+  }
+}
