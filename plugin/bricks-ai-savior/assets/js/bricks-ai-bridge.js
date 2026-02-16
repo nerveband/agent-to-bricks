@@ -148,44 +148,63 @@
     },
 
     _insertRecursive(node, parentId, index, internals, insertedIds) {
-      // Resolve class names to IDs in settings.
-      const settings = this._prepareSettings(node.settings || {});
+      const state = this.getState();
+      const contentLenBefore = state.content.length;
 
-      const element = {
-        name: node.name,
-        settings: settings,
-      };
-      if (node.label) {
-        element.label = node.label;
-      }
+      const settings = this._prepareSettings(node.settings || {});
+      const element = { name: node.name, settings };
+      if (node.label) element.label = node.label;
 
       internals.$_addNewElement({
-        element: element,
+        element,
         parent: parentId,
-        index: index,
+        index,
       });
 
-      // Find the newly inserted element.
-      const state = this.getState();
-      const newEl = state.content.find(e =>
-        e.name === node.name &&
-        e.parent === parentId &&
-        !insertedIds.includes(e.id) &&
-        // Match by label if available, otherwise by position.
-        (!node.label || e.label === node.label)
-      );
+      // Find the newly created element(s) by diffing content array.
+      // $_addNewElement does NOT reliably update activeId.
+      const newElements = state.content.slice(contentLenBefore);
+      const mainEl = newElements.find(e => e.name === node.name) || newElements[0];
+      const newId = mainEl?.id;
 
-      // Fallback: use activeId (Bricks sets it after insert).
-      const newId = newEl?.id || state.activeId;
-      if (newId) {
-        insertedIds.push(newId);
+      if (!newId) return; // insertion failed
+      insertedIds.push(newId);
+
+      // Apply label/settings to the actual element in state (may differ from what we passed).
+      if (node.label && mainEl) mainEl.label = node.label;
+
+      // Sections auto-create a container child in Bricks.
+      // If our tree also has a container as first child, merge into the auto-container.
+      const children = node.children || [];
+      if (node.name === 'section' && children.length > 0) {
+        const autoContainer = newElements.find(
+          e => e.name === 'container' && e.parent === newId
+        );
+        if (autoContainer && children[0]?.name === 'container') {
+          // Merge our container's settings/label into the auto-created one.
+          const containerNode = children[0];
+          insertedIds.push(autoContainer.id);
+          if (containerNode.label) autoContainer.label = containerNode.label;
+          if (containerNode.settings) {
+            const prep = this._prepareSettings(containerNode.settings);
+            Object.assign(autoContainer.settings, prep);
+          }
+          // Insert the container's children into the auto-container.
+          const containerChildren = containerNode.children || [];
+          for (let i = 0; i < containerChildren.length; i++) {
+            this._insertRecursive(containerChildren[i], autoContainer.id, i, internals, insertedIds);
+          }
+          // Insert any remaining section children after the first container.
+          for (let i = 1; i < children.length; i++) {
+            this._insertRecursive(children[i], newId, i, internals, insertedIds);
+          }
+          return;
+        }
       }
 
-      // Recurse for children.
-      if (node.children && node.children.length > 0) {
-        for (let i = 0; i < node.children.length; i++) {
-          this._insertRecursive(node.children[i], newId, i, internals, insertedIds);
-        }
+      // Normal child processing.
+      for (let i = 0; i < children.length; i++) {
+        this._insertRecursive(children[i], newId, i, internals, insertedIds);
       }
     },
 
@@ -271,6 +290,82 @@
       if (!internals) return false;
       internals.$_savePost({ force: true });
       return true;
+    },
+
+    // ---- Global Class Management ----
+
+    /**
+     * Ensure global classes from an import exist in the current state.
+     * Adds any missing classes so that _cssGlobalClasses references resolve.
+     *
+     * @param {Object[]} classes - Array of global class objects from Bricks copy data
+     */
+    ensureGlobalClasses(classes) {
+      const state = this.getState();
+      if (!state || !classes) return;
+
+      if (!state.globalClasses) state.globalClasses = [];
+
+      const existingIds = new Set(state.globalClasses.map(c => c.id));
+
+      for (const cls of classes) {
+        if (!cls.id || existingIds.has(cls.id)) continue;
+        // Add the class to state.
+        state.globalClasses.push({
+          id: cls.id,
+          name: cls.name,
+          settings: cls.settings && !Array.isArray(cls.settings) ? cls.settings : {},
+          category: cls.category || undefined,
+          locked: cls.locked || undefined,
+        });
+        existingIds.add(cls.id);
+      }
+    },
+
+    // ---- Import Helpers ----
+
+    /**
+     * Convert Bricks flat array format to nested tree format.
+     * Flat: [{ id, name, parent, children: [ids], settings }, ...]
+     * Nested: { name, label, settings, children: [nested nodes] }
+     *
+     * @param {Object[]} flatArray - Bricks flat element array
+     * @returns {Object[]} Array of root-level nested trees
+     */
+    flatToNested(flatArray) {
+      if (!Array.isArray(flatArray) || flatArray.length === 0) return [];
+
+      // Build lookup map.
+      const byId = {};
+      for (const el of flatArray) {
+        byId[el.id] = el;
+      }
+
+      // Recursive builder.
+      const buildNode = (el) => {
+        const node = { name: el.name };
+        if (el.label) node.label = el.label;
+        node.settings = (el.settings && !Array.isArray(el.settings)) ? { ...el.settings } : {};
+        node.children = [];
+
+        if (el.children && Array.isArray(el.children)) {
+          for (const childId of el.children) {
+            const child = byId[childId];
+            if (child) {
+              node.children.push(buildNode(child));
+            }
+          }
+        }
+
+        return node;
+      };
+
+      // Find root elements (parent === 0 or parent === "0" or missing).
+      const roots = flatArray.filter(el =>
+        el.parent === 0 || el.parent === '0' || !el.parent
+      );
+
+      return roots.map(buildNode);
     },
 
     // ---- Internal Helpers ----

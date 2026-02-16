@@ -20,7 +20,10 @@
 
   function initPanel() {
     const config = window.bricksAIConfig || {};
+    let selectedProvider = config.provider || '';
+    let selectedModel = config.model || '';
     const bridge = window.BricksAIBridge;
+    const providers = config.providers || {};
 
     let state = {
       mode: 'section',         // "section" or "page"
@@ -47,8 +50,16 @@
       </div>
       <div class="bai-body">
         <div class="bai-provider">
-          Provider: <span class="bai-provider-name">${escHtml(config.providerName || 'Not configured')}</span>
-          / <span class="bai-provider-model">${escHtml(config.model || 'default')}</span>
+          <select class="bai-provider-select">
+            ${Object.entries(providers).map(([id, p]) =>
+              `<option value="${escHtml(id)}" ${id === config.provider ? 'selected' : ''}>${escHtml(p.name)}</option>`
+            ).join('')}
+          </select>
+          <select class="bai-model-select">
+            ${(config.availableModels || []).map(m =>
+              `<option value="${escHtml(m)}" ${m === config.model ? 'selected' : ''}>${escHtml(m)}</option>`
+            ).join('')}
+          </select>
         </div>
         <div class="bai-context">
           Context: <span class="bai-context-label">Checking...</span>
@@ -63,6 +74,9 @@
         <div class="bai-actions bai-actions-generate">
           <button class="bai-btn bai-btn-generate">Generate</button>
           <button class="bai-btn bai-btn-modify">Modify Selected</button>
+        </div>
+        <div class="bai-drop-zone">
+          <span class="bai-drop-icon">&#8615;</span> Drop JSON here to import
         </div>
         <div class="bai-loading" style="display:none">
           <div class="bai-spinner"></div>
@@ -150,6 +164,140 @@
       }
     });
 
+    // ---- Provider & Model Selectors ----
+
+    const providerSelect = $('.bai-provider-select');
+    const modelSelect = $('.bai-model-select');
+
+    function updateModelOptions(providerId) {
+      const p = providers[providerId];
+      if (!p) return;
+      const models = p.models || [];
+      modelSelect.innerHTML = models.map(m =>
+        `<option value="${escHtml(m)}">${escHtml(m)}</option>`
+      ).join('');
+      if (models.length > 0) {
+        selectedModel = models[0];
+      }
+    }
+
+    if (providerSelect) {
+      providerSelect.addEventListener('change', (e) => {
+        selectedProvider = e.target.value;
+        updateModelOptions(selectedProvider);
+      });
+    }
+
+    if (modelSelect) {
+      modelSelect.addEventListener('change', (e) => {
+        selectedModel = e.target.value;
+      });
+    }
+
+    // ---- JSON Drag & Drop Import ----
+
+    const dropZone = $('.bai-drop-zone');
+
+    dropZone.addEventListener('dragenter', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      dropZone.classList.add('bai-drop-hover');
+    });
+
+    dropZone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      e.dataTransfer.dropEffect = 'copy';
+    });
+
+    dropZone.addEventListener('dragleave', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      dropZone.classList.remove('bai-drop-hover');
+    });
+
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      dropZone.classList.remove('bai-drop-hover');
+
+      const file = e.dataTransfer.files[0];
+      if (!file) return;
+
+      if (!file.name.endsWith('.json')) {
+        setStatus('Invalid file — expected .json', 'error');
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = (evt) => {
+        try {
+          const data = JSON.parse(evt.target.result);
+
+          // Support both formats:
+          // 1. Plain array: [{id, name, parent, ...}, ...]
+          // 2. Bricks copy format: {content: [...], globalClasses: [...], source: "bricksCopiedElements"}
+          let flatArray;
+          let importGlobalClasses = null;
+
+          if (Array.isArray(data)) {
+            flatArray = data;
+          } else if (data && Array.isArray(data.content)) {
+            flatArray = data.content;
+            if (Array.isArray(data.globalClasses)) {
+              importGlobalClasses = data.globalClasses;
+            }
+          } else {
+            setStatus('Invalid format — expected Bricks element array or copy data', 'error');
+            return;
+          }
+
+          if (flatArray.length === 0) {
+            setStatus('No elements found in file', 'error');
+            return;
+          }
+
+          if (!flatArray[0].name) {
+            setStatus('Invalid Bricks export — elements missing "name" field', 'error');
+            return;
+          }
+
+          // Register any missing global classes from the import.
+          if (importGlobalClasses) {
+            bridge.ensureGlobalClasses(importGlobalClasses);
+          }
+
+          // Convert flat to nested.
+          const nested = bridge.flatToNested(flatArray);
+          if (!nested.length) {
+            setStatus('No root elements found in file', 'error');
+            return;
+          }
+
+          // Insert each root tree.
+          let insertedCount = 0;
+          for (const tree of nested) {
+            const ids = bridge.insertTree(tree, 0, undefined);
+            insertedCount += ids.length;
+          }
+
+          setStatus(`Imported ${insertedCount} elements from ${file.name} (Ctrl+Z to undo)`, 'success');
+        } catch (err) {
+          setStatus('Failed to parse JSON: ' + err.message, 'error');
+        }
+      };
+
+      reader.onerror = () => {
+        setStatus('Failed to read file', 'error');
+      };
+
+      reader.readAsText(file);
+    });
+
+    // Also prevent default on the panel itself so the browser doesn't open the file.
+    panel.addEventListener('dragover', (e) => e.preventDefault());
+    panel.addEventListener('drop', (e) => e.preventDefault());
+
     // ---- Dragging ----
 
     let dragOffset = { x: 0, y: 0 };
@@ -219,6 +367,8 @@
           postId: getPostId(),
           mode: state.mode,
           context,
+          provider: selectedProvider,
+          model: selectedModel,
         });
 
         if (response.success) {
@@ -259,6 +409,8 @@
           postId: getPostId(),
           currentElement: subtree,
           context,
+          provider: selectedProvider,
+          model: selectedModel,
         });
 
         if (response.success) {

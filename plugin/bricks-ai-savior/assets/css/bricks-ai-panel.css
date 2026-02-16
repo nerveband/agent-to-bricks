@@ -91,6 +91,24 @@
   font-weight: 500;
 }
 
+.bai-model-select {
+  background: #11111b;
+  color: #89b4fa;
+  border: 1px solid #45475a;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-family: inherit;
+  margin-left: 6px;
+  cursor: pointer;
+  max-width: 220px;
+}
+
+.bai-model-select:focus {
+  outline: none;
+  border-color: #89b4fa;
+}
+
 /* ---- Context Bar ---- */
 
 .bai-context {
@@ -364,6 +382,51 @@
 
 #bricks-ai-panel ::-webkit-scrollbar-thumb:hover {
   background: #585b70;
+}
+
+/* ---- Provider Select ---- */
+
+.bai-provider-select {
+  background: #11111b;
+  color: #a6e3a1;
+  border: 1px solid #45475a;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-family: inherit;
+  cursor: pointer;
+  max-width: 140px;
+}
+
+.bai-provider-select:focus {
+  outline: none;
+  border-color: #a6e3a1;
+}
+
+/* ---- Drop Zone ---- */
+
+.bai-drop-zone {
+  margin: 0 14px 0;
+  padding: 12px;
+  border: 2px dashed #45475a;
+  border-radius: 8px;
+  text-align: center;
+  color: #6c7086;
+  font-size: 12px;
+  cursor: default;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.bai-drop-zone .bai-drop-icon {
+  font-size: 16px;
+  margin-right: 4px;
+}
+
+.bai-drop-zone.bai-drop-hover {
+  border-color: #89b4fa;
+  background: rgba(137, 180, 250, 0.1);
+  color: #89b4fa;
 }
 
 /* ---- Error Details ---- */

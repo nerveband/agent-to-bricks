@@ -52,7 +52,7 @@ class BricksAI_LLM_Client {
 		$settings = BricksAI_Settings::get_all();
 
 		$body = array(
-			'model'       => $this->model,
+			'model'       => ! empty( $options['model'] ) ? $options['model'] : $this->model,
 			'messages'    => $messages,
 			'temperature' => $options['temperature'] ?? (float) $settings['temperature'],
 			'max_tokens'  => $options['max_tokens'] ?? (int) $settings['max_tokens'],

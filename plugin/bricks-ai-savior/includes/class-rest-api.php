@@ -43,6 +43,10 @@ class BricksAI_REST_API {
 					'type'    => 'object',
 					'default' => array(),
 				),
+				'model' => array(
+					'type'    => 'string',
+					'default' => '',
+				),
 			),
 		) );
 
@@ -63,6 +67,10 @@ class BricksAI_REST_API {
 				'currentElement' => array(
 					'required' => true,
 					'type'     => 'object',
+				),
+				'model' => array(
+					'type'    => 'string',
+					'default' => '',
 				),
 			),
 		) );
@@ -111,11 +119,13 @@ class BricksAI_REST_API {
 			array( 'role' => 'user', 'content' => $prompt ),
 		);
 
-		$settings   = BricksAI_Settings::get_all();
-		$max_tokens = $mode === 'page' ? max( (int) $settings['max_tokens'], 8000 ) : (int) $settings['max_tokens'];
+		$settings       = BricksAI_Settings::get_all();
+		$max_tokens     = $mode === 'page' ? max( (int) $settings['max_tokens'], 8000 ) : (int) $settings['max_tokens'];
+		$model_override = $request->get_param( 'model' );
 
 		$result = $client->chat_completion( $messages, array(
 			'max_tokens' => $max_tokens,
+			'model'      => $model_override,
 		) );
 
 		if ( is_wp_error( $result ) ) {
@@ -177,7 +187,11 @@ class BricksAI_REST_API {
 			array( 'role' => 'user', 'content' => $prompt ),
 		);
 
-		$result = $client->chat_completion( $messages );
+		$model_override = $request->get_param( 'model' );
+
+		$result = $client->chat_completion( $messages, array(
+			'model' => $model_override,
+		) );
 
 		if ( is_wp_error( $result ) ) {
 			return new WP_REST_Response( array(
