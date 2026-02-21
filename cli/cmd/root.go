@@ -3,8 +3,10 @@ package cmd
 import (
 	"fmt"
 	"os"
+	"strings"
 
 	"github.com/nerveband/agent-to-bricks/internal/config"
+	"github.com/nerveband/agent-to-bricks/internal/updater"
 	"github.com/spf13/cobra"
 )
 
@@ -39,6 +41,40 @@ func Execute() {
 func init() {
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default: ~/.agent-to-bricks/config.yaml)")
 	cobra.OnInitialize(initConfig)
+
+	rootCmd.PersistentPreRun = func(cmd *cobra.Command, args []string) {
+		// Skip update check for these commands
+		name := cmd.Name()
+		if name == "update" || name == "version" || name == "help" {
+			return
+		}
+
+		cache := &updater.CheckCache{Path: updater.DefaultCachePath()}
+		if !cache.NeedsCheck() {
+			// Still show notice if cached version is newer
+			data := cache.Load()
+			if data != nil && data.LatestVersion != "" {
+				cv := strings.TrimPrefix(cliVersion, "v")
+				if updater.CompareVersions(cv, data.LatestVersion) < 0 {
+					fmt.Fprintf(os.Stderr, "\n  Update available: v%s -> run: bricks update\n\n", data.LatestVersion)
+				}
+			}
+			return
+		}
+
+		// Check GitHub (don't block on network errors)
+		u := updater.New(cliVersion, "https://api.github.com/repos/nerveband/agent-to-bricks")
+		rel, err := u.GetLatestRelease()
+		if err != nil {
+			return
+		}
+
+		cache.Save(rel.Version)
+
+		if rel.HasUpdate(cliVersion) {
+			fmt.Fprintf(os.Stderr, "\n  Update available: v%s -> run: bricks update\n\n", rel.Version)
+		}
+	}
 }
 
 func initConfig() {
