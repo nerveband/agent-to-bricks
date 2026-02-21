@@ -2,6 +2,8 @@ package updater
 
 import (
 	"encoding/json"
+	"os"
+	"path/filepath"
 	"fmt"
 	"net/http"
 	"strconv"
@@ -132,4 +134,63 @@ func parseSemver(v string) [3]int {
 		nums[i] = n
 	}
 	return nums
+}
+
+// CheckCache manages the local update check cache file.
+type CheckCache struct {
+	Path string
+}
+
+type checkCacheData struct {
+	LatestVersion string `json:"latestVersion"`
+	CheckedAt     int64  `json:"checkedAt"`
+	TTLHours      int    `json:"ttlHours"`
+}
+
+// DefaultCachePath returns ~/.agent-to-bricks/update-check.json.
+func DefaultCachePath() string {
+	home, _ := os.UserHomeDir()
+	return filepath.Join(home, ".agent-to-bricks", "update-check.json")
+}
+
+// NeedsCheck returns true if the cache is missing or expired (24h TTL).
+func (c *CheckCache) NeedsCheck() bool {
+	data := c.Load()
+	if data == nil {
+		return true
+	}
+	age := time.Now().Unix() - data.CheckedAt
+	ttl := int64(24 * 3600)
+	if data.TTLHours > 0 {
+		ttl = int64(data.TTLHours) * 3600
+	}
+	return age > ttl
+}
+
+// Load reads the cache file. Returns nil if missing or invalid.
+func (c *CheckCache) Load() *checkCacheData {
+	raw, err := os.ReadFile(c.Path)
+	if err != nil {
+		return nil
+	}
+	var data checkCacheData
+	if err := json.Unmarshal(raw, &data); err != nil {
+		return nil
+	}
+	return &data
+}
+
+// Save writes the latest version and current timestamp to cache.
+func (c *CheckCache) Save(latestVersion string) error {
+	data := checkCacheData{
+		LatestVersion: latestVersion,
+		CheckedAt:     time.Now().Unix(),
+		TTLHours:      24,
+	}
+	raw, err := json.Marshal(data)
+	if err != nil {
+		return err
+	}
+	os.MkdirAll(filepath.Dir(c.Path), 0755)
+	return os.WriteFile(c.Path, raw, 0644)
 }
