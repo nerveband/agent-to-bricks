@@ -5,14 +5,18 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"os"
 	"strings"
 )
 
 // Client talks to the Agent to Bricks REST API.
 type Client struct {
-	baseURL    string
-	apiKey     string
-	httpClient *http.Client
+	baseURL           string
+	apiKey            string
+	httpClient        *http.Client
+	cliVersion        string
+	lastPluginVersion string
+	versionWarned     bool
 }
 
 // New creates a client using X-ATB-Key authentication.
@@ -47,6 +51,29 @@ type FrameworksResponse struct {
 	Frameworks map[string]interface{} `json:"frameworks"`
 }
 
+// SetCLIVersion sets the CLI version for mismatch detection.
+func (c *Client) SetCLIVersion(v string) {
+	c.cliVersion = strings.TrimPrefix(v, "v")
+}
+
+// LastPluginVersion returns the plugin version from the most recent API response.
+func (c *Client) LastPluginVersion() string {
+	return c.lastPluginVersion
+}
+
+func (c *Client) checkVersionMismatch() {
+	if c.cliVersion == "" || c.lastPluginVersion == "" || c.versionWarned {
+		return
+	}
+	cli := strings.TrimPrefix(c.cliVersion, "v")
+	plugin := strings.TrimPrefix(c.lastPluginVersion, "v")
+	if cli == plugin {
+		return
+	}
+	c.versionWarned = true
+	fmt.Fprintf(os.Stderr, "\n  Version mismatch: CLI v%s, plugin v%s. Run: bricks update\n\n", cli, plugin)
+}
+
 func (c *Client) do(method, path string, body io.Reader) (*http.Response, error) {
 	return c.doWithHeaders(method, path, body, nil)
 }
@@ -67,6 +94,11 @@ func (c *Client) doWithHeaders(method, path string, body io.Reader, headers map[
 	resp, err := c.httpClient.Do(req)
 	if err != nil {
 		return nil, err
+	}
+	// Read plugin version header for mismatch detection
+	if pv := resp.Header.Get("X-ATB-Version"); pv != "" {
+		c.lastPluginVersion = strings.TrimPrefix(pv, "v")
+		c.checkVersionMismatch()
 	}
 	if resp.StatusCode >= 400 {
 		defer resp.Body.Close()
