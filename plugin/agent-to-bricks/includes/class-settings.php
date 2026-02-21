@@ -111,9 +111,55 @@ class ATB_Settings {
 		$settings  = self::get_all();
 		$providers = ATB_Providers::get_all();
 		$has_key   = ! empty( $settings['api_key'] );
+		$api_keys  = class_exists( 'ATB_API_Auth' ) ? ATB_API_Auth::get_all_keys() : array();
 		?>
 		<div class="wrap">
 			<h1>Agent to Bricks</h1>
+
+			<!-- CLI / Agent API Keys -->
+			<h2>CLI &amp; Agent API Keys</h2>
+			<p class="description">Generate API keys for external tools (CLI, AI agents) to access your site. Keys use the <code>X-ATB-Key</code> header, which works on all hosting providers.</p>
+
+			<table class="widefat fixed striped" style="max-width:700px;">
+				<thead>
+					<tr>
+						<th>Label</th>
+						<th>Key Prefix</th>
+						<th>Created</th>
+						<th>Last Used</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody id="atb-api-keys-list">
+					<?php if ( empty( $api_keys ) ) : ?>
+						<tr id="atb-no-keys"><td colspan="5">No API keys yet.</td></tr>
+					<?php else : ?>
+						<?php foreach ( $api_keys as $k ) : ?>
+							<tr data-prefix="<?php echo esc_attr( $k['prefix'] ); ?>">
+								<td><?php echo esc_html( $k['label'] ); ?></td>
+								<td><code><?php echo esc_html( $k['prefix'] ); ?>...</code></td>
+								<td><?php echo esc_html( $k['created'] ); ?></td>
+								<td><?php echo $k['last_used'] ? esc_html( $k['last_used'] ) : '<em>Never</em>'; ?></td>
+								<td><button type="button" class="button button-small atb-revoke-key" data-prefix="<?php echo esc_attr( $k['prefix'] ); ?>">Revoke</button></td>
+							</tr>
+						<?php endforeach; ?>
+					<?php endif; ?>
+				</tbody>
+			</table>
+
+			<p style="margin-top:10px;">
+				<input type="text" id="atb-new-key-label" placeholder="Key label (e.g. My CLI)" style="width:200px;" />
+				<button type="button" class="button button-primary" id="atb-generate-key">Generate New Key</button>
+			</p>
+			<div id="atb-new-key-display" style="display:none; margin:10px 0; padding:12px; background:#f0f6fc; border:1px solid #0073aa; border-radius:4px;">
+				<strong>New API key created!</strong> Copy it now — it won't be shown again:<br>
+				<code id="atb-new-key-value" style="font-size:14px; user-select:all; display:inline-block; margin:8px 0; padding:4px 8px; background:#fff;"></code>
+				<button type="button" class="button button-small" id="atb-copy-key">Copy</button>
+			</div>
+
+			<hr />
+
+			<h2>LLM Provider Settings</h2>
 
 			<form method="post" action="options.php">
 				<?php settings_fields( 'agent_bricks' ); ?>
@@ -232,6 +278,68 @@ class ATB_Settings {
 
 			// Trigger on load.
 			providerSelect.dispatchEvent(new Event('change'));
+		})();
+		</script>
+
+		<script>
+		(function() {
+			var nonce = '<?php echo wp_create_nonce( 'atb_api_key_nonce' ); ?>';
+			var ajaxUrl = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
+
+			document.getElementById('atb-generate-key').addEventListener('click', function() {
+				var label = document.getElementById('atb-new-key-label').value || 'CLI';
+				var data = new FormData();
+				data.append('action', 'atb_generate_api_key');
+				data.append('nonce', nonce);
+				data.append('label', label);
+
+				fetch(ajaxUrl, { method: 'POST', body: data })
+					.then(function(r) { return r.json(); })
+					.then(function(resp) {
+						if (!resp.success) { alert('Error: ' + (resp.data || 'Unknown')); return; }
+						document.getElementById('atb-new-key-value').textContent = resp.data.key;
+						document.getElementById('atb-new-key-display').style.display = 'block';
+
+						// Add row to table
+						var noKeys = document.getElementById('atb-no-keys');
+						if (noKeys) noKeys.remove();
+						var tbody = document.getElementById('atb-api-keys-list');
+						var tr = document.createElement('tr');
+						tr.setAttribute('data-prefix', resp.data.prefix);
+						tr.innerHTML = '<td>' + label + '</td><td><code>' + resp.data.prefix + '...</code></td><td>Just now</td><td><em>Never</em></td><td><button type="button" class="button button-small atb-revoke-key" data-prefix="' + resp.data.prefix + '">Revoke</button></td>';
+						tbody.appendChild(tr);
+						bindRevoke(tr.querySelector('.atb-revoke-key'));
+						document.getElementById('atb-new-key-label').value = '';
+					});
+			});
+
+			document.getElementById('atb-copy-key').addEventListener('click', function() {
+				var key = document.getElementById('atb-new-key-value').textContent;
+				navigator.clipboard.writeText(key).then(function() {
+					document.getElementById('atb-copy-key').textContent = 'Copied!';
+					setTimeout(function() { document.getElementById('atb-copy-key').textContent = 'Copy'; }, 2000);
+				});
+			});
+
+			function bindRevoke(btn) {
+				btn.addEventListener('click', function() {
+					if (!confirm('Revoke this API key?')) return;
+					var prefix = this.dataset.prefix;
+					var data = new FormData();
+					data.append('action', 'atb_revoke_api_key');
+					data.append('nonce', nonce);
+					data.append('prefix', prefix);
+
+					fetch(ajaxUrl, { method: 'POST', body: data })
+						.then(function(r) { return r.json(); })
+						.then(function(resp) {
+							if (!resp.success) { alert('Error revoking key'); return; }
+							var row = document.querySelector('tr[data-prefix="' + prefix + '"]');
+							if (row) row.remove();
+						});
+				});
+			}
+			document.querySelectorAll('.atb-revoke-key').forEach(bindRevoke);
 		})();
 		</script>
 		<?php

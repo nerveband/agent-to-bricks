@@ -23,6 +23,7 @@ require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-llm-client.php';
 require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-element-validator.php';
 require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-rest-api.php';
 require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-settings.php';
+require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-api-auth.php';
 require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-bricks-lifecycle.php';
 require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-elements-api.php';
 
@@ -30,6 +31,7 @@ require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-elements-api.php';
  * Initialize the plugin.
  */
 function agent_bricks_init() {
+	ATB_API_Auth::init();
 	ATB_Settings::init();
 	ATB_REST_API::init();
 	ATB_Elements_API::init();
