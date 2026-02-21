@@ -10,7 +10,17 @@ import (
 )
 
 // HTMLToBricks converts an HTML string to Bricks elements.
+// Backward-compatible wrapper that calls HTMLToBricksWithRegistry with a nil registry.
 func HTMLToBricks(htmlStr string) ([]map[string]interface{}, error) {
+	return HTMLToBricksWithRegistry(htmlStr, nil)
+}
+
+// HTMLToBricksWithRegistry converts an HTML string to Bricks elements,
+// optionally resolving CSS class names against the provided ClassRegistry.
+// When registry is nil, class attributes are stored as _cssCustom (backward compat).
+// When registry is provided, resolved classes go to _cssGlobalClasses and
+// unresolved classes go to _cssClasses.
+func HTMLToBricksWithRegistry(htmlStr string, registry *ClassRegistry) ([]map[string]interface{}, error) {
 	doc, err := html.Parse(strings.NewReader(htmlStr))
 	if err != nil {
 		return nil, err
@@ -42,7 +52,7 @@ func HTMLToBricks(htmlStr string) ([]map[string]interface{}, error) {
 			}
 
 			// Extract settings from attributes and content
-			settings := extractSettings(n, bricksName)
+			settings := extractSettings(n, bricksName, registry)
 			if len(settings) > 0 {
 				el["settings"] = settings
 			}
@@ -148,7 +158,12 @@ func mapTagToElement(tag string) string {
 }
 
 // extractSettings extracts Bricks settings from an HTML element.
-func extractSettings(n *html.Node, bricksName string) map[string]interface{} {
+// When registry is non-nil, CSS classes are resolved against it:
+//   - Resolved classes are added to _cssGlobalClasses ([]interface{} of string IDs)
+//   - Unresolved classes are added to _cssClasses (space-separated string)
+//
+// When registry is nil, the original _cssCustom behavior is preserved.
+func extractSettings(n *html.Node, bricksName string, registry *ClassRegistry) map[string]interface{} {
 	settings := make(map[string]interface{})
 
 	// Extract text content for text elements
@@ -168,9 +183,30 @@ func extractSettings(n *html.Node, bricksName string) map[string]interface{} {
 	for _, attr := range n.Attr {
 		switch attr.Key {
 		case "class":
-			// Map CSS classes to Bricks classes if possible
 			classes := strings.Fields(attr.Val)
-			if len(classes) > 0 {
+			if len(classes) == 0 {
+				continue
+			}
+
+			if registry != nil {
+				// Registry mode: resolve classes
+				var globalIDs []interface{}
+				var unresolved []string
+				for _, cls := range classes {
+					if id, _, found := registry.Lookup(cls); found {
+						globalIDs = append(globalIDs, id)
+					} else {
+						unresolved = append(unresolved, cls)
+					}
+				}
+				if len(globalIDs) > 0 {
+					settings["_cssGlobalClasses"] = globalIDs
+				}
+				if len(unresolved) > 0 {
+					settings["_cssClasses"] = strings.Join(unresolved, " ")
+				}
+			} else {
+				// Backward compat: store as _cssCustom
 				settings["_cssCustom"] = "." + strings.Join(classes, ".")
 			}
 		case "href":
@@ -195,8 +231,23 @@ func extractSettings(n *html.Node, bricksName string) map[string]interface{} {
 					img["alt"] = attr.Val
 				}
 			}
+		case "style":
+			styleSettings := ParseInlineStyles(attr.Val)
+			for k, v := range styleSettings {
+				settings[k] = v
+			}
 		case "id":
 			settings["_htmlId"] = attr.Val
+		default:
+			// Capture data-* attributes
+			if strings.HasPrefix(attr.Key, "data-") {
+				attrs, _ := settings["_attributes"].([]interface{})
+				attrs = append(attrs, map[string]interface{}{
+					"name":  attr.Key,
+					"value": attr.Val,
+				})
+				settings["_attributes"] = attrs
+			}
 		}
 	}
 
