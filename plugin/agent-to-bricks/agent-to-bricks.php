@@ -28,6 +28,8 @@ require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-bricks-lifecycle.php';
 require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-elements-api.php';
 require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-snapshots-api.php';
 require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-classes-api.php';
+require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-styles-api.php';
+require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-site-api.php';
 
 /**
  * Initialize the plugin.
@@ -39,6 +41,8 @@ function agent_bricks_init() {
 	ATB_Elements_API::init();
 	ATB_Snapshots_API::init();
 	ATB_Classes_API::init();
+	ATB_Styles_API::init();
+	ATB_Site_API::init();
 }
 add_action( 'init', 'agent_bricks_init' );
 
