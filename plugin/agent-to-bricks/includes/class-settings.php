@@ -38,12 +38,13 @@ class ATB_Settings {
 	 */
 	public static function get_all() {
 		$defaults = array(
-			'provider'    => 'cerebras',
-			'api_key'     => '',
-			'model'       => '',
-			'base_url'    => '',
-			'temperature' => 0.7,
-			'max_tokens'  => 4000,
+			'provider'            => 'cerebras',
+			'api_key'             => '',
+			'model'               => '',
+			'base_url'            => '',
+			'temperature'         => 0.7,
+			'max_tokens'          => 4000,
+			'enable_editor_panel' => 0,
 		);
 		$saved = get_option( self::OPTION_KEY, array() );
 		return wp_parse_args( $saved, $defaults );
@@ -59,6 +60,8 @@ class ATB_Settings {
 		$clean['base_url']    = esc_url_raw( $input['base_url'] ?? '' );
 		$clean['temperature'] = floatval( $input['temperature'] ?? 0.7 );
 		$clean['max_tokens']  = intval( $input['max_tokens'] ?? 4000 );
+
+		$clean['enable_editor_panel'] = ! empty( $input['enable_editor_panel'] ) ? 1 : 0;
 
 		// Encrypt API key if changed.
 		$existing = self::get_all();
@@ -244,6 +247,28 @@ class ATB_Settings {
 								value="<?php echo esc_attr( $settings['max_tokens'] ); ?>"
 								min="1000" max="16000" step="500" />
 							<p class="description">4000 for sections, 8000+ for full pages.</p>
+						</td>
+					</tr>
+				</table>
+
+				<h2 class="title" style="margin-top:2em;">Experimental Features</h2>
+				<p class="description">These features are in development and may change. Enable at your own discretion.</p>
+
+				<table class="form-table">
+					<tr>
+						<th scope="row">Bricks Editor Panel</th>
+						<td>
+							<label>
+								<input type="checkbox"
+									name="<?php echo self::OPTION_KEY; ?>[enable_editor_panel]"
+									value="1"
+									<?php checked( $settings['enable_editor_panel'], 1 ); ?> />
+								Enable the AI generation panel inside the Bricks editor
+							</label>
+							<p class="description">
+								When enabled, adds a Generate/Modify panel directly in the Bricks visual editor.
+								This is an experimental feature — the recommended workflow is using the <code>bricks</code> CLI instead.
+							</p>
 						</td>
 					</tr>
 				</table>
