@@ -363,3 +363,29 @@ func (c *Client) Rollback(pageID int, snapshotID string) (*RollbackResponse, err
 	}
 	return &result, nil
 }
+
+// PluginUpdateResponse from POST /site/update.
+type PluginUpdateResponse struct {
+	Success         bool   `json:"success"`
+	Version         string `json:"version"`
+	PreviousVersion string `json:"previousVersion"`
+	Error           string `json:"error,omitempty"`
+}
+
+// TriggerPluginUpdate tells the plugin to self-update to the given version.
+func (c *Client) TriggerPluginUpdate(version string) (*PluginUpdateResponse, error) {
+	payload, _ := json.Marshal(map[string]string{"version": version})
+	resp, err := c.do("POST", "/site/update", strings.NewReader(string(payload)))
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var result PluginUpdateResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return nil, err
+	}
+	if !result.Success {
+		return nil, fmt.Errorf("plugin update failed: %s", result.Error)
+	}
+	return &result, nil
+}
