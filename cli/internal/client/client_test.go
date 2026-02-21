@@ -203,3 +203,37 @@ func TestRollback(t *testing.T) {
 		t.Errorf("expected restored, got %s", resp.ContentHash)
 	}
 }
+
+func TestTriggerPluginUpdate(t *testing.T) {
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path != "/wp-json/agent-bricks/v1/site/update" {
+			t.Errorf("unexpected path: %s", r.URL.Path)
+		}
+		if r.Method != "POST" {
+			t.Errorf("expected POST, got %s", r.Method)
+		}
+		var body map[string]string
+		json.NewDecoder(r.Body).Decode(&body)
+		if body["version"] != "1.4.0" {
+			t.Errorf("expected version 1.4.0, got %s", body["version"])
+		}
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"success":         true,
+			"version":         "1.4.0",
+			"previousVersion": "1.3.0",
+		})
+	}))
+	defer server.Close()
+
+	c := client.New(server.URL, "test-key")
+	result, err := c.TriggerPluginUpdate("1.4.0")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if result.Version != "1.4.0" {
+		t.Errorf("expected 1.4.0, got %s", result.Version)
+	}
+	if result.PreviousVersion != "1.3.0" {
+		t.Errorf("expected 1.3.0, got %s", result.PreviousVersion)
+	}
+}
