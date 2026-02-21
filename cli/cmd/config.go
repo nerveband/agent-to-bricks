@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/nerveband/agent-to-bricks/internal/config"
+	"github.com/nerveband/agent-to-bricks/internal/wizard"
 	"github.com/spf13/cobra"
 )
 
@@ -14,33 +15,55 @@ var configCmd = &cobra.Command{
 
 var configInitCmd = &cobra.Command{
 	Use:   "init",
-	Short: "Create a new config file interactively",
+	Short: "Interactive setup wizard with TUI",
+	Long:  "Launch an interactive terminal UI to configure your Agent to Bricks CLI. Guides you through site connection, LLM provider, and WP-CLI setup.",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		path := cfgFile
 		if path == "" {
 			path = config.DefaultPath()
 		}
 
-		var url, apiKey string
-		fmt.Print("Site URL (e.g. https://example.com): ")
-		fmt.Scanln(&url)
-		fmt.Print("API Key (from WP Admin > Agent to Bricks): ")
-		fmt.Scanln(&apiKey)
+		// Check for --no-tui flag for simple fallback
+		noTUI, _ := cmd.Flags().GetBool("no-tui")
+		if noTUI {
+			return configInitSimple(path)
+		}
 
-		newCfg := &config.Config{
-			Site: config.SiteConfig{
-				URL:    url,
-				APIKey: apiKey,
-			},
+		newCfg, err := wizard.Run()
+		if err != nil {
+			return err
 		}
 
 		if err := newCfg.Save(path); err != nil {
 			return fmt.Errorf("failed to save config: %w", err)
 		}
 
-		fmt.Printf("Config saved to %s\n", path)
+		fmt.Printf("\nConfig saved to %s\n", path)
+		fmt.Println("Run 'bricks site info' to verify your connection.")
 		return nil
 	},
+}
+
+func configInitSimple(path string) error {
+	var url, apiKey string
+	fmt.Print("Site URL (e.g. https://example.com): ")
+	fmt.Scanln(&url)
+	fmt.Print("API Key (from WP Admin > Agent to Bricks): ")
+	fmt.Scanln(&apiKey)
+
+	newCfg := &config.Config{
+		Site: config.SiteConfig{
+			URL:    url,
+			APIKey: apiKey,
+		},
+	}
+
+	if err := newCfg.Save(path); err != nil {
+		return fmt.Errorf("failed to save config: %w", err)
+	}
+
+	fmt.Printf("Config saved to %s\n", path)
+	return nil
 }
 
 var configSetCmd = &cobra.Command{
@@ -53,7 +76,6 @@ var configSetCmd = &cobra.Command{
 			path = config.DefaultPath()
 		}
 
-		// Load existing or create new
 		c, err := config.Load(path)
 		if err != nil {
 			c = &config.Config{}
@@ -73,8 +95,14 @@ var configSetCmd = &cobra.Command{
 			c.LLM.Model = value
 		case "llm.base_url":
 			c.LLM.BaseURL = value
+		case "wpcli.ssh_host":
+			c.WPCLI.SSHHost = value
+		case "wpcli.wp_path":
+			c.WPCLI.WPPath = value
+		case "wpcli.php_bin":
+			c.WPCLI.PHPBin = value
 		default:
-			return fmt.Errorf("unknown config key: %s", key)
+			return fmt.Errorf("unknown config key: %s\nValid keys: site.url, site.api_key, llm.provider, llm.api_key, llm.model, llm.base_url, wpcli.ssh_host, wpcli.wp_path, wpcli.php_bin", key)
 		}
 
 		if err := c.Save(path); err != nil {
@@ -90,19 +118,25 @@ var configListCmd = &cobra.Command{
 	Use:   "list",
 	Short: "Show current configuration",
 	RunE: func(cmd *cobra.Command, args []string) error {
-		fmt.Printf("Site URL:    %s\n", cfg.Site.URL)
+		fmt.Printf("Site URL:      %s\n", cfg.Site.URL)
 		if cfg.Site.APIKey != "" {
-			fmt.Printf("API Key:     %s...\n", cfg.Site.APIKey[:min(12, len(cfg.Site.APIKey))])
+			fmt.Printf("API Key:       %s...\n", cfg.Site.APIKey[:min(12, len(cfg.Site.APIKey))])
 		} else {
-			fmt.Println("API Key:     (not set)")
+			fmt.Println("API Key:       (not set)")
 		}
-		fmt.Printf("LLM Provider: %s\n", cfg.LLM.Provider)
-		fmt.Printf("LLM Model:    %s\n", cfg.LLM.Model)
+		fmt.Printf("LLM Provider:  %s\n", cfg.LLM.Provider)
+		fmt.Printf("LLM Model:     %s\n", cfg.LLM.Model)
+		if cfg.WPCLI.SSHHost != "" {
+			fmt.Printf("WP-CLI SSH:    %s\n", cfg.WPCLI.SSHHost)
+			fmt.Printf("WP-CLI Path:   %s\n", cfg.WPCLI.WPPath)
+		}
 		return nil
 	},
 }
 
 func init() {
+	configInitCmd.Flags().Bool("no-tui", false, "use simple text prompts instead of TUI")
+
 	configCmd.AddCommand(configInitCmd)
 	configCmd.AddCommand(configSetCmd)
 	configCmd.AddCommand(configListCmd)
