@@ -237,3 +237,24 @@ func TestTriggerPluginUpdate(t *testing.T) {
 		t.Errorf("expected 1.3.0, got %s", result.PreviousVersion)
 	}
 }
+
+func TestVersionHeaderWarning(t *testing.T) {
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("X-ATB-Version", "1.5.0")
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"bricksVersion": "1.12", "pluginVersion": "1.5.0",
+			"wpVersion": "6.7", "phpVersion": "8.2",
+		})
+	}))
+	defer server.Close()
+
+	c := client.New(server.URL, "test-key")
+	c.SetCLIVersion("1.4.0")
+	_, err := c.GetSiteInfo()
+	if err != nil {
+		t.Fatal(err)
+	}
+	if c.LastPluginVersion() != "1.5.0" {
+		t.Errorf("expected 1.5.0, got %s", c.LastPluginVersion())
+	}
+}
