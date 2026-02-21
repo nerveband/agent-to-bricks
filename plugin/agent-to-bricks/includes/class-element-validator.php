@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class BricksAI_Element_Validator {
+class ATB_Element_Validator {
 
 	/**
 	 * Known valid Bricks element type names.

@@ -1,4 +1,4 @@
-# Chrome Extension Spec — Bricks AI Savior
+# Chrome Extension Spec — Agent to Bricks
 
 > Version: 0.1.0 | Date: 2026-02-15 | Manifest: MV3
 
@@ -46,7 +46,7 @@ Chrome extension that provides a floating control panel within the Bricks Builde
 │         ▼                                              │
 │  ┌──────────────┐                                      │
 │  │ WP Plugin    │                                      │
-│  │ /bricks-ai/  │                                      │
+│  │ /agent-bricks/  │                                      │
 │  │ v1/          │                                      │
 │  └──────────────┘                                      │
 └──────────────────────────────────────────────────────┘
@@ -61,7 +61,7 @@ Chrome extension that provides a floating control panel within the Bricks Builde
 All messages use the format:
 ```json
 {
-  "source": "bricks-ai-savior",
+  "source": "agent-to-bricks",
   "type": "REQUEST|RESPONSE",
   "action": "ACTION_NAME",
   "requestId": "uuid",
@@ -178,7 +178,7 @@ builderTest._getBricksInternalFunctions().$_setActiveElement();
 
 ```
 ┌─────────────────────────────────┐
-│ 🧱 Bricks AI Savior    [−] [×] │
+│ 🧱 Agent to Bricks     [−] [×] │
 ├─────────────────────────────────┤
 │ Selected: Heading (h1)     [📋] │
 │ ID: 705598 | Parent: 4fdc64    │
@@ -258,7 +258,7 @@ document.head.appendChild(script);
 
 // Communication via window.postMessage
 window.addEventListener('message', (event) => {
-  if (event.data?.source === 'bricks-ai-savior') {
+  if (event.data?.source === 'agent-to-bricks') {
     // Handle response from page script
   }
 });
@@ -279,7 +279,7 @@ setInterval(() => {
   if (state.activeId !== lastActiveId) {
     lastActiveId = state.activeId;
     window.postMessage({
-      source: 'bricks-ai-savior',
+      source: 'agent-to-bricks',
       type: 'EVENT',
       action: 'SELECTION_CHANGED',
       payload: {
@@ -303,7 +303,7 @@ setInterval(() => {
 
 | State | UI Behavior |
 |-------|-------------|
-| Plugin not installed | Banner: "Install Bricks AI Savior plugin for write access" |
+| Plugin not installed | Banner: "Install Agent to Bricks plugin for write access" |
 | Nonce expired | Banner: "Session expired — reload builder" |
 | Validation failed | Show errors inline, highlight invalid fields |
 | Save failed | Show error, offer retry or rollback |

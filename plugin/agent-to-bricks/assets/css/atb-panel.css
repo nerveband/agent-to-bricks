@@ -1,9 +1,9 @@
 /**
- * Bricks AI Savior — Floating Panel Styles
+ * Agent to Bricks — Floating Panel Styles
  * Dark theme to match Bricks editor aesthetic.
  */
 
-#bricks-ai-panel {
+#atb-panel {
   position: fixed;
   top: 80px;
   right: 20px;
@@ -25,11 +25,11 @@
   transition: opacity 0.2s;
 }
 
-#bricks-ai-panel.bai-hidden {
+#atb-panel.bai-hidden {
   display: none;
 }
 
-#bricks-ai-panel.bai-minimized {
+#atb-panel.bai-minimized {
   max-height: 42px;
   overflow: hidden;
 }
@@ -415,20 +415,20 @@
 
 /* ---- Scrollbar ---- */
 
-#bricks-ai-panel ::-webkit-scrollbar {
+#atb-panel ::-webkit-scrollbar {
   width: 6px;
 }
 
-#bricks-ai-panel ::-webkit-scrollbar-track {
+#atb-panel ::-webkit-scrollbar-track {
   background: #1e1e2e;
 }
 
-#bricks-ai-panel ::-webkit-scrollbar-thumb {
+#atb-panel ::-webkit-scrollbar-thumb {
   background: #45475a;
   border-radius: 3px;
 }
 
-#bricks-ai-panel ::-webkit-scrollbar-thumb:hover {
+#atb-panel ::-webkit-scrollbar-thumb:hover {
   background: #585b70;
 }
 
@@ -507,7 +507,7 @@
   border-color: #89b4fa;
 }
 
-#bricks-ai-panel.bai-resizing {
+#atb-panel.bai-resizing {
   transition: none;
   user-select: none;
 }

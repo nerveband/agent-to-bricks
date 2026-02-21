@@ -1,4 +1,4 @@
-# WordPress Plugin Spec — Bricks AI Savior
+# WordPress Plugin Spec — Agent to Bricks
 
 > Version: 0.1.0 | Date: 2026-02-15
 
@@ -14,7 +14,7 @@ Server-side validation gate and persistence layer for AI-driven Bricks Builder m
 
 All endpoints require `manage_options` capability and valid nonce.
 
-### `POST /wp-json/bricks-ai/v1/validate`
+### `POST /wp-json/agent-bricks/v1/validate`
 
 Validates an element patch against the canonical schema without committing.
 
@@ -68,7 +68,7 @@ Validates an element patch against the canonical schema without committing.
 }
 ```
 
-### `POST /wp-json/bricks-ai/v1/commit`
+### `POST /wp-json/agent-bricks/v1/commit`
 
 Validates and commits an element patch. Creates snapshot before writing.
 
@@ -95,14 +95,14 @@ Validates and commits an element patch. Creates snapshot before writing.
 **Flow:**
 1. Validate patch schema
 2. Load current `_bricks_page_content_2` post meta
-3. Create snapshot (store current state in `_bricks_ai_snapshots`)
+3. Create snapshot (store current state in `_agent_bricks_snapshots`)
 4. Apply patch (insert/replace/append/delete)
 5. Validate parent-child integrity
 6. Remap class IDs if needed
 7. Save to post meta
 8. Return result
 
-### `POST /wp-json/bricks-ai/v1/rollback`
+### `POST /wp-json/agent-bricks/v1/rollback`
 
 Restores a previous snapshot.
 
@@ -123,7 +123,7 @@ Restores a previous snapshot.
 }
 ```
 
-### `GET /wp-json/bricks-ai/v1/snapshots`
+### `GET /wp-json/agent-bricks/v1/snapshots`
 
 Lists available snapshots for a post.
 
@@ -145,7 +145,7 @@ Lists available snapshots for a post.
 }
 ```
 
-### `POST /wp-json/bricks-ai/v1/transform`
+### `POST /wp-json/agent-bricks/v1/transform`
 
 Optional server-side LLM proxy (keeps API keys server-side).
 
@@ -174,7 +174,7 @@ Optional server-side LLM proxy (keeps API keys server-side).
 }
 ```
 
-### `GET /wp-json/bricks-ai/v1/elements`
+### `GET /wp-json/agent-bricks/v1/elements`
 
 Read current element tree for a post (for extension bootstrap/sync).
 
@@ -197,7 +197,7 @@ Read current element tree for a post (for extension bootstrap/sync).
 | Layer | Mechanism |
 |-------|-----------|
 | WordPress auth | Cookie-based session (same as builder) |
-| Nonce verification | `wp_verify_nonce()` with `bricks-ai-savior` action |
+| Nonce verification | `wp_verify_nonce()` with `agent-to-bricks` action |
 | Capability check | `current_user_can('edit_post', $postId)` |
 | Rate limiting | 60 requests/minute per user |
 | Input validation | JSON schema validation before any write |
@@ -214,16 +214,16 @@ Read current element tree for a post (for extension bootstrap/sync).
 | `_bricks_page_content_2` | Bricks element data (existing, read/write) |
 | `_bricks_page_header_2` | Header elements (existing) |
 | `_bricks_page_footer_2` | Footer elements (existing) |
-| `_bricks_ai_snapshots` | Snapshot history (new, our plugin) |
-| `_bricks_ai_last_transform` | Last AI transform metadata (new) |
+| `_agent_bricks_snapshots` | Snapshot history (new, our plugin) |
+| `_agent_bricks_last_transform` | Last AI transform metadata (new) |
 
 ### Options Table
 
 | Key | Purpose |
 |-----|---------|
-| `bricks_ai_api_key` | Encrypted LLM API key |
-| `bricks_ai_settings` | Plugin configuration |
-| `bricks_ai_class_map` | Global class name → ID mapping cache |
+| `agent_bricks_api_key` | Encrypted LLM API key |
+| `agent_bricks_settings` | Plugin configuration |
+| `agent_bricks_class_map` | Global class name → ID mapping cache |
 
 ---
 

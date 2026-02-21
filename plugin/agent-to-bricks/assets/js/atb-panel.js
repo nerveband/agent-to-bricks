@@ -1,15 +1,15 @@
 /**
- * Bricks AI Panel
+ * Agent to Bricks Panel
  *
  * Floating UI panel injected into the Bricks editor.
- * Connects to the REST API for LLM generation and uses BricksAIBridge for CRUD.
+ * Connects to the REST API for LLM generation and uses ATBBridge for CRUD.
  */
 (function () {
   'use strict';
 
   // Wait for Bricks editor to be ready.
   const INIT_INTERVAL = setInterval(() => {
-    if (window.BricksAIBridge && window.BricksAIBridge.isReady() && document.querySelector('.brx-body')) {
+    if (window.ATBBridge && window.ATBBridge.isReady() && document.querySelector('.brx-body')) {
       clearInterval(INIT_INTERVAL);
       initPanel();
     }
@@ -19,10 +19,10 @@
   setTimeout(() => clearInterval(INIT_INTERVAL), 30000);
 
   function initPanel() {
-    const config = window.bricksAIConfig || {};
+    const config = window.atbConfig || {};
     let selectedProvider = config.provider || '';
     let selectedModel = config.model || '';
-    const bridge = window.BricksAIBridge;
+    const bridge = window.ATBBridge;
     const providers = config.providers || {};
 
     let state = {
@@ -40,10 +40,10 @@
     // ---- Build DOM ----
 
     const panel = document.createElement('div');
-    panel.id = 'bricks-ai-panel';
+    panel.id = 'atb-panel';
     panel.innerHTML = `
       <div class="bai-header">
-        <span class="bai-header-title">Bricks AI</span>
+        <span class="bai-header-title">Agent to Bricks</span>
         <div class="bai-header-actions">
           <button class="bai-header-btn bai-btn-settings" title="Settings">&#9881;</button>
           <button class="bai-header-btn bai-btn-minimize" title="Minimize">&#8722;</button>
@@ -152,7 +152,7 @@
 
     // Settings link.
     $('.bai-btn-settings').addEventListener('click', () => {
-      window.open('/wp-admin/options-general.php?page=bricks-ai-settings', '_blank');
+      window.open('/wp-admin/options-general.php?page=agent-bricks-settings', '_blank');
     });
 
     // Generate.
@@ -361,7 +361,7 @@
       document.removeEventListener('mousemove', onDrag);
       document.removeEventListener('mouseup', onDragEnd);
       // Save position (and preserve width).
-      localStorage.setItem('bricksAIPanelPos', JSON.stringify({
+      localStorage.setItem('atbPanelPos', JSON.stringify({
         left: panel.style.left,
         top: panel.style.top,
         width: panel.style.width,
@@ -369,7 +369,7 @@
     }
 
     // Restore position and size.
-    const savedPos = localStorage.getItem('bricksAIPanelPos');
+    const savedPos = localStorage.getItem('atbPanelPos');
     if (savedPos) {
       try {
         const pos = JSON.parse(savedPos);
@@ -411,7 +411,7 @@
         top: panel.style.top,
         width: panel.style.width,
       };
-      localStorage.setItem('bricksAIPanelPos', JSON.stringify(posData));
+      localStorage.setItem('atbPanelPos', JSON.stringify(posData));
     }
 
     // ---- Context Updater ----
