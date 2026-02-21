@@ -255,6 +255,101 @@ func (c *Client) ListSnapshots(pageID int) (*SnapshotsListResponse, error) {
 	return &result, nil
 }
 
+// ClassesResponse from GET /classes.
+type ClassesResponse struct {
+	Classes []map[string]interface{} `json:"classes"`
+	Count   int                      `json:"count"`
+	Total   int                      `json:"total"`
+}
+
+// StylesResponse from GET /styles.
+type StylesResponse struct {
+	ThemeStyles    []map[string]interface{} `json:"themeStyles"`
+	ColorPalette   interface{}              `json:"colorPalette"`
+	GlobalSettings map[string]interface{}   `json:"globalSettings"`
+}
+
+// VariablesResponse from GET /variables.
+type VariablesResponse struct {
+	Variables        []map[string]interface{} `json:"variables"`
+	ExtractedFromCSS []map[string]interface{} `json:"extractedFromCSS"`
+}
+
+// ListClasses returns all global classes, optionally filtered by framework.
+func (c *Client) ListClasses(framework string) (*ClassesResponse, error) {
+	path := "/classes"
+	if framework != "" {
+		path += "?framework=" + framework
+	}
+	resp, err := c.do("GET", path, nil)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var result ClassesResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return nil, err
+	}
+	return &result, nil
+}
+
+// CreateClass creates a new global class.
+func (c *Client) CreateClass(name string, settings map[string]interface{}) (map[string]interface{}, error) {
+	payload := map[string]interface{}{"name": name}
+	if settings != nil {
+		payload["settings"] = settings
+	}
+	data, _ := json.Marshal(payload)
+	resp, err := c.do("POST", "/classes", strings.NewReader(string(data)))
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var result map[string]interface{}
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return nil, err
+	}
+	return result, nil
+}
+
+// DeleteClass removes a global class by ID.
+func (c *Client) DeleteClass(classID string) error {
+	resp, err := c.do("DELETE", "/classes/"+classID, nil)
+	if err != nil {
+		return err
+	}
+	resp.Body.Close()
+	return nil
+}
+
+// GetStyles returns theme styles and color palette.
+func (c *Client) GetStyles() (*StylesResponse, error) {
+	resp, err := c.do("GET", "/styles", nil)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var result StylesResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return nil, err
+	}
+	return &result, nil
+}
+
+// GetVariables returns CSS custom properties.
+func (c *Client) GetVariables() (*VariablesResponse, error) {
+	resp, err := c.do("GET", "/variables", nil)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var result VariablesResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return nil, err
+	}
+	return &result, nil
+}
+
 // Rollback restores a snapshot.
 func (c *Client) Rollback(pageID int, snapshotID string) (*RollbackResponse, error) {
 	resp, err := c.do("POST", fmt.Sprintf("/pages/%d/snapshots/%s/rollback", pageID, snapshotID), nil)
