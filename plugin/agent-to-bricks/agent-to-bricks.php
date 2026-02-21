@@ -62,6 +62,12 @@ function agent_bricks_enqueue_editor_assets() {
 		return;
 	}
 
+	// Check if editor panel is enabled (disabled by default — experimental).
+	$settings_check = ATB_Settings::get_all();
+	if ( empty( $settings_check['enable_editor_panel'] ) ) {
+		return;
+	}
+
 	$settings   = ATB_Settings::get_all();
 	$provider   = ATB_Providers::get_provider( $settings['provider'] );
 	$model      = $settings['model'] ?: ( $provider['default'] ?? '' );
@@ -118,12 +124,13 @@ add_action( 'wp_enqueue_scripts', 'agent_bricks_enqueue_editor_assets' );
  */
 function agent_bricks_activate() {
 	$defaults = array(
-		'provider'    => 'cerebras',
-		'api_key'     => '',
-		'model'       => '',
-		'base_url'    => '',
-		'temperature' => 0.7,
-		'max_tokens'  => 4000,
+		'provider'            => 'cerebras',
+		'api_key'             => '',
+		'model'               => '',
+		'base_url'            => '',
+		'temperature'         => 0.7,
+		'max_tokens'          => 4000,
+		'enable_editor_panel' => 0,
 	);
 
 	if ( ! get_option( 'agent_bricks_settings' ) ) {
