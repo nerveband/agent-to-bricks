@@ -16,7 +16,7 @@ var configCmd = &cobra.Command{
 var configInitCmd = &cobra.Command{
 	Use:   "init",
 	Short: "Interactive setup wizard with TUI",
-	Long:  "Launch an interactive terminal UI to configure your Agent to Bricks CLI. Guides you through site connection, LLM provider, and WP-CLI setup.",
+	Long:  "Launch an interactive terminal UI to configure your Agent to Bricks CLI. Guides you through site connection and LLM provider setup.",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		path := cfgFile
 		if path == "" {
@@ -95,14 +95,8 @@ var configSetCmd = &cobra.Command{
 			c.LLM.Model = value
 		case "llm.base_url":
 			c.LLM.BaseURL = value
-		case "wpcli.ssh_host":
-			c.WPCLI.SSHHost = value
-		case "wpcli.wp_path":
-			c.WPCLI.WPPath = value
-		case "wpcli.php_bin":
-			c.WPCLI.PHPBin = value
 		default:
-			return fmt.Errorf("unknown config key: %s\nValid keys: site.url, site.api_key, llm.provider, llm.api_key, llm.model, llm.base_url, wpcli.ssh_host, wpcli.wp_path, wpcli.php_bin", key)
+			return fmt.Errorf("unknown config key: %s\nValid keys: site.url, site.api_key, llm.provider, llm.api_key, llm.model, llm.base_url", key)
 		}
 
 		if err := c.Save(path); err != nil {
@@ -126,10 +120,6 @@ var configListCmd = &cobra.Command{
 		}
 		fmt.Printf("LLM Provider:  %s\n", cfg.LLM.Provider)
 		fmt.Printf("LLM Model:     %s\n", cfg.LLM.Model)
-		if cfg.WPCLI.SSHHost != "" {
-			fmt.Printf("WP-CLI SSH:    %s\n", cfg.WPCLI.SSHHost)
-			fmt.Printf("WP-CLI Path:   %s\n", cfg.WPCLI.WPPath)
-		}
 		return nil
 	},
 }

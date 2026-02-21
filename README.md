@@ -351,7 +351,7 @@ agent-to-bricks/
 │       ├── llm/                LLM client + prompt engineering
 │       ├── styles/profile.go   Style profile management
 │       ├── wizard/wizard.go    TUI setup wizard (Bubble Tea)
-│       └── wpcli/wpcli.go      WP-CLI SSH bridge
+│       └── updater/            CLI self-update logic
 │
 ├── Makefile                    build/test/install/deploy
 ├── docs/plans/                 Design docs and implementation plans
@@ -468,10 +468,6 @@ llm:
   base_url: ""              # Custom endpoint for local models
   temperature: 0.3
 
-wpcli:
-  ssh_host: user@server     # For remote WP-CLI operations
-  wp_path: /var/www/html
-  php_bin: php
 ```
 
 Available config keys for `bricks config set`:
@@ -484,9 +480,6 @@ Available config keys for `bricks config set`:
 | `llm.api_key` | LLM API key |
 | `llm.model` | Model name |
 | `llm.base_url` | Custom API endpoint |
-| `wpcli.ssh_host` | SSH host for WP-CLI |
-| `wpcli.wp_path` | WordPress install path |
-| `wpcli.php_bin` | PHP binary path |
 
 ## License
 

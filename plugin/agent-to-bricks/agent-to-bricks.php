@@ -31,6 +31,7 @@ require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-classes-api.php';
 require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-styles-api.php';
 require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-site-api.php';
 require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-templates-api.php';
+require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-media-api.php';
 require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-update-api.php';
 require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-update-checker.php';
 
@@ -59,6 +60,7 @@ function agent_bricks_init() {
 	ATB_Styles_API::init();
 	ATB_Site_API::init();
 	ATB_Templates_API::init();
+	ATB_Media_API::init();
 	ATB_Update_API::init();
 	ATB_Update_Checker::init();
 }
