@@ -103,5 +103,132 @@ if ($no_match_r['status'] === 428) {
     $fail++;
 }
 
+// ===== Test 5: POST append element =====
+echo "TEST 5: POST append element... ";
+$get_r = dispatch_rest('GET', "/agent-bricks/v1/pages/$test_page/elements", ['id' => $test_page]);
+$hash = $get_r['data']['contentHash'];
+$count_before = count($get_r['data']['elements']);
+
+$post_r = dispatch_rest('POST', "/agent-bricks/v1/pages/$test_page/elements",
+    ['id' => $test_page],
+    ['if_match' => $hash],
+    ['elements' => [[
+        'id' => 'atbtest99',
+        'name' => 'heading',
+        'parent' => 0,
+        'children' => [],
+        'settings' => ['text' => 'ATB Test Heading', 'tag' => 'h2'],
+    ]]]
+);
+if ($post_r['status'] === 201 && isset($post_r['data']['contentHash'])) {
+    $count_after = $post_r['data']['count'] ?? 0;
+    echo "PASS (appended, count $count_before -> $count_after)\n";
+    $pass++;
+    $append_hash = $post_r['data']['contentHash'];
+} else {
+    echo "FAIL (status={$post_r['status']})\n";
+    echo json_encode($post_r['data']) . "\n";
+    $fail++;
+    $append_hash = null;
+}
+
+// ===== Test 6: DELETE element =====
+echo "TEST 6: DELETE element... ";
+if ($append_hash) {
+    $del_r = dispatch_rest('DELETE', "/agent-bricks/v1/pages/$test_page/elements",
+        ['id' => $test_page],
+        ['if_match' => $append_hash],
+        ['ids' => ['atbtest99']]
+    );
+    if ($del_r['status'] === 200) {
+        echo "PASS (deleted)\n";
+        $pass++;
+        $del_hash = $del_r['data']['contentHash'];
+    } else {
+        echo "FAIL (status={$del_r['status']})\n";
+        echo json_encode($del_r['data']) . "\n";
+        $fail++;
+        $del_hash = null;
+    }
+} else {
+    echo "SKIP (append failed)\n";
+    $del_hash = null;
+}
+
+// ===== Test 7: PUT full replace =====
+echo "TEST 7: PUT full replace... ";
+$get_r = dispatch_rest('GET', "/agent-bricks/v1/pages/$test_page/elements", ['id' => $test_page]);
+$hash = $get_r['data']['contentHash'];
+$original_elements = $get_r['data']['elements'];
+
+$replace_elements = [
+    ['id' => 'rep001', 'name' => 'section', 'parent' => 0, 'children' => [], 'settings' => [], 'label' => 'Replaced'],
+];
+$put_r = dispatch_rest('PUT', "/agent-bricks/v1/pages/$test_page/elements",
+    ['id' => $test_page],
+    ['if_match' => $hash],
+    ['elements' => $replace_elements]
+);
+if ($put_r['status'] === 200 && isset($put_r['data']['contentHash'])) {
+    // Verify replacement worked
+    $verify = dispatch_rest('GET', "/agent-bricks/v1/pages/$test_page/elements", ['id' => $test_page]);
+    $verify_count = count($verify['data']['elements']);
+    if ($verify_count === 1 && $verify['data']['elements'][0]['id'] === 'rep001') {
+        echo "PASS (replaced with 1 element)\n";
+        $pass++;
+    } else {
+        echo "FAIL (expected 1 element, got $verify_count)\n";
+        $fail++;
+    }
+
+    // Restore original elements
+    dispatch_rest('PUT', "/agent-bricks/v1/pages/$test_page/elements",
+        ['id' => $test_page],
+        ['if_match' => $put_r['data']['contentHash']],
+        ['elements' => $original_elements]
+    );
+} else {
+    echo "FAIL (status={$put_r['status']})\n";
+    echo json_encode($put_r['data']) . "\n";
+    $fail++;
+}
+
+// ===== Test 8: Batch operations =====
+echo "TEST 8: Batch operations... ";
+$get_r = dispatch_rest('GET', "/agent-bricks/v1/pages/$test_page/elements", ['id' => $test_page]);
+$hash = $get_r['data']['contentHash'];
+$first_id = $get_r['data']['elements'][0]['id'] ?? null;
+
+$batch_r = dispatch_rest('POST', "/agent-bricks/v1/pages/$test_page/elements/batch",
+    ['id' => $test_page],
+    ['if_match' => $hash],
+    ['operations' => [
+        ['op' => 'append', 'elements' => [['id' => 'batch01', 'name' => 'heading', 'parent' => 0, 'children' => [], 'settings' => ['text' => 'Batch Test']]]],
+        ['op' => 'patch', 'patches' => [['id' => $first_id, 'label' => 'Batch Patched']]],
+    ]]
+);
+if ($batch_r['status'] === 200 && isset($batch_r['data']['contentHash'])) {
+    echo "PASS (batch completed)\n";
+    $pass++;
+
+    // Cleanup: delete batch element and restore label
+    $bh = $batch_r['data']['contentHash'];
+    dispatch_rest('DELETE', "/agent-bricks/v1/pages/$test_page/elements",
+        ['id' => $test_page],
+        ['if_match' => $bh],
+        ['ids' => ['batch01']]
+    );
+    $get2 = dispatch_rest('GET', "/agent-bricks/v1/pages/$test_page/elements", ['id' => $test_page]);
+    dispatch_rest('PATCH', "/agent-bricks/v1/pages/$test_page/elements",
+        ['id' => $test_page],
+        ['if_match' => $get2['data']['contentHash']],
+        ['patches' => [['id' => $first_id, 'label' => 'Test Section']]]
+    );
+} else {
+    echo "FAIL (status={$batch_r['status']})\n";
+    echo json_encode($batch_r['data']) . "\n";
+    $fail++;
+}
+
 echo "\nResults: $pass passed, $fail failed\n";
 exit($fail > 0 ? 1 : 0);
