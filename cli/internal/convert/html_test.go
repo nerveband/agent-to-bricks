@@ -177,3 +177,49 @@ func TestConvertClassAttribute(t *testing.T) {
 		t.Errorf("expected '.hero.dark-bg', got '%s'", css)
 	}
 }
+
+func TestConvertHTMLWithRegistry(t *testing.T) {
+	reg := convert.NewClassRegistry()
+	reg.Add("height--full", "acss_import_height--full", "acss")
+	reg.Add("bg--ultra-dark", "acss_import_bg--ultra-dark", "acss")
+	reg.Add("fr-lede", "kddjfd", "frames")
+
+	html := `<section class="height--full bg--ultra-dark">
+		<h1>Hello</h1>
+		<p class="fr-lede my-custom">Text</p>
+	</section>`
+
+	elements, err := convert.HTMLToBricksWithRegistry(html, reg)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	// Section should have _cssGlobalClasses with resolved IDs
+	section := elements[0]
+	settings, _ := section["settings"].(map[string]interface{})
+	globalClasses, _ := settings["_cssGlobalClasses"].([]interface{})
+	if len(globalClasses) != 2 {
+		t.Fatalf("expected 2 global classes on section, got %d: %v", len(globalClasses), globalClasses)
+	}
+
+	// Find the paragraph element
+	var para map[string]interface{}
+	for _, el := range elements {
+		if n, _ := el["name"].(string); n == "text-basic" {
+			para = el
+			break
+		}
+	}
+	if para == nil {
+		t.Fatal("paragraph element not found")
+	}
+	pSettings, _ := para["settings"].(map[string]interface{})
+	pGlobal, _ := pSettings["_cssGlobalClasses"].([]interface{})
+	if len(pGlobal) != 1 || pGlobal[0] != "kddjfd" {
+		t.Errorf("expected [kddjfd] for fr-lede, got %v", pGlobal)
+	}
+	pCustom, _ := pSettings["_cssClasses"].(string)
+	if pCustom != "my-custom" {
+		t.Errorf("expected 'my-custom' as unresolved class, got %q", pCustom)
+	}
+}
