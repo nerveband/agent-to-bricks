@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class BricksAI_Providers {
+class ATB_Providers {
 
 	private static $providers = array(
 		'cerebras' => array(

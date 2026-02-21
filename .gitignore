@@ -33,3 +33,8 @@ test-data/gallery-bravo-raw.json
 
 # mcporter config
 config/mcporter.json
+
+# CLI credentials (lives at ~/.agent-to-bricks/ but guard against accidental copies)
+config.yaml
+*.credentials
+*.secret

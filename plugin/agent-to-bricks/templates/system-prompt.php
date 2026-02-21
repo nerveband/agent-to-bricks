@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class BricksAI_System_Prompt {
+class ATB_System_Prompt {
 
 	/**
 	 * Build the system prompt for the given mode.

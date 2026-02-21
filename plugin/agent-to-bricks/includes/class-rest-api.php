@@ -1,26 +1,26 @@
 <?php
 /**
- * REST API endpoints for Bricks AI Savior.
+ * REST API endpoints for Agent to Bricks.
  *
- * POST /bricks-ai/v1/generate  — Generate new elements
- * POST /bricks-ai/v1/modify    — Modify existing elements
- * GET  /bricks-ai/v1/providers  — List available providers
+ * POST /agent-bricks/v1/generate  — Generate new elements
+ * POST /agent-bricks/v1/modify    — Modify existing elements
+ * GET  /agent-bricks/v1/providers  — List available providers
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-require_once BRICKS_AI_PLUGIN_DIR . 'templates/system-prompt.php';
+require_once AGENT_BRICKS_PLUGIN_DIR . 'templates/system-prompt.php';
 
-class BricksAI_REST_API {
+class ATB_REST_API {
 
 	public static function init() {
 		add_action( 'rest_api_init', array( __CLASS__, 'register_routes' ) );
 	}
 
 	public static function register_routes() {
-		register_rest_route( 'bricks-ai/v1', '/generate', array(
+		register_rest_route( 'agent-bricks/v1', '/generate', array(
 			'methods'             => 'POST',
 			'callback'            => array( __CLASS__, 'handle_generate' ),
 			'permission_callback' => array( __CLASS__, 'check_permissions' ),
@@ -50,7 +50,7 @@ class BricksAI_REST_API {
 			),
 		) );
 
-		register_rest_route( 'bricks-ai/v1', '/modify', array(
+		register_rest_route( 'agent-bricks/v1', '/modify', array(
 			'methods'             => 'POST',
 			'callback'            => array( __CLASS__, 'handle_modify' ),
 			'permission_callback' => array( __CLASS__, 'check_permissions' ),
@@ -75,7 +75,7 @@ class BricksAI_REST_API {
 			),
 		) );
 
-		register_rest_route( 'bricks-ai/v1', '/providers', array(
+		register_rest_route( 'agent-bricks/v1', '/providers', array(
 			'methods'             => 'GET',
 			'callback'            => array( __CLASS__, 'handle_providers' ),
 			'permission_callback' => array( __CLASS__, 'check_permissions' ),
@@ -102,7 +102,7 @@ class BricksAI_REST_API {
 		$context = $request->get_param( 'context' ) ?: array();
 
 		// Build client.
-		$client = BricksAI_LLM_Client::from_settings();
+		$client = ATB_LLM_Client::from_settings();
 		if ( is_wp_error( $client ) ) {
 			return new WP_REST_Response( array(
 				'success' => false,
@@ -111,7 +111,7 @@ class BricksAI_REST_API {
 		}
 
 		// Build system prompt.
-		$system_prompt = BricksAI_System_Prompt::build( $mode, $context );
+		$system_prompt = ATB_System_Prompt::build( $mode, $context );
 
 		// Call LLM.
 		$messages = array(
@@ -119,7 +119,7 @@ class BricksAI_REST_API {
 			array( 'role' => 'user', 'content' => $prompt ),
 		);
 
-		$settings       = BricksAI_Settings::get_all();
+		$settings       = ATB_Settings::get_all();
 		$max_tokens     = $mode === 'page' ? max( (int) $settings['max_tokens'], 8000 ) : (int) $settings['max_tokens'];
 		$model_override = $request->get_param( 'model' );
 
@@ -136,7 +136,7 @@ class BricksAI_REST_API {
 		}
 
 		// Validate response.
-		$validation = BricksAI_Element_Validator::validate( $result['data'] );
+		$validation = ATB_Element_Validator::validate( $result['data'] );
 
 		if ( ! $validation['valid'] ) {
 			return new WP_REST_Response( array(
@@ -148,7 +148,7 @@ class BricksAI_REST_API {
 			), 422 );
 		}
 
-		$resolved = BricksAI_Providers::resolve( $settings );
+		$resolved = ATB_Providers::resolve( $settings );
 
 		return new WP_REST_Response( array(
 			'success'     => true,
@@ -170,7 +170,7 @@ class BricksAI_REST_API {
 		$context        = $request->get_param( 'context' ) ?: array();
 
 		// Build client.
-		$client = BricksAI_LLM_Client::from_settings();
+		$client = ATB_LLM_Client::from_settings();
 		if ( is_wp_error( $client ) ) {
 			return new WP_REST_Response( array(
 				'success' => false,
@@ -180,7 +180,7 @@ class BricksAI_REST_API {
 
 		// Build system prompt for modify mode.
 		$context['currentElement'] = $current;
-		$system_prompt = BricksAI_System_Prompt::build( 'modify', $context );
+		$system_prompt = ATB_System_Prompt::build( 'modify', $context );
 
 		$messages = array(
 			array( 'role' => 'system', 'content' => $system_prompt ),
@@ -201,7 +201,7 @@ class BricksAI_REST_API {
 		}
 
 		// Validate.
-		$validation = BricksAI_Element_Validator::validate( $result['data'] );
+		$validation = ATB_Element_Validator::validate( $result['data'] );
 
 		if ( ! $validation['valid'] ) {
 			return new WP_REST_Response( array(
@@ -212,8 +212,8 @@ class BricksAI_REST_API {
 			), 422 );
 		}
 
-		$settings = BricksAI_Settings::get_all();
-		$resolved = BricksAI_Providers::resolve( $settings );
+		$settings = ATB_Settings::get_all();
+		$resolved = ATB_Providers::resolve( $settings );
 
 		return new WP_REST_Response( array(
 			'success'     => true,
@@ -230,8 +230,8 @@ class BricksAI_REST_API {
 	 * GET /providers — List available providers (no keys exposed).
 	 */
 	public static function handle_providers( $request ) {
-		$providers = BricksAI_Providers::get_all();
-		$settings  = BricksAI_Settings::get_all();
+		$providers = ATB_Providers::get_all();
+		$settings  = ATB_Settings::get_all();
 
 		$safe = array();
 		foreach ( $providers as $id => $provider ) {

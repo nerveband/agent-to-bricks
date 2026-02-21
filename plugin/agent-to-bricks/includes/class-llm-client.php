@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class BricksAI_LLM_Client {
+class ATB_LLM_Client {
 
 	private $base_url;
 	private $api_key;
@@ -26,16 +26,16 @@ class BricksAI_LLM_Client {
 	 * Create from current plugin settings.
 	 */
 	public static function from_settings() {
-		$settings = BricksAI_Settings::get_all();
-		$resolved = BricksAI_Providers::resolve( $settings );
-		$api_key  = BricksAI_Settings::decrypt_key( $settings['api_key'] );
+		$settings = ATB_Settings::get_all();
+		$resolved = ATB_Providers::resolve( $settings );
+		$api_key  = ATB_Settings::decrypt_key( $settings['api_key'] );
 
 		if ( empty( $api_key ) ) {
-			return new WP_Error( 'bricks_ai_no_key', 'No API key configured. Go to Settings > Bricks AI.' );
+			return new WP_Error( 'agent_bricks_no_key', 'No API key configured. Go to Settings > Agent to Bricks.' );
 		}
 
 		if ( empty( $resolved['base_url'] ) ) {
-			return new WP_Error( 'bricks_ai_no_url', 'No base URL configured for the selected provider.' );
+			return new WP_Error( 'agent_bricks_no_url', 'No base URL configured for the selected provider.' );
 		}
 
 		return new self( $resolved['base_url'], $api_key, $resolved['model'] );
@@ -49,7 +49,7 @@ class BricksAI_LLM_Client {
 	 * @return array|WP_Error Parsed response or error.
 	 */
 	public function chat_completion( $messages, $options = array() ) {
-		$settings = BricksAI_Settings::get_all();
+		$settings = ATB_Settings::get_all();
 
 		$body = array(
 			'model'       => ! empty( $options['model'] ) ? $options['model'] : $this->model,
@@ -84,18 +84,18 @@ class BricksAI_LLM_Client {
 
 		if ( $code !== 200 ) {
 			$error_msg = $data['error']['message'] ?? "HTTP $code from LLM provider";
-			return new WP_Error( 'bricks_ai_llm_error', $error_msg, array( 'status' => $code ) );
+			return new WP_Error( 'agent_bricks_llm_error', $error_msg, array( 'status' => $code ) );
 		}
 
 		if ( empty( $data['choices'][0]['message']['content'] ) ) {
-			return new WP_Error( 'bricks_ai_empty_response', 'LLM returned an empty response.' );
+			return new WP_Error( 'agent_bricks_empty_response', 'LLM returned an empty response.' );
 		}
 
 		$content = $data['choices'][0]['message']['content'];
 		$parsed  = json_decode( $content, true );
 
 		if ( json_last_error() !== JSON_ERROR_NONE ) {
-			return new WP_Error( 'bricks_ai_json_parse', 'LLM response was not valid JSON: ' . json_last_error_msg() );
+			return new WP_Error( 'agent_bricks_json_parse', 'LLM response was not valid JSON: ' . json_last_error_msg() );
 		}
 
 		return array(

@@ -1,15 +1,15 @@
 <?php
 /**
- * Admin settings page for Bricks AI Savior.
+ * Admin settings page for Agent to Bricks.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class BricksAI_Settings {
+class ATB_Settings {
 
-	const OPTION_KEY = 'bricks_ai_settings';
+	const OPTION_KEY = 'agent_bricks_settings';
 
 	public static function init() {
 		add_action( 'admin_menu', array( __CLASS__, 'add_menu_page' ) );
@@ -18,16 +18,16 @@ class BricksAI_Settings {
 
 	public static function add_menu_page() {
 		add_options_page(
-			'Bricks AI Savior',
-			'Bricks AI',
+			'Agent to Bricks',
+			'Agent to Bricks',
 			'manage_options',
-			'bricks-ai-settings',
+			'agent-bricks-settings',
 			array( __CLASS__, 'render_page' )
 		);
 	}
 
 	public static function register_settings() {
-		register_setting( 'bricks_ai', self::OPTION_KEY, array(
+		register_setting( 'agent_bricks', self::OPTION_KEY, array(
 			'type'              => 'array',
 			'sanitize_callback' => array( __CLASS__, 'sanitize' ),
 		) );
@@ -109,20 +109,20 @@ class BricksAI_Settings {
 	 */
 	public static function render_page() {
 		$settings  = self::get_all();
-		$providers = BricksAI_Providers::get_all();
+		$providers = ATB_Providers::get_all();
 		$has_key   = ! empty( $settings['api_key'] );
 		?>
 		<div class="wrap">
-			<h1>Bricks AI Savior</h1>
+			<h1>Agent to Bricks</h1>
 
 			<form method="post" action="options.php">
-				<?php settings_fields( 'bricks_ai' ); ?>
+				<?php settings_fields( 'agent_bricks' ); ?>
 
 				<table class="form-table">
 					<tr>
-						<th scope="row"><label for="bricks_ai_provider">LLM Provider</label></th>
+						<th scope="row"><label for="agent_bricks_provider">LLM Provider</label></th>
 						<td>
-							<select name="<?php echo self::OPTION_KEY; ?>[provider]" id="bricks_ai_provider">
+							<select name="<?php echo self::OPTION_KEY; ?>[provider]" id="agent_bricks_provider">
 								<?php foreach ( $providers as $id => $provider ) : ?>
 									<option value="<?php echo esc_attr( $id ); ?>"
 										<?php selected( $settings['provider'], $id ); ?>
@@ -137,11 +137,11 @@ class BricksAI_Settings {
 					</tr>
 
 					<tr>
-						<th scope="row"><label for="bricks_ai_api_key">API Key</label></th>
+						<th scope="row"><label for="agent_bricks_api_key">API Key</label></th>
 						<td>
 							<input type="password"
 								name="<?php echo self::OPTION_KEY; ?>[api_key]"
-								id="bricks_ai_api_key"
+								id="agent_bricks_api_key"
 								value="<?php echo $has_key ? '••••••••' : ''; ?>"
 								class="regular-text"
 								autocomplete="off" />
@@ -152,24 +152,24 @@ class BricksAI_Settings {
 					</tr>
 
 					<tr>
-						<th scope="row"><label for="bricks_ai_model">Model</label></th>
+						<th scope="row"><label for="agent_bricks_model">Model</label></th>
 						<td>
 							<input type="text"
 								name="<?php echo self::OPTION_KEY; ?>[model]"
-								id="bricks_ai_model"
+								id="agent_bricks_model"
 								value="<?php echo esc_attr( $settings['model'] ); ?>"
 								class="regular-text"
 								placeholder="Leave empty for provider default" />
-							<p class="description" id="bricks_ai_model_suggestions"></p>
+							<p class="description" id="agent_bricks_model_suggestions"></p>
 						</td>
 					</tr>
 
 					<tr>
-						<th scope="row"><label for="bricks_ai_base_url">Base URL</label></th>
+						<th scope="row"><label for="agent_bricks_base_url">Base URL</label></th>
 						<td>
 							<input type="url"
 								name="<?php echo self::OPTION_KEY; ?>[base_url]"
-								id="bricks_ai_base_url"
+								id="agent_bricks_base_url"
 								value="<?php echo esc_attr( $settings['base_url'] ); ?>"
 								class="regular-text"
 								placeholder="Auto-filled per provider" />
@@ -178,23 +178,23 @@ class BricksAI_Settings {
 					</tr>
 
 					<tr>
-						<th scope="row"><label for="bricks_ai_temperature">Temperature</label></th>
+						<th scope="row"><label for="agent_bricks_temperature">Temperature</label></th>
 						<td>
 							<input type="range"
 								name="<?php echo self::OPTION_KEY; ?>[temperature]"
-								id="bricks_ai_temperature"
+								id="agent_bricks_temperature"
 								min="0" max="1.5" step="0.1"
 								value="<?php echo esc_attr( $settings['temperature'] ); ?>" />
-							<span id="bricks_ai_temp_value"><?php echo esc_html( $settings['temperature'] ); ?></span>
+							<span id="agent_bricks_temp_value"><?php echo esc_html( $settings['temperature'] ); ?></span>
 						</td>
 					</tr>
 
 					<tr>
-						<th scope="row"><label for="bricks_ai_max_tokens">Max Tokens</label></th>
+						<th scope="row"><label for="agent_bricks_max_tokens">Max Tokens</label></th>
 						<td>
 							<input type="number"
 								name="<?php echo self::OPTION_KEY; ?>[max_tokens]"
-								id="bricks_ai_max_tokens"
+								id="agent_bricks_max_tokens"
 								value="<?php echo esc_attr( $settings['max_tokens'] ); ?>"
 								min="1000" max="16000" step="500" />
 							<p class="description">4000 for sections, 8000+ for full pages.</p>
@@ -208,12 +208,12 @@ class BricksAI_Settings {
 
 		<script>
 		(function() {
-			var providerSelect = document.getElementById('bricks_ai_provider');
-			var baseUrlInput = document.getElementById('bricks_ai_base_url');
-			var modelInput = document.getElementById('bricks_ai_model');
-			var modelSuggestions = document.getElementById('bricks_ai_model_suggestions');
-			var tempSlider = document.getElementById('bricks_ai_temperature');
-			var tempValue = document.getElementById('bricks_ai_temp_value');
+			var providerSelect = document.getElementById('agent_bricks_provider');
+			var baseUrlInput = document.getElementById('agent_bricks_base_url');
+			var modelInput = document.getElementById('agent_bricks_model');
+			var modelSuggestions = document.getElementById('agent_bricks_model_suggestions');
+			var tempSlider = document.getElementById('agent_bricks_temperature');
+			var tempValue = document.getElementById('agent_bricks_temp_value');
 
 			providerSelect.addEventListener('change', function() {
 				var opt = this.options[this.selectedIndex];

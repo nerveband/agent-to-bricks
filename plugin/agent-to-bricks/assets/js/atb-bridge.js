@@ -1,5 +1,5 @@
 /**
- * Bricks AI Bridge
+ * Agent to Bricks Bridge
  *
  * Wraps the builderTest API for safe CRUD operations.
  * All mutations go through Bricks' internal functions, preserving native undo/redo.
@@ -7,7 +7,7 @@
 (function () {
   'use strict';
 
-  const BricksAIBridge = {
+  const ATBBridge = {
 
     // ---- State Access ----
 
@@ -413,5 +413,5 @@
   };
 
   // Expose globally.
-  window.BricksAIBridge = BricksAIBridge;
+  window.ATBBridge = ATBBridge;
 })();
