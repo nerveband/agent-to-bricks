@@ -48,6 +48,10 @@ type FrameworksResponse struct {
 }
 
 func (c *Client) do(method, path string, body io.Reader) (*http.Response, error) {
+	return c.doWithHeaders(method, path, body, nil)
+}
+
+func (c *Client) doWithHeaders(method, path string, body io.Reader, headers map[string]string) (*http.Response, error) {
 	url := c.baseURL + "/wp-json/agent-bricks/v1" + path
 	req, err := http.NewRequest(method, url, body)
 	if err != nil {
@@ -56,6 +60,9 @@ func (c *Client) do(method, path string, body io.Reader) (*http.Response, error)
 	req.Header.Set("X-ATB-Key", c.apiKey)
 	if body != nil {
 		req.Header.Set("Content-Type", "application/json")
+	}
+	for k, v := range headers {
+		req.Header.Set(k, v)
 	}
 	resp, err := c.httpClient.Do(req)
 	if err != nil {
@@ -67,6 +74,41 @@ func (c *Client) do(method, path string, body io.Reader) (*http.Response, error)
 		return nil, fmt.Errorf("HTTP %d: %s", resp.StatusCode, string(data))
 	}
 	return resp, nil
+}
+
+// MutationResponse from PUT/POST/DELETE/PATCH element operations.
+type MutationResponse struct {
+	Success     bool   `json:"success"`
+	ContentHash string `json:"contentHash"`
+	Count       int    `json:"count"`
+}
+
+// SnapshotResponse from POST /pages/{id}/snapshots.
+type SnapshotResponse struct {
+	SnapshotID  string `json:"snapshotId"`
+	ContentHash string `json:"contentHash"`
+	Label       string `json:"label"`
+}
+
+// SnapshotsListResponse from GET /pages/{id}/snapshots.
+type SnapshotsListResponse struct {
+	Snapshots []Snapshot `json:"snapshots"`
+}
+
+// Snapshot represents a single snapshot entry.
+type Snapshot struct {
+	ID          string `json:"id"`
+	ContentHash string `json:"contentHash"`
+	Label       string `json:"label"`
+	CreatedAt   string `json:"createdAt"`
+	Count       int    `json:"count"`
+}
+
+// RollbackResponse from POST /pages/{id}/snapshots/{snapshot_id}/rollback.
+type RollbackResponse struct {
+	Success     bool   `json:"success"`
+	ContentHash string `json:"contentHash"`
+	Restored    string `json:"restored"`
 }
 
 func (c *Client) GetElements(pageID int) (*ElementsResponse, error) {
@@ -102,6 +144,125 @@ func (c *Client) GetFrameworks() (*FrameworksResponse, error) {
 	}
 	defer resp.Body.Close()
 	var result FrameworksResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return nil, err
+	}
+	return &result, nil
+}
+
+// ReplaceElements does a full PUT replace of all elements on a page.
+func (c *Client) ReplaceElements(pageID int, elements []map[string]interface{}, ifMatch string) (*MutationResponse, error) {
+	payload, _ := json.Marshal(map[string]interface{}{"elements": elements})
+	headers := map[string]string{}
+	if ifMatch != "" {
+		headers["If-Match"] = ifMatch
+	}
+	resp, err := c.doWithHeaders("PUT", fmt.Sprintf("/pages/%d/elements", pageID), strings.NewReader(string(payload)), headers)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var result MutationResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return nil, err
+	}
+	return &result, nil
+}
+
+// PatchElements updates specific elements by ID.
+func (c *Client) PatchElements(pageID int, patches []map[string]interface{}, ifMatch string) (*MutationResponse, error) {
+	payload, _ := json.Marshal(map[string]interface{}{"elements": patches})
+	headers := map[string]string{}
+	if ifMatch != "" {
+		headers["If-Match"] = ifMatch
+	}
+	resp, err := c.doWithHeaders("PATCH", fmt.Sprintf("/pages/%d/elements", pageID), strings.NewReader(string(payload)), headers)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var result MutationResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return nil, err
+	}
+	return &result, nil
+}
+
+// AppendElements adds new elements to a page.
+func (c *Client) AppendElements(pageID int, elements []map[string]interface{}, ifMatch string) (*MutationResponse, error) {
+	payload, _ := json.Marshal(map[string]interface{}{"elements": elements})
+	headers := map[string]string{}
+	if ifMatch != "" {
+		headers["If-Match"] = ifMatch
+	}
+	resp, err := c.doWithHeaders("POST", fmt.Sprintf("/pages/%d/elements", pageID), strings.NewReader(string(payload)), headers)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var result MutationResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return nil, err
+	}
+	return &result, nil
+}
+
+// DeleteElements removes elements by ID.
+func (c *Client) DeleteElements(pageID int, ids []string, ifMatch string) (*MutationResponse, error) {
+	payload, _ := json.Marshal(map[string]interface{}{"ids": ids})
+	headers := map[string]string{}
+	if ifMatch != "" {
+		headers["If-Match"] = ifMatch
+	}
+	resp, err := c.doWithHeaders("DELETE", fmt.Sprintf("/pages/%d/elements", pageID), strings.NewReader(string(payload)), headers)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var result MutationResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return nil, err
+	}
+	return &result, nil
+}
+
+// CreateSnapshot creates a snapshot of the current page state.
+func (c *Client) CreateSnapshot(pageID int, label string) (*SnapshotResponse, error) {
+	payload, _ := json.Marshal(map[string]string{"label": label})
+	resp, err := c.do("POST", fmt.Sprintf("/pages/%d/snapshots", pageID), strings.NewReader(string(payload)))
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var result SnapshotResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return nil, err
+	}
+	return &result, nil
+}
+
+// ListSnapshots lists all snapshots for a page.
+func (c *Client) ListSnapshots(pageID int) (*SnapshotsListResponse, error) {
+	resp, err := c.do("GET", fmt.Sprintf("/pages/%d/snapshots", pageID), nil)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var result SnapshotsListResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return nil, err
+	}
+	return &result, nil
+}
+
+// Rollback restores a snapshot.
+func (c *Client) Rollback(pageID int, snapshotID string) (*RollbackResponse, error) {
+	resp, err := c.do("POST", fmt.Sprintf("/pages/%d/snapshots/%s/rollback", pageID, snapshotID), nil)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var result RollbackResponse
 	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
 		return nil, err
 	}
