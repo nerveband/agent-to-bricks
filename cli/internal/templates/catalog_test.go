@@ -121,3 +121,48 @@ func TestLearnFromPage(t *testing.T) {
 		t.Errorf("expected category 'learned', got '%s'", learned[0].Category)
 	}
 }
+
+func TestCatalogLoadFramesFormat(t *testing.T) {
+	dir := t.TempDir()
+	// Create a subdirectory to simulate category
+	heroDir := filepath.Join(dir, "hero")
+	os.MkdirAll(heroDir, 0755)
+
+	framesJSON := `{
+		"idx": 442,
+		"title": "Hero Alpha",
+		"elementCount": 10,
+		"classCount": 11,
+		"bricksExport": {
+			"content": [
+				{"id": "cfc3c9", "name": "section", "parent": 0, "children": ["49c48b"], "label": "Hero Alpha"},
+				{"id": "49c48b", "name": "container", "parent": "cfc3c9", "children": []}
+			],
+			"globalClasses": [
+				{"id": "btn--primary", "name": "btn--primary"},
+				{"id": "bkkiqm", "name": "hero-section"}
+			]
+		}
+	}`
+	os.WriteFile(filepath.Join(heroDir, "hero-alpha.json"), []byte(framesJSON), 0644)
+
+	cat := templates.NewCatalog()
+	err := cat.LoadDir(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	tmpl := cat.Get("Hero Alpha")
+	if tmpl == nil {
+		t.Fatal("Hero Alpha not found")
+	}
+	if len(tmpl.Elements) != 2 {
+		t.Errorf("expected 2 elements, got %d", len(tmpl.Elements))
+	}
+	if len(tmpl.GlobalClasses) != 2 {
+		t.Errorf("expected 2 global classes, got %d", len(tmpl.GlobalClasses))
+	}
+	if tmpl.Category != "hero" {
+		t.Errorf("expected category 'hero', got %q", tmpl.Category)
+	}
+}

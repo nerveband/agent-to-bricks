@@ -6,8 +6,14 @@ import (
 	"fmt"
 )
 
+// ComposeResult holds composed elements and merged global classes.
+type ComposeResult struct {
+	Elements      []map[string]interface{}
+	GlobalClasses []map[string]interface{}
+}
+
 // Compose merges multiple templates into a single element list.
-// It remaps IDs to avoid collisions and deduplicates global classes.
+// It remaps IDs to avoid collisions.
 func Compose(templates []*Template) ([]map[string]interface{}, error) {
 	if len(templates) == 0 {
 		return nil, fmt.Errorf("no templates to compose")
@@ -36,6 +42,50 @@ func Compose(templates []*Template) ([]map[string]interface{}, error) {
 	}
 
 	return result, nil
+}
+
+// ComposeWithClasses merges templates and their global classes.
+func ComposeWithClasses(templates []*Template) (*ComposeResult, error) {
+	if len(templates) == 0 {
+		return nil, fmt.Errorf("no templates to compose")
+	}
+
+	var allElements []map[string]interface{}
+	usedIDs := make(map[string]bool)
+	seenClasses := make(map[string]bool)
+	var mergedClasses []map[string]interface{}
+
+	for _, tmpl := range templates {
+		// Build an ID remap table for this template
+		idMap := make(map[string]string)
+		for _, el := range tmpl.Elements {
+			oldID, _ := el["id"].(string)
+			if oldID != "" {
+				newID := generateUniqueID(usedIDs)
+				idMap[oldID] = newID
+				usedIDs[newID] = true
+			}
+		}
+
+		// Apply remap
+		for _, el := range tmpl.Elements {
+			allElements = append(allElements, remapElement(el, idMap))
+		}
+
+		// Merge global classes (deduplicate by name)
+		for _, gc := range tmpl.GlobalClasses {
+			name, _ := gc["name"].(string)
+			if name != "" && !seenClasses[name] {
+				seenClasses[name] = true
+				mergedClasses = append(mergedClasses, gc)
+			}
+		}
+	}
+
+	return &ComposeResult{
+		Elements:      allElements,
+		GlobalClasses: mergedClasses,
+	}, nil
 }
 
 // remapElement creates a copy of the element with remapped IDs.

@@ -107,3 +107,55 @@ func TestComposePreservesSettings(t *testing.T) {
 		t.Errorf("settings text not preserved: %v", settings["text"])
 	}
 }
+
+func TestComposeWithClasses(t *testing.T) {
+	tmpl1 := &templates.Template{
+		Name: "hero",
+		Elements: []map[string]interface{}{
+			{"id": "s1", "name": "section", "parent": float64(0), "children": []interface{}{}},
+		},
+		GlobalClasses: []map[string]interface{}{
+			{"id": "cls1", "name": "btn--primary"},
+			{"id": "cls2", "name": "hero-section"},
+		},
+	}
+	tmpl2 := &templates.Template{
+		Name: "footer",
+		Elements: []map[string]interface{}{
+			{"id": "s1", "name": "section", "parent": float64(0), "children": []interface{}{}},
+		},
+		GlobalClasses: []map[string]interface{}{
+			{"id": "cls1", "name": "btn--primary"}, // Duplicate — should be deduped
+			{"id": "cls3", "name": "footer-dark"},
+		},
+	}
+
+	result, err := templates.ComposeWithClasses([]*templates.Template{tmpl1, tmpl2})
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if len(result.Elements) != 2 {
+		t.Errorf("expected 2 elements, got %d", len(result.Elements))
+	}
+	if len(result.GlobalClasses) != 3 {
+		t.Errorf("expected 3 unique global classes, got %d", len(result.GlobalClasses))
+	}
+
+	// Verify deduplication kept first occurrence
+	names := map[string]bool{}
+	for _, gc := range result.GlobalClasses {
+		name, _ := gc["name"].(string)
+		if names[name] {
+			t.Errorf("duplicate global class: %s", name)
+		}
+		names[name] = true
+	}
+}
+
+func TestComposeWithClassesEmpty(t *testing.T) {
+	_, err := templates.ComposeWithClasses([]*templates.Template{})
+	if err == nil {
+		t.Error("expected error for empty compose")
+	}
+}

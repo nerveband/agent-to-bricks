@@ -79,6 +79,9 @@ var templatesShowCmd = &cobra.Command{
 		fmt.Printf("Category:    %s\n", tmpl.Category)
 		fmt.Printf("Tags:        %v\n", tmpl.Tags)
 		fmt.Printf("Elements:    %d\n", len(tmpl.Elements))
+		if len(tmpl.GlobalClasses) > 0 {
+			fmt.Printf("Classes:     %d\n", len(tmpl.GlobalClasses))
+		}
 		fmt.Printf("Source:      %s\n", tmpl.Source)
 		return nil
 	},
@@ -177,6 +180,7 @@ var templatesLearnCmd = &cobra.Command{
 }
 
 var composeOutput string
+var composePush int
 
 var composeCmd = &cobra.Command{
 	Use:   "compose <template1> [template2] ...",
@@ -197,15 +201,37 @@ var composeCmd = &cobra.Command{
 			tmpls = append(tmpls, tmpl)
 		}
 
-		elements, err := templates.Compose(tmpls)
+		result, err := templates.ComposeWithClasses(tmpls)
 		if err != nil {
 			return err
 		}
 
-		data, err := json.MarshalIndent(map[string]interface{}{
+		elements := result.Elements
+
+		// Push to a page if --push flag is set
+		if composePush > 0 {
+			if err := requireConfig(); err != nil {
+				return err
+			}
+			c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+			pushResult, err := c.ReplaceElements(composePush, elements, "")
+			if err != nil {
+				return fmt.Errorf("push failed: %w", err)
+			}
+			fmt.Printf("Pushed %d elements to page %d\n", pushResult.Count, composePush)
+			return nil
+		}
+
+		// Build output payload including globalClasses if present
+		output := map[string]interface{}{
 			"elements": elements,
 			"count":    len(elements),
-		}, "", "  ")
+		}
+		if len(result.GlobalClasses) > 0 {
+			output["globalClasses"] = result.GlobalClasses
+		}
+
+		data, err := json.MarshalIndent(output, "", "  ")
 		if err != nil {
 			return err
 		}
@@ -258,6 +284,7 @@ var templatesSearchCmd = &cobra.Command{
 
 func init() {
 	composeCmd.Flags().StringVarP(&composeOutput, "output", "o", "", "output file path")
+	composeCmd.Flags().IntVar(&composePush, "push", 0, "push composed result to page ID")
 
 	templatesCmd.AddCommand(templatesListCmd)
 	templatesCmd.AddCommand(templatesShowCmd)
