@@ -1,0 +1,66 @@
+{
+  "name": "Automatic.css",
+  "id": "acss",
+  "version": "3.3.x",
+  "description": "Utility-first CSS framework for WordPress page builders",
+  "pluginSlug": "automaticcss-plugin/automaticcss-plugin.php",
+  "optionKey": "automatic_css_settings",
+  "bricksClassPrefix": "acss_import_",
+  "spacing": {
+    "variables": {
+      "xs": "--space-xs",
+      "s": "--space-s",
+      "m": "--space-m",
+      "l": "--space-l",
+      "xl": "--space-xl",
+      "xxl": "--space-xxl"
+    },
+    "settingsKeys": ["space-scale", "section-padding-block", "section-padding-x-min", "section-padding-x-max"]
+  },
+  "colors": {
+    "families": ["primary", "secondary", "tertiary", "accent", "base", "neutral", "shade", "action", "info", "success", "warning", "danger"],
+    "variablePattern": "--{family}",
+    "shadePattern": "--{family}-{shade}",
+    "shades": ["ultra-light", "light", "medium", "dark", "ultra-dark", "hover"],
+    "settingsKeyPattern": "color-{family}"
+  },
+  "typography": {
+    "headings": ["h1", "h2", "h3", "h4", "h5", "h6"],
+    "textSizes": {
+      "xs": "text-xs",
+      "s": "text-s",
+      "m": "text-m",
+      "l": "text-l",
+      "xl": "text-xl",
+      "xxl": "text-xxl"
+    },
+    "variables": {
+      "rootFontSize": "--root-font-size",
+      "textFont": "--text-font-family",
+      "headingFont": "--heading-font-family"
+    }
+  },
+  "buttons": {
+    "variants": ["primary", "secondary", "tertiary", "accent", "action", "base", "neutral", "info", "success", "warning", "danger"],
+    "classPattern": "btn--{variant}",
+    "modifiers": ["outline", "dark", "dark-outline"]
+  },
+  "layout": {
+    "classes": {
+      "grid": ["grid-l", "grid-m", "grid-s"],
+      "flex": ["flex-grow", "flex-center", "flex-wrap"],
+      "justify": ["justify-center", "justify-between", "justify-start", "justify-end"],
+      "align": ["align-center", "align-start", "align-end", "align-stretch"]
+    },
+    "variables": {
+      "contentWidth": "--content-width",
+      "sectionPadding": "--section-padding"
+    }
+  },
+  "utilityClasses": {
+    "spacing": ["pad-section", "pad-l", "pad-m", "pad-s", "margin-auto", "margin-l", "margin-m", "margin-s"],
+    "display": ["hide-on-desktop", "hide-on-tablet", "hide-on-phone"],
+    "text": ["text-center", "text-left", "text-right", "text-uppercase", "text-lowercase"],
+    "sizing": ["width-100", "height-100", "max-width-s", "max-width-m", "max-width-l"]
+  }
+}
