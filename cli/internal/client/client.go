@@ -1,11 +1,14 @@
 package client
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"io"
+	"mime/multipart"
 	"net/http"
 	"os"
+	"path/filepath"
 	"strings"
 )
 
@@ -418,6 +421,83 @@ func (c *Client) TriggerPluginUpdate(version string) (*PluginUpdateResponse, err
 	}
 	if !result.Success {
 		return nil, fmt.Errorf("plugin update failed: %s", result.Error)
+	}
+	return &result, nil
+}
+
+// MediaItem represents a single media library entry.
+type MediaItem struct {
+	ID       int    `json:"id"`
+	Title    string `json:"title"`
+	URL      string `json:"url"`
+	MimeType string `json:"mimeType"`
+	Date     string `json:"date"`
+	Filesize int64  `json:"filesize"`
+}
+
+// MediaListResponse from GET /media.
+type MediaListResponse struct {
+	Media []MediaItem `json:"media"`
+	Count int         `json:"count"`
+}
+
+// MediaUploadResponse from POST /media/upload.
+type MediaUploadResponse struct {
+	ID       int    `json:"id"`
+	URL      string `json:"url"`
+	MimeType string `json:"mimeType"`
+	Filename string `json:"filename"`
+	Filesize int64  `json:"filesize"`
+}
+
+// ListMedia returns media library items, optionally filtered by search term.
+func (c *Client) ListMedia(search string) (*MediaListResponse, error) {
+	path := "/media"
+	if search != "" {
+		path += "?search=" + search
+	}
+	resp, err := c.do("GET", path, nil)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var result MediaListResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return nil, err
+	}
+	return &result, nil
+}
+
+// UploadMedia uploads a file to the WordPress media library via multipart POST.
+func (c *Client) UploadMedia(filePath string) (*MediaUploadResponse, error) {
+	f, err := os.Open(filePath)
+	if err != nil {
+		return nil, fmt.Errorf("cannot open file: %w", err)
+	}
+	defer f.Close()
+
+	var buf bytes.Buffer
+	writer := multipart.NewWriter(&buf)
+	part, err := writer.CreateFormFile("file", filepath.Base(filePath))
+	if err != nil {
+		return nil, err
+	}
+	if _, err := io.Copy(part, f); err != nil {
+		return nil, err
+	}
+	writer.Close()
+
+	headers := map[string]string{
+		"Content-Type": writer.FormDataContentType(),
+	}
+	resp, err := c.doWithHeaders("POST", "/media/upload", &buf, headers)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var result MediaUploadResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return nil, err
 	}
 	return &result, nil
 }

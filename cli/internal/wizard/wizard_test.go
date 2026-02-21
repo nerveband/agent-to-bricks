@@ -60,14 +60,6 @@ func TestBuildConfig(t *testing.T) {
 	ti.SetValue("sk-cerebras-key")
 	m.inputs[stepLLMKey] = ti
 
-	ti = m.inputs[stepWPCLISSH]
-	ti.SetValue("user@host.com")
-	m.inputs[stepWPCLISSH] = ti
-
-	ti = m.inputs[stepWPCLIPath]
-	ti.SetValue("/var/www/html")
-	m.inputs[stepWPCLIPath] = ti
-
 	cfg := m.buildConfig()
 
 	if cfg.Site.URL != "https://example.com" {
@@ -82,15 +74,9 @@ func TestBuildConfig(t *testing.T) {
 	if cfg.LLM.APIKey != "sk-cerebras-key" {
 		t.Errorf("expected LLM key, got %q", cfg.LLM.APIKey)
 	}
-	if cfg.WPCLI.SSHHost != "user@host.com" {
-		t.Errorf("expected SSH host, got %q", cfg.WPCLI.SSHHost)
-	}
-	if cfg.WPCLI.WPPath != "/var/www/html" {
-		t.Errorf("expected WP path, got %q", cfg.WPCLI.WPPath)
-	}
 }
 
-func TestBuildConfigNoWPCLI(t *testing.T) {
+func TestBuildConfigSkipLLM(t *testing.T) {
 	m := initialModel()
 
 	ti := m.inputs[stepSiteURL]
@@ -105,9 +91,6 @@ func TestBuildConfigNoWPCLI(t *testing.T) {
 
 	cfg := m.buildConfig()
 
-	if cfg.WPCLI.SSHHost != "" {
-		t.Error("expected empty SSH host when skipped")
-	}
 	if cfg.LLM.Provider != "" {
 		t.Errorf("expected empty provider when skipped, got %q", cfg.LLM.Provider)
 	}
@@ -131,13 +114,8 @@ func TestStepIndex(t *testing.T) {
 		t.Error("LLM should be step 2")
 	}
 
-	m.step = stepWPCLISSH
-	if m.stepIndex() != 3 {
-		t.Error("WP-CLI should be step 3")
-	}
-
 	m.step = stepDone
-	if m.stepIndex() != 4 {
-		t.Error("done should be step 4")
+	if m.stepIndex() != 3 {
+		t.Error("done should be step 3")
 	}
 }

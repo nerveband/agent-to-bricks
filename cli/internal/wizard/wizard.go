@@ -22,8 +22,6 @@ const (
 	stepTestConnection
 	stepLLMProvider
 	stepLLMKey
-	stepWPCLISSH
-	stepWPCLIPath
 	stepSummary
 	stepDone
 )
@@ -104,8 +102,6 @@ func initialModel() model {
 		stepSiteURL:  newTextInput("https://mysite.com", false),
 		stepAPIKey:   newTextInput("atb_xxxxxxxxxxxxx", true),
 		stepLLMKey:   newTextInput("sk-xxxxxxxxxxxxx", true),
-		stepWPCLISSH: newTextInput("user@mysite.com (leave empty to skip)", false),
-		stepWPCLIPath: newTextInput("/var/www/html", false),
 	}
 
 	return model{
@@ -246,12 +242,8 @@ func (m model) handleEnter() (tea.Model, tea.Cmd) {
 		providers := []string{"cerebras", "openrouter", "openai", "ollama", ""}
 		provider := providers[m.llmChoice]
 		if provider == "" || provider == "ollama" {
-			// Skip key step for ollama and skip
-			m.step = stepWPCLISSH
-			ti := m.inputs[stepWPCLISSH]
-			ti.Focus()
-			m.inputs[stepWPCLISSH] = ti
-			return m, ti.Focus()
+			m.step = stepSummary
+			return m, nil
 		}
 		m.step = stepLLMKey
 		ti := m.inputs[stepLLMKey]
@@ -260,25 +252,6 @@ func (m model) handleEnter() (tea.Model, tea.Cmd) {
 		return m, ti.Focus()
 
 	case stepLLMKey:
-		m.step = stepWPCLISSH
-		ti := m.inputs[stepWPCLISSH]
-		ti.Focus()
-		m.inputs[stepWPCLISSH] = ti
-		return m, ti.Focus()
-
-	case stepWPCLISSH:
-		ssh := strings.TrimSpace(m.inputs[stepWPCLISSH].Value())
-		if ssh != "" {
-			m.step = stepWPCLIPath
-			ti := m.inputs[stepWPCLIPath]
-			ti.Focus()
-			m.inputs[stepWPCLIPath] = ti
-			return m, ti.Focus()
-		}
-		m.step = stepSummary
-		return m, nil
-
-	case stepWPCLIPath:
 		m.step = stepSummary
 		return m, nil
 
@@ -308,14 +281,6 @@ func (m model) buildConfig() *config.Config {
 		}
 	}
 
-	ssh := strings.TrimSpace(m.inputs[stepWPCLISSH].Value())
-	if ssh != "" {
-		c.WPCLI = config.WPCLIConfig{
-			SSHHost: ssh,
-			WPPath:  strings.TrimSpace(m.inputs[stepWPCLIPath].Value()),
-		}
-	}
-
 	return c
 }
 
@@ -328,7 +293,7 @@ func (m model) View() string {
 
 	// Header
 	header := titleStyle.Render("Agent to Bricks Setup")
-	steps := []string{"Site", "Auth", "LLM", "WP-CLI", "Done"}
+	steps := []string{"Site", "Auth", "LLM", "Done"}
 	currentStepIdx := m.stepIndex()
 	stepBar := m.renderStepBar(steps, currentStepIdx)
 
@@ -350,10 +315,6 @@ func (m model) View() string {
 		s.WriteString(m.renderLLMChoice())
 	case stepLLMKey:
 		s.WriteString(m.renderInput("API Key for "+m.selectedProvider(), stepLLMKey, "Get your key from the provider's dashboard"))
-	case stepWPCLISSH:
-		s.WriteString(m.renderInput("SSH Connection (optional)", stepWPCLISSH, "For WP-CLI access: user@host. Press Enter to skip."))
-	case stepWPCLIPath:
-		s.WriteString(m.renderInput("WordPress Install Path", stepWPCLIPath, "Absolute path to WordPress on the server"))
 	case stepSummary:
 		s.WriteString(m.renderSummary())
 	case stepDone:
@@ -377,10 +338,8 @@ func (m model) stepIndex() int {
 		return 1
 	case m.step <= stepLLMKey:
 		return 2
-	case m.step <= stepWPCLIPath:
-		return 3
 	default:
-		return 4
+		return 3
 	}
 }
 
@@ -407,7 +366,7 @@ func (m model) renderWelcome() string {
 			"  1. A WordPress site with Bricks Builder\n" +
 			"  2. The Agent to Bricks plugin activated\n" +
 			"  3. An API key (generated in WP Admin)\n\n" +
-			dimStyle.Render("Optional: LLM provider for AI generation, SSH for WP-CLI"))
+			dimStyle.Render("Optional: LLM provider for AI generation"))
 	s.WriteString("  " + content + "\n")
 	return s.String()
 }
@@ -469,12 +428,6 @@ func (m model) renderSummary() string {
 		maskKey(m.inputs[stepAPIKey].Value()),
 		providers[m.llmChoice],
 	)
-
-	ssh := strings.TrimSpace(m.inputs[stepWPCLISSH].Value())
-	if ssh != "" {
-		content += fmt.Sprintf("  SSH Host:     %s\n", ssh)
-		content += fmt.Sprintf("  WP Path:      %s\n", m.inputs[stepWPCLIPath].Value())
-	}
 
 	s.WriteString(boxStyle.Render(content))
 	s.WriteString("\n\n  " + dimStyle.Render("Press Enter to save configuration"))

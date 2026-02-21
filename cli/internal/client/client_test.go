@@ -4,6 +4,9 @@ import (
 	"encoding/json"
 	"net/http"
 	"net/http/httptest"
+	"os"
+	"path/filepath"
+	"strings"
 	"testing"
 
 	"github.com/nerveband/agent-to-bricks/internal/client"
@@ -256,5 +259,118 @@ func TestVersionHeaderWarning(t *testing.T) {
 	}
 	if c.LastPluginVersion() != "1.5.0" {
 		t.Errorf("expected 1.5.0, got %s", c.LastPluginVersion())
+	}
+}
+
+func TestListMedia(t *testing.T) {
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path != "/wp-json/agent-bricks/v1/media" {
+			t.Errorf("unexpected path: %s", r.URL.Path)
+		}
+		if r.Method != "GET" {
+			t.Errorf("expected GET, got %s", r.Method)
+		}
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"media": []map[string]interface{}{
+				{"id": 10, "title": "logo.png", "url": "https://example.com/logo.png", "mimeType": "image/png", "date": "2025-01-01", "filesize": 1024},
+			},
+			"count": 1,
+		})
+	}))
+	defer srv.Close()
+
+	c := client.New(srv.URL, "atb_testkey")
+	resp, err := c.ListMedia("")
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if resp.Count != 1 {
+		t.Errorf("expected count 1, got %d", resp.Count)
+	}
+	if resp.Media[0].Title != "logo.png" {
+		t.Errorf("expected title logo.png, got %s", resp.Media[0].Title)
+	}
+}
+
+func TestListMediaWithSearch(t *testing.T) {
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path != "/wp-json/agent-bricks/v1/media" {
+			t.Errorf("unexpected path: %s", r.URL.Path)
+		}
+		if r.URL.Query().Get("search") != "logo" {
+			t.Errorf("expected search=logo, got %s", r.URL.Query().Get("search"))
+		}
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"media": []map[string]interface{}{},
+			"count": 0,
+		})
+	}))
+	defer srv.Close()
+
+	c := client.New(srv.URL, "atb_testkey")
+	resp, err := c.ListMedia("logo")
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if resp.Count != 0 {
+		t.Errorf("expected count 0, got %d", resp.Count)
+	}
+}
+
+func TestUploadMedia(t *testing.T) {
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path != "/wp-json/agent-bricks/v1/media/upload" {
+			t.Errorf("unexpected path: %s", r.URL.Path)
+		}
+		if r.Method != "POST" {
+			t.Errorf("expected POST, got %s", r.Method)
+		}
+		ct := r.Header.Get("Content-Type")
+		if !strings.HasPrefix(ct, "multipart/form-data") {
+			t.Errorf("expected multipart content type, got %s", ct)
+		}
+		// Parse the multipart to verify file field exists
+		if err := r.ParseMultipartForm(10 << 20); err != nil {
+			t.Fatalf("failed to parse multipart: %v", err)
+		}
+		if _, _, err := r.FormFile("file"); err != nil {
+			t.Fatalf("expected file field: %v", err)
+		}
+		w.WriteHeader(201)
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"id":       42,
+			"url":      "https://example.com/uploads/test.txt",
+			"mimeType": "text/plain",
+			"filename": "test.txt",
+			"filesize": 13,
+		})
+	}))
+	defer srv.Close()
+
+	// Create a temp file to upload
+	tmpDir := t.TempDir()
+	tmpFile := filepath.Join(tmpDir, "test.txt")
+	if err := os.WriteFile(tmpFile, []byte("hello upload!"), 0644); err != nil {
+		t.Fatal(err)
+	}
+
+	c := client.New(srv.URL, "atb_testkey")
+	resp, err := c.UploadMedia(tmpFile)
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if resp.ID != 42 {
+		t.Errorf("expected ID 42, got %d", resp.ID)
+	}
+	if resp.Filename != "test.txt" {
+		t.Errorf("expected filename test.txt, got %s", resp.Filename)
+	}
+}
+
+func TestUploadMediaFileNotFound(t *testing.T) {
+	c := client.New("http://localhost", "atb_testkey")
+	_, err := c.UploadMedia("/nonexistent/file.txt")
+	if err == nil {
+		t.Error("expected error for missing file")
 	}
 }
