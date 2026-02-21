@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/nerveband/agent-to-bricks/internal/client"
 	"github.com/nerveband/agent-to-bricks/internal/doctor"
 	"github.com/spf13/cobra"
 )
@@ -23,7 +22,7 @@ var doctorCmd = &cobra.Command{
 			return fmt.Errorf("invalid page ID: %s", args[0])
 		}
 
-		c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+		c := newSiteClient()
 		resp, err := c.GetElements(pageID)
 		if err != nil {
 			return fmt.Errorf("failed to pull elements: %w", err)

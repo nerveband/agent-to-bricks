@@ -5,7 +5,6 @@ import (
 	"os"
 
 	"github.com/nerveband/agent-to-bricks/internal/agent"
-	"github.com/nerveband/agent-to-bricks/internal/client"
 	"github.com/nerveband/agent-to-bricks/internal/convert"
 	"github.com/nerveband/agent-to-bricks/internal/templates"
 	"github.com/spf13/cobra"
@@ -51,7 +50,7 @@ Examples:
 
 		// Fetch site info if configured
 		if cfg.Site.URL != "" && cfg.Site.APIKey != "" {
-			c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+			c := newSiteClient()
 
 			// Site info
 			info, err := c.GetSiteInfo()

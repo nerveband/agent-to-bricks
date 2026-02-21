@@ -6,7 +6,6 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/nerveband/agent-to-bricks/internal/client"
 	"github.com/spf13/cobra"
 )
 
@@ -23,7 +22,7 @@ var siteInfoCmd = &cobra.Command{
 			return err
 		}
 
-		c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+		c := newSiteClient()
 
 		info, err := c.GetSiteInfo()
 		if err != nil {
@@ -50,7 +49,7 @@ var siteFrameworksCmd = &cobra.Command{
 			return err
 		}
 
-		c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+		c := newSiteClient()
 
 		resp, err := c.GetFrameworks()
 		if err != nil {
@@ -87,7 +86,7 @@ var sitePullCmd = &cobra.Command{
 			return fmt.Errorf("invalid page ID: %s", args[0])
 		}
 
-		c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+		c := newSiteClient()
 
 		resp, err := c.GetElements(pageID)
 		if err != nil {
@@ -139,7 +138,7 @@ var sitePushCmd = &cobra.Command{
 			return fmt.Errorf("failed to parse JSON: %w", err)
 		}
 
-		c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+		c := newSiteClient()
 
 		resp, err := c.ReplaceElements(pageID, payload.Elements, payload.ContentHash)
 		if err != nil {
@@ -185,7 +184,7 @@ var sitePatchCmd = &cobra.Command{
 			return fmt.Errorf("failed to parse patch JSON: %w", err)
 		}
 
-		c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+		c := newSiteClient()
 
 		resp, err := c.PatchElements(pageID, patches.Elements, patches.ContentHash)
 		if err != nil {
@@ -213,7 +212,7 @@ var siteSnapshotCmd = &cobra.Command{
 			return fmt.Errorf("invalid page ID: %s", args[0])
 		}
 
-		c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+		c := newSiteClient()
 
 		resp, err := c.CreateSnapshot(pageID, snapshotLabel)
 		if err != nil {
@@ -239,7 +238,7 @@ var siteSnapshotsListCmd = &cobra.Command{
 			return fmt.Errorf("invalid page ID: %s", args[0])
 		}
 
-		c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+		c := newSiteClient()
 
 		resp, err := c.ListSnapshots(pageID)
 		if err != nil {
@@ -272,7 +271,7 @@ var siteRollbackCmd = &cobra.Command{
 			return fmt.Errorf("invalid page ID: %s", args[0])
 		}
 
-		c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+		c := newSiteClient()
 
 		snapshotID := ""
 		if len(args) > 1 {
