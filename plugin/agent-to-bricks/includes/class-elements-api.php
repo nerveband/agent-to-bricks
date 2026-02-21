@@ -335,6 +335,11 @@ class ATB_Elements_API {
 			return new WP_REST_Response( array( 'error' => 'elements array required.' ), 400 );
 		}
 
+		// Auto-snapshot before full replace
+		if ( class_exists( 'ATB_Snapshots_API' ) ) {
+			ATB_Snapshots_API::take_snapshot( $post_id, 'Auto: before full replace' );
+		}
+
 		$result = ATB_Bricks_Lifecycle::write_elements( $post_id, $elements, $if_match );
 		if ( is_wp_error( $result ) ) {
 			$data = $result->get_error_data();
