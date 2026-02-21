@@ -214,7 +214,12 @@ var composeCmd = &cobra.Command{
 				return err
 			}
 			c := client.New(cfg.Site.URL, cfg.Site.APIKey)
-			pushResult, err := c.ReplaceElements(composePush, elements, "")
+			existing, _ := c.GetElements(composePush)
+			ifMatch := ""
+			if existing != nil {
+				ifMatch = existing.ContentHash
+			}
+			pushResult, err := c.ReplaceElements(composePush, elements, ifMatch)
 			if err != nil {
 				return fmt.Errorf("push failed: %w", err)
 			}
