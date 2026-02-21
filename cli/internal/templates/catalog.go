@@ -10,12 +10,13 @@ import (
 
 // Template represents a reusable Bricks element template.
 type Template struct {
-	Name        string                   `json:"name"`
-	Description string                   `json:"description"`
-	Category    string                   `json:"category"`
-	Tags        []string                 `json:"tags"`
-	Elements    []map[string]interface{} `json:"elements"`
-	Source      string                   `json:"source,omitempty"` // file path or "learned"
+	Name          string                   `json:"name"`
+	Description   string                   `json:"description"`
+	Category      string                   `json:"category"`
+	Tags          []string                 `json:"tags"`
+	Elements      []map[string]interface{} `json:"elements"`
+	GlobalClasses []map[string]interface{} `json:"globalClasses,omitempty"`
+	Source        string                   `json:"source,omitempty"` // file path or "learned"
 }
 
 // Catalog manages a collection of templates.
@@ -45,10 +46,32 @@ func (c *Catalog) LoadDir(dir string) error {
 		if err != nil {
 			return nil
 		}
-		var tmpl Template
-		if err := json.Unmarshal(data, &tmpl); err != nil {
+
+		// Try to detect Frames format first
+		var raw map[string]interface{}
+		if err := json.Unmarshal(data, &raw); err != nil {
 			return nil
 		}
+
+		var tmpl Template
+		if bricksExport, ok := raw["bricksExport"].(map[string]interface{}); ok {
+			// Frames format: extract from bricksExport wrapper
+			tmpl.Name = stringVal(raw, "title")
+			if content, ok := bricksExport["content"].([]interface{}); ok {
+				tmpl.Elements = toElementSlice(content)
+			}
+			if gc, ok := bricksExport["globalClasses"].([]interface{}); ok {
+				tmpl.GlobalClasses = toElementSlice(gc)
+			}
+			// Derive category from parent directory name
+			tmpl.Category = filepath.Base(filepath.Dir(path))
+		} else {
+			// Standard format
+			if err := json.Unmarshal(data, &tmpl); err != nil {
+				return nil
+			}
+		}
+
 		if tmpl.Name == "" {
 			tmpl.Name = strings.TrimSuffix(info.Name(), ".json")
 		}
@@ -56,6 +79,25 @@ func (c *Catalog) LoadDir(dir string) error {
 		c.templates[tmpl.Name] = &tmpl
 		return nil
 	})
+}
+
+// stringVal safely extracts a string value from a map.
+func stringVal(m map[string]interface{}, key string) string {
+	if v, ok := m[key].(string); ok {
+		return v
+	}
+	return ""
+}
+
+// toElementSlice converts a []interface{} to []map[string]interface{}.
+func toElementSlice(raw []interface{}) []map[string]interface{} {
+	result := make([]map[string]interface{}, 0, len(raw))
+	for _, item := range raw {
+		if m, ok := item.(map[string]interface{}); ok {
+			result = append(result, m)
+		}
+	}
+	return result
 }
 
 // Add adds a template to the catalog.
@@ -167,7 +209,7 @@ func LearnFromPage(elements []map[string]interface{}, pageName string) []*Templa
 				Category:    "learned",
 				Tags:        []string{"learned", pageName},
 				Elements:    sectionElements,
-				Source:       "learned",
+				Source:      "learned",
 			}
 			templates = append(templates, tmpl)
 		}
