@@ -120,7 +120,14 @@ Use --stdin to pipe HTML from another tool (e.g., an LLM).`,
 				}
 			}
 
-			result, pushErr := c.ReplaceElements(convertPush, elements, "")
+			// Fetch current contentHash for If-Match header
+			existing, getErr := c.GetElements(convertPush)
+			ifMatch := ""
+			if getErr == nil {
+				ifMatch = existing.ContentHash
+			}
+
+			result, pushErr := c.ReplaceElements(convertPush, elements, ifMatch)
 			if pushErr != nil {
 				return fmt.Errorf("push failed: %w", pushErr)
 			}
