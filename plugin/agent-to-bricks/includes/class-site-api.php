@@ -79,11 +79,31 @@ class ATB_Site_API {
 				return strpos( $c['id'] ?? '', 'acss_import_' ) === 0;
 			} );
 
+			// Extract key design tokens
+			$colors = array();
+			foreach ( array( 'primary', 'secondary', 'accent', 'base', 'neutral' ) as $family ) {
+				$key = "color-$family";
+				if ( isset( $acss_settings[ $key ] ) ) {
+					$colors[ $family ] = $acss_settings[ $key ];
+				}
+			}
+
 			$frameworks['acss'] = array(
 				'name'         => 'Automatic.css',
 				'active'       => true,
+				'version'      => get_option( 'automatic_css_db_version', '' ),
 				'settingsKeys' => $settings_keys,
 				'classCount'   => count( $acss_classes ),
+				'colors'       => $colors,
+				'spacing'      => array(
+					'scale'          => $acss_settings['space-scale'] ?? '',
+					'sectionPadding' => $acss_settings['section-padding-block'] ?? '',
+				),
+				'typography'   => array(
+					'rootFontSize'    => $acss_settings['root-font-size'] ?? '',
+					'textFontFamily'  => $acss_settings['text-font-family'] ?? '',
+					'headingFontFamily' => $acss_settings['heading-font-family'] ?? '',
+				),
 			);
 		}
 
