@@ -33,9 +33,21 @@ require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-site-api.php';
 require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-templates-api.php';
 
 /**
+ * Add X-ATB-Version header to all plugin REST responses.
+ */
+function agent_bricks_add_version_header( $response, $server, $request ) {
+	$route = $request->get_route();
+	if ( strpos( $route, '/agent-bricks/' ) === 0 ) {
+		$response->header( 'X-ATB-Version', AGENT_BRICKS_VERSION );
+	}
+	return $response;
+}
+
+/**
  * Initialize the plugin.
  */
 function agent_bricks_init() {
+	add_filter( 'rest_post_dispatch', 'agent_bricks_add_version_header', 10, 3 );
 	ATB_API_Auth::init();
 	ATB_Settings::init();
 	ATB_REST_API::init();
