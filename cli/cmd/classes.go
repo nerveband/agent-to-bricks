@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/nerveband/agent-to-bricks/internal/client"
 	"github.com/spf13/cobra"
 )
 
@@ -21,7 +20,7 @@ var classesListCmd = &cobra.Command{
 		if err := requireConfig(); err != nil {
 			return err
 		}
-		c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+		c := newSiteClient()
 
 		framework, _ := cmd.Flags().GetString("framework")
 		resp, err := c.ListClasses(framework)
@@ -59,7 +58,7 @@ var classesCreateCmd = &cobra.Command{
 		if err := requireConfig(); err != nil {
 			return err
 		}
-		c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+		c := newSiteClient()
 
 		var settings map[string]interface{}
 		settingsStr, _ := cmd.Flags().GetString("settings")
@@ -88,7 +87,7 @@ var classesFindCmd = &cobra.Command{
 		if err := requireConfig(); err != nil {
 			return err
 		}
-		c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+		c := newSiteClient()
 
 		resp, err := c.ListClasses("")
 		if err != nil {
@@ -133,7 +132,7 @@ var classesDeleteCmd = &cobra.Command{
 		if err := requireConfig(); err != nil {
 			return err
 		}
-		c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+		c := newSiteClient()
 
 		if err := c.DeleteClass(args[0]); err != nil {
 			return fmt.Errorf("failed to delete class: %w", err)

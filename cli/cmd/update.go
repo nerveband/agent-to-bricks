@@ -5,7 +5,6 @@ import (
 	"os"
 	"strings"
 
-	"github.com/nerveband/agent-to-bricks/internal/client"
 	"github.com/nerveband/agent-to-bricks/internal/updater"
 	"github.com/spf13/cobra"
 )
@@ -39,7 +38,7 @@ Use --force to re-download even if already on the latest version.`,
 		pluginNeedsUpdate := false
 
 		if cfg != nil && cfg.Site.URL != "" && cfg.Site.APIKey != "" && !updateCLIOnly {
-			c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+			c := newSiteClient()
 			info, err := c.GetSiteInfo()
 			if err != nil {
 				fmt.Fprintf(os.Stderr, "Warning: could not reach plugin: %v\n", err)
@@ -89,7 +88,7 @@ Use --force to re-download even if already on the latest version.`,
 
 		if pluginNeedsUpdate && !updateCLIOnly {
 			fmt.Fprintf(os.Stderr, "Updating plugin on %s...", cfg.Site.URL)
-			c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+			c := newSiteClient()
 			result, err := c.TriggerPluginUpdate(rel.Version)
 			if err != nil {
 				fmt.Fprintf(os.Stderr, "\nPlugin update failed: %v\n", err)

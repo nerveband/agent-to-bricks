@@ -6,7 +6,6 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/nerveband/agent-to-bricks/internal/client"
 	"github.com/nerveband/agent-to-bricks/internal/framework"
 	"github.com/nerveband/agent-to-bricks/internal/llm"
 	"github.com/nerveband/agent-to-bricks/internal/validator"
@@ -108,7 +107,7 @@ func generateAndProcess(systemPrompt, userPrompt string, pageID int, dryRun bool
 		}
 	}
 
-	c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+	c := newSiteClient()
 
 	// Create snapshot first
 	snap, err := c.CreateSnapshot(pageID, "Auto: before generate")
@@ -190,7 +189,7 @@ var generateModifyCmd = &cobra.Command{
 			return fmt.Errorf("--page is required for modify")
 		}
 
-		c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+		c := newSiteClient()
 
 		// Pull current elements
 		current, err := c.GetElements(genPageID)

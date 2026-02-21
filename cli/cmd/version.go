@@ -8,7 +8,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/nerveband/agent-to-bricks/internal/client"
 	"github.com/nerveband/agent-to-bricks/internal/updater"
 	"github.com/spf13/cobra"
 )
@@ -30,7 +29,7 @@ func showVersion() error {
 	fmt.Printf("CLI:       v%s (commit: %s, built: %s)\n", cliVersion, cliCommit, cliDate)
 
 	if cfg != nil && cfg.Site.URL != "" && cfg.Site.APIKey != "" {
-		c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+		c := newSiteClient()
 		info, err := c.GetSiteInfo()
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "Plugin:    (unreachable: %v)\n", err)

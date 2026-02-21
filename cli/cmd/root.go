@@ -5,6 +5,7 @@ import (
 	"os"
 	"strings"
 
+	"github.com/nerveband/agent-to-bricks/internal/client"
 	"github.com/nerveband/agent-to-bricks/internal/config"
 	"github.com/nerveband/agent-to-bricks/internal/updater"
 	"github.com/spf13/cobra"
@@ -89,6 +90,12 @@ func initConfig() {
 		return
 	}
 	cfg = loaded
+}
+
+func newSiteClient() *client.Client {
+	c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+	c.SetCLIVersion(cliVersion)
+	return c
 }
 
 func requireConfig() error {

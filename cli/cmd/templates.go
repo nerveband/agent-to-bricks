@@ -7,7 +7,6 @@ import (
 	"path/filepath"
 	"strconv"
 
-	"github.com/nerveband/agent-to-bricks/internal/client"
 	"github.com/nerveband/agent-to-bricks/internal/embeddings"
 	"github.com/nerveband/agent-to-bricks/internal/templates"
 	"github.com/spf13/cobra"
@@ -152,7 +151,7 @@ var templatesLearnCmd = &cobra.Command{
 			return fmt.Errorf("invalid page ID: %s", args[0])
 		}
 
-		c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+		c := newSiteClient()
 		resp, err := c.GetElements(pageID)
 		if err != nil {
 			return fmt.Errorf("failed to pull elements: %w", err)
@@ -213,7 +212,7 @@ var composeCmd = &cobra.Command{
 			if err := requireConfig(); err != nil {
 				return err
 			}
-			c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+			c := newSiteClient()
 			existing, _ := c.GetElements(composePush)
 			ifMatch := ""
 			if existing != nil {

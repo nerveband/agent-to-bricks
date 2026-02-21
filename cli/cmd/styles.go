@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/nerveband/agent-to-bricks/internal/client"
 	"github.com/nerveband/agent-to-bricks/internal/styles"
 	"github.com/spf13/cobra"
 )
@@ -26,7 +25,7 @@ var stylesLearnCmd = &cobra.Command{
 
 		profilePath := styles.DefaultPath()
 		profile, _ := styles.Load(profilePath)
-		c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+		c := newSiteClient()
 
 		for _, arg := range args {
 			pageID, err := strconv.Atoi(arg)
@@ -118,7 +117,7 @@ var stylesColorsCmd = &cobra.Command{
 		if err := requireConfig(); err != nil {
 			return err
 		}
-		c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+		c := newSiteClient()
 
 		resp, err := c.GetStyles()
 		if err != nil {
@@ -162,7 +161,7 @@ var stylesVariablesCmd = &cobra.Command{
 		if err := requireConfig(); err != nil {
 			return err
 		}
-		c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+		c := newSiteClient()
 
 		resp, err := c.GetVariables()
 		if err != nil {
@@ -210,7 +209,7 @@ var stylesThemeCmd = &cobra.Command{
 		if err := requireConfig(); err != nil {
 			return err
 		}
-		c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+		c := newSiteClient()
 
 		resp, err := c.GetStyles()
 		if err != nil {

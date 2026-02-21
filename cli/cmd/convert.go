@@ -7,7 +7,6 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/nerveband/agent-to-bricks/internal/client"
 	"github.com/nerveband/agent-to-bricks/internal/convert"
 	"github.com/spf13/cobra"
 )
@@ -74,7 +73,7 @@ Use --stdin to pipe HTML from another tool (e.g., an LLM).`,
 			}
 
 			if registry == nil {
-				c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+				c := newSiteClient()
 				classResp, apiErr := c.ListClasses("")
 				if apiErr != nil {
 					fmt.Fprintf(os.Stderr, "Warning: could not fetch classes: %v\n", apiErr)
@@ -108,7 +107,7 @@ Use --stdin to pipe HTML from another tool (e.g., an LLM).`,
 			if err := requireConfig(); err != nil {
 				return err
 			}
-			c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+			c := newSiteClient()
 
 			// Optional snapshot before pushing
 			if convertSnapshot {
