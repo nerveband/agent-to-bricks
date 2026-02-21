@@ -19,6 +19,11 @@ var rootCmd = &cobra.Command{
 	Long:  "Build and manage Bricks Builder pages programmatically via AI agents.",
 }
 
+// SetVersion sets the CLI version info from ldflags.
+func SetVersion(version, commit, date string) {
+	rootCmd.Version = fmt.Sprintf("%s (commit: %s, built: %s)", version, commit, date)
+}
+
 func Execute() {
 	if err := rootCmd.Execute(); err != nil {
 		os.Exit(1)

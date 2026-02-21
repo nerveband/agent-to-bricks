@@ -8,8 +8,9 @@ import (
 )
 
 type Config struct {
-	Site SiteConfig `yaml:"site"`
-	LLM  LLMConfig  `yaml:"llm"`
+	Site  SiteConfig  `yaml:"site"`
+	LLM   LLMConfig   `yaml:"llm"`
+	WPCLI WPCLIConfig `yaml:"wpcli,omitempty"`
 }
 
 type SiteConfig struct {
@@ -23,6 +24,12 @@ type LLMConfig struct {
 	Model       string  `yaml:"model"`
 	BaseURL     string  `yaml:"base_url"`
 	Temperature float64 `yaml:"temperature"`
+}
+
+type WPCLIConfig struct {
+	SSHHost string `yaml:"ssh_host,omitempty"`
+	WPPath  string `yaml:"wp_path,omitempty"`
+	PHPBin  string `yaml:"php_bin,omitempty"`
 }
 
 func DefaultPath() string {
