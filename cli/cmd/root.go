@@ -9,8 +9,11 @@ import (
 )
 
 var (
-	cfgFile string
-	cfg     *config.Config
+	cfgFile    string
+	cfg        *config.Config
+	cliVersion string
+	cliCommit  string
+	cliDate    string
 )
 
 var rootCmd = &cobra.Command{
@@ -21,6 +24,9 @@ var rootCmd = &cobra.Command{
 
 // SetVersion sets the CLI version info from ldflags.
 func SetVersion(version, commit, date string) {
+	cliVersion = version
+	cliCommit = commit
+	cliDate = date
 	rootCmd.Version = fmt.Sprintf("%s (commit: %s, built: %s)", version, commit, date)
 }
 
