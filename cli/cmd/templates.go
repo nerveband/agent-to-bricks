@@ -8,6 +8,7 @@ import (
 	"strconv"
 
 	"github.com/nerveband/agent-to-bricks/internal/client"
+	"github.com/nerveband/agent-to-bricks/internal/embeddings"
 	"github.com/nerveband/agent-to-bricks/internal/templates"
 	"github.com/spf13/cobra"
 )
@@ -221,6 +222,40 @@ var composeCmd = &cobra.Command{
 	},
 }
 
+var templatesSearchCmd = &cobra.Command{
+	Use:   "search <query>",
+	Short: "Search templates by description or tags",
+	Args:  cobra.ExactArgs(1),
+	RunE: func(cmd *cobra.Command, args []string) error {
+		cat, err := loadCatalog()
+		if err != nil {
+			return err
+		}
+
+		// Build search index from catalog
+		idx := embeddings.NewIndex()
+		for _, name := range cat.List() {
+			tmpl := cat.Get(name)
+			idx.Add(name, tmpl.Name, tmpl.Description, tmpl.Category, tmpl.Tags)
+		}
+
+		results := idx.Search(args[0], 10)
+		if len(results) == 0 {
+			fmt.Println("No matching templates found.")
+			return nil
+		}
+
+		for i, r := range results {
+			tmpl := cat.Get(r.ID)
+			fmt.Printf("  %d. %-30s (score: %.3f)\n", i+1, r.Name, r.Score)
+			if tmpl != nil && tmpl.Description != "" {
+				fmt.Printf("     %s\n", tmpl.Description)
+			}
+		}
+		return nil
+	},
+}
+
 func init() {
 	composeCmd.Flags().StringVarP(&composeOutput, "output", "o", "", "output file path")
 
@@ -228,6 +263,7 @@ func init() {
 	templatesCmd.AddCommand(templatesShowCmd)
 	templatesCmd.AddCommand(templatesImportCmd)
 	templatesCmd.AddCommand(templatesLearnCmd)
+	templatesCmd.AddCommand(templatesSearchCmd)
 	rootCmd.AddCommand(templatesCmd)
 	rootCmd.AddCommand(composeCmd)
 }
