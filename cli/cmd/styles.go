@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"encoding/json"
 	"fmt"
 	"strconv"
 
@@ -110,6 +111,134 @@ var stylesResetCmd = &cobra.Command{
 	},
 }
 
+var stylesColorsCmd = &cobra.Command{
+	Use:   "colors",
+	Short: "Show color palette from the live site",
+	RunE: func(cmd *cobra.Command, args []string) error {
+		if err := requireConfig(); err != nil {
+			return err
+		}
+		c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+
+		resp, err := c.GetStyles()
+		if err != nil {
+			return fmt.Errorf("failed to get styles: %w", err)
+		}
+
+		jsonOut, _ := cmd.Flags().GetBool("json")
+		if jsonOut {
+			data, _ := json.MarshalIndent(resp.ColorPalette, "", "  ")
+			fmt.Println(string(data))
+			return nil
+		}
+
+		palette, ok := resp.ColorPalette.([]interface{})
+		if !ok || len(palette) == 0 {
+			fmt.Println("No color palette found.")
+			return nil
+		}
+
+		fmt.Printf("Color Palette (%d colors)\n\n", len(palette))
+		for _, item := range palette {
+			color, ok := item.(map[string]interface{})
+			if !ok {
+				continue
+			}
+			name, _ := color["name"].(string)
+			hex, _ := color["color"].(string)
+			if name == "" {
+				name = "(unnamed)"
+			}
+			fmt.Printf("  %s  %s\n", hex, name)
+		}
+		return nil
+	},
+}
+
+var stylesVariablesCmd = &cobra.Command{
+	Use:   "variables",
+	Short: "Show CSS custom properties from the live site",
+	RunE: func(cmd *cobra.Command, args []string) error {
+		if err := requireConfig(); err != nil {
+			return err
+		}
+		c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+
+		resp, err := c.GetVariables()
+		if err != nil {
+			return fmt.Errorf("failed to get variables: %w", err)
+		}
+
+		jsonOut, _ := cmd.Flags().GetBool("json")
+		if jsonOut {
+			data, _ := json.MarshalIndent(resp, "", "  ")
+			fmt.Println(string(data))
+			return nil
+		}
+
+		if len(resp.Variables) > 0 {
+			fmt.Printf("Custom Properties (%d)\n\n", len(resp.Variables))
+			for _, v := range resp.Variables {
+				name, _ := v["name"].(string)
+				value, _ := v["value"].(string)
+				fmt.Printf("  %s: %s\n", name, value)
+			}
+		}
+
+		if len(resp.ExtractedFromCSS) > 0 {
+			fmt.Printf("\nExtracted from CSS (%d)\n\n", len(resp.ExtractedFromCSS))
+			for _, v := range resp.ExtractedFromCSS {
+				name, _ := v["name"].(string)
+				value, _ := v["value"].(string)
+				source, _ := v["source"].(string)
+				fmt.Printf("  %s: %s  (from %s)\n", name, value, source)
+			}
+		}
+
+		if len(resp.Variables) == 0 && len(resp.ExtractedFromCSS) == 0 {
+			fmt.Println("No CSS variables found.")
+		}
+
+		return nil
+	},
+}
+
+var stylesThemeCmd = &cobra.Command{
+	Use:   "theme",
+	Short: "Show theme styles from the live site",
+	RunE: func(cmd *cobra.Command, args []string) error {
+		if err := requireConfig(); err != nil {
+			return err
+		}
+		c := client.New(cfg.Site.URL, cfg.Site.APIKey)
+
+		resp, err := c.GetStyles()
+		if err != nil {
+			return fmt.Errorf("failed to get styles: %w", err)
+		}
+
+		jsonOut, _ := cmd.Flags().GetBool("json")
+		if jsonOut {
+			data, _ := json.MarshalIndent(resp.ThemeStyles, "", "  ")
+			fmt.Println(string(data))
+			return nil
+		}
+
+		if len(resp.ThemeStyles) == 0 {
+			fmt.Println("No theme styles found.")
+			return nil
+		}
+
+		fmt.Printf("Theme Styles (%d)\n\n", len(resp.ThemeStyles))
+		for _, style := range resp.ThemeStyles {
+			key, _ := style["key"].(string)
+			label, _ := style["label"].(string)
+			fmt.Printf("  %s (%s)\n", label, key)
+		}
+		return nil
+	},
+}
+
 func topFromMap(m map[string]int, limit int) []styles.RankedItem {
 	items := make([]styles.RankedItem, 0, len(m))
 	for k, v := range m {
@@ -131,9 +260,15 @@ func topFromMap(m map[string]int, limit int) []styles.RankedItem {
 
 func init() {
 	stylesShowCmd.Flags().Int("limit", 10, "number of items to display")
+	stylesColorsCmd.Flags().Bool("json", false, "output as JSON")
+	stylesVariablesCmd.Flags().Bool("json", false, "output as JSON")
+	stylesThemeCmd.Flags().Bool("json", false, "output as JSON")
 
 	stylesCmd.AddCommand(stylesLearnCmd)
 	stylesCmd.AddCommand(stylesShowCmd)
 	stylesCmd.AddCommand(stylesResetCmd)
+	stylesCmd.AddCommand(stylesColorsCmd)
+	stylesCmd.AddCommand(stylesVariablesCmd)
+	stylesCmd.AddCommand(stylesThemeCmd)
 	rootCmd.AddCommand(stylesCmd)
 }
