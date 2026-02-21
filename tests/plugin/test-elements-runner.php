@@ -25,7 +25,7 @@ function dispatch_rest($method, $route, $params = [], $headers = [], $body = nul
 $pass = 0;
 $fail = 0;
 
-// Test 1: GET /pages/{id}/elements returns elements + contentHash
+// ===== Test 1: GET /pages/{id}/elements =====
 echo "TEST 1: GET elements... ";
 $r = dispatch_rest('GET', "/agent-bricks/v1/pages/$test_page/elements", ['id' => $test_page]);
 if ($r['status'] === 200 && isset($r['data']['elements']) && isset($r['data']['contentHash'])) {
@@ -36,6 +36,70 @@ if ($r['status'] === 200 && isset($r['data']['elements']) && isset($r['data']['c
 } else {
     echo "FAIL (status={$r['status']})\n";
     echo json_encode($r['data']) . "\n";
+    $fail++;
+}
+
+// ===== Test 2: PATCH delta with valid hash =====
+echo "TEST 2: PATCH delta (valid hash)... ";
+$get_r = dispatch_rest('GET', "/agent-bricks/v1/pages/$test_page/elements", ['id' => $test_page]);
+$current_hash = $get_r['data']['contentHash'];
+$first_id = $get_r['data']['elements'][0]['id'] ?? null;
+
+if ($first_id) {
+    $patch_r = dispatch_rest('PATCH', "/agent-bricks/v1/pages/$test_page/elements",
+        ['id' => $test_page],
+        ['if_match' => $current_hash],
+        ['patches' => [['id' => $first_id, 'label' => 'ATB Test Label']]]
+    );
+    if ($patch_r['status'] === 200 && isset($patch_r['data']['contentHash'])) {
+        $new_hash = $patch_r['data']['contentHash'];
+        echo "PASS (new hash=$new_hash)\n";
+        $pass++;
+
+        // Restore: patch back
+        dispatch_rest('PATCH', "/agent-bricks/v1/pages/$test_page/elements",
+            ['id' => $test_page],
+            ['if_match' => $new_hash],
+            ['patches' => [['id' => $first_id, 'label' => 'Test Section']]]
+        );
+    } else {
+        echo "FAIL (status={$patch_r['status']})\n";
+        echo json_encode($patch_r['data']) . "\n";
+        $fail++;
+    }
+} else {
+    echo "SKIP (no elements)\n";
+}
+
+// ===== Test 3: PATCH with stale hash -> 409 =====
+echo "TEST 3: PATCH delta (stale hash -> 409)... ";
+$stale_r = dispatch_rest('PATCH', "/agent-bricks/v1/pages/$test_page/elements",
+    ['id' => $test_page],
+    ['if_match' => 'stale_hash_value'],
+    ['patches' => [['id' => $first_id, 'label' => 'Should Fail']]]
+);
+if ($stale_r['status'] === 409) {
+    echo "PASS (correctly rejected stale hash)\n";
+    $pass++;
+} else {
+    echo "FAIL (expected 409, got {$stale_r['status']})\n";
+    echo json_encode($stale_r['data']) . "\n";
+    $fail++;
+}
+
+// ===== Test 4: PATCH without If-Match -> 428 =====
+echo "TEST 4: PATCH without If-Match -> 428... ";
+$no_match_r = dispatch_rest('PATCH', "/agent-bricks/v1/pages/$test_page/elements",
+    ['id' => $test_page],
+    [],
+    ['patches' => [['id' => $first_id, 'label' => 'No Match']]]
+);
+if ($no_match_r['status'] === 428) {
+    echo "PASS (correctly requires If-Match)\n";
+    $pass++;
+} else {
+    echo "FAIL (expected 428, got {$no_match_r['status']})\n";
+    echo json_encode($no_match_r['data']) . "\n";
     $fail++;
 }
 

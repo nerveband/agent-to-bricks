@@ -19,8 +19,8 @@ echo ""
 # Upload test runner PHP file
 scp -q "$SCRIPT_DIR/test-elements-runner.php" "$SSH_HOST:$WP_PATH/atb-test-runner.php" 2>/dev/null
 
-# Run tests via eval-file
-RESULT=$(ssh -o ConnectTimeout=30 "$SSH_HOST" "cd $WP_PATH && $PHP $WPCLI eval-file atb-test-runner.php $TEST_PAGE" 2>&1 | grep -v '^\*\*')
+# Run tests via eval-file (don't fail on non-zero exit from test runner)
+RESULT=$(ssh -o ConnectTimeout=30 "$SSH_HOST" "cd $WP_PATH && $PHP $WPCLI eval-file atb-test-runner.php $TEST_PAGE 2>&1" 2>/dev/null | grep -v '^\*\*' || true)
 
 echo "$RESULT"
 
