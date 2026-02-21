@@ -2,6 +2,7 @@ package updater
 
 import (
 	"encoding/json"
+	"path/filepath"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -90,5 +91,31 @@ func TestMajorMinorMatch(t *testing.T) {
 	}
 	if MajorMinorMatch("2.0.0", "1.4.0") {
 		t.Error("2.0.0 and 1.4.0 should not match")
+	}
+}
+
+func TestCheckCache(t *testing.T) {
+	dir := t.TempDir()
+	cachePath := filepath.Join(dir, "update-check.json")
+
+	cache := &CheckCache{Path: cachePath}
+
+	// First check: no cache file, should need check
+	if !cache.NeedsCheck() {
+		t.Error("expected needs check when no cache file")
+	}
+
+	// Save a recent check
+	cache.Save("1.4.0")
+
+	// Should not need check now
+	if cache.NeedsCheck() {
+		t.Error("expected no check needed after save")
+	}
+
+	// Load and verify
+	loaded := cache.Load()
+	if loaded == nil || loaded.LatestVersion != "1.4.0" {
+		t.Error("expected loaded cache with version 1.4.0")
 	}
 }
