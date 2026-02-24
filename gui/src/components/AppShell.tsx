@@ -9,10 +9,12 @@ import { CommandPalette } from "./CommandPalette";
 import { OnboardingTooltips } from "./OnboardingTooltips";
 import { useToolDetection } from "../hooks/useToolDetection";
 import { useKeyboardShortcuts } from "../hooks/useKeyboardShortcuts";
+import { useConfigPersistence } from "../hooks/useConfigPersistence";
 
 export function AppShell() {
   useToolDetection();
   useKeyboardShortcuts();
+  useConfigPersistence();
   const [sidebarOpen] = useAtom(sidebarOpenAtom);
   const [contextOpen] = useAtom(contextPanelOpenAtom);
   const setSidebarOpen = useSetAtom(sidebarOpenAtom);
