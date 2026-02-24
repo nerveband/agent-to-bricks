@@ -374,3 +374,64 @@ func TestUploadMediaFileNotFound(t *testing.T) {
 		t.Error("expected error for missing file")
 	}
 }
+
+func TestSearchElements(t *testing.T) {
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path != "/wp-json/agent-bricks/v1/search/elements" {
+			t.Errorf("unexpected path: %s", r.URL.Path)
+		}
+		if r.Method != "GET" {
+			t.Errorf("expected GET, got %s", r.Method)
+		}
+		if r.URL.Query().Get("element_type") != "heading" {
+			t.Errorf("expected element_type=heading, got %s", r.URL.Query().Get("element_type"))
+		}
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"results": []map[string]interface{}{
+				{"postId": 42, "postTitle": "Home", "postType": "page", "elementId": "abc", "elementType": "heading"},
+			},
+			"total":      1,
+			"page":       1,
+			"perPage":    50,
+			"totalPages": 1,
+		})
+	}))
+	defer srv.Close()
+
+	c := client.New(srv.URL, "atb_testkey")
+	resp, err := c.SearchElements(client.SearchParams{ElementType: "heading"})
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if resp.Total != 1 {
+		t.Errorf("expected total 1, got %d", resp.Total)
+	}
+	if resp.Results[0].ElementType != "heading" {
+		t.Errorf("expected heading, got %s", resp.Results[0].ElementType)
+	}
+}
+
+func TestSearchElementsWithSettingFilter(t *testing.T) {
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Query().Get("setting_key") != "tag" {
+			t.Errorf("expected setting_key=tag")
+		}
+		if r.URL.Query().Get("setting_value") != "h1" {
+			t.Errorf("expected setting_value=h1")
+		}
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"results": []map[string]interface{}{},
+			"total": 0, "page": 1, "perPage": 50, "totalPages": 0,
+		})
+	}))
+	defer srv.Close()
+
+	c := client.New(srv.URL, "atb_testkey")
+	resp, err := c.SearchElements(client.SearchParams{SettingKey: "tag", SettingValue: "h1"})
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if resp.Total != 0 {
+		t.Errorf("expected 0, got %d", resp.Total)
+	}
+}

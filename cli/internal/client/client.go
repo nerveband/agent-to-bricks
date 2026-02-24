@@ -468,6 +468,77 @@ func (c *Client) ListMedia(search string) (*MediaListResponse, error) {
 	return &result, nil
 }
 
+// SearchParams for GET /search/elements.
+type SearchParams struct {
+	ElementType  string
+	SettingKey   string
+	SettingValue string
+	GlobalClass  string
+	PostType     string
+	PerPage      int
+	Page         int
+}
+
+// SearchResult is a single element match.
+type SearchResult struct {
+	PostID       int                    `json:"postId"`
+	PostTitle    string                 `json:"postTitle"`
+	PostType     string                 `json:"postType"`
+	ElementID    string                 `json:"elementId"`
+	ElementType  string                 `json:"elementType"`
+	ElementLabel string                 `json:"elementLabel"`
+	Settings     map[string]interface{} `json:"settings"`
+	ParentID     string                 `json:"parentId"`
+}
+
+// SearchResponse from GET /search/elements.
+type SearchResponse struct {
+	Results    []SearchResult `json:"results"`
+	Total      int            `json:"total"`
+	Page       int            `json:"page"`
+	PerPage    int            `json:"perPage"`
+	TotalPages int            `json:"totalPages"`
+}
+
+// SearchElements searches elements across all Bricks content.
+func (c *Client) SearchElements(params SearchParams) (*SearchResponse, error) {
+	path := "/search/elements?"
+	q := make([]string, 0)
+	if params.ElementType != "" {
+		q = append(q, "element_type="+params.ElementType)
+	}
+	if params.SettingKey != "" {
+		q = append(q, "setting_key="+params.SettingKey)
+	}
+	if params.SettingValue != "" {
+		q = append(q, "setting_value="+params.SettingValue)
+	}
+	if params.GlobalClass != "" {
+		q = append(q, "global_class="+params.GlobalClass)
+	}
+	if params.PostType != "" {
+		q = append(q, "post_type="+params.PostType)
+	}
+	if params.PerPage > 0 {
+		q = append(q, fmt.Sprintf("per_page=%d", params.PerPage))
+	}
+	if params.Page > 0 {
+		q = append(q, fmt.Sprintf("page=%d", params.Page))
+	}
+	path += strings.Join(q, "&")
+
+	resp, err := c.do("GET", path, nil)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var result SearchResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return nil, err
+	}
+	return &result, nil
+}
+
 // UploadMedia uploads a file to the WordPress media library via multipart POST.
 func (c *Client) UploadMedia(filePath string) (*MediaUploadResponse, error) {
 	f, err := os.Open(filePath)
