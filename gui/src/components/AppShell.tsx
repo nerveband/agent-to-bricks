@@ -1,4 +1,5 @@
-import { useAtom } from "jotai";
+import { useEffect } from "react";
+import { useAtom, useSetAtom } from "jotai";
 import { sidebarOpenAtom, contextPanelOpenAtom, onboardingCompleteAtom } from "../atoms/app";
 import { Sidebar } from "./Sidebar";
 import { TerminalPanel } from "./TerminalPanel";
@@ -14,6 +15,23 @@ export function AppShell() {
   useKeyboardShortcuts();
   const [sidebarOpen] = useAtom(sidebarOpenAtom);
   const [contextOpen] = useAtom(contextPanelOpenAtom);
+  const setSidebarOpen = useSetAtom(sidebarOpenAtom);
+  const setContextOpen = useSetAtom(contextPanelOpenAtom);
+
+  // Responsive: collapse panels at narrow widths
+  useEffect(() => {
+    const observer = new ResizeObserver((entries) => {
+      const width = entries[0]?.contentRect.width ?? 1200;
+      if (width < 700) {
+        setSidebarOpen(false);
+        setContextOpen(false);
+      } else if (width < 1000) {
+        setContextOpen(false);
+      }
+    });
+    observer.observe(document.documentElement);
+    return () => observer.disconnect();
+  }, [setSidebarOpen, setContextOpen]);
 
   if (!onboardingComplete) {
     return <OnboardingWizard />;

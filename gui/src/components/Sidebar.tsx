@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { useAtom, useSetAtom } from "jotai";
 import { toolsAtom, activeToolSlugAtom } from "../atoms/tools";
 import { sessionsAtom, activeSessionIdAtom } from "../atoms/sessions";
 import { useSessionLauncher } from "../hooks/useSessionLauncher";
-import { Gear, Moon, Question, SunDim } from "@phosphor-icons/react";
+import { Gear, Moon, Plus, Question, SunDim } from "@phosphor-icons/react";
 import { useTheme } from "../hooks/useTheme";
+import { AddToolDialog } from "./AddToolDialog";
 
 interface SidebarProps {
   collapsed: boolean;
@@ -18,6 +20,7 @@ export function Sidebar({ collapsed }: SidebarProps) {
   const setActiveToolSlug = useSetAtom(activeToolSlugAtom);
   const { launch } = useSessionLauncher();
   const { theme, toggle } = useTheme();
+  const [addToolOpen, setAddToolOpen] = useState(false);
 
   return (
     <nav
@@ -43,12 +46,22 @@ export function Sidebar({ collapsed }: SidebarProps) {
 
       <div className="flex-1 overflow-y-auto p-2">
         <div className="mb-4">
-          <p
-            className="text-[11px] tracking-widest uppercase px-2 mb-1"
-            style={{ color: "var(--fg-muted)" }}
-          >
-            {!collapsed && "Tools"}
-          </p>
+          <div className="flex items-center justify-between px-2 mb-1">
+            <p
+              className="text-[11px] tracking-widest uppercase"
+              style={{ color: "var(--fg-muted)" }}
+            >
+              {!collapsed && "Tools"}
+            </p>
+            <button
+              onClick={() => setAddToolOpen(true)}
+              className="flex items-center justify-center w-5 h-5 rounded transition-colors"
+              style={{ color: "var(--fg-muted)" }}
+              title="Add tool"
+            >
+              <Plus size={14} weight="bold" />
+            </button>
+          </div>
           {tools.map((tool) => {
             const isActive = tool.slug === activeToolSlug;
             const statusColor = isActive
@@ -155,6 +168,8 @@ export function Sidebar({ collapsed }: SidebarProps) {
           {!collapsed && "Help"}
         </button>
       </div>
+
+      <AddToolDialog open={addToolOpen} onOpenChange={setAddToolOpen} />
     </nav>
   );
 }
