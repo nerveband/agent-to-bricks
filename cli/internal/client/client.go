@@ -399,6 +399,47 @@ func (c *Client) Rollback(pageID int, snapshotID string) (*RollbackResponse, err
 	return &result, nil
 }
 
+// ElementTypeInfo from GET /site/element-types.
+type ElementTypeInfo struct {
+	Name     string                 `json:"name"`
+	Label    string                 `json:"label"`
+	Category string                 `json:"category"`
+	Icon     string                 `json:"icon"`
+	Controls map[string]interface{} `json:"controls,omitempty"`
+}
+
+// ElementTypesResponse from GET /site/element-types.
+type ElementTypesResponse struct {
+	ElementTypes []ElementTypeInfo `json:"elementTypes"`
+	Count        int               `json:"count"`
+}
+
+// ListElementTypes returns rich element type metadata.
+func (c *Client) ListElementTypes(includeControls bool, category string) (*ElementTypesResponse, error) {
+	path := "/site/element-types"
+	q := make([]string, 0)
+	if includeControls {
+		q = append(q, "include_controls=1")
+	}
+	if category != "" {
+		q = append(q, "category="+category)
+	}
+	if len(q) > 0 {
+		path += "?" + strings.Join(q, "&")
+	}
+
+	resp, err := c.do("GET", path, nil)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var result ElementTypesResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return nil, err
+	}
+	return &result, nil
+}
+
 // PluginUpdateResponse from POST /site/update.
 type PluginUpdateResponse struct {
 	Success         bool   `json:"success"`
