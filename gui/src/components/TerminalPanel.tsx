@@ -1,26 +1,56 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { useAtom } from "jotai";
-import { activeSessionAtom } from "../atoms/sessions";
+import { sessionsAtom, activeSessionAtom, type Session } from "../atoms/sessions";
 import { Terminal } from "./Terminal";
 import { usePty } from "../hooks/usePty";
 import type { Terminal as XTerm } from "@xterm/xterm";
 
-export function TerminalPanel() {
-  const [activeSession] = useAtom(activeSessionAtom);
+/**
+ * SessionTerminal renders one terminal + PTY connection for a single session.
+ * Each session gets its own xterm instance and PTY process. When inactive,
+ * the container is hidden with display:none so scrollback is preserved.
+ */
+function SessionTerminal({
+  session,
+  isActive,
+}: {
+  session: Session;
+  isActive: boolean;
+}) {
   const [terminal, setTerminal] = useState<XTerm | null>(null);
 
-  const handleTerminalReady = useCallback((term: XTerm) => {
-    setTerminal(term);
-    term.focus();
-  }, []);
-
-  usePty(
-    terminal,
-    activeSession?.command ?? null,
-    activeSession?.args ?? []
+  const handleReady = useCallback(
+    (term: XTerm) => {
+      setTerminal(term);
+      if (isActive) term.focus();
+    },
+    [isActive]
   );
 
-  if (!activeSession) {
+  usePty(terminal, session.command, session.args);
+
+  // Focus when becoming active
+  useEffect(() => {
+    if (isActive && terminal) {
+      terminal.focus();
+    }
+  }, [isActive, terminal]);
+
+  return (
+    <div
+      className="h-full w-full absolute inset-0"
+      style={{ display: isActive ? "block" : "none" }}
+    >
+      <Terminal onTerminalReady={handleReady} />
+    </div>
+  );
+}
+
+export function TerminalPanel() {
+  const [sessions] = useAtom(sessionsAtom);
+  const [activeSession] = useAtom(activeSessionAtom);
+
+  if (sessions.length === 0) {
     return (
       <div
         className="h-full w-full flex items-center justify-center font-mono text-sm"
@@ -35,12 +65,18 @@ export function TerminalPanel() {
 
   return (
     <div
-      className="h-full w-full"
+      className="h-full w-full relative"
       style={{ background: "var(--terminal)" }}
       role="region"
       aria-label="Terminal"
     >
-      <Terminal onTerminalReady={handleTerminalReady} />
+      {sessions.map((session) => (
+        <SessionTerminal
+          key={session.id}
+          session={session}
+          isActive={session.id === activeSession?.id}
+        />
+      ))}
     </div>
   );
 }
