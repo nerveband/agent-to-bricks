@@ -462,6 +462,82 @@ func TestGetComponent(t *testing.T) {
 	}
 }
 
+func TestListElementTypes(t *testing.T) {
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path != "/wp-json/agent-bricks/v1/site/element-types" {
+			t.Errorf("unexpected path: %s", r.URL.Path)
+		}
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"elementTypes": []map[string]interface{}{
+				{"name": "heading", "label": "Heading", "category": "basic", "icon": "ti-text"},
+				{"name": "section", "label": "Section", "category": "layout", "icon": "ti-layout"},
+			},
+			"count": 2,
+		})
+	}))
+	defer srv.Close()
+
+	c := client.New(srv.URL, "atb_testkey")
+	resp, err := c.ListElementTypes(false, "")
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if resp.Count != 2 {
+		t.Errorf("expected 2, got %d", resp.Count)
+	}
+	if resp.ElementTypes[0].Name != "heading" {
+		t.Errorf("expected heading, got %s", resp.ElementTypes[0].Name)
+	}
+}
+
+func TestListElementTypesWithControls(t *testing.T) {
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Query().Get("include_controls") != "1" {
+			t.Error("expected include_controls=1")
+		}
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"elementTypes": []map[string]interface{}{
+				{
+					"name": "heading", "label": "Heading", "category": "basic",
+					"controls": map[string]interface{}{
+						"text": map[string]interface{}{"type": "text", "label": "Text"},
+					},
+				},
+			},
+			"count": 1,
+		})
+	}))
+	defer srv.Close()
+
+	c := client.New(srv.URL, "atb_testkey")
+	resp, err := c.ListElementTypes(true, "")
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if resp.ElementTypes[0].Controls == nil {
+		t.Error("expected controls")
+	}
+}
+
+func TestListElementTypesByCategory(t *testing.T) {
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Query().Get("category") != "media" {
+			t.Errorf("expected category=media, got %s", r.URL.Query().Get("category"))
+		}
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"elementTypes": []map[string]interface{}{},
+			"count":        0,
+		})
+	}))
+	defer srv.Close()
+
+	c := client.New(srv.URL, "atb_testkey")
+	_, err := c.ListElementTypes(false, "media")
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+}
+
 func TestSearchElementsWithSettingFilter(t *testing.T) {
 	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		if r.URL.Query().Get("setting_key") != "tag" {
