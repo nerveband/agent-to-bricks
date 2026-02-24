@@ -44,13 +44,16 @@ Download the right binary for your system from the [latest release](https://gith
 | Mac (Apple Silicon) | `agent-to-bricks_X.X.X_darwin_arm64.tar.gz` |
 | Mac (Intel) | `agent-to-bricks_X.X.X_darwin_amd64.tar.gz` |
 | Linux | `agent-to-bricks_X.X.X_linux_amd64.tar.gz` |
+| Windows | `agent-to-bricks_X.X.X_windows_amd64.zip` |
 
-Extract and move it somewhere in your PATH:
+**Mac / Linux:** extract and move it somewhere in your PATH:
 
 ```bash
 tar xzf agent-to-bricks_*.tar.gz
 sudo mv bricks /usr/local/bin/
 ```
+
+**Windows:** unzip, then move `bricks.exe` to a directory in your PATH (e.g., `C:\Users\<you>\bin\`), or add the extracted folder to your PATH environment variable.
 
 ### 3. Connect to your site
 

@@ -8,7 +8,8 @@ Thumbs.db
 *.swp
 *.swo
 
-# Zip builds (regenerate from source)
+# Build output
+bin/
 plugin/*.zip
 
 # Node (future)
@@ -18,12 +19,8 @@ node_modules/
 .env
 .env.local
 
-# Test artifacts (raw captures, logs)
-test-data/*.log
-test-data/*.png
-test-data/all-*.json
-test-data/autosave-request.txt
-test-data/gallery-bravo-raw.json
+# Test data (local reference files, not distributed)
+test-data/
 
 # Worktrees
 .worktrees/
