@@ -1,3 +1,10 @@
+import { Provider } from "jotai";
+import { AppShell } from "./components/AppShell";
+
 export default function App() {
-  return <div>Agent to Bricks</div>;
+  return (
+    <Provider>
+      <AppShell />
+    </Provider>
+  );
 }
