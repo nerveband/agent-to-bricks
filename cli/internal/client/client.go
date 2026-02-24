@@ -7,6 +7,7 @@ import (
 	"io"
 	"mime/multipart"
 	"net/http"
+	"net/url"
 	"os"
 	"path/filepath"
 	"strings"
@@ -416,16 +417,16 @@ type ElementTypesResponse struct {
 
 // ListElementTypes returns rich element type metadata.
 func (c *Client) ListElementTypes(includeControls bool, category string) (*ElementTypesResponse, error) {
-	path := "/site/element-types"
-	q := make([]string, 0)
+	v := url.Values{}
 	if includeControls {
-		q = append(q, "include_controls=1")
+		v.Set("include_controls", "1")
 	}
 	if category != "" {
-		q = append(q, "category="+category)
+		v.Set("category", category)
 	}
-	if len(q) > 0 {
-		path += "?" + strings.Join(q, "&")
+	path := "/site/element-types"
+	if len(v) > 0 {
+		path += "?" + v.Encode()
 	}
 
 	resp, err := c.do("GET", path, nil)
@@ -543,30 +544,29 @@ type SearchResponse struct {
 
 // SearchElements searches elements across all Bricks content.
 func (c *Client) SearchElements(params SearchParams) (*SearchResponse, error) {
-	path := "/search/elements?"
-	q := make([]string, 0)
+	v := url.Values{}
 	if params.ElementType != "" {
-		q = append(q, "element_type="+params.ElementType)
+		v.Set("element_type", params.ElementType)
 	}
 	if params.SettingKey != "" {
-		q = append(q, "setting_key="+params.SettingKey)
+		v.Set("setting_key", params.SettingKey)
 	}
 	if params.SettingValue != "" {
-		q = append(q, "setting_value="+params.SettingValue)
+		v.Set("setting_value", params.SettingValue)
 	}
 	if params.GlobalClass != "" {
-		q = append(q, "global_class="+params.GlobalClass)
+		v.Set("global_class", params.GlobalClass)
 	}
 	if params.PostType != "" {
-		q = append(q, "post_type="+params.PostType)
+		v.Set("post_type", params.PostType)
 	}
 	if params.PerPage > 0 {
-		q = append(q, fmt.Sprintf("per_page=%d", params.PerPage))
+		v.Set("per_page", fmt.Sprintf("%d", params.PerPage))
 	}
 	if params.Page > 0 {
-		q = append(q, fmt.Sprintf("page=%d", params.Page))
+		v.Set("page", fmt.Sprintf("%d", params.Page))
 	}
-	path += strings.Join(q, "&")
+	path := "/search/elements?" + v.Encode()
 
 	resp, err := c.do("GET", path, nil)
 	if err != nil {

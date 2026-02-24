@@ -26,11 +26,11 @@ class ATB_Search_API {
 	 * GET /search/elements — search elements across all Bricks content.
 	 */
 	public static function search_elements( WP_REST_Request $request ): WP_REST_Response {
-		$element_type  = $request->get_param( 'element_type' );
-		$setting_key   = $request->get_param( 'setting_key' );
-		$setting_value = $request->get_param( 'setting_value' );
-		$global_class  = $request->get_param( 'global_class' );
-		$post_type     = $request->get_param( 'post_type' );
+		$element_type  = sanitize_text_field( $request->get_param( 'element_type' ) ?? '' ) ?: null;
+		$setting_key   = sanitize_text_field( $request->get_param( 'setting_key' ) ?? '' ) ?: null;
+		$setting_value = sanitize_text_field( $request->get_param( 'setting_value' ) ?? '' ) ?: null;
+		$global_class  = sanitize_text_field( $request->get_param( 'global_class' ) ?? '' ) ?: null;
+		$post_type     = sanitize_text_field( $request->get_param( 'post_type' ) ?? '' ) ?: null;
 		$per_page      = min( (int) ( $request->get_param( 'per_page' ) ?: 50 ), 100 );
 		$page          = max( (int) ( $request->get_param( 'page' ) ?: 1 ), 1 );
 
@@ -51,7 +51,7 @@ class ATB_Search_API {
 		];
 
 		if ( $post_type ) {
-			$query_args['post_type'] = sanitize_text_field( $post_type );
+			$query_args['post_type'] = $post_type;
 		}
 
 		$post_ids = get_posts( $query_args );

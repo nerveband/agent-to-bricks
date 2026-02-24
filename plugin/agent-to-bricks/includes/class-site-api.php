@@ -121,7 +121,7 @@ class ATB_Site_API {
 	 */
 	public static function get_element_types( WP_REST_Request $request ): WP_REST_Response {
 		$include_controls = (bool) $request->get_param( 'include_controls' );
-		$category_filter  = $request->get_param( 'category' );
+		$category_filter  = sanitize_text_field( $request->get_param( 'category' ) ?? '' ) ?: null;
 
 		if ( ! class_exists( '\Bricks\Elements' ) || empty( \Bricks\Elements::$elements ) ) {
 			return new WP_REST_Response( [
