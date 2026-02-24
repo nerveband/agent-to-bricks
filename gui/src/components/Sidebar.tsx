@@ -2,7 +2,8 @@ import { useAtom, useSetAtom } from "jotai";
 import { toolsAtom, activeToolSlugAtom } from "../atoms/tools";
 import { sessionsAtom, activeSessionIdAtom } from "../atoms/sessions";
 import { useSessionLauncher } from "../hooks/useSessionLauncher";
-import { Gear, Question } from "@phosphor-icons/react";
+import { Gear, Moon, Question, SunDim } from "@phosphor-icons/react";
+import { useTheme } from "../hooks/useTheme";
 
 interface SidebarProps {
   collapsed: boolean;
@@ -16,6 +17,7 @@ export function Sidebar({ collapsed }: SidebarProps) {
   const setActiveSessionId = useSetAtom(activeSessionIdAtom);
   const setActiveToolSlug = useSetAtom(activeToolSlugAtom);
   const { launch } = useSessionLauncher();
+  const { theme, toggle } = useTheme();
 
   return (
     <nav
@@ -135,6 +137,15 @@ export function Sidebar({ collapsed }: SidebarProps) {
         >
           <Gear size={18} />
           {!collapsed && "Settings"}
+        </button>
+        <button
+          className="flex items-center gap-2 px-2 py-1.5 rounded text-[13px] transition-colors"
+          style={{ color: "var(--fg-muted)" }}
+          onClick={toggle}
+          title={collapsed ? (theme === "dark" ? "Light mode" : "Dark mode") : undefined}
+        >
+          {theme === "dark" ? <SunDim size={18} /> : <Moon size={18} />}
+          {!collapsed && (theme === "dark" ? "Light mode" : "Dark mode")}
         </button>
         <button
           className="flex items-center gap-2 px-2 py-1.5 rounded text-[13px] transition-colors"
