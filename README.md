@@ -1,35 +1,44 @@
 # Agent to Bricks
 
-A Go CLI and WordPress plugin for building Bricks Builder pages from the command line. Write HTML with ACSS utility classes, convert it to Bricks element JSON, push it to any page. Works for humans typing commands and for LLMs generating pages programmatically.
+Build Bricks Builder pages from the command line. Write HTML, convert it to Bricks elements, and push it to any page — no visual editor needed. Works for humans typing commands and for AI agents generating pages programmatically.
 
-## What this does
+## What this is
 
-Bricks Builder stores page content as a JSON tree of elements. Each element has an ID, a type (section, div, heading, text, image, etc.), parent/child relationships, and a settings object that controls everything from typography to padding to background images.
+Bricks Builder stores page content as a JSON tree of elements. Each element has a type (section, heading, image, etc.), settings that control its appearance, and parent/child relationships that define the layout.
 
-This project gives you:
+This project has two parts:
 
-1. **A WordPress plugin** (`plugin/agent-to-bricks/`) that exposes a REST API for reading, writing, patching, and snapshotting Bricks page content
-2. **A Go CLI** (`cli/`) that talks to that API and adds HTML-to-Bricks conversion, template composition, AI generation, health checks, and full LLM self-discovery
+1. **A WordPress plugin** that adds a REST API to your site for reading, writing, and managing Bricks content
+2. **A CLI tool** (written in Go) that talks to that API and adds HTML conversion, AI generation, template composition, cross-site search, and more
 
-The idea is simple: show an LLM your site's design tokens, utility classes, and templates. It writes HTML. The CLI converts that HTML to Bricks elements and pushes it to a page. No visual editor involved.
+The basic workflow: you (or an AI) write HTML using your site's CSS classes. The CLI converts that HTML into Bricks elements and pushes them to a page. Everything happens through the command line.
+
+## Requirements
+
+- WordPress 6.0+
+- PHP 8.0+
+- Bricks Builder 1.9+
+- Go 1.22+ (to build the CLI from source)
+- Automatic.css (ACSS) 3.x recommended for design token support
+- Frames optional, for component templates
 
 ## Quick start
 
-### 1. Install the WordPress plugin
+### 1. Install the plugin
 
-Copy `plugin/agent-to-bricks/` to your WordPress plugins directory:
+Copy the plugin folder to your WordPress site:
 
 ```bash
 cp -r plugin/agent-to-bricks/ /path/to/wp-content/plugins/
 ```
 
-Activate it in WP Admin. Go to **Settings > Agent to Bricks** to generate an API key.
+Activate it in WP Admin. Go to **Settings > Agent to Bricks** and generate an API key. You'll need this key for the CLI.
 
-### 2. Build and install the CLI
+### 2. Build the CLI
 
 ```bash
-make build        # Outputs bin/bricks
-make install      # Copies to /usr/local/bin/bricks
+make build        # outputs bin/bricks
+make install      # copies to /usr/local/bin/bricks
 ```
 
 Or build directly:
@@ -41,89 +50,101 @@ cd cli && go build -o bricks .
 ### 3. Connect to your site
 
 ```bash
-bricks config init              # Interactive TUI setup
-# or manually:
+bricks config init     # interactive setup wizard
+```
+
+Or set values manually:
+
+```bash
 bricks config set site.url https://your-site.com
 bricks config set site.api_key YOUR_API_KEY
 ```
 
-Config lives at `~/.agent-to-bricks/config.yaml`.
+Config is stored at `~/.agent-to-bricks/config.yaml`.
 
 ### 4. Verify the connection
 
 ```bash
-bricks site info
-bricks doctor 1234    # Health check any page by ID
+bricks site info       # shows Bricks version, PHP, WP info
+bricks doctor 1234     # health check any page by its ID
 ```
 
-## Command reference
+---
 
-### Site operations
+## CLI commands
+
+### Working with pages
+
+Pull, push, and patch page content. Every page's elements can be downloaded as JSON, edited, and uploaded back.
 
 ```bash
-bricks site info                          # Bricks version, PHP, WP, element types
-bricks site frameworks                    # Detect ACSS, show design tokens
-bricks site pull <page-id>               # Pull elements as JSON
-bricks site pull <page-id> -o page.json  # Save to file
-bricks site push <page-id> page.json     # Full replace (requires contentHash)
-bricks site patch <page-id> -f patch.json # Patch specific elements
-bricks site snapshot <page-id>           # Create a snapshot (rollback point)
-bricks site snapshots <page-id>          # List all snapshots
-bricks site rollback <page-id>           # Rollback to latest snapshot
-bricks site rollback <page-id> <snap-id> # Rollback to specific snapshot
+bricks site pull <page-id>                # download elements as JSON
+bricks site pull <page-id> -o page.json   # save to a file
+bricks site push <page-id> page.json      # full replace (needs contentHash)
+bricks site patch <page-id> -f patch.json # update specific elements only
 ```
 
-### HTML to Bricks conversion
+**Snapshots** let you save a page's state before making changes, so you can roll back if something goes wrong:
 
-Converts HTML to Bricks element JSON. When connected to a site with ACSS + Frames, CSS classes are resolved to their global class IDs automatically.
+```bash
+bricks site snapshot <page-id>                  # save current state
+bricks site snapshot <page-id> -l "before hero"  # save with a label
+bricks site snapshots <page-id>                  # list all snapshots
+bricks site rollback <page-id>                   # undo to latest snapshot
+bricks site rollback <page-id> <snapshot-id>     # undo to a specific snapshot
+```
+
+### Converting HTML to Bricks
+
+The converter turns HTML into Bricks element JSON. If your site uses ACSS or Frames, CSS class names are automatically resolved to their global class IDs.
 
 ```bash
 # Convert a file
 bricks convert html page.html
 
-# Pipe from stdin (great for LLM output)
+# Pipe from stdin (useful for AI output)
 echo '<section class="section--l bg--primary-dark">...</section>' | bricks convert html --stdin
 
-# Convert and push directly to a page
+# Convert and push to a page in one step
 bricks convert html page.html --push 1460
 
-# Use cached class registry (faster, skips API call)
-bricks convert html page.html --class-cache
-
-# Create safety snapshot before pushing
+# Create a safety snapshot before pushing
 bricks convert html page.html --push 1460 --snapshot
 
-# Preview without pushing
+# Preview what would happen without actually pushing
 bricks convert html page.html --push 1460 --dry-run
 
-# Save to file
+# Save converted JSON to a file
 bricks convert html page.html -o elements.json
+
+# Use cached class registry (faster, skips an API call)
+bricks convert html page.html --class-cache
 ```
 
-**How class resolution works:**
-
+How class resolution works:
 1. The CLI fetches all global classes from your site (ACSS utilities + Frames components)
-2. HTML class names like `section--l`, `bg--primary-dark`, `fr-hero` are matched against the registry
-3. Matched classes become `_cssGlobalClasses` entries (array of Bricks class IDs)
-4. Unmatched classes go to `_cssClasses` (inline custom classes)
-5. Inline styles are parsed into native Bricks settings (`_typography`, `_padding`, `_background`, etc.)
+2. Class names like `section--l` and `bg--primary-dark` are matched against the registry
+3. Matched classes become `_cssGlobalClasses` entries (Bricks global class IDs)
+4. Unmatched classes go to `_cssClasses` (regular CSS classes)
+5. Inline styles are parsed into native Bricks settings (typography, padding, background, etc.)
 
 ### AI generation
 
-Generate Bricks elements using any OpenAI-compatible LLM:
+Generate Bricks elements by describing what you want in plain English. Works with any OpenAI-compatible LLM provider.
 
 ```bash
+# Set up your LLM
 bricks config set llm.provider openai
 bricks config set llm.api_key sk-...
 bricks config set llm.model gpt-4o
 
-# Generate a single section
+# Generate a section
 bricks generate section "dark hero with CTA buttons" --page 1460
 
 # Generate a full page
-bricks generate page "SaaS landing page with pricing" --page 1460
+bricks generate page "SaaS landing page with pricing table" --page 1460
 
-# Modify existing content
+# Modify existing content on a page
 bricks generate modify "change the hero headline to Welcome" --page 1460
 
 # Preview without pushing
@@ -131,22 +152,83 @@ bricks generate section "testimonial grid" --dry-run
 bricks generate section "testimonial grid" -o section.json
 ```
 
-### Templates
+### Searching across your site
 
-Local template library with import, search, and composition:
+Find elements across every page, template, and component on your site. Useful for auditing content, finding where a class is used, or locating specific elements.
 
 ```bash
-# List all templates
+# Find all headings
+bricks search elements --type heading
+
+# Find elements using a specific global class
+bricks search elements --class fr-hero
+
+# Find elements with a specific setting value
+bricks search elements --setting tag=h1
+
+# Filter by post type
+bricks search elements --type button --post-type page
+
+# Limit results
+bricks search elements --type heading --limit 10
+
+# Get raw JSON output
+bricks search elements --type heading --json
+```
+
+### Components
+
+Components are reusable section templates in Bricks. These commands let you browse and inspect them.
+
+```bash
+# List all components
+bricks components list
+
+# Get JSON output
+bricks components list --json
+
+# View a specific component with its full element tree
+bricks components show <id>
+bricks components show <id> --json
+```
+
+### Element types
+
+See what element types are available in your Bricks installation, and inspect their controls (the settings each element type supports).
+
+```bash
+# List all available element types
+bricks elements types
+
+# Filter by category
+bricks elements types --category media
+
+# Show a specific element type with its full controls schema
+bricks elements types heading
+
+# Get JSON output
+bricks elements types --json
+
+# Include controls for all types
+bricks elements types --controls --json
+```
+
+### Templates
+
+A local template library with import, search, and composition. Templates are stored on your machine and can be combined to build full pages.
+
+```bash
+# List all local templates
 bricks templates list
 
 # Show template details
 bricks templates show hero-cali
 
-# Import from file or directory (supports Frames export format)
+# Import from a file or directory
 bricks templates import ./my-templates/
 bricks templates import hero-section.json
 
-# Learn from an existing page (splits into section templates)
+# Learn templates from an existing page (splits it into sections)
 bricks templates learn <page-id>
 
 # Search templates by description
@@ -159,100 +241,137 @@ bricks compose hero-cali feature-havana footer-amsterdam -o page.json
 bricks compose hero-cali pricing-alpha --push 1460
 ```
 
-Frames library templates include both elements and global classes. When composing, the engine merges classes across templates, deduplicates by name, and remaps IDs to prevent collisions.
-
-### Agent context (LLM self-discovery)
-
-This is the command LLMs should run first. It dumps your site's full design context in a format they can read:
-
-```bash
-# Full markdown context — paste into any LLM chat
-bricks agent context
-
-# Ready-to-use system prompt with design rules + class registry
-bricks agent context --format prompt
-
-# Structured JSON for programmatic tool use
-bricks agent context --format json
-
-# Just one section
-bricks agent context --section classes
-bricks agent context --section tokens
-bricks agent context --section templates
-bricks agent context --section workflows
-
-# Shorter output for small context windows
-bricks agent context --compact
-
-# Save to file
-bricks agent context --format prompt -o system-prompt.md
-```
-
-The context output includes: site environment info, ACSS design tokens (spacing scale, typography scale, color variables, breakpoints), all global classes grouped by source and category, the local template catalog, and step-by-step workflow instructions.
-
-### Health checks
-
-```bash
-bricks doctor <page-id>
-```
-
-Checks for orphaned elements, broken parent/child references, missing IDs, and unknown element types.
-
 ### Global classes
 
-```bash
-bricks classes list                    # All global classes
-bricks classes list --source acss     # Just ACSS utilities
-bricks classes list --source frames   # Just Frames components
-bricks classes show <class-name>      # Full class definition
-```
-
-### Validation
+Manage Bricks global CSS classes — list, create, find, and delete.
 
 ```bash
-bricks validate page.json             # Check structure before pushing
+bricks classes list                       # all global classes
+bricks classes list --framework acss      # just ACSS utilities
+bricks classes list --json                # raw JSON output
+bricks classes create my-class            # create a new class
+bricks classes create my-class --settings '{"color":"red"}'
+bricks classes find "hero"                # find classes by name pattern
+bricks classes delete <class-id>          # delete a class
 ```
 
-## For LLMs: how to use this tool
+### Styles and design tokens
 
-If you're an AI agent reading this, here's the exact workflow.
+Analyze your site's design system — colors, CSS variables, theme styles.
+
+```bash
+bricks styles learn <page-id>            # build a style profile from a page
+bricks styles show                       # display the current style profile
+bricks styles reset                      # clear the style profile
+bricks styles colors                     # show color palette from your site
+bricks styles colors --json
+bricks styles variables                  # show CSS custom properties
+bricks styles variables --json
+bricks styles theme                      # show theme styles
+bricks styles theme --json
+```
+
+### Frameworks
+
+Detect and inspect CSS frameworks installed on your site (like ACSS).
+
+```bash
+bricks frameworks list                    # list detected frameworks
+bricks frameworks show acss              # show detailed framework config
+```
+
+### Media library
+
+Upload files and browse the WordPress media library.
+
+```bash
+bricks media upload photo.jpg             # upload a file
+bricks media list                         # list media items
+bricks media list --search "logo"         # search media by name
+```
+
+### Site info
+
+```bash
+bricks site info                          # Bricks version, PHP, WP, element types
+bricks site frameworks                    # detected CSS frameworks + design tokens
+```
+
+### Agent context (for AI workflows)
+
+This is the command an AI agent should run first. It dumps your site's full design context — classes, tokens, templates, workflows — in a format LLMs can read.
+
+```bash
+bricks agent context                             # full markdown context
+bricks agent context --format prompt             # ready-to-use system prompt
+bricks agent context --format json               # structured JSON
+bricks agent context --section classes           # just one section
+bricks agent context --compact                   # shorter output
+bricks agent context --format prompt -o ctx.md   # save to file
+```
+
+### Health checks and validation
+
+```bash
+bricks doctor <page-id>                   # check for broken elements, orphans, etc.
+bricks validate page.json                 # validate element JSON structure
+```
+
+### Version and updates
+
+```bash
+bricks version                            # show CLI and plugin versions
+bricks version --changelog                # show what changed
+bricks update                             # update CLI and plugin
+bricks update --check                     # check for updates without installing
+bricks update --cli-only                  # only update the CLI
+```
+
+### Configuration
+
+```bash
+bricks config init                        # interactive setup wizard
+bricks config set <key> <value>           # set a config value
+bricks config list                        # show current config
+```
+
+---
+
+## For AI agents
+
+If you're an LLM reading this, here's how to use this tool.
 
 ### The workflow
 
 ```
 1. Discover    →  bricks agent context --format prompt
-2. Generate    →  Write ACSS-compliant HTML
+2. Generate    →  Write HTML using your site's CSS classes
 3. Convert     →  bricks convert html --stdin --push <page-id> --snapshot
 4. Verify      →  bricks doctor <page-id>
 ```
 
 ### Step 1: get your design context
 
-Run `bricks agent context --format prompt` to get a complete system prompt. It has every class on the site, the design token scale, and rules for writing compliant HTML. Load this into your context window before generating any HTML.
+Run `bricks agent context --format prompt`. This gives you a complete system prompt with every CSS class on the site, the design token scale, and rules for writing valid HTML. Load this into your context before generating anything.
 
-If your context window is small, use `--compact` or `--section classes` to get just what you need.
+For smaller context windows, use `--compact` or `--section classes`.
 
-### Step 2: write ACSS-compliant HTML
+### Step 2: write HTML
 
-Use the classes and tokens from the context. The rules:
+Use the classes and tokens from the context output:
 
-- ACSS utility classes handle spacing, backgrounds, typography: `section--l`, `bg--primary-dark`, `text--primary`, `grid--auto-3`, `gap--m`
-- Frames component classes give you pre-built patterns: `fr-hero`, `fr-lede`, `fr-accent-heading`, `btn--primary`, `btn--outline`
-- CSS custom properties go in inline styles: `var(--space-m)`, `var(--h2)`, `var(--content-width)`, `var(--primary)`, `var(--white)`
-- Nest properly: `<section>` as top-level, `<div>` for wrappers and grids, semantic elements for content
-- Every ACSS class maps to a global class ID. The converter handles resolution automatically.
+- ACSS utility classes for spacing, backgrounds, typography: `section--l`, `bg--primary-dark`, `text--primary`, `grid--auto-3`
+- Frames component classes for pre-built patterns: `fr-hero`, `fr-lede`, `btn--primary`
+- CSS custom properties in inline styles: `var(--space-m)`, `var(--h2)`, `var(--primary)`
+- Nest properly: `<section>` as top-level, `<div>` for wrappers, semantic elements for content
 
 ### Step 3: convert and push
 
 ```bash
-# Pipe your HTML directly
 echo '<section class="section--l">...</section>' | bricks convert html --stdin --push 1460 --snapshot
-
-# Or save to file first
-bricks convert html output.html --push 1460 --snapshot
 ```
 
-The `--snapshot` flag creates a rollback point before pushing. Always use it.
+Always use `--snapshot` so you can roll back.
 
 ### Step 4: verify
 
@@ -260,124 +379,114 @@ The `--snapshot` flag creates a rollback point before pushing. Always use it.
 bricks doctor 1460
 ```
 
-If the doctor finds issues, pull the page, fix the elements, and push again:
+### Useful commands for agents
 
 ```bash
-bricks site pull 1460 -o current.json
-# Fix the JSON
-bricks site push 1460 current.json
+# Search for elements across the site
+bricks search elements --type heading --json
+
+# Inspect what element types are available and what settings they take
+bricks elements types heading
+
+# Browse reusable components
+bricks components list --json
+
+# Compose from templates (no AI needed)
+bricks compose hero-cali feature-havana --push 1460
 ```
 
-### Template-based workflow (no LLM needed)
-
-For standard layouts, compose from templates without any AI:
-
-```bash
-bricks templates search "hero"
-bricks compose hero-cali feature-havana pricing-alpha footer-amsterdam --push 1460
-```
-
-### Common patterns
-
-```bash
-# Full page from scratch via AI
-bricks agent context --format prompt -o ctx.md
-# Feed ctx.md to your LLM, get HTML back, then:
-bricks convert html ai-output.html --push 1460 --snapshot
-
-# Iterate on a section
-bricks site pull 1460 -o current.json   # See what's there
-bricks generate modify "make the hero headline bigger" --page 1460
-
-# Safe experimentation
-bricks site snapshot 1460 -l "before experiment"
-bricks convert html experiment.html --push 1460
-bricks doctor 1460                       # Check it
-bricks site rollback 1460               # Undo if needed
-```
-
-## Architecture
-
-```
-agent-to-bricks/
-├── plugin/agent-to-bricks/     WordPress plugin (PHP)
-│   ├── agent-to-bricks.php     Plugin bootstrap
-│   └── includes/
-│       ├── class-rest-api.php          Route registration
-│       ├── class-elements-api.php      GET/PUT/PATCH/DELETE elements
-│       ├── class-classes-api.php       Global class CRUD
-│       ├── class-snapshots-api.php     Snapshot/rollback
-│       ├── class-site-api.php          Site info + frameworks
-│       ├── class-templates-api.php     Server-side templates
-│       ├── class-styles-api.php        Style profiles
-│       ├── class-element-validator.php Element structure validation
-│       ├── class-api-auth.php          API key auth
-│       ├── class-settings.php          Admin settings page
-│       └── class-llm-providers.php     LLM provider configs
-│
-├── cli/                        Go CLI
-│   ├── main.go                 Entry point
-│   ├── go.mod                  Dependencies
-│   ├── cmd/                    Cobra commands
-│   │   ├── root.go             Root command + config loading
-│   │   ├── config.go           config init/set/list
-│   │   ├── site.go             pull/push/patch/snapshot/rollback
-│   │   ├── convert.go          HTML-to-Bricks converter command
-│   │   ├── agent.go            LLM self-discovery context
-│   │   ├── templates.go        Template list/show/import/learn/search/compose
-│   │   ├── generate.go         AI generation (section/page/modify)
-│   │   ├── doctor.go           Page health checks
-│   │   ├── validate.go         JSON structure validation
-│   │   ├── classes.go          Global class operations
-│   │   ├── frameworks.go       Framework detection
-│   │   ├── media.go            Media library operations
-│   │   └── styles.go           Style profile management
-│   │
-│   └── internal/               Core libraries
-│       ├── client/client.go    REST API client (all endpoints)
-│       ├── config/config.go    YAML config management
-│       ├── convert/
-│       │   ├── html.go             HTML → Bricks element tree
-│       │   ├── classregistry.go    ACSS/Frames class name → ID mapping
-│       │   └── styles.go           Inline CSS → Bricks settings parser
-│       ├── agent/context.go    LLM context builder (md/json/prompt)
-│       ├── templates/
-│       │   ├── catalog.go          Template catalog + Frames format loader
-│       │   └── composer.go         Multi-template composition + class merge
-│       ├── doctor/doctor.go    Element tree health checks
-│       ├── validator/          JSON structure validation
-│       ├── embeddings/search.go TF-IDF template search
-│       ├── framework/registry.go CSS framework detection
-│       ├── llm/                LLM client + prompt engineering
-│       ├── styles/profile.go   Style profile management
-│       ├── wizard/wizard.go    TUI setup wizard (Bubble Tea)
-│       └── updater/            CLI self-update logic
-│
-├── Makefile                    build/test/install/deploy
-├── docs/plans/                 Design docs and implementation plans
-├── test-data/                  Template library (452 Frames templates)
-└── scripts/                    Deployment scripts
-```
+---
 
 ## REST API reference
 
-All endpoints require the `X-Agent-Bricks-Key` header with your API key.
+All endpoints are at `/wp-json/agent-bricks/v1/`. Authentication is via the `X-ATB-Key` header with your API key.
+
+### Site
 
 | Endpoint | Method | Description |
 |----------|--------|-------------|
-| `/agent-bricks/v1/site/info` | GET | Bricks version, WP version, element types, breakpoints |
-| `/agent-bricks/v1/site/frameworks` | GET | Detected CSS frameworks + ACSS tokens |
-| `/agent-bricks/v1/classes` | GET | List all global classes (ACSS + Frames) |
-| `/agent-bricks/v1/classes/<id>` | GET | Single class definition |
-| `/agent-bricks/v1/pages/<id>/elements` | GET | Page elements + contentHash |
-| `/agent-bricks/v1/pages/<id>/elements` | PUT | Full replace (requires `If-Match: <contentHash>`) |
-| `/agent-bricks/v1/pages/<id>/elements` | PATCH | Patch specific elements |
-| `/agent-bricks/v1/pages/<id>/elements` | POST | Append elements |
-| `/agent-bricks/v1/pages/<id>/snapshots` | GET | List snapshots |
-| `/agent-bricks/v1/pages/<id>/snapshots` | POST | Create snapshot |
-| `/agent-bricks/v1/pages/<id>/rollback` | POST | Rollback to snapshot |
+| `/site/info` | GET | Bricks version, WP version, PHP, element types, breakpoints |
+| `/site/frameworks` | GET | Detected CSS frameworks and design tokens |
+| `/site/element-types` | GET | Element type metadata (params: `include_controls`, `category`) |
+| `/site/update` | POST | Trigger plugin self-update |
 
-**Important:** PUT (full replace) requires an `If-Match` header containing the current `contentHash`. GET the elements first to obtain it. This prevents accidental overwrites.
+### Pages and elements
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/pages/{id}/elements` | GET | Get all elements for a page (includes `contentHash`) |
+| `/pages/{id}/elements` | POST | Append elements to a page |
+| `/pages/{id}/elements` | PUT | Full replace (requires `If-Match: <contentHash>` header) |
+| `/pages/{id}/elements` | PATCH | Patch specific elements (requires `If-Match`) |
+| `/pages/{id}/elements` | DELETE | Remove elements by ID (requires `If-Match`) |
+| `/pages/{id}/elements/batch` | POST | Multiple operations atomically (requires `If-Match`) |
+
+### Snapshots
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/pages/{id}/snapshots` | GET | List snapshots for a page |
+| `/pages/{id}/snapshots` | POST | Create a snapshot |
+| `/pages/{id}/snapshots/{sid}/rollback` | POST | Rollback to a snapshot |
+
+### Global classes
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/classes` | GET | List all global classes (param: `framework`) |
+| `/classes/{id}` | GET | Get single class |
+| `/classes` | POST | Create a new class |
+| `/classes/{id}` | PATCH | Update a class |
+| `/classes/{id}` | DELETE | Delete a class |
+
+### Templates
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/templates` | GET | List all Bricks templates (param: `type`) |
+| `/templates/{id}` | GET | Get template with elements |
+| `/templates` | POST | Create a template |
+| `/templates/{id}` | PATCH | Update a template |
+| `/templates/{id}` | DELETE | Delete a template |
+
+### Components
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/components` | GET | List reusable components (section-type templates) |
+| `/components/{id}` | GET | Get component with full element tree |
+
+### Search
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/search/elements` | GET | Search elements across all content (params: `element_type`, `setting_key`, `setting_value`, `global_class`, `post_type`, `per_page`, `page`) |
+
+### Media
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/media` | GET | List media items (param: `search`) |
+| `/media/upload` | POST | Upload a file (multipart form-data) |
+
+### Styles
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/styles` | GET | Theme styles and color palette |
+| `/variables` | GET | CSS custom properties |
+
+### AI generation
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/generate` | POST | Generate elements via LLM |
+| `/modify` | POST | Modify existing elements via LLM |
+| `/providers` | GET | List available LLM providers |
+
+**Concurrency control:** All write operations on elements (PUT, PATCH, DELETE, batch) require an `If-Match` header with the current `contentHash`. Get the elements first to obtain it. This prevents two people (or agents) from accidentally overwriting each other's changes.
+
+---
 
 ## Bricks element format
 
@@ -408,48 +517,87 @@ A Bricks element looks like this:
 }
 ```
 
-Settings fields you'll use most:
+Key settings fields:
 
-- `_cssGlobalClasses` -- array of global class IDs (ACSS IDs start with `acss_import_`)
-- `_cssClasses` -- custom CSS class names not in the global registry
-- `_typography` -- font size, weight, color, line-height, letter-spacing
-- `_padding` / `_margin` -- box model with top/right/bottom/left
-- `_background` -- color, image, gradient, overlay
-- `_attributes` -- custom data attributes
-- `tag` -- HTML tag override (section, div, span, etc.)
+- `_cssGlobalClasses` — array of global class IDs (ACSS IDs start with `acss_import_`)
+- `_cssClasses` — custom CSS class names not in the global registry
+- `_typography` — font size, weight, color, line-height, letter-spacing
+- `_padding` / `_margin` — box model (top, right, bottom, left)
+- `_background` — color, image, gradient, overlay
+- `_attributes` — custom data attributes
+- `tag` — HTML tag override (section, div, span, etc.)
 
-## Development
+---
 
-### Prerequisites
+## Project structure
 
-- Go 1.21+
-- WordPress with Bricks Builder 1.9+
-- ACSS (Automatic.css) 3.x (optional but recommended)
-- Frames (optional, for component templates)
-
-### Build
-
-```bash
-make build          # Build CLI binary → bin/bricks
-make test           # Run all tests
-make test-verbose   # Run tests with verbose output
-make lint           # Run go vet
-make clean          # Remove bin/
 ```
-
-### Run tests
-
-```bash
-cd cli && go test ./...                           # All tests
-cd cli && go test -v ./internal/convert/...       # Just converter tests
-cd cli && go test -v ./internal/templates/...     # Just template tests
-cd cli && go test -v ./internal/agent/...         # Just agent context tests
-```
-
-### Deploy plugin to staging
-
-```bash
-make deploy-staging
+agent-to-bricks/
+├── plugin/agent-to-bricks/        WordPress plugin (PHP 8.0+)
+│   ├── agent-to-bricks.php        Plugin bootstrap
+│   └── includes/
+│       ├── class-api-auth.php          API key authentication
+│       ├── class-bricks-lifecycle.php  Bricks content meta helpers
+│       ├── class-classes-api.php       Global class CRUD
+│       ├── class-components-api.php    Reusable components (section templates)
+│       ├── class-element-validator.php Element structure validation
+│       ├── class-elements-api.php      Page element CRUD + batch ops
+│       ├── class-llm-client.php        LLM HTTP client
+│       ├── class-llm-providers.php     LLM provider configs
+│       ├── class-media-api.php         Media library upload + list
+│       ├── class-rest-api.php          Route registration
+│       ├── class-search-api.php        Cross-site element search
+│       ├── class-settings.php          Admin settings page
+│       ├── class-site-api.php          Site info, frameworks, element types
+│       ├── class-snapshots-api.php     Snapshot + rollback
+│       ├── class-styles-api.php        Theme styles + CSS variables
+│       ├── class-templates-api.php     Template CRUD
+│       ├── class-update-api.php        Plugin self-update endpoint
+│       └── class-update-checker.php    Background update checks
+│
+├── cli/                               Go CLI
+│   ├── main.go
+│   ├── cmd/                           Commands
+│   │   ├── root.go                    Root command + config loading
+│   │   ├── config.go                  config init/set/list
+│   │   ├── site.go                    pull/push/patch/snapshot/rollback
+│   │   ├── convert.go                 HTML-to-Bricks converter
+│   │   ├── agent.go                   LLM context builder
+│   │   ├── generate.go                AI generation (section/page/modify)
+│   │   ├── templates.go               Template list/show/import/learn/search
+│   │   ├── search.go                  Cross-site element search
+│   │   ├── components.go              Reusable components list/show
+│   │   ├── elements.go                Element type metadata
+│   │   ├── classes.go                 Global class operations
+│   │   ├── styles.go                  Style profile + design tokens
+│   │   ├── frameworks.go              CSS framework detection
+│   │   ├── media.go                   Media library operations
+│   │   ├── doctor.go                  Page health checks
+│   │   ├── validate.go                JSON structure validation
+│   │   ├── version.go                 Version info
+│   │   └── update.go                  CLI + plugin updates
+│   │
+│   └── internal/                      Core libraries
+│       ├── client/       REST API client
+│       ├── config/       YAML config management
+│       ├── convert/      HTML-to-Bricks converter + class registry
+│       ├── agent/        LLM context builder
+│       ├── templates/    Template catalog + multi-template composer
+│       ├── doctor/       Element tree health checks
+│       ├── validator/    JSON structure validation
+│       ├── embeddings/   TF-IDF template search
+│       ├── framework/    CSS framework detection
+│       ├── llm/          LLM client + prompt engineering
+│       ├── styles/       Style profile management
+│       ├── wizard/       TUI setup wizard (Bubble Tea)
+│       └── updater/      CLI self-update
+│
+├── tests/
+│   ├── plugin/            PHP test runners (wp eval-file)
+│   └── e2e/               End-to-end shell tests
+│
+├── Makefile
+└── docs/plans/            Design docs and implementation plans
 ```
 
 ## Configuration reference
@@ -462,25 +610,45 @@ site:
   api_key: your-api-key-here
 
 llm:
-  provider: openai          # openai, anthropic, or any OpenAI-compatible
+  provider: openai          # openai, anthropic, cerebras, or any OpenAI-compatible
   api_key: sk-...
   model: gpt-4o
-  base_url: ""              # Custom endpoint for local models
+  base_url: ""              # custom endpoint for local/self-hosted models
   temperature: 0.3
-
 ```
 
-Available config keys for `bricks config set`:
+Available keys for `bricks config set`:
 
 | Key | Description |
 |-----|-------------|
-| `site.url` | WordPress site URL |
-| `site.api_key` | Plugin API key |
-| `llm.provider` | LLM provider name |
-| `llm.api_key` | LLM API key |
-| `llm.model` | Model name |
-| `llm.base_url` | Custom API endpoint |
+| `site.url` | Your WordPress site URL |
+| `site.api_key` | API key from the plugin settings page |
+| `llm.provider` | LLM provider (openai, anthropic, cerebras, etc.) |
+| `llm.api_key` | Your LLM API key |
+| `llm.model` | Model name (gpt-4o, claude-sonnet-4-20250514, etc.) |
+| `llm.base_url` | Custom API endpoint for local models |
+
+## Development
+
+### Build and test
+
+```bash
+make build          # build CLI → bin/bricks
+make test           # run all Go tests
+make test-verbose   # verbose test output
+make lint           # go vet
+make clean          # remove bin/
+```
+
+### Run tests
+
+```bash
+cd cli && go test ./...                      # all tests
+cd cli && go test ./internal/client/...      # API client tests
+cd cli && go test ./internal/convert/...     # converter tests
+cd cli && go test ./cmd/...                  # command tests
+```
 
 ## License
 
-MIT
+GPL-2.0-or-later
