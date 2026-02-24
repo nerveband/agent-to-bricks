@@ -1,0 +1,67 @@
+@import "tailwindcss";
+@import "@fontsource-variable/manrope";
+@import "@fontsource/geist-mono";
+
+@theme {
+  --font-sans: "Manrope Variable", "Manrope", system-ui, sans-serif;
+  --font-mono: "Geist Mono", "JetBrains Mono", monospace;
+}
+
+:root {
+  --bg: oklch(0.98 0.002 85);
+  --surface: oklch(0.96 0.003 85);
+  --terminal: oklch(0.10 0.005 265);
+  --fg: oklch(0.25 0.01 265);
+  --fg-muted: oklch(0.50 0.01 265);
+  --accent: oklch(0.82 0.16 85);
+  --accent-hover: oklch(0.76 0.14 85);
+  --border: oklch(0.90 0.003 265);
+  --destructive: oklch(0.55 0.22 27);
+
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: oklch(0.14 0.005 265);
+  --surface: oklch(0.18 0.005 265);
+  --fg: oklch(0.93 0.005 85);
+  --fg-muted: oklch(0.65 0.008 265);
+  --accent-hover: oklch(0.88 0.14 85);
+  --border: oklch(0.22 0.005 265);
+  --destructive: oklch(0.60 0.22 27);
+
+  color-scheme: dark;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+}
+
+[data-radix-popper-content-wrapper] {
+  animation: none !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.animate-pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
