@@ -1,6 +1,6 @@
 mod config;
 
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 #[derive(Serialize)]
 struct ToolDetection {
@@ -10,48 +10,79 @@ struct ToolDetection {
     path: Option<String>,
 }
 
-#[tauri::command]
-async fn detect_tool(command: String) -> ToolDetection {
-    let which_cmd = if cfg!(target_os = "windows") {
-        "where"
-    } else {
-        "which"
-    };
+#[derive(Serialize)]
+struct ConnectionResult {
+    success: bool,
+    status: u16,
+    message: String,
+}
 
-    let path = std::process::Command::new(which_cmd)
-        .arg(&command)
+/// Get the user's login shell, defaulting to /bin/zsh on macOS
+fn user_shell() -> String {
+    std::env::var("SHELL").unwrap_or_else(|_| "/bin/zsh".to_string())
+}
+
+/// Run a command inside the user's login shell so we inherit PATH from ~/.zshrc etc.
+fn shell_exec(cmd: &str) -> Option<String> {
+    let shell = user_shell();
+    std::process::Command::new(&shell)
+        .args(["-l", "-c", cmd])
         .output()
         .ok()
         .and_then(|o| {
             if o.status.success() {
-                Some(String::from_utf8_lossy(&o.stdout).trim().to_string())
+                let stdout = String::from_utf8_lossy(&o.stdout).trim().to_string();
+                if stdout.is_empty() {
+                    let stderr = String::from_utf8_lossy(&o.stderr).trim().to_string();
+                    if stderr.is_empty() { None } else { Some(stderr) }
+                } else {
+                    Some(stdout)
+                }
             } else {
                 None
             }
-        });
+        })
+}
+
+/// Get the user's full environment from their login shell (macOS GUI apps don't inherit it).
+/// Uses `env -0` for null-delimited output to safely handle multiline values.
+#[tauri::command]
+fn get_shell_env() -> std::collections::HashMap<String, String> {
+    let shell = user_shell();
+    // Use env -0 for null-delimited output (safe with multiline values)
+    let output = std::process::Command::new(&shell)
+        .args(["-l", "-c", "env -0"])
+        .output()
+        .ok();
+
+    let mut env = std::collections::HashMap::new();
+    if let Some(o) = output {
+        let text = String::from_utf8_lossy(&o.stdout);
+        // Split on null bytes
+        for entry in text.split('\0') {
+            if let Some((key, value)) = entry.split_once('=') {
+                if !key.is_empty() {
+                    env.insert(key.to_string(), value.to_string());
+                }
+            }
+        }
+    }
+    env
+}
+
+#[tauri::command]
+async fn detect_tool(command: String) -> ToolDetection {
+    // Use login shell so we get the user's full PATH
+    let which_cmd = if cfg!(target_os = "windows") {
+        format!("where {}", command)
+    } else {
+        format!("which {}", command)
+    };
+
+    let path = shell_exec(&which_cmd);
 
     let version = if path.is_some() {
-        std::process::Command::new(&command)
-            .arg("--version")
-            .output()
-            .ok()
-            .and_then(|o| {
-                if o.status.success() {
-                    let stdout = String::from_utf8_lossy(&o.stdout).trim().to_string();
-                    if stdout.is_empty() {
-                        let stderr = String::from_utf8_lossy(&o.stderr).trim().to_string();
-                        if stderr.is_empty() {
-                            None
-                        } else {
-                            Some(stderr)
-                        }
-                    } else {
-                        Some(stdout)
-                    }
-                } else {
-                    None
-                }
-            })
+        shell_exec(&format!("{} --version", command))
     } else {
         None
     };
@@ -64,6 +95,271 @@ async fn detect_tool(command: String) -> ToolDetection {
     }
 }
 
+#[derive(Serialize, Deserialize)]
+struct PageInfo {
+    id: u64,
+    title: String,
+    slug: String,
+    status: String,
+    modified: String,
+}
+
+/// Search pages on a WordPress site via the Agent to Bricks API.
+#[tauri::command]
+async fn search_pages(
+    site_url: String,
+    api_key: String,
+    query: String,
+    per_page: u32,
+) -> Result<Vec<PageInfo>, String> {
+    let url = format!(
+        "{}/wp-json/agent-bricks/v1/pages?search={}&per_page={}",
+        site_url.trim_end_matches('/'),
+        urlencoding::encode(&query),
+        per_page.min(50)
+    );
+
+    let client = reqwest::Client::builder()
+        .timeout(std::time::Duration::from_secs(10))
+        .build()
+        .map_err(|e| format!("Failed to create HTTP client: {}", e))?;
+
+    let resp = client
+        .get(&url)
+        .header("X-ATB-Key", &api_key)
+        .send()
+        .await
+        .map_err(|e| format!("Request failed: {}", e))?;
+
+    if !resp.status().is_success() {
+        return Err(format!("Server responded with status {}", resp.status()));
+    }
+
+    resp.json::<Vec<PageInfo>>()
+        .await
+        .map_err(|e| format!("Failed to parse response: {}", e))
+}
+
+#[derive(Serialize, Deserialize)]
+struct ElementInfo {
+    id: String,
+    name: String,
+    label: Option<String>,
+    parent: Option<String>,
+    children: Option<Vec<String>>,
+    settings: Option<serde_json::Value>,
+}
+
+#[derive(Serialize, Deserialize)]
+struct PageElements {
+    elements: Vec<ElementInfo>,
+    count: u32,
+    #[serde(rename = "contentHash")]
+    content_hash: Option<String>,
+}
+
+#[derive(Serialize, Deserialize)]
+struct GlobalClass {
+    id: serde_json::Value,
+    name: String,
+    settings: Option<serde_json::Value>,
+    framework: Option<String>,
+}
+
+#[derive(Serialize, Deserialize)]
+struct ComponentInfo {
+    id: u64,
+    title: String,
+    #[serde(rename = "type")]
+    component_type: Option<String>,
+    status: Option<String>,
+    #[serde(rename = "elementCount")]
+    element_count: Option<u32>,
+}
+
+#[derive(Serialize, Deserialize)]
+struct MediaItem {
+    id: u64,
+    title: String,
+    url: String,
+    #[serde(rename = "mimeType")]
+    mime_type: Option<String>,
+    filesize: Option<u64>,
+}
+
+#[derive(Serialize, Deserialize)]
+struct SiteStyles {
+    #[serde(rename = "themeStyles")]
+    theme_styles: Option<Vec<serde_json::Value>>,
+    #[serde(rename = "colorPalette")]
+    color_palette: Option<Vec<serde_json::Value>>,
+    #[serde(rename = "globalSettings")]
+    global_settings: Option<serde_json::Value>,
+}
+
+#[derive(Serialize, Deserialize)]
+struct SiteVariables {
+    variables: Option<Vec<serde_json::Value>>,
+    #[serde(rename = "extractedFromCSS")]
+    extracted_from_css: Option<Vec<serde_json::Value>>,
+}
+
+#[derive(Serialize, Deserialize)]
+struct SearchResult {
+    #[serde(rename = "postId")]
+    post_id: u64,
+    #[serde(rename = "postTitle")]
+    post_title: String,
+    #[serde(rename = "elementId")]
+    element_id: String,
+    #[serde(rename = "elementType")]
+    element_type: String,
+    #[serde(rename = "elementLabel")]
+    element_label: Option<String>,
+    settings: Option<serde_json::Value>,
+}
+
+/// Helper: build an authenticated GET request to the ATB API.
+async fn atb_get<T: serde::de::DeserializeOwned>(
+    site_url: &str,
+    api_key: &str,
+    path: &str,
+) -> Result<T, String> {
+    let url = format!("{}/wp-json/agent-bricks/v1{}", site_url.trim_end_matches('/'), path);
+    let client = reqwest::Client::builder()
+        .timeout(std::time::Duration::from_secs(15))
+        .build()
+        .map_err(|e| format!("HTTP client error: {}", e))?;
+    let resp = client.get(&url).header("X-ATB-Key", api_key).send().await
+        .map_err(|e| format!("Request failed: {}", e))?;
+    if !resp.status().is_success() {
+        return Err(format!("Server responded with status {}", resp.status()));
+    }
+    resp.json::<T>().await.map_err(|e| format!("Parse error: {}", e))
+}
+
+#[tauri::command]
+async fn get_page_elements(
+    site_url: String,
+    api_key: String,
+    page_id: u64,
+) -> Result<PageElements, String> {
+    atb_get(&site_url, &api_key, &format!("/pages/{}/elements", page_id)).await
+}
+
+#[tauri::command]
+async fn search_elements(
+    site_url: String,
+    api_key: String,
+    element_type: Option<String>,
+    global_class: Option<String>,
+    per_page: Option<u32>,
+) -> Result<serde_json::Value, String> {
+    let mut path = "/search/elements?".to_string();
+    if let Some(t) = element_type { path.push_str(&format!("element_type={}&", urlencoding::encode(&t))); }
+    if let Some(c) = global_class { path.push_str(&format!("global_class={}&", urlencoding::encode(&c))); }
+    path.push_str(&format!("per_page={}", per_page.unwrap_or(50).min(100)));
+    atb_get(&site_url, &api_key, &path).await
+}
+
+#[tauri::command]
+async fn get_global_classes(
+    site_url: String,
+    api_key: String,
+    framework: Option<String>,
+) -> Result<serde_json::Value, String> {
+    let path = match framework {
+        Some(fw) => format!("/classes?framework={}", urlencoding::encode(&fw)),
+        None => "/classes".to_string(),
+    };
+    atb_get(&site_url, &api_key, &path).await
+}
+
+#[tauri::command]
+async fn get_site_styles(site_url: String, api_key: String) -> Result<SiteStyles, String> {
+    atb_get(&site_url, &api_key, "/styles").await
+}
+
+#[tauri::command]
+async fn get_site_variables(site_url: String, api_key: String) -> Result<SiteVariables, String> {
+    atb_get(&site_url, &api_key, "/variables").await
+}
+
+#[tauri::command]
+async fn get_components(site_url: String, api_key: String) -> Result<serde_json::Value, String> {
+    atb_get(&site_url, &api_key, "/components").await
+}
+
+#[tauri::command]
+async fn get_media(
+    site_url: String,
+    api_key: String,
+    search: Option<String>,
+) -> Result<serde_json::Value, String> {
+    let path = match search {
+        Some(q) => format!("/media?search={}", urlencoding::encode(&q)),
+        None => "/media".to_string(),
+    };
+    atb_get(&site_url, &api_key, &path).await
+}
+
+/// Test connection to a WordPress site's Agent to Bricks API.
+/// Runs from Rust to bypass webview CORS restrictions.
+#[tauri::command]
+async fn test_site_connection(site_url: String, api_key: String) -> ConnectionResult {
+    let url = format!("{}/wp-json/agent-bricks/v1/site/info", site_url.trim_end_matches('/'));
+
+    let client = match reqwest::Client::builder()
+        .timeout(std::time::Duration::from_secs(10))
+        .build()
+    {
+        Ok(c) => c,
+        Err(e) => {
+            return ConnectionResult {
+                success: false,
+                status: 0,
+                message: format!("Failed to create HTTP client: {}", e),
+            };
+        }
+    };
+
+    match client.get(&url).header("X-ATB-Key", &api_key).send().await {
+        Ok(resp) => {
+            let status = resp.status().as_u16();
+            if resp.status().is_success() {
+                ConnectionResult {
+                    success: true,
+                    status,
+                    message: "Connected successfully".to_string(),
+                }
+            } else if status == 401 || status == 403 {
+                ConnectionResult {
+                    success: false,
+                    status,
+                    message: "Invalid API key. Check your key in WordPress under Agent to Bricks.".to_string(),
+                }
+            } else if status == 404 {
+                ConnectionResult {
+                    success: false,
+                    status,
+                    message: "Agent to Bricks plugin not found. Make sure it's installed and activated.".to_string(),
+                }
+            } else {
+                ConnectionResult {
+                    success: false,
+                    status,
+                    message: format!("Server responded with status {}.", status),
+                }
+            }
+        }
+        Err(e) => ConnectionResult {
+            success: false,
+            status: 0,
+            message: format!("Could not reach the site: {}", e),
+        },
+    }
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
@@ -72,6 +368,16 @@ pub fn run() {
         .plugin(tauri_plugin_sql::Builder::default().build())
         .invoke_handler(tauri::generate_handler![
             detect_tool,
+            get_shell_env,
+            search_pages,
+            test_site_connection,
+            get_page_elements,
+            search_elements,
+            get_global_classes,
+            get_site_styles,
+            get_site_variables,
+            get_components,
+            get_media,
             config::read_config,
             config::write_config,
             config::config_exists
