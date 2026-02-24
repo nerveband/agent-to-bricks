@@ -2,10 +2,13 @@ import { useState } from "react";
 import { useAtom, useSetAtom } from "jotai";
 import { toolsAtom, activeToolSlugAtom } from "../atoms/tools";
 import { sessionsAtom, activeSessionIdAtom } from "../atoms/sessions";
+import { settingsOpenAtom, helpOpenAtom, paletteOpenAtom } from "../atoms/app";
 import { useSessionLauncher } from "../hooks/useSessionLauncher";
-import { Gear, Moon, Plus, Question, SunDim } from "@phosphor-icons/react";
+import { Gear, Lightning, Moon, Plus, Question, SunDim } from "@phosphor-icons/react";
 import { useTheme } from "../hooks/useTheme";
 import { AddToolDialog } from "./AddToolDialog";
+import { SettingsDialog } from "./SettingsDialog";
+import { HelpDialog } from "./HelpDialog";
 
 interface SidebarProps {
   collapsed: boolean;
@@ -21,6 +24,9 @@ export function Sidebar({ collapsed }: SidebarProps) {
   const { launch } = useSessionLauncher();
   const { theme, toggle } = useTheme();
   const [addToolOpen, setAddToolOpen] = useState(false);
+  const [settingsOpen, setSettingsOpen] = useAtom(settingsOpenAtom);
+  const [helpOpen, setHelpOpen] = useAtom(helpOpenAtom);
+  const setPaletteOpen = useSetAtom(paletteOpenAtom);
 
   return (
     <nav
@@ -44,8 +50,27 @@ export function Sidebar({ collapsed }: SidebarProps) {
         </span>
       </div>
 
+      {/* Prompt Builder button */}
+      <div className="px-2 pt-2" data-onboard="prompt-btn">
+        <button
+          onClick={() => setPaletteOpen(true)}
+          className="w-full flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] font-medium transition-colors"
+          style={{ background: "var(--accent)", color: "var(--bg)" }}
+          title="Open Prompt Builder (⌘P)"
+          data-onboard="palette-hint"
+        >
+          <Lightning size={16} weight="fill" />
+          {!collapsed && (
+            <>
+              <span className="flex-1 text-left">Prompt</span>
+              <span className="text-[10px] opacity-60">⌘P</span>
+            </>
+          )}
+        </button>
+      </div>
+
       <div className="flex-1 overflow-y-auto p-2">
-        <div className="mb-4">
+        <div className="mb-4" data-onboard="tools">
           <div className="flex items-center justify-between px-2 mb-1">
             <p
               className="text-[11px] tracking-widest uppercase"
@@ -147,6 +172,7 @@ export function Sidebar({ collapsed }: SidebarProps) {
         <button
           className="flex items-center gap-2 px-2 py-1.5 rounded text-[13px] transition-colors"
           style={{ color: "var(--fg-muted)" }}
+          onClick={() => setSettingsOpen(true)}
         >
           <Gear size={18} />
           {!collapsed && "Settings"}
@@ -163,6 +189,7 @@ export function Sidebar({ collapsed }: SidebarProps) {
         <button
           className="flex items-center gap-2 px-2 py-1.5 rounded text-[13px] transition-colors"
           style={{ color: "var(--fg-muted)" }}
+          onClick={() => setHelpOpen(true)}
         >
           <Question size={18} />
           {!collapsed && "Help"}
@@ -170,6 +197,8 @@ export function Sidebar({ collapsed }: SidebarProps) {
       </div>
 
       <AddToolDialog open={addToolOpen} onOpenChange={setAddToolOpen} />
+      <SettingsDialog open={settingsOpen} onOpenChange={setSettingsOpen} />
+      <HelpDialog open={helpOpen} onOpenChange={setHelpOpen} />
     </nav>
   );
 }

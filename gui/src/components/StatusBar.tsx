@@ -2,6 +2,7 @@ import { useAtom } from "jotai";
 import { activeSessionAtom } from "../atoms/sessions";
 import { activeToolAtom } from "../atoms/tools";
 import { useState, useEffect } from "react";
+import { SiteSwitcher } from "./SiteSwitcher";
 
 export function StatusBar() {
   const [session] = useAtom(activeSessionAtom);
@@ -34,6 +35,10 @@ export function StatusBar() {
         color: "var(--fg-muted)",
       }}
     >
+      <div data-onboard="site-switcher">
+        <SiteSwitcher />
+      </div>
+      <span style={{ color: "var(--border)" }}>|</span>
       {session && tool ? (
         <>
           <span className="flex items-center gap-1.5">
