@@ -411,6 +411,57 @@ func TestSearchElements(t *testing.T) {
 	}
 }
 
+func TestListComponents(t *testing.T) {
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path != "/wp-json/agent-bricks/v1/components" {
+			t.Errorf("unexpected path: %s", r.URL.Path)
+		}
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"components": []map[string]interface{}{
+				{"id": 89, "title": "Hero Block", "type": "section", "status": "publish", "elementCount": 5},
+			},
+			"count": 1,
+			"total": 1,
+		})
+	}))
+	defer srv.Close()
+
+	c := client.New(srv.URL, "atb_testkey")
+	resp, err := c.ListComponents()
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if resp.Count != 1 {
+		t.Errorf("expected 1, got %d", resp.Count)
+	}
+	if resp.Components[0].Title != "Hero Block" {
+		t.Errorf("expected Hero Block, got %s", resp.Components[0].Title)
+	}
+}
+
+func TestGetComponent(t *testing.T) {
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path != "/wp-json/agent-bricks/v1/components/89" {
+			t.Errorf("unexpected path: %s", r.URL.Path)
+		}
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"id": 89, "title": "Hero Block", "type": "section",
+			"elements":    []interface{}{},
+			"contentHash": "hash123",
+		})
+	}))
+	defer srv.Close()
+
+	c := client.New(srv.URL, "atb_testkey")
+	resp, err := c.GetComponent(89)
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if resp.Title != "Hero Block" {
+		t.Errorf("expected Hero Block, got %s", resp.Title)
+	}
+}
+
 func TestSearchElementsWithSettingFilter(t *testing.T) {
 	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		if r.URL.Query().Get("setting_key") != "tag" {
