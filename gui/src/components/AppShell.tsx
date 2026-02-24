@@ -5,9 +5,11 @@ import { TerminalPanel } from "./TerminalPanel";
 import { ContextPanel } from "./ContextPanel";
 import { StatusBar } from "./StatusBar";
 import { useToolDetection } from "../hooks/useToolDetection";
+import { useKeyboardShortcuts } from "../hooks/useKeyboardShortcuts";
 
 export function AppShell() {
   useToolDetection(); // Scan for installed CLI tools on mount
+  useKeyboardShortcuts();
   const [sidebarOpen] = useAtom(sidebarOpenAtom);
   const [contextOpen] = useAtom(contextPanelOpenAtom);
 
