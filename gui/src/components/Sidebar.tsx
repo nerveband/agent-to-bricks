@@ -1,7 +1,8 @@
-import { useAtom } from "jotai";
+import { useAtom, useSetAtom } from "jotai";
 import { toolsAtom, activeToolSlugAtom } from "../atoms/tools";
 import { sessionsAtom, activeSessionIdAtom } from "../atoms/sessions";
-import { Gear, Question, SunDim, Moon } from "@phosphor-icons/react";
+import { useSessionLauncher } from "../hooks/useSessionLauncher";
+import { Gear, Question } from "@phosphor-icons/react";
 
 interface SidebarProps {
   collapsed: boolean;
@@ -12,6 +13,9 @@ export function Sidebar({ collapsed }: SidebarProps) {
   const [activeToolSlug] = useAtom(activeToolSlugAtom);
   const [sessions] = useAtom(sessionsAtom);
   const [activeSessionId] = useAtom(activeSessionIdAtom);
+  const setActiveSessionId = useSetAtom(activeSessionIdAtom);
+  const setActiveToolSlug = useSetAtom(activeToolSlugAtom);
+  const { launch } = useSessionLauncher();
 
   return (
     <nav
@@ -60,6 +64,11 @@ export function Sidebar({ collapsed }: SidebarProps) {
                   borderLeft: isActive ? "2px solid var(--accent)" : "2px solid transparent",
                 }}
                 title={collapsed ? tool.name : undefined}
+                onClick={() => {
+                  if (tool.installed) {
+                    launch(tool);
+                  }
+                }}
               >
                 <span
                   className="relative flex items-center justify-center w-6 h-6 rounded text-[10px] font-bold font-mono shrink-0"
@@ -93,6 +102,10 @@ export function Sidebar({ collapsed }: SidebarProps) {
                 className="flex items-center gap-2 w-full px-2 py-1.5 rounded text-[13px] transition-colors duration-75"
                 style={{
                   background: session.id === activeSessionId ? "var(--border)" : undefined,
+                }}
+                onClick={() => {
+                  setActiveSessionId(session.id);
+                  setActiveToolSlug(session.toolSlug);
                 }}
               >
                 <span
