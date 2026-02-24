@@ -539,6 +539,63 @@ func (c *Client) SearchElements(params SearchParams) (*SearchResponse, error) {
 	return &result, nil
 }
 
+// ComponentItem in the list response.
+type ComponentItem struct {
+	ID           int    `json:"id"`
+	Title        string `json:"title"`
+	Type         string `json:"type"`
+	Status       string `json:"status"`
+	ElementCount int    `json:"elementCount"`
+	Modified     string `json:"modified"`
+}
+
+// ComponentsResponse from GET /components.
+type ComponentsResponse struct {
+	Components []ComponentItem `json:"components"`
+	Count      int             `json:"count"`
+	Total      int             `json:"total"`
+}
+
+// ComponentDetailResponse from GET /components/{id}.
+type ComponentDetailResponse struct {
+	ID           int                      `json:"id"`
+	Title        string                   `json:"title"`
+	Type         string                   `json:"type"`
+	Status       string                   `json:"status"`
+	Elements     []map[string]interface{} `json:"elements"`
+	ContentHash  string                   `json:"contentHash"`
+	ElementCount int                      `json:"elementCount"`
+	Modified     string                   `json:"modified"`
+}
+
+// ListComponents returns reusable components (section-type templates).
+func (c *Client) ListComponents() (*ComponentsResponse, error) {
+	resp, err := c.do("GET", "/components", nil)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var result ComponentsResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return nil, err
+	}
+	return &result, nil
+}
+
+// GetComponent returns a single component with its element tree.
+func (c *Client) GetComponent(id int) (*ComponentDetailResponse, error) {
+	resp, err := c.do("GET", fmt.Sprintf("/components/%d", id), nil)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var result ComponentDetailResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return nil, err
+	}
+	return &result, nil
+}
+
 // UploadMedia uploads a file to the WordPress media library via multipart POST.
 func (c *Client) UploadMedia(filePath string) (*MediaUploadResponse, error) {
 	f, err := os.Open(filePath)
