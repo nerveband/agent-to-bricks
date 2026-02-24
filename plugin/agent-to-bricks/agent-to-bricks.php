@@ -5,7 +5,7 @@
  * Version: 1.0.0
  * Author: WaveDepth
  * Requires at least: 6.0
- * Requires PHP: 7.4
+ * Requires PHP: 8.0
  * License: GPL-2.0-or-later
  */
 
