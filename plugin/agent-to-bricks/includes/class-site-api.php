@@ -22,6 +22,12 @@ class ATB_Site_API {
 			'callback'            => array( __CLASS__, 'get_frameworks' ),
 			'permission_callback' => array( __CLASS__, 'check_permission' ),
 		) );
+
+		register_rest_route( 'agent-bricks/v1', '/site/element-types', [
+			'methods'             => 'GET',
+			'callback'            => [ __CLASS__, 'get_element_types' ],
+			'permission_callback' => [ __CLASS__, 'check_permission' ],
+		] );
 	}
 
 	public static function check_permission() {
@@ -108,5 +114,115 @@ class ATB_Site_API {
 		}
 
 		return new WP_REST_Response( array( 'frameworks' => $frameworks ), 200 );
+	}
+
+	/**
+	 * GET /site/element-types — rich element type metadata with optional controls.
+	 */
+	public static function get_element_types( WP_REST_Request $request ): WP_REST_Response {
+		$include_controls = (bool) $request->get_param( 'include_controls' );
+		$category_filter  = $request->get_param( 'category' );
+
+		if ( ! class_exists( '\Bricks\Elements' ) || empty( \Bricks\Elements::$elements ) ) {
+			return new WP_REST_Response( [
+				'elementTypes' => [],
+				'count'        => 0,
+			], 200 );
+		}
+
+		$types = [];
+
+		foreach ( \Bricks\Elements::$elements as $name => $entry ) {
+			$label    = '';
+			$category = 'general';
+			$icon     = '';
+			$controls = [];
+
+			// Bricks stores entries as arrays with 'class', 'name', 'label' keys.
+			// Use get_element() to retrieve the fully populated element data.
+			if ( is_array( $entry ) && method_exists( '\Bricks\Elements', 'get_element' ) ) {
+				$full = \Bricks\Elements::get_element( [ 'name' => $name ] );
+				if ( is_array( $full ) ) {
+					$label    = $full['label'] ?? $name;
+					$category = $full['category'] ?? 'general';
+					$icon     = $full['icon'] ?? '';
+
+					if ( $include_controls && ! empty( $full['controls'] ) ) {
+						$controls = $full['controls'];
+					}
+				} else {
+					$label = $entry['label'] ?? $name;
+				}
+			} elseif ( is_object( $entry ) ) {
+				$label    = $entry->label ?? $name;
+				$category = $entry->category ?? 'general';
+				$icon     = $entry->icon ?? '';
+
+				if ( $include_controls && method_exists( $entry, 'set_controls' ) ) {
+					$entry->set_controls();
+					$controls = $entry->controls ?? [];
+				}
+			} elseif ( is_string( $entry ) && class_exists( $entry ) ) {
+				try {
+					$instance = new $entry();
+					$label    = $instance->label ?? $name;
+					$category = $instance->category ?? 'general';
+					$icon     = $instance->icon ?? '';
+
+					if ( $include_controls && method_exists( $instance, 'set_controls' ) ) {
+						$instance->set_controls();
+						$controls = $instance->controls ?? [];
+					}
+				} catch ( \Throwable $e ) {
+					$label = $name;
+				}
+			}
+
+			if ( $category_filter && $category !== $category_filter ) {
+				continue;
+			}
+
+			$type_data = [
+				'name'     => $name,
+				'label'    => $label,
+				'category' => $category,
+				'icon'     => $icon,
+			];
+
+			if ( $include_controls && ! empty( $controls ) ) {
+				$type_data['controls'] = self::sanitize_controls( $controls );
+			}
+
+			$types[] = $type_data;
+		}
+
+		usort( $types, fn( $a, $b ) => strcmp( $a['name'], $b['name'] ) );
+
+		return new WP_REST_Response( [
+			'elementTypes' => $types,
+			'count'        => count( $types ),
+		], 200 );
+	}
+
+	/**
+	 * Sanitize controls for API response — strip closures and internal fields.
+	 */
+	private static function sanitize_controls( array $controls ): array {
+		$clean = [];
+		foreach ( $controls as $key => $control ) {
+			if ( ! is_array( $control ) ) continue;
+
+			$entry = [];
+			foreach ( [ 'type', 'label', 'default', 'options', 'placeholder', 'description', 'units', 'min', 'max', 'step' ] as $field ) {
+				if ( isset( $control[ $field ] ) && ! ( $control[ $field ] instanceof \Closure ) ) {
+					$entry[ $field ] = $control[ $field ];
+				}
+			}
+
+			if ( ! empty( $entry ) ) {
+				$clean[ $key ] = $entry;
+			}
+		}
+		return $clean;
 	}
 }
