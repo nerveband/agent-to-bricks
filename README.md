@@ -178,7 +178,7 @@ bricks elements types --controls --json      # all types with controls as JSON
 
 ### Work with templates
 
-A local template library. Import templates, search by description, compose multiple into a page.
+A local template library. Import templates, search by description, compose multiple into a page. See the [Templates guide](docs/templates.md) for the full reference on template formats, CSS class naming, and composition.
 
 ```bash
 bricks templates list                                              # list templates
@@ -350,7 +350,7 @@ bricks site rollback <page-id>
 
 ### Template-based workflow (no AI generation needed)
 
-For standard layouts, compose from existing templates:
+For standard layouts, compose from existing templates (see [Templates guide](docs/templates.md) for details):
 
 ```bash
 bricks templates search "hero"
