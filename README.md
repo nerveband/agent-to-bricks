@@ -544,6 +544,44 @@ llm:
 
 ---
 
+## Desktop GUI
+
+A native desktop app for managing AI coding agent sessions with your Bricks Builder sites.
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) 18+
+- [Rust](https://www.rust-lang.org/tools/install) (for Tauri)
+- At least one AI coding tool installed: [Claude Code](https://docs.anthropic.com/en/docs/claude-code), [Codex](https://github.com/openai/codex), or [OpenCode](https://github.com/opencode-ai/opencode)
+
+### Running the GUI
+
+```bash
+cd gui
+npm install
+npm run tauri dev       # development mode with hot reload
+```
+
+### Building for production
+
+```bash
+cd gui
+npm run tauri build     # creates a native app bundle in gui/src-tauri/target/release/bundle/
+```
+
+### What the GUI does
+
+- Manages multiple AI coding tool sessions (Claude Code, Codex, OpenCode)
+- Connects to your Bricks Builder WordPress sites
+- Provides a prompt builder with @mention autocomplete for site objects (pages, sections, classes, colors, components, media)
+- Includes built-in presets for common tasks (generate pages, modify elements, pull/push pages)
+- Inline variable pills in prompts with click-to-edit popovers
+- Launch dialog for configuring tool sessions (working directory, flags, system prompt)
+- Multi-site support with environment labels (production/staging/local)
+- Persists settings to `~/.agent-to-bricks/config.yaml`
+
+---
+
 ## For contributors
 
 If you want to build from source or run the test suite:
