@@ -1,34 +1,42 @@
 ---
+import { Image } from 'astro:assets';
+import winUpload from '../../assets/icons/win-upload.png';
+import winGenerate from '../../assets/icons/win-generate.png';
+import winConvert from '../../assets/icons/win-convert.png';
+import winSearch from '../../assets/icons/win-search.png';
+import winRollback from '../../assets/icons/win-rollback.png';
+import winTeam from '../../assets/icons/win-team.png';
+
 const wins = [
   {
     title: 'Upload images into a gallery',
-    description: 'Drop a folder of photos into your media library and generate a gallery section in one command.',
-    icon: '🖼️',
+    description: 'Point it at a folder. It uploads everything and builds the gallery section. Done.',
+    icon: winUpload,
   },
   {
     title: 'Generate a landing page',
-    description: 'Describe what you need in a sentence. Get a full page with sections, headings, and layout.',
-    icon: '📄',
+    description: 'One sentence in, full page out. Hero, features, testimonials, CTA. All using your ACSS classes.',
+    icon: winGenerate,
   },
   {
     title: 'Convert HTML to Bricks',
-    description: 'Write HTML with your CSS classes. The CLI converts it to Bricks elements and resolves global class IDs.',
-    icon: '🔄',
+    description: 'Write HTML with your classes. The CLI turns it into Bricks elements and maps class names to IDs.',
+    icon: winConvert,
   },
   {
     title: 'Search and replace across pages',
-    description: 'Find every heading, button, or class usage across your entire site. Modify them in bulk.',
-    icon: '🔍',
+    description: 'Find every button, heading, or class usage site-wide. Change them all in one pass.',
+    icon: winSearch,
   },
   {
     title: 'Roll back any change',
-    description: 'Every push creates a snapshot. If something breaks, roll back to the previous state in one command.',
-    icon: '⏪',
+    description: 'Every push saves a snapshot. Something wrong? One command to undo it.',
+    icon: winRollback,
   },
   {
     title: 'Onboard your team',
-    description: 'The GUI gives your team a visual way to learn the toolkit. Graduate to the CLI when they\'re ready.',
-    icon: '👥',
+    description: 'Start people in the GUI. They see the CLI commands running underneath. They graduate when ready.',
+    icon: winTeam,
   },
 ];
 ---
@@ -38,14 +46,14 @@ const wins = [
     <div class="text-center mb-12">
       <h2 class="text-3xl sm:text-4xl font-bold text-white">What you can do</h2>
       <p class="mt-4 text-gray-400 text-lg">
-        Concrete things you get on day one.
+        Things you can do on day one.
       </p>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {wins.map((win) => (
         <div class="rounded-xl border border-white/5 bg-white/[0.02] p-5 hover:border-white/10 transition-colors">
-          <span class="text-2xl mb-3 block">{win.icon}</span>
+          <Image src={win.icon} alt="" width={40} height={40} class="mb-3 rounded" />
           <h3 class="text-white font-semibold text-sm mb-2">{win.title}</h3>
           <p class="text-gray-500 text-sm leading-relaxed">{win.description}</p>
         </div>

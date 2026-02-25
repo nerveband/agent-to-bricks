@@ -149,7 +149,7 @@ const features = [
   {
     key: 'generate',
     title: 'Natural language to Bricks elements',
-    copy: 'Describe what you want in plain language. The AI generates production-ready Bricks elements — complete with your design tokens, global classes, and responsive settings.',
+    copy: 'Tell it what you want. The AI writes Bricks elements that use your design tokens, your global classes, and your responsive settings. Not generic output -- output that fits your site.',
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
@@ -159,7 +159,7 @@ const features = [
   {
     key: 'agent',
     title: 'Bring your own agent',
-    copy: 'Use whatever AI coding tool you prefer. Claude Code, Codex, or any CLI tool that can run commands. Your machine, your API keys, your workflows.',
+    copy: 'Claude Code, Codex, OpenCode, whatever you like. The CLI exports your site context so any AI tool can read your classes, tokens, and templates.',
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m9.86-2.04a4.5 4.5 0 00-1.242-7.244l-4.5-4.5a4.5 4.5 0 00-6.364 6.364L4.25 8.25" />
@@ -169,7 +169,7 @@ const features = [
   {
     key: 'search',
     title: 'Cross-site intelligence',
-    copy: 'Search elements across every page. Pull design tokens and color palettes. Reference existing components. Work with full context of your site\'s design system.',
+    copy: 'Find every hero section, pricing table, or class usage across your entire site. Pull color palettes and spacing tokens. The AI works with the full picture.',
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
@@ -179,7 +179,7 @@ const features = [
   {
     key: 'templates',
     title: 'Templates and style profiles',
-    copy: 'Bring your own templates or learn from existing pages. Compose sections, apply style profiles, and maintain consistency across your entire site.',
+    copy: 'Learn templates from pages you already like. Compose multiple sections into new pages. Style profiles keep the output consistent with your design system.',
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L12 12.75 6.429 9.75m11.142 0l4.179 2.25L12 17.25 2.25 12l4.179-2.25" />

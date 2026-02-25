@@ -3,21 +3,21 @@ title: Introduction
 description: What is Agent to Bricks and who is it for
 ---
 
-Agent to Bricks lets you build and manage [Bricks Builder](https://bricksbuilder.io/) pages from the command line. Write HTML, convert it to Bricks elements, push it to any page -- no visual editor required.
+Agent to Bricks lets you build and manage [Bricks Builder](https://bricksbuilder.io/) pages without opening the visual editor. Write HTML, convert it to Bricks elements, push it to any page. All from the command line.
 
-It was built for two overlapping groups: Bricks Builder users who want to bring AI into their workflow, and developers (human or AI) who prefer working in a terminal over dragging blocks around.
+Two kinds of people end up here: Bricks users who want AI in their workflow, and developers who'd rather type commands than drag blocks around. Both get what they need.
 
 ## The three components
 
 The project ships as three pieces that work together.
 
-**The WordPress plugin** installs on your Bricks site and exposes a REST API. It handles authentication, reads and writes page content, manages snapshots, and gives the CLI access to everything -- global classes, design tokens, templates, media, and more. Think of it as the bridge between your WordPress database and the outside world.
+**The WordPress plugin** adds a REST API to your Bricks site. It reads and writes page content, manages snapshots, and exposes global classes, design tokens, templates, and media to external tools. It's the bridge between your WordPress database and the outside world.
 
-**The CLI** is a standalone binary called `bricks`. It talks to the plugin's API and does the heavy lifting: converting HTML to Bricks element JSON, generating content with AI, composing pages from templates, searching across your entire site, and managing snapshots for safe rollbacks. It runs on Mac, Linux, and Windows.
+**The CLI** is a standalone binary called `bricks`. It converts HTML to Bricks element JSON, generates content with AI, composes pages from templates, searches across your entire site, and handles snapshot rollbacks. Mac, Linux, Windows.
 
-**The desktop GUI** is a native app (built with Tauri) that wraps AI coding tools like Claude Code, Codex, or OpenCode. It connects to your Bricks sites and provides a prompt builder with autocomplete for pages, classes, colors, and components. It's optional -- everything the GUI does, the CLI can do too.
+**The desktop GUI** wraps AI coding tools (Claude Code, Codex, OpenCode) in a native app with a prompt builder that autocompletes pages, classes, colors, and components from your site. It's optional. Everything the GUI does, the CLI can do too.
 
-You can use just the plugin and CLI. You can add the GUI on top. Or you can point an AI agent at the CLI and let it build pages autonomously.
+Use the plugin and CLI together. Add the GUI if you want a visual interface. Or point an AI agent at the CLI and let it build pages on its own.
 
 ## Who this is for
 
