@@ -1,0 +1,85 @@
+---
+import Header from '../components/home/Header.astro';
+import Footer from '../components/home/Footer.astro';
+import '../styles/global.css';
+import '../styles/custom.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Agent to Bricks — Update your Bricks website with natural language',
+  description = 'Bring your own AI agent, your own workflows, from your machine to the cloud. Free and open source.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://agent-to-bricks.dev" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&family=Geist+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen bg-[#0a0a0c] text-gray-100 font-[Manrope,sans-serif] antialiased">
+    <!-- Animated gradient background -->
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] animate-gradient"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(250,204,21,0.05),transparent_50%)]"></div>
+    </div>
+
+    <Header />
+
+    <main>
+      <slot />
+    </main>
+
+    <Footer />
+
+    <script is:inline>
+      // Dark/light mode toggle
+      const theme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+    </script>
+
+    <style is:global>
+      @keyframes gradient {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+      }
+      .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradient 15s ease infinite;
+      }
+
+      [data-theme='light'] body {
+        background-color: #fafaf9;
+        color: #1c1917;
+      }
+      [data-theme='light'] .fixed.-z-10 {
+        opacity: 0.05;
+      }
+    </style>
+  </body>
+</html>
