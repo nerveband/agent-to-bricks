@@ -1,4 +1,5 @@
 import { atom } from "jotai";
+import type { Tool } from "./tools";
 
 export const sidebarOpenAtom = atom(true);
 export const contextPanelOpenAtom = atom(true);
@@ -9,10 +10,13 @@ export const paletteOpenAtom = atom(false);
 export const onboardingSeenAtom = atom(false);
 
 // Multi-site support
+export type SiteEnvironment = "production" | "staging" | "local";
+
 export interface SiteEntry {
   name: string;
   site_url: string;
   api_key: string;
+  environment?: SiteEnvironment;
 }
 
 export const sitesAtom = atom<SiteEntry[]>([]);
@@ -37,7 +41,18 @@ export const hintPreferenceAtom = atom<"auto" | "always" | "never">("auto");
 // Prompt count tracker (drives experience level in "auto" mode)
 export const promptCountAtom = atom(0);
 
-// Session pre-prompt (injected when launching Claude Code)
+// Prompt pane expanded state
+export const promptExpandedAtom = atom(false);
+
+// Session pre-prompt template (injected when launching Claude Code)
+// Variables: {site_url}, {api_key}, {site_name}, {environment}
 export const sessionPrePromptAtom = atom(
-  "You are working with a Bricks Builder WordPress site. The bricks CLI is available. Use `bricks` commands to pull, push, generate, and modify page elements."
+  `You are a web developer working with a Bricks Builder WordPress site ({environment}).
+Site: {site_url}
+API Key: {api_key}
+The bricks CLI is available. Use \`bricks\` commands to pull, push, generate, and modify page elements.
+Use the API key with the X-ATB-Key header when making API calls to the site.`
 );
+
+// Launch dialog — holds the tool being configured before launch, or null when closed
+export const launchDialogToolAtom = atom<Tool | null>(null);
