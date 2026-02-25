@@ -1,64 +1,154 @@
 import { useEffect, useRef } from "react";
-import { Terminal as XTerm } from "@xterm/xterm";
+import { Terminal as XTerm, type ITheme } from "@xterm/xterm";
 import { FitAddon } from "@xterm/addon-fit";
 import { WebglAddon } from "@xterm/addon-webgl";
 import "@xterm/xterm/css/xterm.css";
 
+const FONT_FAMILY = '"JetBrains Mono", monospace';
+
+/* Terminal themes — branded to match the concept:
+   Dark: deep near-black bg with yellow cursor, green/yellow accents
+   Light: clean white bg with warm yellow cursor
+   Both use JetBrains Mono for that authentic terminal feel */
+const THEMES: Record<"light" | "dark", ITheme> = {
+  dark: {
+    background: "#08080a",
+    foreground: "#E5E7EB",
+    cursor: "#FACC15",
+    cursorAccent: "#08080a",
+    selectionBackground: "rgba(250, 204, 21, 0.18)",
+    selectionForeground: "#FACC15",
+    black: "#0B0B0E",
+    red: "#f87171",
+    green: "#22C55E",
+    yellow: "#FACC15",
+    blue: "#60a5fa",
+    magenta: "#c084fc",
+    cyan: "#22d3ee",
+    white: "#E5E7EB",
+    brightBlack: "#6B7280",
+    brightRed: "#fca5a5",
+    brightGreen: "#86efac",
+    brightYellow: "#fde68a",
+    brightBlue: "#93c5fd",
+    brightMagenta: "#d8b4fe",
+    brightCyan: "#67e8f9",
+    brightWhite: "#fafafa",
+  },
+  light: {
+    background: "#fafafa",
+    foreground: "#030712",
+    cursor: "#EBA40A",
+    cursorAccent: "#fafafa",
+    selectionBackground: "rgba(234, 179, 8, 0.15)",
+    selectionForeground: "#030712",
+    black: "#030712",
+    red: "#dc2626",
+    green: "#16A34A",
+    yellow: "#EBA40A",
+    blue: "#2563eb",
+    magenta: "#9333ea",
+    cyan: "#0891b2",
+    white: "#E5E7EB",
+    brightBlack: "#71717a",
+    brightRed: "#ef4444",
+    brightGreen: "#22c55e",
+    brightYellow: "#ca8a04",
+    brightBlue: "#3b82f6",
+    brightMagenta: "#a855f7",
+    brightCyan: "#06b6d4",
+    brightWhite: "#fafafa",
+  },
+};
+
 interface TerminalProps {
+  colorScheme: "light" | "dark";
   onTerminalReady: (terminal: XTerm) => void;
 }
 
-export function Terminal({ onTerminalReady }: TerminalProps) {
+export function Terminal({ colorScheme, onTerminalReady }: TerminalProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const termRef = useRef<XTerm | null>(null);
 
   useEffect(() => {
     if (!containerRef.current || termRef.current) return;
 
-    const term = new XTerm({
-      fontFamily: '"Geist Mono", "JetBrains Mono", monospace',
-      fontSize: 14,
-      lineHeight: 1.4,
-      theme: {
-        background: "#191a1f",
-        foreground: "#e4e4e7",
-        cursor: "#d4a017",
-        selectionBackground: "rgba(212, 160, 23, 0.2)",
-      },
-      cursorBlink: true,
-      cursorStyle: "bar",
-      allowProposedApi: true,
-    });
+    let disposed = false;
+    let observer: ResizeObserver | null = null;
+    let term: XTerm | null = null;
 
-    const fitAddon = new FitAddon();
-    term.loadAddon(fitAddon);
-    term.open(containerRef.current);
-
-    try {
-      term.loadAddon(new WebglAddon());
-    } catch {
-      // WebGL not available, canvas fallback
-    }
-
-    fitAddon.fit();
-    termRef.current = term;
-    onTerminalReady(term);
-
-    const observer = new ResizeObserver(() => {
+    const init = async () => {
       try {
-        fitAddon.fit();
+        await document.fonts.load(`12px ${FONT_FAMILY}`);
       } catch {
-        // ignore fit errors during teardown
+        // Font may already be loaded or unavailable; proceed anyway
       }
-    });
-    observer.observe(containerRef.current);
+
+      if (disposed || !containerRef.current) return;
+
+      term = new XTerm({
+        fontFamily: FONT_FAMILY,
+        fontSize: 13,
+        lineHeight: 1.4,
+        letterSpacing: 0,
+        scrollback: 5000,
+        theme: THEMES[colorScheme],
+        cursorBlink: true,
+        cursorStyle: "bar",
+        cursorWidth: 2,
+        allowProposedApi: true,
+      });
+
+      const fitAddon = new FitAddon();
+      term.loadAddon(fitAddon);
+
+      observer = new ResizeObserver(() => {
+        if (disposed) return;
+        try {
+          fitAddon.fit();
+        } catch {
+          // ignore fit errors during teardown
+        }
+      });
+      observer.observe(containerRef.current);
+
+      term.open(containerRef.current);
+
+      try {
+        const webgl = new WebglAddon();
+        webgl.onContextLoss(() => {
+          webgl.dispose();
+        });
+        term.loadAddon(webgl);
+      } catch {
+        // WebGL not available, canvas fallback
+      }
+
+      fitAddon.fit();
+      termRef.current = term;
+      onTerminalReady(term);
+    };
+
+    init();
 
     return () => {
-      observer.disconnect();
-      term.dispose();
+      disposed = true;
+      observer?.disconnect();
+      term?.dispose();
       termRef.current = null;
     };
   }, [onTerminalReady]);
 
-  return <div ref={containerRef} className="h-full w-full" />;
+  // Update xterm theme live when color scheme changes
+  useEffect(() => {
+    if (termRef.current) {
+      termRef.current.options.theme = THEMES[colorScheme];
+    }
+  }, [colorScheme]);
+
+  return (
+    <div className="h-full w-full p-3 relative" style={{ background: "transparent" }}>
+      <div ref={containerRef} className="h-full w-full overflow-hidden relative z-10" />
+    </div>
+  );
 }

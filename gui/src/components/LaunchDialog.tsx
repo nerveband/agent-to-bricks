@@ -77,26 +77,26 @@ export function LaunchDialog() {
     <Dialog.Root open={open} onOpenChange={(o) => { if (!o) setTool(null); }}>
       <Dialog.Portal>
         <Dialog.Overlay
-          className="fixed inset-0 z-50"
-          style={{ background: "rgba(0,0,0,0.5)" }}
+          className="fixed inset-0 z-50 transition-opacity duration-300"
+          style={{ background: "var(--surface-dark)", backdropFilter: "blur(20px)" }}
         />
         <Dialog.Content
-          className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[520px] max-h-[85vh] overflow-hidden rounded-lg border flex flex-col"
+          className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[520px] max-h-[85vh] overflow-hidden glass-base rounded-2xl border flex flex-col"
           style={{
-            background: "var(--surface)",
-            borderColor: "var(--border)",
+            borderColor: "var(--border-subtle)",
+            boxShadow: "var(--shadow-floating)",
           }}
         >
           {/* Header */}
           <div
-            className="flex items-center justify-between px-5 py-4 border-b"
-            style={{ borderColor: "var(--border)" }}
+            className="flex items-center justify-between px-5 py-4 border-b white-glass"
+            style={{ borderColor: "var(--border-subtle)" }}
           >
             <Dialog.Title className="flex items-center gap-2 text-[16px] font-semibold" style={{ color: "var(--fg)" }}>
               {tool && (
                 <span
-                  className="w-7 h-7 flex items-center justify-center rounded text-[10px] font-bold font-mono"
-                  style={{ background: "var(--bg)", color: "var(--accent)" }}
+                  className="w-7 h-7 flex items-center justify-center rounded text-[10px] font-bold font-mono pill-glass border"
+                  style={{ borderColor: "var(--border-subtle)", color: "var(--yellow)" }}
                 >
                   {tool.icon}
                 </span>
@@ -104,8 +104,8 @@ export function LaunchDialog() {
               Launch {tool?.name}
             </Dialog.Title>
             <Dialog.Close asChild>
-              <button className="p-1 rounded transition-colors" style={{ color: "var(--fg-muted)" }}>
-                <X size={18} />
+              <button className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-[var(--white-glass)] transition-colors" style={{ color: "var(--fg-muted)" }}>
+                <X size={16} />
               </button>
             </Dialog.Close>
           </div>
@@ -129,17 +129,16 @@ export function LaunchDialog() {
                   placeholder="/path/to/project"
                   autoComplete="off"
                   spellCheck={false}
-                  className="flex-1 min-w-0 px-3 py-2 rounded border text-[13px] font-mono"
+                  className="flex-1 min-w-0 px-3 py-2 rounded-xl border text-[13px] font-mono glass-input"
                   style={{
-                    background: "var(--bg)",
-                    borderColor: "var(--border)",
+                    borderColor: "var(--border-subtle)",
                     color: "var(--fg)",
                   }}
                 />
                 <button
                   onClick={handleBrowse}
-                  className="px-3 py-2 rounded border text-[13px] transition-colors"
-                  style={{ borderColor: "var(--border)", color: "var(--fg-muted)" }}
+                  className="px-3 py-2 rounded-lg border text-[13px] transition-colors hover:bg-[var(--white-glass)]"
+                  style={{ borderColor: "var(--border-subtle)", color: "var(--fg-muted)" }}
                   title="Browse..."
                 >
                   Browse
@@ -165,10 +164,9 @@ export function LaunchDialog() {
                 autoCapitalize="off"
                 spellCheck={false}
                 data-1p-ignore
-                className="w-full px-3 py-2 rounded border text-[13px] font-mono"
+                className="w-full px-3 py-2 rounded-xl border text-[13px] font-mono glass-input"
                 style={{
-                  background: "var(--bg)",
-                  borderColor: "var(--border)",
+                  borderColor: "var(--border-subtle)",
                   color: "var(--fg)",
                 }}
               />
@@ -196,8 +194,8 @@ export function LaunchDialog() {
 
             {/* Variable reference */}
             <div
-              className="p-3 rounded border"
-              style={{ borderColor: "var(--border)", background: "var(--bg)" }}
+              className="p-3 rounded-xl glass-input border"
+              style={{ borderColor: "var(--border-subtle)" }}
             >
               <p className="text-[10px] font-medium mb-1.5" style={{ color: "var(--fg-muted)" }}>
                 Available variables
@@ -211,8 +209,8 @@ export function LaunchDialog() {
                 ].map((v) => (
                   <div key={v.var} className="flex items-center gap-2">
                     <code
-                      className="text-[11px] px-1.5 py-0.5 rounded font-mono"
-                      style={{ background: "var(--surface)", color: "var(--accent)" }}
+                      className="text-[11px] px-1.5 py-0.5 rounded white-glass border font-mono font-semibold hover:bg-[var(--white-glass)] cursor-pointer transition-colors shadow-sm"
+                      style={{ borderColor: "var(--border-subtle)", color: "var(--yellow)" }}
                     >
                       {v.var}
                     </code>
@@ -229,22 +227,23 @@ export function LaunchDialog() {
 
           {/* Footer */}
           <div
-            className="flex items-center justify-end gap-2 px-5 py-3 border-t"
-            style={{ borderColor: "var(--border)" }}
+            className="flex items-center justify-end gap-2 px-5 py-3 border-t white-glass"
+            style={{ borderColor: "var(--border-subtle)" }}
           >
             <button
               onClick={() => setTool(null)}
-              className="px-4 py-2 rounded text-[13px] border transition-colors"
-              style={{ borderColor: "var(--border)", color: "var(--fg-muted)" }}
+              className="px-4 py-2 rounded-lg text-[13px] border transition-colors hover:bg-[var(--white-glass)]"
+              style={{ borderColor: "var(--border-subtle)", color: "var(--fg-muted)" }}
             >
               Cancel
             </button>
             <button
               onClick={handleLaunch}
-              className="flex items-center gap-1.5 px-4 py-2 rounded text-[13px] font-semibold transition-colors"
+              className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-[13px] font-semibold transition-all hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0"
               style={{
-                background: "var(--accent)",
-                color: "oklch(0.15 0.01 85)",
+                background: "var(--yellow)",
+                color: "#000",
+                boxShadow: "var(--shadow-glow)",
               }}
             >
               <Play size={14} weight="fill" />

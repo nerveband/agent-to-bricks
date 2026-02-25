@@ -19,6 +19,7 @@ struct ConnectionResult {
     success: bool,
     status: u16,
     message: String,
+    site_name: Option<String>,
 }
 
 /// Get the user's login shell, defaulting to /bin/zsh on macOS
@@ -276,6 +277,11 @@ async fn get_components(http: tauri::State<'_, HttpClient>, site_url: String, ap
 }
 
 #[tauri::command]
+async fn get_templates(http: tauri::State<'_, HttpClient>, site_url: String, api_key: String) -> Result<serde_json::Value, String> {
+    atb_get(&http.0, &site_url, &api_key, "/templates").await
+}
+
+#[tauri::command]
 async fn get_media(
     http: tauri::State<'_, HttpClient>,
     site_url: String,
@@ -290,37 +296,45 @@ async fn get_media(
 }
 
 /// Test connection to a WordPress site's Agent to Bricks API.
+/// Also fetches the WordPress site title from /wp-json/ root endpoint.
 /// Runs from Rust to bypass webview CORS restrictions.
 #[tauri::command]
 async fn test_site_connection(http: tauri::State<'_, HttpClient>, site_url: String, api_key: String) -> Result<ConnectionResult, String> {
-    let url = format!("{}/wp-json/agent-bricks/v1/site/info", site_url.trim_end_matches('/'));
+    let base = site_url.trim_end_matches('/');
+    let url = format!("{}/wp-json/agent-bricks/v1/site/info", base);
 
     match http.0.get(&url).header("X-ATB-Key", &api_key).send().await {
         Ok(resp) => {
             let status = resp.status().as_u16();
             if resp.status().is_success() {
+                // Try to fetch the WP site name from the REST API root
+                let site_name = fetch_wp_site_name(&http.0, base).await;
                 Ok(ConnectionResult {
                     success: true,
                     status,
                     message: "Connected successfully".to_string(),
+                    site_name,
                 })
             } else if status == 401 || status == 403 {
                 Ok(ConnectionResult {
                     success: false,
                     status,
                     message: "Invalid API key. Check your key in WordPress under Agent to Bricks.".to_string(),
+                    site_name: None,
                 })
             } else if status == 404 {
                 Ok(ConnectionResult {
                     success: false,
                     status,
                     message: "Agent to Bricks plugin not found. Make sure it's installed and activated.".to_string(),
+                    site_name: None,
                 })
             } else {
                 Ok(ConnectionResult {
                     success: false,
                     status,
                     message: format!("Server responded with status {}.", status),
+                    site_name: None,
                 })
             }
         }
@@ -328,8 +342,21 @@ async fn test_site_connection(http: tauri::State<'_, HttpClient>, site_url: Stri
             success: false,
             status: 0,
             message: format!("Could not reach the site: {}", e),
+            site_name: None,
         }),
     }
+}
+
+/// Fetch the WordPress site name from the REST API root endpoint.
+async fn fetch_wp_site_name(client: &reqwest::Client, base_url: &str) -> Option<String> {
+    let url = format!("{}/wp-json/", base_url);
+    let resp = client.get(&url).send().await.ok()?;
+    if !resp.status().is_success() { return None; }
+    let json: serde_json::Value = resp.json().await.ok()?;
+    json.get("name")
+        .and_then(|v| v.as_str())
+        .map(|s| s.to_string())
+        .filter(|s| !s.is_empty())
 }
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
@@ -344,6 +371,7 @@ pub fn run() {
         .plugin(tauri_plugin_opener::init())
         .plugin(tauri_plugin_pty::init())
         .plugin(tauri_plugin_sql::Builder::default().build())
+        .plugin(tauri_plugin_dialog::init())
         .invoke_handler(tauri::generate_handler![
             detect_tool,
             get_shell_env,
@@ -355,6 +383,7 @@ pub fn run() {
             get_site_styles,
             get_site_variables,
             get_components,
+            get_templates,
             get_media,
             config::read_config,
             config::write_config,

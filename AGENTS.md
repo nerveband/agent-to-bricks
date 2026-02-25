@@ -7,9 +7,16 @@ Instructions for AI agents (Claude Code, Codex, etc.) working on this project.
 ```
 agent-to-bricks/
   cli/              Go CLI (cobra, bubbletea TUI)
+  gui/              Tauri desktop app
   plugin/           WordPress plugin (PHP)
-  test-data/        452 Frames templates
-  docs/plans/       Design docs and implementation plans
+  website/          Website / marketing
+  docs/             Documentation and reference data
+    plans/          Design docs and implementation plans
+    test-data/      452 Frames templates (gitignored)
+    agents/         Agent reference data (gitignored)
+  tests/            Test suites
+    snippets/       JS browser snippet tests
+  schema/           JSON schema definitions
   scripts/          Deploy and build scripts
   Makefile          build / test / install / deploy-staging
 ```

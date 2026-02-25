@@ -9,7 +9,11 @@ export type MentionType =
   | "color"
   | "variable"
   | "component"
-  | "media";
+  | "media"
+  | "template"
+  | "form"
+  | "loop"
+  | "condition";
 
 export interface MentionToken {
   type: MentionType;
@@ -42,113 +46,84 @@ export interface PromptPreset {
 export const BUILTIN_PRESETS: PromptPreset[] = [
   // Build
   {
-    id: "generate-section",
-    name: "Generate Section",
-    description: "AI-generate a new section from a text description",
-    prompt:
-      "Generate a new section on @page with this description: {description}. Pull existing page structure first, match the site's current styles, then push the changes.",
+    id: "hero-section",
+    name: "Hero Section",
+    description: "Build a hero section with heading, text, and CTA",
+    prompt: "Build a hero section on @page with a heading, subtext, and call-to-action button. {description}",
     category: "build",
     builtin: true,
   },
   {
-    id: "generate-page",
-    name: "Generate Full Page",
-    description: "AI-generate an entire page layout",
-    prompt:
-      "Build a complete page on @page with these sections: {description}. Pull the current site styles first for consistency, generate all sections, then push.",
+    id: "contact-form",
+    name: "Contact Form",
+    description: "Add a contact form section",
+    prompt: "Add a contact form section to @page with name, email, message fields, and a submit button. {description}",
     category: "build",
     builtin: true,
   },
   {
-    id: "full-page-build",
-    name: "Full Page Build",
-    description: "Multi-step: snapshot, pull, generate, push",
-    prompt:
-      "For @page: First create a snapshot backup, then pull current elements, generate new content based on: {description}. Push changes when done.",
+    id: "card-grid",
+    name: "Card Grid",
+    description: "Create a grid of cards (services, features, team)",
+    prompt: "Create a responsive card grid on @page for: {description}",
+    category: "build",
+    builtin: true,
+  },
+  {
+    id: "full-page",
+    name: "Full Page",
+    description: "Build a complete page layout from scratch",
+    prompt: "Build a complete page layout on @page with: {description}",
     category: "build",
     builtin: true,
   },
   // Edit
   {
-    id: "modify-elements",
-    name: "Modify Elements",
-    description: "Change existing elements on a page",
-    prompt:
-      "On @page, modify the existing elements: {description}. Pull current state first, make the changes, then push.",
+    id: "restyle",
+    name: "Restyle",
+    description: "Change the look and feel of a section",
+    prompt: "Restyle @section to: {description}",
     category: "edit",
     builtin: true,
   },
   {
-    id: "restyle-section",
-    name: "Restyle Section",
-    description: "Update the styling of a section",
-    prompt:
-      "Restyle @section to: {description}. Reference existing site styles and ACSS classes where available.",
+    id: "make-responsive",
+    name: "Make Responsive",
+    description: "Fix mobile/tablet layout issues",
+    prompt: "Make @page fully responsive. Fix any layout issues on mobile and tablet breakpoints.",
     category: "edit",
     builtin: true,
   },
   {
-    id: "convert-html",
-    name: "Convert HTML",
-    description: "Transform HTML into Bricks elements",
-    prompt:
-      "Convert the HTML file at {filePath} into Bricks elements on @page using the bricks CLI convert command.",
+    id: "apply-classes",
+    name: "Apply Classes",
+    description: "Apply global classes to elements on a page",
+    prompt: "Apply @class to relevant elements on @page.",
     category: "edit",
     builtin: true,
   },
-  // Manage
   {
-    id: "pull-page",
-    name: "Pull Page",
-    description: "Download page elements from your site",
-    prompt:
-      "Pull all Bricks elements from @page using the bricks CLI. Save the output as JSON.",
-    category: "manage",
-    builtin: true,
-  },
-  {
-    id: "push-page",
-    name: "Push Page",
-    description: "Upload local changes to your site",
-    prompt:
-      "Push the local Bricks element changes back to @page using the bricks CLI.",
-    category: "manage",
-    builtin: true,
-  },
-  {
-    id: "snapshot-page",
-    name: "Snapshot Page",
-    description: "Backup current page state",
-    prompt:
-      "Create a snapshot backup of @page using the bricks CLI before making changes.",
-    category: "manage",
-    builtin: true,
-  },
-  {
-    id: "rollback-page",
-    name: "Rollback Page",
-    description: "Restore page to a previous snapshot",
-    prompt:
-      "Restore @page to its most recent snapshot using the bricks CLI rollback command.",
-    category: "manage",
+    id: "match-style",
+    name: "Match Style",
+    description: "Style a page to match another page's look",
+    prompt: "Style @page to match the design patterns of: {description}",
+    category: "edit",
     builtin: true,
   },
   // Inspect
   {
-    id: "inspect-page",
-    name: "Inspect Page",
-    description: "View all elements on a page",
-    prompt:
-      "List and describe all Bricks elements on @page. Show the element tree structure with types and labels.",
+    id: "analyze-page",
+    name: "Analyze Page",
+    description: "Get a summary of what's on a page",
+    prompt: "Analyze @page and give me a summary of its structure, sections, and elements.",
     category: "inspect",
     builtin: true,
   },
   {
-    id: "check-styles",
-    name: "Check Styles",
-    description: "View site styles, colors, and variables",
-    prompt:
-      "Show the current theme styles, color palette, and CSS variables for the connected site using the bricks CLI.",
+    id: "find-issues",
+    name: "Find Issues",
+    description: "Check for layout or structure problems",
+    prompt: "Inspect @page for any structural issues, missing elements, or layout problems.",
     category: "inspect",
     builtin: true,
   },
@@ -156,10 +131,20 @@ export const BUILTIN_PRESETS: PromptPreset[] = [
 
 export const customPresetsAtom = atom<PromptPreset[]>([]);
 
-export const allPresetsAtom = atom((get) => [
-  ...BUILTIN_PRESETS,
-  ...get(customPresetsAtom),
-]);
+/** IDs of built-in presets the user has deleted/hidden */
+export const hiddenPresetIdsAtom = atom<string[]>([]);
+
+/** Overrides for built-in presets (rename, edit prompt) keyed by preset ID */
+export const presetOverridesAtom = atom<Record<string, Partial<Pick<PromptPreset, "name" | "prompt" | "description">>>>({});
+
+export const allPresetsAtom = atom((get) => {
+  const hidden = new Set(get(hiddenPresetIdsAtom));
+  const overrides = get(presetOverridesAtom);
+  const builtins = BUILTIN_PRESETS
+    .filter((p) => !hidden.has(p.id))
+    .map((p) => overrides[p.id] ? { ...p, ...overrides[p.id] } : p);
+  return [...builtins, ...get(customPresetsAtom)];
+});
 
 // --- Prompt History ---
 export interface PromptHistoryEntry {

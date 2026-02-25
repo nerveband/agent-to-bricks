@@ -11,10 +11,11 @@ import {
   sessionPrePromptAtom,
   promptCountAtom,
 } from "../atoms/app";
-import { customPresetsAtom, promptHistoryAtom } from "../atoms/prompts";
+import { customPresetsAtom, promptHistoryAtom, hiddenPresetIdsAtom, presetOverridesAtom } from "../atoms/prompts";
+import { toolCustomFlagsAtom, toolWorkingDirsAtom } from "../atoms/tools";
 
 interface ConfigData {
-  sites?: Array<{ name: string; url: string; api_key: string }>;
+  sites?: Array<{ name: string; url: string; api_key: string; environment?: string; environment_label?: string }>;
   active_site?: number;
   default_tool?: string;
   theme?: string;
@@ -25,6 +26,10 @@ interface ConfigData {
   session_pre_prompt?: string;
   onboarding_seen?: boolean;
   prompt_count?: number;
+  tool_flags?: Record<string, string>;
+  tool_dirs?: Record<string, string>;
+  hidden_preset_ids?: string[];
+  preset_overrides?: Record<string, { name?: string; prompt?: string; description?: string }>;
   // Legacy single-site fields
   site?: { url?: string; api_key?: string };
 }
@@ -57,12 +62,18 @@ export function useConfigPersistence() {
   const [promptCount, setPromptCount] = useAtom(promptCountAtom);
   const [customPresets, setCustomPresets] = useAtom(customPresetsAtom);
   const [history, setHistory] = useAtom(promptHistoryAtom);
-  const loaded = useRef(false);
+  const [toolFlags, setToolFlags] = useAtom(toolCustomFlagsAtom);
+  const [toolDirs, setToolDirs] = useAtom(toolWorkingDirsAtom);
+  const [hiddenPresetIds, setHiddenPresetIds] = useAtom(hiddenPresetIdsAtom);
+  const [presetOverrides, setPresetOverrides] = useAtom(presetOverridesAtom);
+  // Two-phase loading: `started` prevents double-mount, `ready` gates saving
+  const started = useRef(false);
+  const ready = useRef(false);
 
   // Load config on mount
   useEffect(() => {
-    if (loaded.current) return;
-    loaded.current = true;
+    if (started.current) return;
+    started.current = true;
 
     (async () => {
       try {
@@ -75,6 +86,8 @@ export function useConfigPersistence() {
             name: s.name,
             site_url: s.url,
             api_key: s.api_key,
+            environment: (s.environment as any) || undefined,
+            environmentLabel: s.environment_label || undefined,
           })));
           if (typeof cfg.active_site === "number") setActiveIdx(cfg.active_site);
         } else if (cfg.site?.url) {
@@ -107,22 +120,44 @@ export function useConfigPersistence() {
             mentions: [],
           })));
         }
-      } catch {
-        // Config doesn't exist or is malformed — that's fine
+
+        if (cfg.tool_flags && typeof cfg.tool_flags === "object") {
+          setToolFlags(cfg.tool_flags);
+        }
+        if (cfg.tool_dirs && typeof cfg.tool_dirs === "object") {
+          setToolDirs(cfg.tool_dirs);
+        }
+        if (Array.isArray(cfg.hidden_preset_ids)) {
+          setHiddenPresetIds(cfg.hidden_preset_ids);
+        }
+        if (cfg.preset_overrides && typeof cfg.preset_overrides === "object") {
+          setPresetOverrides(cfg.preset_overrides);
+        }
+      } catch (err) {
+        console.warn("[config] Could not load config (first run?):", err);
       }
+
+      // Only allow saving AFTER load completes (prevents overwriting config with defaults)
+      ready.current = true;
     })();
   }, []);
 
-  // Save config on changes (debounced)
+  // Save config on changes (debounced) — only after initial load is complete
   const saveTimeout = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   useEffect(() => {
-    if (!loaded.current) return;
+    if (!ready.current) return;
 
     clearTimeout(saveTimeout.current);
     saveTimeout.current = setTimeout(async () => {
       const cfg = {
-        sites: sites.map((s) => ({ name: s.name, url: s.site_url, api_key: s.api_key })),
+        sites: sites.map((s) => ({
+          name: s.name,
+          url: s.site_url,
+          api_key: s.api_key,
+          environment: s.environment,
+          environment_label: s.environmentLabel || undefined,
+        })),
         active_site: activeIdx,
         theme,
         onboarding_seen: onboardingSeen,
@@ -136,6 +171,10 @@ export function useConfigPersistence() {
         prompt_history: history.slice(0, 50).map((h) => ({
           text: h.text, composedText: h.composedText, timestamp: h.timestamp,
         })),
+        tool_flags: toolFlags,
+        tool_dirs: toolDirs,
+        hidden_preset_ids: hiddenPresetIds.length > 0 ? hiddenPresetIds : undefined,
+        preset_overrides: Object.keys(presetOverrides).length > 0 ? presetOverrides : undefined,
         // Legacy CLI compat: write active site as flat fields
         site: sites[activeIdx] ? {
           url: sites[activeIdx].site_url,
@@ -150,11 +189,11 @@ export function useConfigPersistence() {
           path: "~/.agent-to-bricks/config.yaml",
           content: JSON.stringify(cfg, null, 2),
         });
-      } catch {
-        // Silently fail on save errors
+      } catch (err) {
+        console.error("[config] Failed to save config:", err);
       }
     }, 1000);
 
     return () => clearTimeout(saveTimeout.current);
-  }, [sites, activeIdx, theme, onboardingSeen, experienceLevel, hintPref, prePrompt, promptCount, customPresets, history]);
+  }, [sites, activeIdx, theme, onboardingSeen, experienceLevel, hintPref, prePrompt, promptCount, customPresets, history, toolFlags, toolDirs, hiddenPresetIds, presetOverrides]);
 }

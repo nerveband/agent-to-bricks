@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useLayoutEffect } from "react";
 import { useAtom } from "jotai";
 import { onboardingSeenAtom } from "../atoms/app";
 
@@ -17,16 +17,10 @@ const STEPS: TooltipStep[] = [
     position: "right",
   },
   {
-    target: "[data-onboard='prompt-btn']",
-    title: "Smart Prompt Builder",
-    message: "Build context-rich prompts with @mentions that reference your site's pages, sections, and styles.",
-    position: "right",
-  },
-  {
-    target: "[data-onboard='palette-hint']",
-    title: "Quick Prompting",
-    message: "Press Cmd+P anytime for the command palette \u2014 fast prompting from anywhere.",
-    position: "bottom",
+    target: "[data-prompt-pane]",
+    title: "Prompt Editor",
+    message: "Build context-rich prompts with @mentions. Use Cmd+P to quickly focus the editor.",
+    position: "top",
   },
   {
     target: "[data-onboard='site-switcher']",
@@ -36,16 +30,61 @@ const STEPS: TooltipStep[] = [
   },
 ];
 
+const VIEWPORT_PAD = 12;
+
+/** Compute tooltip position anchored to target, then clamp within the viewport. */
+function computePosition(
+  targetRect: DOMRect,
+  tooltipW: number,
+  tooltipH: number,
+  preferred: TooltipStep["position"],
+): { top: number; left: number } {
+  const gap = 12;
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+
+  let top = 0;
+  let left = 0;
+
+  switch (preferred) {
+    case "right":
+      top = targetRect.top + targetRect.height / 2 - tooltipH / 2;
+      left = targetRect.right + gap;
+      break;
+    case "left":
+      top = targetRect.top + targetRect.height / 2 - tooltipH / 2;
+      left = targetRect.left - gap - tooltipW;
+      break;
+    case "bottom":
+      top = targetRect.bottom + gap;
+      left = targetRect.left + targetRect.width / 2 - tooltipW / 2;
+      break;
+    case "top":
+      top = targetRect.top - gap - tooltipH;
+      left = targetRect.left + targetRect.width / 2 - tooltipW / 2;
+      break;
+  }
+
+  // Clamp to viewport
+  left = Math.max(VIEWPORT_PAD, Math.min(left, vw - tooltipW - VIEWPORT_PAD));
+  top = Math.max(VIEWPORT_PAD, Math.min(top, vh - tooltipH - VIEWPORT_PAD));
+
+  return { top, left };
+}
+
 export function OnboardingTooltips() {
   const [seen, setSeen] = useAtom(onboardingSeenAtom);
   const [step, setStep] = useState(0);
   const [pos, setPos] = useState<{ top: number; left: number } | null>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
+  const [ready, setReady] = useState(false);
 
+  // First pass: find the target, mark ready so tooltip renders (invisible) for measurement
   useEffect(() => {
     if (seen || step >= STEPS.length) return;
+    setReady(false);
+    setPos(null);
 
-    // Small delay to let the UI render the target elements
     const timer = setTimeout(() => {
       if (step >= STEPS.length) return;
       const target = document.querySelector(STEPS[step].target);
@@ -53,36 +92,26 @@ export function OnboardingTooltips() {
         setStep((s) => Math.min(s + 1, STEPS.length));
         return;
       }
-
-      const rect = target.getBoundingClientRect();
-      const s = STEPS[step];
-      let top = 0;
-      let left = 0;
-
-      switch (s.position) {
-        case "right":
-          top = rect.top + rect.height / 2;
-          left = rect.right + 12;
-          break;
-        case "bottom":
-          top = rect.bottom + 12;
-          left = rect.left + rect.width / 2;
-          break;
-        case "top":
-          top = rect.top - 12;
-          left = rect.left + rect.width / 2;
-          break;
-        case "left":
-          top = rect.top + rect.height / 2;
-          left = rect.left - 12;
-          break;
-      }
-
-      setPos({ top, left });
+      setReady(true);
     }, 300);
 
     return () => clearTimeout(timer);
   }, [step, seen]);
+
+  // Second pass: measure tooltip and compute clamped position
+  useLayoutEffect(() => {
+    if (!ready || seen || step >= STEPS.length) return;
+
+    const el = tooltipRef.current;
+    const target = document.querySelector(STEPS[step].target);
+    if (!el || !target) return;
+
+    const rect = target.getBoundingClientRect();
+    const tooltipW = el.offsetWidth;
+    const tooltipH = el.offsetHeight;
+
+    setPos(computePosition(rect, tooltipW, tooltipH, STEPS[step].position));
+  }, [ready, step, seen]);
 
   if (seen || step >= STEPS.length) return null;
 
@@ -93,20 +122,16 @@ export function OnboardingTooltips() {
     <>
       <div className="fixed inset-0 z-[90] pointer-events-none" style={{ background: "rgba(0,0,0,0.15)" }} />
 
-      {pos && (
+      {ready && (
         <div
           ref={tooltipRef}
-          className="fixed z-[95] max-w-[280px] rounded-xl border shadow-xl p-4 onboarding-tooltip"
+          className="fixed z-[95] w-[280px] rounded-xl border shadow-xl p-4 onboarding-tooltip backdrop-blur-xl"
           style={{
-            top: pos.top,
-            left: pos.left,
+            top: pos?.top ?? -9999,
+            left: pos?.left ?? -9999,
             background: "var(--surface)",
             borderColor: "var(--accent)",
-            transform:
-              current.position === "right" ? "translateY(-50%)" :
-              current.position === "left" ? "translate(-100%, -50%)" :
-              current.position === "bottom" ? "translateX(-50%)" :
-              "translate(-50%, -100%)",
+            visibility: pos ? "visible" : "hidden",
           }}
         >
           <div className="text-[14px] font-medium mb-1" style={{ color: "var(--fg)" }}>

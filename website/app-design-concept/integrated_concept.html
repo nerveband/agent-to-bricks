@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent-to-Bricks Light & Dark Engine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        accent: {
+                            yellow: 'var(--yellow)',
+                            green: 'var(--green)'
+                        },
+                        ui: {
+                            fg: 'var(--fg)',
+                            muted: 'var(--fg-muted)',
+                            subtle: 'var(--fg-subtle)',
+                            bg: 'var(--bg)',
+                            surface: 'var(--surface)',
+                            surfaceDark: 'var(--surface-dark)',
+                            border: 'var(--border)',
+                            borderSubtle: 'var(--border-subtle)'
+                        }
+                    },
+                    boxShadow: {
+                        'sunken': 'var(--shadow-sunken)',
+                        'sunken-deep': 'var(--shadow-sunken-deep)',
+                        'floating-panel': 'var(--shadow-floating)',
+                        'glow': 'var(--shadow-glow)',
+                        'glow-strong': 'var(--shadow-glow-strong)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            /* Dark Mode Variables (Default) */
+            --yellow: #FACC15;
+            --green: #22C55E;
+
+            --fg: #E5E7EB;
+            --fg-muted: #9CA3AF;
+            --fg-subtle: #4B5563;
+
+            --bg: rgba(10, 10, 12, 0.4);
+            --surface: rgba(20, 20, 22, 0.6);
+            --surface-dark: #0B0B0E;
+
+            --border: rgba(255, 255, 255, 0.08);
+            /* Stronger border for overall edges */
+            --border-subtle: rgba(255, 255, 255, 0.03);
+            /* Fainter border for internal dividers */
+
+            --shadow-sunken: inset 0 4px 15px rgba(0, 0, 0, 0.8), inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+            --shadow-sunken-deep: inset 0 6px 20px rgba(0, 0, 0, 1), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+            --shadow-floating: 0 -10px 40px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.05);
+            --shadow-glow: 0 0 15px -2px rgba(250, 204, 21, 0.4);
+            --shadow-glow-strong: 0 0 25px -2px rgba(250, 204, 21, 0.6);
+
+            --glass-inset: inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(255, 255, 255, 0.02), inset 1px 0 0 rgba(255, 255, 255, 0.05), inset -1px 0 0 rgba(255, 255, 255, 0.05);
+
+            /* Gradient Background Animation */
+            --bg-grad-1: #0f0c29;
+            --bg-grad-2: #302b63;
+            --bg-grad-3: #24243e;
+            --bg-grad-4: #0f0c29;
+
+            /* UI element specifics */
+            --sidebar-grad: linear-gradient(180deg, rgba(20, 20, 22, 0.6) 0%, rgba(10, 10, 12, 0.8) 100%);
+            --vignette: inset -20px 0 50px -20px rgba(0, 0, 0, 0.8);
+            --terminal-bg: rgba(6, 6, 8, 0.8);
+            --input-bg: black;
+            --white-glass: rgba(255, 255, 255, 0.05);
+            --pill-bg: rgba(0, 0, 0, 0.4);
+        }
+
+        .light {
+            /* Light Mode Variables */
+            --yellow: #EBA40A;
+            /* Vibrant but standard yellow */
+            --green: #16A34A;
+
+            --fg: #030712;
+            --fg-muted: #374151;
+            --fg-subtle: #4B5563;
+
+            /* Much brighter, but still highly translucent for desktop bleed */
+            --bg: rgba(255, 255, 255, 0.75);
+            --surface: rgba(255, 255, 255, 0.85);
+            --surface-dark: rgba(255, 255, 255, 0.95);
+
+            --border: rgba(0, 0, 0, 0.12);
+            --border-subtle: rgba(0, 0, 0, 0.06);
+
+            /* Inverted shadows for light mode to maintain depth */
+            --shadow-sunken: inset 0 2px 8px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(0, 0, 0, 0.03);
+            --shadow-sunken-deep: inset 0 4px 12px rgba(0, 0, 0, 0.08), inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+            --shadow-floating: 0 -10px 40px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.05);
+            --shadow-glow: 0 0 15px -2px rgba(234, 179, 8, 0.4);
+            --shadow-glow-strong: 0 0 25px -2px rgba(234, 179, 8, 0.6);
+
+            --glass-inset: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 rgba(0, 0, 0, 0.02), inset 1px 0 0 rgba(255, 255, 255, 0.3), inset -1px 0 0 rgba(255, 255, 255, 0.3);
+
+            /* Lighter, airy background animation */
+            --bg-grad-1: #eef2ff;
+            --bg-grad-2: #e0e7ff;
+            --bg-grad-3: #f3f4f6;
+            --bg-grad-4: #eef2ff;
+
+            --sidebar-grad: linear-gradient(180deg, rgba(235, 235, 240, 0.6) 0%, rgba(225, 225, 230, 0.8) 100%);
+            --vignette: inset -20px 0 50px -20px rgba(0, 0, 0, 0.05);
+            --terminal-bg: rgba(255, 255, 255, 0.4);
+            --input-bg: white;
+            --white-glass: rgba(0, 0, 0, 0.03);
+            --pill-bg: rgba(255, 255, 255, 0.6);
+        }
+
+        body {
+            background: linear-gradient(-45deg, var(--bg-grad-1), var(--bg-grad-2), var(--bg-grad-3), var(--bg-grad-4));
+            background-size: 400% 400%;
+            animation: gradientBG 45s ease infinite;
+            color: var(--fg);
+            overflow: hidden;
+            font-size: clamp(12px, 1vw, 14px);
+            transition: color 0.4s ease, background 0.4s ease;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Base Glass Windows */
+        .glass-base {
+            background: var(--bg);
+            backdrop-filter: blur(50px) saturate(180%);
+            -webkit-backdrop-filter: blur(50px) saturate(180%);
+            border-radius: 16px;
+            box-shadow: var(--glass-inset), 0 30px 60px rgba(0, 0, 0, 0.25);
+            transition: all 0.4s ease;
+        }
+
+        .sidebar {
+            background: var(--sidebar-grad);
+            box-shadow: var(--vignette);
+            border-right: 1px solid var(--border-subtle);
+            transition: all 0.4s ease;
+        }
+
+        .terminal-main {
+            background: var(--terminal-bg);
+            box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.02);
+            transition: all 0.4s ease;
+        }
+
+        .bottom-panel {
+            background: var(--surface-dark);
+            backdrop-filter: blur(30px);
+            box-shadow: var(--shadow-floating);
+            border-top: 1px solid var(--border-subtle);
+            transition: all 0.4s ease;
+        }
+
+        .glass-input {
+            background: var(--input-bg);
+            box-shadow: var(--shadow-sunken);
+            transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .light .glass-input {
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .light .glass-input:focus-within {
+            box-shadow: var(--shadow-sunken), 0 0 0 2px rgba(234, 179, 8, 0.2);
+            border-color: rgba(234, 179, 8, 0.4);
+        }
+
+        .white-glass {
+            background: var(--white-glass);
+            transition: all 0.4s ease;
+        }
+
+        .pill-glass {
+            background: var(--pill-bg);
+            transition: all 0.4s ease;
+        }
+
+        .border-base {
+            border-color: var(--border);
+            transition: border-color 0.4s ease;
+        }
+
+        .border-subtle {
+            border-color: var(--border-subtle);
+            transition: border-color 0.4s ease;
+        }
+
+        /* Noise Texture */
+        .noise {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.02;
+            mix-blend-mode: overlay;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            transition: opacity 0.5s ease;
+        }
+
+        .glass-base:hover .noise {
+            opacity: 0.04;
+        }
+
+        /* Light mode needs vastly more noise opacity to be visible */
+        .light .noise {
+            opacity: 0.06;
+            mix-blend-mode: multiply;
+        }
+
+        .light .glass-base:hover .noise {
+            opacity: 0.1;
+        }
+
+        .custom-scroll::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+            opacity: 0;
+        }
+
+        .custom-scroll:hover::-webkit-scrollbar {
+            opacity: 1;
+        }
+
+        .custom-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+
+        .custom-scroll::-webkit-scrollbar-thumb:hover {
+            background: var(--fg-muted);
+        }
+
+        .cli-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 1.2em;
+            background-color: var(--yellow);
+            box-shadow: 0 0 8px var(--yellow);
+            animation: phosphorBlink 1.2s infinite cubic-bezier(0.1, 0, 0.9, 1);
+        }
+
+        @keyframes phosphorBlink {
+
+            0%,
+            40% {
+                opacity: 1;
+            }
+
+            50%,
+            90% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .scanlines {
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1));
+            background-size: 100% 4px;
+            pointer-events: none;
+        }
+
+        .light .scanlines {
+            background: linear-gradient(to bottom, transparent, transparent 50%, rgba(0, 0, 0, 0.03) 50%, rgba(0, 0, 0, 0.03));
+            background-size: 100% 4px;
+        }
+
+        @keyframes elasticPulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+            }
+
+            70% {
+                transform: scale(1.1);
+                box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+            }
+        }
+
+        .status-dot {
+            animation: elasticPulse 2s infinite;
+            background-color: var(--green);
+        }
+
+        .tag-btn {
+            transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            background: var(--pill-bg);
+            border: 1px solid var(--border-subtle);
+            color: var(--fg-muted);
+            box-shadow: var(--shadow-sunken);
+        }
+
+        .tag-btn:active {
+            transform: scale(0.92);
+            filter: brightness(1.2);
+        }
+
+        .tag-btn:hover {
+            color: var(--yellow);
+            border-color: rgba(250, 204, 21, 0.3);
+        }
+
+        .light .tag-btn:hover {
+            border-color: rgba(234, 179, 8, 0.4);
+        }
+
+        .preset-btn {
+            background: var(--white-glass);
+            border: 1px solid var(--border-subtle);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            color: var(--fg-muted);
+        }
+
+        .preset-btn:hover {
+            border-color: var(--border);
+            color: var(--fg);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .preset-btn:active {
+            transform: translateY(1px);
+        }
+
+        /* Light mode specific bump for hover on preset button */
+        .light .preset-btn:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        .reference-active {
+            background: color-mix(in srgb, var(--yellow) 15%, transparent) !important;
+            border-color: color-mix(in srgb, var(--yellow) 30%, transparent) !important;
+        }
+
+        .light .reference-active {
+            background: color-mix(in srgb, var(--yellow) 20%, transparent) !important;
+            border-color: color-mix(in srgb, var(--yellow) 40%, transparent) !important;
+        }
+
+        .app-body:has(.tool-active:hover) .tool-inactive {
+            opacity: 0.4;
+            filter: blur(1px);
+        }
+
+        .tool-item {
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover {
+            font-weight: 500;
+        }
+
+        .ambient-bleed {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(250, 204, 21, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 1;
+            mix-blend-mode: screen;
+        }
+
+        .light .ambient-bleed {
+            mix-blend-mode: multiply;
+            background: radial-gradient(circle, rgba(234, 179, 8, 0.08) 0%, transparent 70%);
+        }
+
+        .mock-code {
+            color: var(--fg);
+            font-weight: 500;
+        }
+
+        .mock-token-keyword {
+            color: var(--yellow);
+            font-weight: 600;
+        }
+
+        .mock-token-string {
+            color: var(--green);
+        }
+
+        .mock-token-var {
+            color: #3B82F6;
+        }
+
+        /* Blue is fine in both modes */
+
+        .theme-icon-light {
+            display: none;
+        }
+
+        .theme-icon-dark {
+            display: block;
+        }
+
+        .light .theme-icon-light {
+            display: block;
+        }
+
+        .light .theme-icon-dark {
+            display: none;
+        }
+
+        /* Context Menu Styles */
+        .context-menu {
+            position: fixed;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(0.95);
+            transition: opacity 0.15s ease, transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-origin: top left;
+        }
+
+        .context-menu.active {
+            opacity: 1;
+            pointer-events: auto;
+            transform: scale(1);
+        }
+
+        .context-item {
+            transition: all 0.2s ease;
+        }
+
+        .context-item:hover {
+            background: var(--white-glass);
+            color: var(--fg);
+        }
+
+        .light .context-item:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        /* Maximized State */
+        body.maximized {
+            padding: 0 !important;
+        }
+
+        body.maximized #main-app {
+            max-width: none !important;
+            border-radius: 0 !important;
+        }
+
+        body.maximized .glass-base {
+            border-radius: 0 !important;
+            box-shadow: none !important;
+        }
+
+        body.maximized .noise {
+            border-radius: 0 !important;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased h-screen w-screen flex items-center justify-center p-8 lg:p-12 relative"
+    oncontextmenu="return false;">
+
+    <!-- Central App Window -->
+    <div id="main-app" class="glass-base w-full h-full max-w-[1600px] flex flex-col relative overflow-hidden app-body">
+        <div class="noise rounded-2xl"></div>
+
+        <!-- Titlebar -->
+        <header
+            class="h-10 shrink-0 flex items-center px-4 bg-gradient-to-b from-[var(--white-glass)] to-transparent border-b border-subtle relative z-20 transition-all duration-400">
+            <div class="flex items-center gap-2 mr-6 group">
+                <div
+                    class="w-3 h-3 rounded-full bg-[#FF5F56] border border-[#E0443E] shadow-[inset_0_1px_4px_rgba(255,255,255,0.3)] relative overflow-hidden cursor-pointer hover:brightness-110">
+                </div>
+                <div
+                    class="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123] shadow-[inset_0_1px_4px_rgba(255,255,255,0.3)] relative cursor-pointer hover:brightness-110">
+                </div>
+                <div onclick="toggleMaximize()"
+                    class="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB29] shadow-[inset_0_1px_4px_rgba(255,255,255,0.3)] relative cursor-pointer hover:brightness-110">
+                </div>
+            </div>
+            <div class="text-[13px] font-medium text-ui-fg font-sans tracking-wide"
+                style="text-shadow: 0 1px 2px rgba(0,0,0,0.1);">
+                Agent to Bricks
+            </div>
+
+            <!-- ACCENT COLOR PICKER -->
+            <label
+                class="ml-auto mr-3 flex items-center gap-2 px-3 py-1 rounded-full border-base border hover:bg-[var(--white-glass)] transition-all group text-ui-fg cursor-pointer relative overflow-hidden">
+                <i class="ph ph-palette text-sm group-hover:text-black"></i>
+                <span
+                    class="text-[10px] font-medium uppercase tracking-wider opacity-60 group-hover:opacity-100">Accent</span>
+                <input type="color" value="#CA8A04" oninput="document.body.style.setProperty('--yellow', this.value)"
+                    class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20">
+            </label>
+
+            <!-- THEME TOGGLE SWITCH -->
+            <button onclick="document.body.classList.toggle('light')"
+                class="flex items-center gap-2 px-3 py-1 rounded-full border-base border hover:bg-[var(--white-glass)] transition-all group text-ui-fg">
+                <i class="ph ph-sun text-sm group-hover:text-black theme-icon-light"></i>
+                <i class="ph ph-moon text-sm group-hover:text-white theme-icon-dark"></i>
+                <span class="text-[10px] font-medium uppercase tracking-wider opacity-60 group-hover:opacity-100">Toggle
+                    Theme</span>
+            </button>
+        </header>
+
+        <!-- Main Workspace -->
+        <div class="flex-1 flex min-h-0 relative z-10 w-full">
+
+            <!-- Sidebar -->
+            <aside class="w-[240px] shrink-0 sidebar flex flex-col pt-3 relative z-30 resize-x overflow-hidden"
+                style="min-width: 200px; max-width: 400px; padding-bottom: 20px;">
+                <div
+                    class="absolute -right-[150px] top-1/2 w-[300px] h-[300px] bg-accent-yellow opacity-10 blur-[80px] rounded-full pointer-events-none">
+                </div>
+
+                <div class="px-4 pb-3">
+                    <button
+                        class="w-full text-left font-semibold text-accent-yellow text-sm tracking-wide hover:opacity-80 transition-opacity drop-shadow-[0_0_8px_rgba(250,204,21,0.2)]">
+                        Agent to Bricks
+                    </button>
+                </div>
+
+                <div class="mt-2 px-3 flex-1 flex flex-col gap-1">
+                    <div
+                        class="text-[10px] font-medium text-ui-subtle tracking-[0.2em] uppercase mb-2 px-2 flex justify-between items-center">
+                        Tools
+                        <i class="ph ph-plus text-sm hover:text-ui-fg cursor-pointer transition-colors"></i>
+                    </div>
+
+                    <button
+                        class="tool-item tool-inactive w-full flex items-center gap-3 px-2 py-1.5 rounded-lg hover:bg-[var(--white-glass)] text-ui-muted transition-colors text-[13px] font-sans group text-left">
+                        <div
+                            class="w-5 h-5 rounded pill-glass border border-subtle flex items-center justify-center font-mono text-[9px] text-ui-subtle group-hover:border-base group-hover:text-ui-fg transition-all">
+                            C>
+                        </div>
+                        Claude Code
+                    </button>
+                    <!-- Active Tool -->
+                    <button
+                        class="tool-item tool-active w-full flex items-center gap-3 px-2 py-1.5 rounded-lg white-glass text-ui-fg transition-all text-[13px] font-medium group text-left relative border border-subtle shadow-sm">
+                        <div
+                            class="w-5 h-5 rounded glass-input border border-base flex items-center justify-center font-mono text-[9px] text-accent-yellow shadow-[var(--shadow-glow)] transition-all">
+                            Cx
+                        </div>
+                        Codex
+                        <div
+                            class="absolute w-1.5 h-1.5 bg-accent-yellow rounded-full shadow-[var(--shadow-glow)] right-3 top-[10px]">
+                        </div>
+                    </button>
+                    <button
+                        class="tool-item tool-inactive w-full flex items-center gap-3 px-2 py-1.5 rounded-lg hover:bg-[var(--white-glass)] text-ui-muted transition-colors text-[13px] font-sans group text-left">
+                        <div
+                            class="w-5 h-5 rounded pill-glass border border-subtle flex items-center justify-center font-mono text-[9px] text-ui-subtle transition-all">
+                            Oc
+                        </div>
+                        OpenCode
+                    </button>
+                    <button
+                        class="tool-item tool-inactive w-full flex items-center gap-3 px-2 py-1.5 rounded-lg hover:bg-[var(--white-glass)] text-ui-muted transition-colors text-[13px] font-sans group text-left">
+                        <div
+                            class="w-5 h-5 rounded pill-glass border border-subtle flex items-center justify-center font-mono text-[9px] text-ui-subtle transition-all">
+                            Bx
+                        </div>
+                        Bricks CLI
+                    </button>
+                </div>
+
+                <div class="p-3 mb-2 flex flex-col gap-0.5 relative z-20">
+                    <button
+                        class="nav-item w-full flex items-center gap-3 px-2 py-2 rounded-lg hover:bg-[var(--white-glass)] text-ui-muted hover:text-ui-fg transition-all text-[13px] text-left group">
+                        <i class="ph ph-terminal-window text-base text-ui-subtle group-hover:text-ui-fg"></i> Terminal
+                    </button>
+                    <!-- Settings Toggle Button -->
+                    <button
+                        onclick="document.getElementById('settings-modal').classList.remove('opacity-0', 'pointer-events-none'); document.getElementById('settings-content').classList.remove('scale-95');"
+                        class="nav-item w-full flex items-center gap-3 px-2 py-2 rounded-lg hover:bg-[var(--white-glass)] text-ui-muted hover:text-ui-fg transition-all text-[13px] text-left group">
+                        <i class="ph ph-gear text-base text-ui-subtle group-hover:text-ui-fg"></i> Settings
+                    </button>
+                    <button
+                        class="nav-item w-full flex items-center gap-3 px-2 py-2 rounded-lg hover:bg-[var(--white-glass)] text-ui-muted hover:text-ui-fg transition-all text-[13px] text-left group">
+                        <i class="ph ph-question text-base text-ui-subtle group-hover:text-ui-fg"></i> Help
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Main Terminal Area -->
+            <main class="flex-1 flex flex-col min-w-0 terminal-main relative">
+
+                <div class="absolute inset-0 scanlines opacity-30 z-0"></div>
+                <div class="ambient-bleed"></div>
+
+                <div class="flex-1 flex flex-col justify-center items-center p-8 relative z-10 custom-scroll overflow-y-auto"
+                    onclick="document.getElementById('autocomplete').classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto')">
+                    <div class="w-full max-w-2xl font-mono text-[13px] leading-relaxed drop-shadow-sm">
+                        <div class="mb-2 text-ui-subtle">Initializing Codex session...</div>
+                        <div class="text-accent-green mb-4 font-semibold">> Connection established via localized bridge.
+                        </div>
+                        <div class="flex font-semibold">
+                            <span class="text-accent-yellow mr-2">codex></span>
+                            <span class="text-ui-fg">Awaiting design parameters</span>
+                            <span class="cli-cursor ml-1"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Input Box -->
+                <div class="shrink-0 flex flex-col bottom-panel relative z-40">
+
+                    <div class="h-10 px-5 flex items-center gap-5 text-xs font-medium text-ui-muted">
+                        <button class="flex items-center gap-[6px] hover:text-ui-fg transition-colors">
+                            <i class="ph ph-floppy-disk text-sm"></i> Save
+                        </button>
+                        <button class="flex items-center gap-[6px] hover:text-ui-fg transition-colors">
+                            <i class="ph ph-copy text-sm"></i> Copy
+                        </button>
+                        <button class="flex items-center gap-[6px] hover:text-accent-yellow transition-colors ml-auto">
+                            <i class="ph-fill ph-magic-wand text-sm"></i>
+                        </button>
+                    </div>
+
+                    <div class="px-5 pb-4 flex-1 flex flex-col relative">
+                        <!-- Autocomplete Pills Menu -->
+                        <div id="autocomplete"
+                            class="absolute bottom-[calc(100%+12px)] left-5 w-[420px] bg-[var(--surfaceDark)] backdrop-blur-3xl rounded-xl border border-subtle shadow-[var(--shadow-floating)] flex flex-col overflow-hidden z-[100] transform translate-y-2 opacity-0 transition-opacity duration-300 pointer-events-none">
+                            <div
+                                class="text-[9px] font-sans font-bold text-ui-subtle tracking-[0.15em] uppercase px-4 py-3 border-b border-subtle bg-[var(--white-glass)]">
+                                Reference Type
+                            </div>
+                            <div class="flex flex-col p-2 custom-scroll max-h-[260px] overflow-y-auto gap-[2px]">
+                                <button
+                                    class="reference-active flex items-center gap-3 px-3 py-2 rounded-lg text-ui-fg text-[13px] font-sans text-left border shadow-[var(--shadow-glow)] relative overflow-hidden group">
+                                    <div class="absolute left-0 top-0 bottom-0 w-[4px] bg-accent-yellow"></div>
+                                    <span class="text-accent-yellow font-mono text-sm font-bold mt-[2px]">@</span>
+                                    <span class="font-semibold text-[color:var(--fg)]">Pages</span>
+                                </button>
+                                <button
+                                    class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[var(--white-glass)] text-ui-muted text-[13px] font-sans text-left border border-transparent hover:border-subtle transition-all group">
+                                    <span
+                                        class="text-ui-subtle group-hover:text-ui-fg font-mono text-sm mt-[2px]">@</span>
+                                    <span class="group-hover:text-ui-fg">Sections</span>
+                                </button>
+                                <button
+                                    class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[var(--white-glass)] text-ui-muted text-[13px] font-sans text-left border border-transparent hover:border-subtle transition-all group">
+                                    <span
+                                        class="text-ui-subtle group-hover:text-ui-fg font-mono text-sm mt-[2px]">@</span>
+                                    <span class="group-hover:text-ui-fg">Elements</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Prompt Texbox Container -->
+                        <div id="prompt-container" style="height: 120px; min-height: 120px; max-height: 80vh;"
+                            class="glass-input p-3 rounded-xl flex flex-col relative group resize-y overflow-hidden shrink-0 w-full">
+
+                            <!-- Maximize Button -->
+                            <div
+                                class="absolute right-3 top-3 opacity-0 group-hover:opacity-100 transition-opacity z-20">
+                                <button onclick="togglePromptFullscreen()"
+                                    class="w-6 h-6 rounded border border-[var(--border-subtle)] text-ui-muted hover:text-ui-fg flex items-center justify-center hover:bg-[var(--white-glass)] transition-all bg-[var(--surface-dark)]">
+                                    <i id="prompt-fullscreen-icon" class="ph ph-corners-out text-[14px]"></i>
+                                </button>
+                            </div>
+
+                            <!-- Mocked rich text input for prompt with the @page token -->
+                            <div class="w-full h-full outline-none font-sans text-[14px] text-ui-fg leading-relaxed pb-8 overflow-y-auto custom-scroll"
+                                contenteditable="true" spellcheck="false"
+                                onfocus="document.getElementById('autocomplete').classList.remove('opacity-0', 'translate-y-2', 'pointer-events-none'); document.getElementById('autocomplete').classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');">
+                                Create a responsive card grid on&nbsp;<span contenteditable="false"
+                                    onclick="openPageSelector(event, this)"
+                                    class="inline-flex items-center gap-1.5 px-2 py-0.5 bg-[var(--surfaceDark)] border border-[var(--border-subtle)] rounded shadow-sm hover:border-accent-yellow cursor-pointer transition-colors select-none group/tag text-[12px]"><span
+                                        class="text-accent-yellow font-mono font-bold">@page</span><span
+                                        class="text-ui-muted group-hover/tag:text-ui-fg transition-colors">for:</span></span>&nbsp;<span
+                                    class="text-accent-yellow font-mono">{description}</span>
+                            </div>
+
+                            <button
+                                class="absolute bottom-3 right-3 w-[34px] h-[34px] rounded-lg bg-accent-yellow text-black flex items-center justify-center hover:brightness-110 transition-all shadow-[0_4px_12px_rgba(0,0,0,0.2)] hover:-translate-y-0.5 active:translate-y-0 z-20">
+                                <i class="ph-bold ph-paper-plane-tilt text-[16px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Tags Reference Strip -->
+                    <div class="px-5 pb-4 flex items-center gap-2 overflow-x-auto custom-scroll">
+                        <div
+                            class="flex items-center gap-2 px-2.5 py-1.5 white-glass border border-subtle rounded-md text-[11px] font-mono whitespace-nowrap shadow-sm">
+                            <div class="w-1.5 h-1.5 rounded-full status-dot"></div>
+                            <span class="text-ui-fg tracking-tight font-medium">Tayseer Seminary</span>
+                            <span
+                                class="px-2 py-[2px] bg-accent-yellow text-black rounded font-bold text-[10px] shadow-sm tracking-widest ml-1 mix-blend-normal opacity-100">STG</span>
+                        </div>
+                        <button
+                            class="tag-btn px-2.5 py-1.5 rounded-md text-[11px] font-mono cursor-pointer">@page</button>
+                        <button
+                            class="tag-btn px-2.5 py-1.5 rounded-md text-[11px] font-mono cursor-pointer">@section</button>
+                        <button
+                            class="tag-btn px-2.5 py-1.5 rounded-md text-[11px] font-mono cursor-pointer">@class</button>
+                    </div>
+
+                    <!-- Presets Strip -->
+                    <div class="px-5 pb-5 border-t border-subtle pt-4 pill-glass resize-y overflow-hidden custom-scroll"
+                        style="min-height: 100px; max-height: 40vh;">
+                        <div
+                            class="mb-3 flex items-center gap-2 text-ui-subtle glass-input border border-subtle rounded-lg px-3 py-2 text-[12px] max-w-xs transition-colors focus-within:text-ui-fg">
+                            <i class="ph ph-magnifying-glass"></i>
+                            <input type="text" placeholder="Search presets..."
+                                class="bg-transparent border-none outline-none w-full text-ui-fg placeholder-[var(--fg-subtle)]">
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <button class="preset-btn px-3 py-1.5 text-[11px] font-sans rounded-md font-medium">Generate
+                                Section</button>
+                            <button class="preset-btn px-3 py-1.5 text-[11px] font-sans rounded-md font-medium">Generate
+                                Full Page</button>
+                            <button
+                                class="preset-btn px-3 py-1.5 text-[11px] font-sans rounded-md font-medium text-accent-yellow relative overflow-hidden group border-accent-yellow border-opacity-20 shadow-sm">
+                                <span class="relative z-10 group-hover:text-black transition-colors">Full Page
+                                    Build</span>
+                                <div
+                                    class="absolute inset-0 bg-accent-yellow transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 ease-out z-0">
+                                </div>
+                            </button>
+                            <button class="preset-btn px-3 py-1.5 text-[11px] font-sans rounded-md font-medium">Convert
+                                HTML</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer
+            class="h-8 shrink-0 pill-glass backdrop-blur-md border-t border-subtle flex items-center px-4 text-[10px] font-mono text-ui-muted relative z-50">
+            <div class="flex items-center gap-2 mr-4">
+                <div class="w-1.5 h-1.5 rounded-full status-dot"></div>
+                <span class="text-ui-fg font-medium">Tayseer Seminary</span>
+                <span
+                    class="px-1.5 py-[1px] bg-accent-yellow text-black rounded font-bold text-[9px] shadow-sm tracking-widest ml-1 mix-blend-normal opacity-100">STG</span>
+            </div>
+            <div class="h-3 w-[1px] bg-[var(--border)] mx-2"></div>
+            <span class="ml-2 text-accent-yellow opacity-90 animate-[pulse_3s_ease_infinite] font-semibold">Session
+                Active (Codex)</span>
+        </footer>
+    </div>
+
+    <!-- Settings Modal Redesign -->
+    <div id="settings-modal"
+        class="fixed inset-0 z-[100] flex items-center justify-center bg-[color:var(--surfaceDark)] backdrop-blur-xl opacity-0 pointer-events-none transition-opacity duration-300 p-8">
+        <div class="absolute inset-0"
+            onclick="document.getElementById('settings-modal').classList.add('opacity-0', 'pointer-events-none'); document.getElementById('settings-content').classList.add('scale-95');">
+        </div>
+
+        <div id="settings-content"
+            class="w-full max-w-[800px] h-[540px] glass-base flex flex-col shadow-[var(--shadow-floating)] border border-subtle overflow-hidden transform scale-95 transition-transform duration-300 relative z-10 rounded-2xl">
+
+            <div class="h-14 shrink-0 flex items-center justify-between px-6 border-b border-subtle white-glass">
+                <h2 class="text-ui-fg font-sans font-semibold text-[15px] tracking-wide">Settings</h2>
+                <button
+                    onclick="document.getElementById('settings-modal').classList.add('opacity-0', 'pointer-events-none'); document.getElementById('settings-content').classList.add('scale-95');"
+                    class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-[var(--white-glass)] text-ui-muted hover:text-ui-fg transition-colors">
+                    <i class="ph ph-x"></i>
+                </button>
+            </div>
+
+            <div class="flex-1 flex min-h-0 bg-[color:var(--surface)]">
+                <div class="w-[200px] shrink-0 border-r border-subtle pill-glass p-4 flex flex-col gap-1.5">
+                    <button
+                        class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[var(--white-glass)] text-ui-muted hover:text-ui-fg transition-colors text-[13px] font-sans group text-left">
+                        <i class="ph ph-globe text-base text-ui-subtle group-hover:text-ui-fg"></i> Site
+                    </button>
+                    <!-- Active Tab -->
+                    <button
+                        class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg white-glass text-ui-fg transition-colors text-[13px] font-sans font-semibold text-left shadow-[inset_3px_0_0_var(--yellow)]">
+                        <i
+                            class="ph-fill ph-chat-text text-base text-accent-yellow drop-shadow-[0_0_5px_rgba(250,204,21,0.5)]"></i>
+                        Prompt
+                    </button>
+                </div>
+
+                <div class="flex-1 p-8 flex flex-col custom-scroll overflow-y-auto">
+                    <div class="flex items-center gap-2 text-ui-fg text-[14px] font-semibold mb-3">
+                        <i class="ph-fill ph-chat-text text-accent-yellow"></i> Session Context Prompt
+                    </div>
+
+                    <p class="text-ui-subtle text-[13px] leading-relaxed mb-6 font-sans">
+                        This prompt is sent to the AI tool when a session starts.
+                    </p>
+
+                    <div
+                        class="rounded-xl glass-input border border-subtle p-5 font-mono text-[13px] leading-7 relative group mb-8">
+                        <div class="mock-code tracking-wide">
+                            You are a web developer working with a Bricks Builder WordPress site (<span
+                                class="mock-token-var">{environment}</span>).<br>
+                            Site: <span class="mock-token-var">{site_url}</span><br>
+                            API Key: <span class="mock-token-var">{api_key}</span><br>
+                            ...
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="text-[12px] font-bold text-ui-muted tracking-widest uppercase mb-3">Available
+                            variables</div>
+                        <div class="grid grid-cols-2 gap-y-3 gap-x-6 text-[13px]">
+                            <div class="flex items-center gap-3">
+                                <span
+                                    class="px-2 py-[2px] rounded white-glass border border-subtle text-accent-yellow font-mono text-[11px] font-semibold hover:bg-[var(--white-glass)] cursor-pointer transition-colors shadow-sm">{site_url}</span>
+                                <span class="text-ui-subtle text-xs">Site URL</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span
+                                    class="px-2 py-[2px] rounded white-glass border border-subtle text-accent-yellow font-mono text-[11px] font-semibold hover:bg-[var(--white-glass)] cursor-pointer transition-colors shadow-sm">{api_key}</span>
+                                <span class="text-ui-subtle text-xs">API key</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-auto pt-8 flex items-center gap-3">
+                        <button
+                            class="px-6 py-2.5 rounded-lg bg-accent-yellow text-black font-semibold text-[13px] hover:brightness-110 transition-all shadow-[var(--shadow-glow-strong)] hover:-translate-y-0.5 active:translate-y-0">
+                            Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Selection Dropdown Mock -->
+    <div id="page-select-dropdown"
+        class="fixed z-[200] w-[240px] bg-[var(--surfaceDark)] backdrop-blur-3xl rounded-xl border border-subtle shadow-[var(--shadow-floating)] flex flex-col overflow-hidden opacity-0 pointer-events-none transform translate-y-2 transition-all">
+        <div class="px-3 py-2 border-b border-subtle bg-[var(--white-glass)] flex flex-col gap-2.5">
+            <div class="text-[10px] font-bold text-ui-subtle uppercase tracking-wider">Select Page</div>
+            <div
+                class="flex items-center gap-1.5 px-2 py-1.5 bg-transparent border border-subtle rounded text-ui-fg focus-within:border-accent-yellow transition-colors shadow-[var(--shadow-sunken)]">
+                <i class="ph ph-magnifying-glass text-ui-muted text-[13px]"></i>
+                <input type="text" placeholder="Search pages..."
+                    class="bg-transparent border-none outline-none w-full text-[12px] text-ui-fg placeholder-[var(--fg-subtle)] font-sans">
+            </div>
+        </div>
+        <div class="p-1.5 flex flex-col gap-0.5 custom-scroll max-h-[200px] overflow-y-auto">
+            <button
+                class="flex items-center gap-2 px-2.5 py-1.5 rounded-lg hover:bg-[var(--white-glass)] text-ui-fg text-[13px] text-left transition-colors"
+                onclick="selectPageMock('Home')">
+                <i class="ph ph-house text-ui-muted text-lg"></i> Home
+            </button>
+            <button
+                class="flex items-center gap-2 px-2.5 py-1.5 rounded-lg hover:bg-[var(--white-glass)] text-ui-fg text-[13px] text-left transition-colors"
+                onclick="selectPageMock('About')">
+                <i class="ph ph-info text-ui-muted text-lg"></i> About
+            </button>
+            <button
+                class="flex items-center gap-2 px-2.5 py-1.5 rounded-lg hover:bg-[var(--white-glass)] text-ui-fg text-[13px] text-left transition-colors"
+                onclick="selectPageMock('Pricing')">
+                <i class="ph ph-tag text-ui-muted text-lg"></i> Pricing
+            </button>
+            <button
+                class="flex items-center gap-2 px-2.5 py-1.5 rounded-lg hover:bg-[var(--white-glass)] text-ui-fg text-[13px] text-left transition-colors"
+                onclick="selectPageMock('Contact')">
+                <i class="ph ph-envelope text-ui-muted text-lg"></i> Contact
+            </button>
+        </div>
+    </div>
+
+    <!-- Custom Context Menu -->
+    <div id="custom-context-menu"
+        class="context-menu w-[220px] glass-base border border-subtle shadow-[var(--shadow-floating)] py-2 rounded-xl flex flex-col font-sans text-[13px] text-ui-muted">
+        <div class="px-3 py-1.5 flex flex-col">
+            <button class="context-item w-full flex items-center gap-3 px-3 py-1.5 rounded-md text-left group">
+                <i class="ph ph-copy text-[15px] group-hover:text-accent-yellow transition-colors"></i>
+                Copy
+                <span class="ml-auto text-[10px] opacity-50 font-mono">⌘C</span>
+            </button>
+            <button class="context-item w-full flex items-center gap-3 px-3 py-1.5 rounded-md text-left group">
+                <i class="ph ph-scissors text-[15px] group-hover:text-accent-yellow transition-colors"></i>
+                Cut
+                <span class="ml-auto text-[10px] opacity-50 font-mono">⌘X</span>
+            </button>
+            <button class="context-item w-full flex items-center gap-3 px-3 py-1.5 rounded-md text-left group">
+                <i class="ph ph-clipboard-text text-[15px] group-hover:text-accent-yellow transition-colors"></i>
+                Paste
+                <span class="ml-auto text-[10px] opacity-50 font-mono">⌘V</span>
+            </button>
+        </div>
+
+        <div class="h-px bg-[var(--border-subtle)] w-full my-1"></div>
+
+        <div class="px-3 py-1.5 flex flex-col">
+            <button class="context-item w-full flex items-center gap-3 px-3 py-1.5 rounded-md text-left group">
+                <i class="ph ph-terminal-window text-[15px] group-hover:text-accent-yellow transition-colors"></i>
+                Open Terminal Here
+            </button>
+            <button class="context-item w-full flex items-center gap-3 px-3 py-1.5 rounded-md text-left group"
+                onclick="document.body.classList.toggle('light')">
+                <i class="ph ph-palette text-[15px] group-hover:text-accent-yellow transition-colors"></i>
+                Toggle Day/Night
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Custom Context Menu Logic
+        const contextMenu = document.getElementById('custom-context-menu');
+
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+
+            // Calculate position, keeping it on screen
+            let x = e.clientX;
+            let y = e.clientY;
+
+            const menuWidth = 220;
+            const menuHeight = 200; // Approximate height
+
+            if (x + menuWidth > window.innerWidth) x = window.innerWidth - menuWidth - 10;
+            if (y + menuHeight > window.innerHeight) y = window.innerHeight - menuHeight - 10;
+
+            contextMenu.style.left = `${x}px`;
+            contextMenu.style.top = `${y}px`;
+            contextMenu.classList.add('active');
+        });
+
+        // Close context menu on click anywhere else
+        document.addEventListener('click', (e) => {
+            if (e.button !== 2) { // Not right click
+                contextMenu.classList.remove('active');
+            }
+        });
+
+        // Ensure autocomplete closes on document click
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('#autocomplete') && !e.target.closest('[contenteditable="true"]') && !e.target.closest('textarea')) {
+                const autocomplete = document.getElementById('autocomplete');
+                if (autocomplete) {
+                    autocomplete.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+                    autocomplete.classList.add('opacity-0', 'translate-y-2', 'pointer-events-none');
+                }
+            }
+            // Close page selector
+            if (!e.target.closest('#page-select-dropdown') && !e.target.closest('[onclick^="openPageSelector"]')) {
+                const dropdown = document.getElementById('page-select-dropdown');
+                if (dropdown) {
+                    dropdown.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+                    dropdown.classList.add('opacity-0', 'translate-y-2', 'pointer-events-none');
+                }
+            }
+        });
+
+        // Maximize Logic
+        function toggleMaximize() {
+            document.body.classList.toggle('maximized');
+        }
+
+        // Prompt Fullscreen Logic
+        function togglePromptFullscreen() {
+            const prompt = document.getElementById('prompt-container');
+            const icon = document.getElementById('prompt-fullscreen-icon');
+
+            if (prompt.classList.contains('is-maximized')) {
+                prompt.classList.remove('is-maximized');
+                prompt.style.height = '120px';
+                icon.className = 'ph ph-corners-out text-[14px]';
+            } else {
+                prompt.classList.add('is-maximized');
+                prompt.style.height = '60vh';
+                icon.className = 'ph ph-corners-in text-[14px]';
+            }
+        }
+
+        // Page Selector Dropdown Logic
+        let currentTagElement = null;
+        function openPageSelector(e, element) {
+            e.stopPropagation();
+            currentTagElement = element;
+            const dropdown = document.getElementById('page-select-dropdown');
+
+            // Position dropdown near the element
+            const rect = element.getBoundingClientRect();
+            dropdown.style.left = `${rect.left}px`;
+            dropdown.style.top = `${rect.bottom + 8}px`;
+
+            dropdown.classList.remove('opacity-0', 'translate-y-2', 'pointer-events-none');
+            dropdown.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+        }
+
+        function selectPageMock(pageName) {
+            if (currentTagElement) {
+                currentTagElement.innerHTML = `<span class="text-accent-yellow font-mono font-bold">@page</span><span class="text-ui-fg ml-1.5">${pageName}</span>`;
+                currentTagElement.classList.remove('bg-[var(--surfaceDark)]', 'hover:border-accent-yellow');
+                currentTagElement.classList.add('reference-active');
+            }
+            const dropdown = document.getElementById('page-select-dropdown');
+            dropdown.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+            dropdown.classList.add('opacity-0', 'translate-y-2', 'pointer-events-none');
+        }
+    </script>
+</body>
+
+</html>

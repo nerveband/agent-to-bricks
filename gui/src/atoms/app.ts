@@ -17,6 +17,7 @@ export interface SiteEntry {
   site_url: string;
   api_key: string;
   environment?: SiteEnvironment;
+  environmentLabel?: string;
 }
 
 export const sitesAtom = atom<SiteEntry[]>([]);

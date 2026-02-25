@@ -1,59 +1,110 @@
 @import "tailwindcss";
-@import "@fontsource-variable/manrope";
+@import "@fontsource-variable/inter";
 @import "@fontsource/jetbrains-mono";
 @import "@fontsource/jetbrains-mono/700.css";
 
 @theme {
-  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Manrope Variable", "Manrope", system-ui, sans-serif;
+  --font-sans: "Inter Variable", "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
+/* ═══════════════════════════════════════════
+   LIGHT MODE (default)
+   ═══════════════════════════════════════════ */
 :root {
-  /* Fresh, clean light mode palette */
-  --bg: oklch(0.98 0.005 240);
-  --bg-texture: radial-gradient(circle at top left, rgba(255, 255, 255, 0.8), transparent 40%),
-    radial-gradient(circle at bottom right, rgba(0, 0, 0, 0.02), transparent 40%);
-  --surface: rgba(255, 255, 255, 0.7);
-  --surface-solid: oklch(0.99 0.002 240);
-  --terminal: #fafafa;
-  --fg: oklch(0.20 0.01 260);
-  --fg-muted: oklch(0.55 0.01 260);
-  --accent: oklch(0.60 0.18 280);
-  /* Deeper, more sophisticated blurple */
-  --accent-hover: oklch(0.55 0.18 280);
-  --border: rgba(0, 0, 0, 0.06);
-  --border-solid: oklch(0.92 0.005 240);
-  --destructive: oklch(0.55 0.22 27);
+  --yellow: #EBA40A;
+  --green: #16A34A;
 
+  --fg: #030712;
+  --fg-muted: #374151;
+  --fg-subtle: #4B5563;
+
+  --bg: rgba(255, 255, 255, 0.80);
+  --surface: rgba(255, 255, 255, 0.88);
+  --surface-dark: rgba(255, 255, 255, 0.95);
+
+  --border: rgba(0, 0, 0, 0.12);
+  --border-subtle: rgba(0, 0, 0, 0.06);
+
+  --destructive: #dc2626;
+  --accent: var(--yellow);
+  --accent-hover: #ca8a04;
+
+  --shadow-sunken: inset 0 2px 8px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(0, 0, 0, 0.03);
+  --shadow-sunken-deep: inset 0 4px 12px rgba(0, 0, 0, 0.08), inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+  --shadow-floating: 0 -10px 40px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  --shadow-glow: 0 0 15px -2px rgba(234, 179, 8, 0.4);
+  --shadow-glow-strong: 0 0 25px -2px rgba(234, 179, 8, 0.6);
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.03);
+
+  --glass-inset: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 rgba(0, 0, 0, 0.02), inset 1px 0 0 rgba(255, 255, 255, 0.3), inset -1px 0 0 rgba(255, 255, 255, 0.3);
+
+  --bg-grad-1: #eef2ff;
+  --bg-grad-2: #e0e7ff;
+  --bg-grad-3: #f3f4f6;
+  --bg-grad-4: #eef2ff;
+
+  --sidebar-grad: linear-gradient(180deg, rgba(235, 235, 240, 0.7) 0%, rgba(225, 225, 230, 0.85) 100%);
+  --vignette: inset -20px 0 50px -20px rgba(0, 0, 0, 0.05);
+  --terminal-bg: rgba(255, 255, 255, 0.4);
+  --input-bg: white;
+  --white-glass: rgba(0, 0, 0, 0.03);
+  --pill-bg: rgba(255, 255, 255, 0.6);
 
   color-scheme: light;
 }
 
+/* ═══════════════════════════════════════════
+   DARK MODE
+   ═══════════════════════════════════════════ */
 [data-theme="dark"] {
-  /* Deep, sophisticated dark mode palette */
-  --bg: oklch(0.12 0.008 260);
-  --bg-texture: radial-gradient(circle at 15% 50%, rgba(200, 200, 255, 0.03), transparent 30%),
-    radial-gradient(circle at 85% 30%, rgba(100, 150, 255, 0.02), transparent 30%);
-  --surface: rgba(26, 28, 33, 0.65);
-  --surface-solid: oklch(0.16 0.005 260);
-  --terminal: #111216;
-  --fg: oklch(0.95 0.01 260);
-  --fg-muted: oklch(0.65 0.01 260);
-  --accent: oklch(0.70 0.16 280);
-  /* Vibrant blurple */
-  --accent-hover: oklch(0.75 0.16 280);
-  --border: rgba(255, 255, 255, 0.08);
-  --border-solid: oklch(0.22 0.005 260);
-  --destructive: oklch(0.60 0.22 27);
+  --yellow: #FACC15;
+  --green: #22C55E;
 
+  --fg: #E5E7EB;
+  --fg-muted: #9CA3AF;
+  --fg-subtle: #4B5563;
+
+  --bg: rgba(10, 10, 12, 0.50);
+  --surface: rgba(20, 20, 22, 0.70);
+  --surface-dark: #0B0B0E;
+
+  --border: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(255, 255, 255, 0.03);
+
+  --destructive: #f87171;
+  --accent: var(--yellow);
+  --accent-hover: #fde68a;
+
+  --shadow-sunken: inset 0 4px 15px rgba(0, 0, 0, 0.8), inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+  --shadow-sunken-deep: inset 0 6px 20px rgba(0, 0, 0, 1), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  --shadow-floating: 0 -10px 40px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  --shadow-glow: 0 0 15px -2px rgba(250, 204, 21, 0.4);
+  --shadow-glow-strong: 0 0 25px -2px rgba(250, 204, 21, 0.6);
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.15);
+
+  --glass-inset: inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(255, 255, 255, 0.02), inset 1px 0 0 rgba(255, 255, 255, 0.05), inset -1px 0 0 rgba(255, 255, 255, 0.05);
+
+  --bg-grad-1: #0f0c29;
+  --bg-grad-2: #302b63;
+  --bg-grad-3: #24243e;
+  --bg-grad-4: #0f0c29;
+
+  --sidebar-grad: linear-gradient(180deg, rgba(20, 20, 22, 0.7) 0%, rgba(10, 10, 12, 0.85) 100%);
+  --vignette: inset -20px 0 50px -20px rgba(0, 0, 0, 0.8);
+  --terminal-bg: rgba(6, 6, 8, 0.8);
+  --input-bg: black;
+  --white-glass: rgba(255, 255, 255, 0.05);
+  --pill-bg: rgba(0, 0, 0, 0.4);
 
   color-scheme: dark;
 }
 
+/* ═══════════════════════════════════════════
+   BASE STYLES
+   ═══════════════════════════════════════════ */
 html,
 body,
 #root {
@@ -61,19 +112,188 @@ body,
   padding: 0;
   height: 100%;
   font-family: var(--font-sans);
-  background: var(--bg);
-  background-image: var(--bg-texture);
-  background-attachment: fixed;
+  background: linear-gradient(-45deg, var(--bg-grad-1), var(--bg-grad-2), var(--bg-grad-3), var(--bg-grad-4));
+  background-size: 400% 400%;
+  animation: gradient-bg 45s ease infinite;
   color: var(--fg);
+  overflow: hidden;
+  font-size: clamp(12px, 1vw, 14px);
   -webkit-font-smoothing: antialiased;
+  transition: color 0.4s ease, background 0.4s ease;
 }
 
-[data-radix-popper-content-wrapper] {
-  animation: none !important;
+@keyframes gradient-bg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
+/* ═══════════════════════════════════════════
+   GLASS MORPHISM SYSTEM
+   ═══════════════════════════════════════════ */
+.glass-base {
+  background: var(--bg);
+  backdrop-filter: blur(50px) saturate(180%);
+  -webkit-backdrop-filter: blur(50px) saturate(180%);
+  border-radius: 0 0 16px 16px;
+  box-shadow: var(--glass-inset), 0 30px 60px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s ease;
+}
+
+.glass-sidebar {
+  background: var(--sidebar-grad);
+  box-shadow: var(--vignette);
+  border-right: 1px solid var(--border-subtle);
+  transition: all 0.4s ease;
+}
+
+.glass-terminal {
+  background: var(--terminal-bg);
+  box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s ease;
+}
+
+/* Bottom panel — concept uses border-top + shadow-floating, but the shadow-floating's
+   0 0 0 1px ring creates a double-border at the top. Split out just the soft shadow. */
+.glass-bottom-panel {
+  background: var(--surface-dark);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-top: 1px solid var(--border-subtle);
+  transition: all 0.4s ease;
+}
+
+/* Light mode: soft upward shadow only (no 1px ring = no double border) */
+:root:not([data-theme="dark"]) .glass-bottom-panel {
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Dark mode: stronger upward shadow only */
+[data-theme="dark"] .glass-bottom-panel {
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.glass-input {
+  background: var(--input-bg);
+  box-shadow: var(--shadow-sunken);
+  transition: all 0.4s ease;
+}
+
+/* Light mode: subtle border on inputs */
+:root:not([data-theme="dark"]) .glass-input {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Focus ring: yellow glow on all inputs */
+.glass-input:focus-within {
+  box-shadow: var(--shadow-sunken), 0 0 0 2px rgba(234, 179, 8, 0.2);
+}
+
+/* Light mode: yellow border on focus */
+:root:not([data-theme="dark"]) .glass-input:focus-within {
+  border-color: rgba(234, 179, 8, 0.4);
+}
+
+.white-glass {
+  background: var(--white-glass);
+  transition: all 0.4s ease;
+}
+
+.pill-glass {
+  background: var(--pill-bg);
+  transition: all 0.4s ease;
+}
+
+/* ═══════════════════════════════════════════
+   NOISE TEXTURE OVERLAY
+   ═══════════════════════════════════════════ */
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  transition: opacity 0.5s ease;
+  border-radius: inherit;
+  /* Dark mode defaults */
+  opacity: 0.02;
+  mix-blend-mode: overlay;
+}
+
+.glass-base:hover .noise-overlay {
+  opacity: 0.04;
+}
+
+/* Dark mode noise */
+[data-theme="dark"] .noise-overlay {
+  opacity: 0.02;
+  mix-blend-mode: overlay;
+}
+
+[data-theme="dark"] .glass-base:hover .noise-overlay {
+  opacity: 0.04;
+}
+
+/* Light mode noise — needs more opacity to be visible */
+:root:not([data-theme="dark"]) .noise-overlay {
+  opacity: 0.06;
+  mix-blend-mode: multiply;
+}
+
+:root:not([data-theme="dark"]) .glass-base:hover .noise-overlay {
+  opacity: 0.1;
+}
+
+/* ═══════════════════════════════════════════
+   SCANLINES (Terminal effect)
+   ═══════════════════════════════════════════ */
+.scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.3;
+  /* Dark mode default: visible CRT scanlines */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1));
+  background-size: 100% 4px;
+}
+
+/* Light mode: much subtler scanlines */
+:root:not([data-theme="dark"]) .scanlines {
+  background: linear-gradient(to bottom, transparent, transparent 50%, rgba(0, 0, 0, 0.03) 50%, rgba(0, 0, 0, 0.03));
+  background-size: 100% 4px;
+}
+
+/* ═══════════════════════════════════════════
+   AMBIENT BLEED (Subtle yellow glow in terminal)
+   ═══════════════════════════════════════════ */
+.ambient-bleed {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+  /* Dark mode default: screen blend for glowing */
+  background: radial-gradient(circle, rgba(250, 204, 21, 0.05) 0%, transparent 70%);
+  mix-blend-mode: screen;
+}
+
+/* Light mode: multiply blend */
+:root:not([data-theme="dark"]) .ambient-bleed {
+  mix-blend-mode: multiply;
+  background: radial-gradient(circle, rgba(234, 179, 8, 0.08) 0%, transparent 70%);
+}
+
+/* ═══════════════════════════════════════════
+   SCROLLBARS
+   ═══════════════════════════════════════════ */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 4px;
+  height: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -85,20 +305,58 @@ body,
   border-radius: 4px;
 }
 
-@keyframes pulse-dot {
+::-webkit-scrollbar-thumb:hover {
+  background: var(--fg-muted);
+}
 
-  0%,
-  100% {
-    opacity: 1;
+/* ═══════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════ */
+
+/* Status dot - elastic pulse */
+@keyframes elastic-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
   }
-
-  50% {
-    opacity: 0.4;
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
   }
 }
 
 .animate-pulse-dot {
-  animation: pulse-dot 2s ease-in-out infinite;
+  animation: elastic-pulse 2s infinite;
+}
+
+/* CLI cursor glow */
+@keyframes phosphor-blink {
+  0%, 40% { opacity: 1; }
+  50%, 90% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.cli-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1.2em;
+  background-color: var(--yellow);
+  box-shadow: 0 0 8px var(--yellow);
+  animation: phosphor-blink 1.2s infinite cubic-bezier(0.1, 0, 0.9, 1);
+}
+
+/* Session active pulse */
+@keyframes session-pulse {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.6; }
+}
+
+.animate-session-active {
+  animation: session-pulse 3s ease infinite;
 }
 
 /* Command Palette transitions */
@@ -107,13 +365,8 @@ body,
 }
 
 @keyframes palette-fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .palette-container {
@@ -121,18 +374,218 @@ body,
 }
 
 @keyframes palette-slide-in {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Onboarding tooltip */
+.onboarding-tooltip {
+  animation: tooltip-pop 200ms ease-out;
+}
+
+@keyframes tooltip-pop {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ═══════════════════════════════════════════
+   INTERACTIVE ELEMENTS
+   ═══════════════════════════════════════════ */
+
+/* Tag/chip buttons — matching concept exactly */
+.tag-btn {
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  background: var(--pill-bg);
+  border: 1px solid var(--border-subtle);
+  color: var(--fg-muted);
+  box-shadow: var(--shadow-sunken);
+}
+
+.tag-btn:active {
+  transform: scale(0.92);
+  filter: brightness(1.2);
+}
+
+.tag-btn:hover {
+  color: var(--yellow);
+  border-color: rgba(250, 204, 21, 0.3);
+}
+
+/* Light mode: slightly stronger yellow border on tag hover */
+:root:not([data-theme="dark"]) .tag-btn:hover {
+  border-color: rgba(234, 179, 8, 0.4);
+}
+
+/* Preset buttons — matching concept exactly */
+.preset-btn {
+  background: var(--white-glass);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  color: var(--fg-muted);
+}
+
+.preset-btn:hover {
+  border-color: var(--border);
+  color: var(--fg);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.preset-btn:active {
+  transform: translateY(1px);
+}
+
+/* Light mode: stronger hover bg on presets */
+:root:not([data-theme="dark"]) .preset-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Accent preset with fill animation — matching concept "Full Page Build" button */
+.preset-btn-accent {
+  color: var(--yellow);
+  border-color: rgba(250, 204, 21, 0.2);
+  box-shadow: 0 0 0 0 rgba(250, 204, 21, 0);
+  position: relative;
+  overflow: hidden;
+}
+
+.preset-btn-accent .preset-btn-fill {
+  position: absolute;
+  inset: 0;
+  background: var(--yellow);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-out;
+  z-index: 0;
+}
+
+.preset-btn-accent:hover .preset-btn-fill {
+  transform: scaleX(1);
+}
+
+.preset-btn-accent:hover {
+  color: #000;
+}
+
+/* Tool items with focus/blur effect — matching concept */
+.tool-item {
+  transition: all 0.3s ease;
+}
+
+.app-body:has(.tool-active:hover) .tool-inactive {
+  opacity: 0.4;
+  filter: blur(1px);
+}
+
+/* Nav items — matching concept */
+.nav-item:hover {
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════
+   CONTEXT MENU (Radix UI styled like concept)
+   Concept: glass-base border border-subtle shadow-floating
+   py-2 rounded-xl w-[220px]
+   ═══════════════════════════════════════════ */
+[data-radix-popper-content-wrapper] {
+  animation: none !important;
+}
+
+.context-menu-content {
+  background: var(--bg);
+  backdrop-filter: blur(50px) saturate(180%);
+  -webkit-backdrop-filter: blur(50px) saturate(180%);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--glass-inset), var(--shadow-floating);
+  border-radius: 12px;
+  /* Concept: scale-in animation */
+  animation: context-menu-in 150ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-origin: top left;
+}
+
+@keyframes context-menu-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.context-menu-item {
+  transition: all 0.2s ease;
+}
+
+.context-menu-item:hover,
+.context-menu-item[data-highlighted] {
+  background: var(--white-glass);
+  color: var(--fg);
+}
+
+/* Icons in context menu items turn yellow on hover — matching concept */
+.context-menu-item:hover svg,
+.context-menu-item[data-highlighted] svg {
+  color: var(--yellow) !important;
+  transition: color 0.2s ease;
+}
+
+/* Light mode: slightly different hover bg */
+:root:not([data-theme="dark"]) .context-menu-item:hover,
+:root:not([data-theme="dark"]) .context-menu-item[data-highlighted] {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* ═══════════════════════════════════════════
+   DIALOG ANIMATIONS (matching concept's scale-in)
+   ═══════════════════════════════════════════ */
+[data-radix-dialog-overlay][data-state="open"] {
+  animation: dialog-overlay-in 300ms ease-out;
+}
+
+@keyframes dialog-overlay-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+[data-radix-dialog-content][data-state="open"] {
+  animation: dialog-content-in 300ms ease-out;
+}
+
+@keyframes dialog-content-in {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translate(-50%, -50%) scale(0.95);
   }
-
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 
-/* Mention pills */
+/* ═══════════════════════════════════════════
+   MENTION & AUTOCOMPLETE
+   ═══════════════════════════════════════════ */
+/* Active type-picker item yellow left bar — matching concept exactly */
+.mention-autocomplete-active-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--yellow);
+  border-radius: 2px 0 0 2px;
+}
+
+/* Concept's reference-active state for autocomplete items */
+.reference-active {
+  background: color-mix(in srgb, var(--yellow) 15%, transparent) !important;
+  border-color: color-mix(in srgb, var(--yellow) 30%, transparent) !important;
+}
+
+:root:not([data-theme="dark"]) .reference-active {
+  background: color-mix(in srgb, var(--yellow) 20%, transparent) !important;
+  border-color: color-mix(in srgb, var(--yellow) 40%, transparent) !important;
+}
+
+/* ═══════════════════════════════════════════
+   MENTION & PROMPT
+   ═══════════════════════════════════════════ */
 .mention-pill {
   user-select: none;
   transition: opacity 150ms;
@@ -142,31 +595,17 @@ body,
   opacity: 0.8;
 }
 
-/* Onboarding tooltip */
-.onboarding-tooltip {
-  animation: tooltip-pop 200ms ease-out;
-}
-
-@keyframes tooltip-pop {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Autocomplete dropdown */
 .mention-autocomplete button:hover {
-  background: var(--border);
+  background: var(--white-glass);
 }
 
-/* Prompt workshop preset hover */
+.mention-autocomplete input:focus {
+  border-color: var(--yellow) !important;
+  outline: none;
+}
+
 .preset-item:hover {
-  background: var(--border);
+  background: var(--white-glass);
 }
 
 /* VariableEditor placeholder */
@@ -176,4 +615,28 @@ body,
   color: var(--fg-muted);
   opacity: 0.5;
   pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════
+   STATUS BAR (Footer) — matching concept
+   ═══════════════════════════════════════════ */
+.status-bar {
+  background: var(--pill-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border-subtle);
+  transition: all 0.4s ease;
+}
+
+/* ═══════════════════════════════════════════
+   SETTINGS MODAL — matching concept
+   ═══════════════════════════════════════════ */
+.settings-tab-active {
+  background: var(--white-glass);
+  box-shadow: inset 3px 0 0 var(--yellow);
+}
+
+.settings-tab-active .settings-tab-icon {
+  color: var(--yellow);
+  filter: drop-shadow(0 0 5px rgba(250, 204, 21, 0.5));
 }

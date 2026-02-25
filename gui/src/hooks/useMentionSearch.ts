@@ -9,9 +9,14 @@ export interface SearchResult {
   label: string;
   sublabel?: string;
   data?: unknown;
+  imageUrl?: string;
 }
 
-export function useMentionSearch(type: MentionType | null, query: string) {
+export function useMentionSearch(
+  type: MentionType | null,
+  query: string,
+  sectionPageId?: number | null
+) {
   const site = useAtomValue(activeSiteAtom);
   const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(false);
@@ -25,15 +30,10 @@ export function useMentionSearch(type: MentionType | null, query: string) {
 
     clearTimeout(debounceRef.current);
 
-    if (!query && !["color", "variable"].includes(type)) {
-      setResults([]);
-      return;
-    }
-
     debounceRef.current = setTimeout(async () => {
       setLoading(true);
       try {
-        const items = await fetchByType(type, query, site.site_url, site.api_key);
+        const items = await fetchByType(type, query, site.site_url, site.api_key, sectionPageId ?? null);
         setResults(items);
       } catch {
         setResults([]);
@@ -43,7 +43,7 @@ export function useMentionSearch(type: MentionType | null, query: string) {
     }, 250);
 
     return () => clearTimeout(debounceRef.current);
-  }, [type, query, site]);
+  }, [type, query, site, sectionPageId]);
 
   return { results, loading };
 }
@@ -52,11 +52,11 @@ async function fetchByType(
   type: MentionType,
   query: string,
   siteUrl: string,
-  apiKey: string
+  apiKey: string,
+  sectionPageId: number | null
 ): Promise<SearchResult[]> {
   switch (type) {
-    case "page":
-    case "section": {
+    case "page": {
       const pages = await invoke<{ id: number; title: string; slug: string }[]>(
         "search_pages",
         { siteUrl, apiKey, query, perPage: 10 }
@@ -64,7 +64,41 @@ async function fetchByType(
       return pages.map((p) => ({
         id: p.id,
         label: p.title,
-        sublabel: `/${p.slug}`,
+        sublabel: `ID: ${p.id} · /${p.slug}`,
+        data: p,
+      }));
+    }
+    case "section": {
+      if (sectionPageId) {
+        // Fetch elements for the selected page
+        const resp = await invoke<{ elements: { id: string; name: string; label: string | null; parent: string | null }[]; count: number }>(
+          "get_page_elements",
+          { siteUrl, apiKey, pageId: sectionPageId }
+        );
+        // Show elements — prefer top-level (no parent or parent is "0"/falsy)
+        const elements = resp.elements ?? [];
+        const topLevel = elements.filter((e) => !e.parent || e.parent === "0");
+        // If no top-level found, show all elements
+        const candidates = topLevel.length > 0 ? topLevel : elements;
+        const filtered = query
+          ? candidates.filter((e) => (e.label ?? e.name).toLowerCase().includes(query.toLowerCase()))
+          : candidates;
+        return filtered.map((e) => ({
+          id: e.id,
+          label: e.label || e.name,
+          sublabel: `Element: ${e.name}`,
+          data: { ...e, pageId: sectionPageId },
+        }));
+      }
+      // No page selected yet — show pages to pick from
+      const pages = await invoke<{ id: number; title: string; slug: string }[]>(
+        "search_pages",
+        { siteUrl, apiKey, query, perPage: 10 }
+      );
+      return pages.map((p) => ({
+        id: p.id,
+        label: p.title,
+        sublabel: `ID: ${p.id} · /${p.slug}`,
         data: p,
       }));
     }
@@ -147,7 +181,71 @@ async function fetchByType(
         label: m.title,
         sublabel: m.mimeType,
         data: m,
+        imageUrl: m.mimeType.startsWith("image/") ? m.url : undefined,
       }));
+    }
+    case "template": {
+      const resp = await invoke<{ templates: { id: number; title: string; type: string }[] }>(
+        "get_templates",
+        { siteUrl, apiKey }
+      );
+      const templates = resp.templates ?? [];
+      const filtered = query
+        ? templates.filter((t) => t.title.toLowerCase().includes(query.toLowerCase()))
+        : templates;
+      return filtered.slice(0, 20).map((t) => ({
+        id: t.id,
+        label: t.title,
+        sublabel: t.type ?? "template",
+        data: t,
+      }));
+    }
+    case "form": {
+      const resp = await invoke<{ results: { elementId: string; elementType: string; elementLabel: string; postTitle: string }[] }>(
+        "search_elements",
+        { siteUrl, apiKey, elementType: "form", perPage: 20 }
+      );
+      const forms = (resp.results ?? []).filter((e) =>
+        !query || (e.elementLabel ?? e.elementType).toLowerCase().includes(query.toLowerCase())
+      );
+      return forms.map((e) => ({
+        id: e.elementId,
+        label: e.elementLabel || "Form",
+        sublabel: e.postTitle,
+        data: e,
+      }));
+    }
+    case "loop": {
+      const resp = await invoke<{ results: { elementId: string; elementType: string; elementLabel: string; postTitle: string }[] }>(
+        "search_elements",
+        { siteUrl, apiKey, elementType: "posts", perPage: 20 }
+      );
+      const loops = (resp.results ?? []).filter((e) =>
+        !query || (e.elementLabel ?? e.elementType).toLowerCase().includes(query.toLowerCase())
+      );
+      return loops.map((e) => ({
+        id: e.elementId,
+        label: e.elementLabel || "Query Loop",
+        sublabel: e.postTitle,
+        data: e,
+      }));
+    }
+    case "condition": {
+      // Conditions are freeform references — show common condition types
+      const CONDITIONS = [
+        { id: "logged-in", label: "User Logged In", sublabel: "Show only to logged-in users" },
+        { id: "logged-out", label: "User Logged Out", sublabel: "Show only to logged-out users" },
+        { id: "post-type", label: "Post Type", sublabel: "Match specific post type" },
+        { id: "page-template", label: "Page Template", sublabel: "Match page template" },
+        { id: "user-role", label: "User Role", sublabel: "Match user role" },
+        { id: "date-range", label: "Date Range", sublabel: "Show within date range" },
+        { id: "dynamic-data", label: "Dynamic Data", sublabel: "Based on dynamic field value" },
+        { id: "browser", label: "Browser / Device", sublabel: "Target specific browser or device" },
+      ];
+      const filtered = query
+        ? CONDITIONS.filter((c) => c.label.toLowerCase().includes(query.toLowerCase()))
+        : CONDITIONS;
+      return filtered.map((c) => ({ ...c, data: c }));
     }
     default:
       return [];

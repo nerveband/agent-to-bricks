@@ -20,16 +20,16 @@ node_modules/
 .env.local
 
 # Test data (local reference files, not distributed)
-test-data/
+docs/test-data/
+
+# Agents (local reference data)
+docs/agents/
 
 # Worktrees
 .worktrees/
 
 # Serena
 .serena/
-
-# mcporter config
-config/mcporter.json
 
 # CLI credentials (lives at ~/.agent-to-bricks/ but guard against accidental copies)
 config.yaml

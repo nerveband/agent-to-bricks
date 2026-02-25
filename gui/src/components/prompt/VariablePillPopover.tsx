@@ -14,7 +14,8 @@ interface VariablePillPopoverProps {
   varType: VarType;
   resolvedValue?: string;
   onApply: (newValue: string) => void;
-  children: React.ReactNode;
+  onClose: () => void;
+  anchorRect: DOMRect;
 }
 
 export function VariablePillPopover({
@@ -22,35 +23,44 @@ export function VariablePillPopover({
   varType,
   resolvedValue,
   onApply,
-  children,
+  onClose,
+  anchorRect,
 }: VariablePillPopoverProps) {
-  const [open, setOpen] = useState(false);
-  const [draft, setDraft] = useState(resolvedValue ?? "");
+  const [draft, setDraft] = useState(resolvedValue ?? varName);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (open) {
-      setDraft(resolvedValue ?? "");
-      requestAnimationFrame(() => inputRef.current?.select());
-    }
-  }, [open, resolvedValue]);
+    requestAnimationFrame(() => inputRef.current?.select());
+  }, []);
 
   const handleApply = () => {
     onApply(draft);
-    setOpen(false);
   };
 
   const accentColor = VAR_COLORS[varType];
 
   return (
-    <Popover.Root open={open} onOpenChange={setOpen}>
-      <Popover.Trigger asChild>{children}</Popover.Trigger>
+    <Popover.Root open onOpenChange={(o) => { if (!o) onClose(); }}>
+      <Popover.Anchor asChild>
+        <span
+          style={{
+            position: "fixed",
+            left: anchorRect.left,
+            top: anchorRect.bottom + 2,
+            width: anchorRect.width,
+            height: 1,
+            pointerEvents: "none",
+          }}
+        />
+      </Popover.Anchor>
       <Popover.Portal>
         <Popover.Content
           className="rounded-lg border p-3 shadow-lg z-[100] w-[240px]"
           style={{ background: "var(--surface)", borderColor: "var(--border)" }}
-          sideOffset={6}
+          sideOffset={4}
           onOpenAutoFocus={(e) => e.preventDefault()}
+          onInteractOutside={() => onClose()}
+          onEscapeKeyDown={() => onClose()}
         >
           <div className="flex items-center justify-between mb-2">
             <span
@@ -59,11 +69,9 @@ export function VariablePillPopover({
             >
               {varName}
             </span>
-            <Popover.Close asChild>
-              <button className="p-0.5 rounded" style={{ color: "var(--fg-muted)" }}>
-                <X size={12} />
-              </button>
-            </Popover.Close>
+            <button onClick={onClose} className="p-0.5 rounded" style={{ color: "var(--fg-muted)" }}>
+              <X size={12} />
+            </button>
           </div>
 
           {resolvedValue && (
@@ -79,7 +87,7 @@ export function VariablePillPopover({
             onChange={(e) => setDraft(e.target.value)}
             onKeyDown={(e) => {
               if (e.key === "Enter") handleApply();
-              if (e.key === "Escape") setOpen(false);
+              if (e.key === "Escape") onClose();
               e.stopPropagation();
             }}
             className="w-full px-2 py-1.5 rounded border text-[12px] font-mono mb-2"
@@ -93,7 +101,7 @@ export function VariablePillPopover({
 
           <div className="flex gap-1.5 justify-end">
             <button
-              onClick={() => setOpen(false)}
+              onClick={onClose}
               className="px-2 py-1 rounded text-[11px] border transition-colors"
               style={{ borderColor: "var(--border)", color: "var(--fg-muted)" }}
             >

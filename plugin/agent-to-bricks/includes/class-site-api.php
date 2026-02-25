@@ -28,6 +28,24 @@ class ATB_Site_API {
 			'callback'            => [ __CLASS__, 'get_element_types' ],
 			'permission_callback' => [ __CLASS__, 'check_permission' ],
 		] );
+
+		register_rest_route( 'agent-bricks/v1', '/pages', [
+			'methods'             => 'GET',
+			'callback'            => [ __CLASS__, 'get_pages' ],
+			'permission_callback' => [ __CLASS__, 'check_permission' ],
+			'args'                => [
+				'search'   => [
+					'type'              => 'string',
+					'sanitize_callback' => 'sanitize_text_field',
+					'default'           => '',
+				],
+				'per_page' => [
+					'type'              => 'integer',
+					'sanitize_callback' => 'absint',
+					'default'           => 20,
+				],
+			],
+		] );
 	}
 
 	public static function check_permission() {
@@ -202,6 +220,44 @@ class ATB_Site_API {
 			'elementTypes' => $types,
 			'count'        => count( $types ),
 		], 200 );
+	}
+
+	/**
+	 * GET /pages — search pages on the site.
+	 */
+	public static function get_pages( WP_REST_Request $request ): WP_REST_Response {
+		$search   = $request->get_param( 'search' );
+		$per_page = min( (int) $request->get_param( 'per_page' ), 50 );
+		if ( $per_page < 1 ) {
+			$per_page = 20;
+		}
+
+		$args = [
+			'post_type'      => 'page',
+			'post_status'    => [ 'publish', 'draft', 'private' ],
+			'posts_per_page' => $per_page,
+			'orderby'        => 'title',
+			'order'          => 'ASC',
+		];
+
+		if ( ! empty( $search ) ) {
+			$args['s'] = $search;
+		}
+
+		$query = new WP_Query( $args );
+		$pages = [];
+
+		foreach ( $query->posts as $post ) {
+			$pages[] = [
+				'id'       => $post->ID,
+				'title'    => $post->post_title ?: '(no title)',
+				'slug'     => $post->post_name,
+				'status'   => $post->post_status,
+				'modified' => $post->post_modified,
+			];
+		}
+
+		return new WP_REST_Response( $pages, 200 );
 	}
 
 	/**

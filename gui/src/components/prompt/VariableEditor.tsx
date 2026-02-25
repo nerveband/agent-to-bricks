@@ -18,6 +18,10 @@ const MENTION_COLORS: Record<string, string> = {
   variable: "#22d3ee",
   component: "#fb923c",
   media: "#a3e635",
+  template: "#c084fc",
+  form: "#38bdf8",
+  loop: "#fb7185",
+  condition: "#fbbf24",
 };
 
 interface VariableEditorProps {
@@ -27,10 +31,15 @@ interface VariableEditorProps {
   resolvedValues?: Record<string, string>;
   /** Called when a variable value is changed via the popover */
   onVariableChange?: (varName: string, newValue: string) => void;
+  /** Called when a @mention pill is clicked — lets parent open autocomplete */
+  onMentionPillClick?: (mentionType: string, fullToken: string) => void;
   placeholder?: string;
   rows?: number;
   className?: string;
   readOnly?: boolean;
+  expanded?: boolean;
+  /** When true, renders with transparent bg and no border (for use inside glass-input containers) */
+  embedded?: boolean;
 }
 
 export function VariableEditor({
@@ -38,10 +47,13 @@ export function VariableEditor({
   onChange,
   resolvedValues = {},
   onVariableChange,
+  onMentionPillClick,
   placeholder,
   rows = 3,
   className = "",
   readOnly = false,
+  expanded = false,
+  embedded = false,
 }: VariableEditorProps) {
   const editorRef = useRef<HTMLDivElement>(null);
   const [focused, setFocused] = useState(false);
@@ -50,6 +62,7 @@ export function VariableEditor({
   const [activePill, setActivePill] = useState<{
     varName: string;
     varType: VarType;
+    varValue: string;
     rect: DOMRect;
   } | null>(null);
 
@@ -151,7 +164,7 @@ export function VariableEditor({
     editorRef.current.appendChild(frag);
   }, [value]);
 
-  // Re-render when value changes externally
+  // Re-render when value changes externally (not from user typing)
   useEffect(() => {
     if (lastValue.current !== value) {
       lastValue.current = value;
@@ -159,12 +172,14 @@ export function VariableEditor({
       renderContent();
       if (focused) restoreCursor(cursor);
     }
-  }, [value, focused, renderContent, saveCursor, restoreCursor]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [value]);
 
-  // Initial render
+  // Initial render only
   useEffect(() => {
     renderContent();
-  }, [renderContent]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleInput = useCallback(() => {
     if (isComposing.current) return;
@@ -187,18 +202,31 @@ export function VariableEditor({
     if (!pill) return;
     e.preventDefault();
     e.stopPropagation();
+
+    const varType = pill.dataset.varType as VarType | undefined;
+    const varName = pill.dataset.varName ?? "";
+    const varValue = pill.dataset.varValue ?? "";
+
+    // For @mention pills, delegate to parent to open autocomplete
+    if (varType === "mention" && onMentionPillClick) {
+      const mentionType = varName.split(" ")[0]; // e.g. "page" from "page Homepage"
+      onMentionPillClick(mentionType, varValue);
+      return;
+    }
+
     setActivePill({
-      varName: pill.dataset.varName ?? "",
-      varType: (pill.dataset.varType as VarType) ?? "curly",
+      varName,
+      varType: varType ?? "curly",
+      varValue,
       rect: pill.getBoundingClientRect(),
     });
-  }, []);
+  }, [onMentionPillClick]);
 
   // Approximate row height for min-height
   const minHeight = rows * 22;
 
   return (
-    <div className="relative">
+    <div className={`relative ${expanded ? "h-full" : ""}`}>
       <div
         ref={editorRef}
         contentEditable={!readOnly}
@@ -214,14 +242,18 @@ export function VariableEditor({
         }}
         onClick={handlePillClick}
         data-placeholder={placeholder}
-        className={`variable-editor w-full rounded-lg px-3 py-2 text-[14px] outline-none transition-colors whitespace-pre-wrap break-words ${className}`}
+        className={`variable-editor w-full ${embedded ? "" : "rounded-lg px-3 py-2"} text-[14px] outline-none transition-colors whitespace-pre-wrap break-words ${className}`}
         style={{
-          background: "var(--bg)",
+          background: embedded ? "transparent" : "var(--bg)",
           color: "var(--fg)",
-          border: `1px solid ${focused ? "var(--accent)" : "var(--border)"}`,
+          border: embedded ? "none" : `1px solid ${focused ? "var(--accent)" : "var(--border)"}`,
           fontFamily: "var(--font-sans, inherit)",
-          lineHeight: "22px",
-          minHeight: `${minHeight}px`,
+          lineHeight: expanded ? "1.625" : "22px",
+          minHeight: expanded ? undefined : `${minHeight}px`,
+          height: expanded ? "100%" : undefined,
+          resize: expanded ? undefined : (embedded ? undefined : "vertical"),
+          overflow: "auto",
+          ...(embedded ? { paddingBottom: "2rem" } : {}),
         }}
         role="textbox"
         aria-multiline="true"
@@ -233,21 +265,26 @@ export function VariableEditor({
           varName={activePill.varName}
           varType={activePill.varType}
           resolvedValue={resolvedValues[activePill.varName]}
+          anchorRect={activePill.rect}
           onApply={(newValue) => {
-            onVariableChange?.(activePill.varName, newValue);
+            if (onVariableChange) {
+              onVariableChange(activePill.varName, newValue);
+            } else {
+              // Replace the variable token in the text with the new value
+              const oldToken = activePill.varType === "double_curly"
+                ? `{{${activePill.varName}}}`
+                : activePill.varType === "curly"
+                ? `{${activePill.varName}}`
+                : activePill.varValue;
+              if (oldToken) {
+                const newText = value.replace(oldToken, newValue);
+                onChange(newText);
+              }
+            }
             setActivePill(null);
           }}
-        >
-          <span
-            style={{
-              position: "fixed",
-              left: activePill.rect.left,
-              top: activePill.rect.bottom + 4,
-              width: 1,
-              height: 1,
-            }}
-          />
-        </VariablePillPopover>
+          onClose={() => setActivePill(null)}
+        />
       )}
     </div>
   );

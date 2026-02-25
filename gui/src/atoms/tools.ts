@@ -50,6 +50,17 @@ export const DEFAULT_TOOLS: Omit<Tool, "installed" | "version">[] = [
       url: "https://github.com/opencode-ai/opencode",
     },
   },
+  {
+    slug: "bricks",
+    name: "Bricks CLI",
+    command: "bricks",
+    args: [],
+    icon: "Bx",
+    configPath: "~/.agent-to-bricks/config.yaml",
+    installInstructions: {
+      url: "https://github.com/your-org/agent-to-bricks",
+    },
+  },
 ];
 
 export const toolsAtom = atom<Tool[]>([]);
@@ -60,3 +71,12 @@ export const activeToolAtom = atom((get) => {
   if (!slug) return null;
   return get(toolsAtom).find((t) => t.slug === slug) ?? null;
 });
+
+// Per-tool custom flags, keyed by slug → space-separated flags string.
+// e.g. { "claude-code": "--dangerously-skip-permissions --verbose" }
+export type ToolCustomFlags = Record<string, string>;
+export const toolCustomFlagsAtom = atom<ToolCustomFlags>({});
+
+// Per-tool working directory, keyed by slug → path string.
+export type ToolWorkingDirs = Record<string, string>;
+export const toolWorkingDirsAtom = atom<ToolWorkingDirs>({});

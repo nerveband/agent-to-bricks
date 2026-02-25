@@ -3,8 +3,10 @@ import { atom } from "jotai";
 export interface Session {
   id: string;
   toolSlug: string;
+  displayName: string;
   command: string;
   args: string[];
+  cwd?: string;
   status: "running" | "ended";
   startedAt: number;
   endedAt?: number;

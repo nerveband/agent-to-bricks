@@ -45,8 +45,7 @@ export function AddToolDialog({ open, onOpenChange }: AddToolDialogProps) {
   };
 
   const inputStyle = {
-    background: "var(--bg)",
-    borderColor: "var(--border)",
+    borderColor: "var(--border-subtle)",
     color: "var(--fg)",
   };
 
@@ -54,15 +53,15 @@ export function AddToolDialog({ open, onOpenChange }: AddToolDialogProps) {
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Portal>
         <Dialog.Overlay
-          className="fixed inset-0 bg-black/50"
-          style={{ zIndex: 50 }}
+          className="fixed inset-0 z-50 transition-opacity duration-300"
+          style={{ background: "var(--surface-dark)", backdropFilter: "blur(20px)" }}
         />
         <Dialog.Content
-          className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] max-w-[90vw] rounded-lg border p-6 shadow-xl"
+          className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] max-w-[90vw] glass-base rounded-2xl border p-6"
           style={{
             zIndex: 51,
-            background: "var(--surface)",
-            borderColor: "var(--border)",
+            borderColor: "var(--border-subtle)",
+            boxShadow: "var(--shadow-floating)",
             color: "var(--fg)",
           }}
         >
@@ -93,7 +92,7 @@ export function AddToolDialog({ open, onOpenChange }: AddToolDialogProps) {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="e.g. Aider"
-                className="w-full px-3 py-1.5 rounded border text-[13px] focus:outline-none focus:ring-1"
+                className="w-full px-3 py-1.5 rounded-xl border text-[13px] glass-input focus:outline-none"
                 style={{
                   ...inputStyle,
                   // @ts-expect-error CSS custom property for ring color
@@ -115,7 +114,7 @@ export function AddToolDialog({ open, onOpenChange }: AddToolDialogProps) {
                 onChange={(e) => setCommand(e.target.value)}
                 placeholder="e.g. aider"
                 required
-                className="w-full px-3 py-1.5 rounded border text-[13px] focus:outline-none focus:ring-1"
+                className="w-full px-3 py-1.5 rounded-xl border text-[13px] glass-input focus:outline-none"
                 style={{
                   ...inputStyle,
                   // @ts-expect-error CSS custom property for ring color
@@ -142,7 +141,7 @@ export function AddToolDialog({ open, onOpenChange }: AddToolDialogProps) {
                 value={workDir}
                 onChange={(e) => setWorkDir(e.target.value)}
                 placeholder="e.g. ~/projects/my-app"
-                className="w-full px-3 py-1.5 rounded border text-[13px] focus:outline-none focus:ring-1"
+                className="w-full px-3 py-1.5 rounded-xl border text-[13px] glass-input focus:outline-none"
                 style={{
                   ...inputStyle,
                   // @ts-expect-error CSS custom property for ring color
@@ -169,7 +168,7 @@ export function AddToolDialog({ open, onOpenChange }: AddToolDialogProps) {
                 value={configPath}
                 onChange={(e) => setConfigPath(e.target.value)}
                 placeholder="e.g. ~/.config/aider/config.yaml"
-                className="w-full px-3 py-1.5 rounded border text-[13px] focus:outline-none focus:ring-1"
+                className="w-full px-3 py-1.5 rounded-xl border text-[13px] glass-input focus:outline-none"
                 style={{
                   ...inputStyle,
                   // @ts-expect-error CSS custom property for ring color
@@ -193,10 +192,11 @@ export function AddToolDialog({ open, onOpenChange }: AddToolDialogProps) {
               </Dialog.Close>
               <button
                 type="submit"
-                className="px-3 py-1.5 rounded text-[13px] font-medium transition-colors"
+                className="px-4 py-1.5 rounded-lg text-[13px] font-semibold transition-all hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0"
                 style={{
-                  background: "var(--accent)",
-                  color: "var(--bg)",
+                  background: "var(--yellow)",
+                  color: "#000",
+                  boxShadow: "var(--shadow-glow)",
                 }}
               >
                 Add Tool

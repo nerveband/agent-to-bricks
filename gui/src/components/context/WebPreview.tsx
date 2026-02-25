@@ -240,22 +240,14 @@ export function WebPreview({ siteUrl }: { siteUrl: string }) {
                     {page.title || "(no title)"}
                   </span>
                   <span
-                    className="text-[11px] shrink-0 font-mono"
-                    style={{ color: "var(--fg-muted)" }}
+                    className="text-[10px] shrink-0 px-1.5 py-0.5 rounded font-medium"
+                    style={{
+                      background: page.status === "publish" ? "rgba(52,211,153,0.15)" : "rgba(251,191,36,0.15)",
+                      color: page.status === "publish" ? "#34d399" : "#fbbf24",
+                    }}
                   >
-                    ID: {page.id}
+                    {page.status === "publish" ? "Published" : page.status === "draft" ? "Draft" : page.status}
                   </span>
-                  {page.status !== "publish" && (
-                    <span
-                      className="text-[10px] shrink-0 px-1 rounded"
-                      style={{
-                        background: "var(--bg)",
-                        color: "var(--fg-muted)",
-                      }}
-                    >
-                      {page.status}
-                    </span>
-                  )}
                 </button>
               ))}
             </div>
@@ -325,13 +317,13 @@ export function WebPreview({ siteUrl }: { siteUrl: string }) {
               /{selectedPage.slug}
             </span>
             <span
-              className="text-[11px] px-1 rounded"
+              className="text-[11px] px-1.5 py-0.5 rounded font-medium"
               style={{
-                background: selectedPage.status === "publish" ? "var(--surface)" : "var(--border)",
-                color: "var(--fg-muted)",
+                background: selectedPage.status === "publish" ? "rgba(52,211,153,0.15)" : "rgba(251,191,36,0.15)",
+                color: selectedPage.status === "publish" ? "#34d399" : "#fbbf24",
               }}
             >
-              {selectedPage.status}
+              {selectedPage.status === "publish" ? "Published" : selectedPage.status === "draft" ? "Draft" : selectedPage.status}
             </span>
           </div>
         </div>

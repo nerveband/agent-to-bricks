@@ -19,6 +19,7 @@ class ATB_API_Auth {
 		// Add AJAX handler for generating keys
 		add_action( 'wp_ajax_atb_generate_api_key', array( __CLASS__, 'ajax_generate_key' ) );
 		add_action( 'wp_ajax_atb_revoke_api_key', array( __CLASS__, 'ajax_revoke_key' ) );
+		add_action( 'wp_ajax_atb_reveal_api_key', array( __CLASS__, 'ajax_reveal_key' ) );
 	}
 
 	/**
@@ -111,8 +112,9 @@ class ATB_API_Auth {
 
 		$keys = get_option( self::OPTION_KEY, array() );
 		$keys[] = array(
-			'key_hash'   => self::hash_key( $raw_key ),
-			'key_prefix' => substr( $raw_key, 0, 8 ),
+			'key_hash'      => self::hash_key( $raw_key ),
+			'key_encrypted' => self::encrypt_key( $raw_key ),
+			'key_prefix'    => substr( $raw_key, 0, 8 ),
 			'user_id'    => (int) $user_id,
 			'label'      => sanitize_text_field( $label ),
 			'created'    => current_time( 'mysql' ),
@@ -177,6 +179,38 @@ class ATB_API_Auth {
 	}
 
 	/**
+	 * Encrypt key for retrievable storage (admin-only reveal).
+	 */
+	private static function encrypt_key( $key ) {
+		if ( empty( $key ) ) {
+			return '';
+		}
+		return base64_encode( openssl_encrypt(
+			$key,
+			'aes-256-cbc',
+			wp_salt( 'auth' ),
+			0,
+			substr( md5( wp_salt( 'secure_auth' ) ), 0, 16 )
+		) );
+	}
+
+	/**
+	 * Decrypt a stored encrypted key.
+	 */
+	private static function decrypt_stored_key( $encrypted ) {
+		if ( empty( $encrypted ) ) {
+			return '';
+		}
+		return openssl_decrypt(
+			base64_decode( $encrypted ),
+			'aes-256-cbc',
+			wp_salt( 'auth' ),
+			0,
+			substr( md5( wp_salt( 'secure_auth' ) ), 0, 16 )
+		);
+	}
+
+	/**
 	 * AJAX: Generate a new API key.
 	 */
 	public static function ajax_generate_key() {
@@ -213,5 +247,33 @@ class ATB_API_Auth {
 
 		self::revoke_key( $prefix );
 		wp_send_json_success();
+	}
+
+	/**
+	 * AJAX: Reveal an API key for copying.
+	 */
+	public static function ajax_reveal_key() {
+		check_ajax_referer( 'atb_api_key_nonce', 'nonce' );
+
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error( 'Unauthorized' );
+		}
+
+		$prefix = sanitize_text_field( $_POST['prefix'] ?? '' );
+		if ( empty( $prefix ) ) {
+			wp_send_json_error( 'No key prefix' );
+		}
+
+		$keys = get_option( self::OPTION_KEY, array() );
+		foreach ( $keys as $k ) {
+			if ( $k['key_prefix'] === $prefix && ! empty( $k['key_encrypted'] ) ) {
+				$decrypted = self::decrypt_stored_key( $k['key_encrypted'] );
+				if ( $decrypted ) {
+					wp_send_json_success( array( 'key' => $decrypted ) );
+				}
+			}
+		}
+
+		wp_send_json_error( 'Key not retrievable. Revoke and generate a new one.' );
 	}
 }

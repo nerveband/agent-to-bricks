@@ -17,13 +17,25 @@ class ATB_Settings {
 	}
 
 	public static function add_menu_page() {
-		add_options_page(
-			'Agent to Bricks',
-			'Agent to Bricks',
-			'manage_options',
-			'agent-bricks-settings',
-			array( __CLASS__, 'render_page' )
-		);
+		// Add under Bricks menu if available, otherwise fall back to Settings.
+		if ( defined( 'BRICKS_VERSION' ) ) {
+			add_submenu_page(
+				'bricks',
+				'Agent to Bricks',
+				'Agent to Bricks',
+				'manage_options',
+				'agent-bricks-settings',
+				array( __CLASS__, 'render_page' )
+			);
+		} else {
+			add_options_page(
+				'Agent to Bricks',
+				'Agent to Bricks',
+				'manage_options',
+				'agent-bricks-settings',
+				array( __CLASS__, 'render_page' )
+			);
+		}
 	}
 
 	public static function register_settings() {
@@ -127,10 +139,10 @@ class ATB_Settings {
 				<thead>
 					<tr>
 						<th>Label</th>
-						<th>Key Prefix</th>
+						<th>Key</th>
 						<th>Created</th>
 						<th>Last Used</th>
-						<th></th>
+						<th>Actions</th>
 					</tr>
 				</thead>
 				<tbody id="atb-api-keys-list">
@@ -140,10 +152,14 @@ class ATB_Settings {
 						<?php foreach ( $api_keys as $k ) : ?>
 							<tr data-prefix="<?php echo esc_attr( $k['prefix'] ); ?>">
 								<td><?php echo esc_html( $k['label'] ); ?></td>
-								<td><code><?php echo esc_html( $k['prefix'] ); ?>...</code></td>
+								<td><code class="atb-key-display"><?php echo esc_html( $k['prefix'] ); ?>...</code></td>
 								<td><?php echo esc_html( $k['created'] ); ?></td>
 								<td><?php echo $k['last_used'] ? esc_html( $k['last_used'] ) : '<em>Never</em>'; ?></td>
-								<td><button type="button" class="button button-small atb-revoke-key" data-prefix="<?php echo esc_attr( $k['prefix'] ); ?>">Revoke</button></td>
+								<td>
+									<button type="button" class="button button-small atb-show-key" data-prefix="<?php echo esc_attr( $k['prefix'] ); ?>">Show</button>
+									<button type="button" class="button button-small atb-copy-existing-key" data-prefix="<?php echo esc_attr( $k['prefix'] ); ?>" style="display:none;">Copy</button>
+									<button type="button" class="button button-small atb-revoke-key" data-prefix="<?php echo esc_attr( $k['prefix'] ); ?>">Revoke</button>
+								</td>
 							</tr>
 						<?php endforeach; ?>
 					<?php endif; ?>
@@ -155,11 +171,12 @@ class ATB_Settings {
 				<button type="button" class="button button-primary" id="atb-generate-key">Generate New Key</button>
 			</p>
 			<div id="atb-new-key-display" style="display:none; margin:10px 0; padding:12px; background:#f0f6fc; border:1px solid #0073aa; border-radius:4px;">
-				<strong>New API key created!</strong> Copy it now — it won't be shown again:<br>
+				<strong>New API key created!</strong> Copy it now, or use the Show button later to reveal it:<br>
 				<code id="atb-new-key-value" style="font-size:14px; user-select:all; display:inline-block; margin:8px 0; padding:4px 8px; background:#fff;"></code>
 				<button type="button" class="button button-small" id="atb-copy-key">Copy</button>
 			</div>
 
+			<?php if ( defined( 'ATB_ENABLE_LLM_SETTINGS' ) && ATB_ENABLE_LLM_SETTINGS ) : ?>
 			<hr />
 
 			<h2>LLM Provider Settings</h2>
@@ -275,8 +292,22 @@ class ATB_Settings {
 
 				<?php submit_button(); ?>
 			</form>
+			<?php endif; ?>
+
+			<hr />
+
+			<h2>About</h2>
+			<p>
+				<strong>Agent to Bricks</strong> v<?php echo esc_html( AGENT_BRICKS_VERSION ); ?><br>
+				Created by <a href="https://ashrafali.net" target="_blank">Ashraf Ali</a>
+			</p>
+			<p>
+				This plugin is designed to be paired with the Agent to Bricks CLI for AI-powered Bricks Builder workflows.<br>
+				Learn more and get the CLI at <a href="https://github.com/nerveband/agent-to-bricks" target="_blank">github.com/nerveband/agent-to-bricks</a>.
+			</p>
 		</div>
 
+		<?php if ( defined( 'ATB_ENABLE_LLM_SETTINGS' ) && ATB_ENABLE_LLM_SETTINGS ) : ?>
 		<script>
 		(function() {
 			var providerSelect = document.getElementById('agent_bricks_provider');
@@ -305,6 +336,7 @@ class ATB_Settings {
 			providerSelect.dispatchEvent(new Event('change'));
 		})();
 		</script>
+		<?php endif; ?>
 
 		<script>
 		(function() {
@@ -331,9 +363,11 @@ class ATB_Settings {
 						var tbody = document.getElementById('atb-api-keys-list');
 						var tr = document.createElement('tr');
 						tr.setAttribute('data-prefix', resp.data.prefix);
-						tr.innerHTML = '<td>' + label + '</td><td><code>' + resp.data.prefix + '...</code></td><td>Just now</td><td><em>Never</em></td><td><button type="button" class="button button-small atb-revoke-key" data-prefix="' + resp.data.prefix + '">Revoke</button></td>';
+						tr.innerHTML = '<td>' + label + '</td><td><code class="atb-key-display">' + resp.data.prefix + '...</code></td><td>Just now</td><td><em>Never</em></td><td><button type="button" class="button button-small atb-show-key" data-prefix="' + resp.data.prefix + '">Show</button> <button type="button" class="button button-small atb-copy-existing-key" data-prefix="' + resp.data.prefix + '" style="display:none;">Copy</button> <button type="button" class="button button-small atb-revoke-key" data-prefix="' + resp.data.prefix + '">Revoke</button></td>';
 						tbody.appendChild(tr);
 						bindRevoke(tr.querySelector('.atb-revoke-key'));
+						bindShow(tr.querySelector('.atb-show-key'));
+						bindCopy(tr.querySelector('.atb-copy-existing-key'));
 						document.getElementById('atb-new-key-label').value = '';
 					});
 			});
@@ -365,6 +399,65 @@ class ATB_Settings {
 				});
 			}
 			document.querySelectorAll('.atb-revoke-key').forEach(bindRevoke);
+
+			function bindShow(btn) {
+				btn.addEventListener('click', function() {
+					var prefix = this.dataset.prefix;
+					var row = document.querySelector('tr[data-prefix="' + prefix + '"]');
+					var codeEl = row.querySelector('.atb-key-display');
+					var copyBtn = row.querySelector('.atb-copy-existing-key');
+					var showBtn = this;
+
+					if (showBtn.textContent === 'Hide') {
+						codeEl.textContent = prefix + '...';
+						codeEl.removeAttribute('data-full-key');
+						codeEl.style.userSelect = '';
+						showBtn.textContent = 'Show';
+						copyBtn.style.display = 'none';
+						return;
+					}
+
+					showBtn.textContent = 'Loading...';
+					var data = new FormData();
+					data.append('action', 'atb_reveal_api_key');
+					data.append('nonce', nonce);
+					data.append('prefix', prefix);
+
+					fetch(ajaxUrl, { method: 'POST', body: data })
+						.then(function(r) { return r.json(); })
+						.then(function(resp) {
+							if (!resp.success) {
+								alert(resp.data || 'Cannot retrieve key. Revoke and generate a new one.');
+								showBtn.textContent = 'Show';
+								return;
+							}
+							codeEl.textContent = resp.data.key;
+							codeEl.setAttribute('data-full-key', resp.data.key);
+							codeEl.style.userSelect = 'all';
+							showBtn.textContent = 'Hide';
+							copyBtn.style.display = '';
+						});
+				});
+			}
+			document.querySelectorAll('.atb-show-key').forEach(bindShow);
+
+			function bindCopy(btn) {
+				btn.addEventListener('click', function() {
+					var prefix = this.dataset.prefix;
+					var row = document.querySelector('tr[data-prefix="' + prefix + '"]');
+					var codeEl = row.querySelector('.atb-key-display');
+					var key = codeEl.getAttribute('data-full-key');
+					var copyBtn = this;
+
+					if (key) {
+						navigator.clipboard.writeText(key).then(function() {
+							copyBtn.textContent = 'Copied!';
+							setTimeout(function() { copyBtn.textContent = 'Copy'; }, 2000);
+						});
+					}
+				});
+			}
+			document.querySelectorAll('.atb-copy-existing-key').forEach(bindCopy);
 		})();
 		</script>
 		<?php

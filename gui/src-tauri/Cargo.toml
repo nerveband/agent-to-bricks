@@ -19,4 +19,8 @@ serde_json = "1"
 tauri-plugin-sql = { version = "2.3.2", features = ["sqlite"] }
 tauri-plugin-pty = "0.2.1"
 dirs = "6.0.0"
+reqwest = { version = "0.12", features = ["json", "rustls-tls"], default-features = false }
+tokio = { version = "1", features = ["macros"] }
+urlencoding = "2"
+tauri-plugin-dialog = "2.6.0"
 

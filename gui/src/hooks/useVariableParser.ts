@@ -23,7 +23,7 @@ export type Segment = TextSegment | VariableSegment;
 export function parseVariables(text: string): Segment[] {
   const segments: Segment[] = [];
   // Match {{double_curly}}, {single_curly}, or @word patterns
-  const regex = /(\{\{[\w]+\}\}|\{[\w]+\}|@(?:page|section|element|class|color|variable|component|media)(?:\s+[^\s@{]+)?)/g;
+  const regex = /(\{\{[\w]+\}\}|\{[\w]+\}|@(?:page|section|element|class|color|variable|component|media|template|form|loop|condition)(?:\s+[^\s@{]+)?)/g;
 
   let lastIndex = 0;
   let match: RegExpExecArray | null;

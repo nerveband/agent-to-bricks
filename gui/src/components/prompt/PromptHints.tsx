@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { useAtomValue } from "jotai";
 import { experienceLevelAtom, hintPreferenceAtom, promptCountAtom } from "../../atoms/app";
-import { Lightbulb, CheckCircle } from "@phosphor-icons/react";
+import { Lightbulb } from "@phosphor-icons/react";
 
 interface PromptHintsProps {
   text: string;
@@ -57,15 +57,6 @@ export function PromptHints({ text, mentionCount }: PromptHintsProps) {
   }, [text, mentionCount, shouldShow]);
 
   if (!text.trim() || !shouldShow) return null;
-
-  if (hints.length === 0 && text.length > 20 && mentionCount > 0) {
-    return (
-      <div className="flex items-center gap-1.5 px-1 py-1 text-[12px]" style={{ color: "#34d399" }}>
-        <CheckCircle size={14} weight="fill" />
-        <span>Good prompt</span>
-      </div>
-    );
-  }
 
   if (hints.length === 0) return null;
 

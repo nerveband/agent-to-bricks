@@ -244,16 +244,16 @@ export function CommandPalette() {
     <div
       ref={backdropRef}
       className="fixed inset-0 z-[100] flex items-start justify-center pt-[10vh] palette-backdrop"
-      style={{ background: "rgba(0,0,0,0.5)", backdropFilter: "blur(4px)" }}
+      style={{ background: "var(--surface-dark)", backdropFilter: "blur(20px)" }}
       onClick={(e) => e.target === backdropRef.current && handleClose()}
     >
       <div
-        className="w-full max-w-[640px] rounded-xl border shadow-2xl overflow-hidden palette-container"
-        style={{ background: "var(--surface)", borderColor: "var(--border)" }}
+        className="w-full max-w-[640px] glass-base rounded-2xl border overflow-hidden palette-container"
+        style={{ borderColor: "var(--border-subtle)", boxShadow: "var(--shadow-floating)" }}
       >
-        <div className="flex items-center justify-between px-4 py-2 border-b" style={{ borderColor: "var(--border)" }}>
+        <div className="flex items-center justify-between px-4 py-2 border-b white-glass" style={{ borderColor: "var(--border-subtle)" }}>
           <div className="flex items-center gap-2">
-            <Lightning size={16} weight="fill" style={{ color: "var(--accent)" }} />
+            <Lightning size={16} weight="fill" style={{ color: "var(--yellow)" }} />
             <span className="text-[13px] font-medium" style={{ color: "var(--fg)" }}>
               Prompt Builder
             </span>

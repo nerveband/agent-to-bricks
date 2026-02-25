@@ -3,9 +3,10 @@ import type { MentionToken, MentionType } from "../atoms/prompts";
 
 const MENTION_TYPES: MentionType[] = [
   "page", "section", "element", "class", "color", "variable", "component", "media",
+  "template", "form", "loop", "condition",
 ];
 
-const MENTION_REGEX = /@(page|section|element|class|color|variable|component|media)(?:\(([^)]*)\))?/g;
+const MENTION_REGEX = /@(page|section|element|class|color|variable|component|media|template|form|loop|condition)(?:\(([^)]*)\))?/g;
 
 export interface ParsedPrompt {
   rawText: string;

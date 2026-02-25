@@ -17,6 +17,11 @@ define( 'AGENT_BRICKS_VERSION', '1.3.0' );
 define( 'AGENT_BRICKS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'AGENT_BRICKS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
+// Feature flag: set to true in wp-config.php to enable LLM provider settings and experimental GUI.
+if ( ! defined( 'ATB_ENABLE_LLM_SETTINGS' ) ) {
+	define( 'ATB_ENABLE_LLM_SETTINGS', false );
+}
+
 // Load classes.
 require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-llm-providers.php';
 require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-llm-client.php';
