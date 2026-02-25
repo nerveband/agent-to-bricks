@@ -2,7 +2,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&family=Geist+Mono:wght@400;500;700&display=swap');
 
-:root {
+:root,
+:root[data-theme='dark'] {
   --sl-font: 'Manrope', sans-serif;
   --sl-font-mono: 'Geist Mono', monospace;
 
@@ -11,14 +12,115 @@
   --sl-color-accent: #FACC15;
   --sl-color-accent-high: #fef3c7;
 
-  /* Dark backgrounds */
+  /* Backgrounds matching homepage */
   --sl-color-bg: #0a0a0c;
-  --sl-color-bg-nav: #14141680;
+  --sl-color-bg-nav: #0f0c29e6;
   --sl-color-bg-sidebar: #0f0c29;
+  --sl-color-bg-inline-code: rgba(255, 255, 255, 0.08);
+
+  /* Gray scale -- tuned for near-black backgrounds */
+  --sl-color-white: #f5f5f7;
+  --sl-color-gray-1: #ededf0;
+  --sl-color-gray-2: #c8c8cd;
+  --sl-color-gray-3: #9e9ea8;
+  --sl-color-gray-4: #6e6e78;
+  --sl-color-gray-5: #3d3d44;
+  --sl-color-gray-6: #1a1a22;
+  --sl-color-black: #0a0a0c;
+
+  /* Text */
+  --sl-color-text: #e4e4e8;
+  --sl-color-text-accent: #FACC15;
 }
 
 :root[data-theme='light'] {
   --sl-color-accent-low: #fef9e7;
   --sl-color-accent: #EBA40A;
   --sl-color-accent-high: #92400e;
+}
+
+/* Gradient background on docs pages to match homepage */
+[data-theme='dark'] .main-frame,
+[data-theme='dark'] body {
+  background: linear-gradient(135deg, #0f0c29 0%, #0a0a0c 40%, #0a0a0c 100%);
+}
+
+/* Nav bar glass effect */
+[data-theme='dark'] header.header {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Sidebar link colors */
+[data-theme='dark'] nav.sidebar a {
+  color: var(--sl-color-gray-2);
+}
+[data-theme='dark'] nav.sidebar a:hover,
+[data-theme='dark'] nav.sidebar a[aria-current='page'] {
+  color: var(--sl-color-white);
+}
+
+/* Sidebar section headings */
+[data-theme='dark'] nav.sidebar .top-level > li > details > summary,
+[data-theme='dark'] nav.sidebar .group-label {
+  color: var(--sl-color-accent);
+}
+
+/* Content heading colors */
+[data-theme='dark'] .sl-markdown-content h1,
+[data-theme='dark'] .sl-markdown-content h2,
+[data-theme='dark'] .sl-markdown-content h3,
+[data-theme='dark'] .sl-markdown-content h4 {
+  color: var(--sl-color-white);
+}
+
+/* Body text readability */
+[data-theme='dark'] .sl-markdown-content {
+  color: var(--sl-color-gray-2);
+}
+
+/* Strong/bold text pops */
+[data-theme='dark'] .sl-markdown-content strong {
+  color: var(--sl-color-white);
+}
+
+/* Table of contents */
+[data-theme='dark'] starlight-toc a {
+  color: var(--sl-color-gray-3);
+}
+[data-theme='dark'] starlight-toc a[aria-current='true'] {
+  color: var(--sl-color-accent);
+}
+
+/* Code blocks */
+[data-theme='dark'] .sl-markdown-content pre {
+  background: rgba(15, 12, 41, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Inline code */
+[data-theme='dark'] .sl-markdown-content :not(pre) > code {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--sl-color-gray-1);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Links in content */
+[data-theme='dark'] .sl-markdown-content a {
+  color: var(--sl-color-accent);
+}
+[data-theme='dark'] .sl-markdown-content a:hover {
+  color: var(--sl-color-accent-high);
+}
+
+/* Table styling */
+[data-theme='dark'] .sl-markdown-content table {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme='dark'] .sl-markdown-content th {
+  color: var(--sl-color-white);
+  background: rgba(255, 255, 255, 0.04);
+}
+[data-theme='dark'] .sl-markdown-content td {
+  border-color: rgba(255, 255, 255, 0.06);
 }
