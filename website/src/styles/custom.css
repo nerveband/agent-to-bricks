@@ -92,10 +92,43 @@
   color: var(--sl-color-accent);
 }
 
-/* Code blocks */
-[data-theme='dark'] .sl-markdown-content pre {
-  background: rgba(15, 12, 41, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+/* Expressive Code overrides for dark theme consistency */
+[data-theme='dark'] .expressive-code,
+[data-theme='dark'] .expressive-code .frame {
+  --ec-brdCol: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme='dark'] .expressive-code pre {
+  background: #12101e !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme='dark'] .expressive-code .frame.is-terminal pre {
+  background: #0d0b18 !important;
+}
+
+[data-theme='dark'] .expressive-code .header {
+  background: #1a1830 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+[data-theme='dark'] .expressive-code .copy button {
+  color: var(--sl-color-gray-3) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme='dark'] .expressive-code .copy button:hover {
+  color: var(--sl-color-white) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Fallback plain pre/code outside expressive-code */
+[data-theme='dark'] .sl-markdown-content pre:not(.expressive-code pre) {
+  background: #12101e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.75rem;
+  color: var(--sl-color-gray-1);
 }
 
 /* Inline code */
@@ -103,6 +136,8 @@
   background: rgba(255, 255, 255, 0.08);
   color: var(--sl-color-gray-1);
   border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.15em 0.35em;
+  border-radius: 0.3rem;
 }
 
 /* Links in content */

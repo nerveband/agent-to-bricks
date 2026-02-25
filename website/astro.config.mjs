@@ -17,6 +17,23 @@ export default defineConfig({
       social: [
         { icon: 'github', label: 'GitHub', href: 'https://github.com/nerveband/agent-to-bricks' },
       ],
+      expressiveCode: {
+        themes: ['dracula'],
+        styleOverrides: {
+          borderColor: 'rgba(255, 255, 255, 0.08)',
+          borderRadius: '0.75rem',
+          codeBackground: '#12101e',
+          codeFontFamily: "'Geist Mono', monospace",
+          codeFontSize: '0.85rem',
+          frames: {
+            editorBackground: '#12101e',
+            terminalBackground: '#0d0b18',
+            terminalTitlebarBackground: '#1a1830',
+            editorTabBarBackground: '#1a1830',
+            tooltipSuccessBackground: '#FACC15',
+          },
+        },
+      },
       customCss: [
         './src/styles/custom.css',
       ],
