@@ -15,7 +15,7 @@ export function useMentionSearch(type: MentionType | null, query: string) {
   const site = useAtomValue(activeSiteAtom);
   const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(false);
-  const debounceRef = useRef<ReturnType<typeof setTimeout>>();
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   useEffect(() => {
     if (!type || !site) {

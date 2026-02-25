@@ -114,7 +114,7 @@ export function useConfigPersistence() {
   }, []);
 
   // Save config on changes (debounced)
-  const saveTimeout = useRef<ReturnType<typeof setTimeout>>();
+  const saveTimeout = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   useEffect(() => {
     if (!loaded.current) return;
