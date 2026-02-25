@@ -4,42 +4,66 @@
 @import "@fontsource/jetbrains-mono/700.css";
 
 @theme {
-  --font-sans: "Manrope Variable", "Manrope", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Manrope Variable", "Manrope", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 :root {
-  --bg: oklch(0.98 0.002 85);
-  --surface: oklch(0.96 0.003 85);
-  --terminal: oklch(0.10 0.005 265);
-  --fg: oklch(0.25 0.01 265);
-  --fg-muted: oklch(0.50 0.01 265);
-  --accent: oklch(0.82 0.16 85);
-  --accent-hover: oklch(0.76 0.14 85);
-  --border: oklch(0.90 0.003 265);
+  /* Fresh, clean light mode palette */
+  --bg: oklch(0.98 0.005 240);
+  --bg-texture: radial-gradient(circle at top left, rgba(255, 255, 255, 0.8), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(0, 0, 0, 0.02), transparent 40%);
+  --surface: rgba(255, 255, 255, 0.7);
+  --surface-solid: oklch(0.99 0.002 240);
+  --terminal: #fafafa;
+  --fg: oklch(0.20 0.01 260);
+  --fg-muted: oklch(0.55 0.01 260);
+  --accent: oklch(0.60 0.18 280);
+  /* Deeper, more sophisticated blurple */
+  --accent-hover: oklch(0.55 0.18 280);
+  --border: rgba(0, 0, 0, 0.06);
+  --border-solid: oklch(0.92 0.005 240);
   --destructive: oklch(0.55 0.22 27);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.03);
 
   color-scheme: light;
 }
 
 [data-theme="dark"] {
-  --bg: oklch(0.14 0.005 265);
-  --surface: oklch(0.18 0.005 265);
-  --fg: oklch(0.93 0.005 85);
-  --fg-muted: oklch(0.65 0.008 265);
-  --accent-hover: oklch(0.88 0.14 85);
-  --border: oklch(0.22 0.005 265);
+  /* Deep, sophisticated dark mode palette */
+  --bg: oklch(0.12 0.008 260);
+  --bg-texture: radial-gradient(circle at 15% 50%, rgba(200, 200, 255, 0.03), transparent 30%),
+    radial-gradient(circle at 85% 30%, rgba(100, 150, 255, 0.02), transparent 30%);
+  --surface: rgba(26, 28, 33, 0.65);
+  --surface-solid: oklch(0.16 0.005 260);
+  --terminal: #111216;
+  --fg: oklch(0.95 0.01 260);
+  --fg-muted: oklch(0.65 0.01 260);
+  --accent: oklch(0.70 0.16 280);
+  /* Vibrant blurple */
+  --accent-hover: oklch(0.75 0.16 280);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-solid: oklch(0.22 0.005 260);
   --destructive: oklch(0.60 0.22 27);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.15);
 
   color-scheme: dark;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: var(--font-sans);
   background: var(--bg);
+  background-image: var(--bg-texture);
+  background-attachment: fixed;
   color: var(--fg);
   -webkit-font-smoothing: antialiased;
 }
@@ -51,18 +75,28 @@ html, body, #root {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--border);
   border-radius: 4px;
 }
 
 @keyframes pulse-dot {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
 }
+
 .animate-pulse-dot {
   animation: pulse-dot 2s ease-in-out infinite;
 }
@@ -73,8 +107,13 @@ html, body, #root {
 }
 
 @keyframes palette-fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .palette-container {
@@ -82,8 +121,15 @@ html, body, #root {
 }
 
 @keyframes palette-slide-in {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Mention pills */
@@ -102,8 +148,15 @@ html, body, #root {
 }
 
 @keyframes tooltip-pop {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* Autocomplete dropdown */
@@ -114,4 +167,13 @@ html, body, #root {
 /* Prompt workshop preset hover */
 .preset-item:hover {
   background: var(--border);
+}
+
+/* VariableEditor placeholder */
+.variable-editor:empty::before,
+.variable-editor:has(> br:only-child)::before {
+  content: attr(data-placeholder);
+  color: var(--fg-muted);
+  opacity: 0.5;
+  pointer-events: none;
 }
