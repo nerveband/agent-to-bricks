@@ -51,9 +51,13 @@ const {
       <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(250,204,21,0.05),transparent_50%)]"></div>
     </div>
 
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-yellow-400 focus:text-gray-900 focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">
+      Skip to main content
+    </a>
+
     <Header />
 
-    <main>
+    <main id="main-content">
       <slot />
     </main>
 
@@ -81,6 +85,17 @@ const {
       }
       [data-theme='light'] .fixed.-z-10 {
         opacity: 0.05;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .animate-gradient {
+          animation: none;
+        }
+        *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
       }
     </style>
   </body>

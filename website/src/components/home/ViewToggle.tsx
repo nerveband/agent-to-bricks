@@ -10,8 +10,11 @@ export default function ViewToggle() {
     <div>
       {/* Toggle switch */}
       <div className="flex justify-center mb-6">
-        <div className="inline-flex items-center rounded-lg border border-white/10 bg-white/[0.03] p-1">
+        <div className="inline-flex items-center rounded-lg border border-white/10 bg-white/[0.03] p-1" role="tablist" aria-label="View mode">
           <button
+            role="tab"
+            aria-selected={view === 'gui'}
+            aria-controls="mockup-panel"
             onClick={() => setView('gui')}
             className={`relative px-4 py-1.5 text-sm font-medium rounded-md transition-colors ${
               view === 'gui' ? 'text-gray-900' : 'text-gray-400 hover:text-white'
@@ -27,6 +30,9 @@ export default function ViewToggle() {
             <span className="relative z-10">GUI</span>
           </button>
           <button
+            role="tab"
+            aria-selected={view === 'cli'}
+            aria-controls="mockup-panel"
             onClick={() => setView('cli')}
             className={`relative px-4 py-1.5 text-sm font-medium rounded-md transition-colors ${
               view === 'cli' ? 'text-gray-900' : 'text-gray-400 hover:text-white'
@@ -45,7 +51,7 @@ export default function ViewToggle() {
       </div>
 
       {/* Mockup area */}
-      <div className="relative">
+      <div className="relative" id="mockup-panel" role="tabpanel" aria-label={`${view === 'gui' ? 'GUI' : 'CLI'} mockup preview`}>
         <AnimatePresence mode="wait">
           {view === 'gui' ? (
             <motion.div

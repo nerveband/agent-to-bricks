@@ -170,10 +170,12 @@ export default function InteractiveDemo() {
     <div>
       {/* View toggle */}
       <div className="flex justify-center mb-6">
-        <div className="inline-flex items-center rounded-lg border border-white/10 bg-white/[0.03] p-1">
+        <div className="inline-flex items-center rounded-lg border border-white/10 bg-white/[0.03] p-1" role="tablist" aria-label="Demo view mode">
           {(['gui', 'cli'] as ViewMode[]).map((v) => (
             <button
               key={v}
+              role="tab"
+              aria-selected={view === v}
               onClick={() => setView(v)}
               className={`relative px-5 py-2 text-sm font-medium rounded-md transition-colors ${
                 view === v ? 'text-gray-900' : 'text-gray-400 hover:text-white'
@@ -193,11 +195,12 @@ export default function InteractiveDemo() {
       </div>
 
       {/* Demo buttons */}
-      <div className="flex flex-wrap justify-center gap-3 mb-6">
+      <div className="flex flex-wrap justify-center gap-3 mb-6" role="group" aria-label="Demo task selection">
         {(Object.keys(demoConfigs) as DemoId[]).map((id) => (
           <button
             key={id}
             onClick={() => setActiveDemo(id)}
+            aria-pressed={activeDemo === id}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
               activeDemo === id
                 ? 'bg-yellow-400/10 text-yellow-400 border border-yellow-400/30'
@@ -210,7 +213,7 @@ export default function InteractiveDemo() {
       </div>
 
       {/* Terminal / GUI window */}
-      <div className="rounded-xl border border-white/10 bg-[#0d0d12]/95 backdrop-blur-sm overflow-hidden shadow-2xl">
+      <div className="rounded-xl border border-white/10 bg-[#0d0d12]/95 backdrop-blur-sm overflow-hidden shadow-2xl" role="region" aria-label={`${config.label} demo output`} aria-live="polite">
         {/* Title bar */}
         <div className="flex items-center gap-2 px-4 py-2.5 border-b border-white/5 bg-white/[0.02]">
           <div className="flex gap-1.5">
