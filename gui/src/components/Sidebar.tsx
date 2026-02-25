@@ -2,12 +2,13 @@ import { useState } from "react";
 import { useAtom, useSetAtom } from "jotai";
 import { toolsAtom, activeToolSlugAtom, toolCustomFlagsAtom, toolWorkingDirsAtom } from "../atoms/tools";
 import { sessionsAtom, activeSessionIdAtom } from "../atoms/sessions";
-import { settingsOpenAtom, helpOpenAtom } from "../atoms/app";
+import { settingsOpenAtom, helpOpenAtom, launchDialogToolAtom } from "../atoms/app";
 import { useSessionLauncher } from "../hooks/useSessionLauncher";
 import { Gear, Plus, Question, PencilSimple, Play, Trash, Terminal, FolderOpen, MagnifyingGlass, X } from "@phosphor-icons/react";
 import { AddToolDialog } from "./AddToolDialog";
 import { SettingsDialog } from "./SettingsDialog";
 import { HelpDialog } from "./HelpDialog";
+import { LaunchDialog } from "./LaunchDialog";
 import * as ContextMenu from "@radix-ui/react-context-menu";
 import { open as openDialog } from "@tauri-apps/plugin-dialog";
 
@@ -22,7 +23,8 @@ export function Sidebar({ collapsed }: SidebarProps) {
   const [activeSessionId] = useAtom(activeSessionIdAtom);
   const setActiveSessionId = useSetAtom(activeSessionIdAtom);
   const setActiveToolSlug = useSetAtom(activeToolSlugAtom);
-  const { launch, launchTerminal } = useSessionLauncher();
+  const { launchTerminal } = useSessionLauncher();
+  const setLaunchDialogTool = useSetAtom(launchDialogToolAtom);
   const setSessions = useSetAtom(sessionsAtom);
 
   const [addToolOpen, setAddToolOpen] = useState(false);
@@ -116,7 +118,7 @@ export function Sidebar({ collapsed }: SidebarProps) {
                       title={collapsed ? tool.name : undefined}
                       onClick={() => {
                         if (tool.installed) {
-                          launch(tool);
+                          setLaunchDialogTool(tool);
                         }
                       }}
                     >
@@ -147,7 +149,7 @@ export function Sidebar({ collapsed }: SidebarProps) {
                         className="flex items-center gap-2 px-3 py-1.5 rounded cursor-pointer outline-none data-[highlighted]:bg-[var(--border)]"
                         style={{ color: "var(--fg)" }}
                         disabled={!tool.installed}
-                        onSelect={() => { if (tool.installed) launch(tool); }}
+                        onSelect={() => { if (tool.installed) setLaunchDialogTool(tool); }}
                       >
                         <Play size={14} />
                         New session
@@ -494,6 +496,7 @@ export function Sidebar({ collapsed }: SidebarProps) {
       <AddToolDialog open={addToolOpen} onOpenChange={setAddToolOpen} />
       <SettingsDialog open={settingsOpen} onOpenChange={setSettingsOpen} />
       <HelpDialog open={helpOpen} onOpenChange={setHelpOpen} />
+      <LaunchDialog />
     </nav>
   );
 }
