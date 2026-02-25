@@ -1,11 +1,15 @@
 import { useEffect } from "react";
-import { useSetAtom } from "jotai";
+import { useAtomValue, useSetAtom } from "jotai";
 import { sidebarOpenAtom, contextPanelOpenAtom, paletteOpenAtom } from "../atoms/app";
+import { toolsAtom } from "../atoms/tools";
+import { useSessionLauncher } from "./useSessionLauncher";
 
 export function useKeyboardShortcuts() {
   const setSidebar = useSetAtom(sidebarOpenAtom);
   const setContext = useSetAtom(contextPanelOpenAtom);
   const setPalette = useSetAtom(paletteOpenAtom);
+  const tools = useAtomValue(toolsAtom);
+  const { launch } = useSessionLauncher();
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
@@ -48,6 +52,14 @@ export function useKeyboardShortcuts() {
         }, 100);
       }
 
+      if (meta && e.key === "n") {
+        e.preventDefault();
+        const defaultTool = tools.find((t) => t.slug === "claude-code" && t.installed)
+          || tools.find((t) => t.installed);
+        if (defaultTool) launch(defaultTool);
+        return;
+      }
+
       if (e.key === "Escape") {
         const termTextarea =
           document.querySelector<HTMLTextAreaElement>(".xterm textarea");
@@ -60,5 +72,5 @@ export function useKeyboardShortcuts() {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [setSidebar, setContext, setPalette]);
+  }, [setSidebar, setContext, setPalette, tools, launch]);
 }

@@ -15,18 +15,18 @@ export interface ParsedPrompt {
 
 export function parseMentions(text: string): ParsedPrompt {
   const mentions: MentionToken[] = [];
-  let match: RegExpExecArray | null;
   const regex = new RegExp(MENTION_REGEX.source, "g");
+  let m: RegExpExecArray | null;
 
-  while ((match = regex.exec(text)) !== null) {
+  while ((m = regex.exec(text)) !== null) {
     mentions.push({
-      type: match[1] as MentionType,
-      query: match[2] ?? "",
+      type: m[1] as MentionType,
+      query: m[2] ?? "",
       displayName: "",
       resolvedId: null,
       resolvedData: null,
-      startPos: match.index,
-      endPos: match.index + match[0].length,
+      startPos: m.index,
+      endPos: m.index + m[0].length,
     });
   }
 

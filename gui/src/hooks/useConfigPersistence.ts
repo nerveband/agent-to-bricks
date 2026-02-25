@@ -144,6 +144,8 @@ export function useConfigPersistence() {
       };
 
       try {
+        // Written as JSON to config.yaml — valid since YAML is a superset of JSON.
+        // The Go CLI uses gopkg.in/yaml.v3 which parses JSON natively.
         await invoke("write_config", {
           path: "~/.agent-to-bricks/config.yaml",
           content: JSON.stringify(cfg, null, 2),

@@ -1,6 +1,10 @@
 mod config;
 
 use serde::{Deserialize, Serialize};
+use std::sync::Arc;
+
+/// Shared HTTP client for connection pooling across all API calls.
+struct HttpClient(Arc<reqwest::Client>);
 
 #[derive(Serialize)]
 struct ToolDetection {
@@ -107,37 +111,18 @@ struct PageInfo {
 /// Search pages on a WordPress site via the Agent to Bricks API.
 #[tauri::command]
 async fn search_pages(
+    http: tauri::State<'_, HttpClient>,
     site_url: String,
     api_key: String,
     query: String,
     per_page: u32,
 ) -> Result<Vec<PageInfo>, String> {
-    let url = format!(
-        "{}/wp-json/agent-bricks/v1/pages?search={}&per_page={}",
-        site_url.trim_end_matches('/'),
+    let path = format!(
+        "/pages?search={}&per_page={}",
         urlencoding::encode(&query),
         per_page.min(50)
     );
-
-    let client = reqwest::Client::builder()
-        .timeout(std::time::Duration::from_secs(10))
-        .build()
-        .map_err(|e| format!("Failed to create HTTP client: {}", e))?;
-
-    let resp = client
-        .get(&url)
-        .header("X-ATB-Key", &api_key)
-        .send()
-        .await
-        .map_err(|e| format!("Request failed: {}", e))?;
-
-    if !resp.status().is_success() {
-        return Err(format!("Server responded with status {}", resp.status()));
-    }
-
-    resp.json::<Vec<PageInfo>>()
-        .await
-        .map_err(|e| format!("Failed to parse response: {}", e))
+    atb_get(&http.0, &site_url, &api_key, &path).await
 }
 
 #[derive(Serialize, Deserialize)]
@@ -219,17 +204,14 @@ struct SearchResult {
     settings: Option<serde_json::Value>,
 }
 
-/// Helper: build an authenticated GET request to the ATB API.
+/// Helper: build an authenticated GET request to the ATB API using the shared client.
 async fn atb_get<T: serde::de::DeserializeOwned>(
+    client: &reqwest::Client,
     site_url: &str,
     api_key: &str,
     path: &str,
 ) -> Result<T, String> {
     let url = format!("{}/wp-json/agent-bricks/v1{}", site_url.trim_end_matches('/'), path);
-    let client = reqwest::Client::builder()
-        .timeout(std::time::Duration::from_secs(15))
-        .build()
-        .map_err(|e| format!("HTTP client error: {}", e))?;
     let resp = client.get(&url).header("X-ATB-Key", api_key).send().await
         .map_err(|e| format!("Request failed: {}", e))?;
     if !resp.status().is_success() {
@@ -240,15 +222,17 @@ async fn atb_get<T: serde::de::DeserializeOwned>(
 
 #[tauri::command]
 async fn get_page_elements(
+    http: tauri::State<'_, HttpClient>,
     site_url: String,
     api_key: String,
     page_id: u64,
 ) -> Result<PageElements, String> {
-    atb_get(&site_url, &api_key, &format!("/pages/{}/elements", page_id)).await
+    atb_get(&http.0, &site_url, &api_key, &format!("/pages/{}/elements", page_id)).await
 }
 
 #[tauri::command]
 async fn search_elements(
+    http: tauri::State<'_, HttpClient>,
     site_url: String,
     api_key: String,
     element_type: Option<String>,
@@ -259,11 +243,12 @@ async fn search_elements(
     if let Some(t) = element_type { path.push_str(&format!("element_type={}&", urlencoding::encode(&t))); }
     if let Some(c) = global_class { path.push_str(&format!("global_class={}&", urlencoding::encode(&c))); }
     path.push_str(&format!("per_page={}", per_page.unwrap_or(50).min(100)));
-    atb_get(&site_url, &api_key, &path).await
+    atb_get(&http.0, &site_url, &api_key, &path).await
 }
 
 #[tauri::command]
 async fn get_global_classes(
+    http: tauri::State<'_, HttpClient>,
     site_url: String,
     api_key: String,
     framework: Option<String>,
@@ -272,26 +257,27 @@ async fn get_global_classes(
         Some(fw) => format!("/classes?framework={}", urlencoding::encode(&fw)),
         None => "/classes".to_string(),
     };
-    atb_get(&site_url, &api_key, &path).await
+    atb_get(&http.0, &site_url, &api_key, &path).await
 }
 
 #[tauri::command]
-async fn get_site_styles(site_url: String, api_key: String) -> Result<SiteStyles, String> {
-    atb_get(&site_url, &api_key, "/styles").await
+async fn get_site_styles(http: tauri::State<'_, HttpClient>, site_url: String, api_key: String) -> Result<SiteStyles, String> {
+    atb_get(&http.0, &site_url, &api_key, "/styles").await
 }
 
 #[tauri::command]
-async fn get_site_variables(site_url: String, api_key: String) -> Result<SiteVariables, String> {
-    atb_get(&site_url, &api_key, "/variables").await
+async fn get_site_variables(http: tauri::State<'_, HttpClient>, site_url: String, api_key: String) -> Result<SiteVariables, String> {
+    atb_get(&http.0, &site_url, &api_key, "/variables").await
 }
 
 #[tauri::command]
-async fn get_components(site_url: String, api_key: String) -> Result<serde_json::Value, String> {
-    atb_get(&site_url, &api_key, "/components").await
+async fn get_components(http: tauri::State<'_, HttpClient>, site_url: String, api_key: String) -> Result<serde_json::Value, String> {
+    atb_get(&http.0, &site_url, &api_key, "/components").await
 }
 
 #[tauri::command]
 async fn get_media(
+    http: tauri::State<'_, HttpClient>,
     site_url: String,
     api_key: String,
     search: Option<String>,
@@ -300,69 +286,61 @@ async fn get_media(
         Some(q) => format!("/media?search={}", urlencoding::encode(&q)),
         None => "/media".to_string(),
     };
-    atb_get(&site_url, &api_key, &path).await
+    atb_get(&http.0, &site_url, &api_key, &path).await
 }
 
 /// Test connection to a WordPress site's Agent to Bricks API.
 /// Runs from Rust to bypass webview CORS restrictions.
 #[tauri::command]
-async fn test_site_connection(site_url: String, api_key: String) -> ConnectionResult {
+async fn test_site_connection(http: tauri::State<'_, HttpClient>, site_url: String, api_key: String) -> Result<ConnectionResult, String> {
     let url = format!("{}/wp-json/agent-bricks/v1/site/info", site_url.trim_end_matches('/'));
 
-    let client = match reqwest::Client::builder()
-        .timeout(std::time::Duration::from_secs(10))
-        .build()
-    {
-        Ok(c) => c,
-        Err(e) => {
-            return ConnectionResult {
-                success: false,
-                status: 0,
-                message: format!("Failed to create HTTP client: {}", e),
-            };
-        }
-    };
-
-    match client.get(&url).header("X-ATB-Key", &api_key).send().await {
+    match http.0.get(&url).header("X-ATB-Key", &api_key).send().await {
         Ok(resp) => {
             let status = resp.status().as_u16();
             if resp.status().is_success() {
-                ConnectionResult {
+                Ok(ConnectionResult {
                     success: true,
                     status,
                     message: "Connected successfully".to_string(),
-                }
+                })
             } else if status == 401 || status == 403 {
-                ConnectionResult {
+                Ok(ConnectionResult {
                     success: false,
                     status,
                     message: "Invalid API key. Check your key in WordPress under Agent to Bricks.".to_string(),
-                }
+                })
             } else if status == 404 {
-                ConnectionResult {
+                Ok(ConnectionResult {
                     success: false,
                     status,
                     message: "Agent to Bricks plugin not found. Make sure it's installed and activated.".to_string(),
-                }
+                })
             } else {
-                ConnectionResult {
+                Ok(ConnectionResult {
                     success: false,
                     status,
                     message: format!("Server responded with status {}.", status),
-                }
+                })
             }
         }
-        Err(e) => ConnectionResult {
+        Err(e) => Ok(ConnectionResult {
             success: false,
             status: 0,
             message: format!("Could not reach the site: {}", e),
-        },
+        }),
     }
 }
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
+    let client = reqwest::Client::builder()
+        .timeout(std::time::Duration::from_secs(15))
+        .build()
+        .expect("Failed to create HTTP client");
+
     tauri::Builder::default()
+        .manage(HttpClient(Arc::new(client)))
         .plugin(tauri_plugin_opener::init())
         .plugin(tauri_plugin_pty::init())
         .plugin(tauri_plugin_sql::Builder::default().build())

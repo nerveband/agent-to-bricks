@@ -37,7 +37,7 @@ export function ContextPreview({
       >
         {expanded ? <CaretDown size={14} /> : <CaretRight size={14} />}
         <span className="flex-1">
-          Context: {mentions.length} reference{mentions.length !== 1 ? "s" : ""} (~{tokens} tokens)
+          Context: {mentions.length} reference{mentions.length !== 1 ? "s" : ""} (~{tokens} tokens est.)
         </span>
       </button>
 
