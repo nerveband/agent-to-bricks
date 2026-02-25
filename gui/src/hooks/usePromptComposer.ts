@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import { useAtomValue } from "jotai";
-import { activeSiteAtom, sessionPrePromptAtom } from "../atoms/app";
+import { activeSiteAtom } from "../atoms/app";
 import { estimateTokens } from "../lib/contextFormatter";
 
 export interface ComposedPrompt {
@@ -12,7 +12,6 @@ export interface ComposedPrompt {
 
 export function usePromptComposer() {
   const site = useAtomValue(activeSiteAtom);
-  const prePrompt = useAtomValue(sessionPrePromptAtom);
 
   const compose = useCallback(
     (rawText: string, resolvedContexts: Map<string, string>): ComposedPrompt => {
@@ -50,7 +49,7 @@ export function usePromptComposer() {
         tokenEstimate: estimateTokens(fullText),
       };
     },
-    [site, prePrompt]
+    [site]
   );
 
   return { compose };

@@ -21,6 +21,14 @@ export interface MentionToken {
   endPos: number;
 }
 
+// --- Resolved mention (shared by CommandPalette, PromptWorkshop, MentionInput) ---
+export interface ResolvedMention {
+  type: MentionType;
+  id: string | number;
+  label: string;
+  data?: unknown;
+}
+
 // --- Presets (replacing old templates) ---
 export interface PromptPreset {
   id: string;

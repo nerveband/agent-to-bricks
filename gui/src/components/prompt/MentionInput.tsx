@@ -2,14 +2,7 @@ import { useState, useRef, useCallback, useEffect } from "react";
 import { MentionAutocomplete } from "./MentionAutocomplete";
 import { MentionPill } from "./MentionPill";
 import { useMentionSearch, type SearchResult } from "../../hooks/useMentionSearch";
-import type { MentionType } from "../../atoms/prompts";
-
-interface ResolvedMention {
-  type: MentionType;
-  id: string | number;
-  label: string;
-  data?: unknown;
-}
+import type { MentionType, ResolvedMention } from "../../atoms/prompts";
 
 interface MentionInputProps {
   value: string;

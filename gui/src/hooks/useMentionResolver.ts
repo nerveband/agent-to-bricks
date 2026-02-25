@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useRef } from "react";
 import { useAtomValue, useSetAtom } from "jotai";
 import { invoke } from "@tauri-apps/api/core";
 import { activeSiteAtom } from "../atoms/app";
@@ -9,6 +9,8 @@ import { formatElementTree } from "../lib/contextFormatter";
 export function useMentionResolver() {
   const site = useAtomValue(activeSiteAtom);
   const cache = useAtomValue(mentionCacheAtom);
+  const cacheRef = useRef(cache);
+  cacheRef.current = cache;
   const setCache = useSetAtom(mentionCacheAtom);
 
   const resolve = useCallback(
@@ -16,7 +18,7 @@ export function useMentionResolver() {
       if (!site || !mention.resolvedId) return "";
 
       const cacheKey = `${mention.type}:${mention.resolvedId}`;
-      const cached = cache[cacheKey];
+      const cached = cacheRef.current[cacheKey];
       if (cached && Date.now() - cached.fetchedAt < CACHE_TTL_MS) {
         return cached.data as string;
       }
@@ -83,7 +85,7 @@ export function useMentionResolver() {
 
       return formatted;
     },
-    [site, cache, setCache]
+    [site, setCache]
   );
 
   return { resolve };

@@ -42,7 +42,7 @@ export function PresetList({ onSelect }: PresetListProps) {
                   <button
                     key={preset.id}
                     onClick={() => onSelect(preset)}
-                    className="w-full text-left px-2 py-1.5 rounded text-[13px] transition-colors"
+                    className="w-full text-left px-2 py-1.5 rounded text-[13px] transition-colors preset-item"
                     style={{ color: "var(--fg)" }}
                   >
                     <div className="font-medium">{preset.name}</div>

@@ -45,7 +45,7 @@ export function MentionAutocomplete({
   return (
     <div
       ref={listRef}
-      className="absolute z-50 rounded-lg border overflow-hidden shadow-xl"
+      className="absolute z-50 rounded-lg border overflow-hidden shadow-xl mention-autocomplete"
       style={{
         top: position.top,
         left: position.left,

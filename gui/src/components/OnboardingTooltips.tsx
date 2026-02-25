@@ -47,9 +47,10 @@ export function OnboardingTooltips() {
 
     // Small delay to let the UI render the target elements
     const timer = setTimeout(() => {
+      if (step >= STEPS.length) return;
       const target = document.querySelector(STEPS[step].target);
       if (!target) {
-        setStep((s) => s + 1);
+        setStep((s) => Math.min(s + 1, STEPS.length));
         return;
       }
 
@@ -95,7 +96,7 @@ export function OnboardingTooltips() {
       {pos && (
         <div
           ref={tooltipRef}
-          className="fixed z-[95] max-w-[280px] rounded-xl border shadow-xl p-4"
+          className="fixed z-[95] max-w-[280px] rounded-xl border shadow-xl p-4 onboarding-tooltip"
           style={{
             top: pos.top,
             left: pos.left,

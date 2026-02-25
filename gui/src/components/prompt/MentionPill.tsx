@@ -18,7 +18,7 @@ const TYPE_COLORS: Record<string, string> = {
 export function MentionPill({ type, label, onRemove }: MentionPillProps) {
   return (
     <span
-      className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[12px] font-mono"
+      className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[12px] font-mono mention-pill"
       style={{
         background: `${TYPE_COLORS[type] ?? "var(--fg-muted)"}20`,
         border: `1px solid ${TYPE_COLORS[type] ?? "var(--fg-muted)"}40`,

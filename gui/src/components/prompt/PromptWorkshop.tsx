@@ -5,8 +5,8 @@ import {
   promptHistoryAtom,
   customPresetsAtom,
   type PromptPreset,
-  type MentionType,
   type PromptHistoryEntry,
+  type ResolvedMention,
 } from "../../atoms/prompts";
 import { activeSessionAtom } from "../../atoms/sessions";
 import { MentionInput } from "./MentionInput";
@@ -25,13 +25,6 @@ import {
   ClockCounterClockwise,
   Notebook,
 } from "@phosphor-icons/react";
-
-interface ResolvedMention {
-  type: MentionType;
-  id: string | number;
-  label: string;
-  data?: unknown;
-}
 
 export function PromptWorkshop() {
   const site = useAtomValue(activeSiteAtom);
@@ -129,7 +122,7 @@ export function PromptWorkshop() {
       {site ? (
         <div className="flex items-center gap-1.5 text-[11px]" style={{ color: "#34d399" }}>
           <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#34d399" }} />
-          {site.name} ({new URL(site.site_url).hostname})
+          {site.name} ({(() => { try { return new URL(site.site_url).hostname; } catch { return site.site_url; } })()})
         </div>
       ) : (
         <div className="flex items-center gap-1.5 text-[11px]" style={{ color: "var(--accent)" }}>

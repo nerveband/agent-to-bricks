@@ -10,8 +10,10 @@ import {
 } from "../atoms/app";
 import {
   promptHistoryAtom,
+  customPresetsAtom,
   type MentionType,
   type PromptHistoryEntry,
+  type ResolvedMention,
 } from "../atoms/prompts";
 import { activeSessionAtom } from "../atoms/sessions";
 import { useSessionLauncher } from "../hooks/useSessionLauncher";
@@ -22,7 +24,7 @@ import { PromptHints } from "./prompt/PromptHints";
 import { useMentionResolver } from "../hooks/useMentionResolver";
 import { usePromptComposer } from "../hooks/usePromptComposer";
 import { classifyIntent } from "../lib/intentClassifier";
-import { writeToActivePty } from "../atoms/ptyBridge";
+import { writeToActivePty, writeToActivePtyWhenReady } from "../atoms/ptyBridge";
 import {
   PaperPlaneRight,
   Lightning,
@@ -32,13 +34,6 @@ import {
   X,
 } from "@phosphor-icons/react";
 
-interface ResolvedMention {
-  type: MentionType;
-  id: string | number;
-  label: string;
-  data?: unknown;
-}
-
 export function CommandPalette() {
   const [open, setOpen] = useAtom(paletteOpenAtom);
   const site = useAtomValue(activeSiteAtom);
@@ -47,6 +42,7 @@ export function CommandPalette() {
   const setActiveSiteIdx = useSetAtom(activeSiteIndexAtom);
   const [history, setHistory] = useAtom(promptHistoryAtom);
   const setPromptCount = useSetAtom(promptCountAtom);
+  const setCustomPresets = useSetAtom(customPresetsAtom);
   const setTheme = useSetAtom(themeAtom);
   const tools = useAtomValue(toolsAtom);
   const { launch } = useSessionLauncher();
@@ -135,9 +131,33 @@ export function CommandPalette() {
           break;
         }
         case "save-preset": {
+          setCustomPresets((prev) => [...prev, {
+            id: `custom-${Date.now()}`,
+            name: intent.name,
+            description: text.slice(0, 80),
+            prompt: text,
+            category: "build" as const,
+            builtin: false,
+          }]);
           result = { success: true, message: `Preset "${intent.name}" saved` };
           break;
         }
+        case "update-config": {
+          if (site && intent.field === "api_key") {
+            const idx = sites.findIndex((s) => s.site_url === site.site_url);
+            if (idx >= 0) {
+              setSites((prev) => prev.map((s, i) => i === idx ? { ...s, api_key: intent.value } : s));
+              result = { success: true, message: `API key updated for ${site.name}` };
+            } else {
+              result = { success: false, message: "No active site to update" };
+            }
+          } else {
+            result = { success: false, message: "No active site configured" };
+          }
+          break;
+        }
+        case "update-setting":
+        case "show-history":
         default:
           result = { success: true, message: "Done" };
       }
@@ -172,9 +192,7 @@ export function CommandPalette() {
       const claudeTool = tools.find((t) => t.slug === "claude-code" && t.installed);
       if (claudeTool) {
         launch(claudeTool);
-        setTimeout(() => {
-          writeToActivePty(composed.fullText + "\n");
-        }, 1500);
+        writeToActivePtyWhenReady(composed.fullText + "\n");
       }
     } else {
       writeToActivePty(composed.fullText + "\n");
@@ -225,12 +243,12 @@ export function CommandPalette() {
   return (
     <div
       ref={backdropRef}
-      className="fixed inset-0 z-[100] flex items-start justify-center pt-[10vh]"
+      className="fixed inset-0 z-[100] flex items-start justify-center pt-[10vh] palette-backdrop"
       style={{ background: "rgba(0,0,0,0.5)", backdropFilter: "blur(4px)" }}
       onClick={(e) => e.target === backdropRef.current && handleClose()}
     >
       <div
-        className="w-full max-w-[640px] rounded-xl border shadow-2xl overflow-hidden"
+        className="w-full max-w-[640px] rounded-xl border shadow-2xl overflow-hidden palette-container"
         style={{ background: "var(--surface)", borderColor: "var(--border)" }}
       >
         <div className="flex items-center justify-between px-4 py-2 border-b" style={{ borderColor: "var(--border)" }}>
