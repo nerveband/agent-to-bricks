@@ -16,7 +16,7 @@ var configCmd = &cobra.Command{
 var configInitCmd = &cobra.Command{
 	Use:   "init",
 	Short: "Interactive setup wizard with TUI",
-	Long:  "Launch an interactive terminal UI to configure your Agent to Bricks CLI. Guides you through site connection and LLM provider setup.",
+	Long:  "Launch an interactive terminal UI to configure your Agent to Bricks CLI. Guides you through site connection setup.",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		path := cfgFile
 		if path == "" {
@@ -68,7 +68,7 @@ func configInitSimple(path string) error {
 
 var configSetCmd = &cobra.Command{
 	Use:   "set <key> <value>",
-	Short: "Set a config value (e.g. site.url, site.api_key, llm.provider)",
+	Short: "Set a config value (e.g. site.url, site.api_key)",
 	Args:  cobra.ExactArgs(2),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		path := cfgFile
@@ -87,23 +87,15 @@ var configSetCmd = &cobra.Command{
 			c.Site.URL = value
 		case "site.api_key":
 			c.Site.APIKey = value
-		case "llm.provider":
-			c.LLM.Provider = value
-		case "llm.api_key":
-			c.LLM.APIKey = value
-		case "llm.model":
-			c.LLM.Model = value
-		case "llm.base_url":
-			c.LLM.BaseURL = value
 		default:
-			return fmt.Errorf("unknown config key: %s\nValid keys: site.url, site.api_key, llm.provider, llm.api_key, llm.model, llm.base_url", key)
+			return fmt.Errorf("unknown config key: %s\nValid keys: site.url, site.api_key", key)
 		}
 
 		if err := c.Save(path); err != nil {
 			return fmt.Errorf("failed to save: %w", err)
 		}
 
-		if key == "site.api_key" || key == "llm.api_key" {
+		if key == "site.api_key" {
 			masked := value
 			if len(value) > 8 {
 				masked = value[:8] + "..."
@@ -126,8 +118,6 @@ var configListCmd = &cobra.Command{
 		} else {
 			fmt.Println("API Key:       (not set)")
 		}
-		fmt.Printf("LLM Provider:  %s\n", cfg.LLM.Provider)
-		fmt.Printf("LLM Model:     %s\n", cfg.LLM.Model)
 		return nil
 	},
 }

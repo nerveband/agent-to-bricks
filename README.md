@@ -8,7 +8,7 @@ Write HTML using your site's CSS classes, convert it to Bricks elements, and pus
 
 | Component | Description |
 |-----------|-------------|
-| **CLI** | Terminal tool for page operations, AI generation, search, and templates |
+| **CLI** | Terminal tool for page operations, HTML conversion, search, and templates |
 | **Desktop App** | Visual session manager for AI coding tools (Claude Code, Codex, etc.) |
 | **WordPress Plugin** | REST API bridge to your Bricks Builder site |
 | **[Documentation](https://agenttobricks.com)** | Full guides, references, and tutorials |
@@ -39,7 +39,7 @@ bricks site info            # verify connection
 ### 4. Build something
 
 ```bash
-bricks generate section "dark hero with CTA" --page 42 --snapshot
+bricks convert html section.html --push 42 --snapshot
 ```
 
 [Full installation guide](https://agenttobricks.com/getting-started/installation/) | [Quick start](https://agenttobricks.com/getting-started/quick-start/)

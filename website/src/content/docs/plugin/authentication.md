@@ -3,7 +3,7 @@ title: Authentication
 description: How API keys work, how to generate and revoke them, and what the rate limits are
 ---
 
-The plugin uses a custom `X-ATB-Key` header for authentication. This was a deliberate choice -- the standard `Authorization` header gets stripped by many hosting providers (Nginx, LiteSpeed, some managed WordPress hosts). The `X-ATB-Key` header works everywhere.
+The plugin uses a custom `X-ATB-Key` header for authentication. This was a deliberate choice. The standard `Authorization` header gets stripped by many hosting providers (Nginx, LiteSpeed, some managed WordPress hosts). The `X-ATB-Key` header works everywhere.
 
 ## How it works
 
@@ -20,7 +20,7 @@ In the WordPress admin:
 1. Go to **Settings > Agent to Bricks**
 2. Under **CLI & Agent API Keys**, type a label (e.g., "My laptop" or "CI/CD pipeline")
 3. Click **Generate New Key**
-4. Copy the key immediately -- it won't be shown again
+4. Copy the key immediately. It won't be shown again
 
 The key looks like this: `atb_xK9mP2vL7nQ4rT8wY1bF3hJ6...`
 
@@ -99,7 +99,7 @@ The authentication system has several protections built in:
 
 **Per-user binding.** Each key is tied to a WordPress user account. The API request runs with that user's exact capabilities. A key created by an Editor can't do things that require Administrator access.
 
-**Last-used tracking.** The plugin records when each key was last used. Check the settings page periodically -- if you see a key that hasn't been used in months, revoke it.
+**Last-used tracking.** The plugin records when each key was last used. Check the settings page periodically. If you see a key that hasn't been used in months, revoke it.
 
 **No Authorization header dependency.** The `X-ATB-Key` header bypasses the common problem where server configs strip the `Authorization` header before PHP sees it. This means the plugin works on cheap shared hosting just as well as on a VPS.
 

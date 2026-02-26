@@ -53,7 +53,7 @@ Save to a file for editing:
 bricks site pull 1460 -o homepage.json
 ```
 
-The output includes a `contentHash` field at the top level. You'll need this hash for push operations -- it prevents you from accidentally overwriting someone else's changes.
+The output includes a `contentHash` field at the top level. You'll need this hash for push operations. It prevents you from accidentally overwriting someone else's changes.
 
 ## Push page elements
 
@@ -226,11 +226,11 @@ bricks frameworks list
 bricks frameworks show acss
 ```
 
-`bricks frameworks show acss` prints the full ACSS configuration -- spacing scales, color palettes, typography tokens, and every registered utility class.
+`bricks frameworks show acss` prints the full ACSS configuration: spacing scales, color palettes, typography tokens, and every registered utility class.
 
 ## Related commands
 
-- [`bricks convert html`](/cli/convert-commands/) -- convert HTML files and push them to pages
-- [`bricks classes list`](/cli/class-commands/) -- browse global CSS classes
-- [`bricks doctor`](/cli/doctor-validate/) -- check a page for structural problems
-- [`bricks config init`](/cli/config-update/) -- set up your site connection
+- [`bricks convert html`](/cli/convert-commands/): convert HTML files and push them to pages
+- [`bricks classes list`](/cli/class-commands/): browse global CSS classes
+- [`bricks doctor`](/cli/doctor-validate/): check a page for structural problems
+- [`bricks config init`](/cli/config-update/): set up your site connection

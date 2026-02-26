@@ -3,7 +3,7 @@ title: Team onboarding
 description: Using the GUI as a learning tool, transitioning to the CLI, and getting your team productive with Agent to Bricks
 ---
 
-If you're introducing Agent to Bricks to a team, the question is usually "where do people start?" The answer depends on their comfort level with the command line. The project has three interfaces -- GUI, CLI, and direct API -- and they're all talking to the same backend. People can start wherever they're comfortable and grow from there.
+If you're introducing Agent to Bricks to a team, the question is usually "where do people start?" The answer depends on their comfort level with the command line. The project has three interfaces (GUI, CLI, and direct API), and they're all talking to the same backend. People can start wherever they're comfortable and grow from there.
 
 ## The GUI is an IDE, not training wheels
 
@@ -13,7 +13,7 @@ For team members who haven't used a terminal much, the GUI is a real working env
 
 What the GUI teaches along the way:
 
-- **How prompts map to commands.** The session output shows the CLI commands being run. "Generate a hero section for page 42" becomes `bricks generate section --page 42 --prompt "..."`. Team members see the translation happen.
+- **How prompts map to commands.** The session output shows the CLI commands being run. "Build a hero section for page 42" becomes a sequence of `bricks agent context`, writing HTML, and `bricks convert html --push 42`. Team members see the translation happen.
 - **What classes are available.** The @mention autocomplete for class names shows the ACSS utility classes and custom classes on your site. People learn the class vocabulary by using it.
 - **How snapshots work.** The session history shows when snapshots are created and what was pushed. The rollback option is right there. People build the habit of snapshotting before changes.
 - **What the API does.** Each GUI action maps to an API call. Curious team members can see what happened under the hood and start to understand the system.
@@ -75,7 +75,7 @@ A developer comfortable in the terminal starts with the CLI. They use the GUI oc
 | GUI action | CLI equivalent |
 |-----------|---------------|
 | Inspect Page preset | `bricks site pull <page-id>` |
-| Generate Section preset | `bricks generate section --page <id> --prompt "..."` |
+| Convert and push HTML | `bricks convert html section.html --push <id> --snapshot` |
 | @class mention | `bricks classes list` |
 | @color mention | `bricks styles colors` |
 | Site switcher | `bricks config use <site-name>` |
@@ -123,12 +123,20 @@ ATB_SITE_API_KEY=atb_client_b_staging_key \
 bricks site info
 ```
 
-For convenience, wrap these in shell aliases:
+For convenience, wrap these in shell aliases.
+
+**Mac / Linux** — add to your `.bashrc` or `.zshrc`:
 
 ```bash
-# In your .bashrc or .zshrc
 alias bricks-a='ATB_SITE_URL=https://client-a.com ATB_SITE_API_KEY=atb_client_a_key bricks'
 alias bricks-b='ATB_SITE_URL=https://staging.client-b.com ATB_SITE_API_KEY=atb_client_b_staging_key bricks'
+```
+
+**Windows** — add to your PowerShell profile (`$PROFILE`):
+
+```powershell
+function bricks-a { $env:ATB_SITE_URL='https://client-a.com'; $env:ATB_SITE_API_KEY='atb_client_a_key'; bricks @args }
+function bricks-b { $env:ATB_SITE_URL='https://staging.client-b.com'; $env:ATB_SITE_API_KEY='atb_client_b_staging_key'; bricks @args }
 ```
 
 Each team member can have their own keys for each site.
@@ -145,6 +153,6 @@ Each team member can have their own keys for each site.
 
 ## Related
 
-- [GUI overview](/gui/overview/) -- getting started with the desktop app
-- [Prompt composer](/gui/prompt-composer/) -- @mentions and presets
-- [Quick start](/getting-started/quick-start/) -- the CLI-first introduction
+- [GUI overview](/gui/overview/): getting started with the desktop app
+- [Prompt composer](/gui/prompt-composer/): @mentions and presets
+- [Quick start](/getting-started/quick-start/): the CLI-first introduction

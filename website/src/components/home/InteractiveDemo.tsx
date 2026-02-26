@@ -26,39 +26,38 @@ const cliConfigs: Record<DemoId, CliConfig> = {
     ],
   },
   docs: {
-    command: 'cat brief.md | bricks generate section --page 1460 --push',
+    command: 'bricks convert html landing-page.html --push 1460 --snapshot',
     lines: [
-      { text: '● Reading input from stdin...', delay: 600 },
-      { text: '  Detected: markdown document (2.4kb)', delay: 400 },
-      { text: '● Generating section via AI...', delay: 800 },
-      { text: '  ├─ Extracted: headline, 3 features, CTA', delay: 350 },
-      { text: '  ├─ Applying style profile: default', delay: 300 },
-      { text: '  └─ Building 8 Bricks elements...', delay: 400 },
-      { text: '● Pushing to page 1460...', delay: 500 },
-      { text: '✓ Section generated and pushed to Homepage', delay: 400 },
-      { text: '✓ Snapshot #47 saved', delay: 300 },
+      { text: '● Reading landing-page.html...', delay: 600 },
+      { text: '  Parsed: 4 sections, 22 elements', delay: 400 },
+      { text: '● Resolving global classes...', delay: 800 },
+      { text: '  ├─ section--l → acss_import_section__l', delay: 350 },
+      { text: '  ├─ bg--primary-dark → acss_import_bg__primary_dark', delay: 300 },
+      { text: '  └─ 6 more classes resolved', delay: 400 },
+      { text: '● Snapshot created: snap_20260225_093015', delay: 500 },
+      { text: '● Pushing to page 1460...', delay: 400 },
+      { text: '✓ 22 elements pushed to Homepage', delay: 400 },
     ],
   },
   media: {
-    command: 'bricks media upload ./photos/*.jpg && bricks generate gallery --images latest --push',
+    command: 'bricks media upload ./photos/*.jpg',
     lines: [
       { text: '● Uploading 6 images...', delay: 700 },
       { text: '  ├─ sunset-1.jpg → ID 2041', delay: 200 },
       { text: '  ├─ sunset-2.jpg → ID 2042', delay: 180 },
       { text: '  ├─ portrait-1.jpg → ID 2043', delay: 180 },
-      { text: '  └─ ...3 more uploaded', delay: 250 },
+      { text: '  ├─ portrait-2.jpg → ID 2044', delay: 180 },
+      { text: '  ├─ landscape-1.jpg → ID 2045', delay: 180 },
+      { text: '  └─ landscape-2.jpg → ID 2046', delay: 200 },
       { text: '✓ 6 images uploaded to media library', delay: 400 },
-      { text: '● Generating gallery section...', delay: 700 },
-      { text: '  ├─ Layout: 3-column masonry grid', delay: 300 },
-      { text: '  └─ Lightbox: enabled', delay: 250 },
-      { text: '✓ Gallery with 6 images pushed to page', delay: 400 },
+      { text: '✓ Image IDs: 2041-2046', delay: 300 },
     ],
   },
 };
 
 const demoLabels: Record<DemoId, string> = {
   styles: 'Bulk style update',
-  docs: 'Content from documents',
+  docs: 'HTML to Bricks',
   media: 'Multi-page media upload',
 };
 
@@ -208,7 +207,22 @@ function GuiDocsDemo() {
 }
 
 function GuiMediaDemo() {
-  const colors = ['#E57373', '#64B5F6', '#81C784', '#FFB74D', '#BA68C8', '#4DD0E1'];
+  const photos = [
+    'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=120&h=120&fit=crop',
+    'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=120&h=120&fit=crop',
+    'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=120&h=120&fit=crop',
+    'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=120&h=120&fit=crop',
+    'https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=120&h=120&fit=crop',
+    'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=120&h=120&fit=crop',
+  ];
+  const galleryPhotos = [
+    'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=160&h=100&fit=crop',
+    'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=160&h=100&fit=crop',
+    'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=160&h=100&fit=crop',
+    'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=160&h=100&fit=crop',
+    'https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=160&h=100&fit=crop',
+    'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=160&h=100&fit=crop',
+  ];
   return (
     <div className="flex flex-col min-h-[300px] p-4">
       <div className="glass-input rounded-lg p-2.5 flex items-center gap-2 flex-wrap text-sm mb-4">
@@ -217,14 +231,14 @@ function GuiMediaDemo() {
       </div>
       <div className="text-[9px] uppercase tracking-[0.15em] text-ui-subtle font-medium mb-2">Uploaded Images</div>
       <div className="grid grid-cols-6 gap-2 mb-4">
-        {colors.map((c, i) => (
-          <div key={i} className="aspect-square rounded-lg border border-subtle" style={{ background: c, opacity: 0.7 }} />
+        {photos.map((src, i) => (
+          <img key={i} src={src} alt="" loading="lazy" className="aspect-square rounded-lg border border-subtle object-cover" />
         ))}
       </div>
       <div className="text-[9px] uppercase tracking-[0.15em] text-ui-subtle font-medium mb-2">Gallery Preview</div>
       <div className="grid grid-cols-3 gap-1.5 flex-1 mb-4">
-        {colors.map((c, i) => (
-          <div key={i} className="rounded-md border border-subtle" style={{ background: c, opacity: 0.5, minHeight: '48px' }} />
+        {galleryPhotos.map((src, i) => (
+          <img key={i} src={src} alt="" loading="lazy" className="rounded-md border border-subtle object-cover w-full" style={{ minHeight: '48px' }} />
         ))}
       </div>
       <button className="self-end px-4 py-2 rounded-lg bg-accent-yellow text-black text-xs font-semibold spring-btn shadow-[var(--shadow-glow)]">
@@ -289,8 +303,8 @@ export default function InteractiveDemo() {
         </div>
 
         {/* Content */}
-        <AnimatePresence mode="wait">
-          <motion.div key={`${activeDemo}-${view}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} className="relative z-10">
+        <AnimatePresence initial={false}>
+          <motion.div key={`${activeDemo}-${view}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, position: 'absolute' as const, inset: 0 }} transition={{ duration: 0.15 }} className="relative z-10">
             {view === 'cli' ? (
               <>
                 <div className="absolute inset-0 scanlines opacity-15 pointer-events-none z-0" />

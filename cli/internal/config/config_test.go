@@ -39,10 +39,6 @@ func TestSaveAndLoad(t *testing.T) {
 			URL:    "https://test.com",
 			APIKey: "atb_key456",
 		},
-		LLM: config.LLMConfig{
-			Provider: "anthropic",
-			Model:    "claude-sonnet-4-20250514",
-		},
 	}
 
 	if err := cfg.Save(cfgPath); err != nil {
@@ -55,9 +51,6 @@ func TestSaveAndLoad(t *testing.T) {
 	}
 	if loaded.Site.URL != "https://test.com" {
 		t.Errorf("URL mismatch: %s", loaded.Site.URL)
-	}
-	if loaded.LLM.Provider != "anthropic" {
-		t.Errorf("provider mismatch: %s", loaded.LLM.Provider)
 	}
 }
 

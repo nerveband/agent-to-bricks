@@ -20,8 +20,6 @@ const (
 	stepSiteURL
 	stepAPIKey
 	stepTestConnection
-	stepLLMProvider
-	stepLLMKey
 	stepSummary
 	stepDone
 )
@@ -41,8 +39,6 @@ type connectionTestMsg struct {
 type model struct {
 	step       step
 	inputs     map[step]textinput.Model
-	llmChoice  int
-	llmOptions []string
 	result     Result
 	width      int
 	height     int
@@ -55,10 +51,6 @@ var (
 	titleStyle = lipgloss.NewStyle().
 			Bold(true).
 			Foreground(lipgloss.Color("99")).
-			MarginBottom(1)
-
-	subtitleStyle = lipgloss.NewStyle().
-			Foreground(lipgloss.Color("241")).
 			MarginBottom(1)
 
 	successStyle = lipgloss.NewStyle().
@@ -81,8 +73,6 @@ var (
 			BorderForeground(lipgloss.Color("99")).
 			Padding(1, 2)
 
-	stepIndicatorStyle = lipgloss.NewStyle().
-				Foreground(lipgloss.Color("241"))
 )
 
 func newTextInput(placeholder string, isPassword bool) textinput.Model {
@@ -99,21 +89,13 @@ func newTextInput(placeholder string, isPassword bool) textinput.Model {
 
 func initialModel() model {
 	inputs := map[step]textinput.Model{
-		stepSiteURL:  newTextInput("https://mysite.com", false),
-		stepAPIKey:   newTextInput("atb_xxxxxxxxxxxxx", true),
-		stepLLMKey:   newTextInput("sk-xxxxxxxxxxxxx", true),
+		stepSiteURL: newTextInput("https://mysite.com", false),
+		stepAPIKey:  newTextInput("atb_xxxxxxxxxxxxx", true),
 	}
 
 	return model{
 		step:   stepWelcome,
 		inputs: inputs,
-		llmOptions: []string{
-			"cerebras  - Ultra-fast inference (recommended)",
-			"openrouter - Multi-model gateway",
-			"openai     - GPT-4o / o1",
-			"ollama     - Local models (no API key needed)",
-			"skip       - Configure later",
-		},
 	}
 }
 
@@ -157,7 +139,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		m.testing = false
 		if msg.ok {
 			m.testResult = successStyle.Render("+ " + msg.message)
-			m.step = stepLLMProvider
+			m.step = stepSummary
 		} else {
 			m.testResult = errorStyle.Render("x " + msg.message)
 			m.step = stepSiteURL
@@ -172,18 +154,6 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 		case "enter":
 			return m.handleEnter()
-
-		case "up", "k":
-			if m.step == stepLLMProvider && m.llmChoice > 0 {
-				m.llmChoice--
-			}
-			return m, nil
-
-		case "down", "j":
-			if m.step == stepLLMProvider && m.llmChoice < len(m.llmOptions)-1 {
-				m.llmChoice++
-			}
-			return m, nil
 		}
 	}
 
@@ -238,23 +208,6 @@ func (m model) handleEnter() (tea.Model, tea.Cmd) {
 		// Waiting for test result
 		return m, nil
 
-	case stepLLMProvider:
-		providers := []string{"cerebras", "openrouter", "openai", "ollama", ""}
-		provider := providers[m.llmChoice]
-		if provider == "" || provider == "ollama" {
-			m.step = stepSummary
-			return m, nil
-		}
-		m.step = stepLLMKey
-		ti := m.inputs[stepLLMKey]
-		ti.Focus()
-		m.inputs[stepLLMKey] = ti
-		return m, ti.Focus()
-
-	case stepLLMKey:
-		m.step = stepSummary
-		return m, nil
-
 	case stepSummary:
 		m.step = stepDone
 		m.result.Config = m.buildConfig()
@@ -264,24 +217,12 @@ func (m model) handleEnter() (tea.Model, tea.Cmd) {
 }
 
 func (m model) buildConfig() *config.Config {
-	providers := []string{"cerebras", "openrouter", "openai", "ollama", ""}
-	provider := providers[m.llmChoice]
-
-	c := &config.Config{
+	return &config.Config{
 		Site: config.SiteConfig{
 			URL:    strings.TrimSpace(m.inputs[stepSiteURL].Value()),
 			APIKey: strings.TrimSpace(m.inputs[stepAPIKey].Value()),
 		},
 	}
-
-	if provider != "" {
-		c.LLM = config.LLMConfig{
-			Provider: provider,
-			APIKey:   strings.TrimSpace(m.inputs[stepLLMKey].Value()),
-		}
-	}
-
-	return c
 }
 
 func (m model) View() string {
@@ -293,7 +234,7 @@ func (m model) View() string {
 
 	// Header
 	header := titleStyle.Render("Agent to Bricks Setup")
-	steps := []string{"Site", "Auth", "LLM", "Done"}
+	steps := []string{"Site", "Auth", "Done"}
 	currentStepIdx := m.stepIndex()
 	stepBar := m.renderStepBar(steps, currentStepIdx)
 
@@ -311,10 +252,6 @@ func (m model) View() string {
 		s.WriteString(m.renderInput("API Key", stepAPIKey, "Generate one at WP Admin > Agent to Bricks > Settings"))
 	case stepTestConnection:
 		s.WriteString(m.renderTesting())
-	case stepLLMProvider:
-		s.WriteString(m.renderLLMChoice())
-	case stepLLMKey:
-		s.WriteString(m.renderInput("API Key for "+m.selectedProvider(), stepLLMKey, "Get your key from the provider's dashboard"))
 	case stepSummary:
 		s.WriteString(m.renderSummary())
 	case stepDone:
@@ -332,14 +269,10 @@ func (m model) stepIndex() int {
 	switch {
 	case m.step <= stepSiteURL:
 		return 0
-	case m.step <= stepAPIKey:
-		return 1
 	case m.step <= stepTestConnection:
 		return 1
-	case m.step <= stepLLMKey:
-		return 2
 	default:
-		return 3
+		return 2
 	}
 }
 
@@ -365,8 +298,7 @@ func (m model) renderWelcome() string {
 			"You'll need:\n\n" +
 			"  1. A WordPress site with Bricks Builder\n" +
 			"  2. The Agent to Bricks plugin activated\n" +
-			"  3. An API key (generated in WP Admin)\n\n" +
-			dimStyle.Render("Optional: LLM provider for AI generation"))
+			"  3. An API key (generated in WP Admin)")
 	s.WriteString("  " + content + "\n")
 	return s.String()
 }
@@ -391,42 +323,16 @@ func (m model) renderTesting() string {
 	return s.String()
 }
 
-func (m model) renderLLMChoice() string {
-	var s strings.Builder
-	s.WriteString("  " + titleStyle.Render("Choose an LLM Provider") + "\n")
-	s.WriteString("  " + dimStyle.Render("Used for AI-powered page generation") + "\n\n")
-
-	for i, opt := range m.llmOptions {
-		cursor := "  "
-		style := dimStyle
-		if i == m.llmChoice {
-			cursor = "> "
-			style = selectedStyle
-		}
-		s.WriteString("  " + style.Render(cursor+opt) + "\n")
-	}
-
-	return s.String()
-}
-
-func (m model) selectedProvider() string {
-	providers := []string{"Cerebras", "OpenRouter", "OpenAI", "Ollama", ""}
-	return providers[m.llmChoice]
-}
-
 func (m model) renderSummary() string {
 	var s strings.Builder
-	providers := []string{"cerebras", "openrouter", "openai", "ollama", "(none)"}
 
 	s.WriteString("  " + titleStyle.Render("Configuration Summary") + "\n\n")
 
 	content := fmt.Sprintf(
 		"  Site URL:     %s\n"+
-			"  API Key:      %s...\n"+
-			"  LLM Provider: %s\n",
+			"  API Key:      %s...\n",
 		m.inputs[stepSiteURL].Value(),
 		maskKey(m.inputs[stepAPIKey].Value()),
-		providers[m.llmChoice],
 	)
 
 	s.WriteString(boxStyle.Render(content))

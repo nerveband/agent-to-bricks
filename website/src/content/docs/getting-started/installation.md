@@ -29,7 +29,7 @@ Then generate your API key:
 
 1. Go to **Settings > Agent to Bricks**
 2. Click **Generate API Key**
-3. Copy the key somewhere safe -- you'll need it to connect the CLI
+3. Copy the key somewhere safe. You'll need it to connect the CLI
 
 The API key authenticates all requests from the CLI to your site. Keep it private.
 
@@ -73,7 +73,9 @@ bricks version
 
 ### Build from source
 
-If you prefer to compile it yourself, you'll need Go 1.22 or higher:
+If you prefer to compile it yourself, you'll need Go 1.22 or higher.
+
+**Mac / Linux:**
 
 ```bash
 cd cli
@@ -81,11 +83,19 @@ go build -o bricks .
 sudo mv bricks /usr/local/bin/
 ```
 
-Or use the Makefile:
+Or use the Makefile (Mac / Linux only):
 
 ```bash
 make build      # outputs to bin/bricks
 make install    # copies to /usr/local/bin
+```
+
+**Windows (PowerShell):**
+
+```powershell
+cd cli
+go build -o bricks.exe .
+Move-Item bricks.exe C:\Users\YourName\bin\
 ```
 
 ## 3. Connect the CLI to your site

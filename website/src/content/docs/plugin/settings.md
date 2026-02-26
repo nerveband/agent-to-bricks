@@ -3,7 +3,7 @@ title: Settings
 description: Plugin configuration in the WordPress admin and wp_options keys
 ---
 
-The plugin settings live at **Settings > Agent to Bricks** in the WordPress admin. The settings page manages **CLI & Agent API Keys** -- this is where you generate and revoke keys for external tools. See [Authentication](/plugin/authentication/) for the details.
+The plugin settings live at **Settings > Agent to Bricks** in the WordPress admin. The settings page manages **CLI & Agent API Keys**. This is where you generate and revoke keys for external tools. See [Authentication](/plugin/authentication/) for the details.
 
 ## wp_options keys
 

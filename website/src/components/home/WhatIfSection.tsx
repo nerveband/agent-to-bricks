@@ -9,45 +9,52 @@ interface Scenario {
 
 const scenarios: Scenario[] = [
   {
-    label: 'Style update',
-    prompt: 'Change all heading colors to brand blue',
+    label: 'Site-wide rebrand',
+    prompt: 'Rebrand the site: swap all colors, fonts, and button styles to the new guidelines',
     lines: [
-      { text: '\u25cf Scanning 20 pages for headings...', delay: 800 },
-      { text: '  Found 47 heading elements', delay: 400 },
-      { text: '\u25cf Applying color: var(--primary)...', delay: 600 },
-      { text: '  \u251c\u2500 Homepage: 8 headings updated', delay: 300 },
-      { text: '  \u251c\u2500 About: 6 headings updated', delay: 250 },
-      { text: '  \u251c\u2500 Services: 12 headings updated', delay: 250 },
-      { text: '  \u2514\u2500 ...11 more pages', delay: 300 },
-      { text: '\u2713 47 headings updated. Snapshots saved.', delay: 500 },
+      { text: '\u25cf Scanning 35 pages for styled elements...', delay: 800 },
+      { text: '  Found 214 elements across 35 pages', delay: 400 },
+      { text: '\u25cf Updating colors: #1a365d \u2192 #2563eb...', delay: 600 },
+      { text: '  \u251c\u2500 Homepage: 24 elements updated', delay: 300 },
+      { text: '  \u251c\u2500 About: 18 elements updated', delay: 250 },
+      { text: '  \u251c\u2500 Services: 31 elements updated', delay: 250 },
+      { text: '  \u251c\u2500 Pricing: 22 elements updated', delay: 250 },
+      { text: '  \u2514\u2500 ...31 more pages', delay: 300 },
+      { text: '\u25cf Swapping font: Inter \u2192 Space Grotesk...', delay: 500 },
+      { text: '  Applied to 142 text elements', delay: 300 },
+      { text: '\u2713 214 elements rebranded across 35 pages. Snapshots saved.', delay: 500 },
     ],
   },
   {
-    label: 'Media upload',
-    prompt: 'Upload these 12 photos and build a gallery',
+    label: 'Landing page',
+    prompt: 'Build a full landing page: hero, features, pricing table, testimonials, FAQ, and CTA',
     lines: [
-      { text: '\u25cf Uploading 12 images...', delay: 800 },
-      { text: '  \u251c\u2500 sunset-01.jpg \u2192 ID 2041', delay: 300 },
-      { text: '  \u251c\u2500 sunset-02.jpg \u2192 ID 2042', delay: 250 },
-      { text: '  \u2514\u2500 ...10 more uploaded', delay: 300 },
-      { text: '\u25cf Generating gallery section...', delay: 600 },
-      { text: '  \u251c\u2500 Using masonry layout (4 columns)', delay: 300 },
-      { text: '  \u2514\u2500 Applying lightbox interaction', delay: 300 },
-      { text: '\u2713 Gallery with 12 images live on page.', delay: 500 },
+      { text: '\u25cf Pulling design tokens and ACSS classes...', delay: 800 },
+      { text: '  Loaded 186 utility classes, 24 design tokens', delay: 400 },
+      { text: '\u25cf Converting 6 sections to Bricks elements...', delay: 600 },
+      { text: '  \u251c\u2500 Hero: headline, subtext, 2 CTA buttons', delay: 300 },
+      { text: '  \u251c\u2500 Features: 3-column grid with icons', delay: 250 },
+      { text: '  \u251c\u2500 Pricing: 3-tier comparison table (12 rows)', delay: 300 },
+      { text: '  \u251c\u2500 Testimonials: carousel with 4 reviews', delay: 250 },
+      { text: '  \u251c\u2500 FAQ: accordion with 8 items', delay: 250 },
+      { text: '  \u2514\u2500 CTA: banner with email capture', delay: 250 },
+      { text: '\u25cf Resolved 47/47 classes to global IDs', delay: 400 },
+      { text: '\u2713 Pushed 68 elements to page 84. Snapshot saved.', delay: 500 },
     ],
   },
   {
-    label: 'Generate from docs',
-    prompt: 'Reference this PDF and build a landing page',
+    label: 'Bulk update',
+    prompt: 'Replace the testimonials section on all 20 client pages with the new 3-card layout',
     lines: [
-      { text: '\u25cf Reading document: product-brief.pdf', delay: 800 },
-      { text: '  \u251c\u2500 Extracted: headline, features, pricing', delay: 400 },
-      { text: '  \u251c\u2500 Detected tone: professional, minimal', delay: 350 },
-      { text: '\u25cf Generating landing page...', delay: 600 },
-      { text: '  \u251c\u2500 Hero with headline + CTA', delay: 300 },
-      { text: '  \u251c\u2500 3-column feature grid', delay: 250 },
-      { text: '  \u2514\u2500 Pricing table with 3 tiers', delay: 300 },
-      { text: '\u2713 Landing page pushed to draft.', delay: 500 },
+      { text: '\u25cf Searching for testimonial sections...', delay: 800 },
+      { text: '  Found testimonials on 20 pages', delay: 400 },
+      { text: '\u25cf Loading template: testimonials-3-card...', delay: 500 },
+      { text: '\u25cf Replacing sections with snapshots...', delay: 600 },
+      { text: '  \u251c\u2500 Page 42 (Acme Corp): swapped, 12 elements', delay: 250 },
+      { text: '  \u251c\u2500 Page 58 (Archway Digital): swapped, 12 elements', delay: 250 },
+      { text: '  \u251c\u2500 Page 71 (Beacon Labs): swapped, 12 elements', delay: 250 },
+      { text: '  \u2514\u2500 ...17 more pages', delay: 300 },
+      { text: '\u2713 20 pages updated. 20 snapshots saved for rollback.', delay: 500 },
     ],
   },
 ];
@@ -200,13 +207,13 @@ export default function WhatIfSection() {
         {/* Terminal content */}
         <div className="relative z-10 p-6 min-h-[280px] font-mono text-xs leading-relaxed">
           <div className="absolute inset-0 scanlines opacity-15 pointer-events-none z-0" />
-          <AnimatePresence mode="wait">
+          <AnimatePresence initial={false}>
             <motion.div
               key={activeIdx}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
+              exit={{ opacity: 0, position: 'absolute', inset: 0 }}
+              transition={{ duration: 0.15 }}
               className="relative z-10"
             >
               {/* Prompt line */}

@@ -46,7 +46,7 @@ Settings hold everything about an element's appearance and content. A few key pr
 | `text` | string | Text content (supports HTML for rich-text elements) |
 | `tag` | string | HTML tag: `h1`-`h6`, `p`, `div`, `span`, `section`, `article`, etc. |
 | `link` | object | `{ "type": "external", "url": "https://...", "newTab": true }` |
-| `image` | object | `{ "url": "https://...", "id": 201 }` -- references media library |
+| `image` | object | `{ "url": "https://...", "id": 201 }` (references media library) |
 
 ### CSS classes
 
@@ -142,7 +142,7 @@ If-Match: e3b0c44298fc1c14...
 
 If someone else modified the page between your read and your write, the hash won't match, and the plugin returns `409 Conflict` with the current hash. This prevents two editors (or an editor and an AI agent) from overwriting each other's changes.
 
-The CLI handles this automatically -- it reads the page, gets the hash, and includes it in write requests.
+The CLI handles this automatically. It reads the page, gets the hash, and includes it in write requests.
 
 ## Registered element types
 

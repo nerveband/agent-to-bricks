@@ -7,7 +7,7 @@ The Agent to Bricks GUI is a desktop application built with [Tauri 2](https://v2
 
 ## What it does
 
-The app wraps AI coding tools -- Claude Code, Codex, OpenCode, or any CLI tool you add -- in managed terminal sessions. You pick a tool, configure it, and launch. The app handles the PTY (pseudo-terminal) connection, streams output in real time, and lets you switch between multiple running sessions.
+The app wraps AI coding tools (Claude Code, Codex, OpenCode, or any CLI tool you add) in managed terminal sessions. You pick a tool, configure it, and launch. The app handles the PTY (pseudo-terminal) connection, streams output in real time, and lets you switch between multiple running sessions.
 
 On top of that, the prompt composer lets you write prompts that reference your actual site objects. Type `@page` and the app pulls your real pages from the WordPress REST API. That context gets injected into the prompt before it reaches the AI tool, so the agent knows exactly which page, section, or class you mean.
 
@@ -23,10 +23,10 @@ Here is what you get:
 
 Before you run the GUI, make sure you have:
 
-- **Bricks CLI** (`bricks`) installed and on your PATH. This is a **hard requirement** -- the app will not start without it. See [Installation](/getting-started/installation/) for setup options.
+- **Bricks CLI** (`bricks`) installed and on your PATH. This is a **hard requirement**; the app will not start without it. See [Installation](/getting-started/installation/) for setup options.
 - **Node.js 18** or newer
-- **Rust** (stable toolchain) -- Tauri needs this to compile the native shell
-- **At least one AI coding tool** installed globally. The app auto-detects Claude Code (`claude`), Codex (`codex`), and OpenCode (`opencode`). You can also register your own. These are optional -- the app works without them but you won't be able to run agent sessions.
+- **Rust** (stable toolchain). Tauri needs this to compile the native shell
+- **At least one AI coding tool** installed globally. The app auto-detects Claude Code (`claude`), Codex (`codex`), and OpenCode (`opencode`). You can also register your own. These are optional. The app works without them but you won't be able to run agent sessions.
 - **A Bricks Builder site** with the Agent to Bricks WordPress plugin installed and an API key generated. This is optional for basic use, but @mentions and site context won't work without it.
 
 ## Running the app
@@ -39,7 +39,7 @@ npm install
 npm run tauri dev
 ```
 
-The first run takes a few minutes while Rust compiles the Tauri backend. After that, hot-reload kicks in for the React frontend -- changes appear immediately.
+The first run takes a few minutes while Rust compiles the Tauri backend. After that, hot-reload kicks in for the React frontend and changes appear immediately.
 
 For a production build:
 
@@ -53,9 +53,9 @@ This produces a platform-native binary (`.app` on macOS, `.msi` on Windows, `.de
 
 When the app opens it runs a startup detection sequence. You will see a real-time log showing:
 
-1. **Environment detection** -- your OS, architecture, shell type, and augmented PATH directories.
-2. **Bricks CLI check** -- the required dependency is checked first. If it is not found, the app shows a blocking gate with installation instructions (Go install or website download). You must install Bricks CLI and click "Re-check" before the app will proceed.
-3. **Optional agent scan** -- Claude Code, Codex, and OpenCode are checked. Missing agents are reported but do not block the app.
+1. **Environment detection:** your OS, architecture, shell type, and augmented PATH directories.
+2. **Bricks CLI check:** the required dependency is checked first. If it is not found, the app shows a blocking gate with installation instructions (Go install or website download). You must install Bricks CLI and click "Re-check" before the app will proceed.
+3. **Optional agent scan:** Claude Code, Codex, and OpenCode are checked. Missing agents are reported but do not block the app.
 
 The detection system supports all major shells (bash, zsh, fish, PowerShell, Nushell, cmd.exe) and augments the search PATH with common tool directories so that CLI tools installed via Homebrew, Cargo, Go, npm, and other package managers are found even when the app is launched outside a terminal.
 

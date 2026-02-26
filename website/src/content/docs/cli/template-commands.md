@@ -201,8 +201,8 @@ bricks templates show footer-amsterdam
 # 3. Compose them into a page
 bricks compose hero-cali feature-havana footer-amsterdam --push 1460
 
-# 4. Tweak with modify if needed
-bricks generate modify "change the hero headline to 'Welcome Home'" --page 1460
+# 4. Pull the page, edit the HTML, and push the updated version
+bricks site pull 1460 -o tweaked.json
 ```
 
 ## Build your own template library
@@ -230,6 +230,6 @@ bricks templates import ~/team-templates/
 
 ## Related commands
 
-- [`bricks generate section`](/cli/generate-commands/) -- generate a section with AI instead of using a template
-- [`bricks site snapshot`](/cli/site-commands/) -- snapshot before pushing composed pages
-- [`bricks styles learn`](/cli/style-commands/) -- learn style profiles alongside templates
+- [`bricks convert html`](/cli/convert-commands/): convert HTML to Bricks elements as an alternative to templates
+- [`bricks site snapshot`](/cli/site-commands/): snapshot before pushing composed pages
+- [`bricks styles learn`](/cli/style-commands/): learn style profiles alongside templates

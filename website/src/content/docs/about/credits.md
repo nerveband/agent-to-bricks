@@ -5,20 +5,20 @@ description: Who built Agent to Bricks, licensing, and project acknowledgments
 
 ## Created by
 
-**Ashraf Ali** -- [ashrafali.net](https://ashrafali.net)
+**Ashraf Ali** | [ashrafali.net](https://ashrafali.net)
 
 ## License
 
 GPL-3.0. The full license text is in the [LICENSE](https://github.com/nerveband/agent-to-bricks/blob/main/LICENSE) file in the repository.
 
-This means you can use, modify, and distribute Agent to Bricks freely. If you distribute a modified version, it must also be GPL-3.0. Your site content and configurations are yours -- the license applies to the software itself, not to what you build with it.
+This means you can use, modify, and distribute Agent to Bricks freely. If you distribute a modified version, it must also be GPL-3.0. Your site content and configurations are yours. The license applies to the software itself, not to what you build with it.
 
 ## Built with
 
-- [Go](https://go.dev/) -- CLI binary
-- [WordPress](https://wordpress.org/) -- plugin platform
-- [React](https://react.dev/) + [Tauri](https://tauri.app/) -- desktop GUI
-- [Astro](https://astro.build/) + [Starlight](https://starlight.astro.build/) -- this documentation site
+- [Go](https://go.dev/): CLI binary
+- [WordPress](https://wordpress.org/): plugin platform
+- [React](https://react.dev/) + [Tauri](https://tauri.app/): desktop GUI
+- [Astro](https://astro.build/) + [Starlight](https://starlight.astro.build/): this documentation site
 
 ## Disclaimer
 

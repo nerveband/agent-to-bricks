@@ -11,10 +11,10 @@ You don't need to configure anything. It just works.
 
 When the plugin sees ACSS in your active plugins list, it reads:
 
-- **Utility classes** -- all ACSS classes imported into the Bricks global class registry (`section--l`, `bg--primary`, `text--white`, `grid--auto-3`, etc.)
-- **Color tokens** -- primary, secondary, accent, base, neutral, and their light/dark/ultra-light/ultra-dark variants
-- **Spacing scale** -- the full clamp-based spacing scale (space-xs through space-xxl, section-space-s through section-space-xl)
-- **Typography** -- root font size, heading and body font families, the responsive type scale
+- **Utility classes**: all ACSS classes imported into the Bricks global class registry (`section--l`, `bg--primary`, `text--white`, `grid--auto-3`, etc.)
+- **Color tokens**: primary, secondary, accent, base, neutral, and their light/dark/ultra-light/ultra-dark variants
+- **Spacing scale**: the full clamp-based spacing scale (space-xs through space-xxl, section-space-s through section-space-xl)
+- **Typography**: root font size, heading and body font families, the responsive type scale
 
 Check what's detected:
 
@@ -167,7 +167,7 @@ bricks classes list --framework custom  # list your own classes (read-write)
 
 Agent to Bricks works fine without ACSS. The class resolution system handles any global classes in the Bricks registry, whether they come from ACSS, Frames, or were created manually.
 
-Without ACSS, you won't have the utility class shortcuts or design tokens. The AI context will be shorter, and you'll reference classes by whatever names you've registered in Bricks. The workflow is the same -- the only difference is the set of available classes.
+Without ACSS, you won't have the utility class shortcuts or design tokens. The AI context will be shorter, and you'll reference classes by whatever names you've registered in Bricks. The workflow is the same; the only difference is the set of available classes.
 
 ## Checking class resolution
 
@@ -186,6 +186,6 @@ If a class you expect to see is missing, check that ACSS has synced its classes 
 ## Related
 
 - [Global classes reference](/plugin/global-classes/)
-- [Class commands](/cli/class-commands/) -- manage global classes
-- [HTML to Bricks](/guides/html-to-bricks/) -- write HTML with ACSS classes
-- [Style profiles](/guides/style-profiles/) -- learn patterns from ACSS-styled pages
+- [Class commands](/cli/class-commands/): manage global classes
+- [HTML to Bricks](/guides/html-to-bricks/): write HTML with ACSS classes
+- [Style profiles](/guides/style-profiles/): learn patterns from ACSS-styled pages

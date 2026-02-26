@@ -3,7 +3,7 @@ title: Global classes
 description: How Bricks global classes work, how the plugin manages them, and how ACSS utility classes get registered
 ---
 
-Bricks Builder has a site-wide registry of CSS classes stored in the `bricks_global_classes` wp_option. These are different from regular CSS classes -- they get an ID, they're managed through the Bricks UI, and elements reference them by ID rather than by name.
+Bricks Builder has a site-wide registry of CSS classes stored in the `bricks_global_classes` wp_option. These are different from regular CSS classes. They get an ID, they're managed through the Bricks UI, and elements reference them by ID rather than by name.
 
 The plugin exposes this registry through the REST API and handles the mapping between class names (what you write in HTML) and class IDs (what Bricks stores in element settings).
 
@@ -26,7 +26,7 @@ Each global class is an entry in the `bricks_global_classes` option array:
 }
 ```
 
-The `id` is a 6-character alphanumeric string that Bricks generates. When an element uses this class, its `settings._cssGlobalClasses` array contains `"abcdef"` -- the ID, not the name `"card--featured"`.
+The `id` is a 6-character alphanumeric string that Bricks generates. When an element uses this class, its `settings._cssGlobalClasses` array contains `"abcdef"` (the ID, not the name `"card--featured"`).
 
 ## ACSS classes
 
@@ -43,7 +43,7 @@ The plugin detects ACSS classes by checking for this prefix. It tags them with `
 }
 ```
 
-ACSS classes are read-only through the API. Trying to update or delete one returns `403 Forbidden`. These classes are managed by ACSS itself -- editing them through the plugin would cause conflicts.
+ACSS classes are read-only through the API. Trying to update or delete one returns `403 Forbidden`. These classes are managed by ACSS itself, and editing them through the plugin would cause conflicts.
 
 ## Listing classes
 

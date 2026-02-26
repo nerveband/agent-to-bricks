@@ -30,10 +30,6 @@ func TestInitialModel(t *testing.T) {
 		t.Errorf("expected initial step to be welcome, got %d", m.step)
 	}
 
-	if len(m.llmOptions) != 5 {
-		t.Errorf("expected 5 LLM options, got %d", len(m.llmOptions))
-	}
-
 	if _, ok := m.inputs[stepSiteURL]; !ok {
 		t.Error("expected site URL input to exist")
 	}
@@ -54,12 +50,6 @@ func TestBuildConfig(t *testing.T) {
 	ti.SetValue("atb_testkey123456789")
 	m.inputs[stepAPIKey] = ti
 
-	m.llmChoice = 0 // cerebras
-
-	ti = m.inputs[stepLLMKey]
-	ti.SetValue("sk-cerebras-key")
-	m.inputs[stepLLMKey] = ti
-
 	cfg := m.buildConfig()
 
 	if cfg.Site.URL != "https://example.com" {
@@ -67,32 +57,6 @@ func TestBuildConfig(t *testing.T) {
 	}
 	if cfg.Site.APIKey != "atb_testkey123456789" {
 		t.Errorf("expected API key, got %q", cfg.Site.APIKey)
-	}
-	if cfg.LLM.Provider != "cerebras" {
-		t.Errorf("expected provider 'cerebras', got %q", cfg.LLM.Provider)
-	}
-	if cfg.LLM.APIKey != "sk-cerebras-key" {
-		t.Errorf("expected LLM key, got %q", cfg.LLM.APIKey)
-	}
-}
-
-func TestBuildConfigSkipLLM(t *testing.T) {
-	m := initialModel()
-
-	ti := m.inputs[stepSiteURL]
-	ti.SetValue("https://test.com")
-	m.inputs[stepSiteURL] = ti
-
-	ti = m.inputs[stepAPIKey]
-	ti.SetValue("atb_key")
-	m.inputs[stepAPIKey] = ti
-
-	m.llmChoice = 4 // skip
-
-	cfg := m.buildConfig()
-
-	if cfg.LLM.Provider != "" {
-		t.Errorf("expected empty provider when skipped, got %q", cfg.LLM.Provider)
 	}
 }
 
@@ -109,13 +73,8 @@ func TestStepIndex(t *testing.T) {
 		t.Error("API key should be step 1")
 	}
 
-	m.step = stepLLMProvider
-	if m.stepIndex() != 2 {
-		t.Error("LLM should be step 2")
-	}
-
 	m.step = stepDone
-	if m.stepIndex() != 3 {
-		t.Error("done should be step 3")
+	if m.stepIndex() != 2 {
+		t.Error("done should be step 2")
 	}
 }

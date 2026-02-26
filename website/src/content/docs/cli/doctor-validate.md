@@ -40,17 +40,17 @@ Summary: 2 issues found
 
 The doctor command looks for:
 
-- **Orphaned elements** -- elements whose parent ID points to an element that doesn't exist. This usually happens when a parent gets deleted but its children stay behind.
-- **Duplicate IDs** -- two elements sharing the same ID, which causes unpredictable behavior in Bricks.
-- **Broken parent/child references** -- a parent listing a child that doesn't exist, or a child claiming a parent that doesn't list it.
-- **Invalid global class references** -- elements referencing global class IDs that no longer exist on the site.
-- **Empty sections** -- sections with no children, which render as blank space.
-- **Heading hierarchy** -- headings that skip levels (e.g., H1 followed directly by H4) or appear in unexpected order.
-- **Missing required settings** -- elements that are missing settings they need to render properly (e.g., an image with no source).
+- **Orphaned elements.** Elements whose parent ID points to an element that doesn't exist. This usually happens when a parent gets deleted but its children stay behind.
+- **Duplicate IDs.** Two elements sharing the same ID, which causes unpredictable behavior in Bricks.
+- **Broken parent/child references.** A parent listing a child that doesn't exist, or a child claiming a parent that doesn't list it.
+- **Invalid global class references.** Elements referencing global class IDs that no longer exist on the site.
+- **Empty sections.** Sections with no children, which render as blank space.
+- **Heading hierarchy.** Headings that skip levels (e.g., H1 followed directly by H4) or appear in unexpected order.
+- **Missing required settings.** Elements that are missing settings they need to render properly (e.g., an image with no source).
 
 ### When to run it
 
-Run `bricks doctor` after any push or generate operation. It's fast (a single API call) and catches the kinds of issues that are hard to spot in the visual editor.
+Run `bricks doctor` after any push operation. It's fast (a single API call) and catches the kinds of issues that are hard to spot in the visual editor.
 
 A good habit:
 
@@ -73,7 +73,7 @@ Check a local JSON file against the Bricks element schema without touching your 
 bricks validate <file.json>
 ```
 
-### Example -- clean file
+### Example: clean file
 
 ```bash
 bricks validate homepage.json
@@ -91,7 +91,7 @@ Validating homepage.json...
 homepage.json is valid
 ```
 
-### Example -- file with problems
+### Example: file with problems
 
 ```bash
 bricks validate broken-page.json
@@ -112,14 +112,14 @@ Validating broken-page.json...
 
 ### What it checks
 
-Validation runs locally -- it doesn't contact your site. It verifies:
+Validation runs locally; it doesn't contact your site. It verifies:
 
-- **Valid JSON** -- the file parses without errors.
-- **Required fields** -- every element has `id`, `name`, and `settings`.
-- **Known element types** -- the `name` field matches a valid Bricks element type. Typos get flagged with suggestions.
-- **Unique IDs** -- no two elements share an ID.
-- **Tree consistency** -- parent/child references line up. Every `parent` value points to an element that exists in the file (or is `0` for top-level elements).
-- **Settings structure** -- settings objects have the expected shape for their element type.
+- **Valid JSON.** The file parses without errors.
+- **Required fields.** Every element has `id`, `name`, and `settings`.
+- **Known element types.** The `name` field matches a valid Bricks element type. Typos get flagged with suggestions.
+- **Unique IDs.** No two elements share an ID.
+- **Tree consistency.** Parent/child references line up. Every `parent` value points to an element that exists in the file (or is `0` for top-level elements).
+- **Settings structure.** Settings objects have the expected shape for their element type.
 
 ### When to use it
 
@@ -136,10 +136,10 @@ bricks validate homepage.json
 bricks site push 1460 homepage.json
 ```
 
-After generating output you want to inspect:
+After converting HTML you want to inspect before pushing:
 
 ```bash
-bricks generate page "landing page" --dry-run -o draft.json
+bricks convert html landing-page.html -o draft.json
 bricks validate draft.json
 ```
 
@@ -165,6 +165,6 @@ Use `validate` for local files before pushing. Use `doctor` for pages already on
 
 ## Related commands
 
-- [`bricks site push`](/cli/site-commands/) -- push validated JSON to a page
-- [`bricks site rollback`](/cli/site-commands/) -- undo a push that introduced problems
-- [`bricks site snapshot`](/cli/site-commands/) -- save a restore point before risky changes
+- [`bricks site push`](/cli/site-commands/): push validated JSON to a page
+- [`bricks site rollback`](/cli/site-commands/): undo a push that introduced problems
+- [`bricks site snapshot`](/cli/site-commands/): save a restore point before risky changes

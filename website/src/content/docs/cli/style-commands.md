@@ -3,7 +3,7 @@ title: Style commands
 description: Inspect your site's color palette, CSS variables, theme styles, and build style profiles from existing pages.
 ---
 
-The `bricks styles` commands give you access to your site's design tokens -- colors, CSS custom properties, theme configuration, and learned style profiles. This is the data that AI agents and the HTML converter use to write markup that matches your site's design system.
+The `bricks styles` commands give you access to your site's design tokens: colors, CSS custom properties, theme configuration, and learned style profiles. This is the data that AI agents and the HTML converter use to write markup that matches your site's design system.
 
 ## View the color palette
 
@@ -140,7 +140,7 @@ Style Profile:
 Saved as style profile "homepage"
 ```
 
-Style profiles help AI generation match the look of your existing pages. When you run `bricks generate`, the profile data gets included in the LLM context.
+Style profiles help AI agents match the look of your existing pages. When you run `bricks agent context`, the profile data is included in the exported context so AI tools know which tokens and classes to use.
 
 ## Show the current style profile
 
@@ -191,7 +191,7 @@ The `bricks convert html` command will translate this into proper Bricks element
 
 ## Related commands
 
-- [`bricks classes list`](/cli/class-commands/) -- see the global classes that reference these tokens
-- [`bricks agent context`](/cli/agent-commands/) -- full context export including styles, classes, and tokens
-- [`bricks site frameworks`](/cli/site-commands/) -- see which CSS framework provides these tokens
-- [`bricks templates learn`](/cli/template-commands/) -- learn templates alongside style profiles
+- [`bricks classes list`](/cli/class-commands/): see the global classes that reference these tokens
+- [`bricks agent context`](/cli/agent-commands/): full context export including styles, classes, and tokens
+- [`bricks site frameworks`](/cli/site-commands/): see which CSS framework provides these tokens
+- [`bricks templates learn`](/cli/template-commands/): learn templates alongside style profiles

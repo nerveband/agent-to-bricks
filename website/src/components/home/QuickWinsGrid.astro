@@ -5,48 +5,56 @@ const wins = [
     description: 'Every push saves a snapshot. Something wrong? One command to undo it. Your safety net for every edit.',
     iconClass: 'ph-duotone ph-clock-counter-clockwise',
     command: '$ bricks snapshot restore --page 1460',
+    href: '/plugin/snapshots/',
   },
   {
-    title: 'Generate a landing page',
-    description: 'One sentence in, full page out. Hero, features, testimonials, CTA. All using your ACSS classes.',
-    iconClass: 'ph-duotone ph-magic-wand',
-    command: '$ bricks generate page "SaaS landing page"',
+    title: 'Export your design context',
+    description: 'Give any AI agent your full design system: classes, tokens, templates. It writes HTML that matches your site.',
+    iconClass: 'ph-duotone ph-brain',
+    command: '$ bricks agent context --format prompt',
+    href: '/cli/agent-commands/',
   },
   {
     title: 'Control what AI can touch',
     description: 'Set allow and deny lists so AI only edits the pages you choose. Stay in control, even at scale.',
     iconClass: 'ph-duotone ph-shield-check',
     command: '$ bricks config set --allowed-pages 12,45,67',
+    href: '/plugin/settings/',
   },
   {
     title: 'Search and replace across pages',
     description: 'Find every button, heading, or class usage site-wide. Change them all in one pass.',
     iconClass: 'ph-duotone ph-magnifying-glass-plus',
     command: '$ bricks search "old" | bricks modify',
+    href: '/cli/search-commands/',
   },
   {
     title: 'Upload images into a gallery',
     description: 'Point it at a folder. It uploads everything and builds the gallery section. Done.',
     iconClass: 'ph-duotone ph-upload-simple',
     command: '$ bricks media upload ./photos/*.jpg',
+    href: '/cli/media-commands/',
   },
   {
     title: 'Convert HTML to Bricks',
     description: 'Write HTML with your classes. The CLI turns it into Bricks elements and maps class names to IDs.',
     iconClass: 'ph-duotone ph-brackets-angle',
     command: '$ bricks convert ./template.html --push',
+    href: '/guides/html-to-bricks/',
   },
   {
     title: 'Manage multiple sites',
     description: 'Switch between Bricks websites from one place. Update styles across all your client sites without logging into each one.',
     iconClass: 'ph-duotone ph-globe-hemisphere-west',
     command: '$ bricks config use --profile client-b',
+    href: '/getting-started/configuration/',
   },
   {
     title: 'Apply a style profile',
     description: 'Define your brand fonts, colors, and spacing once. Every generated section follows your rules automatically.',
     iconClass: 'ph-duotone ph-paint-brush',
     command: '$ bricks style apply --profile brand.json',
+    href: '/guides/style-profiles/',
   },
 ];
 ---
@@ -62,7 +70,7 @@ const wins = [
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-20 stagger-children">
       {wins.map((win) => (
-        <div class="glass-base tilt-card relative overflow-hidden p-7 border border-subtle transition-all hover:border-accent-yellow hover:-translate-y-1 group group-hover:shadow-[var(--shadow-glow)]">
+        <a href={win.href} class="glass-base tilt-card relative overflow-hidden p-7 border border-subtle transition-all hover:border-accent-yellow hover:-translate-y-1 group group-hover:shadow-[var(--shadow-glow)] no-underline block">
           <div class="noise"></div>
           <div class="w-11 h-11 rounded-lg bg-accent-yellow/5 border border-accent-yellow/10 flex items-center justify-center mb-5 relative z-10 group-hover:border-accent-yellow/30 group-hover:bg-accent-yellow/20 transition-colors">
              <i class={`${win.iconClass} text-[22px] text-accent-yellow transition-colors`}></i>
@@ -70,7 +78,10 @@ const wins = [
           <h3 class="text-ui-fg font-mono font-bold uppercase tracking-[0.05em] text-[12px] mb-3 relative z-10 group-hover:text-accent-yellow transition-colors">{win.title}</h3>
           <p class="text-ui-muted text-sm leading-relaxed relative z-10">{win.description}</p>
           <div class="mt-3 font-mono text-[10px] text-accent-yellow/70 truncate relative z-10">{win.command}</div>
-        </div>
+          <div class="mt-4 text-xs text-accent-yellow font-medium relative z-10 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+            Learn more <span class="text-sm">&rarr;</span>
+          </div>
+        </a>
       ))}
     </div>
   </div>

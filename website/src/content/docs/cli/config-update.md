@@ -205,6 +205,5 @@ If this fails, double-check your `site.url` and `site.api_key` values. The URL s
 
 ## Related commands
 
-- [`bricks site info`](/cli/site-commands/) -- verify your connection after configuring
-- [`bricks generate section`](/cli/generate-commands/) -- requires LLM configuration
-- [`bricks agent context`](/cli/agent-commands/) -- uses the site connection to export context
+- [`bricks site info`](/cli/site-commands/): verify your connection after configuring
+- [`bricks agent context`](/cli/agent-commands/): uses the site connection to export context

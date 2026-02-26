@@ -9,20 +9,11 @@ import (
 
 type Config struct {
 	Site SiteConfig `yaml:"site"`
-	LLM  LLMConfig  `yaml:"llm"`
 }
 
 type SiteConfig struct {
 	URL    string `yaml:"url"`
 	APIKey string `yaml:"api_key"`
-}
-
-type LLMConfig struct {
-	Provider    string  `yaml:"provider"`
-	APIKey      string  `yaml:"api_key"`
-	Model       string  `yaml:"model"`
-	BaseURL     string  `yaml:"base_url"`
-	Temperature float64 `yaml:"temperature"`
 }
 
 func DefaultPath() string {

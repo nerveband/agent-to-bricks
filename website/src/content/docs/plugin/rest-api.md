@@ -217,7 +217,7 @@ curl -X PUT https://your-site.com/wp-json/agent-bricks/v1/pages/42/elements \
 
 ### PATCH /pages/{id}/elements
 
-Delta-patch individual elements by ID. Settings are merged (not replaced) -- set a key to `null` to remove it.
+Delta-patch individual elements by ID. Settings are merged (not replaced). Set a key to `null` to remove it.
 
 **Headers:** `If-Match: <contentHash>`
 
@@ -681,6 +681,6 @@ Common status codes:
 | 401 | Invalid or missing API key |
 | 403 | Forbidden (e.g., trying to modify an ACSS class) |
 | 404 | Resource not found |
-| 409 | Conflict (contentHash mismatch -- someone else wrote first) |
+| 409 | Conflict (contentHash mismatch; someone else wrote first) |
 | 428 | If-Match header required but missing |
 | 429 | Rate limit exceeded |

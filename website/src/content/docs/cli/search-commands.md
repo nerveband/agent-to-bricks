@@ -158,6 +158,11 @@ JSON output is what you'll want when piping results into another tool or feeding
 bricks search elements --type heading --json | jq '.[].settings.tag' | sort | uniq -c
 ```
 
+> On Windows, `jq`, `sort`, and `uniq` are not built-in. Install [jq](https://jqlang.github.io/jq/download/) separately, or use PowerShell:
+> ```powershell
+> bricks search elements --type heading --json | ConvertFrom-Json | Group-Object { $_.settings.tag } | Select-Object Count, Name
+> ```
+
 **Find all buttons linking to a specific URL:**
 ```bash
 bricks search elements --type button --setting link=/pricing
@@ -175,6 +180,6 @@ bricks search elements --type image --json | jq length
 
 ## Related commands
 
-- [`bricks site pull`](/cli/site-commands/) -- pull full page content once you've found what you're looking for
-- [`bricks classes find`](/cli/class-commands/) -- search for global class definitions (not usages)
-- [`bricks doctor`](/cli/doctor-validate/) -- find structural problems on a specific page
+- [`bricks site pull`](/cli/site-commands/): pull full page content once you've found what you're looking for
+- [`bricks classes find`](/cli/class-commands/): search for global class definitions (not usages)
+- [`bricks doctor`](/cli/doctor-validate/): find structural problems on a specific page

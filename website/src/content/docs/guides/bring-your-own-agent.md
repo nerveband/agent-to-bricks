@@ -92,7 +92,7 @@ Claude: I'll create the about page. Let me first check what's on page 58 and rev
 
         Now I'll write the HTML using your ACSS classes and push it:
 
-        > cat <<'EOF' > /tmp/about-page.html
+        > cat <<'EOF' > about-page.html
         <section class="section--l bg--white">
           <div class="container grid--2">
             <div>
@@ -107,7 +107,7 @@ Claude: I'll create the about page. Let me first check what's on page 58 and rev
         ...
         EOF
 
-        > bricks convert html /tmp/about-page.html --push 58 --snapshot
+        > bricks convert html about-page.html --push 58 --snapshot
 
         Done. The page has 4 sections with 28 elements. I created a snapshot before
         pushing in case you want to roll back.
@@ -149,11 +149,11 @@ bricks site info
 bricks classes list
 bricks styles variables
 
-# Agent writes HTML
-echo '<section class="section--l">...</section>' > /tmp/page.html
+# Agent writes HTML to a working file
+echo '<section class="section--l">...</section>' > page.html
 
 # Agent converts and pushes
-bricks convert html /tmp/page.html --push 42 --snapshot
+bricks convert html page.html --push 42 --snapshot
 ```
 
 ### Option B: HTTP only
@@ -164,15 +164,12 @@ If your agent can only make HTTP requests, it can call the REST API directly:
 # Read page content
 GET /wp-json/agent-bricks/v1/pages/42/elements
 
-# Generate with AI
-POST /wp-json/agent-bricks/v1/generate
-{
-  "prompt": "Add a testimonial section",
-  "postId": 42,
-  "mode": "section"
-}
+# Read design context (classes, tokens, frameworks)
+GET /wp-json/agent-bricks/v1/classes
+GET /wp-json/agent-bricks/v1/variables
+GET /wp-json/agent-bricks/v1/site/frameworks
 
-# Push elements
+# Push elements the agent generated
 POST /wp-json/agent-bricks/v1/pages/42/elements
 {
   "elements": [...],
@@ -208,10 +205,9 @@ Your template library, grouped by category. The AI can reference these by slug w
 
 ### Workflows
 
-Three recommended approaches:
-1. **HTML Convert** -- write HTML, convert with the CLI, push
-2. **Template Compose** -- search templates, compose them into a page
-3. **AI Generate** -- use the `/generate` endpoint for rapid prototyping
+Two recommended approaches:
+1. **HTML Convert:** write HTML, convert with the CLI, push to your site
+2. **Template Compose:** search templates, compose them into a page, push
 
 ## Tips for better results
 

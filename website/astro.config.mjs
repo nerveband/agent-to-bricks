@@ -52,7 +52,6 @@ export default defineConfig({
           collapsed: true,
           items: [
             'cli/site-commands',
-            'cli/generate-commands',
             'cli/convert-commands',
             'cli/search-commands',
             'cli/template-commands',

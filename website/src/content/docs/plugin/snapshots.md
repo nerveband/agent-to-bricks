@@ -157,28 +157,31 @@ A typical safe workflow looks like this:
 # 1. Take a snapshot before you start
 bricks snapshots create 42 --label "Before landing page rework"
 
-# 2. Generate new content
-bricks generate page --page 42 --prompt "Modern SaaS landing page with hero, features, pricing, and CTA"
+# 2. Write your HTML (or have an AI agent write it)
+# landing.html contains your new page content
 
-# 3. Check the result in the browser
+# 3. Convert and push
+bricks convert html landing.html --push 42
+
+# 4. Check the result in the browser
 # If it looks wrong...
 
-# 4. Roll back
+# 5. Roll back
 bricks snapshots list 42
 bricks snapshots rollback 42 snap_a1b2c3d4e5f6
 
-# 5. Try again with a different prompt
+# 6. Edit the HTML and try again
 ```
 
 Or just use the `--snapshot` flag and skip step 1:
 
 ```bash
-bricks generate page --page 42 --prompt "..." --snapshot
+bricks convert html landing.html --push 42 --snapshot
 ```
 
 ## Limits
 
 - **10 snapshots per page.** Oldest gets dropped when you create the 11th. If you need more history, pull the page content and save it as a file.
-- **Stored in post meta.** Large pages with many elements will use more database storage. A page with 100 elements might produce a snapshot around 50-100KB of serialized data. 10 of those is 0.5-1MB in post meta -- not a problem for most sites.
+- **Stored in post meta.** Large pages with many elements will use more database storage. A page with 100 elements might produce a snapshot around 50-100KB of serialized data. 10 of those is 0.5-1MB in post meta, not a problem for most sites.
 - **No diff view.** Snapshots store the full element array, not a diff. There's no built-in way to see what changed between two snapshots. Pull both and compare them with a diff tool if you need that.
 - **Rollback bypasses the content hash check.** Since the whole point is to restore previous state, the optimistic locking system is skipped during rollback. The plugin writes directly to post meta.

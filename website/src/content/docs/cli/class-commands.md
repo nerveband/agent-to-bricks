@@ -149,7 +149,7 @@ Deleted global class: custom_card_hover (card-hover)
 
 Use the class ID (not the name) for deletion. Get the ID from `bricks classes list` or `bricks classes find`.
 
-Be careful with this one. Deleting a class that's actively used on pages won't break anything immediately -- the class reference just becomes orphaned. But those elements will lose the styles that class provided.
+Be careful with this one. Deleting a class that's actively used on pages won't break anything immediately. The class reference just becomes orphaned. But those elements will lose the styles that class provided.
 
 ## Practical uses
 
@@ -157,6 +157,11 @@ Be careful with this one. Deleting a class that's actively used on pages won't b
 ```bash
 bricks classes list --framework acss --json | jq '.[].name'
 ```
+
+> On Windows, install [jq](https://jqlang.github.io/jq/download/) separately, or use PowerShell:
+> ```powershell
+> bricks classes list --framework acss --json | ConvertFrom-Json | ForEach-Object { $_.name }
+> ```
 
 **Find all classes related to spacing:**
 ```bash
@@ -177,6 +182,6 @@ bricks classes find "card-shadow"
 
 ## Related commands
 
-- [`bricks search elements --class`](/cli/search-commands/) -- find where a class is used across your site
-- [`bricks convert html`](/cli/convert-commands/) -- the converter resolves class names to global class IDs automatically
-- [`bricks styles variables`](/cli/style-commands/) -- see CSS custom properties used by classes
+- [`bricks search elements --class`](/cli/search-commands/): find where a class is used across your site
+- [`bricks convert html`](/cli/convert-commands/): the converter resolves class names to global class IDs automatically
+- [`bricks styles variables`](/cli/style-commands/): see CSS custom properties used by classes

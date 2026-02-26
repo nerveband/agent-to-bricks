@@ -13,7 +13,7 @@ The project ships as three pieces that work together.
 
 **The WordPress plugin** adds a REST API to your Bricks site. It reads and writes page content, manages snapshots, and exposes global classes, design tokens, templates, and media to external tools. It's the bridge between your WordPress database and the outside world.
 
-**The CLI** is a standalone binary called `bricks`. It converts HTML to Bricks element JSON, generates content with AI, composes pages from templates, searches across your entire site, and handles snapshot rollbacks. Mac, Linux, Windows.
+**The CLI** is a standalone binary called `bricks`. It converts HTML to Bricks element JSON, exports your site's design context for AI agents, composes pages from templates, searches across your entire site, and handles snapshot rollbacks. Mac, Linux, Windows.
 
 **The desktop GUI** wraps AI coding tools (Claude Code, Codex, OpenCode) in a native app with a prompt builder that autocompletes pages, classes, colors, and components from your site. It's optional. Everything the GUI does, the CLI can do too.
 
@@ -21,11 +21,11 @@ Use the plugin and CLI together. Add the GUI if you want a visual interface. Or 
 
 ## Who this is for
 
-**Bricks Builder users** who want to move faster. If you've ever spent an afternoon clicking through the visual editor to build a landing page, the CLI can do that same work in a few commands. Pull a page, generate a hero section with AI, push it back.
+**Bricks Builder users** who want to move faster. If you've ever spent an afternoon clicking through the visual editor to build a landing page, the CLI can do that same work in a few commands. Pull a page, write HTML, convert it to Bricks elements, and push it back.
 
 **Developers and agencies** managing multiple Bricks sites. The CLI's config supports multiple site profiles, so you can push templates across staging and production environments without opening a browser.
 
-**AI agents and coding assistants.** The `bricks agent context` command outputs your site's full design system -- every CSS class, design token, and template -- in a format LLMs can consume directly. An AI agent with shell access can read your site, generate pages that match your design system, and push them live.
+**AI agents and coding assistants.** The `bricks agent context` command outputs your site's full design system (every CSS class, design token, and template) in a format LLMs can consume directly. An AI agent with shell access can read your site, generate pages that match your design system, and push them live.
 
 ## Core concepts
 
@@ -49,7 +49,7 @@ The CLI includes a local template library. You can import templates from files, 
 
 ### Design tokens
 
-If your site uses ACSS or another token-based CSS framework, the CLI can read those tokens -- spacing values, color variables, font sizes -- and pass them to AI generation so the output matches your design system. The `bricks styles variables` command shows what's available.
+If your site uses ACSS or another token-based CSS framework, the CLI can read those tokens (spacing values, color variables, font sizes) and export them as agent context so AI tools write markup that matches your design system. The `bricks styles variables` command shows what's available.
 
 ## What's next
 

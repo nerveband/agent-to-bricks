@@ -24,15 +24,15 @@ Type `@` in the prompt input and an autocomplete dropdown appears. First, pick a
 | `@loop` | Query loop builders |
 | `@condition` | Conditional display rules |
 
-After selecting a type, the dropdown switches to a search mode. Start typing to filter results -- these are fetched live from your connected WordPress site through the REST API. Select a result and it becomes a **mention pill** attached to your prompt.
+After selecting a type, the dropdown switches to a search mode. Start typing to filter results. These are fetched live from your connected WordPress site through the REST API. Select a result and it becomes a **mention pill** attached to your prompt.
 
 You can also trigger autocomplete by typing the category directly, like `@page` followed by a space. Once you have typed at least two characters of a type name, the app matches it and jumps straight to search.
 
 ### How autocomplete navigation works
 
-- **Arrow Up / Arrow Down** -- Move through the dropdown list
-- **Tab or Enter** -- Select the highlighted item
-- **Escape** -- Close the dropdown without selecting
+- **Arrow Up / Arrow Down.** Move through the dropdown list
+- **Tab or Enter.** Select the highlighted item
+- **Escape.** Close the dropdown without selecting
 
 ### What happens behind the scenes
 
@@ -58,11 +58,11 @@ Restyle the hero section on Homepage to use a dark background
 
 ## Variable pills
 
-The prompt input uses a `VariableEditor` -- a contentEditable div that renders `{variables}` and `@mentions` as inline colored pills. These are not plain text. They are non-editable spans styled to stand out:
+The prompt input uses a `VariableEditor`, a contentEditable div that renders `{variables}` and `@mentions` as inline colored pills. These are not plain text. They are non-editable spans styled to stand out:
 
-- **Curly brace variables** like `{description}` or `{site_url}` -- shown with the accent color
-- **@mention references** -- colored by type (blue for pages, purple for sections, green for elements, amber for classes, pink for colors, cyan for variables, orange for components, lime for media)
-- **Double-curly variables** like `{{template}}` -- shown in cyan
+- **Curly brace variables** like `{description}` or `{site_url}`, shown with the accent color
+- **@mention references**, colored by type (blue for pages, purple for sections, green for elements, amber for classes, pink for colors, cyan for variables, orange for components, lime for media)
+- **Double-curly variables** like `{{template}}`, shown in cyan
 
 Click any pill to open a popover that shows its resolved value (if available) and lets you edit it inline. This is especially useful in the LaunchDialog's system prompt editor, where pills like `{site_url}` resolve to your actual site URL.
 
@@ -71,24 +71,24 @@ Click any pill to open a popover that shows its resolved value (if available) an
 The PromptWorkshop includes a preset library organized into four categories:
 
 **Build**
-- Generate Section -- Create a new section from a description
-- Generate Full Page -- Build an entire page layout
-- Full Page Build -- Multi-step: snapshot, pull, generate, push
+- Generate Section: Create a new section from a description
+- Generate Full Page: Build an entire page layout
+- Full Page Build: Multi-step snapshot, pull, generate, push
 
 **Edit**
-- Modify Elements -- Change existing elements on a page
-- Restyle Section -- Update section styling
-- Convert HTML -- Transform an HTML file into Bricks elements
+- Modify Elements: Change existing elements on a page
+- Restyle Section: Update section styling
+- Convert HTML: Transform an HTML file into Bricks elements
 
 **Manage**
-- Pull Page -- Download page elements from your site
-- Push Page -- Upload local changes back
-- Snapshot Page -- Backup current page state
-- Rollback Page -- Restore from a previous snapshot
+- Pull Page: Download page elements from your site
+- Push Page: Upload local changes back
+- Snapshot Page: Backup current page state
+- Rollback Page: Restore from a previous snapshot
 
 **Inspect**
-- Inspect Page -- View all elements on a page
-- Check Styles -- View theme styles, colors, and CSS variables
+- Inspect Page: View all elements on a page
+- Check Styles: View theme styles, colors, and CSS variables
 
 Click a preset to load its prompt template into the editor. The template usually includes `@page` or `@section` mentions and `{description}` placeholders that you fill in.
 
@@ -107,7 +107,7 @@ Both provide the same mention input and compose pipeline. The difference is wher
 **CommandPalette** (`Cmd+P`):
 - Overlay that appears on top of everything
 - Quick-access mention chips (`@page`, `@section`, `@class`, etc.) below the input
-- Shows a preview step before sending -- hit Send once to preview the composed prompt, then again to pipe it to the terminal
+- Shows a preview step before sending; hit Send once to preview the composed prompt, then again to pipe it to the terminal
 - Also handles app commands: add a site, switch sites, change theme, save presets
 - Recent prompt history shows when the input is empty
 - Best for fast, in-the-flow prompting

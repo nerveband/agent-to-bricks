@@ -3,7 +3,7 @@ title: Style profiles
 description: Learn design tokens from your site, build style profiles, and apply consistent color palettes and spacing to generated content
 ---
 
-A style profile is a snapshot of your site's design system -- its colors, spacing, typography, and CSS variables -- packaged in a format that the CLI and AI tools can use. When you generate content or convert HTML, the style profile tells the tools what design tokens are available so the output matches your site.
+A style profile is a snapshot of your site's design system (its colors, spacing, typography, and CSS variables) packaged in a format that the CLI and AI tools can use. When you generate content or convert HTML, the style profile tells the tools what design tokens are available so the output matches your site.
 
 ## What's in a style profile
 
@@ -161,7 +161,7 @@ These tokens map directly to CSS variables your site already uses. When you refe
 
 ## How profiles influence generation
 
-When you run `bricks generate section` or `bricks agent context`, the style profile data is included in the context sent to the LLM. The AI gets a concrete list of tokens and their values.
+When you run `bricks agent context`, the style profile data is included in the exported context. Any AI agent that receives this context gets a concrete list of tokens and their values.
 
 Without a profile, the AI might output:
 
@@ -216,5 +216,5 @@ The `--force` flag overwrites the existing profile.
 ## Related
 
 - [Style commands reference](/cli/style-commands/)
-- [ACSS integration](/guides/acss-integration/) -- the framework that provides most tokens
-- [Working with templates](/guides/working-with-templates/) -- templates + profiles for consistent pages
+- [ACSS integration](/guides/acss-integration/): the framework that provides most tokens
+- [Working with templates](/guides/working-with-templates/): templates + profiles for consistent pages

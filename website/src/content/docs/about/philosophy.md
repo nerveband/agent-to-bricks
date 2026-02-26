@@ -23,7 +23,7 @@ Agent to Bricks fills that gap. The plugin exposes your site's design system as 
 
 Agent to Bricks is a bridge between AI coding tools and Bricks Builder. That's the whole thing.
 
-It's not an AI website builder. It doesn't host an AI model. It doesn't generate content on its own (the `/generate` endpoint is a convenience wrapper, but the real workflow is using external AI tools through the CLI). It's infrastructure that connects two systems that should be able to talk to each other but couldn't before.
+It's not an AI website builder. It doesn't host an AI model. It doesn't generate content on its own. You bring your own AI agent (Claude Code, Codex, or whatever you prefer), feed it your site's design context, and it writes HTML that the CLI converts to Bricks elements. It's infrastructure that connects two systems that should be able to talk to each other but couldn't before.
 
 It's also a passion project. I use Bricks and ACSS for my own client work, and I wanted better tools. I figured other people in the community probably wanted the same thing.
 
@@ -33,17 +33,17 @@ Every few weeks a new AI-powered WordPress plugin launches. The demo looks great
 
 Some tools offer lifetime deals. I've bought a few. Half stopped getting meaningful updates within a year. The other half pivoted to something else. Plugin fatigue is real, and LTD fatigue might be worse.
 
-What most of these tools are selling is a thin wrapper around the same LLM APIs everyone has access to. The prompting, the API calls, the JSON manipulation -- none of that needs to be a SaaS. It can run on your own machine, with your own API keys, for the cost of the tokens you actually use.
+What most of these tools are selling is a thin wrapper around the same LLM APIs everyone has access to. The prompting, the API calls, the JSON manipulation: none of that needs to be a SaaS. It can run on your own machine, with your own API keys, for the cost of the tokens you actually use.
 
 ## Open source values
 
-The whole project is GPL-3.0. Plugin, CLI, GUI -- all of it. There's no "pro" tier, no feature gating, no telemetry, no vendor lock-in. Your API keys stay on your server. Your content stays in your WordPress database. The CLI is a static binary with no phone-home.
+The whole project is GPL-3.0. Plugin, CLI, GUI, all of it. There's no "pro" tier, no feature gating, no telemetry, no vendor lock-in. Your API keys stay on your server. Your content stays in your WordPress database. The CLI is a static binary with no phone-home.
 
 Your machine, your keys, your workflow. No cloud service in the middle. No usage tracking. No subscription.
 
 ## Bring your own agent
 
-I didn't want to build another AI coding tool. There are already good ones: Claude Code, Codex, OpenCode, and whatever comes next. What was missing was the Bricks-specific layer -- the part that understands elements, classes, tokens, and how to push changes back to WordPress.
+I didn't want to build another AI coding tool. There are already good ones: Claude Code, Codex, OpenCode, and whatever comes next. What was missing was the Bricks-specific layer: the part that understands elements, classes, tokens, and how to push changes back to WordPress.
 
 Agent to Bricks provides that layer. You bring whatever AI tool you prefer. The CLI gives it the context and commands it needs to work with your site. When a better AI tool comes out next month, you can switch to it without changing anything about your Bricks workflow.
 
@@ -51,7 +51,7 @@ Agent to Bricks provides that layer. You bring whatever AI tool you prefer. The 
 
 Honestly, the best outcome would be for Bricks to build AI features natively. Thomas and the Bricks team have a deep understanding of the builder's architecture. They could do things at a lower level than a plugin can. If Bricks ships a native AI assistant that understands the element model, the class system, and the design token pipeline, that would be better than anything a third-party plugin can provide.
 
-Until that happens, this project covers the ground. And if native support does arrive, the work here -- the API design, the element validation, the HTML conversion, the class resolution -- still has value as patterns that transfer.
+Until that happens, this project covers the ground. And if native support does arrive, the work here (the API design, the element validation, the HTML conversion, the class resolution) still has value as patterns that transfer.
 
 ## A gift to the community
 

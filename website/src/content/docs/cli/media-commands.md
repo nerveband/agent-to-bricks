@@ -28,7 +28,7 @@ Uploaded: hero-bg.jpg
   Dimensions: 1920x1080
 ```
 
-You can upload any file type that WordPress allows -- images, PDFs, videos, SVGs (if your site has SVG support enabled).
+You can upload any file type that WordPress allows: images, PDFs, videos, SVGs (if your site has SVG support enabled).
 
 ### Upload multiple files
 
@@ -113,5 +113,5 @@ bricks media upload new-hero.jpg
 
 ## Related commands
 
-- [`bricks convert html`](/cli/convert-commands/) -- reference uploaded media URLs in your HTML
-- [`bricks search elements --type image`](/cli/search-commands/) -- find image elements across your site
+- [`bricks convert html`](/cli/convert-commands/): reference uploaded media URLs in your HTML
+- [`bricks search elements --type image`](/cli/search-commands/): find image elements across your site

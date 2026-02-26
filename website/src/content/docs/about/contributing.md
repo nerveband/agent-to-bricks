@@ -1,9 +1,9 @@
 ---
 title: Contributing
-description: How to contribute to Agent to Bricks -- reporting bugs, suggesting features, submitting code, and improving docs
+description: How to contribute to Agent to Bricks, including reporting bugs, suggesting features, submitting code, and improving docs
 ---
 
-Agent to Bricks is open source under GPL-3.0. Contributions are welcome -- bug reports, feature requests, documentation improvements, and code.
+Agent to Bricks is open source under GPL-3.0. Contributions are welcome: bug reports, feature requests, documentation improvements, and code.
 
 The repository: [github.com/nerveband/agent-to-bricks](https://github.com/nerveband/agent-to-bricks)
 
@@ -92,10 +92,10 @@ All tests must pass before your PR will be reviewed.
 
 Open a GitHub issue with:
 
-1. **What you did** -- commands run, steps to reproduce
+1. **What you did:** commands run, steps to reproduce
 2. **What you expected** to happen
-3. **What actually happened** -- error messages, unexpected behavior
-4. **Your environment** -- OS, CLI version (`bricks version`), Bricks version, PHP version, WordPress version
+3. **What actually happened:** error messages, unexpected behavior
+4. **Your environment:** OS, CLI version (`bricks version`), Bricks version, PHP version, WordPress version
 
 Include the output of `bricks doctor` if relevant. It checks your connection, plugin version, and common configuration issues.
 
@@ -120,7 +120,7 @@ For larger changes, open an issue first to discuss the approach. This avoids was
 
 ### What makes a good PR
 
-- **One thing per PR.** A bug fix, a new feature, or a refactor -- not all three combined.
+- **One thing per PR.** A bug fix, a new feature, or a refactor, not all three combined.
 - **Tests included.** New features should have tests. Bug fixes should have a test that would have caught the bug.
 - **Clear description.** What does the PR do, and why? If it fixes an issue, link to it.
 - **Working code.** Make sure `make test` passes. If you're changing the plugin, test it against a real Bricks site.

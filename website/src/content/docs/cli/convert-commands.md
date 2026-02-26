@@ -3,7 +3,7 @@ title: Convert commands
 description: Convert HTML files into Bricks Builder element JSON, with automatic ACSS and Frames class resolution.
 ---
 
-The `bricks convert html` command turns HTML into Bricks element JSON. Write your markup using your site's CSS classes, and the converter handles the translation -- including resolving ACSS utility names and Frames component classes to their global class IDs.
+The `bricks convert html` command turns HTML into Bricks element JSON. Write your markup using your site's CSS classes, and the converter handles the translation, including resolving ACSS utility names and Frames component classes to their global class IDs.
 
 ## Basic usage
 
@@ -106,6 +106,8 @@ Useful when you want to inspect or hand-edit the JSON before pushing it with `br
 
 Pipe HTML directly from another command or script.
 
+**Mac / Linux:**
+
 ```bash
 echo '<section class="section--l bg--primary-dark">
   <div class="container" style="max-width: var(--content-width)">
@@ -115,18 +117,51 @@ echo '<section class="section--l bg--primary-dark">
 </section>' | bricks convert html --stdin
 ```
 
+**Windows (PowerShell):**
+
+```powershell
+@'
+<section class="section--l bg--primary-dark">
+  <div class="container" style="max-width: var(--content-width)">
+    <h1 class="text--white fw--700">Launch day</h1>
+    <p class="text--white-trans-60">Ship it.</p>
+  </div>
+</section>
+'@ | bricks convert html --stdin
+```
+
 This works well with AI agents that generate HTML on the fly:
+
+**Mac / Linux:**
 
 ```bash
 cat generated-output.html | bricks convert html --stdin --push 1460 --snapshot
 ```
 
+**Windows (PowerShell):**
+
+```powershell
+Get-Content generated-output.html | bricks convert html --stdin --push 1460 --snapshot
+```
+
 Or combine stdin with push for a one-liner:
+
+**Mac / Linux:**
 
 ```bash
 echo '<section class="section--m">
   <h2>Hello</h2>
 </section>' | bricks convert html --stdin --push 1460
+```
+
+**Windows (PowerShell):**
+
+```powershell
+@'
+<section class="section--m">
+  <h2>Hello</h2>
+</section>
+'@ | bricks convert html --stdin --push 1460
 ```
 
 ## Class resolution
@@ -190,7 +225,7 @@ A few structural rules to keep in mind:
 
 ## Related commands
 
-- [`bricks site push`](/cli/site-commands/) -- push a JSON file manually
-- [`bricks site snapshot`](/cli/site-commands/) -- take a snapshot separately
-- [`bricks classes list`](/cli/class-commands/) -- see available global classes
-- [`bricks generate section`](/cli/generate-commands/) -- generate HTML with AI instead of writing it yourself
+- [`bricks site push`](/cli/site-commands/): push a JSON file manually
+- [`bricks site snapshot`](/cli/site-commands/): take a snapshot separately
+- [`bricks classes list`](/cli/class-commands/): see available global classes
+- [`bricks agent context`](/cli/agent-commands/): export your site's design system for AI agents

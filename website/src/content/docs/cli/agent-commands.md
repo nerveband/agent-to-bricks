@@ -1,6 +1,6 @@
 ---
 title: Agent commands
-description: Export your site's full design context for AI agents -- classes, tokens, templates, and element rules.
+description: Export your site's full design context for AI agents, including classes, tokens, templates, and element rules.
 ---
 
 The `bricks agent context` command gathers your entire site's design system into a single output that AI agents can use as a reference. It pulls global classes, CSS custom properties, design tokens, templates, element types, and conversion rules into one document.
@@ -13,7 +13,7 @@ This is the command that makes AI agents effective with your specific site. With
 bricks agent context
 ```
 
-By default, this prints a formatted markdown document to stdout -- the kind of thing you'd paste into a Claude Code or Codex session.
+By default, this prints a formatted markdown document to stdout, the kind of thing you'd paste into a Claude Code or Codex session.
 
 ## Flags
 
@@ -129,7 +129,7 @@ bricks agent context --format json
 }
 ```
 
-JSON format is better for programmatic consumption -- when you're building a custom tool that reads the context rather than feeding it directly to an LLM.
+JSON format is better for programmatic consumption, when you're building a custom tool that reads the context rather than feeding it directly to an LLM.
 
 ## Export a single section
 
@@ -173,7 +173,6 @@ claude --system-prompt context.md
 
 ## Related commands
 
-- [`bricks styles variables`](/cli/style-commands/) -- the tokens that appear in agent context
-- [`bricks classes list`](/cli/class-commands/) -- the classes that appear in agent context
-- [`bricks generate section`](/cli/generate-commands/) -- uses agent context internally
-- [`bricks site frameworks`](/cli/site-commands/) -- framework info included in context
+- [`bricks styles variables`](/cli/style-commands/): the tokens that appear in agent context
+- [`bricks classes list`](/cli/class-commands/): the classes that appear in agent context
+- [`bricks site frameworks`](/cli/site-commands/): framework info included in context

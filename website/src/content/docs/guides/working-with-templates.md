@@ -3,7 +3,7 @@ title: Working with templates
 description: Using the template library to import, search, learn from existing pages, and compose templates into new pages
 ---
 
-Templates are reusable chunks of Bricks elements. A hero section, a pricing table, a footer -- anything you've built once and want to use again. The CLI has a local template catalog and can also pull templates from your Bricks site.
+Templates are reusable chunks of Bricks elements. A hero section, a pricing table, a footer, anything you've built once and want to use again. The CLI has a local template catalog and can also pull templates from your Bricks site.
 
 ## Template sources
 
@@ -11,7 +11,7 @@ Templates come from two places:
 
 **Your Bricks site.** Any `bricks_template` post in WordPress shows up when you list or search templates via the API. These include templates you've created in the Bricks editor, imported from Bricks' remote templates, or saved from Frames.
 
-**The local catalog.** The CLI maintains its own template library at `~/.agent-to-bricks/templates/`. You can import templates from files, learn them from existing pages, or save them from API responses.
+**The local catalog.** The CLI maintains its own template library in `~/.agent-to-bricks/templates/` (on Windows: `C:\Users\YourName\.agent-to-bricks\templates\`). You can import templates from files, learn them from existing pages, or save them from API responses.
 
 ## Listing templates
 
@@ -57,7 +57,7 @@ bricks templates search "pricing table"
 bricks templates search "contact form"
 ```
 
-The search looks at template names and metadata. If you have embeddings search enabled, it can also do semantic matching -- searching for "call to action" will find templates named "CTA Banner" even though the words don't match exactly.
+The search looks at template names and metadata. If you have embeddings search enabled, it can also do semantic matching. Searching for "call to action" will find templates named "CTA Banner" even though the words don't match exactly.
 
 ## Learning from existing pages
 
@@ -164,7 +164,7 @@ This permanently deletes the template from WordPress (not just trashing it).
 
 ## Components vs. templates
 
-The `/components` endpoint is a filtered view of templates where the type is `section`. Components are section-level building blocks -- heroes, CTAs, feature grids, testimonials. They're the most common thing you'll compose into pages.
+The `/components` endpoint is a filtered view of templates where the type is `section`. Components are section-level building blocks: heroes, CTAs, feature grids, testimonials. They're the most common thing you'll compose into pages.
 
 ```bash
 curl -s https://your-site.com/wp-json/agent-bricks/v1/components \
@@ -189,7 +189,7 @@ bricks templates compose hero-centered features-3col pricing-cards cta-fullwidth
 # 3. Check the result in your browser
 # Maybe the features section needs different copy...
 
-# 4. Inspect the page elements
+# 4. Inspect the page elements (requires jq — install from https://jqlang.github.io/jq/download/)
 bricks site pull 78 | jq '.elements[] | select(.name == "heading")'
 # Find the heading IDs, then patch them via the API or generate new content
 

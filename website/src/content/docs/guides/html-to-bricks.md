@@ -92,12 +92,14 @@ This tells you those classes need to be created as global classes in Bricks, or 
 You have a few options:
 
 - **Create the missing classes** with `bricks classes create custom-hero-bg` so they become global classes
-- **Leave them as plain CSS classes** -- they'll still work if your stylesheet defines them
-- **Check for typos** -- a class named `section-l` (single dash) won't match `section--l` (double dash)
+- **Leave them as plain CSS classes.** They'll still work if your stylesheet defines them
+- **Check for typos.** A class named `section-l` (single dash) won't match `section--l` (double dash)
 
 ## Stdin piping
 
 You don't need a file. Pipe HTML directly:
+
+**Mac / Linux:**
 
 ```bash
 echo '<section class="section--m">
@@ -107,10 +109,30 @@ echo '<section class="section--m">
 </section>' | bricks convert html --stdin --push 42
 ```
 
+**Windows (PowerShell):**
+
+```powershell
+@'
+<section class="section--m">
+  <div class="container">
+    <h2 class="text--xl">Quick test</h2>
+  </div>
+</section>
+'@ | bricks convert html --stdin --push 42
+```
+
 This is especially useful when an AI agent generates HTML and wants to push it in one step:
+
+**Mac / Linux:**
 
 ```bash
 cat /tmp/ai-output.html | bricks convert html --stdin --push 42 --snapshot
+```
+
+**Windows (PowerShell):**
+
+```powershell
+Get-Content ai-output.html | bricks convert html --stdin --push 42 --snapshot
 ```
 
 Or pipe from a generator script:
@@ -221,7 +243,7 @@ A common pattern: have an AI write the HTML, then convert it.
 # (The AI uses context from `bricks agent context` to know your classes)
 
 # Then convert and push
-bricks convert html /tmp/ai-generated.html --push 42 --snapshot
+bricks convert html ai-generated.html --push 42 --snapshot
 ```
 
 The AI writes standard HTML with your ACSS classes. The converter handles the Bricks-specific transformation. Neither the AI nor you need to think about Bricks element JSON directly.
@@ -229,5 +251,5 @@ The AI writes standard HTML with your ACSS classes. The converter handles the Br
 ## Related
 
 - [Convert commands reference](/cli/convert-commands/)
-- [ACSS integration](/guides/acss-integration/) -- working with Automatic.css classes
-- [Bring your own agent](/guides/bring-your-own-agent/) -- having AI write the HTML for you
+- [ACSS integration](/guides/acss-integration/): working with Automatic.css classes
+- [Bring your own agent](/guides/bring-your-own-agent/): having AI write the HTML for you

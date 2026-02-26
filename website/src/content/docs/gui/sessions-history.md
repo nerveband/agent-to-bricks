@@ -3,14 +3,14 @@ title: Sessions and history
 description: How to manage multiple AI tool sessions, switch between them, work with multiple sites, and use prompt history in the Agent to Bricks GUI.
 ---
 
-Every time you launch a tool, the app creates a new session. Sessions are independent -- each one has its own terminal, PTY process, and scrollback buffer. You can run several at once and flip between them instantly.
+Every time you launch a tool, the app creates a new session. Sessions are independent. Each one has its own terminal, PTY process, and scrollback buffer. You can run several at once and flip between them instantly.
 
 ## Session lifecycle
 
 A session goes through two states:
 
-- **Running** -- The PTY process is active. A pulsing green dot appears next to the session name in the sidebar. The status bar shows elapsed time.
-- **Ended** -- The PTY process has exited (you typed `exit`, the tool finished, or the process was killed). The dot fades to muted gray. The terminal output remains visible and scrollable.
+- **Running.** The PTY process is active. A pulsing green dot appears next to the session name in the sidebar. The status bar shows elapsed time.
+- **Ended.** The PTY process has exited (you typed `exit`, the tool finished, or the process was killed). The dot fades to muted gray. The terminal output remains visible and scrollable.
 
 Sessions are created by clicking a tool in the sidebar (which opens the LaunchDialog) or pressing `Cmd+N` (which launches the default tool directly). Each session records:
 
@@ -22,7 +22,7 @@ Sessions are created by clicking a tool in the sidebar (which opens the LaunchDi
 
 ## Switching between sessions
 
-Click any session in the sidebar to make it active. The terminal panel switches to show that session's output. Because each terminal instance is hidden rather than destroyed when inactive, you never lose scrollback -- switch away and come back to find everything where you left it.
+Click any session in the sidebar to make it active. The terminal panel switches to show that session's output. Because each terminal instance is hidden rather than destroyed when inactive, you never lose scrollback. Switch away and come back to find everything where you left it.
 
 The sidebar highlights the active session with the accent color. The status bar updates to show the corresponding tool name, version, and elapsed time.
 
@@ -34,14 +34,14 @@ Names like "Homepage rebuild", "Staging deploy", or "Style cleanup" are more use
 
 ## Filtering sessions
 
-Once you have more than three sessions, a search input appears at the top of the sessions list. Type to filter by display name or tool slug. This is a simple substring match -- type "claude" to see only Claude Code sessions, or part of your custom name to narrow things down.
+Once you have more than three sessions, a search input appears at the top of the sessions list. Type to filter by display name or tool slug. This is a simple substring match. Type "claude" to see only Claude Code sessions, or part of your custom name to narrow things down.
 
 ## Closing sessions
 
 Two ways to remove a session:
 
-1. **Hover and click X** -- When you hover over a session in the sidebar, a small X button appears on the right side. Click it to close.
-2. **Right-click and delete** -- The context menu has a "Delete" option (shown in red).
+1. **Hover and click X.** When you hover over a session in the sidebar, a small X button appears on the right side. Click it to close.
+2. **Right-click and delete.** The context menu has a "Delete" option (shown in red).
 
 Closing a session removes it from the sidebar and discards its terminal output. If you close the active session, the app automatically switches to the next available one.
 
@@ -49,8 +49,8 @@ Closing a session removes it from the sidebar and discards its terminal output. 
 
 You can set a working directory at two levels:
 
-- **Per tool** -- Set in the LaunchDialog or the tool's context menu. Every new session for that tool starts in this directory.
-- **Per session** -- Right-click a running session and choose "Set working directory" to override the tool default for just that session.
+- **Per tool.** Set in the LaunchDialog or the tool's context menu. Every new session for that tool starts in this directory.
+- **Per session.** Right-click a running session and choose "Set working directory" to override the tool default for just that session.
 
 The per-session directory is useful when you have one tool but multiple projects. Launch Claude Code for your main site, then launch another instance pointed at a different project folder.
 
@@ -70,7 +70,7 @@ The SiteSwitcher sits in the status bar at the bottom-left. It shows the active 
 When you switch sites:
 - The @mention cache clears, so new lookups hit the newly selected site
 - The system prompt variables (`{site_url}`, `{api_key}`, etc.) resolve to the new site's values for subsequent launches
-- Already-running sessions are not affected -- they keep whatever context they started with
+- Already-running sessions are not affected; they keep whatever context they started with
 
 If no sites are configured, the SiteSwitcher shows an "Add Site" button that opens the Settings dialog.
 
@@ -78,8 +78,8 @@ If no sites are configured, the SiteSwitcher shows an "Add Site" button that ope
 
 You can add sites in two ways:
 
-1. **Settings dialog** -- Go to Settings > Site, enter the URL and API key, and save.
-2. **Command palette** -- Press `Cmd+P` and type something like `add site My Blog at https://myblog.com key atb_abc123`. The palette parses this natural-language command and creates the site entry.
+1. **Settings dialog.** Go to Settings > Site, enter the URL and API key, and save.
+2. **Command palette.** Press `Cmd+P` and type something like `add site My Blog at https://myblog.com key atb_abc123`. The palette parses this natural-language command and creates the site entry.
 
 ### Environment labels
 
@@ -87,7 +87,7 @@ Each site can optionally have an environment label. This shows up in the `{envir
 
 ## Prompt history
 
-The app keeps a running history of your last 50 prompts. Every time you send a prompt -- whether from the PromptWorkshop or the CommandPalette -- it gets logged with:
+The app keeps a running history of your last 50 prompts. Every time you send a prompt (whether from the PromptWorkshop or the CommandPalette), it gets logged with:
 
 - The raw text you typed
 - The fully composed text (with resolved @mention context)
@@ -102,7 +102,7 @@ In the **CommandPalette** (`Cmd+P`), recent prompts show automatically when the 
 
 ### How history persists
 
-Prompt history is saved to `~/.agent-to-bricks/config.yaml` alongside your other settings. It survives app restarts. The history caps at 50 entries -- the oldest drop off as new ones are added.
+Prompt history is saved to `~/.agent-to-bricks/config.yaml` alongside your other settings. It survives app restarts. The history caps at 50 entries; the oldest drop off as new ones are added.
 
 ## Configuration persistence
 
