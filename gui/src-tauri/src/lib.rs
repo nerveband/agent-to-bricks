@@ -12,6 +12,17 @@ struct ToolDetection {
     installed: bool,
     version: Option<String>,
     path: Option<String>,
+    /// How the tool was found: "shell", "direct", or "not_found"
+    found_via: String,
+}
+
+#[derive(Serialize)]
+struct EnvironmentInfo {
+    os: String,
+    arch: String,
+    shell_path: String,
+    shell_kind: String,
+    extra_dirs: Vec<String>,
 }
 
 #[derive(Serialize)]
@@ -31,20 +42,81 @@ fn user_shell() -> String {
     }
 }
 
+/// Classify a shell path to decide command syntax and flags.
+#[derive(Debug, PartialEq)]
+enum ShellKind {
+    /// POSIX-compatible: bash, zsh, sh, dash, ash, ksh, etc.
+    Posix,
+    /// Fish shell — uses `set -gx`, no `-i` with `-c`.
+    Fish,
+    /// PowerShell (pwsh on Unix, powershell.exe on Windows).
+    Pwsh,
+    /// Nushell — different syntax, but `which` and `-l -c` work.
+    Nu,
+    /// Windows cmd.exe.
+    Cmd,
+}
+
+fn detect_shell_kind(shell_path: &str) -> ShellKind {
+    let name = std::path::Path::new(shell_path)
+        .file_stem()
+        .and_then(|n| n.to_str())
+        .unwrap_or("")
+        .to_lowercase();
+    match name.as_str() {
+        "fish" => ShellKind::Fish,
+        "pwsh" | "powershell" => ShellKind::Pwsh,
+        "nu" | "nushell" => ShellKind::Nu,
+        "cmd" => ShellKind::Cmd,
+        // bash, zsh, sh, dash, ash, ksh, etc.
+        _ => ShellKind::Posix,
+    }
+}
+
+/// Build extra PATH directories for the current platform.
+/// These cover common install locations that may not be in PATH when a GUI
+/// app is launched outside a terminal (Finder/Dock, desktop shortcut, etc.).
+fn extra_path_dirs_unix() -> Vec<String> {
+    let home = std::env::var("HOME").unwrap_or_else(|_| String::new());
+    let mut dirs = Vec::new();
+    if !home.is_empty() {
+        dirs.push(format!("{}/go/bin", home));        // Go binaries
+        dirs.push(format!("{}/.local/bin", home));     // pip / pipx / user-local
+        dirs.push(format!("{}/.cargo/bin", home));     // Rust / cargo
+        dirs.push(format!("{}/.bun/bin", home));       // Bun
+    }
+    dirs.push("/opt/homebrew/bin".to_string());        // Homebrew (Apple Silicon)
+    dirs.push("/usr/local/bin".to_string());           // Homebrew (Intel) / system
+    dirs.push("/usr/local/go/bin".to_string());        // Go system install
+    dirs.push("/snap/bin".to_string());                // Snap packages (Ubuntu/Linux)
+    dirs
+}
+
+fn extra_path_dirs_windows() -> Vec<String> {
+    let userprofile = std::env::var("USERPROFILE").unwrap_or_default();
+    let appdata = std::env::var("APPDATA").unwrap_or_default();
+    let mut dirs = Vec::new();
+    if !userprofile.is_empty() {
+        dirs.push(format!("{}\\go\\bin", userprofile));     // Go binaries
+        dirs.push(format!("{}\\.cargo\\bin", userprofile)); // Rust / cargo
+        dirs.push(format!("{}\\.bun\\bin", userprofile));   // Bun
+    }
+    if !appdata.is_empty() {
+        dirs.push(format!("{}\\npm", appdata));             // npm global
+    }
+    dirs
+}
+
 /// Run a command inside the user's login shell so we inherit PATH.
-/// Uses platform-appropriate shell flags (POSIX `-l -c` vs Windows `/C`).
+///
+/// Detects the user's shell (bash, zsh, fish, pwsh, nushell, cmd) and uses
+/// appropriate syntax for each.  Also prepends common tool directories as a
+/// fallback for tools installed in standard locations.
 fn shell_exec(cmd: &str) -> Option<String> {
     let output = if cfg!(target_os = "windows") {
-        std::process::Command::new("cmd.exe")
-            .args(["/C", cmd])
-            .output()
-            .ok()
+        shell_exec_windows(cmd)
     } else {
-        let shell = user_shell();
-        std::process::Command::new(&shell)
-            .args(["-l", "-c", cmd])
-            .output()
-            .ok()
+        shell_exec_unix(cmd)
     };
 
     output.and_then(|o| {
@@ -62,26 +134,135 @@ fn shell_exec(cmd: &str) -> Option<String> {
     })
 }
 
+fn shell_exec_windows(cmd: &str) -> Option<std::process::Output> {
+    let extra = extra_path_dirs_windows();
+    let extra_str = extra.join(";");
+
+    // Always use cmd.exe for tool detection on Windows.
+    // COMSPEC is always cmd.exe; PowerShell is the *terminal*, not COMSPEC.
+    let augmented = if extra_str.is_empty() {
+        cmd.to_string()
+    } else {
+        format!("set \"PATH={};%PATH%\" && {}", extra_str, cmd)
+    };
+    std::process::Command::new("cmd.exe")
+        .args(["/C", &augmented])
+        .output()
+        .ok()
+}
+
+fn shell_exec_unix(cmd: &str) -> Option<std::process::Output> {
+    let shell = user_shell();
+    let kind = detect_shell_kind(&shell);
+    let extra = extra_path_dirs_unix();
+    let extra_colon = extra.join(":");
+
+    match kind {
+        ShellKind::Fish => {
+            // Fish: config.fish is sourced on every startup (login or not).
+            // PATH syntax: `set -gx PATH dir1 dir2 $PATH`
+            // Fish does NOT support `-i` combined with `-c`.
+            let path_args = extra.join(" ");
+            let augmented = if path_args.is_empty() {
+                cmd.to_string()
+            } else {
+                format!("set -gx PATH {} $PATH; {}", path_args, cmd)
+            };
+            std::process::Command::new(&shell)
+                .args(["-l", "-c", &augmented])
+                .output()
+                .ok()
+        }
+        ShellKind::Pwsh => {
+            // PowerShell on macOS/Linux: uses $env:PATH and -Login -Command.
+            let augmented = if extra_colon.is_empty() {
+                cmd.to_string()
+            } else {
+                format!(
+                    "$env:PATH = '{}' + ':' + $env:PATH; {}",
+                    extra_colon, cmd
+                )
+            };
+            std::process::Command::new(&shell)
+                .args(["-Login", "-Command", &augmented])
+                .output()
+                .ok()
+        }
+        ShellKind::Nu => {
+            // Nushell: config is loaded automatically on startup.
+            // `which` is a built-in.  PATH manipulation uses different syntax
+            // ($env.PATH = ...) which is fragile to construct, so we try nu
+            // first without PATH augmentation (its config should have it),
+            // then fall back to /bin/sh with POSIX syntax.
+            let result = std::process::Command::new(&shell)
+                .args(["-l", "-c", cmd])
+                .output()
+                .ok();
+            if result.as_ref().map_or(false, |o| o.status.success()) {
+                return result;
+            }
+            // Fallback to /bin/sh for PATH augmentation
+            let augmented = format!("export PATH=\"{}:$PATH\"; {}", extra_colon, cmd);
+            std::process::Command::new("/bin/sh")
+                .args(["-l", "-c", &augmented])
+                .output()
+                .ok()
+        }
+        _ => {
+            // POSIX shells (bash, zsh, sh, dash, ash, ksh, etc.)
+            // Use -l (login) + -i (interactive) to source both .zprofile AND
+            // .zshrc / .bash_profile AND .bashrc.
+            let augmented = format!("export PATH=\"{}:$PATH\"; {}", extra_colon, cmd);
+            std::process::Command::new(&shell)
+                .args(["-l", "-i", "-c", &augmented])
+                .output()
+                .ok()
+        }
+    }
+}
+
+/// Direct binary search using the `which` crate — a cross-platform Rust
+/// implementation that handles Windows `.exe`/`.cmd`/`.bat` extensions,
+/// Unix executable-permission checks, and PATH splitting natively.
+///
+/// We search the system PATH merged with our extra directories so that
+/// recently-installed tools are found even if the current process PATH
+/// hasn't been updated yet.
+fn find_binary_direct(binary: &str) -> Option<String> {
+    let sys_path = std::env::var("PATH").unwrap_or_default();
+    let (extra, sep) = if cfg!(target_os = "windows") {
+        (extra_path_dirs_windows().join(";"), ";")
+    } else {
+        (extra_path_dirs_unix().join(":"), ":")
+    };
+    let merged = format!("{}{}{}", extra, sep, sys_path);
+
+    // which::which_in searches for `binary` in `merged`, using "." as cwd
+    // for relative path resolution (not really needed here).
+    which::which_in(binary, Some(merged), ".")
+        .ok()
+        .map(|p| p.to_string_lossy().to_string())
+}
+
 /// Get the user's full environment from their login shell (macOS/Linux GUI apps
 /// don't inherit it). On Windows, the environment is already inherited by the
 /// GUI process, so we return `std::env::vars()` directly.
+///
+/// Uses `env -0` (null-delimited) via the user's shell.  The shell-specific
+/// PATH augmentation is handled by `shell_exec_unix`, which detects fish,
+/// pwsh, nushell, and POSIX shells automatically.
 #[tauri::command]
 fn get_shell_env() -> std::collections::HashMap<String, String> {
     if cfg!(target_os = "windows") {
         return std::env::vars().collect();
     }
 
-    let shell = user_shell();
-    // Use env -0 for null-delimited output (safe with multiline values)
-    let output = std::process::Command::new(&shell)
-        .args(["-l", "-c", "env -0"])
-        .output()
-        .ok();
+    // `env -0` is an external command (/usr/bin/env) that works in any shell.
+    // shell_exec handles PATH augmentation with the correct syntax per shell.
+    let raw = shell_exec("env -0");
 
     let mut env = std::collections::HashMap::new();
-    if let Some(o) = output {
-        let text = String::from_utf8_lossy(&o.stdout);
-        // Split on null bytes
+    if let Some(text) = raw {
         for entry in text.split('\0') {
             if let Some((key, value)) = entry.split_once('=') {
                 if !key.is_empty() {
@@ -126,22 +307,107 @@ fn get_platform_shell() -> PlatformShell {
     }
 }
 
+/// Extract a file path from shell output, accounting for shell startup noise.
+fn extract_path(raw: &str, kind: &ShellKind) -> Option<String> {
+    match kind {
+        ShellKind::Cmd => {
+            // `where` on Windows returns full paths like C:\Users\...; take the first.
+            raw.lines()
+                .find(|l| !l.trim().is_empty())
+                .map(|l| l.trim().to_string())
+        }
+        ShellKind::Pwsh => {
+            // PowerShell `Get-Command(...).Source` returns a single clean path.
+            // On Unix it starts with `/`, on Windows with a drive letter.
+            raw.lines()
+                .rev()
+                .find(|l| {
+                    let t = l.trim();
+                    t.starts_with('/') || (t.len() >= 3 && t.as_bytes().get(1) == Some(&b':'))
+                })
+                .map(|l| l.trim().to_string())
+        }
+        _ => {
+            // POSIX / Fish / Nu: `which` outputs an absolute path.
+            // The interactive flag may cause .bashrc/.zshrc to print noise to
+            // stdout before the result, so find the last line starting with `/`.
+            raw.lines()
+                .rev()
+                .find(|l| l.trim().starts_with('/'))
+                .map(|l| l.trim().to_string())
+        }
+    }
+}
+
+/// Return information about the detected runtime environment.
+/// Called once at startup so the frontend can display it in the detection log.
+#[tauri::command]
+fn detect_environment() -> EnvironmentInfo {
+    let shell_path = if cfg!(target_os = "windows") {
+        std::env::var("COMSPEC").unwrap_or_else(|_| "cmd.exe".to_string())
+    } else {
+        user_shell()
+    };
+    let kind = detect_shell_kind(&shell_path);
+    let extra_dirs = if cfg!(target_os = "windows") {
+        extra_path_dirs_windows()
+    } else {
+        extra_path_dirs_unix()
+    };
+    EnvironmentInfo {
+        os: format!("{} {}", std::env::consts::OS, std::env::consts::ARCH),
+        arch: std::env::consts::ARCH.to_string(),
+        shell_path,
+        shell_kind: format!("{:?}", kind),
+        extra_dirs,
+    }
+}
+
 #[tauri::command]
 async fn detect_tool(command: String) -> ToolDetection {
-    // Use login shell so we get the user's full PATH
-    let which_cmd = if cfg!(target_os = "windows") {
-        format!("where {}", command)
+    // Build the "find binary" command appropriate for the user's shell.
+    let shell = user_shell();
+    let kind = if cfg!(target_os = "windows") {
+        ShellKind::Cmd
     } else {
-        format!("which {}", command)
+        detect_shell_kind(&shell)
     };
 
-    // `where` on Windows can return multiple paths (one per line) — take only the first.
-    let path = shell_exec(&which_cmd).map(|p| {
-        p.lines().next().unwrap_or(&p).to_string()
+    let which_cmd = match kind {
+        ShellKind::Cmd => format!("where {}", command),
+        // PowerShell uses Get-Command; `which` is not available.
+        ShellKind::Pwsh => format!(
+            "(Get-Command {} -ErrorAction SilentlyContinue).Source",
+            command
+        ),
+        // bash, zsh, fish, nushell all have `which` (built-in or external)
+        _ => format!("which {}", command),
+    };
+
+    // Run detection via the user's shell.
+    let shell_path = shell_exec(&which_cmd).and_then(|p| extract_path(&p, &kind));
+    let mut found_via = if shell_path.is_some() { "shell" } else { "not_found" };
+
+    // Fallback: direct Rust binary search if shell-based detection failed.
+    let path = shell_path.or_else(|| {
+        let direct = find_binary_direct(&command);
+        if direct.is_some() {
+            found_via = "direct";
+        }
+        direct
     });
 
+    // Version output may contain shell startup noise.
+    // Find the last line that contains digits (version-like).
     let version = if path.is_some() {
-        shell_exec(&format!("{} --version", command))
+        shell_exec(&format!("{} --version", command)).map(|v| {
+            v.lines()
+                .rev()
+                .find(|l| l.chars().any(|c| c.is_ascii_digit()))
+                .unwrap_or(v.lines().last().unwrap_or(&v))
+                .trim()
+                .to_string()
+        })
     } else {
         None
     };
@@ -151,6 +417,7 @@ async fn detect_tool(command: String) -> ToolDetection {
         installed: path.is_some(),
         version,
         path,
+        found_via: found_via.to_string(),
     }
 }
 
@@ -429,6 +696,7 @@ pub fn run() {
         .plugin(tauri_plugin_updater::Builder::new().build())
         .plugin(tauri_plugin_process::init())
         .invoke_handler(tauri::generate_handler![
+            detect_environment,
             detect_tool,
             get_shell_env,
             get_platform_shell,

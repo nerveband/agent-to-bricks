@@ -16,7 +16,20 @@ export interface Tool {
   };
 }
 
+// Bricks CLI is listed first — it's the hard dependency and is checked before
+// anything else.  The remaining tools are optional coding agents.
 export const DEFAULT_TOOLS: Omit<Tool, "installed" | "version">[] = [
+  {
+    slug: "bricks",
+    name: "Bricks CLI",
+    command: "bricks",
+    args: [],
+    icon: "Bx",
+    configPath: "~/.agent-to-bricks/config.yaml",
+    installInstructions: {
+      url: "https://agenttobricks.com/getting-started/installation/",
+    },
+  },
   {
     slug: "claude-code",
     name: "Claude Code",
@@ -50,26 +63,29 @@ export const DEFAULT_TOOLS: Omit<Tool, "installed" | "version">[] = [
       url: "https://github.com/opencode-ai/opencode",
     },
   },
-  {
-    slug: "bricks",
-    name: "Bricks CLI",
-    command: "bricks",
-    args: [],
-    icon: "Bx",
-    configPath: "~/.agent-to-bricks/config.yaml",
-    installInstructions: {
-      url: "https://agenttobricks.com/getting-started/installation/",
-    },
-  },
 ];
 
 export const toolsAtom = atom<Tool[]>([]);
+// True once the initial detect_tool sweep has finished (prevents flash of gate)
+export const toolsDetectedAtom = atom(false);
+
+// Log entries shown on the detection loading screen
+export interface DetectionLogEntry {
+  text: string;
+  status: "info" | "ok" | "warn" | "error";
+}
+export const detectionLogAtom = atom<DetectionLogEntry[]>([]);
 export const activeToolSlugAtom = atom<string | null>(null);
 
 export const activeToolAtom = atom((get) => {
   const slug = get(activeToolSlugAtom);
   if (!slug) return null;
   return get(toolsAtom).find((t) => t.slug === slug) ?? null;
+});
+
+// Bricks CLI is a hard dependency — the app cannot function without it.
+export const bricksCliAtom = atom((get) => {
+  return get(toolsAtom).find((t) => t.slug === "bricks") ?? null;
 });
 
 // Per-tool custom flags, keyed by slug → space-separated flags string.

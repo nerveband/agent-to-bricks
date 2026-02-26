@@ -23,9 +23,10 @@ Here is what you get:
 
 Before you run the GUI, make sure you have:
 
+- **Bricks CLI** (`bricks`) installed and on your PATH. This is a **hard requirement** -- the app will not start without it. See [Installation](/getting-started/installation/) for setup options.
 - **Node.js 18** or newer
 - **Rust** (stable toolchain) -- Tauri needs this to compile the native shell
-- **At least one AI coding tool** installed globally. The app auto-detects Claude Code (`claude`), Codex (`codex`), and OpenCode (`opencode`). You can also register your own.
+- **At least one AI coding tool** installed globally. The app auto-detects Claude Code (`claude`), Codex (`codex`), and OpenCode (`opencode`). You can also register your own. These are optional -- the app works without them but you won't be able to run agent sessions.
 - **A Bricks Builder site** with the Agent to Bricks WordPress plugin installed and an API key generated. This is optional for basic use, but @mentions and site context won't work without it.
 
 ## Running the app
@@ -50,9 +51,15 @@ This produces a platform-native binary (`.app` on macOS, `.msi` on Windows, `.de
 
 ## First launch
 
-When you open the app for the first time, onboarding tooltips walk you through the main areas: the tool list, the prompt builder, the command palette shortcut, and the site switcher. You can skip these or step through them at your own pace. They won't appear again after you finish or dismiss them.
+When the app opens it runs a startup detection sequence. You will see a real-time log showing:
 
-If no AI tools are detected on your system, the sidebar will show them as "not found" with installation instructions. Get at least one installed, restart the app, and you are ready to go.
+1. **Environment detection** -- your OS, architecture, shell type, and augmented PATH directories.
+2. **Bricks CLI check** -- the required dependency is checked first. If it is not found, the app shows a blocking gate with installation instructions (Go install or website download). You must install Bricks CLI and click "Re-check" before the app will proceed.
+3. **Optional agent scan** -- Claude Code, Codex, and OpenCode are checked. Missing agents are reported but do not block the app.
+
+The detection system supports all major shells (bash, zsh, fish, PowerShell, Nushell, cmd.exe) and augments the search PATH with common tool directories so that CLI tools installed via Homebrew, Cargo, Go, npm, and other package managers are found even when the app is launched outside a terminal.
+
+After detection, onboarding tooltips walk you through the main areas: the tool list, the prompt builder, the command palette shortcut, and the site switcher. You can skip these or step through them at your own pace. They won't appear again after you finish or dismiss them.
 
 ## Configuration file
 

@@ -3,7 +3,7 @@ title: Managing tools
 description: How to configure, launch, and register AI coding tools in the Agent to Bricks GUI -- LaunchDialog, AddToolDialog, flags, working directories, and system prompts.
 ---
 
-The GUI ships with three built-in tool definitions: Claude Code, Codex, and OpenCode. On startup, it checks whether each tool's command is available on your system. If found, the tool shows as installed with its version number. If not, it shows as "not found" with a red status dot.
+The GUI ships with built-in definitions for the Bricks CLI plus three optional AI coding agents: Claude Code, Codex, and OpenCode. On startup, it checks whether each tool's command is available on your system. Bricks CLI is checked first as a required dependency -- the app will not proceed without it. The optional agents are checked next; each shows as installed with its version number or "not found" with a red status dot.
 
 ## Built-in tools
 
@@ -94,9 +94,17 @@ There are several ways to adjust a tool's settings after initial setup:
 
 ## Tool detection
 
-The app runs tool detection at startup. For each built-in tool definition, it checks if the command exists on your PATH and tries to determine the version. The detection runs once when the AppShell mounts.
+The app runs a three-phase detection sequence at startup:
 
-If a tool becomes available after the app is already running (say you install Claude Code in another terminal), you will need to restart the app for it to pick up the change. There is no live re-scan button yet.
+1. **Environment detection** -- identifies your OS, CPU architecture, default shell, and any extra PATH directories (Homebrew, Cargo, Go, npm global, etc.).
+2. **Bricks CLI (required)** -- checked first. If missing, the app shows a blocking gate with installation options and a "Re-check" button. The app cannot proceed without it.
+3. **Optional agents** -- Claude Code, Codex, and OpenCode are scanned. Missing agents are reported but do not block the app.
+
+Detection works across all major shells: bash, zsh, fish, PowerShell, Nushell, and cmd.exe. Each shell is invoked with its native syntax to resolve tool paths. If the shell-based check fails, a direct binary search is used as a fallback.
+
+A real-time log shows each step as it runs, including the detected environment, per-tool results, and any errors. This log is visible during the loading screen and can be expanded from the Bricks CLI gate if the required dependency is missing.
+
+If a tool becomes available after the app is already running (say you install Claude Code in another terminal), you will need to restart the app for it to pick up the change.
 
 ## Settings dialog
 
