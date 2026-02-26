@@ -7,21 +7,7 @@ The app uses a three-column layout wrapped in a vertical flex container. From to
 
 ## AppShell structure
 
-```
-┌─────────────────────────────────────────────────┐
-│  Sidebar  │    Terminal Panel    │ Context Panel │
-│           │                     │               │
-│  Tools    │  (active session    │  Prompts /    │
-│  Sessions │   output streams    │  Preview /    │
-│           │   here)             │  Tool Info)   │
-│           │                     │               │
-│  Settings │                     │               │
-│  Terminal │                     │               │
-│  Help     │                     │               │
-├─────────────────────────────────────────────────┤
-│  StatusBar: SiteSwitcher │ tool │ version │ time│
-└─────────────────────────────────────────────────┘
-```
+![GUI Layout](../../../assets/gui-mockup.png)
 
 The sidebar sits on the left. The terminal panel fills the center. The context panel takes a fixed 320px on the right. The status bar runs the full width at the bottom, 28px tall.
 
@@ -83,11 +69,10 @@ You can always toggle panels manually with keyboard shortcuts regardless of wind
 
 ## Onboarding tooltips
 
-First-time users see a four-step tooltip tour that highlights:
+First-time users see a three-step tooltip tour that highlights:
 
-1. The tools section -- "Installed coding tools appear here. Click one to start a session."
-2. The prompt builder button -- "Build context-rich prompts with @mentions that reference your site's pages, sections, and styles."
-3. The command palette hint -- "Press Cmd+P anytime for the command palette -- fast prompting from anywhere."
-4. The site switcher -- "Add your WordPress site URL and API key to enable @mentions and site-aware prompting."
+1. The tools section -- "Your AI Tools" -- installed coding tools appear here, click one to start a session.
+2. The prompt editor -- "Prompt Editor" -- compose context-rich prompts with @mentions.
+3. The site switcher -- "Connect Your Site" -- add your WordPress site URL and API key to enable @mentions and site-aware prompting.
 
 Each step positions a tooltip next to the relevant UI element. You can step through with "Next" or dismiss with "Skip". Once completed or skipped, the tooltips do not reappear.

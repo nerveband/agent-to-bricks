@@ -91,7 +91,7 @@ jobs:
           tauriScript: npx tauri
           tagName: ${{ github.ref_name }}
           releaseName: "Agent to Bricks ${{ github.ref_name }}"
-          releaseBody: "See [Changelog](https://agentstobricks.com/about/roadmap/) for details."
+          releaseBody: "See [Changelog](https://agenttobricks.com/about/roadmap/) for details."
           releaseDraft: true
           prerelease: false
           includeUpdaterJson: true

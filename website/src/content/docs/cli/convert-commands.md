@@ -22,6 +22,7 @@ This reads the HTML file and prints the converted Bricks element JSON to stdout.
 | `--dry-run` | Show what would happen without actually pushing |
 | `-o <file>` | Write output to a file instead of stdout |
 | `--stdin` | Read HTML from stdin instead of a file |
+| `--class-cache` | Cache class lookups for faster repeated conversions |
 
 ## Convert a file
 

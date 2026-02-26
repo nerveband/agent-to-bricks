@@ -109,27 +109,26 @@ bricks templates compose pricing-three-col --push 78
 
 ## Managing multiple sites
 
-For agencies managing several Bricks sites, the CLI config supports multiple site profiles:
-
-```yaml
-# ~/.agent-to-bricks/config.yaml
-sites:
-  client-a:
-    url: https://client-a.com
-    api_key: atb_...
-  client-b-staging:
-    url: https://staging.client-b.com
-    api_key: atb_...
-  client-b-production:
-    url: https://client-b.com
-    api_key: atb_...
-```
-
-Switch between them:
+For agencies managing several Bricks sites, use environment variables to switch between them:
 
 ```bash
-bricks config use client-a
-bricks site info  # shows client-a's site details
+# Client A
+ATB_SITE_URL=https://client-a.com \
+ATB_SITE_API_KEY=atb_client_a_key \
+bricks site info
+
+# Client B staging
+ATB_SITE_URL=https://staging.client-b.com \
+ATB_SITE_API_KEY=atb_client_b_staging_key \
+bricks site info
+```
+
+For convenience, wrap these in shell aliases:
+
+```bash
+# In your .bashrc or .zshrc
+alias bricks-a='ATB_SITE_URL=https://client-a.com ATB_SITE_API_KEY=atb_client_a_key bricks'
+alias bricks-b='ATB_SITE_URL=https://staging.client-b.com ATB_SITE_API_KEY=atb_client_b_staging_key bricks'
 ```
 
 Each team member can have their own keys for each site.

@@ -6,7 +6,7 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://agentstobricks.com',
+  site: 'https://agenttobricks.com',
   integrations: [
     starlight({
       title: 'Agent to Bricks',

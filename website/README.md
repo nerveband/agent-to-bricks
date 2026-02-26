@@ -189,7 +189,7 @@ A workflow at `.github/workflows/deploy-website.yml` deploys on push to `main` w
 The site URL is set in `astro.config.mjs`:
 
 ```javascript
-site: 'https://agentstobricks.com',
+site: 'https://agenttobricks.com',
 ```
 
 To change the domain:

@@ -32,7 +32,7 @@ Every release bumps ALL versions, even if only one component changed.
 
 ## Documentation
 
-All documentation lives at [agentstobricks.com](https://agentstobricks.com). The website/ folder is the source of truth. README.md is a concise portal that links to the website.
+All documentation lives at [agenttobricks.com](https://agenttobricks.com). The website/ folder is the source of truth. README.md is a concise portal that links to the website.
 
 ## Release Process
 

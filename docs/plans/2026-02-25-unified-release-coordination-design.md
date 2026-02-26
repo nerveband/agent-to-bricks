@@ -12,7 +12,7 @@ The project has four components (CLI, GUI, Plugin, Website) that must stay versi
 2. **GUI auto-updater** — Tauri built-in updater with GitHub Releases, code-signed on macOS (Apple Developer) and Windows (SignPath Foundation when available)
 3. **Cross-component awareness** — each component detects the others, offers install help when missing
 4. **CLAUDE.md architecture** — hard checklists in every component ensuring cross-project consistency
-5. **README as portal** — concise README routing to agentstobricks.com for all documentation
+5. **README as portal** — concise README routing to agenttobricks.com for all documentation
 6. **Version lock-step** — every release bumps ALL component versions, even if only one changed
 
 ## Design
@@ -89,28 +89,28 @@ The project has four components (CLI, GUI, Plugin, Website) that must stay versi
 - Already detects via `which bricks` (useToolDetection.ts)
 - **New:** When CLI not found, show sidebar banner: "Bricks CLI not found. [Download] | [Installation guide]"
 - Download links to correct platform asset from GitHub Releases
-- Installation guide links to `agentstobricks.com/getting-started/installation/`
+- Installation guide links to `agenttobricks.com/getting-started/installation/`
 - When found but version mismatches GUI: warning with update instructions
 
 **GUI → Plugin:**
 - Already detects via `/site/info` (404 = not installed)
 - **New:** When 404, show inline message: "Plugin not detected. [Installation guide]"
-- Link: `agentstobricks.com/getting-started/installation/#wordpress-plugin`
+- Link: `agenttobricks.com/getting-started/installation/#wordpress-plugin`
 - When version mismatch: "Plugin out of date. Update via: `bricks update`"
 
 **CLI → Plugin:**
 - Already warns on version mismatch in `bricks version` and `bricks site info`
-- **New:** When plugin unreachable/404: "Plugin not detected. Install: agentstobricks.com/getting-started/installation/"
+- **New:** When plugin unreachable/404: "Plugin not detected. Install: agenttobricks.com/getting-started/installation/"
 
 **CLI → GUI:**
 - No active detection needed (independent tools)
-- Help/about output mentions: "Desktop App: agentstobricks.com"
+- Help/about output mentions: "Desktop App: agenttobricks.com"
 
 **Plugin → CLI/GUI:**
 - Settings page links updated from GitHub to docs site:
-  - "Get the CLI: agentstobricks.com/getting-started/installation/"
-  - "Get the Desktop App: agentstobricks.com/gui/overview/"
-- Admin update notice: "Update via CLI (`bricks update`) or download from agentstobricks.com"
+  - "Get the CLI: agenttobricks.com/getting-started/installation/"
+  - "Get the Desktop App: agenttobricks.com/gui/overview/"
+- Admin update notice: "Update via CLI (`bricks update`) or download from agenttobricks.com"
 
 ### 4. CLAUDE.md Architecture
 
@@ -152,7 +152,7 @@ Root `README.md` is a concise portal:
 - One-paragraph description
 - Components table with version badges
 - Brief installation snippets with "Full guide →" links
-- All detail lives at agentstobricks.com
+- All detail lives at agenttobricks.com
 - Links to: Getting Started, CLI Reference, GUI Guide, Plugin Reference, Contributing
 
 **Rule:** README never duplicates docs. Every section links to the website.
@@ -181,7 +181,7 @@ Root `README.md` is a concise portal:
 
 ### 7. Website Domain Fix
 
-Update `astro.config.mjs` site URL from `agent-to-bricks.dev` to `agentstobricks.com`. Update all hardcoded domain references across components.
+Update `astro.config.mjs` site URL from `agent-to-bricks.dev` to `agenttobricks.com`. Update all hardcoded domain references across components.
 
 ## Files Modified/Created
 
@@ -207,11 +207,11 @@ Update `astro.config.mjs` site URL from `agent-to-bricks.dev` to `agentstobricks
 - `gui/src/components/AppShell.tsx` — mount UpdateNotification
 - `gui/src/hooks/useToolDetection.ts` — enhanced CLI-missing messaging
 - `gui/src-tauri/src/lib.rs` — enhanced plugin-missing messaging
-- `plugin/agent-to-bricks/includes/class-settings.php` — update links to agentstobricks.com
+- `plugin/agent-to-bricks/includes/class-settings.php` — update links to agenttobricks.com
 - `plugin/agent-to-bricks/includes/class-update-checker.php` — update notice links
 - `cli/cmd/version.go` — mention desktop app in output
 - `cli/cmd/root.go` — plugin-missing install link
 - `/README.md` — rewrite as portal to docs site
 - `scripts/sync-version.sh` — add Cargo.lock handling
 - `Makefile` — add release-prep, tag-release targets
-- `website/astro.config.mjs` — domain fix to agentstobricks.com
+- `website/astro.config.mjs` — domain fix to agenttobricks.com

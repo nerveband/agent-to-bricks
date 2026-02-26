@@ -34,6 +34,6 @@ Before completing ANY change in this component:
 
 - `class-*-api.php` endpoints → CLI client types, GUI Rust backend, REST API docs
 - `class-api-auth.php` → CLI auth headers, GUI X-ATB-Key header
-- `class-settings.php` → Plugin settings docs, links to agentstobricks.com
+- `class-settings.php` → Plugin settings docs, links to agenttobricks.com
 - `class-update-api.php` → CLI update command, GitHub Release asset naming
 - `agent-to-bricks.php` version → Must match `/VERSION`

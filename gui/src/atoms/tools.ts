@@ -58,7 +58,7 @@ export const DEFAULT_TOOLS: Omit<Tool, "installed" | "version">[] = [
     icon: "Bx",
     configPath: "~/.agent-to-bricks/config.yaml",
     installInstructions: {
-      url: "https://agentstobricks.com/getting-started/installation/",
+      url: "https://agenttobricks.com/getting-started/installation/",
     },
   },
 ];

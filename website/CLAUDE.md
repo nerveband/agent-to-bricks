@@ -1,6 +1,6 @@
 # Website — Agent to Bricks Documentation
 
-Astro 5 + Starlight documentation site at agentstobricks.com.
+Astro 5 + Starlight documentation site at agenttobricks.com.
 
 ## Build & Test
 
@@ -36,10 +36,10 @@ Before completing ANY change in this component:
 - [ ] If plugin docs changed → verify accuracy against current plugin code (`plugin/`)
 - [ ] If GUI docs changed → verify accuracy against current GUI code (`gui/src/`)
 - [ ] If installation page changed → verify download links match GitHub Release assets
-- [ ] Domain is `agentstobricks.com` everywhere (not agent-to-bricks.dev)
+- [ ] Domain is `agenttobricks.com` everywhere (not agent-to-bricks.dev)
 
 ## Impact Map
 
 - `src/content/docs/` → Must accurately reflect current code behavior
-- `astro.config.mjs` → Site URL must be https://agentstobricks.com
+- `astro.config.mjs` → Site URL must be https://agenttobricks.com
 - Homepage GetStartedSection → Install instructions must match current process

@@ -1,6 +1,6 @@
 ---
 title: Configuration
-description: Config file reference and LLM provider setup
+description: Config file reference, LLM provider setup, and environment variables
 ---
 
 The CLI stores its configuration in `~/.agent-to-bricks/config.yaml`. The `bricks config` commands read and write this file, but you can also edit it directly.
@@ -12,7 +12,7 @@ Here's a complete config file with every available option:
 ```yaml
 site:
   url: https://your-site.com
-  api_key: atb_k1_a3b7c9d2e8f4...
+  api_key: atb_a3b7c9d2e8f4...
 
 llm:
   provider: openai
@@ -27,7 +27,7 @@ llm:
 | Key | Description | Example |
 |-----|-------------|---------|
 | `site.url` | Your WordPress site URL, including the protocol | `https://your-site.com` |
-| `site.api_key` | API key from **Settings > Agent to Bricks** in WordPress | `atb_k1_a3b7c9d2e8f4...` |
+| `site.api_key` | API key from **Settings > Agent to Bricks** in WordPress | `atb_a3b7c9d2e8f4...` |
 
 ### LLM settings
 
@@ -45,11 +45,12 @@ Use `bricks config set` to update individual keys:
 
 ```bash
 bricks config set site.url https://your-site.com
-bricks config set site.api_key atb_k1_a3b7c9d2e8f4
+bricks config set site.api_key atb_a3b7c9d2e8f4
 bricks config set llm.provider anthropic
 bricks config set llm.model claude-sonnet-4-20250514
-bricks config set llm.temperature 0.2
 ```
+
+The `llm.temperature` value can be set by editing the config file directly at `~/.agent-to-bricks/config.yaml`.
 
 Or run the interactive wizard to set everything at once:
 
@@ -77,7 +78,7 @@ Environment variables take precedence over the config file. Example:
 
 ```bash
 ATB_SITE_URL=https://staging.your-site.com \
-ATB_SITE_API_KEY=atb_k1_staging_key_here \
+ATB_SITE_API_KEY=atb_staging_key_here_here \
 bricks site info
 ```
 
@@ -156,8 +157,11 @@ The `temperature` setting controls how creative or predictable the AI output is:
 - **0.3 -- 0.5**: Balanced. The default of `0.3` works well for most generation tasks.
 - **0.6 -- 1.0**: More varied output. Can produce more interesting copy but may also introduce unexpected structural choices.
 
-```bash
-bricks config set llm.temperature 0.2
+To change the temperature, edit `~/.agent-to-bricks/config.yaml` directly:
+
+```yaml
+llm:
+  temperature: 0.2
 ```
 
 ## Multiple site configurations
@@ -167,12 +171,12 @@ The config file supports a single site by default. To work with multiple sites, 
 ```bash
 # Production
 ATB_SITE_URL=https://your-site.com \
-ATB_SITE_API_KEY=atb_k1_prod_key \
+ATB_SITE_API_KEY=atb_prod_key_here \
 bricks site info
 
 # Staging
 ATB_SITE_URL=https://staging.your-site.com \
-ATB_SITE_API_KEY=atb_k1_staging_key \
+ATB_SITE_API_KEY=atb_staging_key_here \
 bricks site info
 ```
 
@@ -180,8 +184,8 @@ For convenience, wrap these in shell aliases or a small script:
 
 ```bash
 # In your .bashrc or .zshrc
-alias bricks-prod='ATB_SITE_URL=https://your-site.com ATB_SITE_API_KEY=atb_k1_prod_key bricks'
-alias bricks-staging='ATB_SITE_URL=https://staging.your-site.com ATB_SITE_API_KEY=atb_k1_staging_key bricks'
+alias bricks-prod='ATB_SITE_URL=https://your-site.com ATB_SITE_API_KEY=atb_prod_key_here bricks'
+alias bricks-staging='ATB_SITE_URL=https://staging.your-site.com ATB_SITE_API_KEY=atb_staging_key_here bricks'
 ```
 
 Then use them like any other command:
@@ -207,7 +211,7 @@ The CLI creates this directory and file automatically the first time you run `br
 To see what's currently configured:
 
 ```bash
-bricks config show
+bricks config list
 ```
 
 This prints the active configuration with API keys partially redacted.

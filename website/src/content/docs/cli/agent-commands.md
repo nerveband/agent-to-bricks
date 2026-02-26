@@ -13,15 +13,15 @@ This is the command that makes AI agents effective with your specific site. With
 bricks agent context
 ```
 
-By default, this prints a formatted system prompt to stdout -- the kind of thing you'd paste into a Claude Code or Codex session.
+By default, this prints a formatted markdown document to stdout -- the kind of thing you'd paste into a Claude Code or Codex session.
 
 ## Flags
 
 | Flag | Description |
 |------|-------------|
-| `--format <type>` | Output format: `prompt` (default) or `json` |
+| `--format <type>` | Output format: `md` (default), `json`, or `prompt` |
 | `--compact` | Shorter output with less detail |
-| `--section <name>` | Only output a specific section: `classes` or `tokens` |
+| `--section <name>` | Only output a specific section: `tokens`, `classes`, `templates`, or `workflows` |
 | `-o <file>` | Write output to a file |
 
 ## Full context as a system prompt

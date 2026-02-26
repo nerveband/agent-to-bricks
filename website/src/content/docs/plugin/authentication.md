@@ -85,9 +85,9 @@ Each key is tied to the WordPress user who created it. API requests run with tha
 
 ## Rate limits
 
-The plugin enforces **60 requests per minute** per API key. If you exceed this, you'll get a `429 Too Many Requests` response.
+The plugin enforces rate limiting on **authentication failures**: **10 failed attempts within 5 minutes** from the same IP address triggers a `429 Too Many Requests` response. This protects against brute-force API key guessing.
 
-Most CLI workflows stay well under this limit. A typical page build might make 5-10 API calls. The rate limit is there to prevent runaway scripts or misconfigured agents from hammering your site.
+Most CLI workflows won't encounter rate limits. If you do see a `429`, verify your API key is correct. The limit resets automatically after 5 minutes.
 
 If you're running batch operations, the `/pages/{id}/elements/batch` endpoint lets you combine multiple operations into a single request.
 

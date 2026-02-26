@@ -363,8 +363,8 @@ class ATB_Settings {
 			</p>
 			<p>
 				This plugin is designed to be paired with the Agent to Bricks CLI and Desktop App.<br>
-				Get the CLI: <a href="https://agentstobricks.com/getting-started/installation/" target="_blank">agentstobricks.com/getting-started/installation</a><br>
-				Get the Desktop App: <a href="https://agentstobricks.com/gui/overview/" target="_blank">agentstobricks.com/gui/overview</a>
+				Get the CLI: <a href="https://agenttobricks.com/getting-started/installation/" target="_blank">agenttobricks.com/getting-started/installation</a><br>
+				Get the Desktop App: <a href="https://agenttobricks.com/gui/overview/" target="_blank">agenttobricks.com/gui/overview</a>
 			</p>
 		</div>
 

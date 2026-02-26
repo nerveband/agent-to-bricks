@@ -19,6 +19,10 @@ Type `@` in the prompt input and an autocomplete dropdown appears. First, pick a
 | `@variable` | CSS custom properties |
 | `@component` | Reusable components |
 | `@media` | Media library items |
+| `@template` | Saved templates |
+| `@form` | Form elements |
+| `@loop` | Query loop builders |
+| `@condition` | Conditional display rules |
 
 After selecting a type, the dropdown switches to a search mode. Start typing to filter results -- these are fetched live from your connected WordPress site through the REST API. Select a result and it becomes a **mention pill** attached to your prompt.
 

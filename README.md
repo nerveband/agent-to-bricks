@@ -11,7 +11,7 @@ Write HTML using your site's CSS classes, convert it to Bricks elements, and pus
 | **CLI** | Terminal tool for page operations, AI generation, search, and templates |
 | **Desktop App** | Visual session manager for AI coding tools (Claude Code, Codex, etc.) |
 | **WordPress Plugin** | REST API bridge to your Bricks Builder site |
-| **[Documentation](https://agentstobricks.com)** | Full guides, references, and tutorials |
+| **[Documentation](https://agenttobricks.com)** | Full guides, references, and tutorials |
 
 ## Quick Start
 
@@ -42,17 +42,17 @@ bricks site info            # verify connection
 bricks generate section "dark hero with CTA" --page 42 --snapshot
 ```
 
-[Full installation guide](https://agentstobricks.com/getting-started/installation/) | [Quick start](https://agentstobricks.com/getting-started/quick-start/)
+[Full installation guide](https://agenttobricks.com/getting-started/installation/) | [Quick start](https://agenttobricks.com/getting-started/quick-start/)
 
 ## Documentation
 
-All documentation lives at **[agentstobricks.com](https://agentstobricks.com)**:
+All documentation lives at **[agenttobricks.com](https://agenttobricks.com)**:
 
-- [Getting Started](https://agentstobricks.com/getting-started/introduction/)
-- [CLI Reference](https://agentstobricks.com/cli/site-commands/)
-- [Desktop App Guide](https://agentstobricks.com/gui/overview/)
-- [Plugin Reference](https://agentstobricks.com/plugin/rest-api/)
-- [Guides](https://agentstobricks.com/guides/bring-your-own-agent/)
+- [Getting Started](https://agenttobricks.com/getting-started/introduction/)
+- [CLI Reference](https://agenttobricks.com/cli/site-commands/)
+- [Desktop App Guide](https://agenttobricks.com/gui/overview/)
+- [Plugin Reference](https://agenttobricks.com/plugin/rest-api/)
+- [Guides](https://agenttobricks.com/guides/bring-your-own-agent/)
 
 ## Updating
 
@@ -78,7 +78,7 @@ make sync-version   # sync VERSION across all components
 make check-version  # verify version consistency
 ```
 
-[Contributing guide](https://agentstobricks.com/about/contributing/)
+[Contributing guide](https://agenttobricks.com/about/contributing/)
 
 ## License
 

@@ -4,7 +4,7 @@
 
 **Goal:** Unify the release pipeline, add GUI auto-updates, create cross-project CLAUDE.md files with hard checklists, rewrite the README, and add cross-component install awareness.
 
-**Architecture:** Single `VERSION` file drives all versions. GitHub Actions builds CLI+GUI+Plugin on tag push. Tauri updater plugin pulls from GitHub Releases. CLAUDE.md in each subfolder enforces cross-project checks. Each component detects the others and links to agentstobricks.com for install guides.
+**Architecture:** Single `VERSION` file drives all versions. GitHub Actions builds CLI+GUI+Plugin on tag push. Tauri updater plugin pulls from GitHub Releases. CLAUDE.md in each subfolder enforces cross-project checks. Each component detects the others and links to agenttobricks.com for install guides.
 
 **Tech Stack:** Go (CLI), Rust/Tauri 2/React 19/TypeScript (GUI), PHP 8.0+ (Plugin), Astro/Starlight (Website), GitHub Actions (CI/CD), GoReleaser (CLI builds), tauri-plugin-updater (GUI updates)
 
@@ -52,7 +52,7 @@ Every release bumps ALL versions, even if only one component changed.
 
 ## Documentation
 
-All documentation lives at [agentstobricks.com](https://agentstobricks.com). The website/ folder is the source of truth. README.md is a concise portal that links to the website.
+All documentation lives at [agenttobricks.com](https://agenttobricks.com). The website/ folder is the source of truth. README.md is a concise portal that links to the website.
 
 ## Release Process
 
@@ -220,7 +220,7 @@ Before completing ANY change in this component:
 
 - `class-*-api.php` endpoints → CLI client types, GUI Rust backend, REST API docs
 - `class-api-auth.php` → CLI auth headers, GUI X-ATB-Key header
-- `class-settings.php` → Plugin settings docs, links to agentstobricks.com
+- `class-settings.php` → Plugin settings docs, links to agenttobricks.com
 - `class-update-api.php` → CLI update command, GitHub Release asset naming
 - `agent-to-bricks.php` version → Must match `/VERSION`
 ```
@@ -230,7 +230,7 @@ Before completing ANY change in this component:
 ```markdown
 # Website — Agent to Bricks Documentation
 
-Astro 5 + Starlight documentation site at agentstobricks.com.
+Astro 5 + Starlight documentation site at agenttobricks.com.
 
 ## Build & Test
 
@@ -266,12 +266,12 @@ Before completing ANY change in this component:
 - [ ] If plugin docs changed → verify accuracy against current plugin code (`plugin/`)
 - [ ] If GUI docs changed → verify accuracy against current GUI code (`gui/src/`)
 - [ ] If installation page changed → verify download links match GitHub Release assets
-- [ ] Domain is `agentstobricks.com` everywhere (not agent-to-bricks.dev)
+- [ ] Domain is `agenttobricks.com` everywhere (not agent-to-bricks.dev)
 
 ## Impact Map
 
 - `src/content/docs/` → Must accurately reflect current code behavior
-- `astro.config.mjs` → Site URL must be https://agentstobricks.com
+- `astro.config.mjs` → Site URL must be https://agenttobricks.com
 - Homepage GetStartedSection → Install instructions must match current process
 ```
 
@@ -728,7 +728,7 @@ Change the `installInstructions` URL from the placeholder to the actual docs sit
     icon: "Bx",
     configPath: "~/.agent-to-bricks/config.yaml",
     installInstructions: {
-      url: "https://agentstobricks.com/getting-started/installation/",
+      url: "https://agenttobricks.com/getting-started/installation/",
     },
   },
 ```
@@ -763,7 +763,7 @@ The install instructions URL was the only gap, fixed in Task 6.
 
 ---
 
-### Task 8: Update Plugin Links to agentstobricks.com
+### Task 8: Update Plugin Links to agenttobricks.com
 
 **Files:**
 - Modify: `plugin/agent-to-bricks/includes/class-settings.php:365-366`
@@ -782,8 +782,8 @@ Replace with:
 
 ```php
 This plugin is designed to be paired with the Agent to Bricks CLI and Desktop App.<br>
-Get the CLI: <a href="https://agentstobricks.com/getting-started/installation/" target="_blank">agentstobricks.com/getting-started/installation</a><br>
-Get the Desktop App: <a href="https://agentstobricks.com/gui/overview/" target="_blank">agentstobricks.com/gui/overview</a>
+Get the CLI: <a href="https://agenttobricks.com/getting-started/installation/" target="_blank">agenttobricks.com/getting-started/installation</a><br>
+Get the Desktop App: <a href="https://agenttobricks.com/gui/overview/" target="_blank">agenttobricks.com/gui/overview</a>
 ```
 
 **Step 2: Update admin notice to mention docs site**
@@ -802,14 +802,14 @@ Replace with:
 <strong>Agent to Bricks v<?php echo esc_html( $remote_version ); ?></strong> is available
 (you have v<?php echo esc_html( $local_version ); ?>).
 Update via CLI: <code>bricks update</code> or download from
-<a href="https://agentstobricks.com/getting-started/installation/" target="_blank">agentstobricks.com</a>.
+<a href="https://agenttobricks.com/getting-started/installation/" target="_blank">agenttobricks.com</a>.
 ```
 
 **Step 3: Commit**
 
 ```bash
 git add plugin/agent-to-bricks/includes/class-settings.php plugin/agent-to-bricks/includes/class-update-checker.php
-git commit -m "fix(plugin): update links to agentstobricks.com docs site"
+git commit -m "fix(plugin): update links to agenttobricks.com docs site"
 ```
 
 ---
@@ -851,7 +851,7 @@ func showVersion() error {
 	}
 
 	fmt.Println()
-	fmt.Println("Docs:      https://agentstobricks.com")
+	fmt.Println("Docs:      https://agenttobricks.com")
 
 	return nil
 }
@@ -890,7 +890,7 @@ To:
 
 ```go
 fmt.Fprintf(os.Stderr, "Plugin:    (unreachable: %v)\n", err)
-fmt.Fprintf(os.Stderr, "           Install: https://agentstobricks.com/getting-started/installation/\n")
+fmt.Fprintf(os.Stderr, "           Install: https://agenttobricks.com/getting-started/installation/\n")
 ```
 
 **Step 2: Run tests**
@@ -968,7 +968,7 @@ Write HTML using your site's CSS classes, convert it to Bricks elements, and pus
 | **CLI** | Terminal tool for page operations, AI generation, search, and templates |
 | **Desktop App** | Visual session manager for AI coding tools (Claude Code, Codex, etc.) |
 | **WordPress Plugin** | REST API bridge to your Bricks Builder site |
-| **[Documentation](https://agentstobricks.com)** | Full guides, references, and tutorials |
+| **[Documentation](https://agenttobricks.com)** | Full guides, references, and tutorials |
 
 ## Quick Start
 
@@ -999,17 +999,17 @@ bricks site info            # verify connection
 bricks generate section "dark hero with CTA" --page 42 --snapshot
 ```
 
-[Full installation guide](https://agentstobricks.com/getting-started/installation/) | [Quick start](https://agentstobricks.com/getting-started/quick-start/)
+[Full installation guide](https://agenttobricks.com/getting-started/installation/) | [Quick start](https://agenttobricks.com/getting-started/quick-start/)
 
 ## Documentation
 
-All documentation lives at **[agentstobricks.com](https://agentstobricks.com)**:
+All documentation lives at **[agenttobricks.com](https://agenttobricks.com)**:
 
-- [Getting Started](https://agentstobricks.com/getting-started/introduction/)
-- [CLI Reference](https://agentstobricks.com/cli/site-commands/)
-- [Desktop App Guide](https://agentstobricks.com/gui/overview/)
-- [Plugin Reference](https://agentstobricks.com/plugin/rest-api/)
-- [Guides](https://agentstobricks.com/guides/bring-your-own-agent/)
+- [Getting Started](https://agenttobricks.com/getting-started/introduction/)
+- [CLI Reference](https://agenttobricks.com/cli/site-commands/)
+- [Desktop App Guide](https://agenttobricks.com/gui/overview/)
+- [Plugin Reference](https://agenttobricks.com/plugin/rest-api/)
+- [Guides](https://agenttobricks.com/guides/bring-your-own-agent/)
 
 ## Updating
 
@@ -1035,7 +1035,7 @@ make sync-version   # sync VERSION across all components
 make check-version  # verify version consistency
 ```
 
-[Contributing guide](https://agentstobricks.com/about/contributing/)
+[Contributing guide](https://agenttobricks.com/about/contributing/)
 
 ## License
 
@@ -1051,7 +1051,7 @@ git commit -m "docs: rewrite README as concise portal to docs site"
 
 ---
 
-### Task 13: Fix Website Domain to agentstobricks.com
+### Task 13: Fix Website Domain to agenttobricks.com
 
 **Files:**
 - Modify: `website/astro.config.mjs`
@@ -1067,7 +1067,7 @@ site: 'https://agent-to-bricks.dev',
 To:
 
 ```javascript
-site: 'https://agentstobricks.com',
+site: 'https://agenttobricks.com',
 ```
 
 **Step 2: Verify build**
@@ -1080,7 +1080,7 @@ cd website && npm run build
 
 ```bash
 git add website/astro.config.mjs
-git commit -m "fix(website): update domain to agentstobricks.com"
+git commit -m "fix(website): update domain to agenttobricks.com"
 ```
 
 ---
@@ -1268,7 +1268,7 @@ jobs:
           tauriScript: npx tauri
           tagName: ${{ github.ref_name }}
           releaseName: "Agent to Bricks ${{ github.ref_name }}"
-          releaseBody: "See [Changelog](https://agentstobricks.com/about/roadmap/) for details."
+          releaseBody: "See [Changelog](https://agenttobricks.com/about/roadmap/) for details."
           releaseDraft: true
           prerelease: false
           includeUpdaterJson: true

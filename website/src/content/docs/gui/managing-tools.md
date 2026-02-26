@@ -100,12 +100,14 @@ If a tool becomes available after the app is already running (say you install Cl
 
 ## Settings dialog
 
-Open it from the sidebar's bottom "Settings" button or from any tool's context menu. It has four tabs:
+Open it from the sidebar's bottom "Settings" button or from any tool's context menu. It has five tabs:
 
 **Site** -- Configure your WordPress site connection. Enter the site URL and API key, test the connection, and save. This is where @mentions get their data from.
 
 **Tools** -- Pick your default tool and see the install status of all registered tools.
 
+**Prompt** -- Configure the system prompt template and default prompt settings.
+
 **Theme** -- Switch between dark and light mode. The selection persists in your config file.
 
-**About** -- Shows the app version (currently 0.1.0) and framework info (Tauri 2).
+**About** -- Shows the app version and framework info (Tauri 2).

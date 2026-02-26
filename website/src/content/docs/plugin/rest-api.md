@@ -92,6 +92,29 @@ curl -s "https://your-site.com/wp-json/agent-bricks/v1/site/element-types?catego
 }
 ```
 
+### GET /pages
+
+Lists pages on the site. Useful for browsing available pages before pulling or pushing elements.
+
+**Query parameters:**
+
+| Param | Type | Description |
+|-------|------|-------------|
+| `search` | string | Search pages by title |
+| `per_page` | integer | Results per page (default 20, max 50) |
+
+```bash
+curl -s "https://your-site.com/wp-json/agent-bricks/v1/pages?search=home" \
+  -H "X-ATB-Key: atb_abc123..."
+```
+
+```json
+[
+  { "id": 42, "title": "Homepage", "slug": "homepage", "status": "publish", "modified": "2026-02-25T14:30:00" },
+  { "id": 78, "title": "Home v2", "slug": "home-v2", "status": "draft", "modified": "2026-02-20T10:15:00" }
+]
+```
+
 ---
 
 ## Pages / Elements
@@ -639,119 +662,6 @@ curl -s https://your-site.com/wp-json/agent-bricks/v1/variables \
 
 ---
 
-## AI
-
-### POST /generate
-
-Generates new Bricks elements from a text prompt using the configured LLM provider.
-
-**Body:**
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `prompt` | string | yes | What to generate |
-| `postId` | integer | yes | Target page ID (for context) |
-| `mode` | string | no | `section` (default) or `page` |
-| `context` | object | no | Extra context to include in the system prompt |
-| `model` | string | no | Override the default model |
-
-```bash
-curl -X POST https://your-site.com/wp-json/agent-bricks/v1/generate \
-  -H "X-ATB-Key: atb_abc123..." \
-  -H "Content-Type: application/json" \
-  -d '{
-    "prompt": "Create a hero section with a headline, subtext, and two CTA buttons",
-    "postId": 42,
-    "mode": "section"
-  }'
-```
-
-```json
-{
-  "success": true,
-  "elements": [...],
-  "explanation": "Created a centered hero with gradient background...",
-  "warnings": [],
-  "provider": "Cerebras",
-  "model": "llama-4-scout-17b-16e-instruct",
-  "tokens_used": { "prompt_tokens": 2400, "completion_tokens": 890 }
-}
-```
-
-Validation errors return `422`:
-
-```json
-{
-  "success": false,
-  "error": "Generated elements failed validation.",
-  "details": ["elements[0]: Missing or invalid 'name' field."],
-  "warnings": [],
-  "raw": {}
-}
-```
-
-### POST /modify
-
-Modifies existing elements based on a prompt. Pass the current element data so the LLM knows what to change.
-
-**Body:**
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `prompt` | string | yes | What to change |
-| `postId` | integer | yes | Page ID |
-| `currentElement` | object | yes | The element(s) to modify |
-| `model` | string | no | Override the default model |
-
-```bash
-curl -X POST https://your-site.com/wp-json/agent-bricks/v1/modify \
-  -H "X-ATB-Key: atb_abc123..." \
-  -H "Content-Type: application/json" \
-  -d '{
-    "prompt": "Change the heading to use the accent color and increase font size to 3xl",
-    "postId": 42,
-    "currentElement": {
-      "id": "abc123",
-      "name": "heading",
-      "settings": { "tag": "h2", "text": "Welcome" }
-    }
-  }'
-```
-
-### GET /providers
-
-Lists available LLM providers and their models. Does not expose API keys.
-
-```bash
-curl -s https://your-site.com/wp-json/agent-bricks/v1/providers \
-  -H "X-ATB-Key: atb_abc123..."
-```
-
-```json
-{
-  "providers": {
-    "cerebras": {
-      "name": "Cerebras",
-      "models": ["llama-4-scout-17b-16e-instruct"],
-      "default": "llama-4-scout-17b-16e-instruct",
-      "active": true,
-      "has_key": true
-    },
-    "openai": {
-      "name": "OpenAI",
-      "models": ["gpt-4o", "gpt-4o-mini"],
-      "default": "gpt-4o",
-      "active": false,
-      "has_key": false
-    }
-  },
-  "activeProvider": "cerebras",
-  "activeModel": "llama-4-scout-17b-16e-instruct"
-}
-```
-
----
-
 ## Error responses
 
 All errors follow the same shape:
@@ -772,7 +682,5 @@ Common status codes:
 | 403 | Forbidden (e.g., trying to modify an ACSS class) |
 | 404 | Resource not found |
 | 409 | Conflict (contentHash mismatch -- someone else wrote first) |
-| 422 | Validation failed (AI-generated elements were invalid) |
 | 428 | If-Match header required but missing |
 | 429 | Rate limit exceeded |
-| 502 | LLM provider returned an error |

@@ -1,11 +1,17 @@
 /* Agent to Bricks — Custom Starlight Theme */
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&family=Geist+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Plus+Jakarta+Sans:wght@200..800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+/* Prevent FOUC: set dark background immediately before JS applies data-theme */
+html, body {
+  background: #0a0a0c;
+  color: #e4e4e8;
+}
 
 :root,
 :root[data-theme='dark'] {
-  --sl-font: 'Manrope', sans-serif;
-  --sl-font-mono: 'Geist Mono', monospace;
+  --sl-font: 'Plus Jakarta Sans', sans-serif;
+  --sl-font-mono: 'JetBrains Mono', monospace;
 
   /* Bricks gold accent */
   --sl-color-accent-low: #2a2006;
@@ -376,7 +382,17 @@
   color: var(--sl-color-accent);
 }
 
-/* Content heading colors */
+/* Space Grotesk for headings and site title */
+.site-title,
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3,
+.sl-markdown-content h4,
+.sl-markdown-content h5,
+.sl-markdown-content h6 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
 [data-theme='dark'] .sl-markdown-content h1,
 [data-theme='dark'] .sl-markdown-content h2,
 [data-theme='dark'] .sl-markdown-content h3,
@@ -468,4 +484,34 @@
 }
 [data-theme='dark'] .sl-markdown-content td {
   border-color: rgba(255, 255, 255, 0.06);
+}
+
+/* Search dialog dark-mode fixes */
+[data-theme='dark'] site-search dialog {
+  background-color: #12101e;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] #starlight__search {
+  --pagefind-ui-text: #e4e4e8;
+  --pagefind-ui-primary: #FACC15;
+  --pagefind-ui-background: #0a0a0c;
+  --pagefind-ui-border: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme='dark'] #starlight__search .pagefind-ui__search-input {
+  color: #f5f5f7;
+  background: #0a0a0c;
+}
+
+[data-theme='dark'] #starlight__search .pagefind-ui__search-input::placeholder {
+  color: #9e9ea8;
+}
+
+[data-theme='dark'] #starlight__search .pagefind-ui__result-excerpt {
+  color: #c8c8cd;
+}
+
+[data-theme='dark'] #starlight__search .pagefind-ui__message {
+  color: #9e9ea8;
 }

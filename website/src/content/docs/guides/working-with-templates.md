@@ -189,12 +189,12 @@ bricks templates compose hero-centered features-3col pricing-cards cta-fullwidth
 # 3. Check the result in your browser
 # Maybe the features section needs different copy...
 
-# 4. Patch specific elements
-bricks site elements 78 | jq '.elements[] | select(.name == "heading")'
+# 4. Inspect the page elements
+bricks site pull 78 | jq '.elements[] | select(.name == "heading")'
 # Find the heading IDs, then patch them via the API or generate new content
 
 # 5. Or roll back and try different templates
-bricks snapshots rollback 78 snap_a1b2c3d4e5f6
+bricks site rollback 78 snap_a1b2c3d4e5f6
 bricks templates compose hero-split features-icons pricing-simple cta-banner \
   --push 78 --snapshot
 ```

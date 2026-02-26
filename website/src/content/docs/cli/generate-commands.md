@@ -33,6 +33,8 @@ bricks generate section "<prompt>" --page <page-id>
 |------|-------------|
 | `--page <id>` | Target page ID (the section gets appended to this page) |
 | `--dry-run` | Show what would be generated without pushing anything |
+| `--framework <name>` | CSS framework to use for generated elements (default: `acss`) |
+| `-o <file>` | Write output to a file instead of pushing |
 
 ### Examples
 

@@ -127,6 +127,7 @@ Updated to v0.9.0
 |------|-------------|
 | `--check` | Check for updates without installing them |
 | `--cli-only` | Only update the CLI, skip the plugin |
+| `--force` | Force re-download even if already on the latest version |
 
 ### Check without installing
 

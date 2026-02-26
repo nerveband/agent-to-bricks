@@ -3,38 +3,33 @@ title: Keyboard shortcuts
 description: All keyboard shortcuts available in the Agent to Bricks GUI -- command palette, panel toggles, session management, and prompt editing.
 ---
 
-The app registers global keyboard shortcuts through a `useKeyboardShortcuts` hook that listens on the window. Most shortcuts use `Cmd` on macOS and `Ctrl` on Windows/Linux (referred to as `Mod` below). Some shortcuts are suppressed when the terminal has focus to avoid conflicting with the AI tool's own key bindings.
+The app registers global keyboard shortcuts through a `useKeyboardShortcuts` hook that listens on the window. Most shortcuts use `Cmd` on macOS and `Ctrl` on Windows/Linux. Some shortcuts are suppressed when the terminal has focus to avoid conflicting with the AI tool's own key bindings.
 
 ## Quick reference
 
 | Shortcut | Action | Works in terminal? |
 |---|---|---|
-| `Mod+P` | Toggle command palette | Yes |
-| `Mod+Shift+P` | Open command palette (always opens, never closes) | Yes |
-| `Mod+B` | Toggle sidebar | No |
-| `Mod+\` | Toggle context panel | No |
-| `Mod+K` | Open context panel and focus prompt editor | No |
-| `Mod+N` | Launch new session with default tool | No |
+| `Cmd/Ctrl+P` | Focus the prompt editor | Yes |
+| `Cmd/Ctrl+B` | Toggle sidebar | No |
+| `Cmd/Ctrl+N` | Launch new session with default tool | No |
 | `Escape` | Return focus to terminal | No |
 
 "Works in terminal?" means the shortcut fires even when the xterm terminal has focus. Shortcuts marked "No" only work when focus is outside the terminal -- in the sidebar, context panel, or any dialog.
 
-## Command palette
+## Prompt editor focus
 
-**`Mod+P`** is the most-used shortcut. It toggles the command palette on and off. The palette is a centered overlay with a prompt input, @mention support, quick-access chips, and recent history.
+**`Cmd/Ctrl+P`** is the most-used shortcut. It moves focus to the prompt editor textarea so you can start writing a prompt without reaching for the mouse.
 
-**`Mod+Shift+P`** always opens the palette. If it is already open, it stays open. Use this when you want to guarantee the palette appears without accidentally closing it.
-
-Inside the command palette:
+Inside the prompt editor and command palette:
 
 | Key | Action |
 |---|---|
-| `Escape` | Close the palette |
+| `Escape` | Close the palette / return to terminal |
 | `Arrow Up / Arrow Down` | Navigate autocomplete results |
 | `Tab` or `Enter` | Select highlighted autocomplete item |
-| `Mod+Enter` | Submit the prompt |
+| `Cmd/Ctrl+Enter` | Submit the prompt |
 
-The palette also handles app-level commands typed as plain text:
+The command palette also handles app-level commands typed as plain text:
 
 - `add site [name] at [url] key [api_key]` -- Adds a new site
 - `switch to [site name]` -- Switches the active site
@@ -44,15 +39,11 @@ The palette also handles app-level commands typed as plain text:
 
 ## Panel toggles
 
-**`Mod+B`** toggles the sidebar. When the sidebar collapses, the terminal panel expands to fill the freed space. Useful when you want maximum terminal real estate.
-
-**`Mod+\`** (backslash) toggles the context panel on the right side. Same idea -- collapse it to give the terminal more room, bring it back when you need the prompt workshop or site preview.
-
-**`Mod+K`** opens the context panel (if closed) and moves focus directly to the PromptWorkshop's textarea. This is the fastest way to start writing a prompt without reaching for the mouse. The app looks for the element matching `[data-prompt-workshop] textarea` and focuses it after a short delay.
+**`Cmd/Ctrl+B`** toggles the sidebar. When the sidebar collapses, the terminal panel expands to fill the freed space. Useful when you want maximum terminal real estate.
 
 ## Session management
 
-**`Mod+N`** launches a new session immediately. The app picks the default tool (Claude Code if installed, otherwise the first installed tool it finds) and launches it without opening the LaunchDialog. Good for quickly spinning up another session when you already have your tool configured the way you want.
+**`Cmd/Ctrl+N`** launches a new session immediately. The app picks the default tool (Claude Code if installed, otherwise the first installed tool it finds) and launches it without opening the LaunchDialog. Good for quickly spinning up another session when you already have your tool configured the way you want.
 
 ## Terminal focus
 
@@ -76,7 +67,7 @@ When autocomplete is not showing:
 
 | Key | Action |
 |---|---|
-| `Mod+Enter` | Submit the prompt |
+| `Cmd/Ctrl+Enter` | Submit the prompt |
 | `@` (typed) | Triggers the autocomplete type picker |
 
 ## Shortcuts that live elsewhere
