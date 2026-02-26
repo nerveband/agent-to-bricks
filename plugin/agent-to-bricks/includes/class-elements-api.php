@@ -133,6 +133,8 @@ class ATB_Elements_API {
 			foreach ( $patch as $key => $value ) {
 				if ( $key === 'id' ) continue;
 				if ( $key === 'settings' && is_array( $value ) ) {
+					// Sanitize incoming settings before merging.
+					$value = ATB_Element_Validator::sanitize_settings( $value );
 					if ( ! isset( $elements[ $idx ]['settings'] ) || ! is_array( $elements[ $idx ]['settings'] ) ) {
 						$elements[ $idx ]['settings'] = array();
 					}
@@ -143,9 +145,13 @@ class ATB_Elements_API {
 							$elements[ $idx ]['settings'][ $skey ] = $sval;
 						}
 					}
+				} elseif ( $key === 'name' || $key === 'label' || $key === 'parent' ) {
+					$elements[ $idx ][ $key ] = sanitize_text_field( $value );
 				} else {
 					if ( $value === null ) {
 						unset( $elements[ $idx ][ $key ] );
+					} elseif ( is_string( $value ) ) {
+						$elements[ $idx ][ $key ] = sanitize_text_field( $value );
 					} else {
 						$elements[ $idx ][ $key ] = $value;
 					}
@@ -186,9 +192,10 @@ class ATB_Elements_API {
 		$if_match = $request->get_header( 'if_match' );
 
 		$body     = $request->get_json_params();
-		$new_els  = $body['elements'] ?? array();
-		$parent_id    = $body['parentId'] ?? null;
-		$insert_after = $body['insertAfter'] ?? null;
+		$new_els  = ATB_Element_Validator::sanitize_flat_elements( $body['elements'] ?? array() );
+		$new_els  = self::sanitize_elements( $new_els );
+		$parent_id    = isset( $body['parentId'] ) ? sanitize_text_field( $body['parentId'] ) : null;
+		$insert_after = isset( $body['insertAfter'] ) ? sanitize_text_field( $body['insertAfter'] ) : null;
 
 		if ( empty( $new_els ) ) {
 			return new WP_REST_Response( array( 'error' => 'No elements provided.' ), 400 );
@@ -335,6 +342,10 @@ class ATB_Elements_API {
 			return new WP_REST_Response( array( 'error' => 'elements array required.' ), 400 );
 		}
 
+		// Sanitize all incoming elements before writing.
+		$elements = ATB_Element_Validator::sanitize_flat_elements( $elements );
+		$elements = self::sanitize_elements( $elements );
+
 		// Auto-snapshot before full replace
 		if ( class_exists( 'ATB_Snapshots_API' ) ) {
 			ATB_Snapshots_API::take_snapshot( $post_id, 'Auto: before full replace' );
@@ -386,7 +397,8 @@ class ATB_Elements_API {
 
 			switch ( $op_type ) {
 				case 'append':
-					$new_els = $op['elements'] ?? array();
+					$new_els = ATB_Element_Validator::sanitize_flat_elements( $op['elements'] ?? array() );
+					$new_els = self::sanitize_elements( $new_els );
 					$elements = array_merge( $elements, $new_els );
 					$results[] = array( 'op' => 'append', 'added' => count( $new_els ) );
 					break;
@@ -408,6 +420,7 @@ class ATB_Elements_API {
 						foreach ( $patch as $key => $value ) {
 							if ( $key === 'id' ) continue;
 							if ( $key === 'settings' && is_array( $value ) ) {
+								$value = ATB_Element_Validator::sanitize_settings( $value );
 								if ( ! isset( $elements[ $idx ]['settings'] ) || ! is_array( $elements[ $idx ]['settings'] ) ) {
 									$elements[ $idx ]['settings'] = array();
 								}
@@ -418,9 +431,13 @@ class ATB_Elements_API {
 										$elements[ $idx ]['settings'][ $skey ] = $sval;
 									}
 								}
+							} elseif ( $key === 'name' || $key === 'label' || $key === 'parent' ) {
+								$elements[ $idx ][ $key ] = sanitize_text_field( $value );
 							} else {
 								if ( $value === null ) {
 									unset( $elements[ $idx ][ $key ] );
+								} elseif ( is_string( $value ) ) {
+									$elements[ $idx ][ $key ] = sanitize_text_field( $value );
 								} else {
 									$elements[ $idx ][ $key ] = $value;
 								}
@@ -469,5 +486,42 @@ class ATB_Elements_API {
 			'operations'  => $results,
 			'count'       => count( $elements ),
 		), 200 );
+	}
+
+	/**
+	 * Sanitize elements before writing to post meta.
+	 * Validates structure and applies wp_kses_post to text content.
+	 */
+	private static function sanitize_elements( array $elements ) {
+		$sanitized = array();
+		foreach ( $elements as $el ) {
+			if ( ! is_array( $el ) ) continue;
+			if ( empty( $el['id'] ) || empty( $el['name'] ) ) continue;
+
+			if ( isset( $el['settings'] ) && is_array( $el['settings'] ) ) {
+				$el['settings'] = self::sanitize_settings( $el['settings'] );
+			}
+
+			$sanitized[] = $el;
+		}
+		return $sanitized;
+	}
+
+	/**
+	 * Recursively sanitize element settings.
+	 */
+	private static function sanitize_settings( array $settings ) {
+		$text_keys = array( '_content', 'text', 'title', 'subtitle', 'description', 'label', 'placeholder', 'alt' );
+
+		foreach ( $settings as $key => &$value ) {
+			if ( is_string( $value ) && in_array( $key, $text_keys, true ) ) {
+				$value = wp_kses_post( $value );
+			} elseif ( is_array( $value ) ) {
+				$value = self::sanitize_settings( $value );
+			}
+		}
+		unset( $value );
+
+		return $settings;
 	}
 }
