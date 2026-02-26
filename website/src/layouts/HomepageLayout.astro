@@ -37,19 +37,18 @@ const {
     <meta name="twitter:image" content="/images/og-card.png" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&family=Geist+Mono:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
+    <!-- GSAP for Animations -->
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <title>{title}</title>
   </head>
-  <body class="min-h-screen bg-[#0a0a0c] text-gray-100 font-[Manrope,sans-serif] antialiased">
+  <body class="min-h-screen text-[var(--fg)] font-sans antialiased overflow-x-hidden !bg-none transition-colors duration-400">
+    <div class="noise-overlay"></div>
     <!-- Animated gradient background -->
-    <div class="fixed inset-0 -z-10 overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] animate-gradient"></div>
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(250,204,21,0.05),transparent_50%)]"></div>
-    </div>
+    <div class="fixed inset-0 -z-10 bg-[linear-gradient(-45deg,var(--bg-grad-1),var(--bg-grad-2),var(--bg-grad-3),var(--bg-grad-4))] bg-[length:400%_400%] animate-[gradientBG_45s_ease_infinite] transition-colors duration-400"></div>
 
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-yellow-400 focus:text-gray-900 focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">
       Skip to main content
@@ -57,44 +56,107 @@ const {
 
     <Header />
 
-    <main id="main-content">
+    <main id="main-content" class="relative z-10 w-full flex flex-col items-center">
       <slot />
     </main>
 
     <Footer />
 
     <script is:inline>
-      // Dark/light mode toggle
+      // Dark/light mode toggle persistence
       const theme = localStorage.getItem('theme') || 'dark';
       document.documentElement.setAttribute('data-theme', theme);
+
+      // GSAP Cinematic Entrance Animations
+      document.addEventListener('DOMContentLoaded', () => {
+        // Prevent FOUC and initialize hidden state
+        gsap.set('h1, h2, .gsap-reveal', { opacity: 0, y: 50, skewY: 5 });
+        gsap.set('.glass-base, .app-body, .gsap-slide-up', { opacity: 0, y: 40 });
+
+        const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+
+        // Headlines staggered text-mask-like reveal
+        tl.to('h1, h2, .gsap-reveal', {
+          duration: 1.2,
+          opacity: 1,
+          y: 0,
+          skewY: 0,
+          stagger: 0.15,
+        })
+        // UI elements slide up
+        .to('.glass-base, .app-body, .gsap-slide-up', {
+          duration: 1,
+          opacity: 1,
+          y: 0,
+          stagger: 0.1,
+        }, "-=0.8"); // Overlap with headlines animation
+      });
     </script>
 
     <style is:global>
-      @keyframes gradient {
-        0%, 100% { background-position: 0% 50%; }
+      @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
         50% { background-position: 100% 50%; }
-      }
-      .animate-gradient {
-        background-size: 200% 200%;
-        animation: gradient 15s ease infinite;
+        100% { background-position: 0% 50%; }
       }
 
-      [data-theme='light'] body {
-        background-color: #fafaf9;
-        color: #1c1917;
+      /* Tailwind font family overrides based on new google fonts */
+      html, body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
       }
-      [data-theme='light'] .fixed.-z-10 {
-        opacity: 0.05;
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Space Grotesk', sans-serif;
+      }
+      .font-mono {
+        font-family: 'JetBrains Mono', monospace;
+      }
+      
+      /* Base colors injected into utility classes directly using CSS variables for dynamic switching */
+      .text-ui-fg { color: var(--fg); }
+      .text-ui-muted { color: var(--fg-muted); }
+      .text-ui-subtle { color: var(--fg-subtle); }
+      .text-accent-yellow { color: var(--yellow); }
+      .text-accent-green { color: var(--green); }
+      .bg-accent-yellow { background-color: var(--yellow); }
+
+      /* Noise Texture injected onto elements with .noise */
+      .noise {
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          z-index: 50;
+          opacity: 0.15;
+          mix-blend-mode: overlay;
+          background-image: url('~/assets/grain.svg');
+          transition: opacity 0.5s ease;
+      }
+      .glass-base:hover .noise { opacity: 0.25; }
+
+      /* Site-wide fixed noise overlay */
+      .noise-overlay {
+          position: fixed;
+          inset: 0;
+          pointer-events: none;
+          z-index: 100;
+          opacity: 0.08;
+          mix-blend-mode: overlay;
+          background-image: url('~/assets/grain.svg');
+      }
+
+      [data-theme='light'] .noise {
+          opacity: 0.2;
+          mix-blend-mode: multiply;
+      }
+      [data-theme='light'] .glass-base:hover .noise { opacity: 0.3; }
+      
+      [data-theme='light'] .noise-overlay {
+          opacity: 0.12;
+          mix-blend-mode: multiply;
       }
 
       @media (prefers-reduced-motion: reduce) {
-        .animate-gradient {
+        .animate-[gradientBG_45s_ease_infinite] {
           animation: none;
-        }
-        *, *::before, *::after {
-          animation-duration: 0.01ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.01ms !important;
         }
       }
     </style>
