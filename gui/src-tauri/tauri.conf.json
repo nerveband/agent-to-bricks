@@ -29,6 +29,7 @@
     "targets": "all",
     "category": "DeveloperTool",
     "shortDescription": "Build Bricks Builder pages with AI coding agents",
+    "createUpdaterArtifacts": true,
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",
@@ -40,6 +41,14 @@
       "deb": {
         "depends": ["libwebkit2gtk-4.1-0", "libgtk-3-0"]
       }
+    }
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "REPLACE_WITH_PUBLIC_KEY",
+      "endpoints": [
+        "https://github.com/nerveband/agent-to-bricks/releases/latest/download/latest.json"
+      ]
     }
   }
 }
