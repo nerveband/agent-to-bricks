@@ -362,8 +362,9 @@ class ATB_Settings {
 				Created by <a href="https://ashrafali.net" target="_blank">Ashraf Ali</a>
 			</p>
 			<p>
-				This plugin is designed to be paired with the Agent to Bricks CLI for AI-powered Bricks Builder workflows.<br>
-				Learn more and get the CLI at <a href="https://github.com/nerveband/agent-to-bricks" target="_blank">github.com/nerveband/agent-to-bricks</a>.
+				This plugin is designed to be paired with the Agent to Bricks CLI and Desktop App.<br>
+				Get the CLI: <a href="https://agentstobricks.com/getting-started/installation/" target="_blank">agentstobricks.com/getting-started/installation</a><br>
+				Get the Desktop App: <a href="https://agentstobricks.com/gui/overview/" target="_blank">agentstobricks.com/gui/overview</a>
 			</p>
 		</div>
 

@@ -35,3 +35,20 @@ check-version:
 # Plugin deployment
 deploy-staging:
 	./scripts/deploy-staging.sh
+
+.PHONY: release-prep tag-release
+
+# Sync versions, run all tests, then prompt for commit
+release-prep: sync-version
+	cd cli && go test ./...
+	cd gui && npm run build
+	@echo ""
+	@echo "All versions synced and tests passed."
+	@echo "Commit with: git commit -am 'chore: bump version to $(VERSION)'"
+
+# Create and push a release tag from VERSION file
+tag-release:
+	@echo "Tagging v$(VERSION)..."
+	git tag "v$(VERSION)"
+	git push origin "v$(VERSION)"
+	@echo "Tag v$(VERSION) pushed. GitHub Actions will build the release."

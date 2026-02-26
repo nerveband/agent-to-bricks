@@ -136,5 +136,14 @@ if $CHECK_MODE && [ $ERRORS -gt 0 ]; then
     exit 1
 fi
 
+# --- 6. Regenerate Cargo.lock if versions changed ---
+
+if ! $CHECK_MODE; then
+    if command -v cargo >/dev/null 2>&1; then
+        echo "Regenerating Cargo.lock..."
+        (cd "$ROOT_DIR/gui/src-tauri" && cargo generate-lockfile 2>/dev/null) || true
+    fi
+fi
+
 echo ""
 echo "All versions synced to $VERSION"

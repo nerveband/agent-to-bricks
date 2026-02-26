@@ -6,13 +6,13 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://agent-to-bricks.dev',
+  site: 'https://agentstobricks.com',
   integrations: [
     starlight({
       title: 'Agent to Bricks',
       description: 'Update your Bricks website with natural language.',
       logo: {
-        src: './src/assets/logo.svg',
+        src: './src/assets/icon.png',
       },
       social: [
         { icon: 'github', label: 'GitHub', href: 'https://github.com/nerveband/agent-to-bricks' },
@@ -23,7 +23,7 @@ export default defineConfig({
           borderColor: 'rgba(255, 255, 255, 0.08)',
           borderRadius: '0.75rem',
           codeBackground: '#12101e',
-          codeFontFamily: "'Geist Mono', monospace",
+          codeFontFamily: "'JetBrains Mono', monospace",
           codeFontSize: '0.85rem',
           frames: {
             editorBackground: '#12101e',

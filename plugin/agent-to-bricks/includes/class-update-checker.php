@@ -51,7 +51,8 @@ class ATB_Update_Checker {
 			<p>
 				<strong>Agent to Bricks v<?php echo esc_html( $remote_version ); ?></strong> is available
 				(you have v<?php echo esc_html( $local_version ); ?>).
-				Update from your CLI: <code>bricks update</code>
+				Update via CLI: <code>bricks update</code> or download from
+				<a href="https://agentstobricks.com/getting-started/installation/" target="_blank">agentstobricks.com</a>.
 			</p>
 		</div>
 		<script>
