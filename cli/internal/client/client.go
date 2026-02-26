@@ -315,7 +315,9 @@ type VariablesResponse struct {
 func (c *Client) ListClasses(framework string) (*ClassesResponse, error) {
 	path := "/classes"
 	if framework != "" {
-		path += "?framework=" + framework
+		v := url.Values{}
+		v.Set("framework", framework)
+		path += "?" + v.Encode()
 	}
 	resp, err := c.do("GET", path, nil)
 	if err != nil {
@@ -496,7 +498,9 @@ type MediaUploadResponse struct {
 func (c *Client) ListMedia(search string) (*MediaListResponse, error) {
 	path := "/media"
 	if search != "" {
-		path += "?search=" + search
+		v := url.Values{}
+		v.Set("search", search)
+		path += "?" + v.Encode()
 	}
 	resp, err := c.do("GET", path, nil)
 	if err != nil {
