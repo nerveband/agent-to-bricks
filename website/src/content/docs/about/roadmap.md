@@ -1,6 +1,7 @@
 ---
 title: Roadmap
 description: Planned features and what's coming next for Agent to Bricks
+draft: true
 ---
 
 This is a rough map of where Agent to Bricks is headed. Nothing here is guaranteed or on a fixed timeline. Priorities shift based on community feedback, Bricks updates, and what AI tooling makes possible.

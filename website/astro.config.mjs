@@ -104,7 +104,6 @@ export default defineConfig({
           label: 'About',
           items: [
             'about/philosophy',
-            'about/roadmap',
             'about/contributing',
             'about/credits',
           ],

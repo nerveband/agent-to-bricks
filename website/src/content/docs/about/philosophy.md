@@ -3,11 +3,9 @@ title: Philosophy
 description: Why Agent to Bricks exists and what it's trying to be
 ---
 
-I built Agent to Bricks because I kept watching the same thing happen.
+I built Agent to Bricks because the tools I wanted didn't exist.
 
-A new AI tool for WordPress would launch. It looked good in the demo video. Then you'd see the pricing page: $29/month, $49/month, $99/month for the "agency" tier. On top of your hosting. On top of Bricks Builder. On top of ACSS. On top of Frames. The costs stack, and they never stop stacking.
-
-Meanwhile, tools like Claude Code and Codex are writing code that's genuinely good. But they had no way to talk to a Bricks site. No access to your classes, your tokens, your element tree.
+AI coding agents like Claude Code and Codex are writing code that's genuinely good. But they had no way to talk to a Bricks site. No access to your classes, your tokens, your element tree. And the WordPress-specific AI tools that do exist come with monthly subscriptions that stack on top of everything else you're already paying for.
 
 So I wrote a bridge.
 
@@ -31,11 +29,11 @@ It's also a passion project. I use Bricks and ACSS for my own client work, and I
 
 ## On the subscription treadmill
 
-I keep watching the same thing happen. A new AI tool for WordPress launches. It looks good in the demo video. Then the pricing page: $29/month, $49/month, $99/month for the "agency" tier. On top of your hosting. On top of Bricks. On top of ACSS. On top of Frames. The costs stack, and they never stop stacking.
+Every few weeks a new AI-powered WordPress plugin launches. The demo looks great. Then the pricing page: $29/month, $49/month, $99/month for the agency tier. That's on top of hosting, Bricks, ACSS, Frames, and whatever else you're already running. The costs stack and they never stop stacking.
 
 Some tools offer lifetime deals. I've bought a few. Half stopped getting meaningful updates within a year. The other half pivoted to something else. Plugin fatigue is real, and LTD fatigue might be worse.
 
-What these tools are actually selling is a thin wrapper around the same LLM APIs everyone has access to. The prompting, the API calls, the JSON manipulation -- none of that needs to be a SaaS. It can run on your own machine, with your own API keys, for the cost of the LLM tokens you actually use.
+What most of these tools are selling is a thin wrapper around the same LLM APIs everyone has access to. The prompting, the API calls, the JSON manipulation -- none of that needs to be a SaaS. It can run on your own machine, with your own API keys, for the cost of the tokens you actually use.
 
 ## Open source values
 
@@ -53,7 +51,7 @@ Agent to Bricks provides that layer. You bring whatever AI tool you prefer. The 
 
 Honestly, the best outcome would be for Bricks to build AI features natively. Thomas and the Bricks team have a deep understanding of the builder's architecture. They could do things at a lower level than a plugin can. If Bricks ships a native AI assistant that understands the element model, the class system, and the design token pipeline, that would be better than anything a third-party plugin can provide.
 
-Until that happens, this project fills the gap. And if native support does arrive, the work here -- the API design, the element validation, the HTML conversion, the class resolution -- still has value as patterns that transfer.
+Until that happens, this project covers the ground. And if native support does arrive, the work here -- the API design, the element validation, the HTML conversion, the class resolution -- still has value as patterns that transfer.
 
 ## A gift to the community
 
