@@ -3,6 +3,7 @@ import { useAtom } from "jotai";
 import { invoke } from "@tauri-apps/api/core";
 import { open as openDialog } from "@tauri-apps/plugin-dialog";
 import * as Dialog from "@radix-ui/react-dialog";
+import packageJson from '../../package.json';
 import {
   X,
   Globe,
@@ -527,7 +528,7 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
                     style={{ borderColor: "var(--border-subtle)" }}
                   >
                     {[
-                      { label: "Version", value: "0.1.0" },
+                      { label: "Version", value: packageJson.version },
                       { label: "Framework", value: "Tauri 2" },
                     ].map((item) => (
                       <div key={item.label} className="flex justify-between text-[13px]">
