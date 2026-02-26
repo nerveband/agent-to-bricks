@@ -80,7 +80,8 @@ Use --force to re-download even if already on the latest version.`,
 			}
 
 			fmt.Fprintf(os.Stderr, "Updating CLI binary...")
-			if err := updater.SelfUpdate(asset.URL); err != nil {
+			checksumsURL := asset.URL[:strings.LastIndex(asset.URL, "/")+1] + "checksums.txt"
+			if err := updater.SelfUpdate(asset.URL, checksumsURL); err != nil {
 				return fmt.Errorf("CLI update failed: %w", err)
 			}
 			fmt.Fprintf(os.Stderr, "  done (v%s)\n", rel.Version)
