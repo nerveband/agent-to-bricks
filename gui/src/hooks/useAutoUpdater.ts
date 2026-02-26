@@ -38,7 +38,7 @@ export function useAutoUpdater() {
           checking: false,
           available: true,
           version: result.version,
-          body: result.body,
+          body: result.body ?? null,
         }));
       } else {
         setState((s) => ({ ...s, checking: false, available: false }));
