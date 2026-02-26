@@ -12,6 +12,7 @@ import { useKeyboardShortcuts } from "../hooks/useKeyboardShortcuts";
 import { useConfigPersistence } from "../hooks/useConfigPersistence";
 import { useSiteContextSync } from "../hooks/useSiteContextSync";
 import { useTheme } from "../hooks/useTheme";
+import { UpdateNotification } from "./UpdateNotification";
 
 export function AppShell() {
   useToolDetection();
@@ -118,6 +119,7 @@ export function AppShell() {
       </div>
 
       {!onboardingSeen && <OnboardingTooltips />}
+      <UpdateNotification />
     </div>
   );
 }

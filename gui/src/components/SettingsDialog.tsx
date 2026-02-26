@@ -3,6 +3,7 @@ import { useAtom } from "jotai";
 import { invoke } from "@tauri-apps/api/core";
 import { open as openDialog } from "@tauri-apps/plugin-dialog";
 import { openUrl } from "@tauri-apps/plugin-opener";
+import { check } from "@tauri-apps/plugin-updater";
 import * as Dialog from "@radix-ui/react-dialog";
 import packageJson from '../../package.json';
 import {
@@ -52,6 +53,22 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
     "idle" | "testing" | "success" | "error"
   >("idle");
   const [saved, setSaved] = useState(false);
+  const [updateStatus, setUpdateStatus] = useState<string>("");
+
+  const checkForUpdates = async () => {
+    setUpdateStatus("Checking...");
+    try {
+      const result = await check();
+      if (result) {
+        setUpdateStatus(`v${result.version} available!`);
+      } else {
+        setUpdateStatus("Up to date");
+      }
+    } catch {
+      setUpdateStatus("Check failed");
+    }
+    setTimeout(() => setUpdateStatus(""), 5000);
+  };
 
   useEffect(() => {
     if (open && site) {
@@ -537,6 +554,16 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
                         <span style={{ color: "var(--fg)" }}>{item.value}</span>
                       </div>
                     ))}
+                    <div className="flex justify-between items-center text-[13px]">
+                      <span style={{ color: "var(--fg-muted)" }}>Updates</span>
+                      <button
+                        onClick={checkForUpdates}
+                        className="hover:underline text-[12px]"
+                        style={{ color: "var(--yellow)" }}
+                      >
+                        {updateStatus || "Check for Updates"}
+                      </button>
+                    </div>
                     <div className="flex justify-between text-[13px]">
                       <span style={{ color: "var(--fg-muted)" }}>Developer</span>
                       <button onClick={() => openUrl("https://ashrafali.net")} className="hover:underline" style={{ color: "var(--yellow)" }}>
