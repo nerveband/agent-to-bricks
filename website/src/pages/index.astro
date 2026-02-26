@@ -1,20 +1,24 @@
 ---
 import HomepageLayout from '../layouts/HomepageLayout.astro';
 import HeroSection from '../components/home/HeroSection.astro';
-import HowItWorksSection from '../components/home/HowItWorksSection.astro';
-import FeatureShowcase from '../components/home/FeatureShowcase.astro';
+import PainPoints from '../components/home/PainPoints.tsx';
+import WhatIfSection from '../components/home/WhatIfSection.tsx';
+import FeaturePillars from '../components/home/FeaturePillars.tsx';
 import DemoSection from '../components/home/DemoSection.astro';
+import Differentiator from '../components/home/Differentiator.tsx';
 import QuickWinsGrid from '../components/home/QuickWinsGrid.astro';
-import FounderNote from '../components/home/FounderNote.astro';
 import GetStartedSection from '../components/home/GetStartedSection.astro';
+import FounderNote from '../components/home/FounderNote.astro';
 ---
 
 <HomepageLayout>
   <HeroSection />
-  <HowItWorksSection />
-  <FeatureShowcase />
+  <PainPoints client:visible />
+  <WhatIfSection client:visible />
+  <FeaturePillars client:visible />
   <DemoSection />
+  <Differentiator client:visible />
   <QuickWinsGrid />
-  <FounderNote />
   <GetStartedSection />
+  <FounderNote />
 </HomepageLayout>

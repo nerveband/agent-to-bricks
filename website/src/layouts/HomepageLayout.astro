@@ -36,7 +36,7 @@ const {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="/images/og-card.png" />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
@@ -67,29 +67,66 @@ const {
       const theme = localStorage.getItem('theme') || 'dark';
       document.documentElement.setAttribute('data-theme', theme);
 
-      // GSAP Cinematic Entrance Animations
       document.addEventListener('DOMContentLoaded', () => {
-        // Prevent FOUC and initialize hidden state
-        gsap.set('h1, h2, .gsap-reveal', { opacity: 0, y: 50, skewY: 5 });
-        gsap.set('.glass-base, .app-body, .gsap-slide-up', { opacity: 0, y: 40 });
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+          gsap.registerPlugin(ScrollTrigger);
 
-        const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+          // Reveal all .reveal elements on scroll
+          gsap.utils.toArray('.reveal').forEach(el => {
+            ScrollTrigger.create({
+              trigger: el,
+              start: 'top 85%',
+              onEnter: () => el.classList.add('active'),
+              once: true,
+            });
+          });
 
-        // Headlines staggered text-mask-like reveal
-        tl.to('h1, h2, .gsap-reveal', {
-          duration: 1.2,
-          opacity: 1,
-          y: 0,
-          skewY: 0,
-          stagger: 0.15,
-        })
-        // UI elements slide up
-        .to('.glass-base, .app-body, .gsap-slide-up', {
-          duration: 1,
-          opacity: 1,
-          y: 0,
-          stagger: 0.1,
-        }, "-=0.8"); // Overlap with headlines animation
+          // Stagger children
+          gsap.utils.toArray('.stagger-children').forEach(el => {
+            ScrollTrigger.create({
+              trigger: el,
+              start: 'top 85%',
+              onEnter: () => el.classList.add('active'),
+              once: true,
+            });
+          });
+
+          // Hero entrance animation
+          const heroHeadline = document.querySelector('.hero-headline');
+          if (heroHeadline) {
+            const words = heroHeadline.querySelectorAll('.word');
+            const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+
+            gsap.set(words, { opacity: 0, y: 60 });
+            gsap.set('.hero-subhead', { opacity: 0, y: 30 });
+            gsap.set('.hero-cta', { opacity: 0, y: 20 });
+            gsap.set('.hero-mockup', { opacity: 0, y: 60 });
+
+            tl.to(words, {
+              duration: 0.8,
+              opacity: 1,
+              y: 0,
+              stagger: 0.08,
+            })
+            .to('.hero-subhead', {
+              duration: 0.8,
+              opacity: 1,
+              y: 0,
+            }, '-=0.4')
+            .to('.hero-cta', {
+              duration: 0.6,
+              opacity: 1,
+              y: 0,
+              stagger: 0.1,
+            }, '-=0.4')
+            .to('.hero-mockup', {
+              duration: 1,
+              opacity: 1,
+              y: 0,
+              ease: 'power3.out',
+            }, '-=0.6');
+          }
+        }
       });
     </script>
 
