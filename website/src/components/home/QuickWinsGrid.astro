@@ -1,61 +1,63 @@
 ---
-import { Image } from 'astro:assets';
-import winUpload from '../../assets/icons/win-upload.png';
-import winGenerate from '../../assets/icons/win-generate.png';
-import winConvert from '../../assets/icons/win-convert.png';
-import winSearch from '../../assets/icons/win-search.png';
-import winRollback from '../../assets/icons/win-rollback.png';
-import winTeam from '../../assets/icons/win-team.png';
-
 const wins = [
   {
     title: 'Upload images into a gallery',
     description: 'Point it at a folder. It uploads everything and builds the gallery section. Done.',
-    icon: winUpload,
+    iconClass: 'ph-duotone ph-upload-simple',
+    command: '$ bricks media upload ./photos/*.jpg',
   },
   {
     title: 'Generate a landing page',
     description: 'One sentence in, full page out. Hero, features, testimonials, CTA. All using your ACSS classes.',
-    icon: winGenerate,
+    iconClass: 'ph-duotone ph-magic-wand',
+    command: '$ bricks generate page "SaaS landing page"',
   },
   {
     title: 'Convert HTML to Bricks',
     description: 'Write HTML with your classes. The CLI turns it into Bricks elements and maps class names to IDs.',
-    icon: winConvert,
+    iconClass: 'ph-duotone ph-brackets-angle',
+    command: '$ bricks convert ./template.html --push',
   },
   {
     title: 'Search and replace across pages',
     description: 'Find every button, heading, or class usage site-wide. Change them all in one pass.',
-    icon: winSearch,
+    iconClass: 'ph-duotone ph-magnifying-glass-plus',
+    command: '$ bricks search "old" | bricks modify',
   },
   {
     title: 'Roll back any change',
     description: 'Every push saves a snapshot. Something wrong? One command to undo it.',
-    icon: winRollback,
+    iconClass: 'ph-duotone ph-clock-counter-clockwise',
+    command: '$ bricks snapshot restore --page 1460',
   },
   {
     title: 'Onboard your team',
     description: 'Start people in the GUI. They see the CLI commands running underneath. They graduate when ready.',
-    icon: winTeam,
+    iconClass: 'ph-duotone ph-users-three',
+    command: '$ bricks config export | bricks config import',
   },
 ];
 ---
 
 <section class="py-24 px-4 sm:px-6 lg:px-8">
   <div class="mx-auto max-w-5xl">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl sm:text-4xl font-bold text-white">What you can do</h2>
-      <p class="mt-4 text-gray-400 text-lg">
+    <div class="text-center mb-12 relative z-20">
+      <h2 class="text-3xl sm:text-4xl font-bold text-ui-fg drop-shadow-sm">What you can do</h2>
+      <p class="mt-4 text-ui-muted text-lg">
         Things you can do on day one.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 relative z-20 stagger-children">
       {wins.map((win) => (
-        <div class="rounded-xl border border-white/5 bg-white/[0.02] p-5 hover:border-white/10 transition-colors">
-          <Image src={win.icon} alt="" width={40} height={40} class="mb-3 rounded" />
-          <h3 class="text-white font-semibold text-sm mb-2">{win.title}</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">{win.description}</p>
+        <div class="glass-base tilt-card relative overflow-hidden p-7 border border-subtle transition-all hover:border-accent-yellow hover:-translate-y-1 group group-hover:shadow-[var(--shadow-glow)]">
+          <div class="noise"></div>
+          <div class="w-11 h-11 rounded-lg bg-accent-yellow/5 border border-accent-yellow/10 flex items-center justify-center mb-5 relative z-10 group-hover:border-accent-yellow/30 group-hover:bg-accent-yellow/20 transition-colors">
+             <i class={`${win.iconClass} text-[22px] text-accent-yellow transition-colors`}></i>
+          </div>
+          <h3 class="text-ui-fg font-mono font-bold uppercase tracking-[0.05em] text-[12px] mb-3 relative z-10 group-hover:text-accent-yellow transition-colors">{win.title}</h3>
+          <p class="text-ui-muted text-sm leading-relaxed relative z-10">{win.description}</p>
+          <div class="mt-3 font-mono text-[10px] text-accent-yellow/70 truncate relative z-10">{win.command}</div>
         </div>
       ))}
     </div>
