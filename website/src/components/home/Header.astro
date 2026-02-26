@@ -1,101 +1,132 @@
 ---
+import iconImg from '../../assets/icon.png';
 ---
 
-<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-  <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="flex h-16 items-center justify-between">
-      <!-- Logo + wordmark -->
-      <a href="/" class="flex items-center gap-2.5 group">
-        <img src="/favicon.svg" alt="" class="h-8 w-8" />
-        <span class="text-lg font-bold tracking-tight text-white group-hover:text-yellow-400 transition-colors">
-          Agent to Bricks
-        </span>
-      </a>
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <!-- Left: Logo -->
+    <a href="/" class="flex items-center gap-3 group">
+      <img src={iconImg.src} alt="Agent to Bricks" class="w-8 h-8 rounded-lg shadow-sm group-hover:shadow-[var(--shadow-glow)] transition-shadow" />
+      <span class="text-sm font-semibold text-ui-fg tracking-wide" style="font-family: 'Space Grotesk', sans-serif;">Agent to Bricks</span>
+    </a>
 
-      <!-- Desktop nav -->
-      <div class="hidden md:flex items-center gap-8">
-        <a href="#features" class="text-sm text-gray-300 hover:text-white transition-colors">Features</a>
-        <a href="#how-it-works" class="text-sm text-gray-300 hover:text-white transition-colors">How It Works</a>
-        <a href="/getting-started/introduction/" class="text-sm text-gray-300 hover:text-white transition-colors">Docs</a>
-        <a
-          href="https://github.com/nerveband/agent-to-bricks"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-sm text-gray-300 hover:text-white transition-colors flex items-center gap-1.5"
-        >
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          GitHub
-        </a>
-
-        <!-- Dark/light toggle -->
-        <button
-          id="theme-toggle"
-          type="button"
-          class="rounded-lg p-2 text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
-          aria-label="Toggle dark/light mode"
-        >
-          <svg class="w-5 h-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-          </svg>
-          <svg class="w-5 h-5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-          </svg>
-        </button>
+    <!-- Center: Nav Links (Desktop) -->
+    <nav class="hidden md:flex items-center gap-8" aria-label="Main navigation">
+      <div class="relative group">
+        <a href="#features" class="nav-link text-sm text-ui-muted hover:text-ui-fg transition-colors py-2">Features</a>
+        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 translate-y-1 group-hover:translate-y-0">
+          <div class="glass-base border border-subtle rounded-xl p-4 min-w-[240px] flex flex-col gap-3">
+            <a href="#features" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[var(--white-glass)] transition-colors">
+              <i class="ph ph-terminal-window text-accent-yellow text-lg"></i>
+              <div>
+                <div class="text-sm font-medium text-ui-fg">CLI</div>
+                <div class="text-xs text-ui-muted">Your workflow, your way</div>
+              </div>
+            </a>
+            <a href="#features" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[var(--white-glass)] transition-colors">
+              <i class="ph ph-layout text-accent-yellow text-lg"></i>
+              <div>
+                <div class="text-sm font-medium text-ui-fg">GUI</div>
+                <div class="text-xs text-ui-muted">Everything at your fingertips</div>
+              </div>
+            </a>
+            <a href="#features" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[var(--white-glass)] transition-colors">
+              <i class="ph ph-squares-four text-accent-yellow text-lg"></i>
+              <div>
+                <div class="text-sm font-medium text-ui-fg">Templates</div>
+                <div class="text-xs text-ui-muted">Build your design system</div>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
+      <a href="#how-it-works" class="nav-link text-sm text-ui-muted hover:text-ui-fg transition-colors py-2">How It Works</a>
+      <div class="relative group">
+        <a href="/getting-started/introduction/" class="nav-link text-sm text-ui-muted hover:text-ui-fg transition-colors py-2">Docs</a>
+        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 translate-y-1 group-hover:translate-y-0">
+          <div class="glass-base border border-subtle rounded-xl p-4 min-w-[220px] flex flex-col gap-2">
+            <a href="/getting-started/introduction/" class="px-3 py-2 rounded-lg hover:bg-[var(--white-glass)] transition-colors text-sm text-ui-muted hover:text-ui-fg">Getting Started</a>
+            <a href="/cli/site-commands/" class="px-3 py-2 rounded-lg hover:bg-[var(--white-glass)] transition-colors text-sm text-ui-muted hover:text-ui-fg">CLI Reference</a>
+            <a href="/gui/overview/" class="px-3 py-2 rounded-lg hover:bg-[var(--white-glass)] transition-colors text-sm text-ui-muted hover:text-ui-fg">GUI Guide</a>
+            <a href="/plugin/rest-api/" class="px-3 py-2 rounded-lg hover:bg-[var(--white-glass)] transition-colors text-sm text-ui-muted hover:text-ui-fg">Plugin API</a>
+          </div>
+        </div>
+      </div>
+      <a href="https://github.com/nerveband/agent-to-bricks" target="_blank" rel="noopener noreferrer" class="nav-link text-sm text-ui-muted hover:text-ui-fg transition-colors py-2 flex items-center gap-1.5">
+        <i class="ph ph-github-logo text-base"></i>
+        GitHub
+      </a>
+    </nav>
 
-      <!-- Mobile menu button -->
-      <button
-        id="mobile-menu-btn"
-        type="button"
-        class="md:hidden rounded-lg p-2 text-gray-400 hover:text-white hover:bg-white/10"
-        aria-label="Open menu"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-      >
-        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
+    <!-- Right: CTA + Mobile Menu -->
+    <div class="flex items-center gap-4">
+      <a href="/getting-started/installation/" class="hidden sm:inline-flex items-center px-5 py-2 rounded-lg bg-accent-yellow text-black text-sm font-semibold spring-btn shadow-[var(--shadow-glow)]">
+        Get Started
+      </a>
+      <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Open menu" aria-expanded="false">
+        <span class="w-5 h-0.5 bg-ui-fg transition-all origin-center" id="burger-1"></span>
+        <span class="w-5 h-0.5 bg-ui-fg transition-all" id="burger-2"></span>
+        <span class="w-5 h-0.5 bg-ui-fg transition-all origin-center" id="burger-3"></span>
       </button>
     </div>
+  </div>
 
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="hidden md:hidden pb-4">
-      <div class="flex flex-col gap-2 pt-2 border-t border-white/10">
-        <a href="#features" class="text-sm text-gray-300 hover:text-white px-2 py-1.5">Features</a>
-        <a href="#how-it-works" class="text-sm text-gray-300 hover:text-white px-2 py-1.5">How It Works</a>
-        <a href="/getting-started/introduction/" class="text-sm text-gray-300 hover:text-white px-2 py-1.5">Docs</a>
-        <a href="https://github.com/nerveband/agent-to-bricks" target="_blank" rel="noopener noreferrer" class="text-sm text-gray-300 hover:text-white px-2 py-1.5">GitHub</a>
-      </div>
-    </div>
-  </nav>
+  <!-- Mobile Drawer -->
+  <div id="mobile-drawer" class="md:hidden fixed inset-0 top-16 bg-[var(--surface-dark)]/95 backdrop-blur-xl z-40 translate-x-full transition-transform duration-300" aria-hidden="true">
+    <nav class="flex flex-col gap-2 p-6">
+      <a href="#features" class="text-lg text-ui-fg py-3 border-b border-subtle">Features</a>
+      <a href="#how-it-works" class="text-lg text-ui-fg py-3 border-b border-subtle">How It Works</a>
+      <a href="/getting-started/introduction/" class="text-lg text-ui-fg py-3 border-b border-subtle">Docs</a>
+      <a href="https://github.com/nerveband/agent-to-bricks" target="_blank" class="text-lg text-ui-fg py-3 border-b border-subtle flex items-center gap-2">
+        <i class="ph ph-github-logo"></i> GitHub
+      </a>
+      <a href="/getting-started/installation/" class="mt-4 inline-flex items-center justify-center px-6 py-3 rounded-lg bg-accent-yellow text-black font-semibold">
+        Get Started
+      </a>
+    </nav>
+  </div>
 </header>
 
 <script is:inline>
-  // Sticky glass blur on scroll
+  // Scroll behavior
   const header = document.getElementById('site-header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) {
-      header.classList.add('bg-[#0a0a0c]/80', 'backdrop-blur-xl', 'border-b', 'border-white/5');
+  const updateHeader = () => {
+    if (window.scrollY > 20) {
+      header.style.backdropFilter = 'blur(20px) saturate(180%)';
+      header.style.webkitBackdropFilter = 'blur(20px) saturate(180%)';
+      header.style.background = 'rgba(10, 10, 12, 0.8)';
+      header.style.borderBottom = '1px solid var(--border-subtle)';
     } else {
-      header.classList.remove('bg-[#0a0a0c]/80', 'backdrop-blur-xl', 'border-b', 'border-white/5');
+      header.style.backdropFilter = '';
+      header.style.webkitBackdropFilter = '';
+      header.style.background = '';
+      header.style.borderBottom = '';
     }
-  });
-
-  // Theme toggle
-  document.getElementById('theme-toggle')?.addEventListener('click', () => {
-    const current = document.documentElement.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
-  });
+  };
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader();
 
   // Mobile menu toggle
   const menuBtn = document.getElementById('mobile-menu-btn');
+  const drawer = document.getElementById('mobile-drawer');
+  let menuOpen = false;
   menuBtn?.addEventListener('click', () => {
-    const menu = document.getElementById('mobile-menu');
-    menu?.classList.toggle('hidden');
-    const expanded = !menu?.classList.contains('hidden');
-    menuBtn.setAttribute('aria-expanded', String(expanded));
-    menuBtn.setAttribute('aria-label', expanded ? 'Close menu' : 'Open menu');
+    menuOpen = !menuOpen;
+    drawer.classList.toggle('translate-x-full', !menuOpen);
+    drawer.classList.toggle('translate-x-0', menuOpen);
+    drawer.setAttribute('aria-hidden', String(!menuOpen));
+    menuBtn.setAttribute('aria-expanded', String(menuOpen));
+    document.getElementById('burger-1').style.transform = menuOpen ? 'rotate(45deg) translateY(4px)' : '';
+    document.getElementById('burger-2').style.opacity = menuOpen ? '0' : '1';
+    document.getElementById('burger-3').style.transform = menuOpen ? 'rotate(-45deg) translateY(-4px)' : '';
+  });
+
+  // Close drawer on link click
+  drawer?.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      menuOpen = false;
+      drawer.classList.add('translate-x-full');
+      drawer.classList.remove('translate-x-0');
+    });
   });
 </script>
