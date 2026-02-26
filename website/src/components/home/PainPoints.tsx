@@ -14,7 +14,7 @@ const painPoints = [
   {
     icon: 'ph ph-lock-key',
     title: 'Other AI tools lock you in',
-    desc: 'Existing AI plugins force their models, their interface, their subscription. You can\'t bring Claude, Codex, or your own API keys.',
+    desc: 'Existing AI plugins charge monthly, force their templates, and don\'t respect your existing styles. You\'re locked into their way of doing things.',
   },
   {
     icon: 'ph ph-columns',

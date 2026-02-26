@@ -1,10 +1,10 @@
 ---
 const wins = [
   {
-    title: 'Upload images into a gallery',
-    description: 'Point it at a folder. It uploads everything and builds the gallery section. Done.',
-    iconClass: 'ph-duotone ph-upload-simple',
-    command: '$ bricks media upload ./photos/*.jpg',
+    title: 'Roll back any change',
+    description: 'Every push saves a snapshot. Something wrong? One command to undo it. Your safety net for every edit.',
+    iconClass: 'ph-duotone ph-clock-counter-clockwise',
+    command: '$ bricks snapshot restore --page 1460',
   },
   {
     title: 'Generate a landing page',
@@ -13,10 +13,10 @@ const wins = [
     command: '$ bricks generate page "SaaS landing page"',
   },
   {
-    title: 'Convert HTML to Bricks',
-    description: 'Write HTML with your classes. The CLI turns it into Bricks elements and maps class names to IDs.',
-    iconClass: 'ph-duotone ph-brackets-angle',
-    command: '$ bricks convert ./template.html --push',
+    title: 'Control what AI can touch',
+    description: 'Set allow and deny lists so AI only edits the pages you choose. Stay in control, even at scale.',
+    iconClass: 'ph-duotone ph-shield-check',
+    command: '$ bricks config set --allowed-pages 12,45,67',
   },
   {
     title: 'Search and replace across pages',
@@ -25,10 +25,22 @@ const wins = [
     command: '$ bricks search "old" | bricks modify',
   },
   {
-    title: 'Roll back any change',
-    description: 'Every push saves a snapshot. Something wrong? One command to undo it.',
-    iconClass: 'ph-duotone ph-clock-counter-clockwise',
-    command: '$ bricks snapshot restore --page 1460',
+    title: 'Upload images into a gallery',
+    description: 'Point it at a folder. It uploads everything and builds the gallery section. Done.',
+    iconClass: 'ph-duotone ph-upload-simple',
+    command: '$ bricks media upload ./photos/*.jpg',
+  },
+  {
+    title: 'Convert HTML to Bricks',
+    description: 'Write HTML with your classes. The CLI turns it into Bricks elements and maps class names to IDs.',
+    iconClass: 'ph-duotone ph-brackets-angle',
+    command: '$ bricks convert ./template.html --push',
+  },
+  {
+    title: 'Manage multiple sites',
+    description: 'Switch between Bricks websites from one place. Update styles across all your client sites without logging into each one.',
+    iconClass: 'ph-duotone ph-globe-hemisphere-west',
+    command: '$ bricks config use --profile client-b',
   },
   {
     title: 'Apply a style profile',
@@ -40,7 +52,7 @@ const wins = [
 ---
 
 <section class="py-24 px-4 sm:px-6 lg:px-8">
-  <div class="mx-auto max-w-5xl">
+  <div class="mx-auto max-w-6xl">
     <div class="text-center mb-12 relative z-20">
       <h2 class="text-3xl sm:text-4xl font-bold text-ui-fg drop-shadow-sm">What you can do</h2>
       <p class="mt-4 text-ui-muted text-lg">
@@ -48,7 +60,7 @@ const wins = [
       </p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 relative z-20 stagger-children">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-20 stagger-children">
       {wins.map((win) => (
         <div class="glass-base tilt-card relative overflow-hidden p-7 border border-subtle transition-all hover:border-accent-yellow hover:-translate-y-1 group group-hover:shadow-[var(--shadow-glow)]">
           <div class="noise"></div>

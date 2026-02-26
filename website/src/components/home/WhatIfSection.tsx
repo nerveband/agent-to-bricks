@@ -156,9 +156,9 @@ export default function WhatIfSection() {
           className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-ui-fg"
           style={{ fontFamily: "'Space Grotesk', sans-serif" }}
         >
-          What if you could just{' '}
+          What if one command could{' '}
           <span className="text-accent-yellow drop-shadow-[0_0_15px_rgba(250,204,21,0.4)]">
-            talk to your website?
+            do what takes an hour?
           </span>
         </h2>
       </div>

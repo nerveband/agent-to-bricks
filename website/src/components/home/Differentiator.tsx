@@ -3,7 +3,9 @@ import { useRef, useEffect } from 'react';
 const rows = [
   { feature: 'AI Provider', other: 'Locked to their API', atb: 'Bring your own' },
   { feature: 'Pricing', other: 'Monthly subscription', atb: 'Free & open source' },
+  { feature: 'CSS Output', other: 'Inline styles, code soup', atb: 'Respects your classes and ACSS' },
   { feature: 'Workflow', other: 'Their interface only', atb: 'CLI, GUI, or API' },
+  { feature: 'Safety', other: 'Hope nothing breaks', atb: 'Snapshots on every push, one-click rollback' },
   { feature: 'Automation', other: 'Not possible', atb: 'Chain commands, cron, CI/CD' },
   { feature: 'Templates', other: 'Their templates', atb: 'Create, import, generate your own' },
   { feature: 'Data Privacy', other: 'Sent to their servers', atb: 'Your machine, your keys' },

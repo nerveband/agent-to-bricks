@@ -163,12 +163,12 @@ const pillars = [
   {
     label: 'CLI',
     title: 'Your workflow, your way',
-    description: 'Chain commands together, pipe into other tools, automate with cron. Works with any AI agent \u2014 Claude Code, Codex, or your own.',
+    description: 'Chain commands together, automate repetitive tasks, and let any AI agent do the heavy lifting. Not a terminal person? The desktop app does everything the CLI can.',
     features: [
-      'Pipe and chain commands like Unix tools',
       'Bring any AI agent \u2014 Claude, Codex, OpenCode',
-      'Automate with cron, CI/CD, or scripts',
-      'Works alongside your existing dev tools',
+      'Automate bulk updates across all your pages',
+      'Schedule tasks with cron, CI/CD, or scripts',
+      'Works alongside your existing tools and frameworks',
     ],
     Mockup: CliMockup,
   },
