@@ -189,51 +189,59 @@ class ATB_API_Auth {
 		return hash( 'sha256', $key . wp_salt( 'auth' ) );
 	}
 
-	/**
-	 * Encrypt key for retrievable storage (admin-only reveal).
-	 * Uses a random IV per encryption for stronger security.
-	 */
 	private static function encrypt_key( $key ) {
 		if ( empty( $key ) ) {
 			return '';
 		}
-		$iv        = openssl_random_pseudo_bytes( 16 );
-		$encrypted = openssl_encrypt( $key, 'aes-256-cbc', wp_salt( 'auth' ), OPENSSL_RAW_DATA, $iv );
-		// Prepend IV to ciphertext so it can be extracted during decryption.
+		$iv = random_bytes( 16 );
+		$encrypted = openssl_encrypt(
+			$key,
+			'aes-256-cbc',
+			wp_salt( 'auth' ),
+			OPENSSL_RAW_DATA,
+			$iv
+		);
+		// Prepend IV to ciphertext
 		return base64_encode( $iv . $encrypted );
 	}
 
-	/**
-	 * Decrypt a stored encrypted key.
-	 * Supports both new (random IV prepended) and legacy (static IV) formats.
-	 */
 	private static function decrypt_stored_key( $encrypted ) {
 		if ( empty( $encrypted ) ) {
 			return '';
 		}
-		$data = base64_decode( $encrypted );
-		if ( $data === false ) {
+		$raw = base64_decode( $encrypted );
+		if ( strlen( $raw ) <= 16 ) {
+			return self::decrypt_legacy( $encrypted );
+		}
+		$iv         = substr( $raw, 0, 16 );
+		$ciphertext = substr( $raw, 16 );
+		$decrypted  = openssl_decrypt(
+			$ciphertext,
+			'aes-256-cbc',
+			wp_salt( 'auth' ),
+			OPENSSL_RAW_DATA,
+			$iv
+		);
+		if ( $decrypted === false ) {
+			return self::decrypt_legacy( $encrypted );
+		}
+		return $decrypted;
+	}
+
+	/**
+	 * Legacy decryption using static IV (backward compatibility).
+	 */
+	private static function decrypt_legacy( $encrypted ) {
+		if ( empty( $encrypted ) ) {
 			return '';
 		}
-
-		// New format: first 16 bytes are IV, rest is raw ciphertext.
-		if ( strlen( $data ) > 16 ) {
-			$iv         = substr( $data, 0, 16 );
-			$ciphertext = substr( $data, 16 );
-			$decrypted  = openssl_decrypt( $ciphertext, 'aes-256-cbc', wp_salt( 'auth' ), OPENSSL_RAW_DATA, $iv );
-			if ( $decrypted !== false ) {
-				return $decrypted;
-			}
-		}
-
-		// Legacy fallback: static IV, base64-encoded ciphertext from openssl_encrypt default.
-		$legacy_iv = substr( md5( wp_salt( 'secure_auth' ) ), 0, 16 );
-		$decrypted = openssl_decrypt( $data, 'aes-256-cbc', wp_salt( 'auth' ), 0, $legacy_iv );
-		if ( $decrypted !== false ) {
-			return $decrypted;
-		}
-
-		return '';
+		return openssl_decrypt(
+			base64_decode( $encrypted ),
+			'aes-256-cbc',
+			wp_salt( 'auth' ),
+			0,
+			substr( md5( wp_salt( 'secure_auth' ) ), 0, 16 )
+		);
 	}
 
 	/**

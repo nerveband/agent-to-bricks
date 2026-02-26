@@ -87,26 +87,50 @@ class ATB_Settings {
 		return $clean;
 	}
 
-	/**
-	 * Simple encryption for API key storage.
-	 */
 	private static function encrypt_key( $key ) {
 		if ( empty( $key ) ) {
 			return '';
 		}
-		return base64_encode( openssl_encrypt(
+		$iv = random_bytes( 16 );
+		$encrypted = openssl_encrypt(
 			$key,
 			'aes-256-cbc',
 			wp_salt( 'auth' ),
-			0,
-			substr( md5( wp_salt( 'secure_auth' ) ), 0, 16 )
-		) );
+			OPENSSL_RAW_DATA,
+			$iv
+		);
+		// Prepend IV to ciphertext
+		return base64_encode( $iv . $encrypted );
+	}
+
+	public static function decrypt_key( $encrypted ) {
+		if ( empty( $encrypted ) ) {
+			return '';
+		}
+		$raw = base64_decode( $encrypted );
+		if ( strlen( $raw ) <= 16 ) {
+			return self::decrypt_legacy( $encrypted );
+		}
+		$iv         = substr( $raw, 0, 16 );
+		$ciphertext = substr( $raw, 16 );
+		$decrypted  = openssl_decrypt(
+			$ciphertext,
+			'aes-256-cbc',
+			wp_salt( 'auth' ),
+			OPENSSL_RAW_DATA,
+			$iv
+		);
+		if ( $decrypted === false ) {
+			// Fallback to legacy decryption for keys encrypted before this update
+			return self::decrypt_legacy( $encrypted );
+		}
+		return $decrypted;
 	}
 
 	/**
-	 * Decrypt API key for use.
+	 * Legacy decryption using static IV (backward compatibility).
 	 */
-	public static function decrypt_key( $encrypted ) {
+	private static function decrypt_legacy( $encrypted ) {
 		if ( empty( $encrypted ) ) {
 			return '';
 		}
@@ -363,7 +387,52 @@ class ATB_Settings {
 						var tbody = document.getElementById('atb-api-keys-list');
 						var tr = document.createElement('tr');
 						tr.setAttribute('data-prefix', resp.data.prefix);
-						tr.innerHTML = '<td>' + label + '</td><td><code class="atb-key-display">' + resp.data.prefix + '...</code></td><td>Just now</td><td><em>Never</em></td><td><button type="button" class="button button-small atb-show-key" data-prefix="' + resp.data.prefix + '">Show</button> <button type="button" class="button button-small atb-copy-existing-key" data-prefix="' + resp.data.prefix + '" style="display:none;">Copy</button> <button type="button" class="button button-small atb-revoke-key" data-prefix="' + resp.data.prefix + '">Revoke</button></td>';
+
+						var tdLabel = document.createElement('td');
+						tdLabel.textContent = label;
+						tr.appendChild(tdLabel);
+
+						var tdKey = document.createElement('td');
+						var codeEl = document.createElement('code');
+						codeEl.className = 'atb-key-display';
+						codeEl.textContent = resp.data.prefix + '...';
+						tdKey.appendChild(codeEl);
+						tr.appendChild(tdKey);
+
+						var tdCreated = document.createElement('td');
+						tdCreated.textContent = 'Just now';
+						tr.appendChild(tdCreated);
+
+						var tdUsed = document.createElement('td');
+						tdUsed.innerHTML = '<em>Never</em>';
+						tr.appendChild(tdUsed);
+
+						var tdActions = document.createElement('td');
+						var showBtn = document.createElement('button');
+						showBtn.type = 'button';
+						showBtn.className = 'button button-small atb-show-key';
+						showBtn.setAttribute('data-prefix', resp.data.prefix);
+						showBtn.textContent = 'Show';
+						tdActions.appendChild(showBtn);
+						tdActions.appendChild(document.createTextNode(' '));
+
+						var cpBtn = document.createElement('button');
+						cpBtn.type = 'button';
+						cpBtn.className = 'button button-small atb-copy-existing-key';
+						cpBtn.setAttribute('data-prefix', resp.data.prefix);
+						cpBtn.style.display = 'none';
+						cpBtn.textContent = 'Copy';
+						tdActions.appendChild(cpBtn);
+						tdActions.appendChild(document.createTextNode(' '));
+
+						var rvBtn = document.createElement('button');
+						rvBtn.type = 'button';
+						rvBtn.className = 'button button-small atb-revoke-key';
+						rvBtn.setAttribute('data-prefix', resp.data.prefix);
+						rvBtn.textContent = 'Revoke';
+						tdActions.appendChild(rvBtn);
+						tr.appendChild(tdActions);
+
 						tbody.appendChild(tr);
 						bindRevoke(tr.querySelector('.atb-revoke-key'));
 						bindShow(tr.querySelector('.atb-show-key'));
