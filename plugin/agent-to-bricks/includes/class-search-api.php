@@ -71,6 +71,8 @@ class ATB_Search_API {
 				break;
 			}
 
+			$post_ids = ATB_Access_Control::filter_post_ids( $post_ids );
+
 			foreach ( $post_ids as $pid ) {
 				$post     = get_post( $pid );
 				$elements = get_post_meta( $pid, $meta_key, true );

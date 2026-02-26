@@ -20,12 +20,24 @@ class ATB_Components_API {
 		register_rest_route( 'agent-bricks/v1', '/components/(?P<id>\d+)', [
 			'methods'             => 'GET',
 			'callback'            => [ __CLASS__, 'get_component' ],
-			'permission_callback' => [ __CLASS__, 'check_permission' ],
+			'permission_callback' => [ __CLASS__, 'check_single_permission' ],
 		] );
 	}
 
 	public static function check_permission(): bool {
 		return current_user_can( 'edit_posts' );
+	}
+
+	public static function check_single_permission( WP_REST_Request $request ) {
+		$post_id = (int) $request->get_param( 'id' );
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+			return false;
+		}
+		$access = ATB_Access_Control::can_access_post( $post_id );
+		if ( is_wp_error( $access ) ) {
+			return $access;
+		}
+		return true;
 	}
 
 	public static function list_components(): WP_REST_Response {
@@ -88,7 +100,7 @@ class ATB_Components_API {
 			'type'         => 'section',
 			'status'       => $post->post_status,
 			'elements'     => $elements,
-			'contentHash'  => md5( serialize( $elements ) ),
+			'contentHash'  => md5( wp_json_encode( $elements ) ),
 			'elementCount' => count( $elements ),
 			'modified'     => $post->post_modified,
 		], 200 );

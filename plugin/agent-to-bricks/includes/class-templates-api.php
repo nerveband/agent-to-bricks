@@ -13,42 +13,80 @@ class ATB_Templates_API {
 	}
 
 	public static function register_routes() {
-		// GET + POST /templates
 		register_rest_route( 'agent-bricks/v1', '/templates', array(
 			array(
 				'methods'             => 'GET',
 				'callback'            => array( __CLASS__, 'list_templates' ),
-				'permission_callback' => array( __CLASS__, 'check_permission' ),
+				'permission_callback' => array( __CLASS__, 'check_list_permission' ),
 			),
 			array(
 				'methods'             => 'POST',
 				'callback'            => array( __CLASS__, 'create_template' ),
-				'permission_callback' => array( __CLASS__, 'check_permission' ),
+				'permission_callback' => array( __CLASS__, 'check_create_permission' ),
 			),
 		) );
 
-		// GET + PATCH + DELETE /templates/{id}
 		register_rest_route( 'agent-bricks/v1', '/templates/(?P<id>\d+)', array(
 			array(
 				'methods'             => 'GET',
 				'callback'            => array( __CLASS__, 'get_template' ),
-				'permission_callback' => array( __CLASS__, 'check_permission' ),
+				'permission_callback' => array( __CLASS__, 'check_read_permission' ),
 			),
 			array(
 				'methods'             => 'PATCH',
 				'callback'            => array( __CLASS__, 'update_template' ),
-				'permission_callback' => array( __CLASS__, 'check_permission' ),
+				'permission_callback' => array( __CLASS__, 'check_edit_permission' ),
 			),
 			array(
 				'methods'             => 'DELETE',
 				'callback'            => array( __CLASS__, 'delete_template' ),
-				'permission_callback' => array( __CLASS__, 'check_permission' ),
+				'permission_callback' => array( __CLASS__, 'check_delete_permission' ),
 			),
 		) );
 	}
 
-	public static function check_permission() {
+	public static function check_list_permission() {
 		return current_user_can( 'edit_posts' );
+	}
+
+	public static function check_create_permission() {
+		return current_user_can( 'publish_posts' );
+	}
+
+	public static function check_read_permission( $request ) {
+		$post_id = (int) $request->get_param( 'id' );
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+			return false;
+		}
+		$access = ATB_Access_Control::can_access_post( $post_id );
+		if ( is_wp_error( $access ) ) {
+			return $access;
+		}
+		return true;
+	}
+
+	public static function check_edit_permission( $request ) {
+		$post_id = (int) $request->get_param( 'id' );
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+			return false;
+		}
+		$access = ATB_Access_Control::can_access_post( $post_id );
+		if ( is_wp_error( $access ) ) {
+			return $access;
+		}
+		return true;
+	}
+
+	public static function check_delete_permission( $request ) {
+		$post_id = (int) $request->get_param( 'id' );
+		if ( ! current_user_can( 'delete_post', $post_id ) ) {
+			return false;
+		}
+		$access = ATB_Access_Control::can_access_post( $post_id );
+		if ( is_wp_error( $access ) ) {
+			return $access;
+		}
+		return true;
 	}
 
 	/**
@@ -110,7 +148,7 @@ class ATB_Templates_API {
 			'type'         => get_post_meta( $post_id, '_bricks_template_type', true ) ?: 'content',
 			'status'       => $post->post_status,
 			'elements'     => $elements,
-			'contentHash'  => md5( serialize( $elements ) ),
+			'contentHash'  => md5( wp_json_encode( $elements ) ),
 			'settings'     => get_post_meta( $post_id, '_bricks_template_settings', true ) ?: array(),
 		), 200 );
 	}
@@ -122,7 +160,7 @@ class ATB_Templates_API {
 		$body     = $request->get_json_params();
 		$title    = sanitize_text_field( $body['title'] ?? 'Untitled Template' );
 		$type     = sanitize_text_field( $body['type'] ?? 'section' );
-		$elements = $body['elements'] ?? array();
+		$elements = ATB_Element_Validator::sanitize_flat_elements( $body['elements'] ?? array() );
 		$status   = sanitize_text_field( $body['status'] ?? 'publish' );
 
 		$post_id = wp_insert_post( array(
@@ -141,8 +179,8 @@ class ATB_Templates_API {
 		update_post_meta( $post_id, ATB_Bricks_Lifecycle::content_meta_key(), $elements );
 		update_post_meta( $post_id, '_bricks_editor_mode', 'bricks' );
 
-		if ( ! empty( $body['settings'] ) ) {
-			update_post_meta( $post_id, '_bricks_template_settings', $body['settings'] );
+		if ( ! empty( $body['settings'] ) && is_array( $body['settings'] ) ) {
+			update_post_meta( $post_id, '_bricks_template_settings', ATB_Element_Validator::sanitize_settings( $body['settings'] ) );
 		}
 
 		return new WP_REST_Response( array(
@@ -173,16 +211,16 @@ class ATB_Templates_API {
 			) );
 		}
 
-		if ( isset( $body['elements'] ) ) {
-			update_post_meta( $post_id, ATB_Bricks_Lifecycle::content_meta_key(), $body['elements'] );
+		if ( isset( $body['elements'] ) && is_array( $body['elements'] ) ) {
+			update_post_meta( $post_id, ATB_Bricks_Lifecycle::content_meta_key(), ATB_Element_Validator::sanitize_flat_elements( $body['elements'] ) );
 		}
 
 		if ( isset( $body['type'] ) ) {
 			update_post_meta( $post_id, '_bricks_template_type', sanitize_text_field( $body['type'] ) );
 		}
 
-		if ( isset( $body['settings'] ) ) {
-			update_post_meta( $post_id, '_bricks_template_settings', $body['settings'] );
+		if ( isset( $body['settings'] ) && is_array( $body['settings'] ) ) {
+			update_post_meta( $post_id, '_bricks_template_settings', ATB_Element_Validator::sanitize_settings( $body['settings'] ) );
 		}
 
 		// Read back
@@ -209,7 +247,7 @@ class ATB_Templates_API {
 			return new WP_REST_Response( array( 'error' => 'Template not found.' ), 404 );
 		}
 
-		wp_delete_post( $post_id, true );
+		wp_trash_post( $post_id );
 
 		return new WP_REST_Response( array(
 			'success' => true,

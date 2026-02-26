@@ -72,7 +72,7 @@ class ATB_Site_API {
 			'elementTypes'   => $element_types,
 			'breakpoints'    => $breakpoints,
 			'pluginVersion'  => defined( 'AGENT_BRICKS_VERSION' ) ? AGENT_BRICKS_VERSION : null,
-			'phpVersion'     => PHP_VERSION,
+			'phpVersion'     => current_user_can( 'manage_options' ) ? PHP_VERSION : null,
 			'wpVersion'      => get_bloginfo( 'version' ),
 		), 200 );
 	}
@@ -248,6 +248,10 @@ class ATB_Site_API {
 		$pages = [];
 
 		foreach ( $query->posts as $post ) {
+			// Filter by access control
+			if ( ATB_Access_Control::can_access_post( $post->ID ) !== true ) {
+				continue;
+			}
 			$pages[] = [
 				'id'       => $post->ID,
 				'title'    => $post->post_title ?: '(no title)',

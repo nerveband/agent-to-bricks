@@ -52,12 +52,26 @@ class ATB_Elements_API {
 
 	public static function check_read_permission( $request ) {
 		$post_id = (int) $request->get_param( 'id' );
-		return current_user_can( 'edit_post', $post_id );
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+			return false;
+		}
+		$access = ATB_Access_Control::can_access_post( $post_id );
+		if ( is_wp_error( $access ) ) {
+			return $access;
+		}
+		return true;
 	}
 
 	public static function check_write_permission( $request ) {
 		$post_id = (int) $request->get_param( 'id' );
-		return current_user_can( 'edit_post', $post_id );
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+			return false;
+		}
+		$access = ATB_Access_Control::can_access_post( $post_id );
+		if ( is_wp_error( $access ) ) {
+			return $access;
+		}
+		return true;
 	}
 
 	/**
