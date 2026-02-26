@@ -62,6 +62,11 @@ class ATB_API_Auth {
 		// Log in as the key's owner
 		wp_set_current_user( $key_data['user_id'] );
 
+		// Store key prefix for access control checks
+		if ( class_exists( 'ATB_Access_Control' ) ) {
+			ATB_Access_Control::set_current_key( $key_data['key_prefix'] );
+		}
+
 		// Update last used timestamp (throttled)
 		self::touch_key( $api_key );
 

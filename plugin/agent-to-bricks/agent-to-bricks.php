@@ -26,6 +26,7 @@ if ( ! defined( 'ATB_ENABLE_LLM_SETTINGS' ) ) {
 require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-llm-providers.php';
 require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-llm-client.php';
 require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-element-validator.php';
+require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-access-control.php';
 require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-rest-api.php';
 require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-settings.php';
 require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-api-auth.php';
@@ -80,7 +81,8 @@ add_action( 'init', 'agent_bricks_init' );
  */
 function agent_bricks_enqueue_editor_assets() {
 	// Only load when Bricks editor is active (bricks=run in URL).
-	if ( ! isset( $_GET['bricks'] ) || $_GET['bricks'] !== 'run' ) {
+	$bricks_param = isset( $_GET['bricks'] ) ? sanitize_text_field( wp_unslash( $_GET['bricks'] ) ) : '';
+	if ( $bricks_param !== 'run' ) {
 		return;
 	}
 

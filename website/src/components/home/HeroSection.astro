@@ -1,40 +1,77 @@
 ---
-import ViewToggle from './ViewToggle';
 ---
 
-<section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-  <div class="mx-auto max-w-5xl">
-    <!-- Headline -->
-    <div class="text-center mb-12">
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-        Update your Bricks website with
-        <span class="text-yellow-400">natural language.</span>
-      </h1>
-      <p class="mt-6 text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto">
-        Bring your own AI agent, your own workflows, from your machine to the cloud. Free and open source.
-      </p>
-      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a
-          href="/getting-started/installation/"
-          class="inline-flex items-center px-6 py-3 rounded-lg bg-yellow-400 text-gray-900 font-semibold hover:bg-yellow-300 transition-colors"
-        >
-          Get Started
-        </a>
-        <a
-          href="https://github.com/nerveband/agent-to-bricks"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 text-white hover:bg-white/5 transition-colors"
-        >
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          Star on GitHub
-        </a>
+<section class="pt-24 pb-16 px-4 sm:px-6 lg:px-8 min-h-[calc(100vh-64px)] flex flex-col items-center justify-center relative z-10 w-full max-w-[1400px]">
+
+  <div class="text-center mb-12 mt-8 relative z-20">
+    <h1 class="hero-headline text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.1]" style="font-family: 'Space Grotesk', sans-serif;">
+      <span class="word inline-block text-ui-fg">Your</span>
+      <span class="word inline-block text-ui-fg">Bricks</span>
+      <span class="word inline-block text-ui-fg">site.</span>
+      <span class="word inline-block text-ui-fg">Your</span>
+      <span class="word inline-block text-ui-fg">AI.</span>
+      <span class="word inline-block text-accent-yellow drop-shadow-[0_0_20px_rgba(250,204,21,0.5)]">Your</span>
+      <span class="word inline-block text-accent-yellow drop-shadow-[0_0_20px_rgba(250,204,21,0.5)]">rules.</span>
+    </h1>
+    <p class="hero-subhead mt-6 text-lg sm:text-xl text-ui-muted max-w-2xl mx-auto leading-relaxed">
+      Stop clicking through WordPress one page at a time. Bulk update content, upload media from your desktop, generate sections from any AI — all from your terminal or our GUI.
+    </p>
+    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="/getting-started/installation/" class="hero-cta inline-flex items-center px-7 py-3 rounded-lg bg-accent-yellow text-black font-semibold spring-btn shadow-[var(--shadow-glow)] text-base">
+        Get Started
+      </a>
+      <a href="https://github.com/nerveband/agent-to-bricks" target="_blank" rel="noopener noreferrer" class="hero-cta inline-flex items-center gap-2 px-7 py-3 rounded-lg white-glass border border-subtle text-ui-fg hover:bg-[var(--white-glass)] transition-all text-base">
+        <i class="ph ph-github-logo text-lg"></i>
+        Star on GitHub
+      </a>
+    </div>
+  </div>
+
+  <!-- Two-Pane Mockup -->
+  <div class="hero-mockup glass-base w-full max-w-5xl flex flex-col sm:flex-row relative overflow-hidden app-body shadow-2xl rounded-2xl border border-subtle">
+    <div class="noise rounded-2xl"></div>
+
+    <!-- Left: The Old Way -->
+    <div class="flex-1 p-6 sm:p-8 relative z-10 opacity-60 grayscale-[30%]">
+      <div class="text-xs font-semibold uppercase tracking-[0.2em] text-ui-subtle mb-4">The Old Way</div>
+      <div class="font-mono text-xs leading-loose text-ui-subtle space-y-1">
+        <div><span class="text-ui-muted">1.</span> Open WordPress admin</div>
+        <div><span class="text-ui-muted">2.</span> Navigate to Pages → Homepage</div>
+        <div><span class="text-ui-muted">3.</span> Click "Edit with Bricks"</div>
+        <div><span class="text-ui-muted">4.</span> Find the heading element</div>
+        <div><span class="text-ui-muted">5.</span> Change color to #2563EB</div>
+        <div><span class="text-ui-muted">6.</span> Click Save</div>
+        <div class="pt-2 text-ui-subtle/70 italic">7. Repeat for 19 more pages...</div>
+      </div>
+      <div class="mt-4 text-[10px] text-ui-subtle font-mono">~45 minutes of clicking</div>
+    </div>
+
+    <!-- Vertical Divider -->
+    <div class="hidden sm:block w-px bg-[var(--border)] relative">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[var(--surface-dark)] border border-subtle flex items-center justify-center text-accent-yellow text-xs font-bold z-20">
+        vs
+      </div>
+    </div>
+    <!-- Horizontal divider for mobile -->
+    <div class="sm:hidden h-px bg-[var(--border)] relative">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[var(--surface-dark)] border border-subtle flex items-center justify-center text-accent-yellow text-xs font-bold z-20">
+        vs
       </div>
     </div>
 
-    <!-- Interactive mockup -->
-    <div class="max-w-3xl mx-auto">
-      <ViewToggle client:visible />
+    <!-- Right: With Agent to Bricks -->
+    <div class="flex-1 p-6 sm:p-8 relative z-10">
+      <div class="absolute inset-0 scanlines opacity-15 pointer-events-none z-0"></div>
+      <div class="text-xs font-semibold uppercase tracking-[0.2em] text-accent-yellow mb-4 drop-shadow-[0_0_8px_rgba(250,204,21,0.3)]">With Agent to Bricks</div>
+      <div class="font-mono text-xs leading-loose relative z-10 space-y-1">
+        <div><span class="text-accent-green font-bold">$</span> <span class="text-ui-fg">bricks search --type heading --all-pages</span></div>
+        <div class="text-ui-muted ml-4">Found 47 headings across 20 pages</div>
+        <div class="mt-2"></div>
+        <div><span class="text-accent-green font-bold">$</span> <span class="text-ui-fg">bricks modify --color "var(--primary)" --push</span></div>
+        <div class="text-accent-green ml-4">✓ 47 headings updated across 20 pages</div>
+        <div class="text-accent-green ml-4">✓ Snapshots saved for all modified pages</div>
+      </div>
+      <div class="mt-4 text-[10px] text-accent-yellow font-mono drop-shadow-[0_0_4px_rgba(250,204,21,0.3)]">~8 seconds. Done.</div>
     </div>
   </div>
 </section>
