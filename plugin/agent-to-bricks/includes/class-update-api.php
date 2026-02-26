@@ -40,6 +40,22 @@ class ATB_Update_API {
 		$version          = sanitize_text_field( $request->get_param( 'version' ) );
 		$previous_version = AGENT_BRICKS_VERSION;
 
+		// Validate version string format (strict semver).
+		if ( ! preg_match( '/^\d+\.\d+\.\d+$/', $version ) ) {
+			return new WP_REST_Response( array(
+				'success' => false,
+				'error'   => 'Invalid version format. Expected: X.Y.Z',
+			), 400 );
+		}
+
+		// Bail early if the host disallows filesystem writes.
+		if ( defined( 'DISALLOW_FILE_MODS' ) && DISALLOW_FILE_MODS ) {
+			return new WP_REST_Response( array(
+				'success' => false,
+				'error'   => 'File modifications are disabled on this host. Update the plugin manually or via your hosting dashboard.',
+			), 403 );
+		}
+
 		// Build download URL
 		$download_url = sprintf(
 			'https://github.com/%s/releases/download/v%s/agent-to-bricks-plugin-%s.zip',
@@ -97,6 +113,11 @@ class ATB_Update_API {
 		$plugin_file = 'agent-to-bricks/agent-to-bricks.php';
 		if ( ! is_plugin_active( $plugin_file ) ) {
 			activate_plugin( $plugin_file );
+		}
+
+		// Clear OPcache if available to ensure new code is loaded
+		if ( function_exists( 'opcache_reset' ) ) {
+			opcache_reset();
 		}
 
 		return new WP_REST_Response( array(
