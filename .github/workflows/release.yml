@@ -108,7 +108,7 @@ jobs:
         run: |
           TAG="${{ github.ref_name }}"
           mkdir -p /tmp/rename
-          for ASSET in $(gh release view "$TAG" --json assets --jq ".assets[].name" | grep -E "\.(exe|msi)(\.sig)?$"); do
+          for ASSET in $(gh release view "$TAG" --json assets --jq ".assets[].name" | grep -E "\.(exe|msi)(\.sig)?$" | grep -v "_windows_"); do
             NEW_NAME=$(echo "$ASSET" | sed "s/_x64/_windows_x64/g" | sed "s/_arm64/_windows_arm64/g")
             if [ "$ASSET" != "$NEW_NAME" ]; then
               echo "Renaming: $ASSET -> $NEW_NAME"
