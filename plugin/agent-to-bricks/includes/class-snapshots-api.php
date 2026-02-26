@@ -43,7 +43,14 @@ class ATB_Snapshots_API {
 
 	public static function check_permission( $request ) {
 		$post_id = (int) $request->get_param( 'id' );
-		return current_user_can( 'edit_post', $post_id );
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+			return false;
+		}
+		$access = ATB_Access_Control::can_access_post( $post_id );
+		if ( is_wp_error( $access ) ) {
+			return $access;
+		}
+		return true;
 	}
 
 	/**
@@ -148,7 +155,7 @@ class ATB_Snapshots_API {
 	public static function take_snapshot( $post_id, $label = '' ) {
 		$data     = ATB_Bricks_Lifecycle::read_elements( $post_id );
 		$snapshot = array(
-			'snapshotId'   => 'snap_' . substr( md5( uniqid( '', true ) ), 0, 12 ),
+			'snapshotId'   => 'snap_' . bin2hex( random_bytes( 8 ) ),
 			'contentHash'  => $data['contentHash'],
 			'elementCount' => count( $data['elements'] ),
 			'elements'     => $data['elements'],
