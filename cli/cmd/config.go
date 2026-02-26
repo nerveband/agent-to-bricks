@@ -103,7 +103,15 @@ var configSetCmd = &cobra.Command{
 			return fmt.Errorf("failed to save: %w", err)
 		}
 
-		fmt.Printf("Set %s = %s\n", key, value)
+		if key == "site.api_key" || key == "llm.api_key" {
+			masked := value
+			if len(value) > 8 {
+				masked = value[:8] + "..."
+			}
+			fmt.Printf("Set %s = %s\n", key, masked)
+		} else {
+			fmt.Printf("Set %s = %s\n", key, value)
+		}
 		return nil
 	},
 }
