@@ -42,5 +42,7 @@ Run the full pre-release check and release pipeline. Do these steps:
 23. Download and open the macOS aarch64 DMG to verify signing works
 
 **If re-releasing (workflow failed and you need to retry):**
-- Delete the existing release first: `gh release delete v<version> --yes`
-- Delete and re-create the tag, then push again
+- First try: `gh run rerun <run-id> --failed` to re-run only the failed job
+- If that doesn't work: delete the release (`gh release delete v<version> --yes`), delete the tag locally and remotely, re-create the tag on latest commit, and push again
+- Common transient failure: Windows GUI build gets GitHub API timeouts during asset upload. The rename step has retry logic, but `tauri-action` itself may timeout. Re-running the failed job usually fixes it.
+- After re-release: check that the previous release's assets don't conflict (goreleaser may error if CLI assets already exist)

@@ -94,7 +94,7 @@ jobs:
           tauriScript: npx tauri
           tagName: ${{ github.ref_name }}
           releaseName: "Agent to Bricks ${{ github.ref_name }}"
-          releaseBody: "See [Changelog](https://agenttobricks.com/about/roadmap/) for details."
+          releaseBody: "See the release notes below for details."
           releaseDraft: true
           prerelease: false
           includeUpdaterJson: true
@@ -108,14 +108,30 @@ jobs:
         run: |
           TAG="${{ github.ref_name }}"
           mkdir -p /tmp/rename
-          for ASSET in $(gh release view "$TAG" --json assets --jq ".assets[].name" | grep -E "\.(exe|msi)(\.sig)?$" | grep -v "_windows_"); do
+          # Retry wrapper for transient GitHub API failures (502, timeouts)
+          retry() {
+            local n=0 max=3 delay=10
+            while true; do
+              "$@" && break || {
+                n=$((n+1))
+                if [ $n -ge $max ]; then
+                  echo "ERROR: command failed after $max attempts: $*"
+                  return 1
+                fi
+                echo "WARN: attempt $n/$max failed, retrying in ${delay}s..."
+                sleep $delay
+                delay=$((delay * 2))
+              }
+            done
+          }
+          for ASSET in $(retry gh release view "$TAG" --json assets --jq ".assets[].name" | grep -E "\.(exe|msi)(\.sig)?$" | grep -v "_windows_"); do
             NEW_NAME=$(echo "$ASSET" | sed "s/_x64/_windows_x64/g" | sed "s/_arm64/_windows_arm64/g")
             if [ "$ASSET" != "$NEW_NAME" ]; then
               echo "Renaming: $ASSET -> $NEW_NAME"
-              gh release download "$TAG" --pattern "$ASSET" --dir /tmp/rename
+              retry gh release download "$TAG" --pattern "$ASSET" --dir /tmp/rename
               mv "/tmp/rename/$ASSET" "/tmp/rename/$NEW_NAME"
-              gh release delete-asset "$TAG" "$ASSET" --yes
-              gh release upload "$TAG" "/tmp/rename/$NEW_NAME"
+              retry gh release delete-asset "$TAG" "$ASSET" --yes
+              retry gh release upload "$TAG" "/tmp/rename/$NEW_NAME"
             fi
           done
 
