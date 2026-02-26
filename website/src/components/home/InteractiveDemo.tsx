@@ -139,14 +139,14 @@ function CliOutput({ demoId }: { demoId: DemoId }) {
 
 function GuiStylesDemo() {
   return (
-    <div className="flex min-h-[300px]">
-      <div className="w-[150px] shrink-0 border-r border-subtle p-3 bg-black/20 flex flex-col gap-1">
-        <div className="text-[9px] uppercase tracking-[0.15em] text-ui-subtle font-medium mb-2">Styles</div>
+    <div className="flex flex-col sm:flex-row min-h-[300px]">
+      <div className="sm:w-[150px] shrink-0 border-b sm:border-b-0 sm:border-r border-subtle p-3 bg-black/20 flex sm:flex-col gap-1 overflow-x-auto">
+        <div className="text-[9px] uppercase tracking-[0.15em] text-ui-subtle font-medium mb-0 sm:mb-2 hidden sm:block">Styles</div>
         {['heading-xl', 'heading-lg', 'body-text', 'caption'].map((s, i) => (
-          <div key={s} className={`text-[11px] px-2 py-1 rounded ${i === 0 ? 'bg-accent-yellow/10 text-accent-yellow border border-accent-yellow/20 font-medium' : 'text-ui-muted'}`}>{s}</div>
+          <div key={s} className={`text-[11px] px-2 py-1 rounded whitespace-nowrap ${i === 0 ? 'bg-accent-yellow/10 text-accent-yellow border border-accent-yellow/20 font-medium' : 'text-ui-muted'}`}>{s}</div>
         ))}
       </div>
-      <div className="flex-1 flex flex-col p-4">
+      <div className="flex-1 flex flex-col p-4 min-w-0">
         <div className="glass-input rounded-lg p-2.5 flex items-center gap-2 flex-wrap text-sm mb-3">
           <span className="text-ui-fg text-xs">Apply</span>
           <span className="inline-flex items-center px-2 py-0.5 rounded bg-accent-yellow/15 border border-accent-yellow/25 text-accent-yellow text-[11px] font-mono font-medium">@style:heading-xl</span>
@@ -155,8 +155,8 @@ function GuiStylesDemo() {
         <div className="text-[9px] uppercase tracking-[0.15em] text-ui-subtle font-medium mb-2">Visual Diff</div>
         <div className="space-y-2 flex-1">
           {['Homepage h1', 'About h1', 'Services h1', 'Blog h1'].map((item) => (
-            <div key={item} className="flex items-center gap-3 text-[11px]">
-              <span className="text-ui-muted w-20 shrink-0">{item}</span>
+            <div key={item} className="flex items-center gap-2 sm:gap-3 text-[10px] sm:text-[11px] flex-wrap sm:flex-nowrap">
+              <span className="text-ui-muted w-16 sm:w-20 shrink-0">{item}</span>
               <span className="text-red-400/70 line-through">#333333</span>
               <span className="text-ui-subtle">&rarr;</span>
               <span className="text-accent-yellow font-mono">var(--primary)</span>
