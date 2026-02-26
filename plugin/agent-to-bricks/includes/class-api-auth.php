@@ -42,9 +42,16 @@ class ATB_API_Auth {
 			return $result;
 		}
 
+		// Rate limiting on failed auth attempts
+		$rate_check = self::check_rate_limit();
+		if ( is_wp_error( $rate_check ) ) {
+			return $rate_check;
+		}
+
 		// Validate the key
 		$key_data = self::validate_key( $api_key );
 		if ( ! $key_data ) {
+			self::record_auth_failure();
 			return new WP_Error(
 				'atb_invalid_api_key',
 				'Invalid API key.',
@@ -55,7 +62,7 @@ class ATB_API_Auth {
 		// Log in as the key's owner
 		wp_set_current_user( $key_data['user_id'] );
 
-		// Update last used timestamp
+		// Update last used timestamp (throttled)
 		self::touch_key( $api_key );
 
 		return true;
@@ -137,13 +144,16 @@ class ATB_API_Auth {
 		update_option( self::OPTION_KEY, $keys );
 	}
 
-	/**
-	 * Update last_used timestamp for a key.
-	 */
 	private static function touch_key( $raw_key ) {
-		$keys = get_option( self::OPTION_KEY, array() );
 		$key_hash = self::hash_key( $raw_key );
+		$transient_key = 'atb_touch_' . substr( $key_hash, 0, 12 );
 
+		// Only update DB every 5 minutes per key
+		if ( get_transient( $transient_key ) ) {
+			return;
+		}
+
+		$keys = get_option( self::OPTION_KEY, array() );
 		foreach ( $keys as &$stored ) {
 			if ( hash_equals( $stored['key_hash'], $key_hash ) ) {
 				$stored['last_used'] = current_time( 'mysql' );
@@ -153,6 +163,7 @@ class ATB_API_Auth {
 		unset( $stored );
 
 		update_option( self::OPTION_KEY, $keys );
+		set_transient( $transient_key, 1, 5 * MINUTE_IN_SECONDS );
 	}
 
 	/**
@@ -180,34 +191,49 @@ class ATB_API_Auth {
 
 	/**
 	 * Encrypt key for retrievable storage (admin-only reveal).
+	 * Uses a random IV per encryption for stronger security.
 	 */
 	private static function encrypt_key( $key ) {
 		if ( empty( $key ) ) {
 			return '';
 		}
-		return base64_encode( openssl_encrypt(
-			$key,
-			'aes-256-cbc',
-			wp_salt( 'auth' ),
-			0,
-			substr( md5( wp_salt( 'secure_auth' ) ), 0, 16 )
-		) );
+		$iv        = openssl_random_pseudo_bytes( 16 );
+		$encrypted = openssl_encrypt( $key, 'aes-256-cbc', wp_salt( 'auth' ), OPENSSL_RAW_DATA, $iv );
+		// Prepend IV to ciphertext so it can be extracted during decryption.
+		return base64_encode( $iv . $encrypted );
 	}
 
 	/**
 	 * Decrypt a stored encrypted key.
+	 * Supports both new (random IV prepended) and legacy (static IV) formats.
 	 */
 	private static function decrypt_stored_key( $encrypted ) {
 		if ( empty( $encrypted ) ) {
 			return '';
 		}
-		return openssl_decrypt(
-			base64_decode( $encrypted ),
-			'aes-256-cbc',
-			wp_salt( 'auth' ),
-			0,
-			substr( md5( wp_salt( 'secure_auth' ) ), 0, 16 )
-		);
+		$data = base64_decode( $encrypted );
+		if ( $data === false ) {
+			return '';
+		}
+
+		// New format: first 16 bytes are IV, rest is raw ciphertext.
+		if ( strlen( $data ) > 16 ) {
+			$iv         = substr( $data, 0, 16 );
+			$ciphertext = substr( $data, 16 );
+			$decrypted  = openssl_decrypt( $ciphertext, 'aes-256-cbc', wp_salt( 'auth' ), OPENSSL_RAW_DATA, $iv );
+			if ( $decrypted !== false ) {
+				return $decrypted;
+			}
+		}
+
+		// Legacy fallback: static IV, base64-encoded ciphertext from openssl_encrypt default.
+		$legacy_iv = substr( md5( wp_salt( 'secure_auth' ) ), 0, 16 );
+		$decrypted = openssl_decrypt( $data, 'aes-256-cbc', wp_salt( 'auth' ), 0, $legacy_iv );
+		if ( $decrypted !== false ) {
+			return $decrypted;
+		}
+
+		return '';
 	}
 
 	/**
@@ -275,5 +301,42 @@ class ATB_API_Auth {
 		}
 
 		wp_send_json_error( 'Key not retrievable. Revoke and generate a new one.' );
+	}
+
+	/**
+	 * Check if the current IP has exceeded the auth failure rate limit.
+	 */
+	private static function check_rate_limit() {
+		$ip_hash = self::get_ip_hash();
+		$transient_key = 'atb_auth_fail_' . $ip_hash;
+		$failures = (int) get_transient( $transient_key );
+
+		if ( $failures >= 10 ) {
+			return new WP_Error(
+				'atb_rate_limited',
+				'Too many failed authentication attempts. Try again later.',
+				array( 'status' => 429 )
+			);
+		}
+
+		return true;
+	}
+
+	/**
+	 * Record a failed authentication attempt for rate limiting.
+	 */
+	private static function record_auth_failure() {
+		$ip_hash = self::get_ip_hash();
+		$transient_key = 'atb_auth_fail_' . $ip_hash;
+		$failures = (int) get_transient( $transient_key );
+		set_transient( $transient_key, $failures + 1, 5 * MINUTE_IN_SECONDS );
+	}
+
+	/**
+	 * Get a hashed representation of the client IP for rate limiting.
+	 */
+	private static function get_ip_hash() {
+		$ip = $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
+		return substr( hash( 'sha256', $ip . wp_salt( 'auth' ) ), 0, 16 );
 	}
 }
