@@ -42,6 +42,19 @@ class ATB_LLM_Client {
 	}
 
 	/**
+	 * Calculate a safe timeout that respects the server's max_execution_time.
+	 */
+	private static function safe_timeout() {
+		$max_exec = (int) ini_get( 'max_execution_time' );
+		// 0 means unlimited (CLI or custom config)
+		if ( $max_exec === 0 || $max_exec >= 65 ) {
+			return 60;
+		}
+		// Leave 5 seconds for PHP to process the response
+		return max( 10, $max_exec - 5 );
+	}
+
+	/**
 	 * Send a chat completion request.
 	 *
 	 * @param array $messages Array of { role, content } messages.
@@ -66,7 +79,7 @@ class ATB_LLM_Client {
 		}
 
 		$response = wp_remote_post( $this->base_url . '/chat/completions', array(
-			'timeout' => 60,
+			'timeout' => self::safe_timeout(),
 			'headers' => array(
 				'Content-Type'  => 'application/json',
 				'Authorization' => 'Bearer ' . $this->api_key,

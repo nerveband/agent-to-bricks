@@ -152,6 +152,16 @@ add_action( 'wp_enqueue_scripts', 'agent_bricks_enqueue_editor_assets' );
  * Activation hook — set default options.
  */
 function agent_bricks_activate() {
+	// HP1: Check for required PHP extensions
+	if ( ! function_exists( 'openssl_encrypt' ) ) {
+		deactivate_plugins( plugin_basename( __FILE__ ) );
+		wp_die(
+			'Agent to Bricks requires the PHP OpenSSL extension. Please enable it in your PHP configuration.',
+			'Plugin Activation Error',
+			array( 'back_link' => true )
+		);
+	}
+
 	$defaults = array(
 		'provider'            => 'cerebras',
 		'api_key'             => '',
