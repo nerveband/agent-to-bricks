@@ -20,6 +20,8 @@ class ATB_API_Auth {
 		add_action( 'wp_ajax_atb_generate_api_key', array( __CLASS__, 'ajax_generate_key' ) );
 		add_action( 'wp_ajax_atb_revoke_api_key', array( __CLASS__, 'ajax_revoke_key' ) );
 		add_action( 'wp_ajax_atb_reveal_api_key', array( __CLASS__, 'ajax_reveal_key' ) );
+		add_action( 'wp_ajax_atb_save_access_rules', array( __CLASS__, 'ajax_save_access_rules' ) );
+		add_action( 'wp_ajax_atb_get_access_rules', array( __CLASS__, 'ajax_get_access_rules' ) );
 	}
 
 	/**
@@ -314,6 +316,66 @@ class ATB_API_Auth {
 		}
 
 		wp_send_json_error( 'Key not retrievable. Revoke and generate a new one.' );
+	}
+
+	/**
+	 * AJAX: Save access control rules for a key.
+	 */
+	public static function ajax_save_access_rules() {
+		check_ajax_referer( 'atb_api_key_nonce', 'nonce' );
+
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error( 'Unauthorized' );
+		}
+
+		$prefix = sanitize_text_field( $_POST['prefix'] ?? '' );
+		if ( empty( $prefix ) ) {
+			wp_send_json_error( 'No key prefix' );
+		}
+
+		$mode = sanitize_text_field( $_POST['mode'] ?? 'unrestricted' );
+		if ( ! in_array( $mode, array( 'unrestricted', 'allow', 'deny' ), true ) ) {
+			$mode = 'unrestricted';
+		}
+
+		$post_ids = array();
+		if ( ! empty( $_POST['post_ids'] ) ) {
+			$post_ids = array_map( 'absint', explode( ',', sanitize_text_field( $_POST['post_ids'] ) ) );
+			$post_ids = array_filter( $post_ids );
+		}
+
+		$post_types = array();
+		if ( ! empty( $_POST['post_types'] ) ) {
+			$post_types = array_map( 'sanitize_text_field', explode( ',', $_POST['post_types'] ) );
+		}
+
+		$rules = array(
+			'mode'       => $mode,
+			'post_ids'   => array_values( $post_ids ),
+			'post_types' => array_values( $post_types ),
+		);
+
+		ATB_Access_Control::save_rules( $prefix, $rules );
+		wp_send_json_success( $rules );
+	}
+
+	/**
+	 * AJAX: Get access control rules for a key.
+	 */
+	public static function ajax_get_access_rules() {
+		check_ajax_referer( 'atb_api_key_nonce', 'nonce' );
+
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error( 'Unauthorized' );
+		}
+
+		$prefix = sanitize_text_field( $_GET['prefix'] ?? '' );
+		if ( empty( $prefix ) ) {
+			wp_send_json_error( 'No key prefix' );
+		}
+
+		$rules = ATB_Access_Control::get_rules_for_key( $prefix );
+		wp_send_json_success( $rules );
 	}
 
 	/**

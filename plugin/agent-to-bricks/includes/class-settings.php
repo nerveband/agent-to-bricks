@@ -183,6 +183,7 @@ class ATB_Settings {
 									<button type="button" class="button button-small atb-show-key" data-prefix="<?php echo esc_attr( $k['prefix'] ); ?>">Show</button>
 									<button type="button" class="button button-small atb-copy-existing-key" data-prefix="<?php echo esc_attr( $k['prefix'] ); ?>" style="display:none;">Copy</button>
 									<button type="button" class="button button-small atb-revoke-key" data-prefix="<?php echo esc_attr( $k['prefix'] ); ?>">Revoke</button>
+									<button type="button" class="button button-small atb-access-rules" data-prefix="<?php echo esc_attr( $k['prefix'] ); ?>">Access</button>
 								</td>
 							</tr>
 						<?php endforeach; ?>
@@ -198,6 +199,41 @@ class ATB_Settings {
 				<strong>New API key created!</strong> Copy it now, or use the Show button later to reveal it:<br>
 				<code id="atb-new-key-value" style="font-size:14px; user-select:all; display:inline-block; margin:8px 0; padding:4px 8px; background:#fff;"></code>
 				<button type="button" class="button button-small" id="atb-copy-key">Copy</button>
+			</div>
+
+			<!-- Access Control Rules -->
+			<div id="atb-access-control" style="display:none; margin-top:20px; padding:16px; background:#fff; border:1px solid #c3c4c7; border-radius:4px;">
+				<h3 style="margin-top:0;">Access Rules for <code id="atb-ac-prefix"></code></h3>
+				<table class="form-table">
+					<tr>
+						<th scope="row">Access Mode</th>
+						<td>
+							<select id="atb-ac-mode">
+								<option value="unrestricted">Unrestricted (full access)</option>
+								<option value="allow">Allow List (only specified pages)</option>
+								<option value="deny">Deny List (block specified pages)</option>
+							</select>
+							<p class="description">Controls which pages this API key can read and modify.</p>
+						</td>
+					</tr>
+					<tr id="atb-ac-ids-row" style="display:none;">
+						<th scope="row">Page/Post IDs</th>
+						<td>
+							<input type="text" id="atb-ac-post-ids" class="regular-text" placeholder="e.g. 42, 99, 1338" />
+							<p class="description">Comma-separated post/page IDs.</p>
+						</td>
+					</tr>
+					<tr id="atb-ac-types-row" style="display:none;">
+						<th scope="row">Post Types</th>
+						<td>
+							<label><input type="checkbox" class="atb-ac-type" value="page" /> Pages</label>
+							<label><input type="checkbox" class="atb-ac-type" value="post" /> Posts</label>
+							<label><input type="checkbox" class="atb-ac-type" value="bricks_template" /> Templates</label>
+						</td>
+					</tr>
+				</table>
+				<button type="button" class="button button-primary" id="atb-ac-save">Save Access Rules</button>
+				<button type="button" class="button" id="atb-ac-cancel">Cancel</button>
 			</div>
 
 			<?php if ( defined( 'ATB_ENABLE_LLM_SETTINGS' ) && ATB_ENABLE_LLM_SETTINGS ) : ?>
@@ -431,6 +467,14 @@ class ATB_Settings {
 						rvBtn.setAttribute('data-prefix', resp.data.prefix);
 						rvBtn.textContent = 'Revoke';
 						tdActions.appendChild(rvBtn);
+						tdActions.appendChild(document.createTextNode(' '));
+
+						var acBtn = document.createElement('button');
+						acBtn.type = 'button';
+						acBtn.className = 'button button-small atb-access-rules';
+						acBtn.setAttribute('data-prefix', resp.data.prefix);
+						acBtn.textContent = 'Access';
+						tdActions.appendChild(acBtn);
 						tr.appendChild(tdActions);
 
 						tbody.appendChild(tr);
@@ -527,6 +571,69 @@ class ATB_Settings {
 				});
 			}
 			document.querySelectorAll('.atb-copy-existing-key').forEach(bindCopy);
+
+			// Access Control UI
+			var acPanel = document.getElementById('atb-access-control');
+			var acPrefix = null;
+
+			document.addEventListener('click', function(e) {
+				if (e.target.classList.contains('atb-access-rules')) {
+					acPrefix = e.target.dataset.prefix;
+					document.getElementById('atb-ac-prefix').textContent = acPrefix + '...';
+					acPanel.style.display = 'block';
+
+					// Load existing rules
+					fetch(ajaxUrl + '?action=atb_get_access_rules&nonce=' + nonce + '&prefix=' + acPrefix)
+						.then(function(r) { return r.json(); })
+						.then(function(resp) {
+							if (!resp.success) return;
+							var rules = resp.data;
+							document.getElementById('atb-ac-mode').value = rules.mode || 'unrestricted';
+							document.getElementById('atb-ac-post-ids').value = (rules.post_ids || []).join(', ');
+							document.querySelectorAll('.atb-ac-type').forEach(function(cb) {
+								cb.checked = (rules.post_types || []).indexOf(cb.value) >= 0;
+							});
+							toggleAcFields();
+						});
+				}
+			});
+
+			document.getElementById('atb-ac-mode').addEventListener('change', toggleAcFields);
+
+			function toggleAcFields() {
+				var mode = document.getElementById('atb-ac-mode').value;
+				var show = mode !== 'unrestricted';
+				document.getElementById('atb-ac-ids-row').style.display = show ? '' : 'none';
+				document.getElementById('atb-ac-types-row').style.display = show ? '' : 'none';
+			}
+
+			document.getElementById('atb-ac-save').addEventListener('click', function() {
+				var types = [];
+				document.querySelectorAll('.atb-ac-type:checked').forEach(function(cb) { types.push(cb.value); });
+
+				var data = new FormData();
+				data.append('action', 'atb_save_access_rules');
+				data.append('nonce', nonce);
+				data.append('prefix', acPrefix);
+				data.append('mode', document.getElementById('atb-ac-mode').value);
+				data.append('post_ids', document.getElementById('atb-ac-post-ids').value);
+				data.append('post_types', types.join(','));
+
+				fetch(ajaxUrl, { method: 'POST', body: data })
+					.then(function(r) { return r.json(); })
+					.then(function(resp) {
+						if (resp.success) {
+							acPanel.style.display = 'none';
+							alert('Access rules saved.');
+						} else {
+							alert('Error: ' + (resp.data || 'Unknown'));
+						}
+					});
+			});
+
+			document.getElementById('atb-ac-cancel').addEventListener('click', function() {
+				acPanel.style.display = 'none';
+			});
 		})();
 		</script>
 		<?php
