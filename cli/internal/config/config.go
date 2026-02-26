@@ -26,7 +26,10 @@ type LLMConfig struct {
 }
 
 func DefaultPath() string {
-	home, _ := os.UserHomeDir()
+	home, err := os.UserHomeDir()
+	if err != nil {
+		return filepath.Join(".agent-to-bricks", "config.yaml")
+	}
 	return filepath.Join(home, ".agent-to-bricks", "config.yaml")
 }
 
@@ -47,8 +50,8 @@ func (c *Config) Save(path string) error {
 	if err != nil {
 		return err
 	}
-	if err := os.MkdirAll(filepath.Dir(path), 0755); err != nil {
+	if err := os.MkdirAll(filepath.Dir(path), 0700); err != nil {
 		return err
 	}
-	return os.WriteFile(path, data, 0644)
+	return os.WriteFile(path, data, 0600)
 }

@@ -149,7 +149,10 @@ type checkCacheData struct {
 
 // DefaultCachePath returns ~/.agent-to-bricks/update-check.json.
 func DefaultCachePath() string {
-	home, _ := os.UserHomeDir()
+	home, err := os.UserHomeDir()
+	if err != nil {
+		return filepath.Join(".agent-to-bricks", "update-check.json")
+	}
 	return filepath.Join(home, ".agent-to-bricks", "update-check.json")
 }
 
@@ -191,6 +194,6 @@ func (c *CheckCache) Save(latestVersion string) error {
 	if err != nil {
 		return err
 	}
-	os.MkdirAll(filepath.Dir(c.Path), 0755)
-	return os.WriteFile(c.Path, raw, 0644)
+	os.MkdirAll(filepath.Dir(c.Path), 0700)
+	return os.WriteFile(c.Path, raw, 0600)
 }

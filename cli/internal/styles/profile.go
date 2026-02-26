@@ -34,7 +34,10 @@ func NewProfile() *Profile {
 
 // DefaultPath returns the default profile file path.
 func DefaultPath() string {
-	home, _ := os.UserHomeDir()
+	home, err := os.UserHomeDir()
+	if err != nil {
+		return filepath.Join(".agent-to-bricks", "style-profile.json")
+	}
 	return filepath.Join(home, ".agent-to-bricks", "style-profile.json")
 }
 
@@ -65,12 +68,12 @@ func Load(path string) (*Profile, error) {
 
 // Save writes the profile to disk.
 func (p *Profile) Save(path string) error {
-	os.MkdirAll(filepath.Dir(path), 0755)
+	os.MkdirAll(filepath.Dir(path), 0700)
 	data, err := json.MarshalIndent(p, "", "  ")
 	if err != nil {
 		return err
 	}
-	return os.WriteFile(path, data, 0644)
+	return os.WriteFile(path, data, 0600)
 }
 
 // AnalyzePage updates the profile from a set of page elements.
