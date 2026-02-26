@@ -100,6 +100,25 @@ jobs:
           includeUpdaterJson: true
           args: ${{ matrix.args }}
 
+      - name: Rename Windows assets to include platform
+        if: matrix.platform == 'windows-latest'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          TAG="${{ github.ref_name }}"
+          mkdir -p /tmp/rename
+          for ASSET in $(gh release view "$TAG" --json assets --jq ".assets[].name" | grep -E "\.(exe|msi)(\.sig)?$"); do
+            NEW_NAME=$(echo "$ASSET" | sed "s/_x64/_windows_x64/g" | sed "s/_arm64/_windows_arm64/g")
+            if [ "$ASSET" != "$NEW_NAME" ]; then
+              echo "Renaming: $ASSET -> $NEW_NAME"
+              gh release download "$TAG" --pattern "$ASSET" --dir /tmp/rename
+              mv "/tmp/rename/$ASSET" "/tmp/rename/$NEW_NAME"
+              gh release delete-asset "$TAG" "$ASSET" --yes
+              gh release upload "$TAG" "/tmp/rename/$NEW_NAME"
+            fi
+          done
+
   verify:
     name: Verify Release Assets
     needs: [build-cli, build-plugin, build-gui]
