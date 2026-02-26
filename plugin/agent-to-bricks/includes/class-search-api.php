@@ -34,27 +34,10 @@ class ATB_Search_API {
 		$per_page      = min( (int) ( $request->get_param( 'per_page' ) ?: 50 ), 100 );
 		$page          = max( (int) ( $request->get_param( 'page' ) ?: 1 ), 1 );
 
-		$meta_key = ATB_Bricks_Lifecycle::content_meta_key();
-
-		// Query all posts with Bricks content
-		$query_args = [
-			'post_type'      => [ 'page', 'post', 'bricks_template' ],
-			'posts_per_page' => -1,
-			'post_status'    => 'any',
-			'meta_query'     => [
-				[
-					'key'     => $meta_key,
-					'compare' => 'EXISTS',
-				],
-			],
-			'fields' => 'ids',
-		];
-
-		if ( $post_type ) {
-			$query_args['post_type'] = $post_type;
-		}
-
-		$post_ids = get_posts( $query_args );
+		$meta_key  = ATB_Bricks_Lifecycle::content_meta_key();
+		$max_posts = 500;
+		$batch_size = 50;
+		$offset = 0;
 
 		// Resolve global class name to ID if needed
 		$class_id = null;
@@ -64,27 +47,54 @@ class ATB_Search_API {
 
 		$all_results = [];
 
-		foreach ( $post_ids as $pid ) {
-			$post     = get_post( $pid );
-			$elements = get_post_meta( $pid, $meta_key, true );
-			if ( ! is_array( $elements ) ) continue;
+		while ( $offset < $max_posts ) {
+			$query_args = [
+				'post_type'      => [ 'page', 'post', 'bricks_template' ],
+				'posts_per_page' => $batch_size,
+				'offset'         => $offset,
+				'post_status'    => 'any',
+				'meta_query'     => [
+					[
+						'key'     => $meta_key,
+						'compare' => 'EXISTS',
+					],
+				],
+				'fields' => 'ids',
+			];
 
-			foreach ( $elements as $el ) {
-				if ( ! self::element_matches( $el, $element_type, $setting_key, $setting_value, $class_id, $global_class ) ) {
-					continue;
-				}
-
-				$all_results[] = [
-					'postId'       => $pid,
-					'postTitle'    => $post->post_title,
-					'postType'     => $post->post_type,
-					'elementId'    => $el['id'] ?? '',
-					'elementType'  => $el['name'] ?? '',
-					'elementLabel' => $el['label'] ?? '',
-					'settings'     => $el['settings'] ?? new \stdClass(),
-					'parentId'     => $el['parent'] ?? '',
-				];
+			if ( $post_type ) {
+				$query_args['post_type'] = $post_type;
 			}
+
+			$post_ids = get_posts( $query_args );
+			if ( empty( $post_ids ) ) {
+				break;
+			}
+
+			foreach ( $post_ids as $pid ) {
+				$post     = get_post( $pid );
+				$elements = get_post_meta( $pid, $meta_key, true );
+				if ( ! is_array( $elements ) ) continue;
+
+				foreach ( $elements as $el ) {
+					if ( ! self::element_matches( $el, $element_type, $setting_key, $setting_value, $class_id, $global_class ) ) {
+						continue;
+					}
+
+					$all_results[] = [
+						'postId'       => $pid,
+						'postTitle'    => $post->post_title,
+						'postType'     => $post->post_type,
+						'elementId'    => $el['id'] ?? '',
+						'elementType'  => $el['name'] ?? '',
+						'elementLabel' => $el['label'] ?? '',
+						'settings'     => $el['settings'] ?? new \stdClass(),
+						'parentId'     => $el['parent'] ?? '',
+					];
+				}
+			}
+
+			$offset += $batch_size;
 		}
 
 		$total       = count( $all_results );
