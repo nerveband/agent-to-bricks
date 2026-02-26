@@ -1,21 +1,23 @@
 ---
+import iconImg from '../../assets/icon.png';
 ---
 
-<footer class="border-t border-white/5 mt-24">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-    <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+<footer class="border-t border-subtle mt-24 relative z-10 glass-base">
+  <div class="noise"></div>
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+    <div class="flex flex-col lg:flex-row items-start justify-between gap-10">
       <!-- Left: branding -->
-      <div class="flex items-center gap-4">
-        <a href="/" class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
-          <img src="/favicon.svg" alt="" class="h-5 w-5 opacity-60" />
-          <span class="text-sm font-medium">Agent to Bricks</span>
+      <div class="flex flex-col gap-2">
+        <a href="/" class="flex items-center gap-2.5 text-ui-fg hover:text-accent-yellow transition-colors">
+          <img src={iconImg.src} alt="Agent to Bricks" class="h-7 w-7" />
+          <span class="text-sm font-bold tracking-wide">Agent to Bricks</span>
         </a>
-        <span class="text-gray-600">|</span>
+        <p class="text-xs text-ui-subtle">Free and open source</p>
         <a
           href="https://github.com/nerveband/agent-to-bricks"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex"
+          class="inline-flex mt-1"
         >
           <img
             src="https://img.shields.io/github/stars/nerveband/agent-to-bricks?style=flat&color=facc15&labelColor=1a1a2e"
@@ -25,18 +27,32 @@
         </a>
       </div>
 
-      <!-- Center: links -->
-      <div class="flex items-center gap-6">
-        <a href="/getting-started/introduction/" class="text-sm text-gray-400 hover:text-white transition-colors">Docs</a>
-        <a href="https://github.com/nerveband/agent-to-bricks" target="_blank" rel="noopener noreferrer" class="text-sm text-gray-400 hover:text-white transition-colors">GitHub</a>
+      <!-- Center: link columns -->
+      <div class="flex gap-16">
+        <div>
+          <h4 class="text-[11px] font-mono font-bold uppercase tracking-widest text-ui-subtle mb-3">Product</h4>
+          <ul class="space-y-2">
+            <li><a href="/#features" class="text-sm text-ui-muted hover:text-ui-fg transition-colors">Features</a></li>
+            <li><a href="/getting-started/introduction/" class="text-sm text-ui-muted hover:text-ui-fg transition-colors">Docs</a></li>
+            <li><a href="https://github.com/nerveband/agent-to-bricks" target="_blank" rel="noopener noreferrer" class="text-sm text-ui-muted hover:text-ui-fg transition-colors">GitHub</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-[11px] font-mono font-bold uppercase tracking-widest text-ui-subtle mb-3">Resources</h4>
+          <ul class="space-y-2">
+            <li><a href="/getting-started/installation/" class="text-sm text-ui-muted hover:text-ui-fg transition-colors">Getting Started</a></li>
+            <li><a href="/cli/overview/" class="text-sm text-ui-muted hover:text-ui-fg transition-colors">CLI Reference</a></li>
+            <li><a href="/gui/overview/" class="text-sm text-ui-muted hover:text-ui-fg transition-colors">GUI Guide</a></li>
+          </ul>
+        </div>
       </div>
 
       <!-- Right: credits -->
-      <div class="text-center sm:text-right">
-        <p class="text-sm text-gray-500">
-          Made by <a href="https://ashrafali.net" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-400 transition-colors">Ashraf Ali</a>
+      <div class="text-left lg:text-right">
+        <p class="text-sm text-ui-muted">
+          Made by <a href="https://ashrafali.net" target="_blank" rel="noopener noreferrer" class="text-ui-muted hover:text-accent-yellow transition-colors font-medium">Ashraf Ali</a>
         </p>
-        <p class="text-xs text-gray-600 mt-1">
+        <p class="text-xs text-ui-subtle mt-1">
           Not affiliated with Bricks Builder.
         </p>
       </div>
