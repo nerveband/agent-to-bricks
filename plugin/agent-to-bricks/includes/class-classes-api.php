@@ -116,10 +116,11 @@ class ATB_Classes_API {
 			}
 		}
 
+		$raw_settings = $body['settings'] ?? array();
 		$new_class = array(
 			'id'       => self::generate_id(),
 			'name'     => $name,
-			'settings' => $body['settings'] ?? array(),
+			'settings' => is_array( $raw_settings ) ? ATB_Element_Validator::sanitize_settings( $raw_settings ) : array(),
 			'modified' => time(),
 			'user_id'  => get_current_user_id(),
 		);
@@ -155,8 +156,8 @@ class ATB_Classes_API {
 				if ( isset( $body['name'] ) ) {
 					$class['name'] = sanitize_text_field( $body['name'] );
 				}
-				if ( isset( $body['settings'] ) ) {
-					$class['settings'] = $body['settings'];
+				if ( isset( $body['settings'] ) && is_array( $body['settings'] ) ) {
+					$class['settings'] = ATB_Element_Validator::sanitize_settings( $body['settings'] );
 				}
 				if ( isset( $body['label'] ) ) {
 					$class['label'] = sanitize_text_field( $body['label'] );

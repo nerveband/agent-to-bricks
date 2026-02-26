@@ -1,7 +1,7 @@
 use std::path::PathBuf;
 
 fn expand_tilde(path: &str) -> PathBuf {
-    if path.starts_with("~/") {
+    if path.starts_with("~/") || path.starts_with("~\\") {
         if let Some(home) = dirs::home_dir() {
             return home.join(&path[2..]);
         }

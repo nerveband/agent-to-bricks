@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useLayoutEffect } from "react";
 import { useAtom } from "jotai";
 import { onboardingSeenAtom } from "../atoms/app";
+import { MOD_KEY } from "../lib/platform";
 
 interface TooltipStep {
   target: string;
@@ -19,7 +20,7 @@ const STEPS: TooltipStep[] = [
   {
     target: "[data-prompt-pane]",
     title: "Prompt Editor",
-    message: "Build context-rich prompts with @mentions. Use Cmd+P to quickly focus the editor.",
+    message: `Build context-rich prompts with @mentions. Use ${MOD_KEY}+P to quickly focus the editor.`,
     position: "top",
   },
   {

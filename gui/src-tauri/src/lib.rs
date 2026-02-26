@@ -22,37 +22,55 @@ struct ConnectionResult {
     site_name: Option<String>,
 }
 
-/// Get the user's login shell, defaulting to /bin/zsh on macOS
+/// Get the user's login shell with platform-appropriate fallbacks.
 fn user_shell() -> String {
-    std::env::var("SHELL").unwrap_or_else(|_| "/bin/zsh".to_string())
+    if cfg!(target_os = "windows") {
+        std::env::var("COMSPEC").unwrap_or_else(|_| "cmd.exe".to_string())
+    } else {
+        std::env::var("SHELL").unwrap_or_else(|_| "/bin/sh".to_string())
+    }
 }
 
-/// Run a command inside the user's login shell so we inherit PATH from ~/.zshrc etc.
+/// Run a command inside the user's login shell so we inherit PATH.
+/// Uses platform-appropriate shell flags (POSIX `-l -c` vs Windows `/C`).
 fn shell_exec(cmd: &str) -> Option<String> {
-    let shell = user_shell();
-    std::process::Command::new(&shell)
-        .args(["-l", "-c", cmd])
-        .output()
-        .ok()
-        .and_then(|o| {
-            if o.status.success() {
-                let stdout = String::from_utf8_lossy(&o.stdout).trim().to_string();
-                if stdout.is_empty() {
-                    let stderr = String::from_utf8_lossy(&o.stderr).trim().to_string();
-                    if stderr.is_empty() { None } else { Some(stderr) }
-                } else {
-                    Some(stdout)
-                }
+    let output = if cfg!(target_os = "windows") {
+        std::process::Command::new("cmd.exe")
+            .args(["/C", cmd])
+            .output()
+            .ok()
+    } else {
+        let shell = user_shell();
+        std::process::Command::new(&shell)
+            .args(["-l", "-c", cmd])
+            .output()
+            .ok()
+    };
+
+    output.and_then(|o| {
+        if o.status.success() {
+            let stdout = String::from_utf8_lossy(&o.stdout).trim().to_string();
+            if stdout.is_empty() {
+                let stderr = String::from_utf8_lossy(&o.stderr).trim().to_string();
+                if stderr.is_empty() { None } else { Some(stderr) }
             } else {
-                None
+                Some(stdout)
             }
-        })
+        } else {
+            None
+        }
+    })
 }
 
-/// Get the user's full environment from their login shell (macOS GUI apps don't inherit it).
-/// Uses `env -0` for null-delimited output to safely handle multiline values.
+/// Get the user's full environment from their login shell (macOS/Linux GUI apps
+/// don't inherit it). On Windows, the environment is already inherited by the
+/// GUI process, so we return `std::env::vars()` directly.
 #[tauri::command]
 fn get_shell_env() -> std::collections::HashMap<String, String> {
+    if cfg!(target_os = "windows") {
+        return std::env::vars().collect();
+    }
+
     let shell = user_shell();
     // Use env -0 for null-delimited output (safe with multiline values)
     let output = std::process::Command::new(&shell)
@@ -75,6 +93,39 @@ fn get_shell_env() -> std::collections::HashMap<String, String> {
     env
 }
 
+#[derive(Serialize)]
+struct PlatformShell {
+    os: String,
+    shell: String,
+    interactive_args: Vec<String>,
+}
+
+/// Return the platform OS, default shell path, and interactive shell arguments.
+/// Used by the frontend PTY spawn to select the correct shell per platform.
+#[tauri::command]
+fn get_platform_shell() -> PlatformShell {
+    let os = std::env::consts::OS.to_string();
+
+    if cfg!(target_os = "windows") {
+        let shell = std::env::var("COMSPEC").unwrap_or_else(|_| "powershell.exe".to_string());
+        let interactive_args = if shell.to_lowercase().contains("powershell")
+            || shell.to_lowercase().contains("pwsh")
+        {
+            vec!["-NoLogo".to_string()]
+        } else {
+            vec![]
+        };
+        PlatformShell { os, shell, interactive_args }
+    } else {
+        let shell = std::env::var("SHELL").unwrap_or_else(|_| "/bin/sh".to_string());
+        PlatformShell {
+            os,
+            shell,
+            interactive_args: vec!["--login".to_string()],
+        }
+    }
+}
+
 #[tauri::command]
 async fn detect_tool(command: String) -> ToolDetection {
     // Use login shell so we get the user's full PATH
@@ -84,7 +135,10 @@ async fn detect_tool(command: String) -> ToolDetection {
         format!("which {}", command)
     };
 
-    let path = shell_exec(&which_cmd);
+    // `where` on Windows can return multiple paths (one per line) — take only the first.
+    let path = shell_exec(&which_cmd).map(|p| {
+        p.lines().next().unwrap_or(&p).to_string()
+    });
 
     let version = if path.is_some() {
         shell_exec(&format!("{} --version", command))
@@ -375,6 +429,7 @@ pub fn run() {
         .invoke_handler(tauri::generate_handler![
             detect_tool,
             get_shell_env,
+            get_platform_shell,
             search_pages,
             test_site_connection,
             get_page_elements,

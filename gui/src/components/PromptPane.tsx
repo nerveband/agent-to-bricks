@@ -33,6 +33,7 @@ import {
   Trash,
   TextAa,
 } from "@phosphor-icons/react";
+import { MOD_KEY } from "../lib/platform";
 
 const QUICK_CHIPS: { type: MentionType; label: string }[] = [
   { type: "page", label: "@page" },
@@ -308,7 +309,7 @@ export function PromptPane() {
               color: "#000",
               boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
             }}
-            title={session ? "Send (Cmd+Enter)" : "No active session"}
+            title={session ? `Send (${MOD_KEY}+Enter)` : "No active session"}
           >
             <PaperPlaneTilt size={16} weight="bold" />
           </button>

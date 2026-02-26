@@ -1,4 +1,5 @@
 import { ArrowSquareOut } from "@phosphor-icons/react";
+import { openUrl } from "@tauri-apps/plugin-opener";
 
 interface MentionPillProps {
   type: string;
@@ -56,7 +57,7 @@ export function MentionPill({ type, label, sublabel, linkUrl, onClick, onRemove 
         <button
           onClick={(e) => {
             e.stopPropagation();
-            window.open(linkUrl, "_blank");
+            openUrl(linkUrl);
           }}
           className="ml-0.5 opacity-50 hover:opacity-100 transition-opacity"
           aria-label={`Open ${label} in browser`}

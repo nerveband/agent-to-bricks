@@ -1,4 +1,5 @@
 import { Copy, ArrowSquareOut } from "@phosphor-icons/react";
+import { openUrl } from "@tauri-apps/plugin-opener";
 import type { Tool } from "../../atoms/tools";
 
 interface NotInstalledContentProps {
@@ -76,15 +77,13 @@ export function NotInstalledContent({ tool }: NotInstalledContentProps) {
 
       {tool.installInstructions.url && (
         <div className="mb-3">
-          <a
-            href={tool.installInstructions.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-[13px]"
+          <button
+            onClick={() => openUrl(tool.installInstructions.url!)}
+            className="inline-flex items-center gap-1 text-[13px] hover:underline"
             style={{ color: "var(--accent)" }}
           >
             Installation guide <ArrowSquareOut size={14} />
-          </a>
+          </button>
         </div>
       )}
 

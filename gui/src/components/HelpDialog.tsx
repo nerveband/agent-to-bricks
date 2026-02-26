@@ -9,6 +9,10 @@ import {
   Warning,
   Command,
 } from "@phosphor-icons/react";
+import { MOD_KEY } from "../lib/platform";
+
+const isMac = /Mac|iPod|iPhone|iPad/.test(navigator.platform);
+const isWindows = /Win/.test(navigator.platform);
 
 interface HelpDialogProps {
   open: boolean;
@@ -300,7 +304,7 @@ function Shortcuts() {
               }}
             >
               {s.keys[0] !== "Escape (standalone)" && (
-                <Command size={12} />
+                isMac ? <Command size={12} /> : <span>{MOD_KEY}+</span>
               )}
               {s.keys[0]}
             </kbd>
@@ -323,8 +327,8 @@ function Troubleshooting() {
           </p>
           <p>
             Make sure the CLI tool is installed and in your PATH. Try running{" "}
-            <CodeInline>which claude</CodeInline> or{" "}
-            <CodeInline>which codex</CodeInline> in a regular terminal.
+            <CodeInline>{isWindows ? "where" : "which"} claude</CodeInline> or{" "}
+            <CodeInline>{isWindows ? "where" : "which"} codex</CodeInline> in a regular terminal.
           </p>
         </div>
         <div>

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useAtom } from "jotai";
 import { invoke } from "@tauri-apps/api/core";
 import { open as openDialog } from "@tauri-apps/plugin-dialog";
+import { openUrl } from "@tauri-apps/plugin-opener";
 import * as Dialog from "@radix-ui/react-dialog";
 import packageJson from '../../package.json';
 import {
@@ -538,15 +539,15 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
                     ))}
                     <div className="flex justify-between text-[13px]">
                       <span style={{ color: "var(--fg-muted)" }}>Developer</span>
-                      <a href="https://ashrafali.net" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{ color: "var(--yellow)" }}>
+                      <button onClick={() => openUrl("https://ashrafali.net")} className="hover:underline" style={{ color: "var(--yellow)" }}>
                         Ashraf Ali
-                      </a>
+                      </button>
                     </div>
                     <div className="flex justify-between text-[13px]">
                       <span style={{ color: "var(--fg-muted)" }}>Source</span>
-                      <a href="https://github.com/wavedepth/agent-to-bricks" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{ color: "var(--yellow)" }}>
+                      <button onClick={() => openUrl("https://github.com/wavedepth/agent-to-bricks")} className="hover:underline" style={{ color: "var(--yellow)" }}>
                         GitHub
-                      </a>
+                      </button>
                     </div>
                   </div>
                   <p className="text-[11px]" style={{ color: "var(--fg-muted)" }}>

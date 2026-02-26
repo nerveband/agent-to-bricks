@@ -124,10 +124,101 @@ class ATB_Element_Validator {
 	}
 
 	/**
-	 * Sanitize element settings.
+	 * Sanitize a flat array of Bricks elements (as stored in post meta).
+	 *
+	 * Unlike validate() which handles nested LLM output, this method works
+	 * with the flat array format used by Bricks internally and the CRUD API.
+	 *
+	 * @param array $elements Flat array of element arrays.
+	 * @return array Sanitized elements.
 	 */
-	private static function sanitize_settings( $settings ) {
+	public static function sanitize_flat_elements( $elements ) {
+		if ( ! is_array( $elements ) ) {
+			return array();
+		}
+
 		$clean = array();
+		foreach ( $elements as $el ) {
+			if ( ! is_array( $el ) ) {
+				continue;
+			}
+
+			$sanitized = array();
+
+			// Preserve id as-is (alphanumeric Bricks IDs).
+			if ( isset( $el['id'] ) ) {
+				$sanitized['id'] = sanitize_text_field( $el['id'] );
+			}
+
+			// Sanitize name (element type).
+			if ( isset( $el['name'] ) ) {
+				$sanitized['name'] = sanitize_text_field( $el['name'] );
+			}
+
+			// Sanitize label.
+			if ( isset( $el['label'] ) ) {
+				$sanitized['label'] = sanitize_text_field( $el['label'] );
+			}
+
+			// Sanitize parent ID.
+			if ( isset( $el['parent'] ) ) {
+				$sanitized['parent'] = sanitize_text_field( $el['parent'] );
+			}
+
+			// Children is an array of IDs in flat format.
+			if ( isset( $el['children'] ) && is_array( $el['children'] ) ) {
+				$sanitized['children'] = array_map( 'sanitize_text_field', $el['children'] );
+			}
+
+			// Sanitize settings using the same logic as LLM validation.
+			if ( isset( $el['settings'] ) && is_array( $el['settings'] ) ) {
+				$sanitized['settings'] = self::sanitize_settings( $el['settings'] );
+			}
+
+			// Preserve any other scalar fields (e.g., custom Bricks metadata).
+			foreach ( $el as $key => $value ) {
+				if ( isset( $sanitized[ $key ] ) ) {
+					continue;
+				}
+				if ( is_string( $value ) ) {
+					$sanitized[ $key ] = sanitize_text_field( $value );
+				} elseif ( is_numeric( $value ) || is_bool( $value ) ) {
+					$sanitized[ $key ] = $value;
+				} elseif ( is_array( $value ) ) {
+					$sanitized[ $key ] = self::sanitize_settings( $value );
+				}
+			}
+
+			$clean[] = $sanitized;
+		}
+
+		return $clean;
+	}
+
+	/**
+	 * Settings keys that contain CSS code (multi-line, no HTML tags).
+	 */
+	private static $css_keys = array(
+		'_cssCustom', '_cssHover', '_cssTransition', '_rawCSS',
+	);
+
+	/**
+	 * Settings keys that contain rich HTML content.
+	 */
+	private static $html_keys = array(
+		'text', 'content',
+	);
+
+	/**
+	 * Sanitize element settings.
+	 *
+	 * Follows WordPress's own pattern: users with `unfiltered_html` capability
+	 * (administrators) get lighter filtering so CLI roundtrips are lossless.
+	 * Lower-privilege users get full kses filtering.
+	 */
+	public static function sanitize_settings( $settings ) {
+		$clean = array();
+		$unfiltered = current_user_can( 'unfiltered_html' );
 
 		foreach ( $settings as $key => $value ) {
 			$key = sanitize_text_field( $key );
@@ -137,17 +228,28 @@ class ATB_Element_Validator {
 				if ( is_array( $value ) ) {
 					$clean[ $key ] = array_map( 'sanitize_text_field', $value );
 				}
-			} elseif ( $key === 'text' ) {
-				// Allow HTML in text content (Bricks supports rich text).
-				$clean[ $key ] = wp_kses_post( $value );
+			} elseif ( in_array( $key, self::$html_keys, true ) ) {
+				// Rich text fields: allow safe HTML.
+				if ( is_string( $value ) ) {
+					$clean[ $key ] = $unfiltered ? $value : wp_kses_post( $value );
+				}
+			} elseif ( in_array( $key, self::$css_keys, true ) ) {
+				// CSS code: strip HTML tags but preserve newlines and whitespace.
+				if ( is_string( $value ) ) {
+					$clean[ $key ] = wp_strip_all_tags( $value );
+				}
+			} elseif ( $key === 'code' ) {
+				// Code element content (raw HTML/JS/CSS by design).
+				// Admins can embed <script>/<style> — same as Bricks editor allows.
+				if ( is_string( $value ) ) {
+					$clean[ $key ] = $unfiltered ? $value : wp_kses_post( $value );
+				}
 			} elseif ( $key === 'tag' ) {
 				$clean[ $key ] = sanitize_text_field( $value );
 			} elseif ( $key === 'link' && is_array( $value ) ) {
-				$clean[ $key ] = array(
-					'type'   => sanitize_text_field( $value['type'] ?? 'external' ),
-					'url'    => esc_url_raw( $value['url'] ?? '#' ),
-					'newTab' => ! empty( $value['newTab'] ),
-				);
+				$clean[ $key ] = self::sanitize_link( $value );
+			} elseif ( $key === '_attributes' && is_array( $value ) ) {
+				$clean[ $key ] = self::sanitize_attributes( $value );
 			} elseif ( is_string( $value ) ) {
 				$clean[ $key ] = sanitize_text_field( $value );
 			} elseif ( is_numeric( $value ) || is_bool( $value ) ) {
@@ -158,6 +260,55 @@ class ATB_Element_Validator {
 			}
 		}
 
+		return $clean;
+	}
+
+	/**
+	 * Sanitize a link settings object.
+	 */
+	private static function sanitize_link( $value ) {
+		$clean = array(
+			'type'   => sanitize_text_field( $value['type'] ?? 'external' ),
+			'url'    => esc_url_raw( $value['url'] ?? '#' ),
+			'newTab' => ! empty( $value['newTab'] ),
+		);
+		// Preserve other link properties (e.g., postId for internal links).
+		foreach ( $value as $k => $v ) {
+			if ( isset( $clean[ $k ] ) ) {
+				continue;
+			}
+			if ( is_string( $v ) ) {
+				$clean[ $k ] = sanitize_text_field( $v );
+			} elseif ( is_numeric( $v ) || is_bool( $v ) ) {
+				$clean[ $k ] = $v;
+			}
+		}
+		return $clean;
+	}
+
+	/**
+	 * Sanitize custom HTML attributes array.
+	 * Each entry has 'name' and 'value' keys.
+	 *
+	 * Validates attribute name format but does NOT block event handlers —
+	 * Bricks supports them natively and CLI roundtrips must be lossless.
+	 */
+	private static function sanitize_attributes( $attributes ) {
+		$clean = array();
+		foreach ( $attributes as $attr ) {
+			if ( ! is_array( $attr ) ) {
+				continue;
+			}
+			$name = $attr['name'] ?? '';
+			// Only allow valid attribute names (letters, digits, hyphens, underscores, data-*).
+			if ( ! preg_match( '/^[a-zA-Z_][a-zA-Z0-9_:-]*$/', $name ) ) {
+				continue;
+			}
+			$clean[] = array(
+				'name'  => $name,
+				'value' => sanitize_text_field( $attr['value'] ?? '' ),
+			);
+		}
 		return $clean;
 	}
 

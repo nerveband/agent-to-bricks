@@ -25,6 +25,7 @@ import {
   ClockCounterClockwise,
   Notebook,
 } from "@phosphor-icons/react";
+import { MOD_KEY } from "../../lib/platform";
 
 export function PromptWorkshop() {
   const site = useAtomValue(activeSiteAtom);
@@ -127,7 +128,7 @@ export function PromptWorkshop() {
       ) : (
         <div className="flex items-center gap-1.5 text-[11px]" style={{ color: "var(--accent)" }}>
           <span className="w-1.5 h-1.5 rounded-full" style={{ background: "var(--accent)" }} />
-          No site connected — use Settings or type "add site..." in Cmd+P
+          No site connected — use Settings or type "add site..." in {MOD_KEY}+P
         </div>
       )}
 
