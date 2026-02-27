@@ -1,6 +1,6 @@
 /* Agent to Bricks — Custom Starlight Theme */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Plus+Jakarta+Sans:wght@200..800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+/* Fonts loaded via <link> in HomepageLayout.astro — no @import needed */
 
 /* Prevent FOUC: set dark background immediately before JS applies data-theme */
 html, body {
@@ -128,20 +128,20 @@ html, body {
   -webkit-backdrop-filter: blur(50px) saturate(180%);
   border-radius: 16px;
   box-shadow: var(--glass-inset), 0 30px 60px rgba(0, 0, 0, 0.25);
-  transition: all 0.4s ease;
+  transition: background 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
 .sidebar {
   background: var(--sidebar-grad);
   box-shadow: var(--vignette);
   border-right: 1px solid var(--border-subtle);
-  transition: all 0.4s ease;
+  transition: background 0.4s ease, border-color 0.4s ease;
 }
 
 .terminal-main {
   background: var(--terminal-bg);
   box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.02);
-  transition: all 0.4s ease;
+  transition: background 0.4s ease;
 }
 
 .bottom-panel {
@@ -149,7 +149,7 @@ html, body {
   backdrop-filter: blur(30px);
   box-shadow: var(--shadow-floating);
   border-top: 1px solid var(--border-subtle);
-  transition: all 0.4s ease;
+  transition: background 0.4s ease, border-color 0.4s ease;
 }
 
 .glass-input {
@@ -169,12 +169,12 @@ html, body {
 
 .white-glass {
   background: var(--white-glass);
-  transition: all 0.4s ease;
+  transition: background 0.4s ease;
 }
 
 .pill-glass {
   background: var(--pill-bg);
-  transition: all 0.4s ease;
+  transition: background 0.4s ease;
 }
 
 .border-base {
@@ -391,6 +391,7 @@ html, body {
 .sl-markdown-content h5,
 .sl-markdown-content h6 {
   font-family: 'Space Grotesk', sans-serif;
+  text-wrap: balance;
 }
 
 [data-theme='dark'] .sl-markdown-content h1,

@@ -2,11 +2,11 @@
 import iconImg from '../../assets/icon.png';
 ---
 
-<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-[backdrop-filter,background-color,border-color] duration-500">
   <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
     <!-- Left: Logo -->
     <a href="/" class="flex items-center gap-3 group">
-      <img src={iconImg.src} alt="Agent to Bricks" class="w-8 h-8 rounded-lg shadow-sm group-hover:shadow-[var(--shadow-glow)] transition-shadow" />
+      <img src={iconImg.src} alt="Agent to Bricks" width="32" height="32" class="w-8 h-8 rounded-lg shadow-sm group-hover:shadow-[var(--shadow-glow)] transition-shadow" />
       <span class="text-sm font-semibold text-ui-fg tracking-wide" style="font-family: 'Space Grotesk', sans-serif;">Agent to Bricks</span>
     </a>
 
@@ -14,24 +14,24 @@ import iconImg from '../../assets/icon.png';
     <nav class="hidden md:flex items-baseline gap-8" aria-label="Main navigation">
       <div class="relative group">
         <a href="#features" class="nav-link text-sm text-ui-muted hover:text-ui-fg transition-colors py-2">Features</a>
-        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 translate-y-1 group-hover:translate-y-0">
+        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-[opacity,transform] duration-300 translate-y-1 group-hover:translate-y-0">
           <div class="glass-base border border-subtle rounded-xl p-4 min-w-[240px] flex flex-col gap-3">
             <a href="#features" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[var(--white-glass)] transition-colors">
-              <i class="ph ph-terminal-window text-accent-yellow text-lg"></i>
+              <i class="ph ph-terminal-window text-accent-yellow text-lg" aria-hidden="true"></i>
               <div>
                 <div class="text-sm font-medium text-ui-fg">CLI</div>
                 <div class="text-xs text-ui-muted">Your workflow, your way</div>
               </div>
             </a>
             <a href="#features" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[var(--white-glass)] transition-colors">
-              <i class="ph ph-layout text-accent-yellow text-lg"></i>
+              <i class="ph ph-layout text-accent-yellow text-lg" aria-hidden="true"></i>
               <div>
                 <div class="text-sm font-medium text-ui-fg">GUI</div>
                 <div class="text-xs text-ui-muted">Everything at your fingertips</div>
               </div>
             </a>
             <a href="#features" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[var(--white-glass)] transition-colors">
-              <i class="ph ph-squares-four text-accent-yellow text-lg"></i>
+              <i class="ph ph-squares-four text-accent-yellow text-lg" aria-hidden="true"></i>
               <div>
                 <div class="text-sm font-medium text-ui-fg">Templates</div>
                 <div class="text-xs text-ui-muted">Build your design system</div>
@@ -43,7 +43,7 @@ import iconImg from '../../assets/icon.png';
       <a href="#how-it-works" class="nav-link text-sm text-ui-muted hover:text-ui-fg transition-colors py-2">How It Works</a>
       <div class="relative group">
         <a href="/getting-started/introduction/" class="nav-link text-sm text-ui-muted hover:text-ui-fg transition-colors py-2">Docs</a>
-        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 translate-y-1 group-hover:translate-y-0">
+        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-[opacity,transform] duration-300 translate-y-1 group-hover:translate-y-0">
           <div class="glass-base border border-subtle rounded-xl p-4 min-w-[220px] flex flex-col gap-2">
             <a href="/getting-started/introduction/" class="px-3 py-2 rounded-lg hover:bg-[var(--white-glass)] transition-colors text-sm text-ui-muted hover:text-ui-fg">Getting Started</a>
             <a href="/cli/site-commands/" class="px-3 py-2 rounded-lg hover:bg-[var(--white-glass)] transition-colors text-sm text-ui-muted hover:text-ui-fg">CLI Reference</a>
@@ -53,7 +53,7 @@ import iconImg from '../../assets/icon.png';
         </div>
       </div>
       <a href="https://github.com/nerveband/agent-to-bricks" target="_blank" rel="noopener noreferrer" class="nav-link text-sm text-ui-muted hover:text-ui-fg transition-colors py-2 flex items-center gap-1.5">
-        <i class="ph ph-github-logo text-base"></i>
+        <i class="ph ph-github-logo text-base" aria-hidden="true"></i>
         GitHub
       </a>
     </nav>
@@ -64,9 +64,9 @@ import iconImg from '../../assets/icon.png';
         Get Started
       </a>
       <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Open menu" aria-expanded="false">
-        <span class="w-5 h-0.5 bg-[var(--fg)] transition-all origin-center" id="burger-1"></span>
-        <span class="w-5 h-0.5 bg-[var(--fg)] transition-all" id="burger-2"></span>
-        <span class="w-5 h-0.5 bg-[var(--fg)] transition-all origin-center" id="burger-3"></span>
+        <span class="w-5 h-0.5 bg-[var(--fg)] transition-[transform,opacity] origin-center" id="burger-1"></span>
+        <span class="w-5 h-0.5 bg-[var(--fg)] transition-[transform,opacity]" id="burger-2"></span>
+        <span class="w-5 h-0.5 bg-[var(--fg)] transition-[transform,opacity] origin-center" id="burger-3"></span>
       </button>
     </div>
   </div>
@@ -77,8 +77,8 @@ import iconImg from '../../assets/icon.png';
       <a href="#features" class="text-lg text-ui-fg py-3 border-b border-subtle">Features</a>
       <a href="#how-it-works" class="text-lg text-ui-fg py-3 border-b border-subtle">How It Works</a>
       <a href="/getting-started/introduction/" class="text-lg text-ui-fg py-3 border-b border-subtle">Docs</a>
-      <a href="https://github.com/nerveband/agent-to-bricks" target="_blank" class="text-lg text-ui-fg py-3 border-b border-subtle flex items-center gap-2">
-        <i class="ph ph-github-logo"></i> GitHub
+      <a href="https://github.com/nerveband/agent-to-bricks" target="_blank" rel="noopener noreferrer" class="text-lg text-ui-fg py-3 border-b border-subtle flex items-center gap-2">
+        <i class="ph ph-github-logo" aria-hidden="true"></i> GitHub
       </a>
       <a href="/getting-started/installation/" class="mt-4 inline-flex items-center justify-center px-6 py-3 rounded-lg bg-accent-yellow text-black font-semibold">
         Get Started

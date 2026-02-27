@@ -70,10 +70,10 @@ const wins = [
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-20 stagger-children">
       {wins.map((win) => (
-        <a href={win.href} class="glass-base tilt-card relative overflow-hidden p-7 border border-subtle transition-all hover:border-accent-yellow hover:-translate-y-1 group group-hover:shadow-[var(--shadow-glow)] no-underline block">
+        <a href={win.href} class="glass-base tilt-card relative overflow-hidden p-7 border border-subtle transition-[border-color,transform,box-shadow] hover:border-accent-yellow hover:-translate-y-1 group group-hover:shadow-[var(--shadow-glow)] no-underline block">
           <div class="noise"></div>
           <div class="w-11 h-11 rounded-lg bg-accent-yellow/5 border border-accent-yellow/10 flex items-center justify-center mb-5 relative z-10 group-hover:border-accent-yellow/30 group-hover:bg-accent-yellow/20 transition-colors">
-             <i class={`${win.iconClass} text-[22px] text-accent-yellow transition-colors`}></i>
+             <i class={`${win.iconClass} text-[22px] text-accent-yellow transition-colors`} aria-hidden="true"></i>
           </div>
           <h3 class="text-ui-fg font-mono font-bold uppercase tracking-[0.05em] text-[12px] mb-3 relative z-10 group-hover:text-accent-yellow transition-colors">{win.title}</h3>
           <p class="text-ui-muted text-sm leading-relaxed relative z-10">{win.description}</p>

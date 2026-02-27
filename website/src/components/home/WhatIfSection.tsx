@@ -193,7 +193,7 @@ export default function WhatIfSection() {
                 cancelRef.current = true;
                 setTimeout(() => setActiveIdx(i), 10);
               }}
-              className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all ${
+              className={`px-3 py-1.5 text-xs font-medium rounded-md transition-[color,background-color,border-color] ${
                 activeIdx === i
                   ? 'text-accent-yellow bg-accent-yellow/10 border border-accent-yellow/20'
                   : 'text-ui-muted hover:text-ui-fg'
@@ -274,7 +274,7 @@ export default function WhatIfSection() {
           {scenarios.map((_, i) => (
             <div
               key={i}
-              className={`w-1.5 h-1.5 rounded-full transition-all ${
+              className={`w-1.5 h-1.5 rounded-full transition-[background-color,box-shadow] ${
                 activeIdx === i ? 'bg-accent-yellow shadow-[var(--shadow-glow)]' : 'bg-ui-subtle'
               }`}
             />

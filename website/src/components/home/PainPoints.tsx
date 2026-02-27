@@ -67,7 +67,7 @@ export default function PainPoints() {
             key={point.title}
             className="glass-base tilt-card p-6 rounded-xl border border-subtle"
           >
-            <i className={`${point.icon} text-2xl text-accent-yellow`} />
+            <i className={`${point.icon} text-2xl text-accent-yellow`} aria-hidden="true" />
             <h3
               className="font-semibold text-lg text-ui-fg mt-4"
               style={{ fontFamily: "'Space Grotesk', sans-serif" }}

@@ -175,7 +175,7 @@ function GuiDocsDemo() {
     <div className="flex flex-col min-h-[300px] p-4">
       <div className="flex items-center gap-3 p-4 rounded-lg border border-dashed border-subtle bg-[var(--white-glass)] mb-4">
         <div className="w-10 h-10 rounded-lg bg-red-500/20 border border-red-500/30 flex items-center justify-center text-red-400 text-lg">
-          <i className="ph ph-file-pdf"></i>
+          <i className="ph ph-file-pdf" aria-hidden="true"></i>
         </div>
         <div>
           <div className="text-sm text-ui-fg font-medium">product-brief.pdf</div>
@@ -191,7 +191,7 @@ function GuiDocsDemo() {
           { icon: 'ph-currency-dollar', label: 'Pricing Table', desc: '3 tiers: Basic, Pro, Enterprise' },
         ].map((item) => (
           <div key={item.label} className="flex items-center gap-3 px-3 py-2 rounded-lg bg-[var(--white-glass)] border border-subtle">
-            <i className={`ph ${item.icon} text-accent-yellow text-base`}></i>
+            <i className={`ph ${item.icon} text-accent-yellow text-base`} aria-hidden="true"></i>
             <div>
               <div className="text-xs text-ui-fg font-medium">{item.label}</div>
               <div className="text-[10px] text-ui-muted">{item.desc}</div>
@@ -232,13 +232,13 @@ function GuiMediaDemo() {
       <div className="text-[9px] uppercase tracking-[0.15em] text-ui-subtle font-medium mb-2">Uploaded Images</div>
       <div className="grid grid-cols-6 gap-2 mb-4">
         {photos.map((src, i) => (
-          <img key={i} src={src} alt="" loading="lazy" className="aspect-square rounded-lg border border-subtle object-cover" />
+          <img key={i} src={src} alt="" width="120" height="120" loading="lazy" decoding="async" className="aspect-square rounded-lg border border-subtle object-cover" />
         ))}
       </div>
       <div className="text-[9px] uppercase tracking-[0.15em] text-ui-subtle font-medium mb-2">Gallery Preview</div>
       <div className="grid grid-cols-3 gap-1.5 flex-1 mb-4">
         {galleryPhotos.map((src, i) => (
-          <img key={i} src={src} alt="" loading="lazy" className="rounded-md border border-subtle object-cover w-full" style={{ minHeight: '48px' }} />
+          <img key={i} src={src} alt="" width="160" height="100" loading="lazy" decoding="async" className="rounded-md border border-subtle object-cover w-full" style={{ minHeight: '48px' }} />
         ))}
       </div>
       <button className="self-end px-4 py-2 rounded-lg bg-accent-yellow text-black text-xs font-semibold spring-btn shadow-[var(--shadow-glow)]">
@@ -279,7 +279,7 @@ export default function InteractiveDemo() {
       <div className="flex flex-wrap justify-center gap-3 mb-6">
         {(Object.keys(demoLabels) as DemoId[]).map((id) => (
           <button key={id} onClick={() => setActiveDemo(id)}
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-[color,background-color,border-color] ${
               activeDemo === id ? 'bg-accent-yellow/10 text-accent-yellow border border-accent-yellow/30' : 'text-ui-muted border border-subtle hover:border-base hover:text-ui-fg'
             }`}>
             {demoLabels[id]}
