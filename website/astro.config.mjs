@@ -34,6 +34,16 @@ export default defineConfig({
           },
         },
       },
+      head: [
+        {
+          tag: 'script',
+          attrs: {
+            defer: true,
+            src: 'https://stats.wavedepth.com/script.js',
+            'data-website-id': 'eb9e052e-1189-425b-b59d-211ee0bb3885',
+          },
+        },
+      ],
       customCss: [
         './src/styles/custom.css',
       ],
