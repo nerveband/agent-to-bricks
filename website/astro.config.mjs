@@ -43,8 +43,29 @@ export default defineConfig({
             'data-website-id': 'eb9e052e-1189-425b-b59d-211ee0bb3885',
           },
         },
+        {
+          tag: 'link',
+          attrs: {
+            rel: 'preload',
+            href: '/fonts/plus-jakarta-sans-latin.woff2',
+            as: 'font',
+            type: 'font/woff2',
+            crossorigin: 'anonymous',
+          },
+        },
+        {
+          tag: 'link',
+          attrs: {
+            rel: 'preload',
+            href: '/fonts/space-grotesk-latin.woff2',
+            as: 'font',
+            type: 'font/woff2',
+            crossorigin: 'anonymous',
+          },
+        },
       ],
       customCss: [
+        './src/styles/fonts.css',
         './src/styles/custom.css',
       ],
       sidebar: [

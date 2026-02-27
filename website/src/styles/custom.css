@@ -1,6 +1,6 @@
 /* Agent to Bricks — Custom Starlight Theme */
 
-/* Fonts loaded via <link> in HomepageLayout.astro — no @import needed */
+/* Fonts self-hosted via fonts.css — @font-face declarations in fonts.css */
 
 /* Prevent FOUC: set dark background immediately before JS applies data-theme */
 html, body {
