@@ -8,6 +8,7 @@ export interface Tool {
   icon: string;
   installed: boolean;
   version: string | null;
+  path: string | null;
   configPath: string | null;
   installInstructions: {
     npm?: string;
@@ -18,7 +19,7 @@ export interface Tool {
 
 // Bricks CLI is listed first — it's the hard dependency and is checked before
 // anything else.  The remaining tools are optional coding agents.
-export const DEFAULT_TOOLS: Omit<Tool, "installed" | "version">[] = [
+export const DEFAULT_TOOLS: Omit<Tool, "installed" | "version" | "path">[] = [
   {
     slug: "bricks",
     name: "Bricks CLI",
@@ -96,3 +97,34 @@ export const toolCustomFlagsAtom = atom<ToolCustomFlags>({});
 // Per-tool working directory, keyed by slug → path string.
 export type ToolWorkingDirs = Record<string, string>;
 export const toolWorkingDirsAtom = atom<ToolWorkingDirs>({});
+
+// Per-tool binary path overrides, keyed by slug → absolute path string.
+// When set, this path is used instead of the auto-detected one.
+export type ToolPaths = Record<string, string>;
+export const toolPathsAtom = atom<ToolPaths>({});
+
+// Cached detection results for instant startup on subsequent launches.
+export interface DetectionCacheEntry {
+  installed: boolean;
+  version: string | null;
+  path: string | null;
+  found_via: string;
+  cached_at: number;
+}
+export type DetectionCache = Record<string, DetectionCacheEntry>;
+export const detectionCacheAtom = atom<DetectionCache>({});
+
+// User-added custom tool definitions that persist across restarts.
+export interface CustomToolDef {
+  slug: string;
+  name: string;
+  command: string;
+  args: string[];
+  icon: string;
+  configPath: string | null;
+  installInstructions: { npm?: string; brew?: string; url?: string };
+}
+export const customToolDefsAtom = atom<CustomToolDef[]>([]);
+
+// Increment to trigger a foreground re-detection from any component.
+export const redetectRequestedAtom = atom(0);

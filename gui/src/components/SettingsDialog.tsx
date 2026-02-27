@@ -19,9 +19,10 @@ import {
   ChatText,
   Sun,
   Moon,
+  ArrowsClockwise,
 } from "@phosphor-icons/react";
 import { sitesAtom, activeSiteIndexAtom, sessionPrePromptAtom, type SiteEntry, type SiteEnvironment } from "../atoms/app";
-import { toolsAtom, toolCustomFlagsAtom, toolWorkingDirsAtom } from "../atoms/tools";
+import { toolsAtom, toolCustomFlagsAtom, toolWorkingDirsAtom, toolPathsAtom, redetectRequestedAtom } from "../atoms/tools";
 import { useTheme } from "../hooks/useTheme";
 
 interface SettingsDialogProps {
@@ -38,6 +39,8 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
   const [tools] = useAtom(toolsAtom);
   const [toolFlags, setToolFlags] = useAtom(toolCustomFlagsAtom);
   const [toolDirs, setToolDirs] = useAtom(toolWorkingDirsAtom);
+  const [toolPaths, setToolPaths] = useAtom(toolPathsAtom);
+  const [, setRedetect] = useAtom(redetectRequestedAtom);
   const [prePrompt, setPrePrompt] = useAtom(sessionPrePromptAtom);
   const { theme, toggle } = useTheme();
 
@@ -321,8 +324,19 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
 
               {tab === "tools" && (
                 <div className="space-y-3">
-                  <div className="flex items-center gap-2 text-[14px] font-semibold mb-1" style={{ color: "var(--fg)" }}>
-                    <Wrench size={16} style={{ color: "var(--yellow)" }} weight="fill" /> Tools Configuration
+                  <div className="flex items-center justify-between mb-1">
+                    <div className="flex items-center gap-2 text-[14px] font-semibold" style={{ color: "var(--fg)" }}>
+                      <Wrench size={16} style={{ color: "var(--yellow)" }} weight="fill" /> Tools Configuration
+                    </div>
+                    <button
+                      onClick={() => setRedetect((n) => n + 1)}
+                      className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border text-[12px] transition-colors hover:bg-[var(--white-glass)]"
+                      style={{ borderColor: "var(--border-subtle)", color: "var(--fg-muted)" }}
+                      title="Re-detect all tools"
+                    >
+                      <ArrowsClockwise size={14} />
+                      Re-detect tools
+                    </button>
                   </div>
 
                   <div>
@@ -383,6 +397,48 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
                               className="w-full px-2.5 py-1.5 rounded-lg border text-[13px] font-mono glass-input"
                               style={{ borderColor: "var(--border-subtle)", color: "var(--fg)" }}
                             />
+                          </div>
+                          <div>
+                            <label className="text-[11px] font-medium block mb-1" style={{ color: "var(--fg-muted)" }}>Binary path</label>
+                            <div className="flex gap-1.5">
+                              <input
+                                type="text"
+                                autoComplete="off" autoCorrect="off" spellCheck={false}
+                                value={toolPaths[tool.slug] ?? tool.path ?? ""}
+                                onChange={(e) => setToolPaths((prev) => ({ ...prev, [tool.slug]: e.target.value }))}
+                                placeholder="Auto-detected"
+                                className="flex-1 min-w-0 px-2.5 py-1.5 rounded-lg border text-[13px] font-mono glass-input"
+                                style={{ borderColor: "var(--border-subtle)", color: "var(--fg)" }}
+                              />
+                              <button
+                                onClick={async () => {
+                                  try {
+                                    const selected = await openDialog({ directory: false, multiple: false, title: "Select binary" });
+                                    if (selected && typeof selected === "string") {
+                                      setToolPaths((prev) => ({ ...prev, [tool.slug]: selected }));
+                                    }
+                                  } catch { /* cancelled */ }
+                                }}
+                                className="px-2.5 py-1.5 rounded-lg border text-[13px] transition-colors hover:bg-[var(--white-glass)]"
+                                style={{ borderColor: "var(--border-subtle)", color: "var(--fg-muted)" }}
+                                title="Browse..."
+                              >
+                                Browse
+                              </button>
+                            </div>
+                            {toolPaths[tool.slug] && (
+                              <button
+                                onClick={() => setToolPaths((prev) => {
+                                  const next = { ...prev };
+                                  delete next[tool.slug];
+                                  return next;
+                                })}
+                                className="text-[11px] mt-1 hover:underline"
+                                style={{ color: "var(--fg-subtle)" }}
+                              >
+                                Reset to auto-detected
+                              </button>
+                            )}
                           </div>
                           <div>
                             <label className="text-[11px] font-medium block mb-1" style={{ color: "var(--fg-muted)" }}>Working directory</label>

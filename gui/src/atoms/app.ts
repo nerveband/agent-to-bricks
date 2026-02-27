@@ -57,3 +57,7 @@ Use the API key with the X-ATB-Key header when making API calls to the site.`
 
 // Launch dialog — holds the tool being configured before launch, or null when closed
 export const launchDialogToolAtom = atom<Tool | null>(null);
+
+// Gates tool detection until config is loaded from disk
+// (prevents race between useConfigPersistence and useToolDetection)
+export const configLoadedAtom = atom(false);

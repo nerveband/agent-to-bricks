@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useAtom, useSetAtom } from "jotai";
-import { toolsAtom, activeToolSlugAtom, toolCustomFlagsAtom, toolWorkingDirsAtom } from "../atoms/tools";
+import { toolsAtom, activeToolSlugAtom, toolCustomFlagsAtom, toolWorkingDirsAtom, toolPathsAtom } from "../atoms/tools";
 import { sessionsAtom, activeSessionIdAtom } from "../atoms/sessions";
 import { settingsOpenAtom, helpOpenAtom, launchDialogToolAtom } from "../atoms/app";
 import { useSessionLauncher } from "../hooks/useSessionLauncher";
-import { Gear, Plus, Question, PencilSimple, Play, Trash, Terminal, FolderOpen, MagnifyingGlass, X } from "@phosphor-icons/react";
+import { Gear, Plus, Question, PencilSimple, Play, Trash, Terminal, FolderOpen, MagnifyingGlass, X, FileDashed } from "@phosphor-icons/react";
 import { AddToolDialog } from "./AddToolDialog";
 import { SettingsDialog } from "./SettingsDialog";
 import { HelpDialog } from "./HelpDialog";
@@ -32,6 +32,7 @@ export function Sidebar({ collapsed }: SidebarProps) {
   const [helpOpen, setHelpOpen] = useAtom(helpOpenAtom);
   const [toolFlags, setToolFlags] = useAtom(toolCustomFlagsAtom);
   const [toolDirs, setToolDirs] = useAtom(toolWorkingDirsAtom);
+  const [, setToolPaths] = useAtom(toolPathsAtom);
   const [editingToolSlug, setEditingToolSlug] = useState<string | null>(null);
   const [editingDirSlug, setEditingDirSlug] = useState<string | null>(null);
   const [renamingSessionId, setRenamingSessionId] = useState<string | null>(null);
@@ -53,6 +54,21 @@ export function Sidebar({ collapsed }: SidebarProps) {
             prev.map((s) => (s.id === slug ? { ...s, cwd: selected } : s))
           );
         }
+      }
+    } catch {
+      // User cancelled
+    }
+  };
+
+  const browseForBinary = async (slug: string) => {
+    try {
+      const selected = await openDialog({
+        directory: false,
+        multiple: false,
+        title: "Select tool binary",
+      });
+      if (selected && typeof selected === "string") {
+        setToolPaths((prev) => ({ ...prev, [slug]: selected }));
       }
     } catch {
       // User cancelled
@@ -195,6 +211,19 @@ export function Sidebar({ collapsed }: SidebarProps) {
                           >
                             <PencilSimple size={15} />
                             Type path
+                          </ContextMenu.Item>
+                        </div>
+
+                        <div className="h-px w-full my-1" style={{ background: "var(--border-subtle)" }} />
+
+                        <div className="px-3 py-1.5 flex flex-col">
+                          <ContextMenu.Item
+                            className="context-menu-item flex items-center gap-3 px-3 py-1.5 rounded-md cursor-pointer outline-none group"
+                            style={{ color: "var(--fg-muted)" }}
+                            onSelect={() => browseForBinary(tool.slug)}
+                          >
+                            <FileDashed size={15} />
+                            Binary path...
                           </ContextMenu.Item>
                         </div>
 

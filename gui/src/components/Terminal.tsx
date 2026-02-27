@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Terminal as XTerm, type ITheme } from "@xterm/xterm";
 import { FitAddon } from "@xterm/addon-fit";
-import { WebglAddon } from "@xterm/addon-webgl";
 import "@xterm/xterm/css/xterm.css";
 
 const FONT_FAMILY = '"JetBrains Mono", monospace';
@@ -12,7 +11,7 @@ const FONT_FAMILY = '"JetBrains Mono", monospace';
    Both use JetBrains Mono for that authentic terminal feel */
 const THEMES: Record<"light" | "dark", ITheme> = {
   dark: {
-    background: "#08080a",
+    background: "transparent",
     foreground: "#E5E7EB",
     cursor: "#FACC15",
     cursorAccent: "#08080a",
@@ -36,7 +35,7 @@ const THEMES: Record<"light" | "dark", ITheme> = {
     brightWhite: "#fafafa",
   },
   light: {
-    background: "#fafafa",
+    background: "transparent",
     foreground: "#030712",
     cursor: "#EBA40A",
     cursorAccent: "#fafafa",
@@ -113,16 +112,6 @@ export function Terminal({ colorScheme, onTerminalReady }: TerminalProps) {
       observer.observe(containerRef.current);
 
       term.open(containerRef.current);
-
-      try {
-        const webgl = new WebglAddon();
-        webgl.onContextLoss(() => {
-          webgl.dispose();
-        });
-        term.loadAddon(webgl);
-      } catch {
-        // WebGL not available, canvas fallback
-      }
 
       fitAddon.fit();
       termRef.current = term;

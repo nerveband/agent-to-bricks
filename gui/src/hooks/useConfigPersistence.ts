@@ -12,7 +12,16 @@ import {
   promptCountAtom,
 } from "../atoms/app";
 import { customPresetsAtom, promptHistoryAtom, hiddenPresetIdsAtom, presetOverridesAtom } from "../atoms/prompts";
-import { toolCustomFlagsAtom, toolWorkingDirsAtom } from "../atoms/tools";
+import {
+  toolCustomFlagsAtom,
+  toolWorkingDirsAtom,
+  toolPathsAtom,
+  detectionCacheAtom,
+  customToolDefsAtom,
+  type DetectionCache,
+  type CustomToolDef,
+} from "../atoms/tools";
+import { configLoadedAtom } from "../atoms/app";
 
 interface ConfigData {
   sites?: Array<{ name: string; url: string; api_key: string; environment?: string; environment_label?: string }>;
@@ -28,6 +37,9 @@ interface ConfigData {
   prompt_count?: number;
   tool_flags?: Record<string, string>;
   tool_dirs?: Record<string, string>;
+  tool_paths?: Record<string, string>;
+  detection_cache?: DetectionCache;
+  custom_tools?: CustomToolDef[];
   hidden_preset_ids?: string[];
   preset_overrides?: Record<string, { name?: string; prompt?: string; description?: string }>;
   // Legacy single-site fields
@@ -64,8 +76,12 @@ export function useConfigPersistence() {
   const [history, setHistory] = useAtom(promptHistoryAtom);
   const [toolFlags, setToolFlags] = useAtom(toolCustomFlagsAtom);
   const [toolDirs, setToolDirs] = useAtom(toolWorkingDirsAtom);
+  const [toolPaths, setToolPaths] = useAtom(toolPathsAtom);
+  const [detectionCache, setDetectionCache] = useAtom(detectionCacheAtom);
+  const [customTools, setCustomTools] = useAtom(customToolDefsAtom);
   const [hiddenPresetIds, setHiddenPresetIds] = useAtom(hiddenPresetIdsAtom);
   const [presetOverrides, setPresetOverrides] = useAtom(presetOverridesAtom);
+  const [, setConfigLoaded] = useAtom(configLoadedAtom);
   // Two-phase loading: `started` prevents double-mount, `ready` gates saving
   const started = useRef(false);
   const ready = useRef(false);
@@ -127,6 +143,15 @@ export function useConfigPersistence() {
         if (cfg.tool_dirs && typeof cfg.tool_dirs === "object") {
           setToolDirs(cfg.tool_dirs);
         }
+        if (cfg.tool_paths && typeof cfg.tool_paths === "object") {
+          setToolPaths(cfg.tool_paths);
+        }
+        if (cfg.detection_cache && typeof cfg.detection_cache === "object") {
+          setDetectionCache(cfg.detection_cache);
+        }
+        if (Array.isArray(cfg.custom_tools)) {
+          setCustomTools(cfg.custom_tools);
+        }
         if (Array.isArray(cfg.hidden_preset_ids)) {
           setHiddenPresetIds(cfg.hidden_preset_ids);
         }
@@ -139,6 +164,7 @@ export function useConfigPersistence() {
 
       // Only allow saving AFTER load completes (prevents overwriting config with defaults)
       ready.current = true;
+      setConfigLoaded(true);
     })();
   }, []);
 
@@ -173,6 +199,9 @@ export function useConfigPersistence() {
         })),
         tool_flags: toolFlags,
         tool_dirs: toolDirs,
+        tool_paths: Object.keys(toolPaths).length > 0 ? toolPaths : undefined,
+        detection_cache: Object.keys(detectionCache).length > 0 ? detectionCache : undefined,
+        custom_tools: customTools.length > 0 ? customTools : undefined,
         hidden_preset_ids: hiddenPresetIds.length > 0 ? hiddenPresetIds : undefined,
         preset_overrides: Object.keys(presetOverrides).length > 0 ? presetOverrides : undefined,
         // Legacy CLI compat: write active site as flat fields
@@ -195,5 +224,5 @@ export function useConfigPersistence() {
     }, 1000);
 
     return () => clearTimeout(saveTimeout.current);
-  }, [sites, activeIdx, theme, onboardingSeen, experienceLevel, hintPref, prePrompt, promptCount, customPresets, history, toolFlags, toolDirs, hiddenPresetIds, presetOverrides]);
+  }, [sites, activeIdx, theme, onboardingSeen, experienceLevel, hintPref, prePrompt, promptCount, customPresets, history, toolFlags, toolDirs, toolPaths, detectionCache, customTools, hiddenPresetIds, presetOverrides]);
 }

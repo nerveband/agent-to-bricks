@@ -1,8 +1,9 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { X } from "@phosphor-icons/react";
 import { useState } from "react";
-import { useSetAtom } from "jotai";
-import { toolsAtom, type Tool } from "../atoms/tools";
+import { useSetAtom, useAtomValue } from "jotai";
+import { open as openDialog } from "@tauri-apps/plugin-dialog";
+import { toolsAtom, customToolDefsAtom, toolWorkingDirsAtom, type Tool } from "../atoms/tools";
 
 interface AddToolDialogProps {
   open: boolean;
@@ -11,10 +12,14 @@ interface AddToolDialogProps {
 
 export function AddToolDialog({ open, onOpenChange }: AddToolDialogProps) {
   const setTools = useSetAtom(toolsAtom);
+  const setCustomToolDefs = useSetAtom(customToolDefsAtom);
+  const setToolDirs = useSetAtom(toolWorkingDirsAtom);
+  const existingTools = useAtomValue(toolsAtom);
   const [name, setName] = useState("");
   const [command, setCommand] = useState("");
   const [workDir, setWorkDir] = useState("");
   const [configPath, setConfigPath] = useState("");
+  const [slugError, setSlugError] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,6 +29,13 @@ export function AddToolDialog({ open, onOpenChange }: AddToolDialogProps) {
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/^-|-$/g, "");
+
+    // Check for slug collision
+    if (existingTools.some((t) => t.slug === slug)) {
+      setSlugError(`A tool with identifier "${slug}" already exists.`);
+      return;
+    }
+
     const newTool: Tool = {
       slug,
       name: name.trim(),
@@ -32,16 +44,52 @@ export function AddToolDialog({ open, onOpenChange }: AddToolDialogProps) {
       icon: name.trim().substring(0, 2).toUpperCase(),
       installed: true,
       version: null,
+      path: null,
       configPath: configPath.trim() || null,
       installInstructions: {},
     };
+
+    // Persist custom tool definition so it survives restart
+    setCustomToolDefs((prev) => [
+      ...prev,
+      {
+        slug,
+        name: name.trim(),
+        command: command.trim(),
+        args: [],
+        icon: name.trim().substring(0, 2).toUpperCase(),
+        configPath: configPath.trim() || null,
+        installInstructions: {},
+      },
+    ]);
+
+    // Save working directory if provided
+    if (workDir.trim()) {
+      setToolDirs((prev) => ({ ...prev, [slug]: workDir.trim() }));
+    }
 
     setTools((prev) => [...prev, newTool]);
     setName("");
     setCommand("");
     setWorkDir("");
     setConfigPath("");
+    setSlugError("");
     onOpenChange(false);
+  };
+
+  const browseForBinary = async () => {
+    try {
+      const selected = await openDialog({
+        directory: false,
+        multiple: false,
+        title: "Select tool binary",
+      });
+      if (selected && typeof selected === "string") {
+        setCommand(selected);
+      }
+    } catch {
+      // User cancelled
+    }
   };
 
   const inputStyle = {
@@ -90,7 +138,7 @@ export function AddToolDialog({ open, onOpenChange }: AddToolDialogProps) {
               <input
                 type="text"
                 value={name}
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) => { setName(e.target.value); setSlugError(""); }}
                 placeholder="e.g. Aider"
                 className="w-full px-3 py-1.5 rounded-xl border text-[13px] glass-input focus:outline-none"
                 style={{
@@ -99,6 +147,11 @@ export function AddToolDialog({ open, onOpenChange }: AddToolDialogProps) {
                   "--tw-ring-color": "var(--accent)",
                 }}
               />
+              {slugError && (
+                <p className="text-[11px] mt-1" style={{ color: "var(--destructive)" }}>
+                  {slugError}
+                </p>
+              )}
             </div>
 
             <div>
@@ -108,19 +161,30 @@ export function AddToolDialog({ open, onOpenChange }: AddToolDialogProps) {
               >
                 Launch command <span style={{ color: "var(--destructive)" }}>*</span>
               </label>
-              <input
-                type="text"
-                value={command}
-                onChange={(e) => setCommand(e.target.value)}
-                placeholder="e.g. aider"
-                required
-                className="w-full px-3 py-1.5 rounded-xl border text-[13px] glass-input focus:outline-none"
-                style={{
-                  ...inputStyle,
-                  // @ts-expect-error CSS custom property for ring color
-                  "--tw-ring-color": "var(--accent)",
-                }}
-              />
+              <div className="flex gap-1.5">
+                <input
+                  type="text"
+                  value={command}
+                  onChange={(e) => setCommand(e.target.value)}
+                  placeholder="e.g. aider"
+                  required
+                  className="flex-1 min-w-0 px-3 py-1.5 rounded-xl border text-[13px] glass-input focus:outline-none"
+                  style={{
+                    ...inputStyle,
+                    // @ts-expect-error CSS custom property for ring color
+                    "--tw-ring-color": "var(--accent)",
+                  }}
+                />
+                <button
+                  type="button"
+                  onClick={browseForBinary}
+                  className="px-2.5 py-1.5 rounded-lg border text-[13px] transition-colors hover:bg-[var(--white-glass)]"
+                  style={{ borderColor: "var(--border-subtle)", color: "var(--fg-muted)" }}
+                  title="Browse for binary..."
+                >
+                  Browse
+                </button>
+              </div>
             </div>
 
             <div>

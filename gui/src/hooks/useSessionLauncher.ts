@@ -1,6 +1,6 @@
 import { useSetAtom, useAtom } from "jotai";
 import { sessionsAtom, activeSessionIdAtom } from "../atoms/sessions";
-import { activeToolSlugAtom, toolCustomFlagsAtom, toolWorkingDirsAtom, type Tool } from "../atoms/tools";
+import { activeToolSlugAtom, toolCustomFlagsAtom, toolWorkingDirsAtom, toolPathsAtom, type Tool } from "../atoms/tools";
 import { activeSiteAtom, sessionPrePromptAtom, type SiteEntry } from "../atoms/app";
 import { useAtomValue } from "jotai";
 import { useCallback, useEffect, useState } from "react";
@@ -37,6 +37,7 @@ export function useSessionLauncher() {
   const setActiveToolSlug = useSetAtom(activeToolSlugAtom);
   const [toolFlags] = useAtom(toolCustomFlagsAtom);
   const [toolDirs] = useAtom(toolWorkingDirsAtom);
+  const [toolPaths] = useAtom(toolPathsAtom);
   const site = useAtomValue(activeSiteAtom);
   const promptTemplate = useAtomValue(sessionPrePromptAtom);
 
@@ -51,13 +52,15 @@ export function useSessionLauncher() {
       const customFlags = toolFlags[tool.slug] ?? "";
       const mergedArgs = [...tool.args, ...parseFlags(customFlags)];
       const dir = cwd || toolDirs[tool.slug] || defaultDir;
+      // Resolve binary: user override > detected path > command name
+      const resolvedCommand = toolPaths[tool.slug] || tool.path || tool.command;
 
       const id = crypto.randomUUID();
       const session = {
         id,
         toolSlug: tool.slug,
         displayName: tool.name,
-        command: tool.command,
+        command: resolvedCommand,
         args: mergedArgs,
         cwd: dir,
         status: "running" as const,
@@ -76,7 +79,7 @@ export function useSessionLauncher() {
         }
       }
     },
-    [setSessions, setActiveSessionId, setActiveToolSlug, toolFlags, toolDirs, defaultDir, site, promptTemplate]
+    [setSessions, setActiveSessionId, setActiveToolSlug, toolFlags, toolDirs, toolPaths, defaultDir, site, promptTemplate]
   );
 
   /** Launch a plain terminal with no tool command. */
