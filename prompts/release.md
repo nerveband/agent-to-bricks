@@ -40,12 +40,18 @@ Run the full pre-release check and release pipeline. Do these steps:
     - Share the preview URL for review
     - After review is approved, deploy to production: `cd website && npx netlify deploy --dir=dist --prod`
 
+**Hero changelog badge:**
+19. Update the changelog badge in `website/src/components/home/HeroSection.astro`:
+    - Update the version number (e.g. `v1.8.0`) in both the `href` URL and the badge text
+    - Update the short description text to summarize this release's highlights (keep it under ~8 words)
+    - The badge links to `https://github.com/nerveband/agent-to-bricks/releases/tag/v<VERSION>`
+
 **Release:**
-19. Ask me what version to bump to (patch, minor, or major). Bump `VERSION`, run `make sync-version`, commit all changes
-20. Tag and push to trigger the release workflow: `make tag-release`
-21. Monitor the release workflow until all 7 jobs pass (CLI, Plugin ZIP, 4x GUI, Verify)
-22. Publish the draft release with release notes summarizing what changed
-23. Download and open the macOS aarch64 DMG to verify signing works
+20. Ask me what version to bump to (patch, minor, or major). Bump `VERSION`, run `make sync-version`, commit all changes
+21. Tag and push to trigger the release workflow: `make tag-release`
+22. Monitor the release workflow until all 7 jobs pass (CLI, Plugin ZIP, 4x GUI, Verify)
+23. Publish the draft release with release notes summarizing what changed
+24. Download and open the macOS aarch64 DMG to verify signing works
 
 **If re-releasing (workflow failed and you need to retry):**
 - First try: `gh run rerun <run-id> --failed` to re-run only the failed job
