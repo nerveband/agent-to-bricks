@@ -5,9 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/src-tauri/icons/32x32.png" />
     <title>Agent to Bricks</title>
+    <script>
+      // Apply saved theme before any CSS paints — prevents flash of wrong theme
+      try {
+        var t = localStorage.getItem('atb-theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch(e) {}
+    </script>
     <style>
-      /* Prevent white flash — match dark theme immediately */
-      html, body { margin: 0; padding: 0; background: #0f0c29; }
+      /* Prevent flash — set initial background matching each theme */
+      html, body { margin: 0; padding: 0; }
+      html[data-theme="dark"], html[data-theme="dark"] body { background: #0f0c29; }
+      html[data-theme="light"], html[data-theme="light"] body { background: #eef2ff; }
     </style>
   </head>
   <body>

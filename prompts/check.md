@@ -27,8 +27,15 @@ Run all CI checks, a docs/content audit, and cross-link verification. Do these s
 12. Grep all URLs in CLI source (cmd/*.go), GUI source (src/), and plugin source (includes/) that point to agenttobricks.com — verify each target page exists in `website/src/content/docs/` or `website/src/pages/`
 13. Check that the plugin settings page links and CLI help text URLs are not broken
 
+**Website preview (if website changed):**
+14. If any files under `website/` changed, build the website and deploy a preview:
+    - `cd website && npm run build`
+    - `cd website && npx netlify deploy --dir=dist` (draft/preview deploy)
+    - Share the preview URL for review
+    - After review is approved, deploy to production: `cd website && npx netlify deploy --dir=dist --prod`
+
 **Staging verification (if plugin changed):**
-14. If plugin files changed, deploy to staging and verify the API returns 200: `curl -s -o /dev/null -w "%{http_code}" -H "X-ATB-Key: atb_wZGm30TSSWgcUkSxgRR4Me0stdQDE8GioUoVbXT0" "https://ts-staging.wavedepth.com/wp-json/agent-bricks/v1/site/info"`
+15. If plugin files changed, deploy to staging and verify the API returns 200: `curl -s -o /dev/null -w "%{http_code}" -H "X-ATB-Key: <key-from-config>" "https://ts-staging.wavedepth.com/wp-json/agent-bricks/v1/site/info"`
 
 **Known test limitations:**
 - Plugin functional tests run via WP-CLI `wp eval-file`. Some endpoints return 403 `rest_forbidden` in WP-CLI context because the internal REST dispatch lacks full capabilities. This affects elements, snapshots, and components write endpoints. These are WP-CLI permission limitations, not plugin bugs. The affected suites: `test-elements-runner.php`, `test-snapshots-runner.php`, `test-components-runner.php` (partial), `test-api-auth-runner.php` (REST dispatch test), `test-templates-runner.php` (DELETE). Suites that should always pass: `test-classes-runner.php`, `test-element-types-runner.php`, `test-search-runner.php`, `test-site-runner.php`.

@@ -50,7 +50,7 @@ The default template looks like this:
 You are a web developer working with a Bricks Builder WordPress site ({environment}).
 Site: {site_url}
 API Key: {api_key}
-The bricks CLI is available. Use `bricks` commands to pull, push, generate, and modify page elements.
+The bricks CLI is available. Use `bricks` commands to pull, push, convert, and modify page elements.
 Use the API key with the X-ATB-Key header when making API calls to the site.
 ```
 

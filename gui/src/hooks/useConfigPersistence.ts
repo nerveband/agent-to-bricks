@@ -21,6 +21,7 @@ import {
   type DetectionCache,
   type CustomToolDef,
 } from "../atoms/tools";
+import { terminalSettingsAtom, TERMINAL_DEFAULTS, type TerminalSettings } from "../atoms/terminal";
 import { configLoadedAtom } from "../atoms/app";
 
 interface ConfigData {
@@ -42,6 +43,7 @@ interface ConfigData {
   custom_tools?: CustomToolDef[];
   hidden_preset_ids?: string[];
   preset_overrides?: Record<string, { name?: string; prompt?: string; description?: string }>;
+  terminal?: Partial<TerminalSettings>;
   // Legacy single-site fields
   site?: { url?: string; api_key?: string };
 }
@@ -81,6 +83,7 @@ export function useConfigPersistence() {
   const [customTools, setCustomTools] = useAtom(customToolDefsAtom);
   const [hiddenPresetIds, setHiddenPresetIds] = useAtom(hiddenPresetIdsAtom);
   const [presetOverrides, setPresetOverrides] = useAtom(presetOverridesAtom);
+  const [terminalSettings, setTerminalSettings] = useAtom(terminalSettingsAtom);
   const [, setConfigLoaded] = useAtom(configLoadedAtom);
   // Two-phase loading: `started` prevents double-mount, `ready` gates saving
   const started = useRef(false);
@@ -158,6 +161,9 @@ export function useConfigPersistence() {
         if (cfg.preset_overrides && typeof cfg.preset_overrides === "object") {
           setPresetOverrides(cfg.preset_overrides);
         }
+        if (cfg.terminal && typeof cfg.terminal === "object") {
+          setTerminalSettings({ ...TERMINAL_DEFAULTS, ...cfg.terminal });
+        }
       } catch (err) {
         console.warn("[config] Could not load config (first run?):", err);
       }
@@ -204,6 +210,7 @@ export function useConfigPersistence() {
         custom_tools: customTools.length > 0 ? customTools : undefined,
         hidden_preset_ids: hiddenPresetIds.length > 0 ? hiddenPresetIds : undefined,
         preset_overrides: Object.keys(presetOverrides).length > 0 ? presetOverrides : undefined,
+        terminal: JSON.stringify(terminalSettings) !== JSON.stringify(TERMINAL_DEFAULTS) ? terminalSettings : undefined,
         // Legacy CLI compat: write active site as flat fields
         site: sites[activeIdx] ? {
           url: sites[activeIdx].site_url,
@@ -224,5 +231,5 @@ export function useConfigPersistence() {
     }, 1000);
 
     return () => clearTimeout(saveTimeout.current);
-  }, [sites, activeIdx, theme, onboardingSeen, experienceLevel, hintPref, prePrompt, promptCount, customPresets, history, toolFlags, toolDirs, toolPaths, detectionCache, customTools, hiddenPresetIds, presetOverrides]);
+  }, [sites, activeIdx, theme, onboardingSeen, experienceLevel, hintPref, prePrompt, promptCount, customPresets, history, toolFlags, toolDirs, toolPaths, detectionCache, customTools, hiddenPresetIds, presetOverrides, terminalSettings]);
 }

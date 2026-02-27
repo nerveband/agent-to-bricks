@@ -1,8 +1,8 @@
 # Agent to Bricks
 
-AI-powered page building for [Bricks Builder](https://bricksbuilder.io/) — CLI, Desktop App, and WordPress Plugin.
+Give any AI coding agent direct access to your Bricks Builder site. Build pages, migrate content, and orchestrate multi-tool workflows — all from a single prompt.
 
-Write HTML using your site's CSS classes, convert it to Bricks elements, and push it to any page. Designed for both humans and AI coding agents.
+CLI, Desktop App, and WordPress Plugin for [Bricks Builder](https://bricksbuilder.io/).
 
 ## Components
 
@@ -12,6 +12,15 @@ Write HTML using your site's CSS classes, convert it to Bricks elements, and pus
 | **Desktop App** | Visual session manager for AI coding tools (Claude Code, Codex, etc.) |
 | **WordPress Plugin** | REST API bridge to your Bricks Builder site |
 | **[Documentation](https://agenttobricks.com)** | Full guides, references, and tutorials |
+
+### Desktop App
+![Desktop App — AI session manager with Codex](docs/images/gui-screenshot.jpg)
+
+### CLI
+![CLI — pull, convert, and push pages from the terminal](docs/images/cli-demo.svg)
+
+### WordPress Plugin
+![Plugin settings page in WP Admin](docs/images/plugin-settings.jpg)
 
 ## Quick Start
 
@@ -39,7 +48,9 @@ bricks site info            # verify connection
 ### 4. Build something
 
 ```bash
-bricks convert html section.html --push 42 --snapshot
+bricks pull 42 --format html         # get current page
+# ... let your AI agent edit the HTML
+bricks convert html edited.html --push 42 --snapshot   # push changes
 ```
 
 [Full installation guide](https://agenttobricks.com/getting-started/installation/) | [Quick start](https://agenttobricks.com/getting-started/quick-start/)

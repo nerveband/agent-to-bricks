@@ -20,9 +20,11 @@ import {
   Sun,
   Moon,
   ArrowsClockwise,
+  TerminalWindow,
 } from "@phosphor-icons/react";
 import { sitesAtom, activeSiteIndexAtom, sessionPrePromptAtom, type SiteEntry, type SiteEnvironment } from "../atoms/app";
 import { toolsAtom, toolCustomFlagsAtom, toolWorkingDirsAtom, toolPathsAtom, redetectRequestedAtom } from "../atoms/tools";
+import { terminalSettingsAtom, terminalSettingsOpenAtom, TERMINAL_DEFAULTS } from "../atoms/terminal";
 import { useTheme } from "../hooks/useTheme";
 
 interface SettingsDialogProps {
@@ -30,7 +32,7 @@ interface SettingsDialogProps {
   onOpenChange: (open: boolean) => void;
 }
 
-type Tab = "site" | "tools" | "prompt" | "theme" | "about";
+type Tab = "site" | "tools" | "prompt" | "terminal" | "theme" | "about";
 
 export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
   const [sites, setSites] = useAtom(sitesAtom);
@@ -42,6 +44,8 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
   const [toolPaths, setToolPaths] = useAtom(toolPathsAtom);
   const [, setRedetect] = useAtom(redetectRequestedAtom);
   const [prePrompt, setPrePrompt] = useAtom(sessionPrePromptAtom);
+  const [, setTermSettings] = useAtom(terminalSettingsAtom);
+  const [, setTermBarOpen] = useAtom(terminalSettingsOpenAtom);
   const { theme, toggle } = useTheme();
 
   const [tab, setTab] = useState<Tab>("site");
@@ -132,6 +136,7 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
     { key: "site", label: "Site", icon: <Globe size={16} />, iconFill: <Globe size={16} weight="fill" /> },
     { key: "tools", label: "Tools", icon: <Wrench size={16} />, iconFill: <Wrench size={16} weight="fill" /> },
     { key: "prompt", label: "Prompt", icon: <ChatText size={16} />, iconFill: <ChatText size={16} weight="fill" /> },
+    { key: "terminal", label: "Terminal", icon: <TerminalWindow size={16} />, iconFill: <TerminalWindow size={16} weight="fill" /> },
     { key: "theme", label: "Theme", icon: <Palette size={16} />, iconFill: <Palette size={16} weight="fill" /> },
     { key: "about", label: "About", icon: <Info size={16} />, iconFill: <Info size={16} weight="fill" /> },
   ];
@@ -547,6 +552,43 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
                       style={{ borderColor: "var(--border)", color: "var(--fg-muted)" }}
                     >
                       Reset to Default
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {tab === "terminal" && (
+                <div className="space-y-4">
+                  <div className="flex items-center gap-2 text-[14px] font-semibold mb-1" style={{ color: "var(--fg)" }}>
+                    <TerminalWindow size={16} style={{ color: "var(--yellow)" }} weight="fill" /> Terminal Appearance
+                  </div>
+
+                  <p className="text-[13px] leading-relaxed" style={{ color: "var(--fg-subtle)" }}>
+                    Customize font, cursor, spacing, and scrollback. Changes apply live so you can see the effect immediately.
+                  </p>
+
+                  <button
+                    onClick={() => {
+                      setTermBarOpen(true);
+                      onOpenChange(false);
+                    }}
+                    className="px-6 py-2.5 rounded-lg font-semibold text-[13px] transition-all hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0"
+                    style={{
+                      background: "var(--yellow)",
+                      color: "#000",
+                      boxShadow: "var(--shadow-glow-strong)",
+                    }}
+                  >
+                    Open Terminal Designer
+                  </button>
+
+                  <div className="pt-2">
+                    <button
+                      onClick={() => setTermSettings(TERMINAL_DEFAULTS)}
+                      className="px-3 py-2.5 rounded-lg text-[13px] border transition-colors hover:bg-[var(--white-glass)]"
+                      style={{ borderColor: "var(--border)", color: "var(--fg-muted)" }}
+                    >
+                      Reset to Defaults
                     </button>
                   </div>
                 </div>

@@ -47,7 +47,7 @@
 
   --sidebar-grad: linear-gradient(180deg, rgba(235, 235, 240, 0.7) 0%, rgba(225, 225, 230, 0.85) 100%);
   --vignette: inset -20px 0 50px -20px rgba(0, 0, 0, 0.05);
-  --terminal-bg: rgba(255, 255, 255, 0.4);
+  --terminal-bg: rgba(255, 255, 255, 0.08);
   --input-bg: white;
   --white-glass: rgba(0, 0, 0, 0.03);
   --pill-bg: rgba(255, 255, 255, 0.6);
@@ -63,8 +63,8 @@
   --green: #22C55E;
 
   --fg: #E5E7EB;
-  --fg-muted: #9CA3AF;
-  --fg-subtle: #4B5563;
+  --fg-muted: #B0B6C0;
+  --fg-subtle: #7B8494;
 
   --bg: rgba(10, 10, 12, 0.50);
   --surface: rgba(20, 20, 22, 0.70);
@@ -94,7 +94,7 @@
 
   --sidebar-grad: linear-gradient(180deg, rgba(20, 20, 22, 0.7) 0%, rgba(10, 10, 12, 0.85) 100%);
   --vignette: inset -20px 0 50px -20px rgba(0, 0, 0, 0.8);
-  --terminal-bg: rgba(6, 6, 8, 0.8);
+  --terminal-bg: rgba(6, 6, 8, 0.15);
   --input-bg: black;
   --white-glass: rgba(255, 255, 255, 0.05);
   --pill-bg: rgba(0, 0, 0, 0.4);
@@ -151,6 +151,14 @@ body,
   background: var(--terminal-bg);
   box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.02);
   transition: all 0.4s ease;
+}
+
+/* Force xterm.js to be transparent so the glass background shows through */
+.xterm .xterm-viewport {
+  background-color: transparent !important;
+}
+.xterm {
+  background-color: transparent !important;
 }
 
 /* Bottom panel — concept uses border-top + shadow-floating, but the shadow-floating's

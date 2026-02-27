@@ -126,9 +126,9 @@ function GuiMockup() {
 
 function TemplateMockup() {
   const templates = [
-    { name: 'SaaS Hero', gradient: 'from-blue-600 to-purple-600' },
-    { name: 'Photo Gallery', gradient: 'from-amber-500 to-orange-600' },
-    { name: 'Pricing Table', gradient: 'from-emerald-500 to-teal-600' },
+    { name: 'SaaS Hero', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=160&fit=crop' },
+    { name: 'Photo Gallery', image: 'https://images.unsplash.com/photo-1505739998589-00fc462c5929?w=300&h=160&fit=crop' },
+    { name: 'Pricing Table', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&h=160&fit=crop' },
   ];
 
   return (
@@ -146,7 +146,7 @@ function TemplateMockup() {
         <div className="grid grid-cols-3 gap-3">
           {templates.map((t) => (
             <div key={t.name} className="flex flex-col gap-2">
-              <div className={`h-20 rounded-lg bg-gradient-to-br ${t.gradient} opacity-80`} />
+              <img src={t.image} alt={t.name} width="300" height="160" loading="lazy" decoding="async" className="h-20 rounded-lg object-cover border border-subtle" />
               <div className="text-xs font-medium text-ui-fg">{t.name}</div>
               <button className="text-[10px] px-2 py-1 rounded bg-[rgba(250,204,21,0.1)] text-accent-yellow border border-[rgba(250,204,21,0.2)] hover:bg-[rgba(250,204,21,0.2)] transition-colors">
                 Use Template

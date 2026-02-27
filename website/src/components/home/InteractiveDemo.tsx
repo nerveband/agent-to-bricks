@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 type ViewMode = 'gui' | 'cli';
-type DemoId = 'styles' | 'docs' | 'media';
+type DemoId = 'content' | 'docs' | 'media';
 
 interface CliConfig {
   command: string;
@@ -10,19 +10,19 @@ interface CliConfig {
 }
 
 const cliConfigs: Record<DemoId, CliConfig> = {
-  styles: {
-    command: 'bricks search --type heading | bricks modify --style "color: var(--primary)" --push',
+  content: {
+    command: 'bricks pull 42 | bricks modify --add-section testimonials.html --position after:hero --push',
     lines: [
-      { text: '● Searching for headings across all pages...', delay: 800 },
-      { text: '  Found 47 headings across 20 pages', delay: 400 },
-      { text: '● Modifying styles...', delay: 600 },
-      { text: '  ├─ Homepage: 8 headings updated', delay: 250 },
-      { text: '  ├─ About: 6 headings updated', delay: 200 },
-      { text: '  ├─ Services: 12 headings updated', delay: 200 },
-      { text: '  └─ ...17 more pages', delay: 250 },
-      { text: '● Pushing changes...', delay: 500 },
-      { text: '✓ 47 headings updated across 20 pages', delay: 400 },
-      { text: '✓ Snapshots saved for all modified pages', delay: 300 },
+      { text: '● Pulling page 42 (Homepage)...', delay: 800 },
+      { text: '  Parsed: 6 sections, 34 elements', delay: 400 },
+      { text: '● Reading testimonials.html...', delay: 600 },
+      { text: '  Parsed: 1 section, 8 elements', delay: 300 },
+      { text: '● Resolving global classes...', delay: 500 },
+      { text: '  ├─ section--testimonials → acss_import_section__testimonials', delay: 300 },
+      { text: '  └─ 4 more classes resolved', delay: 250 },
+      { text: '● Inserting after hero section...', delay: 400 },
+      { text: '● Pushing to page 42...', delay: 400 },
+      { text: '✓ Section inserted. Snapshot saved.', delay: 300 },
     ],
   },
   docs: {
@@ -56,7 +56,7 @@ const cliConfigs: Record<DemoId, CliConfig> = {
 };
 
 const demoLabels: Record<DemoId, string> = {
-  styles: 'Bulk style update',
+  content: 'Content orchestration',
   docs: 'HTML to Bricks',
   media: 'Multi-page media upload',
 };
@@ -73,31 +73,38 @@ function CliOutput({ demoId }: { demoId: DemoId }) {
     setTypedText('');
     setVisibleLines(0);
     setPhase('typing');
+    const timeouts: ReturnType<typeof setTimeout>[] = [];
+
+    const delay = (ms: number) =>
+      new Promise<void>((resolve) => {
+        const id = setTimeout(resolve, ms);
+        timeouts.push(id);
+      });
 
     const run = async () => {
       for (let i = 0; i <= config.command.length; i++) {
         if (cancelRef.current) return;
         setTypedText(config.command.slice(0, i));
-        await new Promise((r) => setTimeout(r, 18));
+        await delay(18);
       }
-      await new Promise((r) => setTimeout(r, 400));
+      await delay(400);
       if (cancelRef.current) return;
       setPhase('running');
 
-      let total = 0;
       for (let i = 0; i < config.lines.length; i++) {
-        total += config.lines[i].delay;
-        const idx = i;
-        setTimeout(() => {
-          if (!cancelRef.current) setVisibleLines(idx + 1);
-        }, total);
+        await delay(config.lines[i].delay);
+        if (cancelRef.current) return;
+        setVisibleLines(i + 1);
       }
-      setTimeout(() => {
-        if (!cancelRef.current) setPhase('done');
-      }, total + 400);
+      await delay(400);
+      if (cancelRef.current) return;
+      setPhase('done');
     };
     run();
-    return () => { cancelRef.current = true; };
+    return () => {
+      cancelRef.current = true;
+      timeouts.forEach(clearTimeout);
+    };
   }, [demoId]);
 
   const getColor = (text: string) => {
@@ -107,7 +114,7 @@ function CliOutput({ demoId }: { demoId: DemoId }) {
   };
 
   return (
-    <div className="p-5 font-mono text-xs leading-relaxed min-h-[300px]">
+    <div className="p-5 font-mono text-xs leading-relaxed h-[300px] overflow-y-auto">
       <div className="flex items-start gap-2 mb-2">
         <span className="text-accent-green font-bold">$</span>
         <span className="text-ui-fg break-all">
@@ -136,36 +143,49 @@ function CliOutput({ demoId }: { demoId: DemoId }) {
   );
 }
 
-function GuiStylesDemo() {
+function GuiContentDemo() {
   return (
-    <div className="flex flex-col sm:flex-row min-h-[300px]">
-      <div className="sm:w-[150px] shrink-0 border-b sm:border-b-0 sm:border-r border-subtle p-3 bg-black/20 flex sm:flex-col gap-1 overflow-x-auto">
-        <div className="text-[9px] uppercase tracking-[0.15em] text-ui-subtle font-medium mb-0 sm:mb-2 hidden sm:block">Styles</div>
-        {['heading-xl', 'heading-lg', 'body-text', 'caption'].map((s, i) => (
-          <div key={s} className={`text-[11px] px-2 py-1 rounded whitespace-nowrap ${i === 0 ? 'bg-accent-yellow/10 text-accent-yellow border border-accent-yellow/20 font-medium' : 'text-ui-muted'}`}>{s}</div>
-        ))}
+    <div className="flex flex-col min-h-[300px] p-4">
+      <div className="glass-input rounded-lg p-2.5 flex items-center gap-2 flex-wrap text-sm mb-4">
+        <span className="text-ui-fg text-xs">Add</span>
+        <span className="inline-flex items-center px-2 py-0.5 rounded bg-accent-yellow/15 border border-accent-yellow/25 text-accent-yellow text-[11px] font-mono font-medium">@template:testimonials</span>
+        <span className="text-ui-fg text-xs">to</span>
+        <span className="inline-flex items-center px-2 py-0.5 rounded bg-accent-yellow/15 border border-accent-yellow/25 text-accent-yellow text-[11px] font-mono font-medium">@page:Homepage</span>
+        <span className="text-ui-fg text-xs">after the hero</span>
       </div>
-      <div className="flex-1 flex flex-col p-4 min-w-0">
-        <div className="glass-input rounded-lg p-2.5 flex items-center gap-2 flex-wrap text-sm mb-3">
-          <span className="text-ui-fg text-xs">Apply</span>
-          <span className="inline-flex items-center px-2 py-0.5 rounded bg-accent-yellow/15 border border-accent-yellow/25 text-accent-yellow text-[11px] font-mono font-medium">@style:heading-xl</span>
-          <span className="text-ui-fg text-xs">globally</span>
+      <div className="text-[9px] uppercase tracking-[0.15em] text-ui-subtle font-medium mb-2">Section Preview</div>
+      <div className="flex-1 space-y-2 mb-4">
+        <div className="flex items-center gap-3 px-3 py-2 rounded-lg bg-[var(--white-glass)] border border-subtle opacity-50">
+          <i className="ph ph-layout text-ui-muted text-base" aria-hidden="true"></i>
+          <div>
+            <div className="text-xs text-ui-muted font-medium">Hero Section</div>
+            <div className="text-[10px] text-ui-subtle">Existing — headline + CTA</div>
+          </div>
         </div>
-        <div className="text-[9px] uppercase tracking-[0.15em] text-ui-subtle font-medium mb-2">Visual Diff</div>
-        <div className="space-y-2 flex-1">
-          {['Homepage h1', 'About h1', 'Services h1', 'Blog h1'].map((item) => (
-            <div key={item} className="flex items-center gap-2 sm:gap-3 text-[10px] sm:text-[11px] flex-wrap sm:flex-nowrap">
-              <span className="text-ui-muted w-16 sm:w-20 shrink-0">{item}</span>
-              <span className="text-red-400/70 line-through">#333333</span>
-              <span className="text-ui-subtle">&rarr;</span>
-              <span className="text-accent-yellow font-mono">var(--primary)</span>
-            </div>
-          ))}
+        <div className="flex items-center gap-1 justify-center text-accent-yellow text-[10px]">
+          <i className="ph ph-arrow-down text-sm" aria-hidden="true"></i>
+          <span className="font-medium">Inserting here</span>
+          <i className="ph ph-arrow-down text-sm" aria-hidden="true"></i>
         </div>
-        <button className="mt-3 self-end px-4 py-2 rounded-lg bg-accent-yellow text-black text-xs font-semibold spring-btn shadow-[var(--shadow-glow)]">
-          Push Changes
-        </button>
+        <div className="flex items-center gap-3 px-3 py-2 rounded-lg bg-accent-yellow/10 border border-accent-yellow/25">
+          <i className="ph ph-quotes text-accent-yellow text-base" aria-hidden="true"></i>
+          <div>
+            <div className="text-xs text-accent-yellow font-medium">Testimonials</div>
+            <div className="text-[10px] text-ui-muted">3-card grid — styled to match page</div>
+          </div>
+          <span className="ml-auto text-accent-green text-[10px] font-medium">New</span>
+        </div>
+        <div className="flex items-center gap-3 px-3 py-2 rounded-lg bg-[var(--white-glass)] border border-subtle opacity-50">
+          <i className="ph ph-squares-four text-ui-muted text-base" aria-hidden="true"></i>
+          <div>
+            <div className="text-xs text-ui-muted font-medium">Features Grid</div>
+            <div className="text-[10px] text-ui-subtle">Existing — 3 columns with icons</div>
+          </div>
+        </div>
       </div>
+      <button className="self-end px-4 py-2 rounded-lg bg-accent-yellow text-black text-xs font-semibold spring-btn shadow-[var(--shadow-glow)]">
+        Insert Section
+      </button>
     </div>
   );
 }
@@ -181,7 +201,7 @@ function GuiDocsDemo() {
           <div className="text-sm text-ui-fg font-medium">product-brief.pdf</div>
           <div className="text-[10px] text-ui-muted">2.4 KB &mdash; Uploaded</div>
         </div>
-        <span className="ml-auto text-accent-green text-xs">&check; Parsed</span>
+        <span className="ml-auto text-accent-green text-xs">{'\u2713'} Parsed</span>
       </div>
       <div className="text-[9px] uppercase tracking-[0.15em] text-ui-subtle font-medium mb-2">Generated Structure</div>
       <div className="flex-1 space-y-2 mb-4">
@@ -249,14 +269,14 @@ function GuiMediaDemo() {
 }
 
 const guiComponents: Record<DemoId, React.ReactNode> = {
-  styles: <GuiStylesDemo />,
+  content: <GuiContentDemo />,
   docs: <GuiDocsDemo />,
   media: <GuiMediaDemo />,
 };
 
 export default function InteractiveDemo() {
   const [view, setView] = useState<ViewMode>('gui');
-  const [activeDemo, setActiveDemo] = useState<DemoId>('styles');
+  const [activeDemo, setActiveDemo] = useState<DemoId>('content');
 
   return (
     <div>

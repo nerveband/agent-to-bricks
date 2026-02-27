@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Agent to Bricks
  * Description: AI-powered element generation for Bricks Builder with multi-provider LLM support.
- * Version: 1.6.0
+ * Version: 1.7.0
  * Author: WaveDepth
  * Requires at least: 6.0
  * Requires PHP: 8.0
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'AGENT_BRICKS_VERSION', '1.6.0' );
+define( 'AGENT_BRICKS_VERSION', '1.7.0' );
 define( 'AGENT_BRICKS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'AGENT_BRICKS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 

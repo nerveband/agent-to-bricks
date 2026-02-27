@@ -14,7 +14,7 @@
       <span class="word inline-block text-accent-yellow drop-shadow-[0_0_20px_rgba(250,204,21,0.5)]">rules.</span>
     </h1>
     <p class="hero-subhead mt-6 text-lg sm:text-xl text-ui-muted max-w-2xl mx-auto leading-relaxed">
-      Update 20 pages in seconds, not hours. Generate sections with any AI, upload media from your desktop, keep your existing styles — all without leaving your workflow.
+      Give your AI agent direct access to your Bricks Builder site. Build pages, migrate content, orchestrate tools — all from a single prompt.
     </p>
     <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
       <a href="/getting-started/installation/" class="hero-cta inline-flex items-center px-7 py-3 rounded-lg bg-accent-yellow text-black font-semibold spring-btn shadow-[var(--shadow-glow)] text-base">
@@ -35,15 +35,14 @@
     <div class="flex-1 p-6 sm:p-8 relative z-10 opacity-60 grayscale-[30%]">
       <div class="text-xs font-semibold uppercase tracking-[0.2em] text-ui-subtle mb-4">The Old Way</div>
       <div class="font-mono text-xs leading-loose text-ui-subtle space-y-1">
-        <div><span class="text-ui-muted">1.</span> Open WordPress admin</div>
-        <div><span class="text-ui-muted">2.</span> Navigate to Pages → Homepage</div>
-        <div><span class="text-ui-muted">3.</span> Click "Edit with Bricks"</div>
-        <div><span class="text-ui-muted">4.</span> Find the heading element</div>
-        <div><span class="text-ui-muted">5.</span> Change color to #2563EB</div>
-        <div><span class="text-ui-muted">6.</span> Click Save</div>
-        <div class="pt-2 text-ui-subtle/70 italic">7. Repeat for 19 more pages...</div>
+        <div><span class="text-ui-muted">1.</span> Read the client email</div>
+        <div><span class="text-ui-muted">2.</span> Open Bricks → Page 1</div>
+        <div><span class="text-ui-muted">3.</span> Find the section, make change #1</div>
+        <div><span class="text-ui-muted">4.</span> Save, open next page</div>
+        <div><span class="text-ui-muted">5.</span> Repeat across 5 pages...</div>
+        <div><span class="text-ui-muted">6.</span> Double-check everything matches</div>
       </div>
-      <div class="mt-4 text-[10px] text-ui-subtle font-mono">~45 minutes of clicking</div>
+      <div class="mt-4 text-[10px] text-ui-subtle font-mono">~2 hours of back-and-forth</div>
     </div>
 
     <!-- Vertical Divider -->
@@ -64,14 +63,14 @@
       <div class="absolute inset-0 scanlines opacity-15 pointer-events-none z-0"></div>
       <div class="text-xs font-semibold uppercase tracking-[0.2em] text-accent-yellow mb-4 drop-shadow-[0_0_8px_rgba(250,204,21,0.3)]">With Agent to Bricks</div>
       <div class="font-mono text-xs leading-loose relative z-10 space-y-1">
-        <div><span class="text-accent-green font-bold">$</span> <span class="text-ui-fg">bricks search --type heading --all-pages</span></div>
-        <div class="text-ui-muted ml-4">Found 47 headings across 20 pages</div>
-        <div class="mt-2"></div>
-        <div><span class="text-accent-green font-bold">$</span> <span class="text-ui-fg">bricks modify --color "var(--primary)" --push</span></div>
-        <div class="text-accent-green ml-4">✓ 47 headings updated across 20 pages</div>
-        <div class="text-accent-green ml-4">✓ Snapshots saved for all modified pages</div>
+        <div><span class="text-accent-yellow font-bold">></span> <span class="text-ui-fg">Check my email for the latest client changes, then implement them across the site</span></div>
+        <div class="text-accent-yellow ml-4">● Reading client email via gmail-cli...</div>
+        <div class="text-ui-muted ml-6">Found 6 requested changes</div>
+        <div class="text-accent-yellow ml-4">● Pulling pages via bricks cli...</div>
+        <div class="text-accent-yellow ml-4">● Implementing changes across 5 pages...</div>
+        <div class="text-accent-green ml-4">✓ All 6 changes applied. Snapshots saved.</div>
       </div>
-      <div class="mt-4 text-[10px] text-accent-yellow font-mono drop-shadow-[0_0_4px_rgba(250,204,21,0.3)]">~8 seconds. Done.</div>
+      <div class="mt-4 text-[10px] text-accent-yellow font-mono drop-shadow-[0_0_4px_rgba(250,204,21,0.3)]">~30 seconds. One prompt.</div>
     </div>
   </div>
 </section>

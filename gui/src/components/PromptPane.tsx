@@ -327,30 +327,6 @@ export function PromptPane() {
 
       {/* Tags reference strip */}
       <div className="px-5 pb-4 flex items-center gap-2 overflow-x-auto shrink-0">
-        {site && (
-          <div
-            className="flex items-center gap-2 px-2.5 py-1.5 white-glass border rounded-md text-[11px] font-mono whitespace-nowrap shadow-sm"
-            style={{ borderColor: "var(--border-subtle)" }}
-          >
-            <span
-              className="w-1.5 h-1.5 rounded-full animate-pulse-dot"
-              style={{ background: "var(--green)" }}
-            />
-            <span className="tracking-tight font-medium" style={{ color: "var(--fg)" }}>
-              {site.name}
-            </span>
-            {site.environment && (
-              <span
-                className="px-2 py-[2px] rounded font-bold text-[10px] shadow-sm tracking-widest ml-1"
-                style={{ background: "var(--yellow)", color: "#000" }}
-              >
-                {site.environmentLabel ||
-                  (site.environment === "production" ? "PROD" :
-                   site.environment === "staging" ? "STG" : "LOCAL")}
-              </span>
-            )}
-          </div>
-        )}
         {QUICK_CHIPS.map((chip) => (
           <button
             key={chip.type}

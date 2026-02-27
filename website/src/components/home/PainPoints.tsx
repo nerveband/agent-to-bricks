@@ -2,14 +2,14 @@ import { useRef, useEffect } from 'react';
 
 const painPoints = [
   {
-    icon: 'ph ph-arrows-clockwise',
-    title: 'Bulk updates are manual',
-    desc: 'Changing heading colors across 20 pages? Open each one. Find the element. Edit. Save. Repeat. That\'s an afternoon gone.',
+    icon: 'ph ph-note-pencil',
+    title: 'Repetitive content work',
+    desc: 'Client sends 20 testimonials to sprinkle across 5 pages? That\'s an afternoon of copy-paste, formatting, and layout tweaking — for content that should take minutes.',
   },
   {
-    icon: 'ph ph-upload-simple',
-    title: 'Media upload is tedious',
-    desc: 'Drag files from your desktop to WordPress media, then manually insert them into elements one by one. Every. Single. Time.',
+    icon: 'ph ph-arrows-left-right',
+    title: 'Switching tools constantly',
+    desc: 'Read the client email, open the Bricks editor, check the design system, update the page, check another page — the context switching kills your flow.',
   },
   {
     icon: 'ph ph-lock-key',
@@ -17,9 +17,9 @@ const painPoints = [
     desc: 'Existing AI plugins charge monthly, force their templates, and don\'t respect your existing styles. You\'re locked into their way of doing things.',
   },
   {
-    icon: 'ph ph-columns',
-    title: 'Styles stay siloed',
-    desc: 'Want to copy a style from one page to another? Screenshot it, recreate it manually. There\'s no "apply this everywhere."',
+    icon: 'ph ph-swap',
+    title: 'Migration is a nightmare',
+    desc: 'Moving pages from another builder to Bricks? Manually recreate every section, match every style, re-upload every image. There\'s no shortcut.',
   },
 ];
 

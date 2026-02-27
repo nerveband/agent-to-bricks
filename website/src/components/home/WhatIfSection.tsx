@@ -9,52 +9,52 @@ interface Scenario {
 
 const scenarios: Scenario[] = [
   {
-    label: 'Site-wide rebrand',
-    prompt: 'Rebrand the site: swap all colors, fonts, and button styles to the new guidelines',
+    label: 'Client requests',
+    prompt: 'Check my email for the latest client changes and implement them on the site',
     lines: [
-      { text: '\u25cf Scanning 35 pages for styled elements...', delay: 800 },
-      { text: '  Found 214 elements across 35 pages', delay: 400 },
-      { text: '\u25cf Updating colors: #1a365d \u2192 #2563eb...', delay: 600 },
-      { text: '  \u251c\u2500 Homepage: 24 elements updated', delay: 300 },
-      { text: '  \u251c\u2500 About: 18 elements updated', delay: 250 },
-      { text: '  \u251c\u2500 Services: 31 elements updated', delay: 250 },
-      { text: '  \u251c\u2500 Pricing: 22 elements updated', delay: 250 },
-      { text: '  \u2514\u2500 ...31 more pages', delay: 300 },
-      { text: '\u25cf Swapping font: Inter \u2192 Space Grotesk...', delay: 500 },
-      { text: '  Applied to 142 text elements', delay: 300 },
-      { text: '\u2713 214 elements rebranded across 35 pages. Snapshots saved.', delay: 500 },
+      { text: '\u25cf Reading inbox via gmail-cli...', delay: 800 },
+      { text: '  Found email from client: 6 requested changes', delay: 400 },
+      { text: '\u25cf Pulling affected pages via bricks cli...', delay: 600 },
+      { text: '  \u251c\u2500 Page 42 (Homepage): loaded', delay: 250 },
+      { text: '  \u251c\u2500 Page 58 (About): loaded', delay: 250 },
+      { text: '  \u251c\u2500 Page 71 (Services): loaded', delay: 250 },
+      { text: '\u25cf Implementing changes across 3 pages...', delay: 500 },
+      { text: '  \u251c\u2500 Homepage: updated hero headline + CTA text', delay: 300 },
+      { text: '  \u251c\u2500 About: swapped team photo, updated bio', delay: 300 },
+      { text: '  \u2514\u2500 Services: added new pricing tier', delay: 300 },
+      { text: '\u2713 All 6 changes applied. Snapshots saved for rollback.', delay: 500 },
     ],
   },
   {
-    label: 'Landing page',
-    prompt: 'Build a full landing page: hero, features, pricing table, testimonials, FAQ, and CTA',
+    label: 'Content placement',
+    prompt: 'Take these 20 testimonials and place them across the site, styled to match each page',
     lines: [
-      { text: '\u25cf Pulling design tokens and ACSS classes...', delay: 800 },
-      { text: '  Loaded 186 utility classes, 24 design tokens', delay: 400 },
-      { text: '\u25cf Converting 6 sections to Bricks elements...', delay: 600 },
-      { text: '  \u251c\u2500 Hero: headline, subtext, 2 CTA buttons', delay: 300 },
-      { text: '  \u251c\u2500 Features: 3-column grid with icons', delay: 250 },
-      { text: '  \u251c\u2500 Pricing: 3-tier comparison table (12 rows)', delay: 300 },
-      { text: '  \u251c\u2500 Testimonials: carousel with 4 reviews', delay: 250 },
-      { text: '  \u251c\u2500 FAQ: accordion with 8 items', delay: 250 },
-      { text: '  \u2514\u2500 CTA: banner with email capture', delay: 250 },
-      { text: '\u25cf Resolved 47/47 classes to global IDs', delay: 400 },
-      { text: '\u2713 Pushed 68 elements to page 84. Snapshot saved.', delay: 500 },
+      { text: '\u25cf Parsing 20 testimonials from input...', delay: 800 },
+      { text: '  Categorized: 8 product, 6 service, 6 general', delay: 400 },
+      { text: '\u25cf Analyzing page layouts for placement...', delay: 600 },
+      { text: '  \u251c\u2500 Homepage: 3-card grid after hero', delay: 300 },
+      { text: '  \u251c\u2500 Services: sidebar quotes per service', delay: 250 },
+      { text: '  \u251c\u2500 About: full-width carousel', delay: 250 },
+      { text: '  \u2514\u2500 Pricing: inline social proof badges', delay: 250 },
+      { text: '\u25cf Inserting testimonials styled to match each page...', delay: 500 },
+      { text: '  Resolved 12 ACSS classes for consistent styling', delay: 300 },
+      { text: '\u2713 20 testimonials placed across 4 pages. Snapshots saved.', delay: 500 },
     ],
   },
   {
-    label: 'Bulk update',
-    prompt: 'Replace the testimonials section on all 20 client pages with the new 3-card layout',
+    label: 'Page migration',
+    prompt: 'Migrate the starter theme homepage to Bricks on my staging site, matching the design',
     lines: [
-      { text: '\u25cf Searching for testimonial sections...', delay: 800 },
-      { text: '  Found testimonials on 20 pages', delay: 400 },
-      { text: '\u25cf Loading template: testimonials-3-card...', delay: 500 },
-      { text: '\u25cf Replacing sections with snapshots...', delay: 600 },
-      { text: '  \u251c\u2500 Page 42 (Acme Corp): swapped, 12 elements', delay: 250 },
-      { text: '  \u251c\u2500 Page 58 (Archway Digital): swapped, 12 elements', delay: 250 },
-      { text: '  \u251c\u2500 Page 71 (Beacon Labs): swapped, 12 elements', delay: 250 },
-      { text: '  \u2514\u2500 ...17 more pages', delay: 300 },
-      { text: '\u2713 20 pages updated. 20 snapshots saved for rollback.', delay: 500 },
+      { text: '\u25cf Fetching source page content...', delay: 800 },
+      { text: '  Parsed: 8 sections, 42 elements', delay: 400 },
+      { text: '\u25cf Mapping to Bricks components...', delay: 600 },
+      { text: '  \u251c\u2500 Hero \u2192 bricks-section + heading + buttons', delay: 300 },
+      { text: '  \u251c\u2500 Features \u2192 3-column grid with icons', delay: 250 },
+      { text: '  \u251c\u2500 Testimonials \u2192 carousel with cards', delay: 250 },
+      { text: '  \u2514\u2500 ...5 more sections mapped', delay: 250 },
+      { text: '\u25cf Resolving classes to ACSS equivalents...', delay: 500 },
+      { text: '\u25cf Uploading 6 images to media library...', delay: 400 },
+      { text: '\u2713 42 elements pushed to staging. Design match verified.', delay: 500 },
     ],
   },
 ];
@@ -85,6 +85,13 @@ export default function WhatIfSection() {
     if (!isVisible) return;
     cancelRef.current = false;
     const scenario = scenarios[activeIdx];
+    const timeouts: ReturnType<typeof setTimeout>[] = [];
+
+    const delay = (ms: number) =>
+      new Promise<void>((resolve) => {
+        const id = setTimeout(resolve, ms);
+        timeouts.push(id);
+      });
 
     const run = async () => {
       setTypedText('');
@@ -95,38 +102,34 @@ export default function WhatIfSection() {
       for (let i = 0; i <= scenario.prompt.length; i++) {
         if (cancelRef.current) return;
         setTypedText(scenario.prompt.slice(0, i));
-        await new Promise((r) => setTimeout(r, 25));
+        await delay(25);
       }
 
-      await new Promise((r) => setTimeout(r, 400));
+      await delay(400);
       if (cancelRef.current) return;
       setPhase('running');
 
-      // Show output lines
-      let total = 0;
+      // Show output lines sequentially
       for (let i = 0; i < scenario.lines.length; i++) {
-        total += scenario.lines[i].delay;
-        const lineIdx = i;
-        setTimeout(() => {
-          if (!cancelRef.current) setVisibleLines(lineIdx + 1);
-        }, total);
+        await delay(scenario.lines[i].delay);
+        if (cancelRef.current) return;
+        setVisibleLines(i + 1);
       }
 
-      setTimeout(() => {
-        if (!cancelRef.current) setPhase('done');
-      }, total + 400);
+      await delay(400);
+      if (cancelRef.current) return;
+      setPhase('done');
 
       // Auto-advance after done
-      setTimeout(() => {
-        if (!cancelRef.current) {
-          setActiveIdx((prev) => (prev + 1) % scenarios.length);
-        }
-      }, total + 3000);
+      await delay(3000);
+      if (cancelRef.current) return;
+      setActiveIdx((prev) => (prev + 1) % scenarios.length);
     };
 
     run();
     return () => {
       cancelRef.current = true;
+      timeouts.forEach(clearTimeout);
     };
   }, [activeIdx, isVisible]);
 
@@ -205,7 +208,7 @@ export default function WhatIfSection() {
         </div>
 
         {/* Terminal content */}
-        <div className="relative z-10 p-6 min-h-[280px] font-mono text-xs leading-relaxed">
+        <div className="relative z-10 p-6 h-[340px] overflow-y-auto font-mono text-xs leading-relaxed">
           <div className="absolute inset-0 scanlines opacity-15 pointer-events-none z-0" />
           <AnimatePresence initial={false}>
             <motion.div

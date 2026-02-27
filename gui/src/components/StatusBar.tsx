@@ -1,14 +1,12 @@
 import { useAtom } from "jotai";
 import { activeSessionAtom } from "../atoms/sessions";
 import { activeToolAtom } from "../atoms/tools";
-import { activeSiteAtom } from "../atoms/app";
 import { useState, useEffect } from "react";
 import { SiteSwitcher } from "./SiteSwitcher";
 
 export function StatusBar() {
   const [session] = useAtom(activeSessionAtom);
   const [tool] = useAtom(activeToolAtom);
-  const [site] = useAtom(activeSiteAtom);
   const [elapsed, setElapsed] = useState("");
 
   useEffect(() => {
@@ -37,19 +35,6 @@ export function StatusBar() {
         <div data-onboard="site-switcher">
           <SiteSwitcher />
         </div>
-        {site?.environment && (
-          <span
-            className="px-1.5 py-[1px] rounded font-bold text-[9px] shadow-sm tracking-widest ml-1"
-            style={{
-              background: "var(--yellow)",
-              color: "#000",
-            }}
-          >
-            {site.environmentLabel ||
-              (site.environment === "production" ? "PROD" :
-               site.environment === "staging" ? "STG" : "LOCAL")}
-          </span>
-        )}
       </div>
 
       {/* Separator */}

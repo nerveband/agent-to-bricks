@@ -7,6 +7,9 @@ export function useTheme() {
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
+    // Cache in localStorage so index.html inline script can read it
+    // before React mounts — prevents flash of wrong theme
+    try { localStorage.setItem("atb-theme", theme); } catch {}
   }, [theme]);
 
   const toggle = () => setTheme((t) => (t === "dark" ? "light" : "dark"));

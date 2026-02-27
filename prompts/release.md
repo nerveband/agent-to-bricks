@@ -33,8 +33,14 @@ Run the full pre-release check and release pipeline. Do these steps:
 16. Run `cd gui && npm audit --production 2>/dev/null | tail -5` to check for npm vulnerabilities
 17. If any critical/high vulnerabilities, fix them before releasing
 
+**Website deployment (if website changed):**
+18. If any files under `website/` changed (docs, homepage, components, styles):
+    - `cd website && npm run build`
+    - `cd website && npx netlify deploy --dir=dist` (draft/preview deploy)
+    - Share the preview URL for review
+    - After review is approved, deploy to production: `cd website && npx netlify deploy --dir=dist --prod`
+
 **Release:**
-18. Rebuild website and deploy to Netlify if any docs/content changed
 19. Ask me what version to bump to (patch, minor, or major). Bump `VERSION`, run `make sync-version`, commit all changes
 20. Tag and push to trigger the release workflow: `make tag-release`
 21. Monitor the release workflow until all 7 jobs pass (CLI, Plugin ZIP, 4x GUI, Verify)

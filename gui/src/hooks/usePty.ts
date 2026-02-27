@@ -48,6 +48,8 @@ export function usePty(
   cwd?: string
 ) {
   const ptyRef = useRef<IPty | null>(null);
+  // Guard against React StrictMode double-mount spawning two PTY instances.
+  const spawningRef = useRef(false);
   // Signal so the writer-registration effect re-runs after async spawn completes.
   const [ptyReady, setPtyReady] = useState(false);
 
@@ -57,6 +59,10 @@ export function usePty(
     if (!terminal) return;
     // command can be "" for a plain shell, or null to skip entirely
     if (command === null) return;
+
+    // Prevent concurrent spawns (React StrictMode double-mount in dev)
+    if (spawningRef.current) return;
+    spawningRef.current = true;
 
     let cancelled = false;
     const disposables: IDisposable[] = [];
@@ -69,9 +75,15 @@ export function usePty(
 
         const shellArgs = buildShellArgs(shellInfo, command, args);
 
+        // Fetch the user's full shell environment (with augmented PATH)
+        // so tools like Claude Code are found when spawned from the desktop app.
+        const shellEnv = await invoke<Record<string, string>>("get_shell_env");
+        if (cancelled) return;
+
         const spawnOpts: Record<string, unknown> = {
           cols: terminal.cols,
           rows: terminal.rows,
+          env: shellEnv,
         };
         if (cwd) {
           spawnOpts.cwd = cwd;
@@ -136,13 +148,15 @@ export function usePty(
       cancelled = true;
       disposables.forEach((d) => d.dispose());
       registerPtyWriter(null);
-      try {
-        ptyRef.current?.kill();
-      } catch {
-        // ignore kill errors
+      // Kill any PTY that may have been spawned (including one that
+      // completed between the cancelled check and this cleanup).
+      const existingPty = ptyRef.current;
+      if (existingPty) {
+        try { existingPty.kill(); } catch { /* already gone */ }
+        ptyRef.current = null;
       }
-      ptyRef.current = null;
       setPtyReady(false);
+      spawningRef.current = false;
     };
   }, [terminal, command, JSON.stringify(args), cwd]);
 

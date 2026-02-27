@@ -9,6 +9,7 @@ const rows = [
   { feature: 'Automation', other: 'Not possible', atb: 'Chain commands, cron, CI/CD' },
   { feature: 'Templates', other: 'Their templates', atb: 'Create, import, generate your own' },
   { feature: 'Data Privacy', other: 'Sent to their servers', atb: 'Your machine, your keys' },
+  { feature: 'Tool Integration', other: 'Standalone plugin only', atb: 'Orchestrate with WP-CLI, email, docs, and more' },
 ];
 
 export default function Differentiator() {

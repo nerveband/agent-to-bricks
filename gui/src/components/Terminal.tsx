@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
+import { useAtomValue } from "jotai";
 import { Terminal as XTerm, type ITheme } from "@xterm/xterm";
 import { FitAddon } from "@xterm/addon-fit";
 import "@xterm/xterm/css/xterm.css";
-
-const FONT_FAMILY = '"JetBrains Mono", monospace';
+import { terminalSettingsAtom } from "../atoms/terminal";
 
 /* Terminal themes — branded to match the concept:
    Dark: deep near-black bg with yellow cursor, green/yellow accents
@@ -11,7 +11,7 @@ const FONT_FAMILY = '"JetBrains Mono", monospace';
    Both use JetBrains Mono for that authentic terminal feel */
 const THEMES: Record<"light" | "dark", ITheme> = {
   dark: {
-    background: "transparent",
+    background: "#00000000",
     foreground: "#E5E7EB",
     cursor: "#FACC15",
     cursorAccent: "#08080a",
@@ -35,7 +35,7 @@ const THEMES: Record<"light" | "dark", ITheme> = {
     brightWhite: "#fafafa",
   },
   light: {
-    background: "transparent",
+    background: "#ffffff00",
     foreground: "#030712",
     cursor: "#EBA40A",
     cursorAccent: "#fafafa",
@@ -68,6 +68,10 @@ interface TerminalProps {
 export function Terminal({ colorScheme, onTerminalReady }: TerminalProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const termRef = useRef<XTerm | null>(null);
+  const fitAddonRef = useRef<FitAddon | null>(null);
+  const settings = useAtomValue(terminalSettingsAtom);
+
+  const fontFamily = `"${settings.fontFamily}", monospace`;
 
   useEffect(() => {
     if (!containerRef.current || termRef.current) return;
@@ -78,7 +82,7 @@ export function Terminal({ colorScheme, onTerminalReady }: TerminalProps) {
 
     const init = async () => {
       try {
-        await document.fonts.load(`12px ${FONT_FAMILY}`);
+        await document.fonts.load(`12px ${fontFamily}`);
       } catch {
         // Font may already be loaded or unavailable; proceed anyway
       }
@@ -86,19 +90,21 @@ export function Terminal({ colorScheme, onTerminalReady }: TerminalProps) {
       if (disposed || !containerRef.current) return;
 
       term = new XTerm({
-        fontFamily: FONT_FAMILY,
-        fontSize: 13,
-        lineHeight: 1.4,
-        letterSpacing: 0,
-        scrollback: 5000,
+        fontFamily,
+        fontSize: settings.fontSize,
+        lineHeight: settings.lineHeight,
+        letterSpacing: settings.letterSpacing,
+        scrollback: settings.scrollback,
         theme: THEMES[colorScheme],
-        cursorBlink: true,
-        cursorStyle: "bar",
-        cursorWidth: 2,
+        cursorBlink: settings.cursorBlink,
+        cursorStyle: settings.cursorStyle,
+        cursorWidth: settings.cursorWidth,
+        allowTransparency: true,
         allowProposedApi: true,
       });
 
       const fitAddon = new FitAddon();
+      fitAddonRef.current = fitAddon;
       term.loadAddon(fitAddon);
 
       observer = new ResizeObserver(() => {
@@ -125,6 +131,7 @@ export function Terminal({ colorScheme, onTerminalReady }: TerminalProps) {
       observer?.disconnect();
       term?.dispose();
       termRef.current = null;
+      fitAddonRef.current = null;
     };
   }, [onTerminalReady]);
 
@@ -135,8 +142,33 @@ export function Terminal({ colorScheme, onTerminalReady }: TerminalProps) {
     }
   }, [colorScheme]);
 
+  // Live-update mutable xterm options when settings change
+  useEffect(() => {
+    const term = termRef.current;
+    if (!term) return;
+
+    const ff = `"${settings.fontFamily}", monospace`;
+    term.options.fontSize = settings.fontSize;
+    term.options.fontFamily = ff;
+    term.options.lineHeight = settings.lineHeight;
+    term.options.letterSpacing = settings.letterSpacing;
+    term.options.scrollback = settings.scrollback;
+    term.options.cursorStyle = settings.cursorStyle;
+    term.options.cursorWidth = settings.cursorWidth;
+    term.options.cursorBlink = settings.cursorBlink;
+
+    try {
+      fitAddonRef.current?.fit();
+    } catch {
+      // ignore fit errors
+    }
+  }, [settings]);
+
   return (
-    <div className="h-full w-full p-3 relative" style={{ background: "transparent" }}>
+    <div
+      className="h-full w-full relative"
+      style={{ background: "transparent", padding: `${settings.padding}px` }}
+    >
       <div ref={containerRef} className="h-full w-full overflow-hidden relative z-10" />
     </div>
   );

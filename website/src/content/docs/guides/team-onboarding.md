@@ -52,9 +52,9 @@ If it shows the site details, they're connected. If not, check the URL and key.
 
 ### 4. First exercises
 
-**GUI path:** Open the app, select the site, click an AI tool to start a session. Use the "Inspect Page" preset with an @page mention to pull the homepage. Then try "Generate Section" with a prompt like "Add a testimonial section with 3 cards."
+**GUI path:** Open the app, select the site, click an AI tool to start a session. Use the "Inspect Page" preset with an @page mention to pull the homepage. Then try asking your AI tool to "Add a testimonial section with 3 cards" and push it.
 
-**CLI path:** Run through the [Quick start](/getting-started/quick-start/) guide. Pull a page, generate a section, push it, roll it back.
+**CLI path:** Run through the [Quick start](/getting-started/quick-start/) guide. Pull a page, write a section in HTML, convert and push it, roll it back.
 
 ## Transition paths
 
