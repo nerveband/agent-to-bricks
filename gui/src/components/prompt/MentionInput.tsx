@@ -81,7 +81,7 @@ export const MentionInput = forwardRef<MentionInputRef, MentionInputProps>(
     const { results, loading } = useMentionSearch(
       selectedType,
       searchQuery,
-      selectedType === "section" ? sectionPage?.id ?? null : null
+      (selectedType === "section" || selectedType === "element") ? sectionPage?.id ?? null : null
     );
 
     // Compute autocomplete position
@@ -138,7 +138,7 @@ export const MentionInput = forwardRef<MentionInputRef, MentionInputProps>(
     const handleResultSelect = useCallback(
       (result: SearchResult) => {
         // Section two-step: first select a page, then select a section
-        if (selectedType === "section" && !sectionPage) {
+        if ((selectedType === "section" || selectedType === "element") && !sectionPage) {
           setSectionPage({ id: result.id as number, name: result.label });
           setSearchQuery("");
           setSelectedIndex(0);
@@ -352,7 +352,7 @@ export const MentionInput = forwardRef<MentionInputRef, MentionInputProps>(
             onSelectType={handleTypeSelect}
             onSelectResult={handleResultSelect}
             onDismiss={dismissAutocomplete}
-            onBack={sectionPage ? handleSectionBack : undefined}
+            onBack={(selectedType === "section" || selectedType === "element") && sectionPage ? handleSectionBack : undefined}
             position={autocompletePos}
             typeFilter={typeFilter}
             sectionPageName={sectionPage?.name}

@@ -103,15 +103,33 @@ async function fetchByType(
       }));
     }
     case "element": {
-      const resp = await invoke<{ results: { elementId: string; elementType: string; elementLabel: string; postTitle: string }[] }>(
-        "search_elements",
-        { siteUrl, apiKey, elementType: query || undefined, perPage: 10 }
+      if (sectionPageId) {
+        // Page selected — show elements for that page
+        const resp = await invoke<{ elements: { id: string; name: string; label: string | null; parent: string | null }[]; count: number }>(
+          "get_page_elements",
+          { siteUrl, apiKey, pageId: sectionPageId }
+        );
+        const elements = resp.elements ?? [];
+        const filtered = query
+          ? elements.filter((e) => (e.label ?? e.name).toLowerCase().includes(query.toLowerCase()))
+          : elements;
+        return filtered.map((e) => ({
+          id: e.id,
+          label: e.label || e.name,
+          sublabel: `Element: ${e.name}`,
+          data: { ...e, pageId: sectionPageId },
+        }));
+      }
+      // No page selected — show pages to pick from
+      const pages = await invoke<{ id: number; title: string; slug: string }[]>(
+        "search_pages",
+        { siteUrl, apiKey, query, perPage: 10 }
       );
-      return (resp.results ?? []).map((e) => ({
-        id: e.elementId,
-        label: e.elementLabel || e.elementType,
-        sublabel: e.postTitle,
-        data: e,
+      return pages.map((p) => ({
+        id: p.id,
+        label: p.title,
+        sublabel: `ID: ${p.id} · /${p.slug}`,
+        data: p,
       }));
     }
     case "class": {

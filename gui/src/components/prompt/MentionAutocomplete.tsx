@@ -81,10 +81,10 @@ export function MentionAutocomplete({
     if (aliasTarget) filteredTypes = [aliasTarget];
   }
 
-  // Determine header for section flow
-  const isSecondStepSection = mentionType === "section" && sectionPageName;
-  const headerLabel = isSecondStepSection
-    ? `${sectionPageName} › Sections`
+  // Determine header for section/element two-step flow
+  const isSecondStep = (mentionType === "section" || mentionType === "element") && sectionPageName;
+  const headerLabel = isSecondStep
+    ? `${sectionPageName} › ${TYPE_LABELS[mentionType ?? ""] ?? mentionType}`
     : (TYPE_LABELS[mentionType ?? ""] ?? mentionType);
 
   return (
@@ -201,8 +201,8 @@ export function MentionAutocomplete({
                 e.stopPropagation();
               }}
               placeholder={
-                mentionType === "section" && !sectionPageName
-                  ? "Search pages to pick sections from..."
+                (mentionType === "section" || mentionType === "element") && !sectionPageName
+                  ? `Search pages to pick ${mentionType === "section" ? "sections" : "elements"} from...`
                   : `Search ${(TYPE_LABELS[mentionType ?? ""] ?? "items").toLowerCase()}...`
               }
               className="w-full pl-6 pr-2 py-1.5 rounded-lg border text-[12px] glass-input"
@@ -214,12 +214,12 @@ export function MentionAutocomplete({
           </div>
 
           {/* Hint for section first step */}
-          {mentionType === "section" && !sectionPageName && (
+          {(mentionType === "section" || mentionType === "element") && !sectionPageName && (
             <div
               className="px-2 py-1 text-[11px] mb-1"
               style={{ color: "var(--accent)" }}
             >
-              Step 1: Pick a page, then choose sections within it
+              Step 1: Pick a page, then choose {mentionType === "section" ? "sections" : "elements"} within it
             </div>
           )}
 
