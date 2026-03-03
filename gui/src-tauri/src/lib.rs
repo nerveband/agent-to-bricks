@@ -452,8 +452,11 @@ struct ElementInfo {
     id: String,
     name: String,
     label: Option<String>,
-    parent: Option<String>,
+    #[serde(default)]
+    parent: serde_json::Value,
+    #[serde(default)]
     children: Option<Vec<String>>,
+    #[serde(default)]
     settings: Option<serde_json::Value>,
 }
 
@@ -463,6 +466,8 @@ struct PageElements {
     count: u32,
     #[serde(rename = "contentHash")]
     content_hash: Option<String>,
+    #[serde(rename = "metaKey", default)]
+    meta_key: Option<String>,
 }
 
 #[derive(Serialize, Deserialize)]

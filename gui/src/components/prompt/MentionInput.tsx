@@ -1,10 +1,12 @@
 import { useState, useCallback, useImperativeHandle, forwardRef, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
+import { useAtomValue } from "jotai";
 import { MentionAutocomplete } from "./MentionAutocomplete";
 import { MentionPill } from "./MentionPill";
 import { VariableEditor } from "./VariableEditor";
 import { useMentionSearch, type SearchResult } from "../../hooks/useMentionSearch";
 import type { MentionType, ResolvedMention } from "../../atoms/prompts";
+import { settingsOpenAtom, helpOpenAtom } from "../../atoms/app";
 
 const ALL_TYPES: MentionType[] = [
   "page", "section", "element", "class", "color", "variable", "component", "media",
@@ -77,6 +79,18 @@ export const MentionInput = forwardRef<MentionInputRef, MentionInputProps>(
 
     // Section two-step state
     const [sectionPage, setSectionPage] = useState<{ id: number; name: string } | null>(null);
+
+    // Dismiss autocomplete when a dialog opens (prevents overlap)
+    const settingsOpen = useAtomValue(settingsOpenAtom);
+    const helpOpen = useAtomValue(helpOpenAtom);
+    useEffect(() => {
+      if (settingsOpen || helpOpen) {
+        setShowAutocomplete(false);
+        setSelectedType(null);
+        setTypeFilter("");
+        setSectionPage(null);
+      }
+    }, [settingsOpen, helpOpen]);
 
     const { results, loading } = useMentionSearch(
       selectedType,

@@ -40,6 +40,14 @@ const STEP1_EMPTY_MESSAGES: Record<string, string> = {
   element: "No pages found — pick a page to browse elements",
 };
 
+/** Check if a string looks like a CSS color value */
+function isColorValue(value: string): boolean {
+  if (!value) return false;
+  const v = value.trim().toLowerCase();
+  return v.startsWith("#") || v.startsWith("rgb") || v.startsWith("hsl") ||
+    v.startsWith("oklch") || v.startsWith("oklab");
+}
+
 interface MentionAutocompleteProps {
   mode: "type-picker" | "search";
   mentionType: MentionType | null;
@@ -117,10 +125,15 @@ export function MentionAutocomplete({
     ? `${sectionPageName} › ${TYPE_LABELS[mentionType ?? ""] ?? mentionType}`
     : (TYPE_LABELS[mentionType ?? ""] ?? mentionType);
 
+  // Detect if we're showing colors (to render swatches)
+  const isColorType = mentionType === "color";
+
   return (
     <div
       ref={listRef}
       className="fixed z-[9999] rounded-xl border overflow-hidden mention-autocomplete"
+      role="dialog"
+      aria-label={mode === "type-picker" ? "Select reference type" : `Search ${headerLabel}`}
       style={{
         bottom: position.bottom,
         left: position.left,
@@ -141,7 +154,7 @@ export function MentionAutocomplete({
           >
             {typeFilter ? `Matching "@${typeFilter}"` : "Reference Type"}
           </div>
-          <div className="p-2 flex flex-col gap-[2px]">
+          <div className="p-2 flex flex-col gap-[2px]" role="listbox" aria-label="Reference types">
           {filteredTypes.length === 0 && (
             <div
               className="px-2 py-2 text-[13px]"
@@ -155,6 +168,9 @@ export function MentionAutocomplete({
             return (
               <button
                 key={t}
+                id={`mention-type-${t}`}
+                role="option"
+                aria-selected={isSelected}
                 data-active={isSelected ? "" : undefined}
                 className={`flex items-center gap-3 px-3 py-2 rounded-lg text-[13px] text-left transition-all group relative overflow-hidden ${
                   isSelected
@@ -206,6 +222,7 @@ export function MentionAutocomplete({
               onClick={onDismiss}
               className="p-0.5 rounded hover:opacity-80"
               style={{ color: "var(--fg-muted)" }}
+              aria-label="Close"
             >
               <X size={12} />
             </button>
@@ -236,6 +253,11 @@ export function MentionAutocomplete({
                   : `Search ${(TYPE_LABELS[mentionType ?? ""] ?? "items").toLowerCase()}...`
               }
               className="w-full pl-6 pr-2 py-1.5 rounded-lg border text-[12px] glass-input"
+              role="combobox"
+              aria-autocomplete="list"
+              aria-expanded={results.length > 0}
+              aria-controls="mention-results-list"
+              aria-activedescendant={results[selectedIndex] ? `mention-option-${selectedIndex}` : undefined}
               style={{
                 borderColor: "var(--border-subtle)",
                 color: "var(--fg)",
@@ -243,7 +265,7 @@ export function MentionAutocomplete({
             />
           </div>
 
-          {/* Hint for section first step */}
+          {/* Hint for section/element first step */}
           {(mentionType === "section" || mentionType === "element") && !sectionPageName && (
             <div
               className="px-2 py-1 text-[11px] mb-1"
@@ -258,6 +280,7 @@ export function MentionAutocomplete({
             <div
               className="px-2 py-3 text-[13px]"
               style={{ color: "var(--fg-muted)" }}
+              role="status"
             >
               Searching...
             </div>
@@ -298,9 +321,17 @@ export function MentionAutocomplete({
             </div>
           )}
 
-          {results.map((r, i) => (
+          <div id="mention-results-list" role="listbox" aria-label={`${headerLabel} results`}>
+          {results.map((r, i) => {
+            // For colors, the sublabel contains the color value
+            const colorValue = isColorType && r.sublabel && isColorValue(r.sublabel) ? r.sublabel : null;
+
+            return (
             <button
               key={`${r.id}`}
+              id={`mention-option-${i}`}
+              role="option"
+              aria-selected={i === selectedIndex}
               data-active={i === selectedIndex ? "" : undefined}
               className="w-full text-left px-2 py-1.5 rounded-lg text-[13px] transition-all flex items-center gap-2 border border-transparent hover:bg-[var(--white-glass)] hover:border-[var(--border-subtle)]"
               style={{
@@ -312,6 +343,17 @@ export function MentionAutocomplete({
               onMouseEnter={() => r.imageUrl && setHoveredImageUrl(r.imageUrl)}
               onMouseLeave={() => setHoveredImageUrl(null)}
             >
+              {/* Color swatch */}
+              {colorValue && (
+                <span
+                  className="w-5 h-5 rounded shrink-0 border"
+                  style={{
+                    backgroundColor: colorValue,
+                    borderColor: "var(--border)",
+                  }}
+                  aria-hidden="true"
+                />
+              )}
               {/* Small inline thumbnail for images */}
               {r.imageUrl && (
                 <img
@@ -334,7 +376,9 @@ export function MentionAutocomplete({
                 )}
               </div>
             </button>
-          ))}
+            );
+          })}
+          </div>
         </div>
       )}
     </div>
