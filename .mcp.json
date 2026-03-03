@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "tauri-mcp": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "tauri-plugin-mcp-server"],
+      "env": {
+        "TAURI_MCP_IPC_PATH": "/tmp/tauri-mcp-atb.sock"
+      }
+    }
+  }
+}
