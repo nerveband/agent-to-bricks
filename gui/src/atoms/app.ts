@@ -62,3 +62,7 @@ export const launchDialogToolAtom = atom<Tool | null>(null);
 // Gates tool detection until config is loaded from disk
 // (prevents race between useConfigPersistence and useToolDetection)
 export const configLoadedAtom = atom(false);
+
+// Track whether site context header has been sent for the current session
+// Resets when session changes or on explicit reconnect
+export const siteContextSentAtom = atom(false);

@@ -32,6 +32,7 @@ import {
   PencilSimple,
   Trash,
   TextAa,
+  ArrowsClockwise,
 } from "@phosphor-icons/react";
 import { MOD_KEY } from "../lib/platform";
 
@@ -60,9 +61,16 @@ export function PromptPane() {
   const setPromptCount = useSetAtom(promptCountAtom);
   const allPresets = useAtomValue(allPresetsAtom);
   const { resolve } = useMentionResolver();
-  const { compose } = usePromptComposer();
+  const { compose, markSiteContextSent, resetSiteContext } = usePromptComposer();
 
   const mentionInputRef = useRef<MentionInputRef>(null);
+
+  // Reset site context tracking when session changes
+  const sessionId = session?.id;
+  useEffect(() => {
+    resetSiteContext();
+  }, [sessionId, resetSiteContext]);
+
   const [text, setText] = useState("");
   const [mentions, setMentions] = useState<ResolvedMention[]>([]);
   const [resolvedContexts, setResolvedContexts] = useState<Map<string, string>>(new Map());
@@ -146,10 +154,11 @@ export function PromptPane() {
     };
     setHistory((prev) => [entry, ...prev].slice(0, 50));
     setPromptCount((c) => c + 1);
+    markSiteContextSent();
 
     setText("");
     setMentions([]);
-  }, [text, mentions, session, resolve, compose, setHistory, setPromptCount]);
+  }, [text, mentions, session, resolve, compose, setHistory, setPromptCount, markSiteContextSent]);
 
   const handleSavePreset = useCallback(() => {
     if (!text.trim()) return;
@@ -172,6 +181,18 @@ export function PromptPane() {
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   }, [text, resolvedContexts, compose]);
+
+  const handleReconnect = useCallback(() => {
+    if (!session) return;
+    // Force re-send site context on next prompt
+    resetSiteContext();
+    // Send a minimal site context prompt immediately
+    const composed = compose("", new Map(), { forceSiteContext: true });
+    if (composed.contextBlock) {
+      writeToActivePty(composed.contextBlock + "\n");
+      markSiteContextSent();
+    }
+  }, [session, resetSiteContext, compose, markSiteContextSent]);
 
   // --- Preset management ---
   const handleDeletePreset = useCallback((preset: PromptPreset) => {
@@ -264,6 +285,14 @@ export function PromptPane() {
         </button>
         <PromptHints text={text} mentionCount={mentions.length} />
         <span className="ml-auto" />
+        <button
+          onClick={handleReconnect}
+          disabled={!session}
+          className="flex items-center gap-[6px] hover:text-[var(--fg)] transition-colors disabled:opacity-30"
+          title="Re-send site connection context"
+        >
+          <ArrowsClockwise size={14} /> Reconnect
+        </button>
       </div>
 
       {/* Prompt textarea container */}

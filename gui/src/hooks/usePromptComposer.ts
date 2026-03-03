@@ -1,6 +1,6 @@
 import { useCallback } from "react";
-import { useAtomValue } from "jotai";
-import { activeSiteAtom } from "../atoms/app";
+import { useAtomValue, useSetAtom } from "jotai";
+import { activeSiteAtom, siteContextSentAtom } from "../atoms/app";
 import { estimateTokens } from "../lib/contextFormatter";
 
 export interface ComposedPrompt {
@@ -12,12 +12,15 @@ export interface ComposedPrompt {
 
 export function usePromptComposer() {
   const site = useAtomValue(activeSiteAtom);
+  const siteContextSent = useAtomValue(siteContextSentAtom);
+  const setSiteContextSent = useSetAtom(siteContextSentAtom);
 
   const compose = useCallback(
-    (rawText: string, resolvedContexts: Map<string, string>): ComposedPrompt => {
+    (rawText: string, resolvedContexts: Map<string, string>, options?: { forceSiteContext?: boolean }): ComposedPrompt => {
       const contextParts: string[] = [];
+      const includeSiteHeader = options?.forceSiteContext || !siteContextSent;
 
-      if (site) {
+      if (site && includeSiteHeader) {
         contextParts.push(
           `Site: ${site.site_url} | ${site.name}`
         );
@@ -49,8 +52,16 @@ export function usePromptComposer() {
         tokenEstimate: estimateTokens(fullText),
       };
     },
-    [site]
+    [site, siteContextSent]
   );
 
-  return { compose };
+  const markSiteContextSent = useCallback(() => {
+    setSiteContextSent(true);
+  }, [setSiteContextSent]);
+
+  const resetSiteContext = useCallback(() => {
+    setSiteContextSent(false);
+  }, [setSiteContextSent]);
+
+  return { compose, markSiteContextSent, resetSiteContext };
 }

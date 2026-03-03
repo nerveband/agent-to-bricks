@@ -596,11 +596,12 @@ body,
    ═══════════════════════════════════════════ */
 .mention-pill {
   user-select: none;
-  transition: opacity 150ms;
+  transition: filter 150ms, transform 150ms;
 }
 
 .mention-pill:hover {
-  opacity: 0.8;
+  filter: brightness(1.15);
+  transform: translateY(-0.5px);
 }
 
 .mention-autocomplete button:hover {
@@ -616,9 +617,8 @@ body,
   background: var(--white-glass);
 }
 
-/* VariableEditor placeholder */
-.variable-editor:empty::before,
-.variable-editor:has(> br:only-child)::before {
+/* VariableEditor placeholder — controlled by JS data-empty attribute */
+.variable-editor[data-empty]::before {
   content: attr(data-placeholder);
   color: var(--fg-muted);
   opacity: 0.5;

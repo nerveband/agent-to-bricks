@@ -194,6 +194,18 @@ export const MentionInput = forwardRef<MentionInputRef, MentionInputProps>(
       setSectionPage(null);
     }, []);
 
+    // Click-outside to dismiss autocomplete
+    useEffect(() => {
+      if (!showAutocomplete) return;
+      const handleClickOutside = (e: MouseEvent) => {
+        const target = e.target as HTMLElement;
+        if (target.closest(".mention-autocomplete") || containerRef.current?.contains(target)) return;
+        dismissAutocomplete();
+      };
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, [showAutocomplete, dismissAutocomplete]);
+
     const handleKeyDown = useCallback(
       (e: React.KeyboardEvent) => {
         if (showAutocomplete) {
@@ -280,6 +292,16 @@ export const MentionInput = forwardRef<MentionInputRef, MentionInputProps>(
                 linkUrl={
                   siteUrl && m.data && typeof m.data === "object" && "slug" in (m.data as Record<string, unknown>)
                     ? `${siteUrl}/${(m.data as Record<string, unknown>).slug}`
+                    : undefined
+                }
+                colorValue={
+                  m.type === "color" && m.data && typeof m.data === "object" && "color" in (m.data as Record<string, unknown>)
+                    ? (m.data as Record<string, unknown>).color as string
+                    : undefined
+                }
+                imageUrl={
+                  m.type === "media" && m.data && typeof m.data === "object" && "url" in (m.data as Record<string, unknown>)
+                    ? (m.data as Record<string, unknown>).url as string
                     : undefined
                 }
                 onClick={() => {

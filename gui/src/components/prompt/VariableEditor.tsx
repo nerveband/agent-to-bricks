@@ -242,6 +242,7 @@ export function VariableEditor({
         }}
         onClick={handlePillClick}
         data-placeholder={placeholder}
+        data-empty={!value ? "" : undefined}
         className={`variable-editor w-full ${embedded ? "" : "rounded-lg px-3 py-2"} text-[14px] outline-none transition-colors whitespace-pre-wrap break-words ${className}`}
         style={{
           background: embedded ? "transparent" : "var(--bg)",
