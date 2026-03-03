@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import { MENTION_TYPES } from "../../hooks/useMentionParser";
 import type { SearchResult } from "../../hooks/useMentionSearch";
 import type { MentionType } from "../../atoms/prompts";
@@ -298,15 +299,16 @@ export function MentionAutocomplete({
             </div>
           )}
 
-          {/* Image preview floating panel */}
-          {hoveredImageUrl && (
+          {/* Image preview floating panel — portaled to avoid overflow clipping */}
+          {hoveredImageUrl && listRef.current && createPortal(
             <div
-              className="absolute rounded-xl border overflow-hidden"
+              className="fixed z-[9998] rounded-xl border overflow-hidden pointer-events-none"
               style={{
-                right: "calc(100% + 8px)",
-                top: 8,
+                top: listRef.current.getBoundingClientRect().top,
+                left: listRef.current.getBoundingClientRect().left - 248,
                 width: 240,
                 background: "var(--surface-dark)",
+                backdropFilter: "blur(50px) saturate(180%)",
                 borderColor: "var(--border-subtle)",
                 boxShadow: "var(--shadow-floating)",
               }}
@@ -316,9 +318,10 @@ export function MentionAutocomplete({
                 alt="Preview"
                 loading="lazy"
                 className="w-full h-auto"
-                style={{ maxHeight: 240, objectFit: "contain" }}
+                style={{ maxHeight: 280, objectFit: "contain", background: "var(--bg)" }}
               />
-            </div>
+            </div>,
+            document.body
           )}
 
           <div id="mention-results-list" role="listbox" aria-label={`${headerLabel} results`}>

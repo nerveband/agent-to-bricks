@@ -289,7 +289,7 @@ export function PromptPane() {
           onClick={handleReconnect}
           disabled={!session}
           className="flex items-center gap-[6px] hover:text-[var(--fg)] transition-colors disabled:opacity-30"
-          title="Re-send site connection context"
+          title="Re-send site URL and name to the active session (useful if the AI lost context or you switched sites)"
         >
           <ArrowsClockwise size={14} /> Reconnect
         </button>
