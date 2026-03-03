@@ -14,11 +14,14 @@ const TOOL_REFERENCES: Record<
       { cmd: "/compact", desc: "Compact conversation" },
       { cmd: "/clear", desc: "Clear conversation" },
       { cmd: "/cost", desc: "Show token usage" },
+      { cmd: "bricks abilities list", desc: "Discover all abilities on the site (WP 6.9+)" },
+      { cmd: "bricks abilities describe <name>", desc: "Show ability details and JSON schemas" },
     ],
     tips: [
       "Use Escape to interrupt a response",
       "Shift+Tab cycles permission modes",
       "Type @ to reference files",
+      "Use `bricks agent context --abilities` to include abilities from all plugins in the LLM context.",
     ],
   },
   codex: {
@@ -27,10 +30,13 @@ const TOOL_REFERENCES: Record<
       { cmd: "--model", desc: "Specify model" },
       { cmd: "--full-auto", desc: "Auto-approve all actions" },
       { cmd: "--quiet", desc: "Non-interactive mode" },
+      { cmd: "bricks abilities list", desc: "Discover all abilities on the site (WP 6.9+)" },
+      { cmd: "bricks abilities describe <name>", desc: "Show ability details and JSON schemas" },
     ],
     tips: [
       "Codex runs in a sandboxed environment",
       "Use --full-auto for autonomous operation",
+      "Use `bricks agent context --abilities` to include abilities from all plugins in the LLM context.",
     ],
   },
   opencode: {
@@ -39,10 +45,13 @@ const TOOL_REFERENCES: Record<
       { cmd: "/help", desc: "Show available commands" },
       { cmd: "/model", desc: "Switch model" },
       { cmd: "/compact", desc: "Compact context" },
+      { cmd: "bricks abilities list", desc: "Discover all abilities on the site (WP 6.9+)" },
+      { cmd: "bricks abilities describe <name>", desc: "Show ability details and JSON schemas" },
     ],
     tips: [
       "OpenCode supports multiple LLM providers",
       "Configure providers in ~/.config/opencode/",
+      "Use `bricks agent context --abilities` to include abilities from all plugins in the LLM context.",
     ],
   },
 };

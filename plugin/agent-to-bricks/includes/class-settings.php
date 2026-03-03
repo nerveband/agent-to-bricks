@@ -361,6 +361,33 @@ class ATB_Settings {
 				<strong>Agent to Bricks</strong> v<?php echo esc_html( AGENT_BRICKS_VERSION ); ?><br>
 				Created by <a href="https://ashrafali.net" target="_blank">Ashraf Ali</a>
 			</p>
+			<?php
+			// AI Discovery status (WordPress Abilities API).
+			if ( function_exists( 'wp_register_ability_category' ) ) {
+				$atb_count = 0;
+				if ( function_exists( 'wp_get_abilities' ) ) {
+					$all_abilities = wp_get_abilities();
+					foreach ( $all_abilities as $ability ) {
+						if ( strpos( $ability->get_name(), 'agent-bricks/' ) === 0 ) {
+							$atb_count++;
+						}
+					}
+				}
+				echo '<p><strong>AI Discovery:</strong> <span style="color: #22c55e;">Active</span></p>';
+				echo '<p style="color: #9ca3af; font-size: 0.85em;">';
+				echo 'AI tools like ChatGPT, Claude, and Codex can automatically discover what your site can do. ';
+				echo esc_html( $atb_count ) . ' Agent to Bricks actions are registered. ';
+				echo 'Powered by the <a href="https://developer.wordpress.org/apis/abilities-api/" target="_blank">WordPress Abilities API</a> (6.9+). ';
+				echo '<a href="https://agenttobricks.com/guides/wordpress-abilities/" target="_blank">Learn more &rarr;</a>';
+				echo '</p>';
+			} else {
+				echo '<p><strong>AI Discovery:</strong> <span style="color: #9ca3af;">Not available</span></p>';
+				echo '<p style="color: #9ca3af; font-size: 0.85em;">';
+				echo 'Upgrade to WordPress 6.9 or later to let AI tools automatically discover your site\'s capabilities. ';
+				echo '<a href="https://agenttobricks.com/guides/wordpress-abilities/" target="_blank">Learn more &rarr;</a>';
+				echo '</p>';
+			}
+			?>
 			<p>
 				This plugin is designed to be paired with the Agent to Bricks CLI and Desktop App.<br>
 				Get the CLI: <a href="https://agenttobricks.com/getting-started/installation/" target="_blank">agenttobricks.com/getting-started/installation</a><br>

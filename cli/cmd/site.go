@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+	"strings"
 
 	"github.com/spf13/cobra"
 )
@@ -36,6 +37,22 @@ var siteInfoCmd = &cobra.Command{
 		fmt.Printf("Breakpoints:     %d\n", len(info.Breakpoints))
 		fmt.Printf("PHP Version:     %s\n", info.PHPVersion)
 		fmt.Printf("WP Version:      %s\n", info.WPVersion)
+
+		// Check abilities support
+		abilities, err := c.GetAbilities("")
+		if err == nil && len(abilities) > 0 {
+			// Count ATB vs third-party
+			atbCount := 0
+			thirdPartyCount := 0
+			for _, a := range abilities {
+				if strings.HasPrefix(a.Name, "agent-bricks/") {
+					atbCount++
+				} else {
+					thirdPartyCount++
+				}
+			}
+			fmt.Printf("Abilities API:   %d abilities (%d ATB, %d third-party)\n", len(abilities), atbCount, thirdPartyCount)
+		}
 
 		return nil
 	},

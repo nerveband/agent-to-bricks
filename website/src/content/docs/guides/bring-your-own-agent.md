@@ -209,6 +209,18 @@ Two recommended approaches:
 1. **HTML Convert:** write HTML, convert with the CLI, push to your site
 2. **Template Compose:** search templates, compose them into a page, push
 
+## Discovering abilities from other plugins
+
+If your site runs WordPress 6.9+, you can include abilities from all installed plugins in the context:
+
+```bash
+bricks agent context --format prompt --abilities
+```
+
+This lets your AI agent see what Yoast, WooCommerce, Gravity Forms, or any other abilities-enabled plugin can do. The agent can mix and match — build a page with Bricks, set SEO meta with Yoast, and create a product with WooCommerce, all in one session.
+
+See the [WordPress Abilities guide](/guides/wordpress-abilities/) for the full details.
+
 ## Tips for better results
 
 **Be specific about structure.** "Add a hero section" is vague. "Add a hero section with an H1 headline, a paragraph of subtext, and two side-by-side buttons (primary and outline)" gives the AI something concrete to build.

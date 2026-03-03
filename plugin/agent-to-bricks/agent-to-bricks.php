@@ -42,6 +42,7 @@ require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-update-api.php';
 require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-update-checker.php';
 require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-search-api.php';
 require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-components-api.php';
+require_once AGENT_BRICKS_PLUGIN_DIR . 'includes/class-abilities-api.php';
 
 /**
  * Add X-ATB-Version header to all plugin REST responses.
@@ -73,6 +74,7 @@ function agent_bricks_init() {
 	ATB_Update_Checker::init();
 	ATB_Search_API::init();
 	ATB_Components_API::init();
+	ATB_Abilities_API::init();
 }
 add_action( 'init', 'agent_bricks_init' );
 

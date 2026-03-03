@@ -5,6 +5,10 @@ description: Every endpoint in the Agent to Bricks plugin API, with methods, par
 
 The plugin registers all routes under `/wp-json/agent-bricks/v1/`. Every request must include the `X-ATB-Key` header (see [Authentication](/plugin/authentication/)).
 
+:::note[WordPress 6.9+ — Abilities API]
+All operations listed below are also registered as [WordPress Abilities](/guides/wordpress-abilities/) on sites running WordPress 6.9+. This makes them discoverable by any AI agent via the standard `/wp-json/wp-abilities/v1/` endpoints. The custom REST API documented here continues to work on all WordPress versions.
+:::
+
 Rate limit: 60 requests per minute per key.
 
 ## Site

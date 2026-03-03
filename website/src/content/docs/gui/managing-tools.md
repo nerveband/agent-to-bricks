@@ -54,6 +54,11 @@ The bricks CLI is available. Use `bricks` commands to pull, push, convert, and m
 Use the API key with the X-ATB-Key header when making API calls to the site.
 ```
 
+The tool reference panel also includes `bricks abilities` commands when the site supports WordPress 6.9+:
+
+- `bricks abilities list` — Discover all abilities on the site
+- `bricks abilities describe <name>` — Show ability details and JSON schemas
+
 The VariableEditor renders each `{variable}` as a colored pill. Click a pill to see its resolved value based on the currently active site. You can edit the template however you like: add project-specific instructions, remove variables you don't need, or rewrite it entirely.
 
 Changes to the system prompt persist across sessions and are shared by all tools.

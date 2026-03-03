@@ -46,13 +46,13 @@ export const promptCountAtom = atom(0);
 export const promptExpandedAtom = atom(false);
 
 // Session pre-prompt template (injected when launching Claude Code)
-// Variables: {site_url}, {api_key}, {site_name}, {environment}
+// Variables: {site_url}, {api_key}, {site_name}, {environment}, {abilities_block}
 export const sessionPrePromptAtom = atom(
   `You are a web developer working with a Bricks Builder WordPress site ({environment}).
 Site: {site_url}
 API Key: {api_key}
 The bricks CLI is available. Use \`bricks\` commands to pull, push, generate, and modify page elements.
-Use the API key with the X-ATB-Key header when making API calls to the site.`
+Use the API key with the X-ATB-Key header when making API calls to the site.{abilities_block}`
 );
 
 // Launch dialog — holds the tool being configured before launch, or null when closed

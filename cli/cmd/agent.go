@@ -3,6 +3,8 @@ package cmd
 import (
 	"fmt"
 	"os"
+	"sort"
+	"strings"
 
 	"github.com/nerveband/agent-to-bricks/internal/agent"
 	"github.com/nerveband/agent-to-bricks/internal/convert"
@@ -11,10 +13,11 @@ import (
 )
 
 var (
-	agentFormat  string
-	agentSection string
-	agentCompact bool
-	agentOutput  string
+	agentFormat    string
+	agentSection   string
+	agentCompact   bool
+	agentOutput    string
+	agentAbilities bool
 )
 
 var agentCmd = &cobra.Command{
@@ -99,6 +102,48 @@ Examples:
 				}
 				b.AddClasses(classInfos)
 				fmt.Fprintf(os.Stderr, "Loaded %d classes\n", len(classInfos))
+			}
+
+			// Abilities (WP 6.9+)
+			if agentAbilities || agentSection == "abilities" {
+				abilities, err := c.GetAbilities("")
+				if err != nil {
+					fmt.Fprintf(os.Stderr, "Warning: could not fetch abilities: %v\n", err)
+				} else if len(abilities) > 0 {
+					var abilityInfos []agent.AbilityInfo
+					for _, a := range abilities {
+						inputHint := ""
+						if a.InputSchema != nil {
+							if props, ok := a.InputSchema["properties"].(map[string]interface{}); ok && len(props) > 0 {
+								// Build a simplified input hint
+								parts := make([]string, 0, len(props))
+								for k, v := range props {
+									typ := "any"
+									if vm, ok := v.(map[string]interface{}); ok {
+										if t, ok := vm["type"].(string); ok {
+											typ = t
+										}
+									}
+									parts = append(parts, fmt.Sprintf("%q: <%s>", k, typ))
+								}
+								sort.Strings(parts)
+								inputHint = "{" + strings.Join(parts, ", ") + "}"
+							}
+						}
+						abilityInfos = append(abilityInfos, agent.AbilityInfo{
+							Name:        a.Name,
+							Label:       a.Label,
+							Description: a.Description,
+							Category:    a.Category,
+							Readonly:    a.Annotations.Readonly,
+							InputHint:   inputHint,
+						})
+					}
+					b.AddAbilities(abilityInfos)
+					fmt.Fprintf(os.Stderr, "Loaded %d abilities\n", len(abilityInfos))
+				} else {
+					fmt.Fprintf(os.Stderr, "No abilities found (site may be pre-WP 6.9)\n")
+				}
 			}
 		} else {
 			fmt.Fprintf(os.Stderr, "No site configured — showing local data only. Run: bricks config init\n")
@@ -199,9 +244,10 @@ func categorizeClass(name string) string {
 
 func init() {
 	agentContextCmd.Flags().StringVarP(&agentFormat, "format", "f", "md", "output format: md, json, prompt")
-	agentContextCmd.Flags().StringVarP(&agentSection, "section", "s", "", "dump single section: tokens, classes, templates, workflows")
+	agentContextCmd.Flags().StringVarP(&agentSection, "section", "s", "", "dump single section: tokens, classes, templates, workflows, abilities")
 	agentContextCmd.Flags().BoolVar(&agentCompact, "compact", false, "shorter output for small context windows")
 	agentContextCmd.Flags().StringVarP(&agentOutput, "output", "o", "", "write output to file")
+	agentContextCmd.Flags().BoolVar(&agentAbilities, "abilities", false, "include WordPress Abilities from all plugins (WP 6.9+)")
 
 	agentCmd.AddCommand(agentContextCmd)
 	rootCmd.AddCommand(agentCmd)

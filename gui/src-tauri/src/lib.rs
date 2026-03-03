@@ -616,6 +616,67 @@ async fn get_media(
     atb_get(&http.0, &site_url, &api_key, &path).await
 }
 
+#[derive(Serialize, Deserialize)]
+struct AbilityAnnotations {
+    #[serde(default)]
+    readonly: bool,
+    #[serde(default)]
+    destructive: bool,
+    #[serde(default)]
+    idempotent: bool,
+}
+
+#[derive(Serialize, Deserialize)]
+struct AbilityInfo {
+    name: String,
+    label: String,
+    description: String,
+    category: String,
+    #[serde(default)]
+    annotations: Option<AbilityAnnotations>,
+    #[serde(default)]
+    input_schema: Option<serde_json::Value>,
+    #[serde(default)]
+    output_schema: Option<serde_json::Value>,
+}
+
+/// Discover available abilities from the WP Abilities API (WP 6.9+).
+/// Returns an empty list if the endpoint is not available (404) or on
+/// network errors, so callers can gracefully degrade.
+#[tauri::command]
+async fn get_abilities(
+    http: tauri::State<'_, HttpClient>,
+    site_url: String,
+    api_key: String,
+    category: Option<String>,
+) -> Result<Vec<AbilityInfo>, String> {
+    let base = site_url.trim_end_matches('/');
+    let path = match &category {
+        Some(cat) => format!("/wp-json/wp-abilities/v1/abilities?category={}", urlencoding::encode(cat)),
+        None => "/wp-json/wp-abilities/v1/abilities".to_string(),
+    };
+    let url = format!("{}{}", base, path);
+
+    match http.0.get(&url).header("X-ATB-Key", &api_key).send().await {
+        Ok(resp) => {
+            if resp.status().as_u16() == 404 {
+                // WP < 6.9 — abilities not supported, return empty
+                return Ok(vec![]);
+            }
+            if !resp.status().is_success() {
+                return Err(format!("Abilities API returned status {}", resp.status()));
+            }
+            resp.json::<Vec<AbilityInfo>>().await
+                .map_err(|e| format!("Failed to parse abilities: {}", e))
+        }
+        Err(e) => {
+            // Network error — don't block, just return empty
+            eprintln!("Could not fetch abilities: {}", e);
+            Ok(vec![])
+        }
+    }
+}
+
 /// Test connection to a WordPress site's Agent to Bricks API.
 /// Also fetches the WordPress site title from /wp-json/ root endpoint.
 /// Runs from Rust to bypass webview CORS restrictions.
@@ -710,6 +771,7 @@ pub fn run() {
             get_components,
             get_templates,
             get_media,
+            get_abilities,
             config::read_config,
             config::write_config,
             config::config_exists

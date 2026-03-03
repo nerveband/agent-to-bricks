@@ -123,6 +123,7 @@ export default defineConfig({
           collapsed: true,
           items: [
             'guides/bring-your-own-agent',
+            'guides/wordpress-abilities',
             'guides/working-with-templates',
             'guides/html-to-bricks',
             'guides/style-profiles',

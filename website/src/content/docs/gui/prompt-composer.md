@@ -56,6 +56,14 @@ Elements: [section, heading, paragraph, button, ...]
 Restyle the hero section on Homepage to use a dark background
 ```
 
+### Abilities discovery
+
+If your WordPress site runs version 6.9 or later, the session pre-prompt automatically includes abilities from all installed plugins. This means when you launch Claude Code or Codex through the GUI, the AI already knows what Yoast, WooCommerce, Gravity Forms, or any other abilities-enabled plugin can do.
+
+The abilities are discovered from the WordPress [Abilities API](https://developer.wordpress.org/apis/abilities-api/) and formatted as a list of available actions with their HTTP methods and names.
+
+See the [WordPress Abilities guide](/guides/wordpress-abilities/) for more details.
+
 ## Variable pills
 
 The prompt input uses a `VariableEditor`, a contentEditable div that renders `{variables}` and `@mentions` as inline colored pills. These are not plain text. They are non-editable spans styled to stand out:

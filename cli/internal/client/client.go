@@ -674,3 +674,92 @@ func (c *Client) UploadMedia(filePath string) (*MediaUploadResponse, error) {
 	}
 	return &result, nil
 }
+
+// Ability represents a WordPress Abilities API entry (WP 6.9+).
+type Ability struct {
+	Name         string                 `json:"name"`
+	Label        string                 `json:"label"`
+	Description  string                 `json:"description"`
+	Category     string                 `json:"category"`
+	Annotations  AbilityAnnotations     `json:"annotations"`
+	InputSchema  map[string]interface{} `json:"input_schema"`
+	OutputSchema map[string]interface{} `json:"output_schema"`
+}
+
+// AbilityAnnotations describes the behavior of an ability.
+type AbilityAnnotations struct {
+	Readonly    bool `json:"readonly"`
+	Destructive bool `json:"destructive"`
+	Idempotent  bool `json:"idempotent"`
+}
+
+// AbilityCategory groups related abilities.
+type AbilityCategory struct {
+	Slug        string `json:"slug"`
+	Label       string `json:"label"`
+	Description string `json:"description"`
+}
+
+// GetAbilities fetches abilities from the WordPress Abilities API (WP 6.9+).
+// Returns empty slice (not error) if the site doesn't support abilities.
+func (c *Client) GetAbilities(category string) ([]Ability, error) {
+	path := "/abilities"
+	if category != "" {
+		path += "?category=" + url.QueryEscape(category)
+	}
+	abilitiesURL := c.baseURL + "/wp-json/wp-abilities/v1" + path
+	req, err := http.NewRequest("GET", abilitiesURL, nil)
+	if err != nil {
+		return nil, err
+	}
+	req.Header.Set("X-ATB-Key", c.apiKey)
+	resp, err := c.httpClient.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+
+	// 404 means abilities not supported — return empty, not error.
+	if resp.StatusCode == 404 {
+		return []Ability{}, nil
+	}
+	if resp.StatusCode >= 400 {
+		data, _ := io.ReadAll(resp.Body)
+		return nil, fmt.Errorf("abilities API HTTP %d: %s", resp.StatusCode, string(data))
+	}
+
+	var abilities []Ability
+	if err := json.NewDecoder(resp.Body).Decode(&abilities); err != nil {
+		return nil, err
+	}
+	return abilities, nil
+}
+
+// GetAbilityCategories fetches ability categories (WP 6.9+).
+func (c *Client) GetAbilityCategories() ([]AbilityCategory, error) {
+	abilitiesURL := c.baseURL + "/wp-json/wp-abilities/v1/categories"
+	req, err := http.NewRequest("GET", abilitiesURL, nil)
+	if err != nil {
+		return nil, err
+	}
+	req.Header.Set("X-ATB-Key", c.apiKey)
+	resp, err := c.httpClient.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode == 404 {
+		return []AbilityCategory{}, nil
+	}
+	if resp.StatusCode >= 400 {
+		data, _ := io.ReadAll(resp.Body)
+		return nil, fmt.Errorf("abilities API HTTP %d: %s", resp.StatusCode, string(data))
+	}
+
+	var categories []AbilityCategory
+	if err := json.NewDecoder(resp.Body).Decode(&categories); err != nil {
+		return nil, err
+	}
+	return categories, nil
+}

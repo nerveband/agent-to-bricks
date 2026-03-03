@@ -22,6 +22,7 @@ By default, this prints a formatted markdown document to stdout, the kind of thi
 | `--format <type>` | Output format: `md` (default), `json`, or `prompt` |
 | `--compact` | Shorter output with less detail |
 | `--section <name>` | Only output a specific section: `tokens`, `classes`, `templates`, or `workflows` |
+| `--abilities` | Include WordPress Abilities from all plugins (WP 6.9+) |
 | `-o <file>` | Write output to a file |
 
 ## Full context as a system prompt
@@ -163,6 +164,18 @@ bricks agent context --format prompt -o context.md
 claude --system-prompt context.md
 ```
 
+## Including WordPress Abilities
+
+If your WordPress site runs 6.9 or later, you can include abilities from all plugins in the context:
+
+```bash
+bricks agent context --format prompt --abilities
+```
+
+This adds a "Site Abilities" section listing every ability on the site — from Agent to Bricks, Yoast, WooCommerce, or any other plugin that supports the [WordPress Abilities API](https://developer.wordpress.org/apis/abilities-api/). Your AI agent can then use these abilities alongside the standard ATB workflows.
+
+See the [WordPress Abilities guide](/guides/wordpress-abilities/) for details.
+
 ## When to use this
 
 **Starting a new AI session.** Run `bricks agent context` at the beginning of every session so the agent knows your site's design system. Without this context, the agent will generate generic HTML that may not match your ACSS tokens or Frames components.
@@ -176,3 +189,4 @@ claude --system-prompt context.md
 - [`bricks styles variables`](/cli/style-commands/): the tokens that appear in agent context
 - [`bricks classes list`](/cli/class-commands/): the classes that appear in agent context
 - [`bricks site frameworks`](/cli/site-commands/): framework info included in context
+- [`bricks abilities list`](/guides/wordpress-abilities/): discover abilities from all plugins
