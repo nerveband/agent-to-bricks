@@ -616,7 +616,7 @@ async fn get_media(
     atb_get(&http.0, &site_url, &api_key, &path).await
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Default, Clone)]
 struct AbilityAnnotations {
     #[serde(default)]
     readonly: bool,
@@ -626,12 +626,21 @@ struct AbilityAnnotations {
     idempotent: bool,
 }
 
+#[derive(Serialize, Deserialize, Default)]
+struct AbilityMeta {
+    #[serde(default)]
+    annotations: AbilityAnnotations,
+}
+
 #[derive(Serialize, Deserialize)]
 struct AbilityInfo {
     name: String,
     label: String,
     description: String,
     category: String,
+    #[serde(default)]
+    meta: AbilityMeta,
+    /// Promoted from meta.annotations for convenience.
     #[serde(default)]
     annotations: Option<AbilityAnnotations>,
     #[serde(default)]
@@ -666,8 +675,13 @@ async fn get_abilities(
             if !resp.status().is_success() {
                 return Err(format!("Abilities API returned status {}", resp.status()));
             }
-            resp.json::<Vec<AbilityInfo>>().await
-                .map_err(|e| format!("Failed to parse abilities: {}", e))
+            let mut abilities = resp.json::<Vec<AbilityInfo>>().await
+                .map_err(|e| format!("Failed to parse abilities: {}", e))?;
+            // Promote meta.annotations to top-level for frontend convenience
+            for a in &mut abilities {
+                a.annotations = Some(a.meta.annotations.clone());
+            }
+            Ok(abilities)
         }
         Err(e) => {
             // Network error — don't block, just return empty

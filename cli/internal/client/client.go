@@ -681,9 +681,15 @@ type Ability struct {
 	Label        string                 `json:"label"`
 	Description  string                 `json:"description"`
 	Category     string                 `json:"category"`
-	Annotations  AbilityAnnotations     `json:"annotations"`
+	Meta         AbilityMeta            `json:"meta"`
+	Annotations  AbilityAnnotations     `json:"-"` // populated from Meta after decode
 	InputSchema  map[string]interface{} `json:"input_schema"`
 	OutputSchema map[string]interface{} `json:"output_schema"`
+}
+
+// AbilityMeta wraps the meta object returned by the WP Abilities REST API.
+type AbilityMeta struct {
+	Annotations AbilityAnnotations `json:"annotations"`
 }
 
 // AbilityAnnotations describes the behavior of an ability.
@@ -731,6 +737,10 @@ func (c *Client) GetAbilities(category string) ([]Ability, error) {
 	var abilities []Ability
 	if err := json.NewDecoder(resp.Body).Decode(&abilities); err != nil {
 		return nil, err
+	}
+	// Promote meta.annotations to top-level Annotations for convenience.
+	for i := range abilities {
+		abilities[i].Annotations = abilities[i].Meta.Annotations
 	}
 	return abilities, nil
 }

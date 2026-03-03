@@ -83,8 +83,7 @@ class ATB_Abilities_API {
             ),
             'execute_callback'    => array( __CLASS__, 'execute_get_site_info' ),
             'permission_callback' => array( __CLASS__, 'check_edit_posts' ),
-            'annotations'         => array( 'readonly' => true ),
-            'meta'                => array( 'show_in_rest' => true ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => true ) ),
         ) );
 
         wp_register_ability( 'agent-bricks/get-frameworks', array(
@@ -99,8 +98,7 @@ class ATB_Abilities_API {
             ),
             'execute_callback'    => array( __CLASS__, 'execute_get_frameworks' ),
             'permission_callback' => array( __CLASS__, 'check_edit_posts' ),
-            'annotations'         => array( 'readonly' => true ),
-            'meta'                => array( 'show_in_rest' => true ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => true ) ),
         ) );
 
         wp_register_ability( 'agent-bricks/list-element-types', array(
@@ -122,8 +120,7 @@ class ATB_Abilities_API {
             ),
             'execute_callback'    => array( __CLASS__, 'execute_list_element_types' ),
             'permission_callback' => array( __CLASS__, 'check_edit_posts' ),
-            'annotations'         => array( 'readonly' => true ),
-            'meta'                => array( 'show_in_rest' => true ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => true ) ),
         ) );
 
         wp_register_ability( 'agent-bricks/list-pages', array(
@@ -145,8 +142,7 @@ class ATB_Abilities_API {
             ),
             'execute_callback'    => array( __CLASS__, 'execute_list_pages' ),
             'permission_callback' => array( __CLASS__, 'check_edit_posts' ),
-            'annotations'         => array( 'readonly' => true ),
-            'meta'                => array( 'show_in_rest' => true ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => true ) ),
         ) );
     }
 
@@ -174,8 +170,7 @@ class ATB_Abilities_API {
             ),
             'execute_callback'    => array( __CLASS__, 'execute_get_page_elements' ),
             'permission_callback' => array( __CLASS__, 'check_edit_post_by_input' ),
-            'annotations'         => array( 'readonly' => true ),
-            'meta'                => array( 'show_in_rest' => true ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => true ) ),
         ) );
 
         wp_register_ability( 'agent-bricks/replace-page-elements', array(
@@ -201,8 +196,7 @@ class ATB_Abilities_API {
             ),
             'execute_callback'    => array( __CLASS__, 'execute_replace_page_elements' ),
             'permission_callback' => array( __CLASS__, 'check_edit_post_by_input' ),
-            'annotations'         => array( 'readonly' => false, 'destructive' => true, 'idempotent' => true ),
-            'meta'                => array( 'show_in_rest' => true ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => false, 'destructive' => true, 'idempotent' => true ) ),
         ) );
 
         wp_register_ability( 'agent-bricks/append-page-elements', array(
@@ -230,8 +224,7 @@ class ATB_Abilities_API {
             ),
             'execute_callback'    => array( __CLASS__, 'execute_append_page_elements' ),
             'permission_callback' => array( __CLASS__, 'check_edit_post_by_input' ),
-            'annotations'         => array( 'readonly' => false ),
-            'meta'                => array( 'show_in_rest' => true ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => false ) ),
         ) );
 
         wp_register_ability( 'agent-bricks/patch-page-elements', array(
@@ -257,8 +250,7 @@ class ATB_Abilities_API {
             ),
             'execute_callback'    => array( __CLASS__, 'execute_patch_page_elements' ),
             'permission_callback' => array( __CLASS__, 'check_edit_post_by_input' ),
-            'annotations'         => array( 'readonly' => false, 'idempotent' => true ),
-            'meta'                => array( 'show_in_rest' => true ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => false, 'idempotent' => true ) ),
         ) );
 
         wp_register_ability( 'agent-bricks/delete-page-elements', array(
@@ -284,8 +276,7 @@ class ATB_Abilities_API {
             ),
             'execute_callback'    => array( __CLASS__, 'execute_delete_page_elements' ),
             'permission_callback' => array( __CLASS__, 'check_edit_post_by_input' ),
-            'annotations'         => array( 'readonly' => false, 'destructive' => true ),
-            'meta'                => array( 'show_in_rest' => true ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => false, 'destructive' => true ) ),
         ) );
     }
 
@@ -309,8 +300,7 @@ class ATB_Abilities_API {
             ),
             'execute_callback'    => array( __CLASS__, 'execute_list_snapshots' ),
             'permission_callback' => array( __CLASS__, 'check_edit_post_by_input' ),
-            'annotations'         => array( 'readonly' => true ),
-            'meta'                => array( 'show_in_rest' => true ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => true ) ),
         ) );
 
         wp_register_ability( 'agent-bricks/create-snapshot', array(
@@ -335,8 +325,7 @@ class ATB_Abilities_API {
             ),
             'execute_callback'    => array( __CLASS__, 'execute_create_snapshot' ),
             'permission_callback' => array( __CLASS__, 'check_edit_post_by_input' ),
-            'annotations'         => array( 'readonly' => false ),
-            'meta'                => array( 'show_in_rest' => true ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => false ) ),
         ) );
 
         wp_register_ability( 'agent-bricks/rollback-snapshot', array(
@@ -361,8 +350,7 @@ class ATB_Abilities_API {
             ),
             'execute_callback'    => array( __CLASS__, 'execute_rollback_snapshot' ),
             'permission_callback' => array( __CLASS__, 'check_edit_post_by_input' ),
-            'annotations'         => array( 'readonly' => false, 'destructive' => true ),
-            'meta'                => array( 'show_in_rest' => true ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => false, 'destructive' => true ) ),
         ) );
     }
 
@@ -389,8 +377,7 @@ class ATB_Abilities_API {
             ),
             'execute_callback'    => array( __CLASS__, 'execute_list_classes' ),
             'permission_callback' => array( __CLASS__, 'check_manage_options' ),
-            'annotations'         => array( 'readonly' => true ),
-            'meta'                => array( 'show_in_rest' => true ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => true ) ),
         ) );
 
         wp_register_ability( 'agent-bricks/create-class', array(
@@ -408,8 +395,7 @@ class ATB_Abilities_API {
             'output_schema'       => array( 'type' => 'object' ),
             'execute_callback'    => array( __CLASS__, 'execute_create_class' ),
             'permission_callback' => array( __CLASS__, 'check_manage_options' ),
-            'annotations'         => array( 'readonly' => false ),
-            'meta'                => array( 'show_in_rest' => true ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => false ) ),
         ) );
 
         wp_register_ability( 'agent-bricks/delete-class', array(
@@ -431,8 +417,7 @@ class ATB_Abilities_API {
             ),
             'execute_callback'    => array( __CLASS__, 'execute_delete_class' ),
             'permission_callback' => array( __CLASS__, 'check_manage_options' ),
-            'annotations'         => array( 'readonly' => false, 'destructive' => true ),
-            'meta'                => array( 'show_in_rest' => true ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => false, 'destructive' => true ) ),
         ) );
     }
 
@@ -453,8 +438,7 @@ class ATB_Abilities_API {
             ),
             'execute_callback'    => array( __CLASS__, 'execute_get_styles' ),
             'permission_callback' => array( __CLASS__, 'check_edit_posts' ),
-            'annotations'         => array( 'readonly' => true ),
-            'meta'                => array( 'show_in_rest' => true ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => true ) ),
         ) );
 
         wp_register_ability( 'agent-bricks/get-variables', array(
@@ -470,8 +454,7 @@ class ATB_Abilities_API {
             ),
             'execute_callback'    => array( __CLASS__, 'execute_get_variables' ),
             'permission_callback' => array( __CLASS__, 'check_edit_posts' ),
-            'annotations'         => array( 'readonly' => true ),
-            'meta'                => array( 'show_in_rest' => true ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => true ) ),
         ) );
     }
 
@@ -490,8 +473,7 @@ class ATB_Abilities_API {
             ),
             'execute_callback'    => array( __CLASS__, 'execute_list_templates' ),
             'permission_callback' => array( __CLASS__, 'check_edit_posts' ),
-            'annotations'         => array( 'readonly' => true ),
-            'meta'                => array( 'show_in_rest' => true ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => true ) ),
         ) );
 
         wp_register_ability( 'agent-bricks/list-components', array(
@@ -506,8 +488,7 @@ class ATB_Abilities_API {
             ),
             'execute_callback'    => array( __CLASS__, 'execute_list_components' ),
             'permission_callback' => array( __CLASS__, 'check_edit_posts' ),
-            'annotations'         => array( 'readonly' => true ),
-            'meta'                => array( 'show_in_rest' => true ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => true ) ),
         ) );
 
         wp_register_ability( 'agent-bricks/get-component', array(
@@ -524,8 +505,7 @@ class ATB_Abilities_API {
             'output_schema'       => array( 'type' => 'object' ),
             'execute_callback'    => array( __CLASS__, 'execute_get_component' ),
             'permission_callback' => array( __CLASS__, 'check_edit_posts' ),
-            'annotations'         => array( 'readonly' => true ),
-            'meta'                => array( 'show_in_rest' => true ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => true ) ),
         ) );
 
         wp_register_ability( 'agent-bricks/upload-media', array(
@@ -552,8 +532,7 @@ class ATB_Abilities_API {
             ),
             'execute_callback'    => array( __CLASS__, 'execute_upload_media' ),
             'permission_callback' => array( __CLASS__, 'check_upload_files' ),
-            'annotations'         => array( 'readonly' => false ),
-            'meta'                => array( 'show_in_rest' => true ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => false ) ),
         ) );
     }
 
@@ -587,8 +566,7 @@ class ATB_Abilities_API {
             ),
             'execute_callback'    => array( __CLASS__, 'execute_search_elements' ),
             'permission_callback' => array( __CLASS__, 'check_edit_posts' ),
-            'annotations'         => array( 'readonly' => true ),
-            'meta'                => array( 'show_in_rest' => true ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => true ) ),
         ) );
     }
 

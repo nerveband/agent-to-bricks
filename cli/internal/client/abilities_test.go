@@ -8,13 +8,24 @@ import (
 )
 
 func TestGetAbilities(t *testing.T) {
-	abilities := []Ability{
+	// Mock the WP Abilities API response format (annotations inside meta)
+	type apiAbility struct {
+		Name         string                 `json:"name"`
+		Label        string                 `json:"label"`
+		Description  string                 `json:"description"`
+		Category     string                 `json:"category"`
+		Meta         AbilityMeta            `json:"meta"`
+		InputSchema  map[string]interface{} `json:"input_schema"`
+		OutputSchema map[string]interface{} `json:"output_schema"`
+	}
+
+	abilities := []apiAbility{
 		{
 			Name:        "agent-bricks/get-site-info",
 			Label:       "Get Site Info",
 			Description: "Returns Bricks version info",
 			Category:    "agent-bricks-site",
-			Annotations: AbilityAnnotations{Readonly: true},
+			Meta:        AbilityMeta{Annotations: AbilityAnnotations{Readonly: true}},
 			InputSchema: map[string]interface{}{},
 			OutputSchema: map[string]interface{}{
 				"type": "object",
@@ -25,7 +36,7 @@ func TestGetAbilities(t *testing.T) {
 			Label:       "Get SEO Meta",
 			Description: "Returns SEO metadata for a post",
 			Category:    "seo",
-			Annotations: AbilityAnnotations{Readonly: true},
+			Meta:        AbilityMeta{Annotations: AbilityAnnotations{Readonly: true}},
 			InputSchema: map[string]interface{}{
 				"type": "object",
 				"properties": map[string]interface{}{
@@ -61,7 +72,7 @@ func TestGetAbilities(t *testing.T) {
 		t.Errorf("expected agent-bricks/get-site-info, got %s", result[0].Name)
 	}
 	if !result[0].Annotations.Readonly {
-		t.Error("expected readonly annotation")
+		t.Error("expected readonly annotation (promoted from meta)")
 	}
 }
 
