@@ -22,7 +22,7 @@ import {
   ArrowsClockwise,
   TerminalWindow,
 } from "@phosphor-icons/react";
-import { sitesAtom, activeSiteIndexAtom, sessionPrePromptAtom, type SiteEntry, type SiteEnvironment } from "../atoms/app";
+import { sitesAtom, activeSiteIndexAtom, sessionPrePromptAtom, settingsTabAtom, type SiteEntry, type SiteEnvironment } from "../atoms/app";
 import { toolsAtom, toolCustomFlagsAtom, toolWorkingDirsAtom, toolPathsAtom, redetectRequestedAtom } from "../atoms/tools";
 import { terminalSettingsAtom, terminalSettingsOpenAtom, TERMINAL_DEFAULTS } from "../atoms/terminal";
 import { useTheme } from "../hooks/useTheme";
@@ -48,7 +48,9 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
   const [, setTermBarOpen] = useAtom(terminalSettingsOpenAtom);
   const { theme, toggle } = useTheme();
 
-  const [tab, setTab] = useState<Tab>("site");
+  const [globalTab, setGlobalTab] = useAtom(settingsTabAtom);
+  const tab = globalTab as Tab;
+  const setTab = (t: Tab) => setGlobalTab(t);
   const [promptTemplate, setPromptTemplate] = useState("");
   const [siteUrl, setSiteUrl] = useState("");
   const [apiKey, setApiKey] = useState("");
@@ -676,7 +678,7 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
                     </div>
                   </div>
                   <p className="text-[11px]" style={{ color: "var(--fg-muted)" }}>
-                    Agent to Bricks lets you use AI coding agents like Claude Code, Cursor, and Windsurf to build and modify Bricks Builder pages through a CLI and WordPress plugin.
+                    Agent to Bricks lets you use AI coding agents like Claude Code, Codex, and OpenCode to build and modify Bricks Builder pages through a CLI and WordPress plugin.
                   </p>
                 </div>
               )}

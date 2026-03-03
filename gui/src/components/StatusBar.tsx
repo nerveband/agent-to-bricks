@@ -1,13 +1,17 @@
 import { useAtom } from "jotai";
 import { activeSessionAtom } from "../atoms/sessions";
 import { activeToolAtom } from "../atoms/tools";
+import { settingsOpenAtom, settingsTabAtom } from "../atoms/app";
 import { useState, useEffect } from "react";
 import { SiteSwitcher } from "./SiteSwitcher";
+import packageJson from "../../package.json";
 
 export function StatusBar() {
   const [session] = useAtom(activeSessionAtom);
   const [tool] = useAtom(activeToolAtom);
   const [elapsed, setElapsed] = useState("");
+  const [, setSettingsOpen] = useAtom(settingsOpenAtom);
+  const [, setSettingsTab] = useAtom(settingsTabAtom);
 
   useEffect(() => {
     if (!session || session.status !== "running") {
@@ -58,6 +62,22 @@ export function StatusBar() {
           <span>{elapsed}</span>
         </>
       )}
+
+      {/* Spacer */}
+      <div className="flex-1" />
+
+      {/* Version number — click to open About */}
+      <button
+        onClick={() => {
+          setSettingsTab("about");
+          setSettingsOpen(true);
+        }}
+        className="hover:opacity-80 transition-opacity cursor-pointer"
+        style={{ color: "var(--fg-muted)" }}
+        title="About Agent to Bricks"
+      >
+        v{packageJson.version}
+      </button>
     </footer>
   );
 }

@@ -32,6 +32,7 @@ export const activeSiteAtom = atom((get) => {
 
 // Settings & help dialogs
 export const settingsOpenAtom = atom(false);
+export const settingsTabAtom = atom<string>("site");
 export const helpOpenAtom = atom(false);
 
 // Experience level for progressive hint disclosure
