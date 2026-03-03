@@ -500,6 +500,8 @@ struct SiteStyles {
     theme_styles: Option<Vec<serde_json::Value>>,
     #[serde(rename = "colorPalette")]
     color_palette: Option<Vec<serde_json::Value>>,
+    #[serde(rename = "cssColors")]
+    css_colors: Option<Vec<serde_json::Value>>,
     #[serde(rename = "globalSettings")]
     global_settings: Option<serde_json::Value>,
 }

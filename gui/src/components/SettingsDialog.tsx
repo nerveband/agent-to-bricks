@@ -51,6 +51,13 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
   const [globalTab, setGlobalTab] = useAtom(settingsTabAtom);
   const tab = globalTab as Tab;
   const setTab = (t: Tab) => setGlobalTab(t);
+
+  // Reset tab to "site" when dialog closes (so it doesn't persist "about" from status bar click)
+  useEffect(() => {
+    if (!open) {
+      setGlobalTab("site");
+    }
+  }, [open, setGlobalTab]);
   const [promptTemplate, setPromptTemplate] = useState("");
   const [siteUrl, setSiteUrl] = useState("");
   const [apiKey, setApiKey] = useState("");

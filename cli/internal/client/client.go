@@ -302,6 +302,7 @@ type ClassesResponse struct {
 type StylesResponse struct {
 	ThemeStyles    []map[string]interface{} `json:"themeStyles"`
 	ColorPalette   interface{}              `json:"colorPalette"`
+	CSSColors      []map[string]interface{} `json:"cssColors"`
 	GlobalSettings map[string]interface{}   `json:"globalSettings"`
 }
 

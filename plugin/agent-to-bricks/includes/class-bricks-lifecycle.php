@@ -87,6 +87,9 @@ class ATB_Bricks_Lifecycle {
 		// Delete Bricks transients
 		delete_transient( 'bricks_' . $post_id );
 
+		// Clear CSS variables cache (may have changed if CSS framework regenerated)
+		delete_transient( 'atb_css_vars_cache' );
+
 		// Clear object cache for this post
 		wp_cache_delete( $post_id, 'post_meta' );
 		clean_post_cache( $post_id );

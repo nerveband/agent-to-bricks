@@ -8,6 +8,13 @@ class ATB_Styles_API {
 
 	public static function init() {
 		add_action( 'rest_api_init', array( __CLASS__, 'register_routes' ) );
+		// Invalidate CSS vars cache when theme changes or customizer saves
+		add_action( 'switch_theme', array( __CLASS__, 'clear_css_cache' ) );
+		add_action( 'customize_save_after', array( __CLASS__, 'clear_css_cache' ) );
+	}
+
+	public static function clear_css_cache() {
+		delete_transient( 'atb_css_vars_cache' );
 	}
 
 	public static function register_routes() {

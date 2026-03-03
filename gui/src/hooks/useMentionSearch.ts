@@ -201,7 +201,11 @@ async function fetchByType(
         "get_components",
         { siteUrl, apiKey }
       );
-      return (resp.components ?? []).map((c) => ({
+      const components = resp.components ?? [];
+      const filtered = query
+        ? components.filter((c) => c.title.toLowerCase().includes(query.toLowerCase()))
+        : components;
+      return filtered.slice(0, 20).map((c) => ({
         id: c.id,
         label: c.title,
         sublabel: `${c.elementCount ?? 0} elements`,

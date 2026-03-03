@@ -21,8 +21,8 @@ const TYPE_LABELS: Record<string, string> = {
 
 const EMPTY_MESSAGES: Record<string, string> = {
   page: "No pages found",
-  section: "No sections found — pick a page first",
-  element: "No elements found — pick a page first",
+  section: "No sections found on this page",
+  element: "No elements found on this page",
   class: "No global classes defined in Bricks",
   color: "No colors found on this site",
   variable: "No CSS variables found on this site",
@@ -32,6 +32,12 @@ const EMPTY_MESSAGES: Record<string, string> = {
   form: "No form elements found on any page",
   loop: "No query loop (Posts) elements found on any page",
   condition: "No conditions available",
+};
+
+// Step 1 messages (before page is selected)
+const STEP1_EMPTY_MESSAGES: Record<string, string> = {
+  section: "No pages found — pick a page to browse sections",
+  element: "No pages found — pick a page to browse elements",
 };
 
 interface MentionAutocompleteProps {
@@ -263,7 +269,9 @@ export function MentionAutocomplete({
             >
               {searchQuery
               ? "No results found"
-              : EMPTY_MESSAGES[mentionType ?? ""] ?? "No items available"}
+              : (!sectionPageName && STEP1_EMPTY_MESSAGES[mentionType ?? ""])
+                || EMPTY_MESSAGES[mentionType ?? ""]
+                || "No items available"}
             </div>
           )}
 

@@ -126,29 +126,55 @@ var stylesColorsCmd = &cobra.Command{
 
 		jsonOut, _ := cmd.Flags().GetBool("json")
 		if jsonOut {
-			data, _ := json.MarshalIndent(resp.ColorPalette, "", "  ")
+			combined := map[string]interface{}{
+				"colorPalette": resp.ColorPalette,
+				"cssColors":    resp.CSSColors,
+			}
+			data, _ := json.MarshalIndent(combined, "", "  ")
 			fmt.Println(string(data))
 			return nil
 		}
 
 		palette, ok := resp.ColorPalette.([]interface{})
-		if !ok || len(palette) == 0 {
-			fmt.Println("No color palette found.")
-			return nil
+		if !ok {
+			palette = nil
 		}
 
-		fmt.Printf("Color Palette (%d colors)\n\n", len(palette))
-		for _, item := range palette {
-			color, ok := item.(map[string]interface{})
-			if !ok {
-				continue
+		if len(palette) > 0 {
+			fmt.Printf("Bricks Color Palette (%d colors)\n\n", len(palette))
+			for _, item := range palette {
+				color, ok := item.(map[string]interface{})
+				if !ok {
+					continue
+				}
+				name, _ := color["name"].(string)
+				hex, _ := color["color"].(string)
+				if name == "" {
+					name = "(unnamed)"
+				}
+				fmt.Printf("  %s  %s\n", hex, name)
 			}
-			name, _ := color["name"].(string)
-			hex, _ := color["color"].(string)
-			if name == "" {
-				name = "(unnamed)"
+		}
+
+		if len(resp.CSSColors) > 0 {
+			if len(palette) > 0 {
+				fmt.Println()
 			}
-			fmt.Printf("  %s  %s\n", hex, name)
+			fmt.Printf("CSS Colors (%d from generated stylesheets)\n\n", len(resp.CSSColors))
+			for _, color := range resp.CSSColors {
+				slug, _ := color["slug"].(string)
+				hex, _ := color["color"].(string)
+				source, _ := color["source"].(string)
+				if source != "" {
+					fmt.Printf("  %s  %s  (%s)\n", hex, slug, source)
+				} else {
+					fmt.Printf("  %s  %s\n", hex, slug)
+				}
+			}
+		}
+
+		if len(palette) == 0 && len(resp.CSSColors) == 0 {
+			fmt.Println("No colors found.")
 		}
 		return nil
 	},
