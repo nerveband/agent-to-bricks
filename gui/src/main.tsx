@@ -5,8 +5,7 @@ import "./index.css";
 
 // MCP debugging plugin — registers event handlers for E2E testing (dev only)
 if (import.meta.env.DEV) {
-  // @ts-expect-error — tauri-plugin-mcp is an optional dev dependency for E2E testing
-  import("tauri-plugin-mcp").then((mcp: { setupPluginListeners: () => void }) => {
+  import("tauri-plugin-mcp").then((mcp) => {
     mcp.setupPluginListeners();
   }).catch(() => {/* not installed — skip */});
 }
