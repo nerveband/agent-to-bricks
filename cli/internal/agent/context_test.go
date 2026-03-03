@@ -118,6 +118,95 @@ func TestContextBuilder_Section(t *testing.T) {
 	}
 }
 
+func TestContextBuilder_Abilities(t *testing.T) {
+	b := NewContextBuilder()
+	b.SetSiteInfo("2.2", "6.9.1", "1.7.0")
+	b.AddAbilities([]AbilityInfo{
+		{
+			Name:          "agent-bricks/get-site-info",
+			Label:         "Get Site Info",
+			Description:   "Returns Bricks version info",
+			Category:      "agent-bricks-site",
+			CategoryLabel: "Bricks Site Info",
+			Readonly:      true,
+		},
+		{
+			Name:          "yoast/get-seo-meta",
+			Label:         "Get SEO Meta",
+			Description:   "Returns SEO metadata for a post",
+			Category:      "seo",
+			CategoryLabel: "SEO",
+			Readonly:      true,
+			InputHint:     `{"post_id": <integer>}`,
+		},
+	})
+
+	// Markdown should include abilities
+	md := b.RenderMarkdown()
+	expected := []string{
+		"## WordPress Abilities",
+		"plugins register \"abilities\"",
+		"named actions that any AI agent",
+		"agent-bricks/get-site-info",
+		"yoast/get-seo-meta",
+		"Get SEO Meta",
+		"GET ",
+		"/wp-json/wp-abilities/v1/",
+	}
+	for _, s := range expected {
+		if !strings.Contains(md, s) {
+			t.Errorf("markdown missing %q", s)
+		}
+	}
+
+	// JSON should include abilities
+	jsonStr := b.RenderJSON()
+	jsonExpected := []string{
+		`"abilities"`,
+		`"yoast/get-seo-meta"`,
+		`"seo"`,
+	}
+	for _, s := range jsonExpected {
+		if !strings.Contains(jsonStr, s) {
+			t.Errorf("JSON missing %q", s)
+		}
+	}
+
+	// Prompt should include abilities with explanation
+	prompt := b.RenderPrompt()
+	promptExpected := []string{
+		"WordPress Abilities",
+		"plugins register \"abilities\"",
+		"named actions",
+		"Why abilities matter",
+		"When to use abilities vs. the ATB REST API",
+		"agent-bricks/get-site-info",
+		"yoast/get-seo-meta",
+		"/wp-abilities/v1/",
+	}
+	for _, s := range promptExpected {
+		if !strings.Contains(prompt, s) {
+			t.Errorf("prompt missing %q", s)
+		}
+	}
+
+	// Section render
+	section := b.RenderSection("abilities")
+	if !strings.Contains(section, "yoast/get-seo-meta") {
+		t.Error("abilities section missing ability name")
+	}
+}
+
+func TestContextBuilder_NoAbilities(t *testing.T) {
+	b := NewContextBuilder()
+	b.SetSiteInfo("2.2", "6.4", "1.7.0")
+	// No abilities added — should not include section
+	md := b.RenderMarkdown()
+	if strings.Contains(md, "WordPress Abilities") {
+		t.Error("should not include abilities section when none are set")
+	}
+}
+
 func TestContextBuilder_Compact(t *testing.T) {
 	b := NewContextBuilder()
 	b.SetSiteInfo("2.2", "6.9.1", "1.3.0")

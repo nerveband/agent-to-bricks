@@ -34,9 +34,11 @@ You can also trigger autocomplete by typing the category directly, like `@page` 
 
 ### How autocomplete navigation works
 
-- **Arrow Up / Arrow Down.** Move through the dropdown list
+- **Arrow Up / Arrow Down.** Move through the dropdown list. For `@media` results, the image preview updates as you navigate so you can preview without switching to the mouse.
 - **Tab or Enter.** Select the highlighted item
 - **Escape.** Close the dropdown without selecting
+
+Color results show inline swatches next to each entry so you can visually compare colors without memorizing hex values.
 
 ### What happens behind the scenes
 

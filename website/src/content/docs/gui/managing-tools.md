@@ -123,4 +123,4 @@ Open it from the sidebar's bottom "Settings" button or from any tool's context m
 
 **Theme.** Switch between dark and light mode. The selection persists in your config file.
 
-**About.** Shows the app version and framework info (Tauri 2).
+**About.** Shows the app version and framework info (Tauri 2). When you open this tab, the app automatically checks for updates and displays whether a newer version is available.

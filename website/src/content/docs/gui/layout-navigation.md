@@ -52,8 +52,11 @@ The thin bar at the bottom shows:
 2. **Active tool indicator.** Shows the tool name with a pulsing accent dot when a session is running.
 3. **Tool version.** The detected version string, if available.
 4. **Elapsed time.** A live counter showing how long the current session has been running (e.g., "3m 42s" or "1h 12m").
+5. **App version.** The current Agent to Bricks version. Click it to open the About tab in Settings.
 
 When no session is active, it simply shows "No active session."
+
+All interactive elements in the status bar show descriptive tooltips on hover.
 
 ## Responsive behavior
 
