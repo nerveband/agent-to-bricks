@@ -19,6 +19,21 @@ const TYPE_LABELS: Record<string, string> = {
   condition: "Conditions",
 };
 
+const EMPTY_MESSAGES: Record<string, string> = {
+  page: "No pages found",
+  section: "No sections found — pick a page first",
+  element: "No elements found — pick a page first",
+  class: "No global classes defined in Bricks",
+  color: "No colors found on this site",
+  variable: "No CSS variables found on this site",
+  component: "No reusable components (templates) found",
+  media: "No media files in the library",
+  template: "No Bricks templates found",
+  form: "No form elements found on any page",
+  loop: "No query loop (Posts) elements found on any page",
+  condition: "No conditions available",
+};
+
 interface MentionAutocompleteProps {
   mode: "type-picker" | "search";
   mentionType: MentionType | null;
@@ -60,6 +75,15 @@ export function MentionAutocomplete({
     const active = listRef.current?.querySelector("[data-active]");
     active?.scrollIntoView({ block: "nearest" });
   }, [selectedIndex]);
+
+  // Update image preview when keyboard navigation changes selection
+  useEffect(() => {
+    if (mode === "search" && results[selectedIndex]?.imageUrl) {
+      setHoveredImageUrl(results[selectedIndex].imageUrl!);
+    } else if (mode === "search") {
+      setHoveredImageUrl(null);
+    }
+  }, [selectedIndex, mode, results]);
 
   // Auto-focus search input when entering search mode
   useEffect(() => {
@@ -237,7 +261,9 @@ export function MentionAutocomplete({
               className="px-2 py-3 text-[13px]"
               style={{ color: "var(--fg-muted)" }}
             >
-              {searchQuery ? "No results found" : "No items available — check site connection"}
+              {searchQuery
+              ? "No results found"
+              : EMPTY_MESSAGES[mentionType ?? ""] ?? "No items available"}
             </div>
           )}
 
