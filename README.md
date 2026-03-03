@@ -74,6 +74,13 @@ bricks update --check      # check without installing
 
 The Desktop App checks for updates automatically on launch.
 
+## Key Features
+
+- **WordPress Abilities API** — Auto-discovers plugin abilities (Yoast, WooCommerce, Gravity Forms, etc.) and includes them in AI prompts. Requires WordPress 6.9+.
+- **CSS Framework Support** — Scans ACSS, Cwicly, and theme CSS files for custom properties. Colors and variables appear in `@color` and `@variable` autocomplete.
+- **Page-Specific @mentions** — `@element` and `@section` use a two-step flow: pick a page, then browse elements within it.
+- **40 E2E Tests** — Automated test suite via `tauri-plugin-mcp` covering all GUI features against the live staging site.
+
 ## Requirements
 
 - WordPress 6.0+ with Bricks Builder 1.9+

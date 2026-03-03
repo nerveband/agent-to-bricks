@@ -33,9 +33,28 @@ Then generate your API key:
 
 The API key authenticates all requests from the CLI to your site. Keep it private.
 
-## 2. Install the CLI
+## 2. Install the Desktop App (optional)
 
-Download the binary for your platform from the [latest release](https://github.com/nerveband/agent-to-bricks/releases/latest):
+The Desktop App is a visual session manager for AI coding tools (Claude Code, Codex, etc.). Download the installer for your platform from the [latest release](https://github.com/nerveband/agent-to-bricks/releases/latest):
+
+| Platform | File | Notes |
+|----------|------|-------|
+| Mac (Apple Silicon) | `Agent.to.Bricks_X.X.X_aarch64.dmg` | Open the DMG and drag to Applications |
+| Mac (Intel) | `Agent.to.Bricks_X.X.X_x64.dmg` | Open the DMG and drag to Applications |
+| Windows | `Agent.to.Bricks_X.X.X_windows_x64-setup.exe` | Run the installer |
+| Windows (MSI) | `Agent.to.Bricks_X.X.X_windows_x64_en-US.msi` | Alternative installer format |
+| Linux (deb) | `Agent.to.Bricks_X.X.X_amd64.deb` | `sudo dpkg -i Agent.to.Bricks_*.deb` |
+| Linux (AppImage) | `Agent.to.Bricks_X.X.X_amd64.AppImage` | `chmod +x` and run directly |
+
+The app checks for updates automatically. You do not need the CLI installed to use the Desktop App — it connects directly to the plugin REST API.
+
+## 3. Install the CLI (optional)
+
+The CLI is a terminal tool for page operations, search, HTML conversion, and templates. Download the **CLI binary** for your platform from the [latest release](https://github.com/nerveband/agent-to-bricks/releases/latest):
+
+:::note
+The CLI files are named `agent-to-bricks_X.X.X_...` (lowercase with underscores). The Desktop App files are named `Agent.to.Bricks_X.X.X_...` (title case with dots). Make sure you download the right one.
+:::
 
 | Platform | File |
 |----------|------|
@@ -61,7 +80,7 @@ bricks version
 
 ### Windows
 
-1. Unzip the downloaded file
+1. Unzip `agent-to-bricks_X.X.X_windows_amd64.zip` (this is the CLI, not the Desktop App)
 2. Move `bricks.exe` to a directory in your PATH (e.g., `C:\Users\YourName\bin\`)
 3. Or add the extracted folder to your PATH environment variable
 
@@ -98,7 +117,7 @@ go build -o bricks.exe .
 Move-Item bricks.exe C:\Users\YourName\bin\
 ```
 
-## 3. Connect the CLI to your site
+## 4. Connect to your site
 
 The fastest way is the interactive setup wizard:
 

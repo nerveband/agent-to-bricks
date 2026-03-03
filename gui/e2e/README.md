@@ -29,7 +29,7 @@ JS Guest Bindings (webview, auto-loaded in dev)
 Real App UI
 ```
 
-## Test Categories (35 tests)
+## Test Categories (40 tests)
 
 | Category | Tests | What's Tested |
 |----------|-------|---------------|
@@ -41,7 +41,9 @@ Real App UI
 | Staging Connection | 2 | Site info API, WP version |
 | Page Browsing | 2 | Pages list, elements for page 1338 |
 | Abilities API | 6 | List, categories, core, exec, input, POST rejection |
+| CSS Variables & Colors | 3 | extractedFromCSS, cssColors, valid values |
 | UI Interactions | 2 | Settings dialog open/fields |
+| Status Bar | 2 | Version visible, clickable |
 | Welcome | 1 | Welcome message |
 | MCP Tools | 3 | Page map, state, screenshot |
 

@@ -35,17 +35,23 @@ Run all CI checks, a docs/content audit, and cross-link verification. Do these s
     - After review is approved, deploy to production: `cd website && npx netlify deploy --dir=dist --prod`
 
 **GUI E2E tests:**
-15. Run `cd gui && node e2e/run-tests.mjs` to execute the GUI E2E test suite
-16. Report any test failures — all tests should pass before shipping
+15. The E2E tests require the GUI running with the MCP debug plugin. Setup:
+    - Install JS bindings (one-time): `cd gui && npm install --save-dev tauri-plugin-mcp`
+    - Start GUI with MCP: `cd gui && npx tauri dev --features dev-debug`
+    - Wait for socket at `/tmp/tauri-mcp-atb.sock` and the app window to appear
+    - The `dev-debug` Cargo feature enables `tauri-plugin-mcp` which creates a Unix socket for programmatic control
+    - The JS guest bindings (`setupPluginListeners()`) are auto-loaded in dev mode via `src/main.tsx`
+16. Run `cd gui && node e2e/run-tests.mjs` to execute the GUI E2E test suite (40 tests)
+17. Report any test failures — all tests should pass before shipping
 
 **GUI feature testing (if GUI changed):**
-17. Run `cd gui && npm run tauri dev` and manually verify any changed features:
+18. With the GUI already running from step 15, manually verify any changed features:
     - If @mention autocomplete changed: open autocomplete for affected types and confirm results appear
     - If status bar changed: check the version number is visible and clickable
     - If settings/about changed: open Settings > About and verify content
 
 **Staging verification (if plugin changed):**
-18. If plugin files changed, deploy to staging and verify the API returns 200: `curl -s -o /dev/null -w "%{http_code}" -H "X-ATB-Key: <key-from-config>" "https://ts-staging.wavedepth.com/wp-json/agent-bricks/v1/site/info"`
+19. If plugin files changed, deploy to staging and verify the API returns 200: `curl -s -o /dev/null -w "%{http_code}" -H "X-ATB-Key: <key-from-config>" "https://ts-staging.wavedepth.com/wp-json/agent-bricks/v1/site/info"`
 
 **Known test limitations:**
 - Plugin functional tests run via WP-CLI `wp eval-file`. Some endpoints return 403 `rest_forbidden` in WP-CLI context because the internal REST dispatch lacks full capabilities. This affects elements, snapshots, and components write endpoints. These are WP-CLI permission limitations, not plugin bugs. The affected suites: `test-elements-runner.php`, `test-snapshots-runner.php`, `test-components-runner.php` (partial), `test-api-auth-runner.php` (REST dispatch test), `test-templates-runner.php` (DELETE). Suites that should always pass: `test-classes-runner.php`, `test-element-types-runner.php`, `test-search-runner.php`, `test-site-runner.php`.
