@@ -26,4 +26,7 @@ tauri-plugin-dialog = "2.6.0"
 tauri-plugin-updater = "2"
 tauri-plugin-process = "2"
 which = "7"
+tauri-plugin-mcp = { git = "https://github.com/P3GLEG/tauri-plugin-mcp", optional = true }
 
+[features]
+dev-debug = ["tauri-plugin-mcp"]

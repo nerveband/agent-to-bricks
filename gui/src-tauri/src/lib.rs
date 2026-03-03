@@ -762,14 +762,28 @@ pub fn run() {
         .build()
         .expect("Failed to create HTTP client");
 
-    tauri::Builder::default()
+    let mut builder = tauri::Builder::default()
         .manage(HttpClient(Arc::new(client)))
         .plugin(tauri_plugin_opener::init())
         .plugin(tauri_plugin_pty::init())
         .plugin(tauri_plugin_sql::Builder::default().build())
         .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_updater::Builder::new().build())
-        .plugin(tauri_plugin_process::init())
+        .plugin(tauri_plugin_process::init());
+
+    // MCP debugging plugin — only in debug builds with dev-debug feature
+    #[cfg(feature = "dev-debug")]
+    {
+        builder = builder.plugin(
+            tauri_plugin_mcp::init_with_config(
+                tauri_plugin_mcp::PluginConfig::new("agent-to-bricks".to_string())
+                    .start_socket_server(true)
+                    .socket_path("/tmp/tauri-mcp-atb.sock".into()),
+            ),
+        );
+    }
+
+    builder
         .invoke_handler(tauri::generate_handler![
             detect_environment,
             detect_tool,
