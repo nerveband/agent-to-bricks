@@ -224,6 +224,7 @@ export function MentionAutocomplete({
               className="p-0.5 rounded hover:opacity-80"
               style={{ color: "var(--fg-muted)" }}
               aria-label="Close"
+              title="Close autocomplete (Esc)"
             >
               <X size={12} />
             </button>

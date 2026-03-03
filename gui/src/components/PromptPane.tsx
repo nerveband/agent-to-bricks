@@ -36,19 +36,19 @@ import {
 } from "@phosphor-icons/react";
 import { MOD_KEY } from "../lib/platform";
 
-const QUICK_CHIPS: { type: MentionType; label: string }[] = [
-  { type: "page", label: "@page" },
-  { type: "section", label: "@section" },
-  { type: "element", label: "@element" },
-  { type: "class", label: "@class" },
-  { type: "color", label: "@color" },
-  { type: "variable", label: "@variable" },
-  { type: "component", label: "@component" },
-  { type: "media", label: "@media" },
-  { type: "template", label: "@template" },
-  { type: "form", label: "@form" },
-  { type: "loop", label: "@loop" },
-  { type: "condition", label: "@condition" },
+const QUICK_CHIPS: { type: MentionType; label: string; tooltip: string }[] = [
+  { type: "page", label: "@page", tooltip: "Reference a page by name" },
+  { type: "section", label: "@section", tooltip: "Reference a section within a page" },
+  { type: "element", label: "@element", tooltip: "Reference a specific element on a page" },
+  { type: "class", label: "@class", tooltip: "Reference a Bricks global CSS class" },
+  { type: "color", label: "@color", tooltip: "Reference a color from the site palette or CSS variables" },
+  { type: "variable", label: "@variable", tooltip: "Reference a CSS custom property" },
+  { type: "component", label: "@component", tooltip: "Reference a reusable Bricks component" },
+  { type: "media", label: "@media", tooltip: "Reference an image or file from the media library" },
+  { type: "template", label: "@template", tooltip: "Reference a Bricks template" },
+  { type: "form", label: "@form", tooltip: "Reference a form element" },
+  { type: "loop", label: "@loop", tooltip: "Reference a query loop (Posts) element" },
+  { type: "condition", label: "@condition", tooltip: "Reference a Bricks condition" },
 ];
 
 export function PromptPane() {
@@ -272,6 +272,7 @@ export function PromptPane() {
           onClick={handleSavePreset}
           disabled={!text.trim()}
           className="flex items-center gap-[6px] hover:text-[var(--fg)] transition-colors disabled:opacity-30"
+          title="Save the current prompt text as a reusable preset"
         >
           <FloppyDisk size={14} /> Save
         </button>
@@ -279,6 +280,7 @@ export function PromptPane() {
           onClick={handleCopy}
           disabled={!text.trim()}
           className="flex items-center gap-[6px] hover:text-[var(--fg)] transition-colors disabled:opacity-30"
+          title="Copy the composed prompt (with resolved @references) to clipboard"
         >
           {copied ? <Check size={14} /> : <Copy size={14} />}
           {copied ? "Copied" : "Copy"}
@@ -361,6 +363,7 @@ export function PromptPane() {
             key={chip.type}
             onClick={() => handleChipClick(chip.type)}
             className="tag-btn px-2.5 py-1.5 rounded-md text-[11px] font-mono cursor-pointer"
+            title={chip.tooltip}
           >
             {chip.label}
           </button>
