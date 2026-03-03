@@ -339,6 +339,39 @@ async function runTests() {
   });
 
   // ----------------------------------------------------------
+  // 8b. CSS VARIABLES & COLORS (ACSS support)
+  // ----------------------------------------------------------
+  console.log('\n=== CSS VARIABLES & COLORS ===');
+
+  await test('Variables endpoint returns extractedFromCSS', async () => {
+    const { ok, data } = await apiFetch('agent-bricks/v1/variables');
+    assert(ok, 'Variables fetch failed');
+    const cssVars = data.extractedFromCSS || [];
+    assert(cssVars.length > 0, `Expected CSS vars, got ${cssVars.length}`);
+    log(`  Found ${cssVars.length} CSS variables`);
+  });
+
+  await test('Styles endpoint returns cssColors', async () => {
+    const { ok, data } = await apiFetch('agent-bricks/v1/styles');
+    assert(ok, 'Styles fetch failed');
+    const cssColors = data.cssColors || [];
+    assert(cssColors.length > 0, `Expected CSS colors, got ${cssColors.length}`);
+    log(`  Found ${cssColors.length} CSS colors`);
+  });
+
+  await test('CSS colors have valid hex/rgb values', async () => {
+    const { data } = await apiFetch('agent-bricks/v1/styles');
+    const cssColors = data.cssColors || [];
+    const sample = cssColors.slice(0, 5);
+    for (const c of sample) {
+      assert(c.slug, 'Color missing slug');
+      assert(c.color, 'Color missing value');
+      const isValid = c.color.startsWith('#') || c.color.startsWith('rgb') || c.color.startsWith('hsl');
+      assert(isValid, `Invalid color value: ${c.color}`);
+    }
+  });
+
+  // ----------------------------------------------------------
   // 9. UI INTERACTIONS
   // ----------------------------------------------------------
   console.log('\n=== UI INTERACTIONS ===');
@@ -389,6 +422,37 @@ async function runTests() {
     return 'escaped';
   `);
   await new Promise(r => setTimeout(r, 500));
+
+  // ----------------------------------------------------------
+  // 9b. STATUS BAR
+  // ----------------------------------------------------------
+  console.log('\n=== STATUS BAR ===');
+
+  // Close any open dialogs first
+  await js(`
+    document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', code: 'Escape', bubbles: true }));
+    return 'escaped';
+  `);
+  await new Promise(r => setTimeout(r, 300));
+
+  await test('Version number visible in status bar', async () => {
+    const text = await js('return document.body.innerText');
+    assert(text.includes('v1.7.0'), `Version not found in body text`);
+  });
+
+  await test('Version number is clickable', async () => {
+    const data = await jsJson(`
+      var btns = document.querySelectorAll('button');
+      var found = false;
+      for (var i = 0; i < btns.length; i++) {
+        if (btns[i].textContent.trim().match(/^v\\d+\\.\\d+\\.\\d+$/)) {
+          found = true; break;
+        }
+      }
+      return JSON.stringify({ found: found });
+    `);
+    assert(data.found, 'Version button not found');
+  });
 
   // ----------------------------------------------------------
   // 10. WELCOME MESSAGE
