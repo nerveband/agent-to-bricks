@@ -487,6 +487,31 @@ html, body {
   border-color: rgba(255, 255, 255, 0.06);
 }
 
+/* Starlight aside/note overrides for dark theme */
+[data-theme='dark'] .starlight-aside {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme='dark'] .starlight-aside--note {
+  border-color: var(--sl-color-accent);
+}
+
+[data-theme='dark'] .starlight-aside .starlight-aside__title {
+  color: var(--sl-color-accent);
+}
+
+[data-theme='dark'] .starlight-aside p,
+[data-theme='dark'] .starlight-aside li {
+  color: var(--sl-color-gray-2);
+}
+
+[data-theme='dark'] .starlight-aside :not(pre) > code {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--sl-color-gray-1);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
 /* Search dialog dark-mode fixes */
 [data-theme='dark'] site-search dialog {
   background-color: #12101e;
