@@ -34,8 +34,18 @@ Run all CI checks, a docs/content audit, and cross-link verification. Do these s
     - Share the preview URL for review
     - After review is approved, deploy to production: `cd website && npx netlify deploy --dir=dist --prod`
 
+**GUI E2E tests:**
+15. Run `cd gui && node e2e/run-tests.mjs` to execute the GUI E2E test suite
+16. Report any test failures — all tests should pass before shipping
+
+**GUI feature testing (if GUI changed):**
+17. Run `cd gui && npm run tauri dev` and manually verify any changed features:
+    - If @mention autocomplete changed: open autocomplete for affected types and confirm results appear
+    - If status bar changed: check the version number is visible and clickable
+    - If settings/about changed: open Settings > About and verify content
+
 **Staging verification (if plugin changed):**
-15. If plugin files changed, deploy to staging and verify the API returns 200: `curl -s -o /dev/null -w "%{http_code}" -H "X-ATB-Key: <key-from-config>" "https://ts-staging.wavedepth.com/wp-json/agent-bricks/v1/site/info"`
+18. If plugin files changed, deploy to staging and verify the API returns 200: `curl -s -o /dev/null -w "%{http_code}" -H "X-ATB-Key: <key-from-config>" "https://ts-staging.wavedepth.com/wp-json/agent-bricks/v1/site/info"`
 
 **Known test limitations:**
 - Plugin functional tests run via WP-CLI `wp eval-file`. Some endpoints return 403 `rest_forbidden` in WP-CLI context because the internal REST dispatch lacks full capabilities. This affects elements, snapshots, and components write endpoints. These are WP-CLI permission limitations, not plugin bugs. The affected suites: `test-elements-runner.php`, `test-snapshots-runner.php`, `test-components-runner.php` (partial), `test-api-auth-runner.php` (REST dispatch test), `test-templates-runner.php` (DELETE). Suites that should always pass: `test-classes-runner.php`, `test-element-types-runner.php`, `test-search-runner.php`, `test-site-runner.php`.

@@ -28,30 +28,40 @@ Run the full pre-release check and release pipeline. Do these steps:
 13. Grep all URLs in CLI source (cmd/*.go), GUI source (src/), and plugin source (includes/) that point to agenttobricks.com — verify each target page exists in `website/src/content/docs/` or `website/src/pages/`
 14. Check that the plugin settings page links and CLI help text URLs are not broken
 
+**GUI E2E tests:**
+15. Run `cd gui && node e2e/run-tests.mjs` to execute the GUI E2E test suite
+16. Report any test failures — all tests must pass before releasing
+
+**GUI feature testing (if GUI changed):**
+17. Run `cd gui && npm run tauri dev` and manually verify any changed features:
+    - If @mention autocomplete changed: open autocomplete for affected types and confirm results appear
+    - If status bar changed: check the version number is visible and clickable
+    - If settings/about changed: open Settings > About and verify content
+
 **Dependency check:**
-15. Run `cd cli && go list -m -u all 2>/dev/null | grep '\[' | head -10` to check for Go dependency updates
-16. Run `cd gui && npm audit --production 2>/dev/null | tail -5` to check for npm vulnerabilities
-17. If any critical/high vulnerabilities, fix them before releasing
+18. Run `cd cli && go list -m -u all 2>/dev/null | grep '\[' | head -10` to check for Go dependency updates
+19. Run `cd gui && npm audit --production 2>/dev/null | tail -5` to check for npm vulnerabilities
+20. If any critical/high vulnerabilities, fix them before releasing
 
 **Website deployment (if website changed):**
-18. If any files under `website/` changed (docs, homepage, components, styles):
+21. If any files under `website/` changed (docs, homepage, components, styles):
     - `cd website && npm run build`
     - `cd website && npx netlify deploy --dir=dist` (draft/preview deploy)
     - Share the preview URL for review
     - After review is approved, deploy to production: `cd website && npx netlify deploy --dir=dist --prod`
 
 **Hero changelog badge:**
-19. Update the changelog badge in `website/src/components/home/HeroSection.astro`:
+22. Update the changelog badge in `website/src/components/home/HeroSection.astro`:
     - Update the version number (e.g. `v1.8.0`) in both the `href` URL and the badge text
     - Update the short description text to summarize this release's highlights (keep it under ~8 words)
     - The badge links to `https://github.com/nerveband/agent-to-bricks/releases/tag/v<VERSION>`
 
 **Release:**
-20. Ask me what version to bump to (patch, minor, or major). Bump `VERSION`, run `make sync-version`, commit all changes
-21. Tag and push to trigger the release workflow: `make tag-release`
-22. Monitor the release workflow until all 7 jobs pass (CLI, Plugin ZIP, 4x GUI, Verify)
-23. Publish the draft release with release notes summarizing what changed
-24. Download and open the macOS aarch64 DMG to verify signing works
+23. Ask me what version to bump to (patch, minor, or major). Bump `VERSION`, run `make sync-version`, commit all changes
+24. Tag and push to trigger the release workflow: `make tag-release`
+25. Monitor the release workflow until all 7 jobs pass (CLI, Plugin ZIP, 4x GUI, Verify)
+26. Publish the draft release with release notes summarizing what changed
+27. Download and open the macOS aarch64 DMG to verify signing works
 
 **If re-releasing (workflow failed and you need to retry):**
 - First try: `gh run rerun <run-id> --failed` to re-run only the failed job
