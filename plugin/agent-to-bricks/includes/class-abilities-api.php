@@ -649,7 +649,8 @@ class ATB_Abilities_API {
         $request = new WP_REST_Request( 'PUT' );
         $request->set_url_params( array( 'id' => $input['page_id'] ) );
         $request->set_header( 'If-Match', $input['content_hash'] );
-        $request->set_body_params( array( 'elements' => $input['elements'] ) );
+        $request->set_header( 'Content-Type', 'application/json' );
+        $request->set_body( wp_json_encode( array( 'elements' => $input['elements'] ) ) );
         $response = $api->replace_elements( $request );
         return is_wp_error( $response ) ? $response : $response->get_data();
     }
@@ -666,7 +667,8 @@ class ATB_Abilities_API {
         if ( ! empty( $input['insert_after'] ) ) {
             $body['insertAfter'] = $input['insert_after'];
         }
-        $request->set_body_params( $body );
+        $request->set_header( 'Content-Type', 'application/json' );
+        $request->set_body( wp_json_encode( $body ) );
         $response = $api->append_elements( $request );
         return is_wp_error( $response ) ? $response : $response->get_data();
     }
@@ -676,7 +678,8 @@ class ATB_Abilities_API {
         $request = new WP_REST_Request( 'PATCH' );
         $request->set_url_params( array( 'id' => $input['page_id'] ) );
         $request->set_header( 'If-Match', $input['content_hash'] );
-        $request->set_body_params( array( 'patches' => $input['patches'] ) );
+        $request->set_header( 'Content-Type', 'application/json' );
+        $request->set_body( wp_json_encode( array( 'patches' => $input['patches'] ) ) );
         $response = $api->patch_elements( $request );
         return is_wp_error( $response ) ? $response : $response->get_data();
     }
@@ -686,7 +689,8 @@ class ATB_Abilities_API {
         $request = new WP_REST_Request( 'DELETE' );
         $request->set_url_params( array( 'id' => $input['page_id'] ) );
         $request->set_header( 'If-Match', $input['content_hash'] );
-        $request->set_body_params( array( 'ids' => $input['ids'] ) );
+        $request->set_header( 'Content-Type', 'application/json' );
+        $request->set_body( wp_json_encode( array( 'ids' => $input['ids'] ) ) );
         $response = $api->delete_elements( $request );
         return is_wp_error( $response ) ? $response : $response->get_data();
     }
@@ -704,7 +708,8 @@ class ATB_Abilities_API {
         $request = new WP_REST_Request( 'POST' );
         $request->set_url_params( array( 'id' => $input['page_id'] ) );
         if ( ! empty( $input['label'] ) ) {
-            $request->set_body_params( array( 'label' => $input['label'] ) );
+            $request->set_header( 'Content-Type', 'application/json' );
+            $request->set_body( wp_json_encode( array( 'label' => $input['label'] ) ) );
         }
         $response = $api->create_snapshot( $request );
         return is_wp_error( $response ) ? $response : $response->get_data();
@@ -734,10 +739,11 @@ class ATB_Abilities_API {
     public static function execute_create_class( $input ) {
         $api = new ATB_Classes_API();
         $request = new WP_REST_Request( 'POST' );
-        $request->set_body_params( array(
+        $request->set_header( 'Content-Type', 'application/json' );
+        $request->set_body( wp_json_encode( array(
             'name'     => $input['name'],
             'settings' => $input['settings'] ?? array(),
-        ) );
+        ) ) );
         $response = $api->create_class( $request );
         return is_wp_error( $response ) ? $response : $response->get_data();
     }

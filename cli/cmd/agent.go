@@ -110,6 +110,13 @@ Examples:
 				if err != nil {
 					fmt.Fprintf(os.Stderr, "Warning: could not fetch abilities: %v\n", err)
 				} else if len(abilities) > 0 {
+					// Build category label lookup
+					catLabels := map[string]string{}
+					if cats, err := c.GetAbilityCategories(); err == nil {
+						for _, cat := range cats {
+							catLabels[cat.Slug] = cat.Label
+						}
+					}
 					var abilityInfos []agent.AbilityInfo
 					for _, a := range abilities {
 						inputHint := ""
@@ -131,12 +138,13 @@ Examples:
 							}
 						}
 						abilityInfos = append(abilityInfos, agent.AbilityInfo{
-							Name:        a.Name,
-							Label:       a.Label,
-							Description: a.Description,
-							Category:    a.Category,
-							Readonly:    a.Annotations.Readonly,
-							InputHint:   inputHint,
+							Name:          a.Name,
+							Label:         a.Label,
+							Description:   a.Description,
+							Category:      a.Category,
+							CategoryLabel: catLabels[a.Category],
+							Readonly:      a.Annotations.Readonly,
+							InputHint:     inputHint,
 						})
 					}
 					b.AddAbilities(abilityInfos)

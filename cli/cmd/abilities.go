@@ -143,8 +143,12 @@ Examples:
 					fmt.Printf("\nOutput Schema:\n%s\n", string(schemaJSON))
 				}
 
-				fmt.Printf("\nExecute: POST %s/wp-json/wp-abilities/v1/%s/run\n",
-					strings.TrimRight(cfg.Site.URL, "/"), name)
+				method := "POST"
+			if a.Annotations.Readonly {
+				method = "GET"
+			}
+			fmt.Printf("\nExecute: %s %s/wp-json/wp-abilities/v1/%s/run\n",
+				method, strings.TrimRight(cfg.Site.URL, "/"), name)
 				return nil
 			}
 		}
