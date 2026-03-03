@@ -3,7 +3,11 @@ title: Installation
 description: Install the plugin, CLI, and optional GUI
 ---
 
-Agent to Bricks has three components: a WordPress plugin, a CLI binary, and an optional desktop GUI. You need the plugin and CLI at minimum. The GUI is for people who want a visual interface for managing AI agent sessions.
+Agent to Bricks has three components: a **WordPress plugin** (required), a **Desktop App**, and a **CLI**. You only need the plugin plus whichever client fits your workflow:
+
+- **Desktop App only** — If you want a visual interface for managing AI agent sessions (Claude Code, Codex, etc.). No terminal needed.
+- **CLI only** — If you prefer the terminal for page operations, HTML conversion, search, and templates.
+- **Both** — Install both for maximum flexibility. They share the same config and connect to the same plugin.
 
 ## System requirements
 
@@ -119,7 +123,9 @@ Move-Item bricks.exe C:\Users\YourName\bin\
 
 ## 4. Connect to your site
 
-The fastest way is the interactive setup wizard:
+**Desktop App:** Open the app, click the site switcher in the bottom status bar, then "Add Site". Enter your site URL and the API key from step 1.
+
+**CLI:** Run the interactive setup wizard:
 
 ```bash
 bricks config init
@@ -127,16 +133,20 @@ bricks config init
 
 It will prompt you for your site URL and the API key you copied from the plugin settings.
 
-If you'd rather set values directly:
+Or set values directly:
 
 ```bash
 bricks config set site.url https://your-site.com
 bricks config set site.api_key YOUR_API_KEY
 ```
 
-This writes to `~/.agent-to-bricks/config.yaml`.
+Both the Desktop App and CLI write to `~/.agent-to-bricks/config.yaml` and share the same site configuration.
 
-## 4. Verify the connection
+## 5. Verify the connection
+
+**Desktop App:** The status bar shows a green dot and your site name when connected. Open Settings > About to confirm the plugin version.
+
+**CLI:**
 
 ```bash
 bricks site info
@@ -149,39 +159,10 @@ Site:       https://your-site.com
 Bricks:     1.11.1
 WordPress:  6.7.2
 PHP:        8.2.27
-Plugin:     1.2.0
+Plugin:     1.8.0
 ```
 
 If you get a connection error, double-check the URL (make sure it includes `https://`) and confirm the API key matches what's in your plugin settings.
-
-## 5. Install the GUI (optional)
-
-The desktop GUI is a Tauri app that manages AI coding agent sessions. Skip this if you only need the CLI.
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) 18 or higher
-- [Rust](https://www.rust-lang.org/tools/install) (required by Tauri)
-- At least one AI coding tool: [Claude Code](https://docs.anthropic.com/en/docs/claude-code), [Codex](https://github.com/openai/codex), or [OpenCode](https://github.com/opencode-ai/opencode)
-
-### Development mode
-
-```bash
-cd gui
-npm install
-npm run tauri dev
-```
-
-This launches the app with hot reload for development.
-
-### Build a standalone app
-
-```bash
-cd gui
-npm run tauri build
-```
-
-The compiled binary lands in `gui/src-tauri/target/release/bundle/`.
 
 ## Updating
 
