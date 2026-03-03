@@ -131,33 +131,52 @@ async function fetchByType(
       }));
     }
     case "color": {
-      const resp = await invoke<{ colorPalette: { color: string; slug: string }[] }>(
+      const resp = await invoke<{ colorPalette: { color: string; slug: string }[]; cssColors?: { slug: string; color: string; source: string }[] }>(
         "get_site_styles",
         { siteUrl, apiKey }
       );
-      const colors = resp.colorPalette ?? [];
-      return colors.map((c) => ({
-        id: c.slug,
-        label: c.slug,
-        sublabel: c.color,
-        data: c,
-      }));
+      const bricksColors = resp.colorPalette ?? [];
+      const cssColors = resp.cssColors ?? [];
+      const seen = new Set<string>();
+      const allColors: SearchResult[] = [];
+      for (const c of bricksColors) {
+        seen.add(c.slug);
+        allColors.push({ id: c.slug, label: c.slug, sublabel: c.color, data: c });
+      }
+      for (const c of cssColors) {
+        if (!seen.has(c.slug)) {
+          seen.add(c.slug);
+          allColors.push({ id: c.slug, label: c.slug, sublabel: c.color, data: c });
+        }
+      }
+      const filtered = query
+        ? allColors.filter((c) => c.label.toLowerCase().includes(query.toLowerCase()))
+        : allColors;
+      return filtered.slice(0, 30);
     }
     case "variable": {
-      const resp = await invoke<{ variables: { name: string; value: string }[] }>(
+      const resp = await invoke<{ variables: { name: string; value: string }[]; extractedFromCSS?: { name: string; value: string; source: string }[] }>(
         "get_site_variables",
         { siteUrl, apiKey }
       );
-      const vars = resp.variables ?? [];
+      const bricksVars = resp.variables ?? [];
+      const cssVars = resp.extractedFromCSS ?? [];
+      const seen = new Set<string>();
+      const allVars: SearchResult[] = [];
+      for (const v of bricksVars) {
+        seen.add(v.name);
+        allVars.push({ id: v.name, label: v.name, sublabel: v.value, data: v });
+      }
+      for (const v of cssVars) {
+        if (!seen.has(v.name)) {
+          seen.add(v.name);
+          allVars.push({ id: v.name, label: v.name, sublabel: v.value, data: v });
+        }
+      }
       const filtered = query
-        ? vars.filter((v) => v.name.toLowerCase().includes(query.toLowerCase()))
-        : vars;
-      return filtered.slice(0, 20).map((v) => ({
-        id: v.name,
-        label: v.name,
-        sublabel: v.value,
-        data: v,
-      }));
+        ? allVars.filter((v) => v.label.toLowerCase().includes(query.toLowerCase()))
+        : allVars;
+      return filtered.slice(0, 30);
     }
     case "component": {
       const resp = await invoke<{ components: { id: number; title: string; elementCount: number }[] }>(
