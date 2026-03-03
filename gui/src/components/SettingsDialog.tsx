@@ -101,6 +101,14 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
     setSaved(false);
   }, [open, site, prePrompt]);
 
+  // Auto-check for updates when About tab is opened
+  useEffect(() => {
+    if (open && tab === "about" && !updateStatus) {
+      checkForUpdates();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open, tab]);
+
   const handleTest = async () => {
     setTestStatus("testing");
     try {
