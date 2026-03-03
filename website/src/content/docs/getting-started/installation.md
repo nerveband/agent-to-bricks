@@ -41,14 +41,37 @@ The API key authenticates all requests from the CLI to your site. Keep it privat
 
 The Desktop App is a visual session manager for AI coding tools (Claude Code, Codex, etc.). Download the installer for your platform from the [latest release](https://github.com/nerveband/agent-to-bricks/releases/latest):
 
-| Platform | File | Notes |
-|----------|------|-------|
-| Mac (Apple Silicon) | `Agent.to.Bricks_X.X.X_aarch64.dmg` | Open the DMG and drag to Applications |
-| Mac (Intel) | `Agent.to.Bricks_X.X.X_x64.dmg` | Open the DMG and drag to Applications |
-| Windows | `Agent.to.Bricks_X.X.X_windows_x64-setup.exe` | Run the installer |
-| Windows (MSI) | `Agent.to.Bricks_X.X.X_windows_x64_en-US.msi` | Alternative installer format |
-| Linux (deb) | `Agent.to.Bricks_X.X.X_amd64.deb` | `sudo dpkg -i Agent.to.Bricks_*.deb` |
-| Linux (AppImage) | `Agent.to.Bricks_X.X.X_amd64.AppImage` | `chmod +x` and run directly |
+| Platform | File |
+|----------|------|
+| Mac (Apple Silicon) | `Agent.to.Bricks_X.X.X_aarch64.dmg` |
+| Mac (Intel) | `Agent.to.Bricks_X.X.X_x64.dmg` |
+| Windows | `Agent.to.Bricks_X.X.X_windows_x64-setup.exe` |
+| Windows (MSI) | `Agent.to.Bricks_X.X.X_windows_x64_en-US.msi` |
+| Linux (deb) | `Agent.to.Bricks_X.X.X_amd64.deb` |
+| Linux (AppImage) | `Agent.to.Bricks_X.X.X_amd64.AppImage` |
+
+### macOS
+
+1. Download the `.dmg` file for your chip (Apple Silicon = `aarch64`, Intel = `x64`)
+2. Open the DMG and drag **Agent to Bricks** into your Applications folder
+3. On first launch, macOS may show a Gatekeeper warning — right-click the app and choose **Open** to bypass it
+
+### Windows
+
+1. Download the `.exe` installer (or `.msi` for enterprise deployment)
+2. Run the installer — it installs to `C:\Program Files\Agent to Bricks\`
+3. Launch from the Start Menu
+
+### Linux
+
+```bash
+# Debian/Ubuntu
+sudo dpkg -i Agent.to.Bricks_*.deb
+
+# Or use the AppImage (no install needed)
+chmod +x Agent.to.Bricks_*.AppImage
+./Agent.to.Bricks_*.AppImage
+```
 
 The app checks for updates automatically. You do not need the CLI installed to use the Desktop App — it connects directly to the plugin REST API.
 
