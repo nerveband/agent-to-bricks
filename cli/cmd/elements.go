@@ -6,6 +6,7 @@ import (
 	"os"
 	"text/tabwriter"
 
+	"github.com/nerveband/agent-to-bricks/internal/output"
 	"github.com/spf13/cobra"
 )
 
@@ -17,7 +18,6 @@ var elementsCmd = &cobra.Command{
 var (
 	elemTypesControls bool
 	elemTypesCategory string
-	elemTypesJSON     bool
 )
 
 var elemTypesCmd = &cobra.Command{
@@ -31,6 +31,7 @@ Examples:
   bricks elements types --controls
   bricks elements types heading --controls`,
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		if err := requireConfig(); err != nil {
 			return err
 		}
@@ -50,10 +51,8 @@ Examples:
 		if singleName != "" {
 			for _, et := range resp.ElementTypes {
 				if et.Name == singleName {
-					if elemTypesJSON {
-						enc := json.NewEncoder(os.Stdout)
-						enc.SetIndent("", "  ")
-						return enc.Encode(et)
+					if output.IsJSON() {
+						return output.JSON(et)
 					}
 					fmt.Printf("Name:     %s\n", et.Name)
 					fmt.Printf("Label:    %s\n", et.Label)
@@ -69,10 +68,8 @@ Examples:
 			return fmt.Errorf("element type '%s' not found", singleName)
 		}
 
-		if elemTypesJSON {
-			enc := json.NewEncoder(os.Stdout)
-			enc.SetIndent("", "  ")
-			return enc.Encode(resp)
+		if output.IsJSON() {
+			return output.JSON(resp)
 		}
 
 		if resp.Count == 0 {
@@ -94,7 +91,7 @@ Examples:
 func init() {
 	elemTypesCmd.Flags().BoolVar(&elemTypesControls, "controls", false, "include element controls schema")
 	elemTypesCmd.Flags().StringVar(&elemTypesCategory, "category", "", "filter by category")
-	elemTypesCmd.Flags().BoolVar(&elemTypesJSON, "json", false, "output as JSON")
+	output.AddFormatFlags(elemTypesCmd)
 
 	elementsCmd.AddCommand(elemTypesCmd)
 	rootCmd.AddCommand(elementsCmd)

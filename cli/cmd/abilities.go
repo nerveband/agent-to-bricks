@@ -8,6 +8,7 @@ import (
 	"strings"
 	"text/tabwriter"
 
+	"github.com/nerveband/agent-to-bricks/internal/output"
 	"github.com/spf13/cobra"
 )
 
@@ -34,13 +35,13 @@ Examples:
   bricks abilities list --category agent-bricks-pages  # Filter by category
   bricks abilities list --json                    # JSON output`,
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		if err := requireConfig(); err != nil {
 			return err
 		}
 		c := newSiteClient()
 
 		category, _ := cmd.Flags().GetString("category")
-		jsonOut, _ := cmd.Flags().GetBool("json")
 
 		abilities, err := c.GetAbilities(category)
 		if err != nil {
@@ -52,10 +53,8 @@ Examples:
 			return nil
 		}
 
-		if jsonOut {
-			enc := json.NewEncoder(os.Stdout)
-			enc.SetIndent("", "  ")
-			return enc.Encode(abilities)
+		if output.IsJSON() {
+			return output.JSON(abilities)
 		}
 
 		// Group by category
@@ -188,7 +187,7 @@ var abilitiesCategoriesCmd = &cobra.Command{
 
 func init() {
 	abilitiesListCmd.Flags().String("category", "", "filter by category slug")
-	abilitiesListCmd.Flags().Bool("json", false, "output as JSON")
+	output.AddFormatFlags(abilitiesListCmd)
 
 	abilitiesCmd.AddCommand(abilitiesListCmd)
 	abilitiesCmd.AddCommand(abilitiesDescribeCmd)

@@ -1,12 +1,12 @@
 package cmd
 
 import (
-	"encoding/json"
 	"fmt"
 	"os"
 	"text/tabwriter"
 
 	"github.com/nerveband/agent-to-bricks/internal/client"
+	"github.com/nerveband/agent-to-bricks/internal/output"
 	"github.com/spf13/cobra"
 )
 
@@ -20,7 +20,6 @@ var (
 	searchSetting  string
 	searchClass    string
 	searchPostType string
-	searchJSON     bool
 	searchLimit    int
 )
 
@@ -35,6 +34,7 @@ Examples:
   bricks search elements --class btn--primary
   bricks search elements --type button --post-type page`,
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		if err := requireConfig(); err != nil {
 			return err
 		}
@@ -63,10 +63,8 @@ Examples:
 			return fmt.Errorf("search failed: %w", err)
 		}
 
-		if searchJSON {
-			enc := json.NewEncoder(os.Stdout)
-			enc.SetIndent("", "  ")
-			return enc.Encode(resp)
+		if output.IsJSON() {
+			return output.JSON(resp)
 		}
 
 		if len(resp.Results) == 0 {
@@ -104,7 +102,7 @@ func init() {
 	searchElementsCmd.Flags().StringVar(&searchSetting, "setting", "", "setting filter as key=value")
 	searchElementsCmd.Flags().StringVar(&searchClass, "class", "", "global class name or ID")
 	searchElementsCmd.Flags().StringVar(&searchPostType, "post-type", "", "post type filter")
-	searchElementsCmd.Flags().BoolVar(&searchJSON, "json", false, "output as JSON")
+	output.AddFormatFlags(searchElementsCmd)
 	searchElementsCmd.Flags().IntVar(&searchLimit, "limit", 0, "max results")
 
 	searchCmd.AddCommand(searchElementsCmd)

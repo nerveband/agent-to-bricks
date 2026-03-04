@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/nerveband/agent-to-bricks/internal/output"
 	"github.com/spf13/cobra"
 )
 
@@ -17,6 +18,7 @@ var classesListCmd = &cobra.Command{
 	Use:   "list",
 	Short: "List all global classes",
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		if err := requireConfig(); err != nil {
 			return err
 		}
@@ -28,11 +30,8 @@ var classesListCmd = &cobra.Command{
 			return fmt.Errorf("failed to list classes: %w", err)
 		}
 
-		jsonOut, _ := cmd.Flags().GetBool("json")
-		if jsonOut {
-			data, _ := json.MarshalIndent(resp, "", "  ")
-			fmt.Println(string(data))
-			return nil
+		if output.IsJSON() {
+			return output.JSON(resp)
 		}
 
 		fmt.Printf("Global Classes (%d of %d total)\n\n", resp.Count, resp.Total)
@@ -175,7 +174,7 @@ func matchWildcard(pattern, s string) bool {
 
 func init() {
 	classesListCmd.Flags().String("framework", "", "filter by framework (acss, custom)")
-	classesListCmd.Flags().Bool("json", false, "output as JSON")
+	output.AddFormatFlags(classesListCmd)
 	classesCreateCmd.Flags().String("settings", "", "class settings as JSON")
 
 	classesCmd.AddCommand(classesListCmd)
