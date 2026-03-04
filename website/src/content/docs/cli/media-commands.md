@@ -91,6 +91,8 @@ The search matches against filenames and titles in the media library.
 | Flag | Description |
 |------|-------------|
 | `--search "<query>"` | Filter media by filename or title |
+| `--format json` | Output as JSON |
+| `--json` | Shorthand for `--format json` |
 
 ## Practical uses
 

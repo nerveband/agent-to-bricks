@@ -11,7 +11,10 @@ Run a health check on a page's Bricks elements.
 
 ```bash
 bricks doctor <page-id>
+bricks doctor <page-id> --format json
 ```
+
+Both commands support `--format json` for machine-readable output.
 
 ### Example
 

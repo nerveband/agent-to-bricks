@@ -76,6 +76,7 @@ The Desktop App checks for updates automatically on launch.
 
 ## Key Features
 
+- **Machine-Readable CLI** — `bricks schema` outputs a JSON manifest of all commands. Structured error codes, `--format json` on every command, and stdin pipelines make the CLI fully automatable by AI agents.
 - **WordPress Abilities API** — Auto-discovers plugin abilities (Yoast, WooCommerce, Gravity Forms, etc.) and includes them in AI prompts. Requires WordPress 6.9+.
 - **CSS Framework Support** — Scans ACSS, Cwicly, and theme CSS files for custom properties. Colors and variables appear in `@color` and `@variable` autocomplete.
 - **Page-Specific @mentions** — `@element` and `@section` use a two-step flow: pick a page, then browse elements within it.

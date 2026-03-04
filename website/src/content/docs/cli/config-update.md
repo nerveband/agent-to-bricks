@@ -184,6 +184,26 @@ v0.8.2 (2026-02-10)
 ...
 ```
 
+## Schema manifest
+
+Output a JSON manifest describing every CLI command, its flags, arguments, stdin support, and error codes. Designed for AI agents and tools that need to discover what the CLI can do.
+
+```bash
+bricks schema
+```
+
+The output is a static `schema.json` bundled with the CLI binary.
+
+### Validate
+
+Check that the schema file is in sync with the actual command tree:
+
+```bash
+bricks schema --validate
+```
+
+This runs in CI to catch drift between the schema and the code.
+
 ## Verify your connection
 
 After configuring, run `bricks site info` to make sure everything works:

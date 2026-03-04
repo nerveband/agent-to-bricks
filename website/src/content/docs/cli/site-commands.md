@@ -11,6 +11,7 @@ Check your connection and see what's running on the other end.
 
 ```bash
 bricks site info
+bricks site info --format json
 ```
 
 ```
@@ -60,17 +61,35 @@ The output includes a `contentHash` field at the top level. You'll need this has
 Replace all elements on a page with the contents of a JSON file. This is a full replacement, not a merge.
 
 ```bash
-bricks site push <page-id> <file.json>
+bricks site push <page-id> [file.json]
 ```
 
-The JSON file must include the `contentHash` from a recent pull. If the page has changed since you pulled it, the push will fail with a conflict error. Pull again, re-apply your changes, and try the push again.
+The JSON must include the `contentHash` from a recent pull. If the page has changed since you pulled it, the push will fail with a conflict error. Pull again, re-apply your changes, and try the push again.
 
-### Example
+The file argument is optional — if omitted, the command reads JSON from stdin.
+
+### Flags
+
+| Flag | Description |
+|------|-------------|
+| `--format json` | Output result as JSON |
+| `--json` | Shorthand for `--format json` |
+
+### Examples
+
+Push from a file:
 
 ```bash
 bricks site pull 1460 -o homepage.json
 # ... edit homepage.json ...
 bricks site push 1460 homepage.json
+```
+
+Push from stdin (pipe from another command):
+
+```bash
+cat homepage.json | bricks site push 1460
+bricks convert html --stdin | bricks site push 1460
 ```
 
 ```
@@ -82,18 +101,20 @@ Pushed 24 elements to page 1460
 Update individual elements without replacing the entire page. Useful when you want to change a headline or swap out an image without touching anything else.
 
 ```bash
-bricks site patch <page-id> -f <patch.json>
+bricks site patch <page-id> [-f <patch.json>]
 ```
 
 ### Flags
 
 | Flag | Description |
 |------|-------------|
-| `-f <file>` | Path to the patch JSON file |
+| `-f <file>` | Path to the patch JSON file (reads from stdin if omitted) |
+| `--format json` | Output result as JSON |
+| `--json` | Shorthand for `--format json` |
 
-### Example
+### Examples
 
-Change just the hero headline:
+Patch from a file:
 
 ```json
 [
@@ -108,6 +129,12 @@ Change just the hero headline:
 
 ```bash
 bricks site patch 1460 -f headline-fix.json
+```
+
+Patch from stdin:
+
+```bash
+echo '[{"id":"abc123","settings":{"text":"Updated"}}]' | bricks site patch 1460
 ```
 
 ```

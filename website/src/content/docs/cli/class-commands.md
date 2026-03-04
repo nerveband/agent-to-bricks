@@ -26,7 +26,8 @@ custom_card_shadow              card-shadow        custom      box-shadow: 0 4px
 | Flag | Description |
 |------|-------------|
 | `--framework <name>` | Filter by framework: `acss`, `frames`, `custom` |
-| `--json` | Output as JSON |
+| `--format json` | Output as JSON |
+| `--json` | Shorthand for `--format json` |
 
 ### Filter by framework
 
@@ -81,6 +82,12 @@ Add a new global class to your site.
 
 ```bash
 bricks classes create <name>
+```
+
+You can also pipe a JSON object via stdin to create a class with settings:
+
+```bash
+echo '{"name":"btn-cta","settings":{"_cssGlobalPadding":"16px 32px"}}' | bricks classes create
 ```
 
 ### Example
