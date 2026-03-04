@@ -2,6 +2,7 @@ package errors
 
 import (
 	"encoding/json"
+	stderrors "errors"
 	"testing"
 )
 
@@ -76,6 +77,17 @@ func TestCLIErrorJSONOmitsEmptyHint(t *testing.T) {
 	json.Unmarshal(data, &m)
 	if _, ok := m["hint"]; ok {
 		t.Error("empty hint should be omitted from JSON")
+	}
+}
+
+func TestCLIErrorUnwrap(t *testing.T) {
+	var err error = ConfigError("CONFIG_MISSING_URL", "site URL not configured", "Run: bricks config init")
+	var cliErr *CLIError
+	if !stderrors.As(err, &cliErr) {
+		t.Error("expected errors.As to find CLIError")
+	}
+	if cliErr.Exit != 2 {
+		t.Errorf("expected exit 2, got %d", cliErr.Exit)
 	}
 }
 
