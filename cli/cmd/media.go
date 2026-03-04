@@ -2,9 +2,10 @@ package cmd
 
 import (
 	"fmt"
-	"text/tabwriter"
 	"os"
+	"text/tabwriter"
 
+	"github.com/nerveband/agent-to-bricks/internal/output"
 	"github.com/spf13/cobra"
 )
 
@@ -16,8 +17,11 @@ var mediaCmd = &cobra.Command{
 var mediaUploadCmd = &cobra.Command{
 	Use:   "upload <file>",
 	Short: "Upload a file to the WordPress media library",
-	Args:  cobra.ExactArgs(1),
+	Example: `  bricks media upload hero.jpg
+  bricks media upload ./assets/banner.png --format json`,
+	Args: cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		if err := requireConfig(); err != nil {
 			return err
 		}
@@ -25,6 +29,9 @@ var mediaUploadCmd = &cobra.Command{
 		resp, err := c.UploadMedia(args[0])
 		if err != nil {
 			return fmt.Errorf("upload failed: %w", err)
+		}
+		if output.IsJSON() {
+			return output.JSON(resp)
 		}
 		fmt.Printf("ID:       %d\n", resp.ID)
 		fmt.Printf("URL:      %s\n", resp.URL)
@@ -40,7 +47,10 @@ var mediaListSearch string
 var mediaListCmd = &cobra.Command{
 	Use:   "list",
 	Short: "List media library items",
+	Example: `  bricks media list
+  bricks media list --search "hero" --format json`,
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		if err := requireConfig(); err != nil {
 			return err
 		}
@@ -48,6 +58,9 @@ var mediaListCmd = &cobra.Command{
 		resp, err := c.ListMedia(mediaListSearch)
 		if err != nil {
 			return fmt.Errorf("list failed: %w", err)
+		}
+		if output.IsJSON() {
+			return output.JSON(resp)
 		}
 		if resp.Count == 0 {
 			fmt.Println("No media items found.")
@@ -66,6 +79,8 @@ var mediaListCmd = &cobra.Command{
 
 func init() {
 	mediaListCmd.Flags().StringVarP(&mediaListSearch, "search", "s", "", "search term")
+	output.AddFormatFlags(mediaUploadCmd)
+	output.AddFormatFlags(mediaListCmd)
 
 	mediaCmd.AddCommand(mediaUploadCmd)
 	mediaCmd.AddCommand(mediaListCmd)

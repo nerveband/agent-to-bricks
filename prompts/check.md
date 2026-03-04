@@ -10,7 +10,8 @@ Run all CI checks, a docs/content audit, and cross-link verification. Do these s
 1. Run `make check-version` to verify version consistency
 2. Run `make test` for CLI tests
 3. Run `make lint` for Go vet/lint
-4. Run `cd gui && npx tsc --noEmit` for GUI type check
+4. Run `cd cli && go run . schema --validate` to verify schema.json is in sync with commands
+5. Run `cd gui && npx tsc --noEmit` for GUI type check
 5. Run PHP lint on plugin files: `find plugin -name "*.php" -exec php -l {} \;`
 6. Run `cd website && npm run build` to verify website builds
 
@@ -20,6 +21,8 @@ Run all CI checks, a docs/content audit, and cross-link verification. Do these s
 **Docs & content audit:**
 8. Check `git diff --name-only HEAD~5` to see what changed recently
 9. For any CLI, GUI, or plugin changes: check if the matching docs in `website/src/content/docs/` need updating (new commands, changed flags, new features, changed behavior, removed features)
+   - For any new CLI commands or flags: verify they appear in `cli/schema.json`
+   - For any error handling changes: verify structured error codes are used (not bare `fmt.Errorf` in commands)
 10. Check if the homepage sections in `website/src/components/home/` reference outdated features or are missing new ones
 11. Check if `README.md` changelog/feature list reflects recent changes
 

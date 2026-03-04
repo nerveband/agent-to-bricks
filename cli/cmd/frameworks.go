@@ -5,6 +5,7 @@ import (
 	"strings"
 
 	"github.com/nerveband/agent-to-bricks/internal/framework"
+	"github.com/nerveband/agent-to-bricks/internal/output"
 	"github.com/spf13/cobra"
 )
 
@@ -17,9 +18,18 @@ var frameworksListCmd = &cobra.Command{
 	Use:   "list",
 	Short: "List loaded CSS framework configs",
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		reg, err := framework.NewRegistry()
 		if err != nil {
 			return err
+		}
+
+		if output.IsJSON() {
+			fws := make(map[string]interface{})
+			for _, id := range reg.List() {
+				fws[id] = reg.Get(id)
+			}
+			return output.JSON(fws)
 		}
 
 		for _, id := range reg.List() {
@@ -57,6 +67,7 @@ var frameworksShowCmd = &cobra.Command{
 	Short: "Show detailed framework configuration",
 	Args:  cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		reg, err := framework.NewRegistry()
 		if err != nil {
 			return err
@@ -65,6 +76,10 @@ var frameworksShowCmd = &cobra.Command{
 		fw := reg.Get(args[0])
 		if fw == nil {
 			return fmt.Errorf("framework '%s' not found", args[0])
+		}
+
+		if output.IsJSON() {
+			return output.JSON(fw)
 		}
 
 		fmt.Printf("%s (%s) v%s\n", fw.Name, fw.ID, fw.Version)
@@ -107,6 +122,8 @@ var frameworksShowCmd = &cobra.Command{
 }
 
 func init() {
+	output.AddFormatFlags(frameworksListCmd)
+	output.AddFormatFlags(frameworksShowCmd)
 	frameworksCmd.AddCommand(frameworksListCmd)
 	frameworksCmd.AddCommand(frameworksShowCmd)
 	rootCmd.AddCommand(frameworksCmd)

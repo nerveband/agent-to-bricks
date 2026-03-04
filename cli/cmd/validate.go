@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/nerveband/agent-to-bricks/internal/output"
 	"github.com/nerveband/agent-to-bricks/internal/validator"
 	"github.com/spf13/cobra"
 )
@@ -14,6 +15,7 @@ var validateCmd = &cobra.Command{
 	Short: "Validate Bricks element JSON",
 	Args:  cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		data, err := os.ReadFile(args[0])
 		if err != nil {
 			return fmt.Errorf("failed to read file: %w", err)
@@ -25,6 +27,10 @@ var validateCmd = &cobra.Command{
 		}
 
 		result := validator.ValidateFile(parsed)
+
+		if output.IsJSON() {
+			return output.JSON(result)
+		}
 
 		if len(result.Errors) > 0 {
 			fmt.Println("Errors:")
@@ -50,5 +56,6 @@ var validateCmd = &cobra.Command{
 }
 
 func init() {
+	output.AddFormatFlags(validateCmd)
 	rootCmd.AddCommand(validateCmd)
 }

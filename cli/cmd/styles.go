@@ -1,10 +1,10 @@
 package cmd
 
 import (
-	"encoding/json"
 	"fmt"
 	"strconv"
 
+	"github.com/nerveband/agent-to-bricks/internal/output"
 	"github.com/nerveband/agent-to-bricks/internal/styles"
 	"github.com/spf13/cobra"
 )
@@ -17,7 +17,9 @@ var stylesCmd = &cobra.Command{
 var stylesLearnCmd = &cobra.Command{
 	Use:   "learn <page-id> [page-id...]",
 	Short: "Analyze pages to build a style profile",
-	Args:  cobra.MinimumNArgs(1),
+	Example: `  bricks styles learn 1234
+  bricks styles learn 1234 5678 9012`,
+	Args: cobra.MinimumNArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		if err := requireConfig(); err != nil {
 			return err
@@ -114,6 +116,7 @@ var stylesColorsCmd = &cobra.Command{
 	Use:   "colors",
 	Short: "Show color palette from the live site",
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		if err := requireConfig(); err != nil {
 			return err
 		}
@@ -124,15 +127,11 @@ var stylesColorsCmd = &cobra.Command{
 			return fmt.Errorf("failed to get styles: %w", err)
 		}
 
-		jsonOut, _ := cmd.Flags().GetBool("json")
-		if jsonOut {
-			combined := map[string]interface{}{
+		if output.IsJSON() {
+			return output.JSON(map[string]interface{}{
 				"colorPalette": resp.ColorPalette,
 				"cssColors":    resp.CSSColors,
-			}
-			data, _ := json.MarshalIndent(combined, "", "  ")
-			fmt.Println(string(data))
-			return nil
+			})
 		}
 
 		palette, ok := resp.ColorPalette.([]interface{})
@@ -184,6 +183,7 @@ var stylesVariablesCmd = &cobra.Command{
 	Use:   "variables",
 	Short: "Show CSS custom properties from the live site",
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		if err := requireConfig(); err != nil {
 			return err
 		}
@@ -194,11 +194,8 @@ var stylesVariablesCmd = &cobra.Command{
 			return fmt.Errorf("failed to get variables: %w", err)
 		}
 
-		jsonOut, _ := cmd.Flags().GetBool("json")
-		if jsonOut {
-			data, _ := json.MarshalIndent(resp, "", "  ")
-			fmt.Println(string(data))
-			return nil
+		if output.IsJSON() {
+			return output.JSON(resp)
 		}
 
 		if len(resp.Variables) > 0 {
@@ -232,6 +229,7 @@ var stylesThemeCmd = &cobra.Command{
 	Use:   "theme",
 	Short: "Show theme styles from the live site",
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		if err := requireConfig(); err != nil {
 			return err
 		}
@@ -242,11 +240,8 @@ var stylesThemeCmd = &cobra.Command{
 			return fmt.Errorf("failed to get styles: %w", err)
 		}
 
-		jsonOut, _ := cmd.Flags().GetBool("json")
-		if jsonOut {
-			data, _ := json.MarshalIndent(resp.ThemeStyles, "", "  ")
-			fmt.Println(string(data))
-			return nil
+		if output.IsJSON() {
+			return output.JSON(resp.ThemeStyles)
 		}
 
 		if len(resp.ThemeStyles) == 0 {
@@ -285,9 +280,9 @@ func topFromMap(m map[string]int, limit int) []styles.RankedItem {
 
 func init() {
 	stylesShowCmd.Flags().Int("limit", 10, "number of items to display")
-	stylesColorsCmd.Flags().Bool("json", false, "output as JSON")
-	stylesVariablesCmd.Flags().Bool("json", false, "output as JSON")
-	stylesThemeCmd.Flags().Bool("json", false, "output as JSON")
+	output.AddFormatFlags(stylesColorsCmd)
+	output.AddFormatFlags(stylesVariablesCmd)
+	output.AddFormatFlags(stylesThemeCmd)
 
 	stylesCmd.AddCommand(stylesLearnCmd)
 	stylesCmd.AddCommand(stylesShowCmd)

@@ -6,6 +6,7 @@ import (
 	"os"
 	"text/tabwriter"
 
+	"github.com/nerveband/agent-to-bricks/internal/output"
 	"github.com/spf13/cobra"
 )
 
@@ -14,12 +15,11 @@ var componentsCmd = &cobra.Command{
 	Short: "Manage reusable Bricks components",
 }
 
-var componentsJSON bool
-
 var componentsListCmd = &cobra.Command{
 	Use:   "list",
 	Short: "List reusable components (section templates)",
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		if err := requireConfig(); err != nil {
 			return err
 		}
@@ -29,10 +29,8 @@ var componentsListCmd = &cobra.Command{
 			return fmt.Errorf("list failed: %w", err)
 		}
 
-		if componentsJSON {
-			enc := json.NewEncoder(os.Stdout)
-			enc.SetIndent("", "  ")
-			return enc.Encode(resp)
+		if output.IsJSON() {
+			return output.JSON(resp)
 		}
 
 		if resp.Count == 0 {
@@ -57,6 +55,7 @@ var componentsShowCmd = &cobra.Command{
 	Short: "Show a component with its element tree",
 	Args:  cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		if err := requireConfig(); err != nil {
 			return err
 		}
@@ -70,10 +69,8 @@ var componentsShowCmd = &cobra.Command{
 			return fmt.Errorf("get component failed: %w", err)
 		}
 
-		if componentsJSON {
-			enc := json.NewEncoder(os.Stdout)
-			enc.SetIndent("", "  ")
-			return enc.Encode(resp)
+		if output.IsJSON() {
+			return output.JSON(resp)
 		}
 
 		fmt.Printf("Component: %s (ID: %d)\n", resp.Title, resp.ID)
@@ -88,8 +85,8 @@ var componentsShowCmd = &cobra.Command{
 }
 
 func init() {
-	componentsListCmd.Flags().BoolVar(&componentsJSON, "json", false, "output as JSON")
-	componentsShowCmd.Flags().BoolVar(&componentsJSON, "json", false, "output as JSON")
+	output.AddFormatFlags(componentsListCmd)
+	output.AddFormatFlags(componentsShowCmd)
 
 	componentsCmd.AddCommand(componentsListCmd)
 	componentsCmd.AddCommand(componentsShowCmd)

@@ -11,6 +11,8 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+
+	clierrors "github.com/nerveband/agent-to-bricks/internal/errors"
 )
 
 // Client talks to the Agent to Bricks REST API.
@@ -107,7 +109,7 @@ func (c *Client) doWithHeaders(method, path string, body io.Reader, headers map[
 	if resp.StatusCode >= 400 {
 		defer resp.Body.Close()
 		data, _ := io.ReadAll(resp.Body)
-		return nil, fmt.Errorf("HTTP %d: %s", resp.StatusCode, string(data))
+		return nil, clierrors.FromHTTPStatus(resp.StatusCode, string(data))
 	}
 	return resp, nil
 }

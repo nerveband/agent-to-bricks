@@ -5,6 +5,7 @@ import (
 	"strconv"
 
 	"github.com/nerveband/agent-to-bricks/internal/doctor"
+	"github.com/nerveband/agent-to-bricks/internal/output"
 	"github.com/spf13/cobra"
 )
 
@@ -13,6 +14,7 @@ var doctorCmd = &cobra.Command{
 	Short: "Run health checks on a Bricks page",
 	Args:  cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		if err := requireConfig(); err != nil {
 			return err
 		}
@@ -28,9 +30,13 @@ var doctorCmd = &cobra.Command{
 			return fmt.Errorf("failed to pull elements: %w", err)
 		}
 
-		fmt.Printf("Checking page %d (%d elements)...\n\n", pageID, resp.Count)
-
 		report := doctor.Check(resp.Elements)
+
+		if output.IsJSON() {
+			return output.JSON(report)
+		}
+
+		fmt.Printf("Checking page %d (%d elements)...\n\n", pageID, resp.Count)
 
 		if len(report.Issues) == 0 {
 			fmt.Println("No issues found. Page is healthy!")
@@ -65,5 +71,6 @@ var doctorCmd = &cobra.Command{
 }
 
 func init() {
+	output.AddFormatFlags(doctorCmd)
 	rootCmd.AddCommand(doctorCmd)
 }

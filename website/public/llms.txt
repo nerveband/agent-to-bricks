@@ -1,0 +1,43 @@
+# Agent to Bricks
+
+> AI-powered CLI and WordPress plugin for building Bricks Builder pages programmatically.
+
+## What This Tool Does
+
+Agent to Bricks lets AI agents (Claude, GPT, etc.) create and manage Bricks Builder pages on WordPress sites. It converts HTML to Bricks JSON, manages global CSS classes, handles templates, and supports the WordPress Abilities API.
+
+## CLI Quick Start
+
+Install: download from https://github.com/nerveband/agent-to-bricks/releases
+Configure: `bricks config init` (sets site URL + API key)
+Discover capabilities: `bricks schema` (outputs full JSON manifest of all commands)
+Get site context for LLM: `bricks agent context --format json`
+
+## Key Commands
+
+- `bricks agent context --format json` — Structured site context for LLM consumption
+- `bricks agent context --format prompt` — Complete LLM system prompt with design rules
+- `bricks convert html --stdin --push <page-id>` — Pipe HTML, get Bricks JSON, push to page
+- `bricks site pull <page-id>` — Pull page elements as JSON
+- `bricks site push <page-id> <file.json>` — Push elements to page (accepts stdin)
+- `bricks classes list --format json` — List all global CSS classes
+- `bricks abilities list --format json` — Discover WordPress Abilities with JSON schemas
+- `bricks schema` — Full CLI capability manifest as JSON
+
+## Machine-Readable Interfaces
+
+- CLI schema manifest: `bricks schema` (JSON with all commands, flags, types, error codes)
+- Structured errors: Use `--format json` on any command for machine-parseable error responses
+- All commands support `--format json` for structured output
+- stdin support on: `convert html`, `site push`, `site patch`, `classes create`
+
+## Authentication
+
+Uses `X-ATB-Key` custom header. API key stored in `~/.agent-to-bricks/config.yaml`.
+
+## Documentation
+
+- Full docs: https://agenttobricks.com
+- CLI reference: https://agenttobricks.com/cli/
+- REST API: https://agenttobricks.com/plugin/rest-api/
+- GitHub: https://github.com/nerveband/agent-to-bricks

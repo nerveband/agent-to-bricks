@@ -8,6 +8,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/nerveband/agent-to-bricks/internal/output"
 	"github.com/nerveband/agent-to-bricks/internal/updater"
 	"github.com/spf13/cobra"
 )
@@ -18,8 +19,16 @@ var versionCmd = &cobra.Command{
 	Use:   "version",
 	Short: "Show CLI and plugin versions",
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		if versionChangelog {
 			return showChangelog()
+		}
+		if output.IsJSON() {
+			return output.JSON(map[string]string{
+				"cli":    cliVersion,
+				"commit": cliCommit,
+				"date":   cliDate,
+			})
 		}
 		return showVersion()
 	},
@@ -105,5 +114,6 @@ func showChangelog() error {
 
 func init() {
 	versionCmd.Flags().BoolVar(&versionChangelog, "changelog", false, "show changelog from GitHub Releases")
+	output.AddFormatFlags(versionCmd)
 	rootCmd.AddCommand(versionCmd)
 }

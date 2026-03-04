@@ -1,12 +1,15 @@
 package cmd
 
 import (
+	stderrors "errors"
 	"fmt"
 	"os"
 	"strings"
 
 	"github.com/nerveband/agent-to-bricks/internal/client"
 	"github.com/nerveband/agent-to-bricks/internal/config"
+	clierrors "github.com/nerveband/agent-to-bricks/internal/errors"
+	"github.com/nerveband/agent-to-bricks/internal/output"
 	"github.com/nerveband/agent-to-bricks/internal/updater"
 	"github.com/spf13/cobra"
 )
@@ -35,6 +38,13 @@ func SetVersion(version, commit, date string) {
 
 func Execute() {
 	if err := rootCmd.Execute(); err != nil {
+		var cliErr *clierrors.CLIError
+		if stderrors.As(err, &cliErr) {
+			if output.IsJSON() {
+				output.JSONError(cliErr)
+			}
+			os.Exit(cliErr.Exit)
+		}
 		os.Exit(1)
 	}
 }
@@ -100,10 +110,10 @@ func newSiteClient() *client.Client {
 
 func requireConfig() error {
 	if cfg.Site.URL == "" {
-		return fmt.Errorf("site URL not configured. Run: bricks config init")
+		return clierrors.ConfigError("CONFIG_MISSING_URL", "site URL not configured", "Run: bricks config init")
 	}
 	if cfg.Site.APIKey == "" {
-		return fmt.Errorf("API key not configured. Run: bricks config set site.api_key <key>")
+		return clierrors.ConfigError("CONFIG_MISSING_KEY", "API key not configured", "Run: bricks config set site.api_key <key>")
 	}
 	return nil
 }

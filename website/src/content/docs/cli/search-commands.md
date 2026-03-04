@@ -22,7 +22,8 @@ At least one search filter is required. You can combine multiple filters to narr
 | `--setting <key=value>` | Filter by a specific setting and value |
 | `--post-type <type>` | Limit to a post type: page, template, etc. |
 | `--limit <N>` | Maximum number of results to return |
-| `--json` | Output as JSON instead of the default table |
+| `--format json` | Output as JSON instead of the default table |
+| `--json` | Shorthand for `--format json` |
 
 ## Find by element type
 

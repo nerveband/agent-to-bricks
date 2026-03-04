@@ -3,8 +3,12 @@ package cmd
 import (
 	"encoding/json"
 	"fmt"
+	"io"
+	"os"
 	"strings"
 
+	clierrors "github.com/nerveband/agent-to-bricks/internal/errors"
+	"github.com/nerveband/agent-to-bricks/internal/output"
 	"github.com/spf13/cobra"
 )
 
@@ -17,6 +21,7 @@ var classesListCmd = &cobra.Command{
 	Use:   "list",
 	Short: "List all global classes",
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		if err := requireConfig(); err != nil {
 			return err
 		}
@@ -28,11 +33,8 @@ var classesListCmd = &cobra.Command{
 			return fmt.Errorf("failed to list classes: %w", err)
 		}
 
-		jsonOut, _ := cmd.Flags().GetBool("json")
-		if jsonOut {
-			data, _ := json.MarshalIndent(resp, "", "  ")
-			fmt.Println(string(data))
-			return nil
+		if output.IsJSON() {
+			return output.JSON(resp)
 		}
 
 		fmt.Printf("Global Classes (%d of %d total)\n\n", resp.Count, resp.Total)
@@ -51,28 +53,59 @@ var classesListCmd = &cobra.Command{
 }
 
 var classesCreateCmd = &cobra.Command{
-	Use:   "create <name>",
-	Short: "Create a new global class",
-	Args:  cobra.ExactArgs(1),
+	Use:   "create [name]",
+	Short: "Create a new global class (accepts name arg or JSON from stdin)",
+	Example: `  bricks classes create btn--cta --settings '{"backgroundColor":"var(--primary)"}'
+  echo '{"name":"btn--cta","settings":{"backgroundColor":"var(--primary)"}}' | bricks classes create`,
+	Args: cobra.MaximumNArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		if err := requireConfig(); err != nil {
 			return err
 		}
 		c := newSiteClient()
 
+		var name string
 		var settings map[string]interface{}
-		settingsStr, _ := cmd.Flags().GetString("settings")
-		if settingsStr != "" {
-			if err := json.Unmarshal([]byte(settingsStr), &settings); err != nil {
-				return fmt.Errorf("invalid settings JSON: %w", err)
+
+		if len(args) > 0 {
+			name = args[0]
+			settingsStr, _ := cmd.Flags().GetString("settings")
+			if settingsStr != "" {
+				if err := json.Unmarshal([]byte(settingsStr), &settings); err != nil {
+					return fmt.Errorf("invalid settings JSON: %w", err)
+				}
+			}
+		} else {
+			// Read JSON from stdin
+			data, err := io.ReadAll(os.Stdin)
+			if err != nil {
+				return clierrors.ValidationError("INVALID_INPUT", "failed to read from stdin")
+			}
+			var payload map[string]interface{}
+			if err := json.Unmarshal(data, &payload); err != nil {
+				return clierrors.ValidationError("INVALID_JSON", "invalid JSON input")
+			}
+			if n, ok := payload["name"].(string); ok {
+				name = n
+			}
+			if s, ok := payload["settings"].(map[string]interface{}); ok {
+				settings = s
 			}
 		}
 
-		result, err := c.CreateClass(args[0], settings)
+		if name == "" {
+			return clierrors.ValidationError("MISSING_NAME", "class name is required")
+		}
+
+		result, err := c.CreateClass(name, settings)
 		if err != nil {
 			return fmt.Errorf("failed to create class: %w", err)
 		}
 
+		if output.IsJSON() {
+			return output.JSON(result)
+		}
 		data, _ := json.MarshalIndent(result, "", "  ")
 		fmt.Println(string(data))
 		return nil
@@ -175,7 +208,7 @@ func matchWildcard(pattern, s string) bool {
 
 func init() {
 	classesListCmd.Flags().String("framework", "", "filter by framework (acss, custom)")
-	classesListCmd.Flags().Bool("json", false, "output as JSON")
+	output.AddFormatFlags(classesListCmd)
 	classesCreateCmd.Flags().String("settings", "", "class settings as JSON")
 
 	classesCmd.AddCommand(classesListCmd)
