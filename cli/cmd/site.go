@@ -3,10 +3,12 @@ package cmd
 import (
 	"encoding/json"
 	"fmt"
+	"io"
 	"os"
 	"strconv"
 	"strings"
 
+	"github.com/nerveband/agent-to-bricks/internal/output"
 	"github.com/spf13/cobra"
 )
 
@@ -19,6 +21,7 @@ var siteInfoCmd = &cobra.Command{
 	Use:   "info",
 	Short: "Show site and Bricks environment info",
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		if err := requireConfig(); err != nil {
 			return err
 		}
@@ -28,6 +31,10 @@ var siteInfoCmd = &cobra.Command{
 		info, err := c.GetSiteInfo()
 		if err != nil {
 			return fmt.Errorf("failed to get site info: %w", err)
+		}
+
+		if output.IsJSON() {
+			return output.JSON(info)
 		}
 
 		fmt.Printf("Bricks Version:  %s\n", info.BricksVersion)
@@ -62,6 +69,7 @@ var siteFrameworksCmd = &cobra.Command{
 	Use:   "frameworks",
 	Short: "Detect CSS frameworks (ACSS, etc.)",
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		if err := requireConfig(); err != nil {
 			return err
 		}
@@ -71,6 +79,10 @@ var siteFrameworksCmd = &cobra.Command{
 		resp, err := c.GetFrameworks()
 		if err != nil {
 			return fmt.Errorf("failed to get frameworks: %w", err)
+		}
+
+		if output.IsJSON() {
+			return output.JSON(resp)
 		}
 
 		if len(resp.Frameworks) == 0 {
@@ -129,10 +141,11 @@ var sitePullCmd = &cobra.Command{
 }
 
 var sitePushCmd = &cobra.Command{
-	Use:   "push <page-id> <file.json>",
-	Short: "Push elements from a JSON file (full replace)",
-	Args:  cobra.ExactArgs(2),
+	Use:   "push <page-id> [file.json]",
+	Short: "Push elements from a JSON file or stdin (full replace)",
+	Args:  cobra.RangeArgs(1, 2),
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		if err := requireConfig(); err != nil {
 			return err
 		}
@@ -142,9 +155,14 @@ var sitePushCmd = &cobra.Command{
 			return fmt.Errorf("invalid page ID: %s", args[0])
 		}
 
-		data, err := os.ReadFile(args[1])
+		var data []byte
+		if len(args) >= 2 {
+			data, err = os.ReadFile(args[1])
+		} else {
+			data, err = io.ReadAll(os.Stdin)
+		}
 		if err != nil {
-			return fmt.Errorf("failed to read file: %w", err)
+			return fmt.Errorf("failed to read input: %w", err)
 		}
 
 		var payload struct {
@@ -172,9 +190,10 @@ var patchFile string
 var sitePatchCmd = &cobra.Command{
 	Use:   "patch <page-id>",
 	Short: "Patch specific elements on a page",
-	Long:  "Patch elements using --element <id> --set key=value or --file patches.json",
+	Long:  "Patch elements using --file patches.json or stdin",
 	Args:  cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		if err := requireConfig(); err != nil {
 			return err
 		}
@@ -184,13 +203,14 @@ var sitePatchCmd = &cobra.Command{
 			return fmt.Errorf("invalid page ID: %s", args[0])
 		}
 
-		if patchFile == "" {
-			return fmt.Errorf("--file is required (e.g. --file patches.json)")
+		var data []byte
+		if patchFile != "" {
+			data, err = os.ReadFile(patchFile)
+		} else {
+			data, err = io.ReadAll(os.Stdin)
 		}
-
-		data, err := os.ReadFile(patchFile)
 		if err != nil {
-			return fmt.Errorf("failed to read patch file: %w", err)
+			return fmt.Errorf("failed to read input: %w", err)
 		}
 
 		var patches struct {
@@ -316,6 +336,10 @@ var siteRollbackCmd = &cobra.Command{
 }
 
 func init() {
+	output.AddFormatFlags(siteInfoCmd)
+	output.AddFormatFlags(siteFrameworksCmd)
+	output.AddFormatFlags(sitePushCmd)
+	output.AddFormatFlags(sitePatchCmd)
 	sitePullCmd.Flags().StringVarP(&pullOutput, "output", "o", "", "output file path (default: stdout)")
 	sitePatchCmd.Flags().StringVarP(&patchFile, "file", "f", "", "patch file (JSON)")
 	siteSnapshotCmd.Flags().StringVarP(&snapshotLabel, "label", "l", "", "snapshot label")
