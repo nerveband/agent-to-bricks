@@ -1,0 +1,519 @@
+{
+  "name": "bricks",
+  "version": "1.8.0",
+  "description": "Agent to Bricks — AI-powered Bricks Builder CLI",
+  "globalFlags": {
+    "--config": {"type": "string", "default": "~/.agent-to-bricks/config.yaml", "description": "config file path"}
+  },
+  "commands": {
+    "abilities categories": {
+      "description": "List ability categories",
+      "args": [],
+      "flags": {},
+      "stdin": false,
+      "output": ["table"],
+      "example": "bricks abilities categories"
+    },
+    "abilities describe": {
+      "description": "Show details and schemas for an ability",
+      "args": ["ability-name"],
+      "flags": {},
+      "stdin": false,
+      "output": ["text"],
+      "example": "bricks abilities describe agent-bricks/get-site-info"
+    },
+    "abilities list": {
+      "description": "List all available abilities",
+      "args": [],
+      "flags": {
+        "--category": {"type": "string", "default": "", "description": "filter by category slug"},
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": false,
+      "output": ["json", "table"],
+      "example": "bricks abilities list --format json"
+    },
+    "agent context": {
+      "description": "Dump site context for LLM consumption",
+      "args": [],
+      "flags": {
+        "--format": {"type": "string", "default": "md", "description": "output format: md, json, prompt"},
+        "--section": {"type": "string", "default": "", "description": "dump single section: tokens, classes, templates, workflows, abilities"},
+        "--output": {"type": "string", "default": "", "description": "write output to file"},
+        "--compact": {"type": "bool", "default": false, "description": "shorter output for small context windows"},
+        "--abilities": {"type": "bool", "default": false, "description": "include WordPress Abilities from all plugins (WP 6.9+)"}
+      },
+      "stdin": false,
+      "output": ["md", "json", "prompt"],
+      "example": "bricks agent context --format json"
+    },
+    "classes create": {
+      "description": "Create a new global class (accepts name arg or JSON from stdin)",
+      "args": ["name?"],
+      "flags": {
+        "--settings": {"type": "string", "default": "", "description": "class settings as JSON"},
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": true,
+      "output": ["json"],
+      "example": "bricks classes create btn--cta --settings '{\"backgroundColor\":\"var(--primary)\"}'"
+    },
+    "classes delete": {
+      "description": "Delete a global class by ID",
+      "args": ["class-id"],
+      "flags": {},
+      "stdin": false,
+      "output": ["text"],
+      "example": "bricks classes delete abc123"
+    },
+    "classes find": {
+      "description": "Find classes matching a pattern (supports * wildcards)",
+      "args": ["pattern"],
+      "flags": {},
+      "stdin": false,
+      "output": ["text"],
+      "example": "bricks classes find 'btn*'"
+    },
+    "classes list": {
+      "description": "List all global classes",
+      "args": [],
+      "flags": {
+        "--framework": {"type": "string", "default": "", "description": "filter by framework (acss, custom)"},
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": false,
+      "output": ["json", "text"],
+      "example": "bricks classes list --format json"
+    },
+    "components list": {
+      "description": "List reusable components (section templates)",
+      "args": [],
+      "flags": {
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": false,
+      "output": ["json", "table"],
+      "example": "bricks components list --format json"
+    },
+    "components show": {
+      "description": "Show a component with its element tree",
+      "args": ["id"],
+      "flags": {
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": false,
+      "output": ["json", "text"],
+      "example": "bricks components show 42"
+    },
+    "completion bash": {
+      "description": "Generate the autocompletion script for bash",
+      "args": [],
+      "flags": {},
+      "stdin": false,
+      "output": ["text"],
+      "example": "bricks completion bash"
+    },
+    "completion fish": {
+      "description": "Generate the autocompletion script for fish",
+      "args": [],
+      "flags": {},
+      "stdin": false,
+      "output": ["text"],
+      "example": "bricks completion fish"
+    },
+    "completion powershell": {
+      "description": "Generate the autocompletion script for powershell",
+      "args": [],
+      "flags": {},
+      "stdin": false,
+      "output": ["text"],
+      "example": "bricks completion powershell"
+    },
+    "completion zsh": {
+      "description": "Generate the autocompletion script for zsh",
+      "args": [],
+      "flags": {},
+      "stdin": false,
+      "output": ["text"],
+      "example": "bricks completion zsh"
+    },
+    "compose": {
+      "description": "Compose multiple templates into a single page",
+      "args": ["template1", "template2..."],
+      "flags": {
+        "--output": {"type": "string", "default": "", "description": "output file path"},
+        "--push": {"type": "int", "default": 0, "description": "push composed result to page ID"}
+      },
+      "stdin": false,
+      "output": ["json"],
+      "example": "bricks compose hero-section features-grid --push 1234"
+    },
+    "config init": {
+      "description": "Interactive setup wizard with TUI",
+      "args": [],
+      "flags": {
+        "--no-tui": {"type": "bool", "default": false, "description": "use simple text prompts instead of TUI"}
+      },
+      "stdin": false,
+      "output": ["text"],
+      "example": "bricks config init --no-tui"
+    },
+    "config list": {
+      "description": "Show current configuration",
+      "args": [],
+      "flags": {},
+      "stdin": false,
+      "output": ["text"],
+      "example": "bricks config list"
+    },
+    "config set": {
+      "description": "Set a config value (e.g. site.url, site.api_key)",
+      "args": ["key", "value"],
+      "flags": {},
+      "stdin": false,
+      "output": ["text"],
+      "example": "bricks config set site.url https://example.com"
+    },
+    "convert html": {
+      "description": "Convert HTML to Bricks element JSON",
+      "args": ["file.html?"],
+      "flags": {
+        "--stdin": {"type": "bool", "default": false, "description": "read HTML from stdin"},
+        "--push": {"type": "int", "default": 0, "description": "push to page ID after converting"},
+        "--snapshot": {"type": "bool", "default": false, "description": "create snapshot before pushing"},
+        "--output": {"type": "string", "default": "", "description": "output file path"},
+        "--dry-run": {"type": "bool", "default": false, "description": "show result without pushing"},
+        "--class-cache": {"type": "bool", "default": false, "description": "use cached class registry"}
+      },
+      "stdin": true,
+      "output": ["json"],
+      "example": "echo '<h1>Hello</h1>' | bricks convert html --stdin --push 1234"
+    },
+    "doctor": {
+      "description": "Run health checks on a Bricks page",
+      "args": ["page-id"],
+      "flags": {
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": false,
+      "output": ["json", "text"],
+      "example": "bricks doctor 1234 --format json"
+    },
+    "elements types": {
+      "description": "List available Bricks element types with metadata",
+      "args": ["name?"],
+      "flags": {
+        "--controls": {"type": "bool", "default": false, "description": "include element controls schema"},
+        "--category": {"type": "string", "default": "", "description": "filter by category"},
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": false,
+      "output": ["json", "table"],
+      "example": "bricks elements types --format json"
+    },
+    "frameworks list": {
+      "description": "List loaded CSS framework configs",
+      "args": [],
+      "flags": {
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": false,
+      "output": ["json", "text"],
+      "example": "bricks frameworks list --format json"
+    },
+    "frameworks show": {
+      "description": "Show detailed framework configuration",
+      "args": ["framework-id"],
+      "flags": {
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": false,
+      "output": ["json", "text"],
+      "example": "bricks frameworks show acss --format json"
+    },
+    "media list": {
+      "description": "List media library items",
+      "args": [],
+      "flags": {
+        "--search": {"type": "string", "default": "", "description": "search term"},
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": false,
+      "output": ["json", "table"],
+      "example": "bricks media list --search hero --format json"
+    },
+    "media upload": {
+      "description": "Upload a file to the WordPress media library",
+      "args": ["file"],
+      "flags": {
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": false,
+      "output": ["json", "text"],
+      "example": "bricks media upload hero.jpg --format json"
+    },
+    "search elements": {
+      "description": "Search elements by type, setting, or class across all pages",
+      "args": [],
+      "flags": {
+        "--type": {"type": "string", "default": "", "description": "element type (heading, button, etc.)"},
+        "--setting": {"type": "string", "default": "", "description": "setting filter as key=value"},
+        "--class": {"type": "string", "default": "", "description": "global class name or ID"},
+        "--post-type": {"type": "string", "default": "", "description": "post type filter"},
+        "--limit": {"type": "int", "default": 0, "description": "max results"},
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": false,
+      "output": ["json", "table"],
+      "example": "bricks search elements --type heading --format json"
+    },
+    "site frameworks": {
+      "description": "Detect CSS frameworks (ACSS, etc.)",
+      "args": [],
+      "flags": {
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": false,
+      "output": ["json", "text"],
+      "example": "bricks site frameworks --format json"
+    },
+    "site info": {
+      "description": "Show site and Bricks environment info",
+      "args": [],
+      "flags": {
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": false,
+      "output": ["json", "text"],
+      "example": "bricks site info --format json"
+    },
+    "site patch": {
+      "description": "Patch specific elements on a page",
+      "args": ["page-id"],
+      "flags": {
+        "--file": {"type": "string", "default": "", "description": "patch file (JSON)"},
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": true,
+      "output": ["text"],
+      "example": "echo '{\"elements\":[...]}' | bricks site patch 1234"
+    },
+    "site pull": {
+      "description": "Pull page elements to a JSON file",
+      "args": ["page-id"],
+      "flags": {
+        "--output": {"type": "string", "default": "", "description": "output file path (default: stdout)"}
+      },
+      "stdin": false,
+      "output": ["json"],
+      "example": "bricks site pull 1234 -o page.json"
+    },
+    "site push": {
+      "description": "Push elements from a JSON file or stdin (full replace)",
+      "args": ["page-id", "file.json?"],
+      "flags": {
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": true,
+      "output": ["text"],
+      "example": "bricks site push 1234 layout.json"
+    },
+    "site rollback": {
+      "description": "Rollback a page to a snapshot (defaults to latest)",
+      "args": ["page-id", "snapshot-id?"],
+      "flags": {},
+      "stdin": false,
+      "output": ["text"],
+      "example": "bricks site rollback 1234"
+    },
+    "site snapshot": {
+      "description": "Create a snapshot of the current page state",
+      "args": ["page-id"],
+      "flags": {
+        "--label": {"type": "string", "default": "", "description": "snapshot label"}
+      },
+      "stdin": false,
+      "output": ["text"],
+      "example": "bricks site snapshot 1234 --label 'before redesign'"
+    },
+    "site snapshots": {
+      "description": "List snapshots for a page",
+      "args": ["page-id"],
+      "flags": {},
+      "stdin": false,
+      "output": ["text"],
+      "example": "bricks site snapshots 1234"
+    },
+    "styles colors": {
+      "description": "Show color palette from the live site",
+      "args": [],
+      "flags": {
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": false,
+      "output": ["json", "text"],
+      "example": "bricks styles colors --format json"
+    },
+    "styles learn": {
+      "description": "Analyze pages to build a style profile",
+      "args": ["page-id", "page-id..."],
+      "flags": {},
+      "stdin": false,
+      "output": ["text"],
+      "example": "bricks styles learn 1234 5678"
+    },
+    "styles reset": {
+      "description": "Reset the style profile",
+      "args": [],
+      "flags": {},
+      "stdin": false,
+      "output": ["text"],
+      "example": "bricks styles reset"
+    },
+    "styles show": {
+      "description": "Display the current style profile",
+      "args": [],
+      "flags": {
+        "--limit": {"type": "int", "default": 10, "description": "number of items to display"}
+      },
+      "stdin": false,
+      "output": ["text"],
+      "example": "bricks styles show --limit 20"
+    },
+    "styles theme": {
+      "description": "Show theme styles from the live site",
+      "args": [],
+      "flags": {
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": false,
+      "output": ["json", "text"],
+      "example": "bricks styles theme --format json"
+    },
+    "styles variables": {
+      "description": "Show CSS custom properties from the live site",
+      "args": [],
+      "flags": {
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": false,
+      "output": ["json", "text"],
+      "example": "bricks styles variables --format json"
+    },
+    "templates import": {
+      "description": "Import templates from a directory or JSON file",
+      "args": ["dir-or-file"],
+      "flags": {},
+      "stdin": false,
+      "output": ["text"],
+      "example": "bricks templates import ./my-templates/"
+    },
+    "templates learn": {
+      "description": "Learn templates from an existing page (splits into sections)",
+      "args": ["page-id"],
+      "flags": {},
+      "stdin": false,
+      "output": ["text"],
+      "example": "bricks templates learn 1234"
+    },
+    "templates list": {
+      "description": "List available templates",
+      "args": [],
+      "flags": {},
+      "stdin": false,
+      "output": ["text"],
+      "example": "bricks templates list"
+    },
+    "templates search": {
+      "description": "Search templates by description or tags",
+      "args": ["query"],
+      "flags": {},
+      "stdin": false,
+      "output": ["text"],
+      "example": "bricks templates search hero"
+    },
+    "templates show": {
+      "description": "Show template details",
+      "args": ["name"],
+      "flags": {},
+      "stdin": false,
+      "output": ["text"],
+      "example": "bricks templates show hero-section"
+    },
+    "update": {
+      "description": "Update CLI and plugin to the latest version",
+      "args": [],
+      "flags": {},
+      "stdin": false,
+      "output": ["text"],
+      "example": "bricks update"
+    },
+    "validate": {
+      "description": "Validate Bricks element JSON",
+      "args": ["file.json"],
+      "flags": {
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": false,
+      "output": ["json", "text"],
+      "example": "bricks validate page.json --format json"
+    },
+    "version": {
+      "description": "Show CLI and plugin versions",
+      "args": [],
+      "flags": {
+        "--changelog": {"type": "bool", "default": false, "description": "show changelog from GitHub Releases"},
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": false,
+      "output": ["json", "text"],
+      "example": "bricks version --format json"
+    },
+    "schema": {
+      "description": "Output or validate the CLI schema manifest",
+      "args": [],
+      "flags": {
+        "--validate": {"type": "bool", "default": false, "description": "Validate schema.json against live command tree"}
+      },
+      "stdin": false,
+      "output": ["json", "text"],
+      "example": "bricks schema"
+    }
+  },
+  "errorCodes": {
+    "CONFIG_MISSING_URL": {"exit": 2, "description": "Site URL not configured"},
+    "CONFIG_MISSING_KEY": {"exit": 2, "description": "API key not configured"},
+    "CONFIG_NOT_FOUND": {"exit": 2, "description": "Config file not found"},
+    "API_UNAUTHORIZED": {"exit": 3, "description": "HTTP 401 — invalid or missing API key"},
+    "API_FORBIDDEN": {"exit": 3, "description": "HTTP 403 — insufficient permissions"},
+    "API_NOT_FOUND": {"exit": 3, "description": "HTTP 404 — resource not found"},
+    "API_SERVER_ERROR": {"exit": 3, "description": "HTTP 5xx — server error"},
+    "API_ERROR": {"exit": 3, "description": "Other HTTP error"},
+    "INVALID_PAGE_ID": {"exit": 4, "description": "Invalid page ID argument"},
+    "INVALID_INPUT": {"exit": 4, "description": "Failed to read from stdin"},
+    "INVALID_JSON": {"exit": 4, "description": "Invalid JSON input"},
+    "MISSING_NAME": {"exit": 4, "description": "Required name argument missing"},
+    "CONTENT_CONFLICT": {"exit": 5, "description": "Content hash mismatch (concurrent edit)"}
+  }
+}
