@@ -24,6 +24,8 @@ jobs:
           go-version-file: cli/go.mod
       - run: cd cli && go test ./...
       - run: cd cli && go vet ./...
+      - name: Validate CLI schema
+        run: cd cli && go run . schema --validate
 
   gui-typecheck:
     name: GUI Type Check

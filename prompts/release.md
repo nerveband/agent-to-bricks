@@ -10,7 +10,8 @@ Run the full pre-release check and release pipeline. Do these steps:
 1. Run `make check-version` to verify version consistency
 2. Run `make test` for CLI tests
 3. Run `make lint` for Go vet/lint
-4. Run `cd gui && npx tsc --noEmit` for GUI type check
+4. Run `cd cli && go run . schema --validate` to verify schema.json is in sync
+5. Run `cd gui && npx tsc --noEmit` for GUI type check
 5. Run PHP lint on plugin files: `find plugin -name "*.php" -exec php -l {} \;`
 6. Run `cd website && npm run build` to verify website builds
 
@@ -21,6 +22,8 @@ Run the full pre-release check and release pipeline. Do these steps:
 **Docs & content sync:**
 9. Check `git log --oneline` since the last release tag to see all changes
 10. For any CLI, GUI, or plugin changes: update the matching docs in `website/src/content/docs/` (new commands, changed flags, new features, changed behavior, removed features)
+    - If CLI commands or flags changed: update `cli/schema.json` and commit
+    - Verify `cli/schema.json` version matches `VERSION` file
 11. Check if the homepage sections in `website/src/components/home/` need updates for new features
 12. Update the changelog section in `README.md` with a summary of what's new in this version
 
