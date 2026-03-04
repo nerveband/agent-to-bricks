@@ -17,8 +17,15 @@ test-verbose:
 clean:
 	rm -rf bin/
 
+INSTALL_DIR ?= $(shell \
+	if [ -d /opt/homebrew/bin ] && [ -w /opt/homebrew/bin ]; then echo /opt/homebrew/bin; \
+	elif [ -d /usr/local/bin ] && [ -w /usr/local/bin ]; then echo /usr/local/bin; \
+	else echo $(HOME)/bin; fi)
+
 install: build
-	cp bin/bricks /usr/local/bin/bricks
+	@mkdir -p $(INSTALL_DIR)
+	cp bin/bricks $(INSTALL_DIR)/bricks
+	@echo "Installed to $(INSTALL_DIR)/bricks"
 
 lint:
 	cd cli && go vet ./...
