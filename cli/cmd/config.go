@@ -69,7 +69,9 @@ func configInitSimple(path string) error {
 var configSetCmd = &cobra.Command{
 	Use:   "set <key> <value>",
 	Short: "Set a config value (e.g. site.url, site.api_key)",
-	Args:  cobra.ExactArgs(2),
+	Example: `  bricks config set site.url https://example.com
+  bricks config set site.api_key atb_xxx`,
+	Args: cobra.ExactArgs(2),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		path := cfgFile
 		if path == "" {

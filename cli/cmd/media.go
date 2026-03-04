@@ -17,7 +17,9 @@ var mediaCmd = &cobra.Command{
 var mediaUploadCmd = &cobra.Command{
 	Use:   "upload <file>",
 	Short: "Upload a file to the WordPress media library",
-	Args:  cobra.ExactArgs(1),
+	Example: `  bricks media upload hero.jpg
+  bricks media upload ./assets/banner.png --format json`,
+	Args: cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		output.ResolveFormat(cmd)
 		if err := requireConfig(); err != nil {
@@ -45,6 +47,8 @@ var mediaListSearch string
 var mediaListCmd = &cobra.Command{
 	Use:   "list",
 	Short: "List media library items",
+	Example: `  bricks media list
+  bricks media list --search "hero" --format json`,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		output.ResolveFormat(cmd)
 		if err := requireConfig(); err != nil {

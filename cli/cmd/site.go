@@ -143,7 +143,9 @@ var sitePullCmd = &cobra.Command{
 var sitePushCmd = &cobra.Command{
 	Use:   "push <page-id> [file.json]",
 	Short: "Push elements from a JSON file or stdin (full replace)",
-	Args:  cobra.RangeArgs(1, 2),
+	Example: `  bricks site push 1234 layout.json
+  cat layout.json | bricks site push 1234`,
+	Args: cobra.RangeArgs(1, 2),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		output.ResolveFormat(cmd)
 		if err := requireConfig(); err != nil {
@@ -191,7 +193,9 @@ var sitePatchCmd = &cobra.Command{
 	Use:   "patch <page-id>",
 	Short: "Patch specific elements on a page",
 	Long:  "Patch elements using --file patches.json or stdin",
-	Args:  cobra.ExactArgs(1),
+	Example: `  bricks site patch 1234 --file fixes.json
+  echo '{"elements":[...]}' | bricks site patch 1234`,
+	Args: cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		output.ResolveFormat(cmd)
 		if err := requireConfig(); err != nil {

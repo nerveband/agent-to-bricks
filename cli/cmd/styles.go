@@ -17,7 +17,9 @@ var stylesCmd = &cobra.Command{
 var stylesLearnCmd = &cobra.Command{
 	Use:   "learn <page-id> [page-id...]",
 	Short: "Analyze pages to build a style profile",
-	Args:  cobra.MinimumNArgs(1),
+	Example: `  bricks styles learn 1234
+  bricks styles learn 1234 5678 9012`,
+	Args: cobra.MinimumNArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		if err := requireConfig(); err != nil {
 			return err

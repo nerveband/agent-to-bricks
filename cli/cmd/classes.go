@@ -55,7 +55,9 @@ var classesListCmd = &cobra.Command{
 var classesCreateCmd = &cobra.Command{
 	Use:   "create [name]",
 	Short: "Create a new global class (accepts name arg or JSON from stdin)",
-	Args:  cobra.MaximumNArgs(1),
+	Example: `  bricks classes create btn--cta --settings '{"backgroundColor":"var(--primary)"}'
+  echo '{"name":"btn--cta","settings":{"backgroundColor":"var(--primary)"}}' | bricks classes create`,
+	Args: cobra.MaximumNArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		output.ResolveFormat(cmd)
 		if err := requireConfig(); err != nil {
