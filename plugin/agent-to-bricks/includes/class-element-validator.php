@@ -234,9 +234,9 @@ class ATB_Element_Validator {
 					$clean[ $key ] = $unfiltered ? $value : wp_kses_post( $value );
 				}
 			} elseif ( in_array( $key, self::$css_keys, true ) ) {
-				// CSS code: strip HTML tags but preserve newlines and whitespace.
+				// CSS code: strip HTML tags, ensure readable formatting.
 				if ( is_string( $value ) ) {
-					$clean[ $key ] = wp_strip_all_tags( $value );
+					$clean[ $key ] = self::prettify_css( wp_strip_all_tags( $value ) );
 				}
 			} elseif ( $key === 'code' ) {
 				// Code element content (raw HTML/JS/CSS by design).
@@ -261,6 +261,31 @@ class ATB_Element_Validator {
 		}
 
 		return $clean;
+	}
+
+	/**
+	 * Prettify a CSS string by adding line breaks if missing.
+	 *
+	 * Skips strings that already contain newlines (already formatted).
+	 * Produces readable output that matches what the Bricks editor expects.
+	 */
+	private static function prettify_css( $css ) {
+		$css = trim( $css );
+
+		if ( '' === $css || strpos( $css, "\n" ) !== false ) {
+			return $css;
+		}
+
+		// Newline after opening brace.
+		$css = preg_replace( '/\{\s*/', " {\n  ", $css );
+		// Newline before closing brace.
+		$css = preg_replace( '/\s*\}/', "\n}", $css );
+		// Newline after semicolons (but not inside url() or data: values).
+		$css = preg_replace( '/;\s*(?![\s}])/', ";\n  ", $css );
+		// Blank line between rule blocks for readability.
+		$css = preg_replace( '/\}\s*([^\s])/', "}\n\n$1", $css );
+
+		return trim( $css );
 	}
 
 	/**
