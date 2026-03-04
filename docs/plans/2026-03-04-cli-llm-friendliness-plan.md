@@ -1092,7 +1092,85 @@ git commit -m "chore: add schema validation to check/release prompts and CI"
 
 ---
 
-### Task 11: Final Verification
+### Task 11: Add `llms.txt` to Website
+
+**Files:**
+- Create: `website/public/llms.txt`
+
+**Step 1: Create `llms.txt`**
+
+This file is served at `https://agenttobricks.com/llms.txt` and tells LLMs what Agent to Bricks is and how to use it. It follows the emerging llms.txt convention — plain text, structured for LLM consumption.
+
+```text
+# Agent to Bricks
+
+> AI-powered CLI and WordPress plugin for building Bricks Builder pages programmatically.
+
+## What This Tool Does
+
+Agent to Bricks lets AI agents (Claude, GPT, etc.) create and manage Bricks Builder pages on WordPress sites. It converts HTML to Bricks JSON, manages global CSS classes, handles templates, and supports the WordPress Abilities API.
+
+## CLI Quick Start
+
+Install: download from https://github.com/nerveband/agent-to-bricks/releases
+Configure: `bricks config init` (sets site URL + API key)
+Discover capabilities: `bricks schema` (outputs full JSON manifest of all commands)
+Get site context for LLM: `bricks agent context --format json`
+
+## Key Commands
+
+- `bricks agent context --format json` — Structured site context for LLM consumption
+- `bricks agent context --format prompt` — Complete LLM system prompt with design rules
+- `bricks convert html --stdin --push <page-id>` — Pipe HTML, get Bricks JSON, push to page
+- `bricks site pull <page-id>` — Pull page elements as JSON
+- `bricks site push <page-id> <file.json>` — Push elements to page (accepts stdin)
+- `bricks classes list --format json` — List all global CSS classes
+- `bricks abilities list --format json` — Discover WordPress Abilities with JSON schemas
+- `bricks schema` — Full CLI capability manifest as JSON
+
+## Machine-Readable Interfaces
+
+- CLI schema manifest: `bricks schema` (JSON with all commands, flags, types, error codes)
+- Structured errors: Use `--format json` on any command for machine-parseable error responses
+- All commands support `--format json` for structured output
+- stdin support on: `convert html`, `site push`, `site patch`, `classes create`
+
+## Authentication
+
+Uses `X-ATB-Key` custom header. API key stored in `~/.agent-to-bricks/config.yaml`.
+
+## Documentation
+
+- Full docs: https://agenttobricks.com
+- CLI reference: https://agenttobricks.com/cli/
+- REST API: https://agenttobricks.com/plugin/rest-api/
+- GitHub: https://github.com/nerveband/agent-to-bricks
+```
+
+**Step 2: Verify the file will be served**
+
+Astro/Starlight serves files from `public/` at the site root. Verify by checking the Astro config or existing public files.
+
+Run: `ls website/public/`
+Expected: See existing static files (favicon, etc.)
+
+**Step 3: Build the website to verify**
+
+Run: `cd website && npm run build`
+Expected: Build succeeds. Check `dist/llms.txt` exists.
+
+**Step 4: Commit**
+
+```bash
+git add website/public/llms.txt
+git commit -m "feat(website): add llms.txt for LLM discoverability"
+```
+
+---
+
+### Task 12: Final Verification
+
+**Depends on:** All previous tasks complete.
 
 **Step 1: Run the full test suite**
 
@@ -1156,6 +1234,7 @@ git commit -m "fix(cli): address issues found in final verification"
 | 8 | schema.json + schema command | 3 new files | ~300 lines (schema.json) + ~100 lines (Go) |
 | 9 | Help text examples | 5 modified | ~5 lines each |
 | 10 | Prompts + CI | 2-3 modified | ~20 lines total |
-| 11 | Final verification | 0 files | Smoke tests only |
+| 11 | llms.txt on website | 1 new file | ~40 lines |
+| 12 | Final verification | 0 files | Smoke tests only |
 
-**Total: ~11 commits, ~20 files touched, ~700 lines of new code**
+**Total: ~12 commits, ~21 files touched, ~750 lines of new code**
