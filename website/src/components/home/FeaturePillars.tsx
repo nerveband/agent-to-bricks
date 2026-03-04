@@ -127,7 +127,7 @@ function GuiMockup() {
 function TemplateMockup() {
   const templates = [
     { name: 'SaaS Hero', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=160&fit=crop' },
-    { name: 'Photo Gallery', image: 'https://images.unsplash.com/photo-1505739998589-00fc462c5929?w=300&h=160&fit=crop' },
+    { name: 'Photo Gallery', image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=300&h=160&fit=crop' },
     { name: 'Pricing Table', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&h=160&fit=crop' },
   ];
 
