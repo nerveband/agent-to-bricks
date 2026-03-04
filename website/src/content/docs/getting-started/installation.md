@@ -90,13 +90,18 @@ The CLI files are named `agent-to-bricks_X.X.X_...` (lowercase with underscores)
 | Linux (x86_64) | `agent-to-bricks_X.X.X_linux_amd64.tar.gz` |
 | Windows (x86_64) | `agent-to-bricks_X.X.X_windows_amd64.zip` |
 
-### Mac and Linux
+### macOS
 
-Extract the archive and move the binary into your PATH:
+Extract the archive and move the binary somewhere in your PATH:
 
 ```bash
 tar xzf agent-to-bricks_*.tar.gz
-sudo mv bricks /usr/local/bin/
+
+# Apple Silicon (Homebrew default)
+mv bricks /opt/homebrew/bin/
+
+# Intel Mac
+mv bricks /usr/local/bin/
 ```
 
 Verify it works:
@@ -105,13 +110,40 @@ Verify it works:
 bricks version
 ```
 
+### Linux
+
+```bash
+tar xzf agent-to-bricks_*.tar.gz
+mkdir -p ~/.local/bin
+mv bricks ~/.local/bin/
+```
+
+Make sure `~/.local/bin` is in your PATH. Most distros include it by default, but if not:
+
+```bash
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
+
 ### Windows
 
 1. Unzip `agent-to-bricks_X.X.X_windows_amd64.zip` (this is the CLI, not the Desktop App)
-2. Move `bricks.exe` to a directory in your PATH (e.g., `C:\Users\YourName\bin\`)
-3. Or add the extracted folder to your PATH environment variable
+2. Move `bricks.exe` to a directory in your PATH, for example:
 
-Open a new terminal and run:
+```powershell
+# Create a bin folder if it doesn't exist
+New-Item -ItemType Directory -Force -Path "$env:LOCALAPPDATA\Programs\bricks"
+Move-Item bricks.exe "$env:LOCALAPPDATA\Programs\bricks\"
+
+# Add to PATH (persistent, current user only)
+$binDir = "$env:LOCALAPPDATA\Programs\bricks"
+$userPath = [Environment]::GetEnvironmentVariable("Path", "User")
+if ($userPath -notlike "*$binDir*") {
+    [Environment]::SetEnvironmentVariable("Path", "$userPath;$binDir", "User")
+}
+```
+
+Open a **new** terminal and run:
 
 ```powershell
 bricks version
@@ -124,16 +156,17 @@ If you prefer to compile it yourself, you'll need Go 1.22 or higher.
 **Mac / Linux:**
 
 ```bash
-cd cli
-go build -o bricks .
-sudo mv bricks /usr/local/bin/
+make build      # outputs to bin/bricks
+make install    # auto-detects best install dir, no sudo needed
 ```
 
-Or use the Makefile (Mac / Linux only):
+Or manually:
 
 ```bash
-make build      # outputs to bin/bricks
-make install    # copies to /usr/local/bin
+cd cli
+go build -o bricks .
+mv bricks ~/.local/bin/    # Linux
+mv bricks /opt/homebrew/bin/  # macOS (Apple Silicon)
 ```
 
 **Windows (PowerShell):**
@@ -141,7 +174,7 @@ make install    # copies to /usr/local/bin
 ```powershell
 cd cli
 go build -o bricks.exe .
-Move-Item bricks.exe C:\Users\YourName\bin\
+Move-Item bricks.exe "$env:LOCALAPPDATA\Programs\bricks\"
 ```
 
 ## 4. Connect to your site

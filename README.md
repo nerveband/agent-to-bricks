@@ -33,9 +33,13 @@ Download the plugin ZIP from the [latest release](https://github.com/nerveband/a
 Download the binary for your platform from the [latest release](https://github.com/nerveband/agent-to-bricks/releases/latest):
 
 ```bash
-# Mac / Linux
+# macOS (Apple Silicon)
 tar xzf agent-to-bricks_*.tar.gz
-sudo mv bricks /usr/local/bin/
+mv bricks /opt/homebrew/bin/
+
+# Linux
+tar xzf agent-to-bricks_*.tar.gz
+mv bricks ~/.local/bin/
 ```
 
 ### 3. Connect

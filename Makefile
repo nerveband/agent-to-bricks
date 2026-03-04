@@ -19,13 +19,16 @@ clean:
 
 INSTALL_DIR ?= $(shell \
 	if [ -d /opt/homebrew/bin ] && [ -w /opt/homebrew/bin ]; then echo /opt/homebrew/bin; \
+	elif [ -d "$(HOME)/.local/bin" ] && [ -w "$(HOME)/.local/bin" ]; then echo $(HOME)/.local/bin; \
 	elif [ -d /usr/local/bin ] && [ -w /usr/local/bin ]; then echo /usr/local/bin; \
-	else echo $(HOME)/bin; fi)
+	else echo $(HOME)/.local/bin; fi)
 
 install: build
 	@mkdir -p $(INSTALL_DIR)
 	cp bin/bricks $(INSTALL_DIR)/bricks
 	@echo "Installed to $(INSTALL_DIR)/bricks"
+	@case "$$PATH" in *$(INSTALL_DIR)*) ;; *) echo "WARNING: $(INSTALL_DIR) is not in your PATH. Add it with:"; \
+		echo "  echo 'export PATH=\"$(INSTALL_DIR):\$$PATH\"' >> ~/.zshrc  # or ~/.bashrc"; esac
 
 lint:
 	cd cli && go vet ./...
