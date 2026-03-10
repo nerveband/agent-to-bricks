@@ -234,9 +234,9 @@ class ATB_Element_Validator {
 					$clean[ $key ] = $unfiltered ? $value : wp_kses_post( $value );
 				}
 			} elseif ( in_array( $key, self::$css_keys, true ) ) {
-				// CSS code: strip HTML tags but preserve newlines and whitespace.
+				// CSS code: strip HTML tags, then normalize single-line CSS for Bricks.
 				if ( is_string( $value ) ) {
-					$clean[ $key ] = wp_strip_all_tags( $value );
+					$clean[ $key ] = self::prettify_css( wp_strip_all_tags( $value ) );
 				}
 			} elseif ( $key === 'code' ) {
 				// Code element content (raw HTML/JS/CSS by design).
@@ -261,6 +261,124 @@ class ATB_Element_Validator {
 		}
 
 		return $clean;
+	}
+
+	/**
+	 * Prettify a CSS string by adding line breaks if missing.
+	 *
+	 * Skips strings that already contain newlines (already formatted).
+	 * Only inserts formatting at the CSS top level so quoted strings and custom
+	 * property values stay intact, and semicolons inside functions/urls are not split.
+	 */
+	private static function prettify_css( $css ) {
+		$css = trim( $css );
+
+		if ( '' === $css || preg_match( '/\R/', $css ) ) {
+			return $css;
+		}
+
+		$formatted   = '';
+		$length      = strlen( $css );
+		$paren_depth = 0;
+		$quote       = '';
+		$escape      = false;
+		$in_comment  = false;
+
+		for ( $i = 0; $i < $length; $i++ ) {
+			$char = $css[ $i ];
+			$next = ( $i + 1 < $length ) ? $css[ $i + 1 ] : '';
+
+			if ( $in_comment ) {
+				$formatted .= $char;
+				if ( '*' === $char && '/' === $next ) {
+					$formatted .= $next;
+					$in_comment = false;
+					$i++;
+				}
+				continue;
+			}
+
+			if ( '' !== $quote ) {
+				$formatted .= $char;
+				if ( $escape ) {
+					$escape = false;
+					continue;
+				}
+				if ( '\\' === $char ) {
+					$escape = true;
+					continue;
+				}
+				if ( $char === $quote ) {
+					$quote = '';
+				}
+				continue;
+			}
+
+			if ( '/' === $char && '*' === $next ) {
+				$formatted .= '/*';
+				$in_comment = true;
+				$i++;
+				continue;
+			}
+
+			if ( '"' === $char || "'" === $char ) {
+				$quote     = $char;
+				$formatted .= $char;
+				continue;
+			}
+
+			if ( '(' === $char ) {
+				$paren_depth++;
+				$formatted .= $char;
+				continue;
+			}
+
+			if ( ')' === $char && $paren_depth > 0 ) {
+				$paren_depth--;
+				$formatted .= $char;
+				continue;
+			}
+
+			if ( 0 === $paren_depth && '{' === $char ) {
+				$formatted = rtrim( $formatted );
+				$formatted .= " {\n  ";
+				continue;
+			}
+
+			if ( 0 === $paren_depth && ';' === $char ) {
+				$formatted = rtrim( $formatted );
+				$formatted .= ";\n  ";
+				continue;
+			}
+
+			if ( 0 === $paren_depth && '}' === $char ) {
+				$formatted = rtrim( $formatted );
+				if ( '' !== $formatted && substr( $formatted, -1 ) !== "\n" ) {
+					$formatted .= "\n";
+				}
+				$formatted .= '}';
+				if ( preg_match( '/\S/', substr( $css, $i + 1 ) ) ) {
+					$formatted .= "\n\n";
+				}
+				continue;
+			}
+
+			if ( ctype_space( $char ) ) {
+				if ( '' === $formatted ) {
+					continue;
+				}
+				$last = substr( $formatted, -1 );
+				if ( " " === $last || "\n" === $last ) {
+					continue;
+				}
+				$formatted .= ' ';
+				continue;
+			}
+
+			$formatted .= $char;
+		}
+
+		return trim( $formatted );
 	}
 
 	/**
