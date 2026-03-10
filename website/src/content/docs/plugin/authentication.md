@@ -22,6 +22,8 @@ In the WordPress admin:
 3. Click **Generate New Key**
 4. Copy the key immediately. It won't be shown again
 
+If you do not see **Settings > Agent to Bricks** in the sidebar, click the **Settings** link for the plugin on **Plugins > Installed Plugins**, or open `/wp-admin/admin.php?page=agent-bricks-settings` directly. Short help URL: [agenttobricks.com/menu-missing](https://agenttobricks.com/menu-missing/).
+
 The key looks like this: `atb_xK9mP2vL7nQ4rT8wY1bF3hJ6...`
 
 The `atb_` prefix is always there. The rest is 40 random characters.

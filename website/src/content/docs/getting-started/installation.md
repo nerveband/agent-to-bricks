@@ -35,6 +35,12 @@ Then generate your API key:
 2. Click **Generate API Key**
 3. Copy the key somewhere safe. You'll need it to connect the CLI
 
+If the sidebar menu item is missing, use one of these instead:
+
+- On **Plugins > Installed Plugins**, click the **Settings** link under **Agent to Bricks**
+- Open `/wp-admin/admin.php?page=agent-bricks-settings` directly
+- Follow the short recovery guide: [agenttobricks.com/menu-missing](https://agenttobricks.com/menu-missing/)
+
 The API key authenticates all requests from the CLI to your site. Keep it private.
 
 ## 2. Install the Desktop App (optional)

@@ -14,6 +14,29 @@ class ATB_Settings {
 	public static function init() {
 		add_action( 'admin_menu', array( __CLASS__, 'add_menu_page' ) );
 		add_action( 'admin_init', array( __CLASS__, 'register_settings' ) );
+		add_filter( 'plugin_action_links_' . AGENT_BRICKS_PLUGIN_BASENAME, array( __CLASS__, 'plugin_action_links' ) );
+	}
+
+	public static function plugin_action_links( $links ) {
+		$settings_link = sprintf(
+			'<a href="%s">%s</a>',
+			esc_url( self::settings_url() ),
+			esc_html__( 'Settings', 'agent-to-bricks' )
+		);
+		$help_link = sprintf(
+			'<a href="%s" target="_blank" rel="noopener">%s</a>',
+			esc_url( 'https://agenttobricks.com/menu-missing/' ),
+			esc_html__( 'Help', 'agent-to-bricks' )
+		);
+
+		array_unshift( $links, $settings_link );
+		$links[] = $help_link;
+
+		return $links;
+	}
+
+	public static function settings_url() {
+		return admin_url( 'admin.php?page=agent-bricks-settings' );
 	}
 
 	public static function add_menu_page() {
@@ -154,6 +177,13 @@ class ATB_Settings {
 		?>
 		<div class="wrap">
 			<h1>Agent to Bricks</h1>
+			<p class="description">
+				If the sidebar menu item is missing, open this page from
+				<a href="<?php echo esc_url( admin_url( 'plugins.php' ) ); ?>">Plugins</a>
+				using the <strong>Settings</strong> link under Agent to Bricks, or bookmark
+				<code><?php echo esc_html( self::settings_url() ); ?></code>.
+				Help: <a href="https://agenttobricks.com/menu-missing/" target="_blank" rel="noopener">agenttobricks.com/menu-missing</a>
+			</p>
 
 			<!-- CLI / Agent API Keys -->
 			<h2>CLI &amp; Agent API Keys</h2>

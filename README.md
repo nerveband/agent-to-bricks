@@ -28,6 +28,8 @@ CLI, Desktop App, and WordPress Plugin for [Bricks Builder](https://bricksbuilde
 
 Download the plugin ZIP from the [latest release](https://github.com/nerveband/agent-to-bricks/releases/latest) and upload it in WordPress under **Plugins > Add New > Upload Plugin**. Then go to **Settings > Agent to Bricks** and generate an API key.
 
+If the sidebar menu item is missing, use the plugin's **Settings** link on **Plugins > Installed Plugins**, or open `/wp-admin/admin.php?page=agent-bricks-settings` directly. Short help URL: [agenttobricks.com/menu-missing](https://agenttobricks.com/menu-missing/).
+
 ### 2. Install the CLI
 
 Download the binary for your platform from the [latest release](https://github.com/nerveband/agent-to-bricks/releases/latest):

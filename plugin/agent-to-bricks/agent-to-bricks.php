@@ -16,6 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'AGENT_BRICKS_VERSION', '2.0.0' );
 define( 'AGENT_BRICKS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'AGENT_BRICKS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'AGENT_BRICKS_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 
 // Feature flag: set to true in wp-config.php to enable LLM provider settings and experimental GUI.
 if ( ! defined( 'ATB_ENABLE_LLM_SETTINGS' ) ) {

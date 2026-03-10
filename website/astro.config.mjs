@@ -7,6 +7,9 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://agenttobricks.com',
+  redirects: {
+    '/menu-missing': '/plugin/settings/#if-the-settings-menu-item-is-missing',
+  },
   integrations: [
     starlight({
       title: 'Agent to Bricks',

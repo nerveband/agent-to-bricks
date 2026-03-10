@@ -5,6 +5,18 @@ description: Plugin configuration in the WordPress admin and wp_options keys
 
 The plugin settings live at **Settings > Agent to Bricks** in the WordPress admin. The settings page manages **CLI & Agent API Keys**. This is where you generate and revoke keys for external tools. See [Authentication](/plugin/authentication/) for the details.
 
+## If the settings menu item is missing
+
+If you activate the plugin and do not see **Settings > Agent to Bricks** in the WordPress sidebar, use one of these direct paths instead:
+
+1. Go to **Plugins > Installed Plugins** and click the **Settings** link under **Agent to Bricks**
+2. Open the settings page directly at `/wp-admin/admin.php?page=agent-bricks-settings`
+3. Use the short help URL: [agenttobricks.com/menu-missing](https://agenttobricks.com/menu-missing/)
+
+![Agent to Bricks settings page](../../../assets/plugin-settings.jpg)
+
+If you land on the screen above, you are on the right page. Generate your API key there and continue with [Authentication](/plugin/authentication/) or the [Installation guide](/getting-started/installation/).
+
 ## wp_options keys
 
 The plugin stores its data in several WordPress options. You shouldn't need to edit these directly, but they're useful for debugging or if you're building integrations.
