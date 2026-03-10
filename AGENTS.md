@@ -25,12 +25,20 @@ agent-to-bricks/
 
 ```bash
 make build          # builds bin/bricks
+make install        # installs the CLI into the preferred local bin dir
+make install-verify # build/install verification + staging connectivity when configured
 make test           # runs all Go tests
 make test-verbose   # verbose test output
 make lint           # go vet
+make check-version  # sync/version drift check, including cli/schema.json
+make staging-gate   # full staging deploy + plugin/CLI/template/GUI E2E gate
 ```
 
 The CLI binary is at `bin/bricks` after build. Tests live next to the code they test (`_test.go` files).
+
+Staging and local install automation are env-driven. Load repo-local `.env` when present and treat `.env.example` as the source of truth for required `ATB_STAGING_*` variables, WP-CLI deploy settings, and optional compatibility aliases.
+
+`docs/test-data/` may contain proprietary/local-only Bricks fixtures and is intentionally gitignored. Public clones must skip private corpus validation cleanly when those fixtures are absent.
 
 ## CLI architecture
 
@@ -60,10 +68,11 @@ Key classes:
 
 CLI and plugin share one semver. Both must show the same major.minor version.
 
-- CLI version: injected via ldflags at build time (`-X main.version=X.Y.Z`)
+- Canonical release version: `VERSION`
+- CLI version: injected via ldflags at build time from `VERSION`
 - Plugin version: `AGENT_BRICKS_VERSION` constant + `Version:` header in `agent-to-bricks.php`
 
-When making changes, bump both in the same commit.
+Only bump versions for a release or when explicitly asked. Use `make sync-version` to propagate `VERSION` into generated/versioned assets before release.
 
 ## Release process
 
@@ -71,27 +80,26 @@ Each release is one atomic unit: CLI binaries + plugin zip, same version.
 
 ### Steps
 
-1. Bump version in these files:
-   - `plugin/agent-to-bricks/agent-to-bricks.php` -- both the `Version:` header comment AND the `AGENT_BRICKS_VERSION` constant
-   - Version is injected into CLI via git tag + ldflags, no file to edit
-
-2. Commit and tag:
+1. Update `VERSION`, then run `make sync-version` so the plugin header/constant, docs, and `cli/schema.json` stay aligned.
+2. Run the local gate before tagging:
+   ```bash
+   ./scripts/verify-local-install.sh
+   make test
+   make lint
+   cd cli && go run . schema --validate
+   cd gui && npx tsc --noEmit
+   find plugin -name "*.php" -exec php -l {} \;
+   cd website && npm run build
+   ```
+3. Run `./scripts/verify-staging-release.sh` when staging credentials are configured. This is the canonical release gate and covers staging deploy, plugin runner matrix, CLI E2E, template smoke, and GUI MCP E2E.
+4. Commit the release on `main`, push `main`, then push the tag:
    ```bash
    git commit -am "release: vX.Y.Z"
-   git tag vX.Y.Z
-   git push && git push --tags
+   git push origin main
+   make tag-release
    ```
-
-3. GoReleaser builds CLI binaries (runs via `goreleaser release` or GitHub Actions):
-   - Builds for linux/darwin/windows, amd64/arm64
-   - Creates GitHub Release with changelog
-   - Config: `cli/.goreleaser.yaml`
-
-4. Build and attach plugin zip:
-   ```bash
-   cd plugin && zip -r ../agent-to-bricks-plugin-X.Y.Z.zip agent-to-bricks/
-   gh release upload vX.Y.Z agent-to-bricks-plugin-X.Y.Z.zip
-   ```
+5. GitHub Actions builds the CLI binaries, plugin zip, GUI artifacts, and release assets. Monitor the full workflow and verify the GitHub release body/title after all jobs pass.
+6. Reinstall locally after the release commit exists so `bricks --version` resolves to the released SHA, then verify `bricks site info` against staging.
 
 ### What the release contains
 
@@ -101,6 +109,14 @@ Each release is one atomic unit: CLI binaries + plugin zip, same version.
 - `agent-to-bricks_X.Y.Z_windows_amd64.zip` -- CLI binary (Windows)
 - `agent-to-bricks-plugin-X.Y.Z.zip` -- WordPress plugin
 - `checksums.txt` -- SHA256 checksums
+
+## Prompt docs
+
+Use the prompt docs in `prompts/` when you want to hand a repeatable repo workflow to another AI session:
+
+- `prompts/implement.md` -- day-to-day implementation/build/test/doc sync prompt
+- `prompts/check.md` -- full verification/docs audit prompt
+- `prompts/release.md` -- release, staging, reinstall, and post-release verification prompt
 
 ## Update system
 

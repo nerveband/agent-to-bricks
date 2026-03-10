@@ -4,59 +4,59 @@ Copy-paste this into Claude Code to verify everything builds and docs are up to 
 
 ---
 
-Run all CI checks, a docs/content audit, and cross-link verification. Do these steps:
+Run the full local verification pass, docs/content audit, and staging-aware checks. Prefer the repo scripts and `make` targets over ad hoc command sequences. Do these steps:
+
+**Environment and install:**
+1. Load repo-local env if present (`.env`) and treat `.env.example` as the source of truth for required staging vars.
+2. Run `./scripts/verify-local-install.sh` to verify build, install target, local binary resolution, and staging connectivity when credentials are configured.
+3. If `bricks` resolves to a stale shim before the installed binary, call that out explicitly and explain how it was handled.
+4. Treat `docs/test-data/` as local/private fixture space. Public clones must skip private corpus checks cleanly instead of failing.
 
 **Build checks:**
-1. Run `make check-version` to verify version consistency
-2. Run `make test` for CLI tests
-3. Run `make lint` for Go vet/lint
-4. Run `cd cli && go run . schema --validate` to verify schema.json is in sync with commands
-5. Run `cd gui && npx tsc --noEmit` for GUI type check
-5. Run PHP lint on plugin files: `find plugin -name "*.php" -exec php -l {} \;`
-6. Run `cd website && npm run build` to verify website builds
+5. Run `make check-version` to verify version consistency, including `cli/schema.json`
+6. Run `make test` for CLI tests
+7. Run `make lint` for Go vet/lint
+8. Run `cd cli && go run . schema --validate` to verify `schema.json` is in sync with commands
+9. Run `cd gui && npx tsc --noEmit` for GUI type check
+10. Run PHP lint on plugin files: `find plugin -name "*.php" -exec php -l {} \;`
+11. Run `cd website && npm run build` to verify website builds
 
-**Plugin functional tests (if staging is deployed):**
-7. Run the plugin test suite on staging via WP-CLI: for each file in `tests/plugin/test-*-runner.php`, run it with `wp eval-file` on the staging server. Report any failures.
+**Staging and E2E checks:**
+12. If staging credentials are available, prefer `./scripts/verify-staging-release.sh` as the canonical end-to-end gate. It deploys staging, verifies `/site/info`, runs the plugin runner matrix, CLI E2E, template smoke, and GUI MCP E2E.
+13. If the full gate fails and you need to isolate the breakage, use these narrower scripts:
+    - `./scripts/deploy-staging.sh`
+    - `./tests/plugin/run-staging-suite.sh`
+    - `./tests/e2e/test-full-workflow.sh`
+    - `./tests/e2e/test-template-smoke.sh`
+    - `./gui/e2e/run-tests.sh`
+14. Treat `docs/test-data/templates` as local/private. If the proprietary corpus exists, run the template smoke flow and confirm it used real fixtures. If it is absent, confirm the repo skips cleanly instead of failing.
 
 **Docs & content audit:**
-8. Check `git diff --name-only HEAD~5` to see what changed recently
-9. For any CLI, GUI, or plugin changes: check if the matching docs in `website/src/content/docs/` need updating (new commands, changed flags, new features, changed behavior, removed features)
-   - For any new CLI commands or flags: verify they appear in `cli/schema.json`
-   - For any error handling changes: verify structured error codes are used (not bare `fmt.Errorf` in commands)
-10. Check if the homepage sections in `website/src/components/home/` reference outdated features or are missing new ones
-11. Check if `README.md` changelog/feature list reflects recent changes
+15. Check `git diff --name-only HEAD~5` to see what changed recently
+16. For any CLI, GUI, or plugin changes: check if the matching docs in `website/src/content/docs/` need updating
+    - If CLI commands, flags, or payloads changed: verify `cli/schema.json` and the docs examples were updated together
+    - If staging, install, or env behavior changed: verify `.env.example`, `README.md`, and any relevant guides reflect it
+    - If release-facing messaging changed: verify `CHANGELOG.md`, `README.md`, and `website/src/components/home/HeroSection.astro`
+17. Check if the homepage sections in `website/src/components/home/` reference outdated features or are missing new ones
+18. Check if `README.md`, `CHANGELOG.md`, and the prompt docs under `prompts/` reflect recent process changes
 
 **Cross-link & URL verification:**
-12. Grep all URLs in CLI source (cmd/*.go), GUI source (src/), and plugin source (includes/) that point to agenttobricks.com — verify each target page exists in `website/src/content/docs/` or `website/src/pages/`
-13. Check that the plugin settings page links and CLI help text URLs are not broken
+19. Grep all URLs in CLI source (`cmd/*.go`), GUI source (`src/`), and plugin source (`includes/`) that point to `agenttobricks.com` and verify each target page exists in `website/src/content/docs/` or `website/src/pages/`
+20. Check that plugin settings links and CLI help text URLs are not broken
 
 **Website preview (if website changed):**
-14. If any files under `website/` changed, build the website and deploy a preview:
+21. If any files under `website/` changed, build the website and deploy a preview:
     - `cd website && npm run build`
-    - `cd website && npx netlify deploy --dir=dist` (draft/preview deploy)
+    - `cd website && npx netlify deploy --dir=dist`
     - Share the preview URL for review
     - After review is approved, deploy to production: `cd website && npx netlify deploy --dir=dist --prod`
 
-**GUI E2E tests:**
-15. The E2E tests require the GUI running with the MCP debug plugin. Setup:
-    - Install JS bindings (one-time): `cd gui && npm install --save-dev tauri-plugin-mcp`
-    - Start GUI with MCP: `cd gui && npx tauri dev --features dev-debug`
-    - Wait for socket at `/tmp/tauri-mcp-atb.sock` and the app window to appear
-    - The `dev-debug` Cargo feature enables `tauri-plugin-mcp` which creates a Unix socket for programmatic control
-    - The JS guest bindings (`setupPluginListeners()`) are auto-loaded in dev mode via `src/main.tsx`
-16. Run `cd gui && node e2e/run-tests.mjs` to execute the GUI E2E test suite (40 tests)
-17. Report any test failures — all tests should pass before shipping
+**GUI MCP notes:**
+22. The GUI E2E tests require the app running with the MCP debug feature:
+    - Start GUI with MCP: `cd gui && npm run dev:mcp`
+    - Wait for socket at `/tmp/tauri-mcp-atb.sock`
+    - Run `./gui/e2e/run-tests.sh`
+23. The suite currently contains 41 tests. All should pass before shipping.
 
-**GUI feature testing (if GUI changed):**
-18. With the GUI already running from step 15, manually verify any changed features:
-    - If @mention autocomplete changed: open autocomplete for affected types and confirm results appear
-    - If status bar changed: check the version number is visible and clickable
-    - If settings/about changed: open Settings > About and verify content
-
-**Staging verification (if plugin changed):**
-19. If plugin files changed, deploy to staging and verify the API returns 200: `curl -s -o /dev/null -w "%{http_code}" -H "X-ATB-Key: <key-from-config>" "https://ts-staging.wavedepth.com/wp-json/agent-bricks/v1/site/info"`
-
-**Known test limitations:**
-- Plugin functional tests run via WP-CLI `wp eval-file`. Some endpoints return 403 `rest_forbidden` in WP-CLI context because the internal REST dispatch lacks full capabilities. This affects elements, snapshots, and components write endpoints. These are WP-CLI permission limitations, not plugin bugs. The affected suites: `test-elements-runner.php`, `test-snapshots-runner.php`, `test-components-runner.php` (partial), `test-api-auth-runner.php` (REST dispatch test), `test-templates-runner.php` (DELETE). Suites that should always pass: `test-classes-runner.php`, `test-element-types-runner.php`, `test-search-runner.php`, `test-site-runner.php`.
-
-Report what passes, what fails, and what docs need updating.
+**Reporting:**
+24. Report what passed, what failed, what was skipped because local/private fixtures were absent, whether the installed binary path is clean, and what docs or release surfaces still need updating.
