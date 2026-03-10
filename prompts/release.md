@@ -39,54 +39,58 @@ Run the full pre-release check, release pipeline, and post-release install/site 
     - If release-facing messaging changed: update `CHANGELOG.md`, `README.md`, and `website/src/components/home/HeroSection.astro`
 17. Check if the homepage sections in `website/src/components/home/` need updates for new features
 18. Update `CHANGELOG.md`, the release summary in `README.md`, and any affected prompts under `prompts/` if the process changed
+19. Confirm the release candidate still follows the repo philosophy in `AGENTS.md`:
+    - contract-first, machine-readable public surfaces in the ShipTypes sense
+    - agent-DX CLI properties: structured JSON I/O, raw payload input, schema validation, stable errors, pagination/field selection, safety rails
+    - no newly introduced structured-string corruption from naive regex or delimiter splitting
 
 **Cross-link & URL verification:**
-19. Grep all URLs in CLI source (`cmd/*.go`), GUI source (`src/`), and plugin source (`includes/`) that point to `agenttobricks.com` and verify each target page exists in `website/src/content/docs/` or `website/src/pages/`
-20. Check that the plugin settings page links and CLI help text URLs are not broken
+20. Grep all URLs in CLI source (`cmd/*.go`), GUI source (`src/`), and plugin source (`includes/`) that point to `agenttobricks.com` and verify each target page exists in `website/src/content/docs/` or `website/src/pages/`
+21. Check that the plugin settings page links and CLI help text URLs are not broken
 
 **GUI MCP notes:**
-21. The GUI E2E tests require the app running with the MCP debug feature:
+22. The GUI E2E tests require the app running with the MCP debug feature:
     - Start GUI with MCP: `cd gui && npm run dev:mcp`
     - Wait for socket at `/tmp/tauri-mcp-atb.sock`
     - Run `./gui/e2e/run-tests.sh`
-22. The suite currently contains 41 tests. All must pass before releasing.
+23. The suite currently contains 41 tests. All must pass before releasing.
 
 **GUI feature testing (if GUI changed):**
-23. With the GUI already running from step 21, manually verify any changed features:
+24. With the GUI already running from step 22, manually verify any changed features:
     - If @mention autocomplete changed: open autocomplete for affected types and confirm results appear
     - If status bar changed: check the version number is visible and clickable
     - If settings/about changed: open Settings > About and verify content
 
 **Dependency check:**
-24. Run `cd cli && go list -m -u all 2>/dev/null | grep '\[' | head -10` to check for Go dependency updates
-25. Run `cd gui && npm audit --production 2>/dev/null | tail -5` to check for npm vulnerabilities
-26. If any critical/high vulnerabilities, fix them before releasing
+25. Run `cd cli && go list -m -u all 2>/dev/null | grep '\[' | head -10` to check for Go dependency updates
+26. Run `cd gui && npm audit --production 2>/dev/null | tail -5` to check for npm vulnerabilities
+27. If any critical/high vulnerabilities, fix them before releasing
 
 **Website deployment (if website changed):**
-27. If any files under `website/` changed (docs, homepage, components, styles):
+28. If any files under `website/` changed (docs, homepage, components, styles):
     - `cd website && npm run build`
     - `cd website && npx netlify deploy --dir=dist` (draft/preview deploy)
     - Share the preview URL for review
     - After review is approved, deploy to production: `cd website && npx netlify deploy --dir=dist --prod`
 
 **Hero changelog badge:**
-28. Update the changelog badge in `website/src/components/home/HeroSection.astro`:
+29. Update the changelog badge in `website/src/components/home/HeroSection.astro`:
     - Update the version number (e.g. `v1.8.0`) in both the `href` URL and the badge text
     - Update the short description text to summarize this release's highlights (keep it under ~8 words)
     - The badge links to `https://github.com/nerveband/agent-to-bricks/releases/tag/v<VERSION>`
 
 **Release:**
-29. Choose the version bump based on compatibility:
+30. Choose the version bump based on compatibility:
     - patch for internal-only fixes
     - minor for additive public behavior
     - major for breaking CLI/plugin contract changes
-30. Bump `VERSION`, run `make sync-version`, and commit all release changes together
-31. Push `main` first so the tag points at the final release commit, then push the tag with `make tag-release`
-32. Monitor the release workflow until all 7 jobs pass (CLI, Plugin ZIP, 4x GUI, Verify)
-33. The release may already be published by an asset job before the workflow finishes. After all 7 jobs pass, make sure the release title and body are correct and include release notes summarizing what changed.
-34. Download the macOS aarch64 DMG and verify notarization/signing with `spctl` and `codesign`
-35. After the release commit exists, rebuild/install locally one more time so `bricks --version` reports the released commit SHA, not a pre-commit SHA
-36. Verify local and staging post-release:
+31. Bump `VERSION`, run `make sync-version`, and commit all release changes together
+32. Push `main` first so the tag points at the final release commit, then push the tag with `make tag-release`
+33. Monitor the release workflow until all 7 jobs pass (CLI, Plugin ZIP, 4x GUI, Verify)
+34. The release may already be published by an asset job before the workflow finishes. After all 7 jobs pass, make sure the release title and body are correct and include release notes summarizing what changed.
+35. Download the macOS aarch64 DMG and verify notarization/signing with `spctl` and `codesign`
+36. After the release commit exists, rebuild/install locally one more time so `bricks --version` reports the released commit SHA, not a pre-commit SHA
+37. Verify local and staging post-release:
     - `bricks --version`
     - `bricks site info`
     - `gh release view v<VERSION>`

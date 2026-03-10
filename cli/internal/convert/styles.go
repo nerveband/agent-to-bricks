@@ -5,9 +5,7 @@ import "strings"
 // ParseInlineStyles converts a CSS style string to Bricks settings map.
 func ParseInlineStyles(style string) map[string]interface{} {
 	settings := make(map[string]interface{})
-	pairs := strings.Split(style, ";")
-
-	for _, pair := range pairs {
+	for _, pair := range splitCSSDeclarations(style) {
 		pair = strings.TrimSpace(pair)
 		if pair == "" {
 			continue
@@ -99,6 +97,63 @@ func ParseInlineStyles(style string) map[string]interface{} {
 		}
 	}
 	return settings
+}
+
+func splitCSSDeclarations(style string) []string {
+	var declarations []string
+	var current strings.Builder
+	parenDepth := 0
+	quote := rune(0)
+	escape := false
+
+	for _, ch := range style {
+		if quote != 0 {
+			current.WriteRune(ch)
+			if escape {
+				escape = false
+				continue
+			}
+			if ch == '\\' {
+				escape = true
+				continue
+			}
+			if ch == quote {
+				quote = 0
+			}
+			continue
+		}
+
+		switch ch {
+		case '\'', '"':
+			quote = ch
+			current.WriteRune(ch)
+		case '(':
+			parenDepth++
+			current.WriteRune(ch)
+		case ')':
+			if parenDepth > 0 {
+				parenDepth--
+			}
+			current.WriteRune(ch)
+		case ';':
+			if parenDepth == 0 {
+				if decl := strings.TrimSpace(current.String()); decl != "" {
+					declarations = append(declarations, decl)
+				}
+				current.Reset()
+				continue
+			}
+			current.WriteRune(ch)
+		default:
+			current.WriteRune(ch)
+		}
+	}
+
+	if decl := strings.TrimSpace(current.String()); decl != "" {
+		declarations = append(declarations, decl)
+	}
+
+	return declarations
 }
 
 func ensureTypo(s map[string]interface{}) map[string]interface{} {

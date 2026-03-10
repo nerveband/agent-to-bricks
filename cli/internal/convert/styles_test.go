@@ -84,6 +84,29 @@ func TestParseInlineStyles_Layout(t *testing.T) {
 	}
 }
 
+func TestParseInlineStyles_DataURI(t *testing.T) {
+	style := "background: url(data:text/plain;utf8,hello); color: red"
+	settings := ParseInlineStyles(style)
+
+	bg, ok := settings["_background"].(map[string]interface{})
+	if !ok {
+		t.Fatal("expected _background settings")
+	}
+	bgColor, _ := bg["color"].(map[string]interface{})
+	if bgColor["raw"] != "url(data:text/plain;utf8,hello)" {
+		t.Errorf("expected data URI to stay intact, got %v", bgColor["raw"])
+	}
+
+	typo, ok := settings["_typography"].(map[string]interface{})
+	if !ok {
+		t.Fatal("expected _typography settings")
+	}
+	color, _ := typo["color"].(map[string]interface{})
+	if color["raw"] != "red" {
+		t.Errorf("expected red, got %v", color["raw"])
+	}
+}
+
 func TestParseInlineStyles_Empty(t *testing.T) {
 	settings := ParseInlineStyles("")
 	if len(settings) != 0 {

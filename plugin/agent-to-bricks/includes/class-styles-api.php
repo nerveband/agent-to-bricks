@@ -40,6 +40,163 @@ class ATB_Styles_API {
 	}
 
 	/**
+	 * Extract CSS custom properties without splitting inside strings or functions.
+	 */
+	private static function extract_custom_properties( string $css, string $source ): array {
+		$vars    = array();
+		$length  = strlen( $css );
+		$quote   = '';
+		$escape  = false;
+		$comment = false;
+
+		for ( $i = 0; $i < $length; $i++ ) {
+			$char = $css[ $i ];
+			$next = ( $i + 1 < $length ) ? $css[ $i + 1 ] : '';
+
+			if ( $comment ) {
+				if ( '*' === $char && '/' === $next ) {
+					$comment = false;
+					$i++;
+				}
+				continue;
+			}
+
+			if ( '' !== $quote ) {
+				if ( $escape ) {
+					$escape = false;
+					continue;
+				}
+				if ( '\\' === $char ) {
+					$escape = true;
+					continue;
+				}
+				if ( $char === $quote ) {
+					$quote = '';
+				}
+				continue;
+			}
+
+			if ( '/' === $char && '*' === $next ) {
+				$comment = true;
+				$i++;
+				continue;
+			}
+
+			if ( '"' === $char || "'" === $char ) {
+				$quote = $char;
+				continue;
+			}
+
+			if ( '-' !== $char || '-' !== $next ) {
+				continue;
+			}
+
+			$name_start = $i + 2;
+			$name_end   = $name_start;
+
+			while ( $name_end < $length && self::is_custom_property_name_char( $css[ $name_end ] ) ) {
+				$name_end++;
+			}
+
+			if ( $name_end === $name_start ) {
+				continue;
+			}
+
+			$cursor = $name_end;
+			while ( $cursor < $length && ctype_space( $css[ $cursor ] ) ) {
+				$cursor++;
+			}
+
+			if ( $cursor >= $length || ':' !== $css[ $cursor ] ) {
+				continue;
+			}
+
+			$value_quote   = '';
+			$value_escape  = false;
+			$value_comment = false;
+			$value_parens  = 0;
+			$value         = '';
+
+			for ( $cursor++; $cursor < $length; $cursor++ ) {
+				$value_char = $css[ $cursor ];
+				$value_next = ( $cursor + 1 < $length ) ? $css[ $cursor + 1 ] : '';
+
+				if ( $value_comment ) {
+					if ( '*' === $value_char && '/' === $value_next ) {
+						$value      .= '*/';
+						$value_comment = false;
+						$cursor++;
+					} else {
+						$value .= $value_char;
+					}
+					continue;
+				}
+
+				if ( '' !== $value_quote ) {
+					$value .= $value_char;
+					if ( $value_escape ) {
+						$value_escape = false;
+						continue;
+					}
+					if ( '\\' === $value_char ) {
+						$value_escape = true;
+						continue;
+					}
+					if ( $value_char === $value_quote ) {
+						$value_quote = '';
+					}
+					continue;
+				}
+
+				if ( '/' === $value_char && '*' === $value_next ) {
+					$value         .= '/*';
+					$value_comment = true;
+					$cursor++;
+					continue;
+				}
+
+				if ( '"' === $value_char || "'" === $value_char ) {
+					$value_quote = $value_char;
+					$value      .= $value_char;
+					continue;
+				}
+
+				if ( '(' === $value_char ) {
+					$value_parens++;
+					$value .= $value_char;
+					continue;
+				}
+
+				if ( ')' === $value_char && $value_parens > 0 ) {
+					$value_parens--;
+					$value .= $value_char;
+					continue;
+				}
+
+				if ( ';' === $value_char && 0 === $value_parens ) {
+					break;
+				}
+
+				$value .= $value_char;
+			}
+
+			$vars[] = array(
+				'name'   => '--' . substr( $css, $name_start, $name_end - $name_start ),
+				'value'  => trim( $value ),
+				'source' => $source,
+			);
+
+			$i = $cursor;
+		}
+
+		return $vars;
+	}
+
+	private static function is_custom_property_name_char( string $char ): bool {
+		return (bool) preg_match( '/^[A-Za-z0-9_-]$/', $char );
+	}
+
+	/**
 	 * Scan generated CSS files for custom properties (ACSS, Cwicly, theme).
 	 */
 	private static function scan_css_files(): array {
@@ -79,19 +236,12 @@ class ATB_Styles_API {
 				continue;
 			}
 			$source = basename( dirname( $file ) ) . '/' . basename( $file );
-			if ( preg_match_all( '/--([a-zA-Z0-9_-]+)\s*:\s*([^;]+);/', $css, $matches, PREG_SET_ORDER ) ) {
-				foreach ( $matches as $m ) {
-					$name  = '--' . $m[1];
-					$value = trim( $m[2] );
-					// Deduplicate by name (keep first occurrence)
-					if ( ! isset( $seen[ $name ] ) ) {
-						$seen[ $name ] = true;
-						$vars[] = array(
-							'name'   => $name,
-							'value'  => $value,
-							'source' => $source,
-						);
-					}
+			foreach ( self::extract_custom_properties( $css, $source ) as $var ) {
+				$name = $var['name'];
+				// Deduplicate by name (keep first occurrence)
+				if ( ! isset( $seen[ $name ] ) ) {
+					$seen[ $name ] = true;
+					$vars[] = $var;
 				}
 			}
 		}
@@ -168,16 +318,7 @@ class ATB_Styles_API {
 		foreach ( $theme_styles as $key => $style ) {
 			$custom_css = $style['settings']['_custom'] ?? '';
 			if ( ! empty( $custom_css ) ) {
-				// Extract --var-name: value patterns from :root or body blocks
-				if ( preg_match_all( '/--([a-zA-Z0-9_-]+)\s*:\s*([^;]+);/', $custom_css, $matches, PREG_SET_ORDER ) ) {
-					foreach ( $matches as $m ) {
-						$extracted_vars[] = array(
-							'name'   => '--' . $m[1],
-							'value'  => trim( $m[2] ),
-							'source' => $key,
-						);
-					}
-				}
+				$extracted_vars = array_merge( $extracted_vars, self::extract_custom_properties( $custom_css, $key ) );
 			}
 		}
 

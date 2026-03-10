@@ -95,7 +95,13 @@ See [CHANGELOG.md](CHANGELOG.md) for the full release summary.
 - **WordPress Abilities API** — Auto-discovers plugin abilities (Yoast, WooCommerce, Gravity Forms, etc.) and includes them in AI prompts. Requires WordPress 6.9+.
 - **CSS Framework Support** — Scans ACSS, Cwicly, and theme CSS files for custom properties. Colors and variables appear in `@color` and `@variable` autocomplete.
 - **Page-Specific @mentions** — `@element` and `@section` use a two-step flow: pick a page, then browse elements within it.
-- **40 E2E Tests** — Automated test suite via `tauri-plugin-mcp` covering all GUI features against the live staging site.
+- **41 E2E Tests** — Automated test suite via `tauri-plugin-mcp` covering all GUI features against the live staging site.
+
+## Core Philosophy
+
+- **ShipTypes-style contract-first design** — public CLI, plugin, and GUI behavior should be typed, machine-readable, and discoverable without relying on prose scraping.
+- **`agent-dx-cli-scale` discipline** — changes should preserve or improve JSON-first I/O, raw payload paths, schema validation, stable errors, safety rails, and context-window discipline.
+- **No silent structured-content corruption** — avoid naive regex or delimiter splitting that can rewrite valid CSS, HTML, JSON, URLs, or other structured payloads in transit.
 
 ## Requirements
 

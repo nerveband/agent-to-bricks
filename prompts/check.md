@@ -39,24 +39,28 @@ Run the full local verification pass, docs/content audit, and staging-aware chec
     - If release-facing messaging changed: verify `CHANGELOG.md`, `README.md`, and `website/src/components/home/HeroSection.astro`
 17. Check if the homepage sections in `website/src/components/home/` reference outdated features or are missing new ones
 18. Check if `README.md`, `CHANGELOG.md`, and the prompt docs under `prompts/` reflect recent process changes
+19. Check the change against the repo philosophy in `AGENTS.md`:
+    - contract-first, machine-readable surfaces in the ShipTypes sense
+    - agent-DX CLI discipline: structured JSON I/O, raw payload input, schema validation, stable errors, pagination/field selection, safety rails
+    - no naive regex or delimiter splitting that could corrupt structured strings
 
 **Cross-link & URL verification:**
-19. Grep all URLs in CLI source (`cmd/*.go`), GUI source (`src/`), and plugin source (`includes/`) that point to `agenttobricks.com` and verify each target page exists in `website/src/content/docs/` or `website/src/pages/`
-20. Check that plugin settings links and CLI help text URLs are not broken
+20. Grep all URLs in CLI source (`cmd/*.go`), GUI source (`src/`), and plugin source (`includes/`) that point to `agenttobricks.com` and verify each target page exists in `website/src/content/docs/` or `website/src/pages/`
+21. Check that plugin settings links and CLI help text URLs are not broken
 
 **Website preview (if website changed):**
-21. If any files under `website/` changed, build the website and deploy a preview:
+22. If any files under `website/` changed, build the website and deploy a preview:
     - `cd website && npm run build`
     - `cd website && npx netlify deploy --dir=dist`
     - Share the preview URL for review
     - After review is approved, deploy to production: `cd website && npx netlify deploy --dir=dist --prod`
 
 **GUI MCP notes:**
-22. The GUI E2E tests require the app running with the MCP debug feature:
+23. The GUI E2E tests require the app running with the MCP debug feature:
     - Start GUI with MCP: `cd gui && npm run dev:mcp`
     - Wait for socket at `/tmp/tauri-mcp-atb.sock`
     - Run `./gui/e2e/run-tests.sh`
-23. The suite currently contains 41 tests. All should pass before shipping.
+24. The suite currently contains 41 tests. All should pass before shipping.
 
 **Reporting:**
-24. Report what passed, what failed, what was skipped because local/private fixtures were absent, whether the installed binary path is clean, and what docs or release surfaces still need updating.
+25. Report what passed, what failed, what was skipped because local/private fixtures were absent, whether the installed binary path is clean, and any ShipTypes/agent-DX philosophy regressions or wins.

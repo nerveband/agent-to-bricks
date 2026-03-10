@@ -7,10 +7,10 @@ wp_set_current_user( 1 );
 
 $pass = 0;
 $fail = 0;
+$GLOBALS['pass'] = 0;
+$GLOBALS['fail'] = 0;
 
 function assert_same_css( $label, $input, $expected ) {
-	global $pass, $fail;
-
 	echo "TEST: {$label}... ";
 	$settings = ATB_Element_Validator::sanitize_settings(
 		array(
@@ -21,14 +21,14 @@ function assert_same_css( $label, $input, $expected ) {
 
 	if ( $actual === $expected ) {
 		echo "PASS\n";
-		$pass++;
+		$GLOBALS['pass']++;
 		return;
 	}
 
 	echo "FAIL\n";
 	echo "Expected:\n{$expected}\n";
 	echo "Actual:\n{$actual}\n";
-	$fail++;
+	$GLOBALS['fail']++;
 }
 
 assert_same_css(
@@ -54,6 +54,9 @@ assert_same_css(
 	'.x{--token:"a;b";color:red}',
 	".x {\n  --token:\"a;b\";\n  color:red\n}"
 );
+
+$pass = $GLOBALS['pass'];
+$fail = $GLOBALS['fail'];
 
 echo "\nResults: {$pass} passed, {$fail} failed\n";
 exit( $fail > 0 ? 1 : 0 );

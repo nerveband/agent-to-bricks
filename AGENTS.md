@@ -40,6 +40,17 @@ Staging and local install automation are env-driven. Load repo-local `.env` when
 
 `docs/test-data/` may contain proprietary/local-only Bricks fixtures and is intentionally gitignored. Public clones must skip private corpus validation cleanly when those fixtures are absent.
 
+## Core philosophy
+
+Treat these as non-optional design constraints on every subsequent code change:
+
+- ShipTypes-style contract-first interfaces: public CLI/plugin/GUI surfaces should be typed, machine-readable, and driven by one canonical contract instead of prose-only behavior.
+- Agent DX CLI discipline: preserve or improve structured JSON I/O, raw payload input, schema validation, stable error shapes, pagination/field-selection controls, safety rails, and automation-friendly defaults.
+- No silent corruption of structured content: avoid regex or naive string splitting that rewrites valid CSS, HTML, JSON, URLs, or other structured payloads unless the parser is delimiter-aware.
+- Docs and implementation move together: when behavior, contract, or workflow changes, update tests, docs, prompts, and `AGENTS.md` in the same change.
+
+If a change would make the product less machine-addressable, less contract-driven, or more likely to damage structured content in transit, treat that as a regression and fix the design before merging.
+
 ## CLI architecture
 
 Go module at `cli/`. Entry point is `cli/main.go`. Commands are in `cli/cmd/`. Core libraries are in `cli/internal/`.
