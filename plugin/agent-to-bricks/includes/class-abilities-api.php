@@ -320,7 +320,8 @@ class ATB_Abilities_API {
                 'properties' => array(
                     'snapshotId'  => array( 'type' => 'string' ),
                     'contentHash' => array( 'type' => 'string' ),
-                    'label'       => array( 'type' => 'string' ),
+                    'elementCount'=> array( 'type' => 'integer' ),
+                    'timestamp'   => array( 'type' => 'string' ),
                 ),
             ),
             'execute_callback'    => array( __CLASS__, 'execute_create_snapshot' ),
@@ -343,9 +344,9 @@ class ATB_Abilities_API {
             'output_schema'       => array(
                 'type'       => 'object',
                 'properties' => array(
-                    'success'     => array( 'type' => 'boolean' ),
                     'contentHash' => array( 'type' => 'string' ),
-                    'restored'    => array( 'type' => 'string' ),
+                    'count'       => array( 'type' => 'integer' ),
+                    'restoredFrom'=> array( 'type' => 'string' ),
                 ),
             ),
             'execute_callback'    => array( __CLASS__, 'execute_rollback_snapshot' ),
@@ -611,7 +612,12 @@ class ATB_Abilities_API {
             $request->set_param( 'per_page', $input['per_page'] );
         }
         $response = $api->get_pages( $request );
-        return is_wp_error( $response ) ? $response : $response->get_data();
+        if ( is_wp_error( $response ) ) {
+            return $response;
+        }
+        return array(
+            'pages' => $response->get_data(),
+        );
     }
 
     public static function execute_get_page_elements( $input ) {

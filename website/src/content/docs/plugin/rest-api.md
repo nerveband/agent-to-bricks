@@ -9,7 +9,7 @@ The plugin registers all routes under `/wp-json/agent-bricks/v1/`. Every request
 All operations listed below are also registered as [WordPress Abilities](/guides/wordpress-abilities/) on sites running WordPress 6.9+. This makes them discoverable by any AI agent via the standard `/wp-json/wp-abilities/v1/` endpoints. The custom REST API documented here continues to work on all WordPress versions.
 :::
 
-Rate limit: 60 requests per minute per key.
+Rate limiting currently applies to repeated failed authentication attempts. A site-wide per-key request limit is not currently enforced across all endpoints.
 
 ## Site
 
@@ -687,4 +687,4 @@ Common status codes:
 | 404 | Resource not found |
 | 409 | Conflict (contentHash mismatch; someone else wrote first) |
 | 428 | If-Match header required but missing |
-| 429 | Rate limit exceeded |
+| 429 | Too many failed authentication attempts |

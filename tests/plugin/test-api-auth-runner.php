@@ -6,6 +6,7 @@
  * Tests the plugin-level API key auth system (class-api-auth.php).
  */
 wp_set_current_user(1);
+$test_page = isset($args[0]) ? (int)$args[0] : 2005;
 
 $pass = 0;
 $fail = 0;
@@ -89,8 +90,8 @@ wp_set_current_user(0);
 $server = rest_get_server();
 
 // Create a request with X-ATB-Key header
-$request = new WP_REST_Request('GET', '/agent-bricks/v1/pages/2005/elements');
-$request->set_param('id', 2005);
+$request = new WP_REST_Request('GET', "/agent-bricks/v1/pages/$test_page/elements");
+$request->set_param('id', $test_page);
 $request->set_header('X-ATB-Key', $rest_key);
 
 // Simulate the authenticate filter

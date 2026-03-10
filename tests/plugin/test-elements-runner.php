@@ -44,6 +44,7 @@ echo "TEST 2: PATCH delta (valid hash)... ";
 $get_r = dispatch_rest('GET', "/agent-bricks/v1/pages/$test_page/elements", ['id' => $test_page]);
 $current_hash = $get_r['data']['contentHash'];
 $first_id = $get_r['data']['elements'][0]['id'] ?? null;
+$original_label = $get_r['data']['elements'][0]['label'] ?? '';
 
 if ($first_id) {
     $patch_r = dispatch_rest('PATCH', "/agent-bricks/v1/pages/$test_page/elements",
@@ -60,7 +61,7 @@ if ($first_id) {
         dispatch_rest('PATCH', "/agent-bricks/v1/pages/$test_page/elements",
             ['id' => $test_page],
             ['if_match' => $new_hash],
-            ['patches' => [['id' => $first_id, 'label' => 'Test Section']]]
+            ['patches' => [['id' => $first_id, 'label' => $original_label]]]
         );
     } else {
         echo "FAIL (status={$patch_r['status']})\n";
@@ -198,6 +199,7 @@ echo "TEST 8: Batch operations... ";
 $get_r = dispatch_rest('GET', "/agent-bricks/v1/pages/$test_page/elements", ['id' => $test_page]);
 $hash = $get_r['data']['contentHash'];
 $first_id = $get_r['data']['elements'][0]['id'] ?? null;
+$original_label = $get_r['data']['elements'][0]['label'] ?? $original_label;
 
 $batch_r = dispatch_rest('POST', "/agent-bricks/v1/pages/$test_page/elements/batch",
     ['id' => $test_page],
@@ -222,7 +224,7 @@ if ($batch_r['status'] === 200 && isset($batch_r['data']['contentHash'])) {
     dispatch_rest('PATCH', "/agent-bricks/v1/pages/$test_page/elements",
         ['id' => $test_page],
         ['if_match' => $get2['data']['contentHash']],
-        ['patches' => [['id' => $first_id, 'label' => 'Test Section']]]
+        ['patches' => [['id' => $first_id, 'label' => $original_label]]]
     );
 } else {
     echo "FAIL (status={$batch_r['status']})\n";

@@ -51,6 +51,7 @@ PLUGIN_PHP="$ROOT_DIR/plugin/agent-to-bricks/agent-to-bricks.php"
 GUI_PACKAGE_JSON="$ROOT_DIR/gui/package.json"
 TAURI_CONF_JSON="$ROOT_DIR/gui/src-tauri/tauri.conf.json"
 TAURI_CARGO_TOML="$ROOT_DIR/gui/src-tauri/Cargo.toml"
+CLI_SCHEMA_JSON="$ROOT_DIR/cli/schema.json"
 
 # --- Check mode ---
 
@@ -128,6 +129,16 @@ check_or_update "$TAURI_CARGO_TOML" "tauri-Cargo.toml" \
     "s/^(version = \")[^\"]*/\\1$VERSION/" \
     "$CARGO_VER"
 
+# --- 6. CLI schema.json ---
+
+[ -f "$CLI_SCHEMA_JSON" ] || die "CLI schema not found: $CLI_SCHEMA_JSON"
+
+CLI_SCHEMA_VER="$(grep '"version"' "$CLI_SCHEMA_JSON" | head -1 | sed -E 's/.*"version": *"([^"]+)".*/\1/')"
+
+check_or_update "$CLI_SCHEMA_JSON" "cli-schema.json" \
+    "s/(\"version\": \")[^\"]*/\\1$VERSION/" \
+    "$CLI_SCHEMA_VER"
+
 # --- Summary ---
 
 if $CHECK_MODE && [ $ERRORS -gt 0 ]; then
@@ -136,7 +147,7 @@ if $CHECK_MODE && [ $ERRORS -gt 0 ]; then
     exit 1
 fi
 
-# --- 6. Regenerate Cargo.lock if versions changed ---
+# --- 7. Regenerate Cargo.lock if versions changed ---
 
 if ! $CHECK_MODE; then
     if command -v cargo >/dev/null 2>&1; then

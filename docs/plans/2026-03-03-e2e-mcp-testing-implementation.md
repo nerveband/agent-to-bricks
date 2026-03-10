@@ -328,7 +328,7 @@ Use MCP tool: `execute_js` to programmatically set the site:
 // The atoms are managed internally, so we inject via config
 window.__TEST_SITE = {
   url: 'https://ts-staging.wavedepth.com',
-  api_key: 'atb_D1i02W8BlbsE3HR5dQJV3k9ZzITz8jlFjqwHa1OD',
+  api_key: process.env.ATB_STAGING_API_KEY,
   name: 'TS Staging'
 };
 ```
@@ -365,7 +365,7 @@ Use MCP tool: `execute_js`:
 // Invoke the Tauri command directly to test the backend
 window.__TAURI__.core.invoke('get_abilities', {
   siteUrl: 'https://ts-staging.wavedepth.com',
-  apiKey: 'atb_D1i02W8BlbsE3HR5dQJV3k9ZzITz8jlFjqwHa1OD',
+  apiKey: process.env.ATB_STAGING_API_KEY,
   category: ''
 }).then(r => JSON.stringify({count: r.length, names: r.map(a => a.name)}))
 ```
@@ -377,7 +377,7 @@ Use MCP tool: `execute_js`:
 ```javascript
 window.__TAURI__.core.invoke('get_abilities', {
   siteUrl: 'https://ts-staging.wavedepth.com',
-  apiKey: 'atb_D1i02W8BlbsE3HR5dQJV3k9ZzITz8jlFjqwHa1OD',
+  apiKey: process.env.ATB_STAGING_API_KEY,
   category: ''
 }).then(r => {
   const cats = [...new Set(r.map(a => a.category))];
@@ -395,7 +395,7 @@ Use MCP tool: `execute_js`:
 ```javascript
 window.__TAURI__.core.invoke('get_abilities', {
   siteUrl: 'https://ts-staging.wavedepth.com',
-  apiKey: 'atb_D1i02W8BlbsE3HR5dQJV3k9ZzITz8jlFjqwHa1OD',
+  apiKey: process.env.ATB_STAGING_API_KEY,
   category: ''
 }).then(r => {
   const readonly = r.filter(a => a.annotations?.readonly);
@@ -475,7 +475,7 @@ Use MCP tool: `execute_js`:
 ```javascript
 window.__TAURI__.core.invoke('search_pages', {
   siteUrl: 'https://ts-staging.wavedepth.com',
-  apiKey: 'atb_D1i02W8BlbsE3HR5dQJV3k9ZzITz8jlFjqwHa1OD',
+  apiKey: process.env.ATB_STAGING_API_KEY,
   query: '',
   perPage: 10
 }).then(r => JSON.stringify({count: r.length, pages: r.map(p => ({id: p.id, title: p.title}))}))
@@ -488,7 +488,7 @@ Use MCP tool: `execute_js`:
 ```javascript
 window.__TAURI__.core.invoke('get_page_elements', {
   siteUrl: 'https://ts-staging.wavedepth.com',
-  apiKey: 'atb_D1i02W8BlbsE3HR5dQJV3k9ZzITz8jlFjqwHa1OD',
+  apiKey: process.env.ATB_STAGING_API_KEY,
   pageId: 1338
 }).then(r => JSON.stringify({
   element_count: r.count,

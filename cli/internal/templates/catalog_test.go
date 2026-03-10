@@ -166,3 +166,49 @@ func TestCatalogLoadFramesFormat(t *testing.T) {
 		t.Errorf("expected category 'hero', got %q", tmpl.Category)
 	}
 }
+
+func TestLoadFileFramesFormat(t *testing.T) {
+	dir := t.TempDir()
+	heroDir := filepath.Join(dir, "hero")
+	if err := os.MkdirAll(heroDir, 0755); err != nil {
+		t.Fatal(err)
+	}
+
+	framesJSON := `{
+		"idx": 442,
+		"title": "Hero Alpha",
+		"elementCount": 2,
+		"classCount": 1,
+		"bricksExport": {
+			"content": [
+				{"id": "cfc3c9", "name": "section", "parent": 0, "children": ["49c48b"], "label": "Hero Alpha"},
+				{"id": "49c48b", "name": "container", "parent": "cfc3c9", "children": []}
+			],
+			"globalClasses": [
+				{"id": "btn--primary", "name": "btn--primary"}
+			]
+		}
+	}`
+	path := filepath.Join(heroDir, "hero-alpha.json")
+	if err := os.WriteFile(path, []byte(framesJSON), 0644); err != nil {
+		t.Fatal(err)
+	}
+
+	tmpl, err := templates.LoadFile(path)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if tmpl.Name != "Hero Alpha" {
+		t.Fatalf("expected template name %q, got %q", "Hero Alpha", tmpl.Name)
+	}
+	if len(tmpl.Elements) != 2 {
+		t.Fatalf("expected 2 elements, got %d", len(tmpl.Elements))
+	}
+	if len(tmpl.GlobalClasses) != 1 {
+		t.Fatalf("expected 1 global class, got %d", len(tmpl.GlobalClasses))
+	}
+	if tmpl.Category != "hero" {
+		t.Fatalf("expected category %q, got %q", "hero", tmpl.Category)
+	}
+}

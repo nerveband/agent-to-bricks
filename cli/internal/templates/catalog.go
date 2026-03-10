@@ -42,43 +42,50 @@ func (c *Catalog) LoadDir(dir string) error {
 		if info.IsDir() || !strings.HasSuffix(info.Name(), ".json") {
 			return nil
 		}
-		data, err := os.ReadFile(path)
+		tmpl, err := LoadFile(path)
 		if err != nil {
 			return nil
 		}
-
-		// Try to detect Frames format first
-		var raw map[string]interface{}
-		if err := json.Unmarshal(data, &raw); err != nil {
-			return nil
-		}
-
-		var tmpl Template
-		if bricksExport, ok := raw["bricksExport"].(map[string]interface{}); ok {
-			// Frames format: extract from bricksExport wrapper
-			tmpl.Name = stringVal(raw, "title")
-			if content, ok := bricksExport["content"].([]interface{}); ok {
-				tmpl.Elements = toElementSlice(content)
-			}
-			if gc, ok := bricksExport["globalClasses"].([]interface{}); ok {
-				tmpl.GlobalClasses = toElementSlice(gc)
-			}
-			// Derive category from parent directory name
-			tmpl.Category = filepath.Base(filepath.Dir(path))
-		} else {
-			// Standard format
-			if err := json.Unmarshal(data, &tmpl); err != nil {
-				return nil
-			}
-		}
-
-		if tmpl.Name == "" {
-			tmpl.Name = strings.TrimSuffix(info.Name(), ".json")
-		}
-		tmpl.Source = path
-		c.templates[tmpl.Name] = &tmpl
+		c.templates[tmpl.Name] = tmpl
 		return nil
 	})
+}
+
+// LoadFile loads a single template JSON file, including Frames exports.
+func LoadFile(path string) (*Template, error) {
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return nil, err
+	}
+
+	var raw map[string]interface{}
+	if err := json.Unmarshal(data, &raw); err != nil {
+		return nil, err
+	}
+
+	var tmpl Template
+	if bricksExport, ok := raw["bricksExport"].(map[string]interface{}); ok {
+		// Frames format: extract from bricksExport wrapper.
+		tmpl.Name = stringVal(raw, "title")
+		if content, ok := bricksExport["content"].([]interface{}); ok {
+			tmpl.Elements = toElementSlice(content)
+		}
+		if gc, ok := bricksExport["globalClasses"].([]interface{}); ok {
+			tmpl.GlobalClasses = toElementSlice(gc)
+		}
+		// Derive category from parent directory name.
+		tmpl.Category = filepath.Base(filepath.Dir(path))
+	} else {
+		if err := json.Unmarshal(data, &tmpl); err != nil {
+			return nil, err
+		}
+	}
+
+	if tmpl.Name == "" {
+		tmpl.Name = strings.TrimSuffix(filepath.Base(path), ".json")
+	}
+	tmpl.Source = path
+	return &tmpl, nil
 }
 
 // stringVal safely extracts a string value from a map.

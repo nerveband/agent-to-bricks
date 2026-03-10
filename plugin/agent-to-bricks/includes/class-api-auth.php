@@ -38,6 +38,11 @@ class ATB_API_Auth {
 			return $result;
 		}
 
+		// Only authenticate the ATB REST surfaces that are intended for agent use.
+		if ( ! self::is_agent_rest_request() ) {
+			return $result;
+		}
+
 		// Only process if X-ATB-Key header is present
 		$api_key = self::get_request_key();
 		if ( empty( $api_key ) ) {
@@ -73,6 +78,35 @@ class ATB_API_Auth {
 		self::touch_key( $api_key );
 
 		return true;
+	}
+
+	/**
+	 * Detect whether the current request targets an ATB-authenticated REST namespace.
+	 */
+	private static function is_agent_rest_request() {
+		$uri = $_SERVER['REQUEST_URI'] ?? '';
+		if ( empty( $uri ) ) {
+			return false;
+		}
+
+		$path = wp_parse_url( $uri, PHP_URL_PATH );
+		if ( ! is_string( $path ) || $path === '' ) {
+			return false;
+		}
+
+		$normalized    = trailingslashit( $path );
+		$rest_prefixes = array(
+			'/' . rest_get_url_prefix() . '/agent-bricks/v1/',
+			'/' . rest_get_url_prefix() . '/wp-abilities/v1/',
+		);
+
+		foreach ( $rest_prefixes as $rest_prefix ) {
+			if ( strpos( $normalized, $rest_prefix ) !== false ) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	/**

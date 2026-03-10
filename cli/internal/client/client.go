@@ -209,7 +209,7 @@ func (c *Client) ReplaceElements(pageID int, elements []map[string]interface{}, 
 
 // PatchElements updates specific elements by ID.
 func (c *Client) PatchElements(pageID int, patches []map[string]interface{}, ifMatch string) (*MutationResponse, error) {
-	payload, _ := json.Marshal(map[string]interface{}{"elements": patches})
+	payload, _ := json.Marshal(map[string]interface{}{"patches": patches})
 	headers := map[string]string{}
 	if ifMatch != "" {
 		headers["If-Match"] = ifMatch

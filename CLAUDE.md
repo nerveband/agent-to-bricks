@@ -50,5 +50,7 @@ All components use `X-ATB-Key` custom header (not Authorization). API key stored
 ## Staging
 
 - Server: ts-staging.wavedepth.com (23.94.202.65)
-- After deploy: `chown -R runcloud:runcloud` plugin dir + restart PHP-FPM
-- Test page ID: 1338
+- Canonical env vars: `ATB_STAGING_URL`, `ATB_STAGING_API_KEY`, `ATB_STAGING_READ_PAGE_ID`, `ATB_STAGING_SCRATCH_PAGE_ID`, `ATB_STAGING_TEMPLATE_PAGE_ID`
+- Legacy `WP_STAGING_URL`, `ATB_API_KEY`, and `TEST_PAGE_ID` still work through the staging helper for local compatibility
+- After deploy: restore plugin ownership and reload PHP-FPM (best effort in `scripts/deploy-staging.sh`)
+- Proprietary template fixtures under `docs/test-data/` are local-only; public clones should skip those validations cleanly

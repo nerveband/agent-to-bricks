@@ -8,6 +8,27 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 class ATB_Templates_API {
 
+	private static function check_single_post_permission( $request, $existing_cap, $missing_cap ) {
+		$post_id = (int) $request->get_param( 'id' );
+		$post    = get_post( $post_id );
+
+		// Let the route callback return the canonical 404 for missing resources.
+		if ( ! $post ) {
+			return current_user_can( $missing_cap );
+		}
+
+		if ( ! current_user_can( $existing_cap, $post_id ) ) {
+			return false;
+		}
+
+		$access = ATB_Access_Control::can_access_post( $post_id );
+		if ( is_wp_error( $access ) ) {
+			return $access;
+		}
+
+		return true;
+	}
+
 	public static function init() {
 		add_action( 'rest_api_init', array( __CLASS__, 'register_routes' ) );
 	}
@@ -54,39 +75,15 @@ class ATB_Templates_API {
 	}
 
 	public static function check_read_permission( $request ) {
-		$post_id = (int) $request->get_param( 'id' );
-		if ( ! current_user_can( 'edit_post', $post_id ) ) {
-			return false;
-		}
-		$access = ATB_Access_Control::can_access_post( $post_id );
-		if ( is_wp_error( $access ) ) {
-			return $access;
-		}
-		return true;
+		return self::check_single_post_permission( $request, 'edit_post', 'edit_posts' );
 	}
 
 	public static function check_edit_permission( $request ) {
-		$post_id = (int) $request->get_param( 'id' );
-		if ( ! current_user_can( 'edit_post', $post_id ) ) {
-			return false;
-		}
-		$access = ATB_Access_Control::can_access_post( $post_id );
-		if ( is_wp_error( $access ) ) {
-			return $access;
-		}
-		return true;
+		return self::check_single_post_permission( $request, 'edit_post', 'edit_posts' );
 	}
 
 	public static function check_delete_permission( $request ) {
-		$post_id = (int) $request->get_param( 'id' );
-		if ( ! current_user_can( 'delete_post', $post_id ) ) {
-			return false;
-		}
-		$access = ATB_Access_Control::can_access_post( $post_id );
-		if ( is_wp_error( $access ) ) {
-			return $access;
-		}
-		return true;
+		return self::check_single_post_permission( $request, 'delete_post', 'delete_posts' );
 	}
 
 	/**
@@ -107,6 +104,12 @@ class ATB_Templates_API {
 		$templates = array();
 
 		foreach ( $posts as $post ) {
+			if ( $post->post_status === 'trash' ) {
+				continue;
+			}
+			if ( ATB_Access_Control::can_access_post( $post->ID ) !== true ) {
+				continue;
+			}
 			$tmpl_type = get_post_meta( $post->ID, '_bricks_template_type', true );
 			if ( $type_filter && $tmpl_type !== $type_filter ) {
 				continue;
@@ -135,7 +138,7 @@ class ATB_Templates_API {
 		$post_id = (int) $request->get_param( 'id' );
 		$post    = get_post( $post_id );
 
-		if ( ! $post || $post->post_type !== 'bricks_template' ) {
+		if ( ! $post || $post->post_type !== 'bricks_template' || $post->post_status === 'trash' ) {
 			return new WP_REST_Response( array( 'error' => 'Template not found.' ), 404 );
 		}
 
@@ -198,7 +201,7 @@ class ATB_Templates_API {
 		$post_id = (int) $request->get_param( 'id' );
 		$post    = get_post( $post_id );
 
-		if ( ! $post || $post->post_type !== 'bricks_template' ) {
+		if ( ! $post || $post->post_type !== 'bricks_template' || $post->post_status === 'trash' ) {
 			return new WP_REST_Response( array( 'error' => 'Template not found.' ), 404 );
 		}
 
@@ -243,15 +246,18 @@ class ATB_Templates_API {
 		$post_id = (int) $request->get_param( 'id' );
 		$post    = get_post( $post_id );
 
-		if ( ! $post || $post->post_type !== 'bricks_template' ) {
+		if ( ! $post || $post->post_type !== 'bricks_template' || $post->post_status === 'trash' ) {
 			return new WP_REST_Response( array( 'error' => 'Template not found.' ), 404 );
 		}
 
-		wp_trash_post( $post_id );
+		if ( ! wp_trash_post( $post_id ) ) {
+			return new WP_REST_Response( array( 'error' => 'Failed to delete template.' ), 500 );
+		}
 
 		return new WP_REST_Response( array(
 			'success' => true,
 			'deleted' => $post_id,
+			'status'  => 'trash',
 		), 200 );
 	}
 }

@@ -7,6 +7,14 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 class ATB_Bricks_Lifecycle {
 
 	/**
+	 * Drop post/meta caches so the next read reflects persisted storage.
+	 */
+	private static function refresh_post_caches( $post_id ) {
+		wp_cache_delete( $post_id, 'post_meta' );
+		clean_post_cache( $post_id );
+	}
+
+	/**
 	 * Get the correct post meta key for Bricks content.
 	 */
 	public static function content_meta_key() {
@@ -54,7 +62,32 @@ class ATB_Bricks_Lifecycle {
 		}
 
 		$meta_key = self::content_meta_key();
+		$desired_hash = md5( maybe_serialize( $elements ) );
+
 		update_post_meta( $post_id, $meta_key, $elements );
+		self::refresh_post_caches( $post_id );
+
+		$persisted = self::read_elements( $post_id );
+		if ( $persisted['contentHash'] !== $desired_hash ) {
+			// Some Bricks/WordPress installs refuse update_post_meta() for this key
+			// even though a delete+add cycle succeeds. Retry once with that path.
+			delete_post_meta( $post_id, $meta_key );
+			add_post_meta( $post_id, $meta_key, $elements, true );
+			self::refresh_post_caches( $post_id );
+
+			$persisted = self::read_elements( $post_id );
+			if ( $persisted['contentHash'] !== $desired_hash ) {
+				return new WP_Error(
+					'content_write_failed',
+					'Failed to persist page content.',
+					array(
+						'status'       => 500,
+						'expectedHash' => $desired_hash,
+						'currentHash'  => $persisted['contentHash'],
+					)
+				);
+			}
+		}
 
 		// Trigger Bricks CSS regeneration
 		self::regenerate_css( $post_id );
@@ -65,8 +98,10 @@ class ATB_Bricks_Lifecycle {
 		// Fire action for other plugins
 		do_action( 'agent_bricks_content_updated', $post_id, $elements );
 
-		$new_hash = md5( maybe_serialize( $elements ) );
-		return $new_hash;
+		// Return the persisted hash, not the pre-write in-memory hash. Bricks/WP can
+		// normalize stored meta, and clients use this value for the next If-Match.
+		self::refresh_post_caches( $post_id );
+		return self::read_elements( $post_id )['contentHash'];
 	}
 
 	/**

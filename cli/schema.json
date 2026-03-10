@@ -1,6 +1,6 @@
 {
   "name": "bricks",
-  "version": "1.9.0",
+  "version": "2.0.0",
   "description": "Agent to Bricks — AI-powered Bricks Builder CLI",
   "globalFlags": {
     "--config": {"type": "string", "default": "~/.agent-to-bricks/config.yaml", "description": "config file path"}
@@ -310,8 +310,8 @@
         "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
       },
       "stdin": true,
-      "output": ["text"],
-      "example": "echo '{\"elements\":[...]}' | bricks site patch 1234"
+      "output": ["json", "text"],
+      "example": "echo '{\"patches\":[...]}' | bricks site patch 1234"
     },
     "site pull": {
       "description": "Pull page elements to a JSON file",
@@ -331,7 +331,7 @@
         "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
       },
       "stdin": true,
-      "output": ["text"],
+      "output": ["json", "text"],
       "example": "bricks site push 1234 layout.json"
     },
     "site rollback": {

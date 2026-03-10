@@ -1,7 +1,7 @@
 import { useSetAtom, useAtom } from "jotai";
 import { sessionsAtom, activeSessionIdAtom } from "../atoms/sessions";
 import { activeToolSlugAtom, toolCustomFlagsAtom, toolWorkingDirsAtom, toolPathsAtom, type Tool } from "../atoms/tools";
-import { activeSiteAtom, sessionPrePromptAtom, type SiteEntry } from "../atoms/app";
+import { activeSiteAtom, sessionPrePromptAtom, SESSION_API_KEY_PLACEHOLDER, DEFAULT_SESSION_PREPROMPT, type SiteEntry } from "../atoms/app";
 import { useAtomValue } from "jotai";
 import { useCallback, useEffect, useState } from "react";
 import { writeToActivePtyWhenReady } from "../atoms/ptyBridge";
@@ -67,15 +67,11 @@ Read-only abilities also accept GET. Auth: X-ATB-Key header.
 /** Build the initial context prompt for a coding tool session using the user's template. */
 export function buildSiteContextPrompt(site: SiteEntry | null, template?: string, abilities?: AbilityInfo[]): string {
   if (!site) return "";
-  const tmpl = template || `You are a web developer working with a Bricks Builder WordPress site ({environment}).
-Site: {site_url}
-API Key: {api_key}
-The bricks CLI is available. Use \`bricks\` commands to pull, push, generate, and modify page elements.
-Use the API key with the X-ATB-Key header when making API calls to the site.{abilities_block}`;
+  const tmpl = template || DEFAULT_SESSION_PREPROMPT;
 
   return tmpl
     .replace(/\{site_url\}/g, site.site_url)
-    .replace(/\{api_key\}/g, site.api_key)
+    .replace(/\{api_key\}/g, SESSION_API_KEY_PLACEHOLDER)
     .replace(/\{site_name\}/g, site.name)
     .replace(/\{environment\}/g, site.environment ?? "")
     .replace(/\{abilities_block\}/g, formatAbilitiesBlock(abilities ?? []));

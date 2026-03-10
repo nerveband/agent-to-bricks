@@ -42,7 +42,7 @@ func showVersion() error {
 		info, err := c.GetSiteInfo()
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "Plugin:    (unreachable: %v)\n", err)
-			fmt.Fprintf(os.Stderr, "           Install: https://agenttobricks.com/getting-started/installation/\n")
+			fmt.Fprintln(os.Stderr, "           Install: https://agenttobricks.com/getting-started/installation/")
 		} else {
 			fmt.Printf("Plugin:    v%s (on %s)\n", info.PluginVersion, cfg.Site.URL)
 

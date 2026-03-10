@@ -118,15 +118,11 @@ var templatesImportCmd = &cobra.Command{
 				count++
 			}
 		} else {
-			data, err := os.ReadFile(src)
+			tmpl, err := templates.LoadFile(src)
 			if err != nil {
 				return err
 			}
-			var tmpl templates.Template
-			if err := json.Unmarshal(data, &tmpl); err != nil {
-				return err
-			}
-			if err := cat.Save(&tmpl, dest); err != nil {
+			if err := cat.Save(tmpl, dest); err != nil {
 				return err
 			}
 			count = 1

@@ -130,15 +130,17 @@ class ATB_Snapshots_API {
 		// Auto-snapshot current state before rollback
 		self::take_snapshot( $post_id, 'Pre-rollback auto-snapshot' );
 
-		// Restore the elements (bypass hash check since we're rolling back)
-		$meta_key = ATB_Bricks_Lifecycle::content_meta_key();
-		update_post_meta( $post_id, $meta_key, $target['elements'] );
+		// Restore the elements via the shared lifecycle writer so rollback uses the
+		// same hardened persistence path as the CRUD endpoints.
+		$result = ATB_Bricks_Lifecycle::write_elements( $post_id, $target['elements'] );
+		if ( is_wp_error( $result ) ) {
+			$data = $result->get_error_data();
+			return new WP_REST_Response( array(
+				'error'       => $result->get_error_message(),
+				'currentHash' => $data['currentHash'] ?? '',
+			), $data['status'] ?? 500 );
+		}
 
-		// Regenerate CSS and clear caches
-		ATB_Bricks_Lifecycle::regenerate_css( $post_id );
-		ATB_Bricks_Lifecycle::clear_cache( $post_id );
-
-		// Read back to get fresh hash
 		$data = ATB_Bricks_Lifecycle::read_elements( $post_id );
 
 		return new WP_REST_Response( array(

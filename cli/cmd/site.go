@@ -8,6 +8,7 @@ import (
 	"strconv"
 	"strings"
 
+	clierrors "github.com/nerveband/agent-to-bricks/internal/errors"
 	"github.com/nerveband/agent-to-bricks/internal/output"
 	"github.com/spf13/cobra"
 )
@@ -154,7 +155,7 @@ var sitePushCmd = &cobra.Command{
 
 		pageID, err := strconv.Atoi(args[0])
 		if err != nil {
-			return fmt.Errorf("invalid page ID: %s", args[0])
+			return clierrors.ValidationError("INVALID_PAGE_ID", fmt.Sprintf("invalid page ID: %s", args[0]))
 		}
 
 		var data []byte
@@ -164,7 +165,7 @@ var sitePushCmd = &cobra.Command{
 			data, err = io.ReadAll(os.Stdin)
 		}
 		if err != nil {
-			return fmt.Errorf("failed to read input: %w", err)
+			return clierrors.ValidationError("INVALID_INPUT", fmt.Sprintf("failed to read input: %v", err))
 		}
 
 		var payload struct {
@@ -172,7 +173,7 @@ var sitePushCmd = &cobra.Command{
 			ContentHash string                   `json:"contentHash"`
 		}
 		if err := json.Unmarshal(data, &payload); err != nil {
-			return fmt.Errorf("failed to parse JSON: %w", err)
+			return clierrors.ValidationError("INVALID_JSON", "failed to parse JSON input")
 		}
 
 		c := newSiteClient()
@@ -182,6 +183,9 @@ var sitePushCmd = &cobra.Command{
 			return fmt.Errorf("failed to push elements: %w", err)
 		}
 
+		if output.IsJSON() {
+			return output.JSON(resp)
+		}
 		fmt.Printf("Pushed %d elements (new hash: %s)\n", resp.Count, resp.ContentHash)
 		return nil
 	},
@@ -194,7 +198,7 @@ var sitePatchCmd = &cobra.Command{
 	Short: "Patch specific elements on a page",
 	Long:  "Patch elements using --file patches.json or stdin",
 	Example: `  bricks site patch 1234 --file fixes.json
-  echo '{"elements":[...]}' | bricks site patch 1234`,
+  echo '{"patches":[...]}' | bricks site patch 1234`,
 	Args: cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		output.ResolveFormat(cmd)
@@ -204,7 +208,7 @@ var sitePatchCmd = &cobra.Command{
 
 		pageID, err := strconv.Atoi(args[0])
 		if err != nil {
-			return fmt.Errorf("invalid page ID: %s", args[0])
+			return clierrors.ValidationError("INVALID_PAGE_ID", fmt.Sprintf("invalid page ID: %s", args[0]))
 		}
 
 		var data []byte
@@ -214,24 +218,27 @@ var sitePatchCmd = &cobra.Command{
 			data, err = io.ReadAll(os.Stdin)
 		}
 		if err != nil {
-			return fmt.Errorf("failed to read input: %w", err)
+			return clierrors.ValidationError("INVALID_INPUT", fmt.Sprintf("failed to read input: %v", err))
 		}
 
 		var patches struct {
-			Elements    []map[string]interface{} `json:"elements"`
+			Patches     []map[string]interface{} `json:"patches"`
 			ContentHash string                   `json:"contentHash"`
 		}
 		if err := json.Unmarshal(data, &patches); err != nil {
-			return fmt.Errorf("failed to parse patch JSON: %w", err)
+			return clierrors.ValidationError("INVALID_JSON", "failed to parse patch JSON input")
 		}
 
 		c := newSiteClient()
 
-		resp, err := c.PatchElements(pageID, patches.Elements, patches.ContentHash)
+		resp, err := c.PatchElements(pageID, patches.Patches, patches.ContentHash)
 		if err != nil {
 			return fmt.Errorf("failed to patch elements: %w", err)
 		}
 
+		if output.IsJSON() {
+			return output.JSON(resp)
+		}
 		fmt.Printf("Patched elements (new hash: %s)\n", resp.ContentHash)
 		return nil
 	},

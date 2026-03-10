@@ -78,6 +78,17 @@ bricks update --check      # check without installing
 
 The Desktop App checks for updates automatically on launch.
 
+## Latest Release
+
+### v2.0.0
+
+- Breaking API hardening: page patch requests now use `patches` only, matching the plugin and docs contract.
+- Staging is now a real release gate: shared env-driven fixture config, deploy verification, plugin runner matrix, CLI E2E, GUI E2E, and template smoke coverage.
+- Private Bricks template corpora under `docs/test-data/` are supported for local validation without forcing proprietary fixtures into public clones.
+- GUI session bootstrap no longer injects raw site API keys into agent prompts; typed staging checks and release verification scripts are included in-repo.
+
+See [CHANGELOG.md](CHANGELOG.md) for the full release summary.
+
 ## Key Features
 
 - **Machine-Readable CLI** — `bricks schema` outputs a JSON manifest of all commands. Structured error codes, `--format json` on every command, and stdin pipelines make the CLI fully automatable by AI agents.

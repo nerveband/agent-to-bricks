@@ -14,6 +14,23 @@ End-to-end tests using `tauri-plugin-mcp` to programmatically interact with the 
 ## Running Tests
 
 ```bash
+gui/e2e/run-tests.sh
+```
+
+The runner is env-driven. It requires:
+
+- `ATB_STAGING_URL`
+- `ATB_STAGING_API_KEY`
+- `ATB_STAGING_READ_PAGE_ID`
+
+`gui/e2e/run-tests.sh` will source the repo root `.env` when present and normalize the older
+`WP_STAGING_URL`, `ATB_API_KEY`, and `TEST_PAGE_ID` names into the new `ATB_STAGING_*` variables.
+If you prefer to run Node directly, export the `ATB_STAGING_*` variables yourself:
+
+```bash
+export ATB_STAGING_URL="https://ts-staging.wavedepth.com"
+export ATB_STAGING_API_KEY="atb_redacted"
+export ATB_STAGING_READ_PAGE_ID="1338"
 node gui/e2e/run-tests.mjs
 ```
 
@@ -39,7 +56,7 @@ Real App UI
 | Site Management | 1 | Connected site display |
 | Prompt Composer | 5 | Input, @-mentions, presets, save/copy |
 | Staging Connection | 2 | Site info API, WP version |
-| Page Browsing | 2 | Pages list, elements for page 1338 |
+| Page Browsing | 2 | Pages list, elements for `ATB_STAGING_READ_PAGE_ID` |
 | Abilities API | 6 | List, categories, core, exec, input, POST rejection |
 | CSS Variables & Colors | 3 | extractedFromCSS, cssColors, valid values |
 | UI Interactions | 2 | Settings dialog open/fields |
@@ -51,5 +68,6 @@ Real App UI
 
 - `mcp-client.mjs` — Socket client for tauri-plugin-mcp
 - `run-tests.mjs` — Test suite
+- `run-tests.sh` — Env-aware wrapper that loads staging configuration
 - `screenshots/` — Auto-captured during test runs
 - `test-results.json` — Machine-readable results

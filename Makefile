@@ -1,4 +1,4 @@
-.PHONY: build test clean install lint sync-version check-version
+.PHONY: build test clean install install-verify lint sync-version check-version deploy-staging test-staging-plugin test-staging-cli test-template-smoke test-gui-e2e staging-gate
 
 VERSION ?= $(shell cat VERSION 2>/dev/null || git describe --tags --always --dirty 2>/dev/null || echo "dev")
 COMMIT  ?= $(shell git rev-parse --short HEAD 2>/dev/null || echo "none")
@@ -30,6 +30,9 @@ install: build
 	@case "$$PATH" in *$(INSTALL_DIR)*) ;; *) echo "WARNING: $(INSTALL_DIR) is not in your PATH. Add it with:"; \
 		echo "  echo 'export PATH=\"$(INSTALL_DIR):\$$PATH\"' >> ~/.zshrc  # or ~/.bashrc"; esac
 
+install-verify:
+	./scripts/verify-local-install.sh
+
 lint:
 	cd cli && go vet ./...
 
@@ -45,6 +48,21 @@ check-version:
 # Plugin deployment
 deploy-staging:
 	./scripts/deploy-staging.sh
+
+test-staging-plugin:
+	./tests/plugin/run-staging-suite.sh
+
+test-staging-cli:
+	./tests/e2e/test-full-workflow.sh
+
+test-template-smoke:
+	./tests/e2e/test-template-smoke.sh
+
+test-gui-e2e:
+	./gui/e2e/run-tests.sh
+
+staging-gate:
+	./scripts/verify-staging-release.sh
 
 .PHONY: release-prep tag-release
 

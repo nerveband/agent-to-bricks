@@ -117,14 +117,17 @@ bricks site patch <page-id> [-f <patch.json>]
 Patch from a file:
 
 ```json
-[
-  {
-    "id": "abc123",
-    "settings": {
-      "text": "New headline text"
+{
+  "patches": [
+    {
+      "id": "abc123",
+      "settings": {
+        "text": "New headline text"
+      }
     }
-  }
-]
+  ],
+  "contentHash": "e3b0c44298fc1c14..."
+}
 ```
 
 ```bash
@@ -134,7 +137,7 @@ bricks site patch 1460 -f headline-fix.json
 Patch from stdin:
 
 ```bash
-echo '[{"id":"abc123","settings":{"text":"Updated"}}]' | bricks site patch 1460
+echo '{"patches":[{"id":"abc123","settings":{"text":"Updated"}}],"contentHash":"e3b0c44298fc1c14..."}' | bricks site patch 1460
 ```
 
 ```

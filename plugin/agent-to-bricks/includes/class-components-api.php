@@ -30,6 +30,13 @@ class ATB_Components_API {
 
 	public static function check_single_permission( WP_REST_Request $request ) {
 		$post_id = (int) $request->get_param( 'id' );
+		$post    = get_post( $post_id );
+
+		// Let the route callback return a canonical 404 for missing resources.
+		if ( ! $post ) {
+			return current_user_can( 'edit_posts' );
+		}
+
 		if ( ! current_user_can( 'edit_post', $post_id ) ) {
 			return false;
 		}
@@ -59,6 +66,12 @@ class ATB_Components_API {
 		$components = [];
 
 		foreach ( $posts as $post ) {
+			if ( $post->post_status === 'trash' ) {
+				continue;
+			}
+			if ( ATB_Access_Control::can_access_post( $post->ID ) !== true ) {
+				continue;
+			}
 			$content = get_post_meta( $post->ID, $meta_key, true );
 			$components[] = [
 				'id'           => $post->ID,
@@ -81,7 +94,7 @@ class ATB_Components_API {
 		$post_id = (int) $request->get_param( 'id' );
 		$post    = get_post( $post_id );
 
-		if ( ! $post || $post->post_type !== 'bricks_template' ) {
+		if ( ! $post || $post->post_type !== 'bricks_template' || $post->post_status === 'trash' ) {
 			return new WP_REST_Response( [ 'error' => 'Component not found.' ], 404 );
 		}
 

@@ -46,15 +46,19 @@ export const promptCountAtom = atom(0);
 // Prompt pane expanded state
 export const promptExpandedAtom = atom(false);
 
-// Session pre-prompt template (injected when launching Claude Code)
-// Variables: {site_url}, {api_key}, {site_name}, {environment}, {abilities_block}
-export const sessionPrePromptAtom = atom(
+export const SESSION_API_KEY_PLACEHOLDER = "[managed by Agent to Bricks; not injected into session prompts]";
+export const DEFAULT_SESSION_PREPROMPT =
   `You are a web developer working with a Bricks Builder WordPress site ({environment}).
 Site: {site_url}
-API Key: {api_key}
+Site name: {site_name}
+Credentials: {api_key}
 The bricks CLI is available. Use \`bricks\` commands to pull, push, generate, and modify page elements.
-Use the API key with the X-ATB-Key header when making API calls to the site.{abilities_block}`
-);
+No raw API key is injected into this session bootstrap. Use the locally configured \`bricks\` CLI or another secure credential path if authenticated access is required.{abilities_block}`;
+
+// Session pre-prompt template (injected when launching Claude Code)
+// Variables: {site_url}, {api_key}, {site_name}, {environment}, {abilities_block}
+// Note: {api_key} resolves to a redacted credential note, not the raw secret.
+export const sessionPrePromptAtom = atom(DEFAULT_SESSION_PREPROMPT);
 
 // Launch dialog — holds the tool being configured before launch, or null when closed
 export const launchDialogToolAtom = atom<Tool | null>(null);

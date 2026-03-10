@@ -3,7 +3,7 @@ import { useAtom, useAtomValue } from "jotai";
 import * as Dialog from "@radix-ui/react-dialog";
 import { X, FolderOpen, Play } from "@phosphor-icons/react";
 import { open as openDialog } from "@tauri-apps/plugin-dialog";
-import { launchDialogToolAtom, activeSiteAtom, sessionPrePromptAtom } from "../atoms/app";
+import { launchDialogToolAtom, activeSiteAtom, sessionPrePromptAtom, SESSION_API_KEY_PLACEHOLDER } from "../atoms/app";
 import { toolCustomFlagsAtom, toolWorkingDirsAtom } from "../atoms/tools";
 import { useSessionLauncher } from "../hooks/useSessionLauncher";
 import { VariableEditor } from "./prompt/VariableEditor";
@@ -68,7 +68,7 @@ export function LaunchDialog() {
   const resolvedValues: Record<string, string> = {};
   if (site) {
     resolvedValues.site_url = site.site_url;
-    resolvedValues.api_key = site.api_key;
+    resolvedValues.api_key = SESSION_API_KEY_PLACEHOLDER;
     resolvedValues.site_name = site.name;
     resolvedValues.environment = site.environment ?? "";
   }

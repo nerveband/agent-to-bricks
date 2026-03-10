@@ -3,17 +3,41 @@
 import MCPClient from './mcp-client.mjs';
 import * as fs from 'fs';
 import * as path from 'path';
+import { fileURLToPath } from 'url';
 
-const SCREENSHOT_DIR = path.join(path.dirname(new URL(import.meta.url).pathname), 'screenshots');
+const E2E_DIR = path.dirname(fileURLToPath(import.meta.url));
+const SCREENSHOT_DIR = path.join(E2E_DIR, 'screenshots');
 fs.mkdirSync(SCREENSHOT_DIR, { recursive: true });
+const GUI_VERSION = JSON.parse(
+  fs.readFileSync(path.join(E2E_DIR, '..', 'package.json'), 'utf8')
+).version;
 
-const API_KEY = 'atb_D1i02W8BlbsE3HR5dQJV3k9ZzITz8jlFjqwHa1OD';
-const STAGING_URL = 'https://ts-staging.wavedepth.com';
+function requiredEnv(name) {
+  const value = process.env[name];
+  if (!value) {
+    throw new Error(`Missing required environment variable: ${name}`);
+  }
+  return value;
+}
+
+function requiredPageId(name) {
+  const raw = requiredEnv(name);
+  const parsed = Number(raw);
+  if (!Number.isInteger(parsed) || parsed <= 0) {
+    throw new Error(`Environment variable ${name} must be a positive integer, got: ${raw}`);
+  }
+  return parsed;
+}
+
+const STAGING_URL = requiredEnv('ATB_STAGING_URL').replace(/\/+$/, '');
+const API_KEY = requiredEnv('ATB_STAGING_API_KEY');
+const READ_PAGE_ID = requiredPageId('ATB_STAGING_READ_PAGE_ID');
 
 const results = [];
 let client;
 
 function log(msg) { console.log(`  ${msg}`); }
+function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
 
 async function test(name, fn) {
   process.stdout.write(`TEST: ${name} ... `);
@@ -31,9 +55,26 @@ function assert(condition, msg) {
   if (!condition) throw new Error(msg || 'Assertion failed');
 }
 
+function isRetryableJsError(error) {
+  const message = String(error?.message || '').toLowerCase();
+  return message.includes('timeout') || message.includes('execute-js') || message.includes('execute_js');
+}
+
 // Execute JS in webview (uses new Function, needs explicit return)
-async function js(code) {
-  return client.executeJs(code);
+async function js(code, attempts = 3) {
+  let lastError;
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    try {
+      return await client.executeJs(code);
+    } catch (error) {
+      lastError = error;
+      if (!isRetryableJsError(error) || attempt === attempts) {
+        break;
+      }
+      await sleep(500 * attempt);
+    }
+  }
+  throw lastError;
 }
 
 // Execute JS and parse JSON result
@@ -53,14 +94,34 @@ async function apiFetch(endpoint, opts = {}) {
   return { ok: resp.ok, status: resp.status, data: await resp.json() };
 }
 
+async function waitForWebviewReady(attempts = 20) {
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    try {
+      const readyState = await client.executeJs('return document.readyState');
+      if (readyState === 'interactive' || readyState === 'complete') {
+        return readyState;
+      }
+    } catch (error) {
+      if (!isRetryableJsError(error) || attempt === attempts) {
+        throw error;
+      }
+    }
+    await sleep(500);
+  }
+  throw new Error('Timed out waiting for webview readiness');
+}
+
 // ============================================================
 // TEST SUITE
 // ============================================================
 
 async function runTests() {
+  log(`Using staging site ${STAGING_URL} (read page ${READ_PAGE_ID})`);
   client = new MCPClient();
   await client.connect();
   log('Connected to MCP socket\n');
+  const readyState = await waitForWebviewReady();
+  log(`Webview ready (${readyState})\n`);
 
   // ----------------------------------------------------------
   // 1. APP LIFECYCLE
@@ -70,7 +131,7 @@ async function runTests() {
   await test('App has correct name and version', async () => {
     const info = await client.appInfo();
     assert(info.app.name === 'Agent to Bricks', `Name: ${info.app.name}`);
-    assert(info.app.version === '1.7.0', `Version: ${info.app.version}`);
+    assert(info.app.version === GUI_VERSION, `Version: ${info.app.version}`);
   });
 
   await test('Window is visible with correct title', async () => {
@@ -269,13 +330,13 @@ async function runTests() {
     log(`  Found ${data.length} pages: ${data.map(p => p.title.rendered).join(', ')}`);
   });
 
-  await test('Can fetch elements for test page 1338', async () => {
-    const { ok, data } = await apiFetch('agent-bricks/v1/pages/1338/elements');
+  await test(`Can fetch elements for test page ${READ_PAGE_ID}`, async () => {
+    const { ok, data } = await apiFetch(`agent-bricks/v1/pages/${READ_PAGE_ID}/elements`);
     assert(ok, 'Elements fetch failed');
     const elements = data.elements || data;
     assert(Array.isArray(elements), 'Elements not an array');
     assert(elements.length > 0, `No elements, got ${elements.length}`);
-    log(`  Page 1338 has ${elements.length} elements`);
+    log(`  Page ${READ_PAGE_ID} has ${elements.length} elements`);
   });
 
   // ----------------------------------------------------------
@@ -317,9 +378,9 @@ async function runTests() {
     log(`  Got site info via ability: WP ${data.wpVersion}`);
   });
 
-  await test('Can execute ability with input (get-page-elements for 1338)', async () => {
+  await test(`Can execute ability with input (get-page-elements for ${READ_PAGE_ID})`, async () => {
     const { ok, status, data } = await apiFetch(
-      'wp-abilities/v1/abilities/agent-bricks/get-page-elements/run?input[page_id]=1338'
+      `wp-abilities/v1/abilities/agent-bricks/get-page-elements/run?input[page_id]=${READ_PAGE_ID}`
     );
     assert(ok, `Ability exec failed: status ${status}`);
     // Response is the elements data directly
@@ -412,6 +473,33 @@ async function runTests() {
     assert(hasFields, 'Settings missing config fields');
   });
 
+  await test('Prompt template does not inline the raw API key', async () => {
+    await js(`
+      var tabs = document.querySelectorAll('button, [role="tab"], a');
+      for (var i = 0; i < tabs.length; i++) {
+        if (tabs[i].textContent.trim() === 'Prompt') { tabs[i].click(); break; }
+      }
+      return 'clicked';
+    `);
+    await new Promise(r => setTimeout(r, 400));
+
+    const data = await jsJson(`
+      var areas = Array.from(document.querySelectorAll('textarea'));
+      var promptArea = areas.find((el) => (el.value || '').indexOf('Bricks Builder') !== -1) || null;
+      var value = promptArea ? promptArea.value : '';
+      return JSON.stringify({
+        found: !!promptArea,
+        hasRawKey: value.indexOf(${JSON.stringify(API_KEY)}) !== -1,
+        hasPlaceholder: value.indexOf('{api_key}') !== -1,
+        hasRedactionNote: document.body.innerText.indexOf('managed by Agent to Bricks') !== -1
+      });
+    `);
+    assert(data.found, 'Prompt template textarea not found');
+    assert(!data.hasRawKey, 'Prompt template contains the raw API key');
+    assert(data.hasPlaceholder, 'Prompt template lost the {api_key} placeholder');
+    assert(data.hasRedactionNote, 'Redaction guidance not visible in settings');
+  });
+
   // Screenshot settings
   const settingsShot = await client.screenshot();
   log(`Settings screenshot: ${settingsShot.filePath}`);
@@ -437,7 +525,7 @@ async function runTests() {
 
   await test('Version number visible in status bar', async () => {
     const text = await js('return document.body.innerText');
-    assert(text.includes('v1.7.0'), `Version not found in body text`);
+    assert(text.includes(`v${GUI_VERSION}`), `Version not found in body text`);
   });
 
   await test('Version number is clickable', async () => {

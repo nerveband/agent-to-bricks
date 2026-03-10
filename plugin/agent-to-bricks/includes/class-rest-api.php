@@ -88,7 +88,16 @@ class ATB_REST_API {
 	public static function check_permissions( $request ) {
 		$post_id = $request->get_param( 'postId' );
 		if ( $post_id ) {
-			return current_user_can( 'edit_post', $post_id );
+			if ( ! current_user_can( 'edit_post', $post_id ) ) {
+				return false;
+			}
+			if ( class_exists( 'ATB_Access_Control' ) ) {
+				$access = ATB_Access_Control::can_access_post( (int) $post_id );
+				if ( is_wp_error( $access ) ) {
+					return $access;
+				}
+			}
+			return true;
 		}
 		return current_user_can( 'edit_posts' );
 	}

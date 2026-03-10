@@ -22,7 +22,7 @@ import {
   ArrowsClockwise,
   TerminalWindow,
 } from "@phosphor-icons/react";
-import { sitesAtom, activeSiteIndexAtom, sessionPrePromptAtom, settingsTabAtom, type SiteEntry, type SiteEnvironment } from "../atoms/app";
+import { sitesAtom, activeSiteIndexAtom, sessionPrePromptAtom, settingsTabAtom, DEFAULT_SESSION_PREPROMPT, SESSION_API_KEY_PLACEHOLDER, type SiteEntry, type SiteEnvironment } from "../atoms/app";
 import { toolsAtom, toolCustomFlagsAtom, toolWorkingDirsAtom, toolPathsAtom, redetectRequestedAtom } from "../atoms/tools";
 import { terminalSettingsAtom, terminalSettingsOpenAtom, TERMINAL_DEFAULTS } from "../atoms/terminal";
 import { useTheme } from "../hooks/useTheme";
@@ -527,7 +527,7 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
                     <div className="grid grid-cols-2 gap-y-3 gap-x-6 text-[13px]">
                       {[
                         { var: "{site_url}", desc: "Site URL" },
-                        { var: "{api_key}", desc: "API key" },
+                        { var: "{api_key}", desc: "Redacted credential note" },
                         { var: "{site_name}", desc: "Site name" },
                         { var: "{environment}", desc: "Environment tag" },
                       ].map((v) => (
@@ -562,14 +562,16 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
                     </button>
                     <button
                       onClick={() => {
-                        const defaultTemplate = `You are a web developer working with a Bricks Builder WordPress site ({environment}).\nSite: {site_url}\nAPI Key: {api_key}\nThe bricks CLI is available. Use \`bricks\` commands to pull, push, generate, and modify page elements.\nUse the API key with the X-ATB-Key header when making API calls to the site.`;
-                        setPromptTemplate(defaultTemplate);
+                        setPromptTemplate(DEFAULT_SESSION_PREPROMPT);
                       }}
                       className="px-3 py-2.5 rounded-lg text-[13px] border transition-colors hover:bg-[var(--white-glass)]"
                       style={{ borderColor: "var(--border)", color: "var(--fg-muted)" }}
                     >
                       Reset to Default
                     </button>
+                    <span className="text-[11px]" style={{ color: "var(--fg-subtle)" }}>
+                      {"{api_key}"} resolves to: {SESSION_API_KEY_PLACEHOLDER}
+                    </span>
                   </div>
                 </div>
               )}

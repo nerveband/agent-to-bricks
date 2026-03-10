@@ -131,6 +131,19 @@ func TestPatchElements(t *testing.T) {
 		if r.Method != "PATCH" {
 			t.Errorf("expected PATCH, got %s", r.Method)
 		}
+		if r.Header.Get("If-Match") != "oldhash" {
+			t.Errorf("expected If-Match oldhash, got %s", r.Header.Get("If-Match"))
+		}
+		var body map[string]interface{}
+		if err := json.NewDecoder(r.Body).Decode(&body); err != nil {
+			t.Fatalf("failed to decode request body: %v", err)
+		}
+		if _, ok := body["patches"]; !ok {
+			t.Fatalf("expected request body to contain patches, got %v", body)
+		}
+		if _, ok := body["elements"]; ok {
+			t.Fatalf("expected request body to omit elements field, got %v", body)
+		}
 		json.NewEncoder(w).Encode(map[string]interface{}{
 			"success":     true,
 			"contentHash": "patched",
@@ -548,7 +561,7 @@ func TestSearchElementsWithSettingFilter(t *testing.T) {
 		}
 		json.NewEncoder(w).Encode(map[string]interface{}{
 			"results": []map[string]interface{}{},
-			"total": 0, "page": 1, "perPage": 50, "totalPages": 0,
+			"total":   0, "page": 1, "perPage": 50, "totalPages": 0,
 		})
 	}))
 	defer srv.Close()
