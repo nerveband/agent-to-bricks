@@ -41,7 +41,7 @@ class MCPClient {
     }
   }
 
-  async send(command, payload = {}) {
+  async send(command, payload = {}, timeoutMs = 30000) {
     const id = `req_${++this.reqId}`;
     return new Promise((resolve, reject) => {
       this.callbacks.set(id, { resolve, reject });
@@ -52,18 +52,34 @@ class MCPClient {
           this.callbacks.delete(id);
           reject(new Error(`Timeout: ${command}`));
         }
-      }, 30000);
+      }, timeoutMs);
     });
   }
 
-  async screenshot(opts = {}) {
-    return this.send('take_screenshot', {
-      window_label: 'main',
-      save_to_disk: true,
-      thumbnail: false,
-      output_dir: process.env.SCREENSHOT_DIR || '/tmp',
-      ...opts,
-    });
+  async screenshot(opts = {}, attempts = 2) {
+    let lastError;
+    for (let attempt = 1; attempt <= attempts; attempt++) {
+      try {
+        return await this.send(
+          'take_screenshot',
+          {
+            window_label: 'main',
+            save_to_disk: true,
+            thumbnail: false,
+            output_dir: process.env.SCREENSHOT_DIR || '/tmp',
+            ...opts,
+          },
+          60000
+        );
+      } catch (error) {
+        lastError = error;
+        if (!String(error?.message || '').includes('Timeout') || attempt === attempts) {
+          break;
+        }
+        await new Promise((resolve) => setTimeout(resolve, 1000 * attempt));
+      }
+    }
+    throw lastError;
   }
 
   async appInfo() {
