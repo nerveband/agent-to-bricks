@@ -14,8 +14,24 @@ atb_require_env ATB_STAGING_URL ATB_STAGING_API_KEY ATB_STAGING_READ_PAGE_ID ATB
 
 BRICKS_BIN="${BRICKS_BIN:-$PROJECT_DIR/bin/bricks}"
 SOCKET_PATH="${TAURI_MCP_IPC_PATH:-/tmp/tauri-mcp-atb.sock}"
+GUI_VITE_PORT="${ATB_GUI_DEV_PORT:-1420}"
 GUI_LOG="$(mktemp)"
 GUI_PID=""
+
+stop_stale_gui_dev_server() {
+  local stale_pids=()
+
+  while IFS= read -r pid; do
+    [[ -n "$pid" ]] || continue
+    stale_pids+=("$pid")
+  done < <(lsof -tiTCP:"$GUI_VITE_PORT" -sTCP:LISTEN 2>/dev/null | sort -u)
+
+  if [[ "${#stale_pids[@]}" -gt 0 ]]; then
+    echo "Stopping stale GUI dev server on port $GUI_VITE_PORT: ${stale_pids[*]}"
+    kill "${stale_pids[@]}" >/dev/null 2>&1 || true
+    sleep 2
+  fi
+}
 
 cleanup() {
   if [[ -n "$GUI_PID" ]]; then
@@ -51,6 +67,7 @@ if [[ "${ATB_SKIP_GUI_E2E:-0}" == "1" ]]; then
   exit 0
 fi
 
+stop_stale_gui_dev_server
 rm -f "$SOCKET_PATH"
 (
   cd "$PROJECT_DIR/gui"
@@ -60,6 +77,9 @@ GUI_PID="$!"
 
 for _ in $(seq 1 90); do
   if [[ -S "$SOCKET_PATH" ]]; then
+    break
+  fi
+  if ! kill -0 "$GUI_PID" >/dev/null 2>&1; then
     break
   fi
   sleep 2
