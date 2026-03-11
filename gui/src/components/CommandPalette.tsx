@@ -61,6 +61,8 @@ export function CommandPalette() {
   const quickChips: { type: MentionType; label: string }[] = [
     { type: "page", label: "@page" },
     { type: "section", label: "@section" },
+    { type: "query", label: "@query" },
+    { type: "product", label: "@product" },
     { type: "class", label: "@class" },
     { type: "color", label: "@color" },
     { type: "component", label: "@component" },

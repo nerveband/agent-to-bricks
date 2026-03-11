@@ -19,7 +19,8 @@ else
   SSH_PREFIX=()
 fi
 
-SSH_CMD=("${SSH_PREFIX[@]}" ssh -o ConnectTimeout=30 "$SSH_HOST")
+SSH_OPTIONS=(-o StrictHostKeyChecking=accept-new -o ConnectTimeout=30)
+SSH_CMD=("${SSH_PREFIX[@]}" ssh "${SSH_OPTIONS[@]}" "$SSH_HOST")
 REMOTE_HOME="/home/${SSH_HOST%%@*}"
 WP_CMD="$PHP_BIN $WPCLI_BIN"
 STATUS=0
@@ -55,6 +56,7 @@ run_runner "test-element-types-runner.php"
 run_runner "test-classes-runner.php"
 run_runner "test-components-runner.php"
 run_runner "test-search-runner.php"
+run_runner "test-woo-runner.php"
 run_runner "test-styles-runner.php"
 run_runner "test-element-validator-runner.php"
 run_runner "test-elements-runner.php" "$ATB_STAGING_SCRATCH_PAGE_ID"

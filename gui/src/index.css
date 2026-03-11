@@ -407,6 +407,9 @@ body,
   border: 1px solid var(--border-subtle);
   color: var(--fg-muted);
   box-shadow: var(--shadow-sunken);
+  white-space: normal;
+  line-height: 1.2;
+  word-break: break-word;
 }
 
 .tag-btn:active {

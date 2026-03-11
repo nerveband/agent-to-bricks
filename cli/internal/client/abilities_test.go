@@ -10,13 +10,13 @@ import (
 func TestGetAbilities(t *testing.T) {
 	// Mock the WP Abilities API response format (annotations inside meta)
 	type apiAbility struct {
-		Name         string                 `json:"name"`
-		Label        string                 `json:"label"`
-		Description  string                 `json:"description"`
-		Category     string                 `json:"category"`
-		Meta         AbilityMeta            `json:"meta"`
-		InputSchema  map[string]interface{} `json:"input_schema"`
-		OutputSchema map[string]interface{} `json:"output_schema"`
+		Name         string      `json:"name"`
+		Label        string      `json:"label"`
+		Description  string      `json:"description"`
+		Category     string      `json:"category"`
+		Meta         AbilityMeta `json:"meta"`
+		InputSchema  interface{} `json:"input_schema"`
+		OutputSchema interface{} `json:"output_schema"`
 	}
 
 	abilities := []apiAbility{
@@ -90,6 +90,41 @@ func TestGetAbilitiesWithCategory(t *testing.T) {
 	_, err := c.GetAbilities("agent-bricks-site")
 	if err != nil {
 		t.Fatalf("unexpected error: %v", err)
+	}
+}
+
+func TestGetAbilitiesWithArraySchema(t *testing.T) {
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		json.NewEncoder(w).Encode([]map[string]interface{}{
+			{
+				"name":         "agent-bricks/get-site-info",
+				"label":        "Get Site Info",
+				"description":  "Returns Bricks version info",
+				"category":     "agent-bricks-site",
+				"meta":         map[string]interface{}{"annotations": map[string]interface{}{"readonly": true}},
+				"input_schema": []interface{}{},
+				"output_schema": map[string]interface{}{
+					"type": "object",
+				},
+			},
+		})
+	}))
+	defer srv.Close()
+
+	c := New(srv.URL, "test-key")
+	result, err := c.GetAbilities("")
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if len(result) != 1 {
+		t.Fatalf("expected 1 ability, got %d", len(result))
+	}
+	schema, ok := result[0].InputSchema.([]interface{})
+	if !ok {
+		t.Fatalf("expected array input schema, got %T", result[0].InputSchema)
+	}
+	if len(schema) != 0 {
+		t.Fatalf("expected empty array input schema, got %d items", len(schema))
 	}
 }
 

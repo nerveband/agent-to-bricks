@@ -133,21 +133,21 @@ Examples:
 				}
 				fmt.Printf("Mode:        %s\n", mode)
 
-				if a.InputSchema != nil && len(a.InputSchema) > 0 {
+				if abilitySchemaHasContent(a.InputSchema) {
 					schemaJSON, _ := json.MarshalIndent(a.InputSchema, "", "  ")
 					fmt.Printf("\nInput Schema:\n%s\n", string(schemaJSON))
 				}
-				if a.OutputSchema != nil && len(a.OutputSchema) > 0 {
+				if abilitySchemaHasContent(a.OutputSchema) {
 					schemaJSON, _ := json.MarshalIndent(a.OutputSchema, "", "  ")
 					fmt.Printf("\nOutput Schema:\n%s\n", string(schemaJSON))
 				}
 
 				method := "POST"
-			if a.Annotations.Readonly {
-				method = "GET"
-			}
-			fmt.Printf("\nExecute: %s %s/wp-json/wp-abilities/v1/%s/run\n",
-				method, strings.TrimRight(cfg.Site.URL, "/"), name)
+				if a.Annotations.Readonly {
+					method = "GET"
+				}
+				fmt.Printf("\nExecute: %s %s/wp-json/wp-abilities/v1/%s/run\n",
+					method, strings.TrimRight(cfg.Site.URL, "/"), name)
 				return nil
 			}
 		}

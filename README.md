@@ -54,9 +54,9 @@ bricks site info            # verify connection
 ### 4. Build something
 
 ```bash
-bricks pull 42 --format html         # get current page
-# ... let your AI agent edit the HTML
-bricks convert html edited.html --push 42 --snapshot   # push changes
+bricks site pull 42 -o page.json
+# ... let your AI agent edit page.json or generate a patch
+bricks site push 42 page.json
 ```
 
 [Full installation guide](https://agenttobricks.com/getting-started/installation/) | [Quick start](https://agenttobricks.com/getting-started/quick-start/)
@@ -82,21 +82,22 @@ The Desktop App checks for updates automatically on launch.
 
 ## Latest Release
 
-### v2.0.0
+### v2.1.0
 
-- Breaking API hardening: page patch requests now use `patches` only, matching the plugin and docs contract.
-- Staging is now a real release gate: shared env-driven fixture config, deploy verification, plugin runner matrix, CLI E2E, GUI E2E, and template smoke coverage.
-- Private Bricks template corpora under `docs/test-data/` are supported for local validation without forcing proprietary fixtures into public clones.
-- GUI session bootstrap no longer injects raw site API keys into agent prompts; typed staging checks and release verification scripts are included in-repo.
+- Added query-aware discovery with `bricks site features`, `bricks site query-elements`, and query metadata in `bricks search elements`.
+- Added WooCommerce discovery commands plus GUI `@query`, `@product`, `@product-category`, and `@product-tag` mentions.
+- Extended WordPress Abilities coverage with site/query/Woo discovery abilities and verified the full flow on `ts-staging`.
+- Hardened the staging SSH workflow for first-connect deploys while keeping the full plugin, CLI, template, and GUI release gate intact.
 
 See [CHANGELOG.md](CHANGELOG.md) for the full release summary.
 
 ## Key Features
 
 - **Machine-Readable CLI** — `bricks schema` outputs a JSON manifest of all commands. Structured error codes, `--format json` on every command, and stdin pipelines make the CLI fully automatable by AI agents.
+- **Query & Woo discovery** — `bricks site features`, `bricks site query-elements`, and `bricks woo ...` expose query-capable Bricks elements plus WooCommerce products, categories, and tags without scraping wp-admin.
 - **WordPress Abilities API** — Auto-discovers plugin abilities (Yoast, WooCommerce, Gravity Forms, etc.) and includes them in AI prompts. Requires WordPress 6.9+.
 - **CSS Framework Support** — Scans ACSS, Cwicly, and theme CSS files for custom properties. Colors and variables appear in `@color` and `@variable` autocomplete.
-- **Page-Specific @mentions** — `@element` and `@section` use a two-step flow: pick a page, then browse elements within it.
+- **Page-Specific and commerce-aware @mentions** — `@element` and `@section` use a two-step flow, while `@query`, `@product`, `@product-category`, and `@product-tag` resolve live site and WooCommerce context in the GUI.
 - **41 E2E Tests** — Automated test suite via `tauri-plugin-mcp` covering all GUI features against the live staging site.
 
 ## Core Philosophy

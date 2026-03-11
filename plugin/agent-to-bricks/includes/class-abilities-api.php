@@ -48,6 +48,11 @@ class ATB_Abilities_API {
             'label'       => __( 'Bricks Site Info', 'agent-to-bricks' ),
             'description' => __( 'Site configuration, versions, frameworks, and element types.', 'agent-to-bricks' ),
         ) );
+
+        wp_register_ability_category( 'agent-bricks-commerce', array(
+            'label'       => __( 'Bricks Commerce', 'agent-to-bricks' ),
+            'description' => __( 'WooCommerce discovery, query-aware content, and commerce metadata.', 'agent-to-bricks' ),
+        ) );
     }
 
     /**
@@ -55,6 +60,7 @@ class ATB_Abilities_API {
      */
     public static function register_abilities() {
         self::register_site_abilities();
+        self::register_commerce_abilities();
         self::register_page_abilities();
         self::register_snapshot_abilities();
         self::register_class_abilities();
@@ -141,6 +147,154 @@ class ATB_Abilities_API {
                 ),
             ),
             'execute_callback'    => array( __CLASS__, 'execute_list_pages' ),
+            'permission_callback' => array( __CLASS__, 'check_edit_posts' ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => true ) ),
+        ) );
+
+        wp_register_ability( 'agent-bricks/get-site-features', array(
+            'label'               => __( 'Get Site Features', 'agent-to-bricks' ),
+            'description'         => __( 'Returns machine-discoverable site capabilities including Bricks availability, frameworks, query-capable elements, Abilities support, and WooCommerce summary data.', 'agent-to-bricks' ),
+            'category'            => 'agent-bricks-site',
+            'output_schema'       => array(
+                'type'       => 'object',
+                'properties' => array(
+                    'bricks'            => array( 'type' => 'object' ),
+                    'wordpress'         => array( 'type' => 'object' ),
+                    'plugin'            => array( 'type' => 'object' ),
+                    'abilities'         => array( 'type' => 'object' ),
+                    'frameworks'        => array( 'type' => 'array', 'items' => array( 'type' => 'string' ) ),
+                    'queryElements'     => array( 'type' => 'array', 'items' => array( 'type' => 'string' ) ),
+                    'queryElementCount' => array( 'type' => 'integer' ),
+                    'woocommerce'       => array( 'type' => 'object' ),
+                ),
+            ),
+            'execute_callback'    => array( __CLASS__, 'execute_get_site_features' ),
+            'permission_callback' => array( __CLASS__, 'check_edit_posts' ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => true ) ),
+        ) );
+
+        wp_register_ability( 'agent-bricks/list-query-element-types', array(
+            'label'               => __( 'List Query Element Types', 'agent-to-bricks' ),
+            'description'         => __( 'Lists Bricks element types that expose a query control, with optional control schemas for agent-friendly discovery.', 'agent-to-bricks' ),
+            'category'            => 'agent-bricks-site',
+            'input_schema'        => array(
+                'type'       => 'object',
+                'properties' => array(
+                    'include_controls' => array( 'type' => 'boolean', 'default' => false ),
+                ),
+            ),
+            'output_schema'       => array(
+                'type'       => 'object',
+                'properties' => array(
+                    'queryElements' => array( 'type' => 'array' ),
+                    'count'         => array( 'type' => 'integer' ),
+                ),
+            ),
+            'execute_callback'    => array( __CLASS__, 'execute_list_query_element_types' ),
+            'permission_callback' => array( __CLASS__, 'check_edit_posts' ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => true ) ),
+        ) );
+    }
+
+    // ── Commerce & Query Discovery ─────────────────────────────
+
+    private static function register_commerce_abilities() {
+        wp_register_ability( 'agent-bricks/get-woocommerce-status', array(
+            'label'               => __( 'Get WooCommerce Status', 'agent-to-bricks' ),
+            'description'         => __( 'Returns WooCommerce availability, version, HPOS status, taxonomy support, Woo-specific Bricks element types, and whether Abilities support is available.', 'agent-to-bricks' ),
+            'category'            => 'agent-bricks-commerce',
+            'output_schema'       => array(
+                'type'       => 'object',
+                'properties' => array(
+                    'active'             => array( 'type' => 'boolean' ),
+                    'version'            => array( 'type' => 'string' ),
+                    'hpos'               => array( 'type' => 'boolean' ),
+                    'productPostType'    => array( 'type' => 'boolean' ),
+                    'productCategories'  => array( 'type' => 'boolean' ),
+                    'productTags'        => array( 'type' => 'boolean' ),
+                    'elementTypes'       => array( 'type' => 'array', 'items' => array( 'type' => 'string' ) ),
+                    'elementTypeCount'   => array( 'type' => 'integer' ),
+                    'abilitiesAvailable' => array( 'type' => 'boolean' ),
+                ),
+            ),
+            'execute_callback'    => array( __CLASS__, 'execute_get_woocommerce_status' ),
+            'permission_callback' => array( __CLASS__, 'check_edit_posts' ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => true ) ),
+        ) );
+
+        wp_register_ability( 'agent-bricks/list-products', array(
+            'label'               => __( 'List WooCommerce Products', 'agent-to-bricks' ),
+            'description'         => __( 'Lists WooCommerce products for agent discovery, autocomplete, and query planning. Returns basic catalog metadata including SKU, price, categories, and tags.', 'agent-to-bricks' ),
+            'category'            => 'agent-bricks-commerce',
+            'input_schema'        => array(
+                'type'       => 'object',
+                'properties' => array(
+                    'search'   => array( 'type' => 'string', 'default' => '' ),
+                    'per_page' => array( 'type' => 'integer', 'default' => 20, 'maximum' => 50 ),
+                    'page'     => array( 'type' => 'integer', 'default' => 1 ),
+                ),
+            ),
+            'output_schema'       => array(
+                'type'       => 'object',
+                'properties' => array(
+                    'products'          => array( 'type' => 'array' ),
+                    'count'             => array( 'type' => 'integer' ),
+                    'total'             => array( 'type' => 'integer' ),
+                    'page'              => array( 'type' => 'integer' ),
+                    'perPage'           => array( 'type' => 'integer' ),
+                    'totalPages'        => array( 'type' => 'integer' ),
+                    'woocommerceActive' => array( 'type' => 'boolean' ),
+                ),
+            ),
+            'execute_callback'    => array( __CLASS__, 'execute_list_products' ),
+            'permission_callback' => array( __CLASS__, 'check_edit_posts' ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => true ) ),
+        ) );
+
+        wp_register_ability( 'agent-bricks/list-product-categories', array(
+            'label'               => __( 'List WooCommerce Product Categories', 'agent-to-bricks' ),
+            'description'         => __( 'Lists WooCommerce product categories for discovery, filtering, and agent mentions.', 'agent-to-bricks' ),
+            'category'            => 'agent-bricks-commerce',
+            'input_schema'        => array(
+                'type'       => 'object',
+                'properties' => array(
+                    'search'   => array( 'type' => 'string', 'default' => '' ),
+                    'per_page' => array( 'type' => 'integer', 'default' => 20, 'maximum' => 50 ),
+                ),
+            ),
+            'output_schema'       => array(
+                'type'       => 'object',
+                'properties' => array(
+                    'categories'        => array( 'type' => 'array' ),
+                    'count'             => array( 'type' => 'integer' ),
+                    'woocommerceActive' => array( 'type' => 'boolean' ),
+                ),
+            ),
+            'execute_callback'    => array( __CLASS__, 'execute_list_product_categories' ),
+            'permission_callback' => array( __CLASS__, 'check_edit_posts' ),
+            'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => true ) ),
+        ) );
+
+        wp_register_ability( 'agent-bricks/list-product-tags', array(
+            'label'               => __( 'List WooCommerce Product Tags', 'agent-to-bricks' ),
+            'description'         => __( 'Lists WooCommerce product tags for discovery, filtering, and agent mentions.', 'agent-to-bricks' ),
+            'category'            => 'agent-bricks-commerce',
+            'input_schema'        => array(
+                'type'       => 'object',
+                'properties' => array(
+                    'search'   => array( 'type' => 'string', 'default' => '' ),
+                    'per_page' => array( 'type' => 'integer', 'default' => 20, 'maximum' => 50 ),
+                ),
+            ),
+            'output_schema'       => array(
+                'type'       => 'object',
+                'properties' => array(
+                    'tags'               => array( 'type' => 'array' ),
+                    'count'              => array( 'type' => 'integer' ),
+                    'woocommerceActive'  => array( 'type' => 'boolean' ),
+                ),
+            ),
+            'execute_callback'    => array( __CLASS__, 'execute_list_product_tags' ),
             'permission_callback' => array( __CLASS__, 'check_edit_posts' ),
             'meta'                => array( 'show_in_rest' => true, 'annotations' => array( 'readonly' => true ) ),
         ) );
@@ -542,7 +696,7 @@ class ATB_Abilities_API {
     private static function register_search_abilities() {
         wp_register_ability( 'agent-bricks/search-elements', array(
             'label'               => __( 'Search Elements', 'agent-to-bricks' ),
-            'description'         => __( 'Searches for Bricks elements across all pages. Filter by element type, setting key/value, global class, or post type.', 'agent-to-bricks' ),
+            'description'         => __( 'Searches for Bricks elements across all pages. Filter by element type, setting key/value, global class, post type, and Bricks query metadata such as queried post type or taxonomy.', 'agent-to-bricks' ),
             'category'            => 'agent-bricks-pages',
             'input_schema'        => array(
                 'type'       => 'object',
@@ -552,6 +706,10 @@ class ATB_Abilities_API {
                     'setting_value' => array( 'type' => 'string', 'default' => '' ),
                     'global_class'  => array( 'type' => 'string', 'default' => '' ),
                     'post_type'     => array( 'type' => 'string', 'default' => '' ),
+                    'has_query'     => array( 'type' => 'boolean', 'default' => false ),
+                    'query_object_type' => array( 'type' => 'string', 'default' => '' ),
+                    'query_post_type'   => array( 'type' => 'string', 'default' => '' ),
+                    'query_taxonomy'    => array( 'type' => 'string', 'default' => '' ),
                     'per_page'      => array( 'type' => 'integer', 'default' => 20 ),
                     'page'          => array( 'type' => 'integer', 'default' => 1 ),
                 ),
@@ -562,6 +720,7 @@ class ATB_Abilities_API {
                     'results'    => array( 'type' => 'array' ),
                     'total'      => array( 'type' => 'integer' ),
                     'page'       => array( 'type' => 'integer' ),
+                    'perPage'    => array( 'type' => 'integer' ),
                     'totalPages' => array( 'type' => 'integer' ),
                 ),
             ),
@@ -589,6 +748,13 @@ class ATB_Abilities_API {
         return is_wp_error( $response ) ? $response : $response->get_data();
     }
 
+    public static function execute_get_site_features() {
+        $api = new ATB_Site_API();
+        $request = new WP_REST_Request( 'GET' );
+        $response = $api->get_features( $request );
+        return is_wp_error( $response ) ? $response : $response->get_data();
+    }
+
     public static function execute_list_element_types( $input ) {
         $api = new ATB_Site_API();
         $request = new WP_REST_Request( 'GET' );
@@ -599,6 +765,16 @@ class ATB_Abilities_API {
             $request->set_param( 'category', $input['category'] );
         }
         $response = $api->get_element_types( $request );
+        return is_wp_error( $response ) ? $response : $response->get_data();
+    }
+
+    public static function execute_list_query_element_types( $input ) {
+        $api = new ATB_Site_API();
+        $request = new WP_REST_Request( 'GET' );
+        if ( ! empty( $input['include_controls'] ) ) {
+            $request->set_param( 'include_controls', true );
+        }
+        $response = $api->get_query_elements( $request );
         return is_wp_error( $response ) ? $response : $response->get_data();
     }
 
@@ -618,6 +794,49 @@ class ATB_Abilities_API {
         return array(
             'pages' => $response->get_data(),
         );
+    }
+
+    public static function execute_get_woocommerce_status() {
+        $api = new ATB_Site_API();
+        $request = new WP_REST_Request( 'GET' );
+        $response = $api->get_woocommerce_status( $request );
+        return is_wp_error( $response ) ? $response : $response->get_data();
+    }
+
+    public static function execute_list_products( $input ) {
+        $api = new ATB_Site_API();
+        $request = new WP_REST_Request( 'GET' );
+        foreach ( array( 'search', 'per_page', 'page' ) as $key ) {
+            if ( isset( $input[ $key ] ) && '' !== $input[ $key ] ) {
+                $request->set_param( $key, $input[ $key ] );
+            }
+        }
+        $response = $api->get_woocommerce_products( $request );
+        return is_wp_error( $response ) ? $response : $response->get_data();
+    }
+
+    public static function execute_list_product_categories( $input ) {
+        $api = new ATB_Site_API();
+        $request = new WP_REST_Request( 'GET' );
+        foreach ( array( 'search', 'per_page' ) as $key ) {
+            if ( isset( $input[ $key ] ) && '' !== $input[ $key ] ) {
+                $request->set_param( $key, $input[ $key ] );
+            }
+        }
+        $response = $api->get_woocommerce_product_categories( $request );
+        return is_wp_error( $response ) ? $response : $response->get_data();
+    }
+
+    public static function execute_list_product_tags( $input ) {
+        $api = new ATB_Site_API();
+        $request = new WP_REST_Request( 'GET' );
+        foreach ( array( 'search', 'per_page' ) as $key ) {
+            if ( isset( $input[ $key ] ) && '' !== $input[ $key ] ) {
+                $request->set_param( $key, $input[ $key ] );
+            }
+        }
+        $response = $api->get_woocommerce_product_tags( $request );
+        return is_wp_error( $response ) ? $response : $response->get_data();
     }
 
     public static function execute_get_page_elements( $input ) {
@@ -825,7 +1044,7 @@ class ATB_Abilities_API {
     public static function execute_search_elements( $input ) {
         $api = new ATB_Search_API();
         $request = new WP_REST_Request( 'GET' );
-        foreach ( array( 'element_type', 'setting_key', 'setting_value', 'global_class', 'post_type', 'per_page', 'page' ) as $key ) {
+        foreach ( array( 'element_type', 'setting_key', 'setting_value', 'global_class', 'post_type', 'has_query', 'query_object_type', 'query_post_type', 'query_taxonomy', 'per_page', 'page' ) as $key ) {
             if ( isset( $input[ $key ] ) && '' !== $input[ $key ] ) {
                 $request->set_param( $key, $input[ $key ] );
             }

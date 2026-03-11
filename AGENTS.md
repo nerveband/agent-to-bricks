@@ -103,6 +103,7 @@ Each release is one atomic unit: CLI binaries + plugin zip, same version.
    cd website && npm run build
    ```
 3. Run `./scripts/verify-staging-release.sh` when staging credentials are configured. This is the canonical release gate and covers staging deploy, plugin runner matrix, CLI E2E, template smoke, and GUI MCP E2E.
+   - If staging SSH uses the 1Password agent, unlock/approve the signing prompt before retrying the deploy or full gate.
 4. Commit the release on `main`, push `main`, then push the tag:
    ```bash
    git commit -am "release: vX.Y.Z"

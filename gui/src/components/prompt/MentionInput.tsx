@@ -10,7 +10,7 @@ import { settingsOpenAtom, helpOpenAtom } from "../../atoms/app";
 
 const ALL_TYPES: MentionType[] = [
   "page", "section", "element", "class", "color", "variable", "component", "media",
-  "template", "form", "loop", "condition",
+  "template", "form", "loop", "query", "product", "product-category", "product-tag", "condition",
 ];
 
 /** Map common aliases/plurals to canonical type names */
@@ -25,6 +25,12 @@ const TYPE_ALIASES: Record<string, MentionType> = {
   templates: "template",
   forms: "form",
   loops: "loop",
+  queries: "query",
+  products: "product",
+  categories: "product-category",
+  tags: "product-tag",
+  productcategories: "product-category",
+  producttags: "product-tag",
   conditions: "condition",
   css: "variable",
   vars: "variable",

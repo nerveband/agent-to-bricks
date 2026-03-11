@@ -12,6 +12,15 @@ export interface SearchResult {
   imageUrl?: string;
 }
 
+interface ElementSearchMatch {
+  postId: number;
+  postTitle: string;
+  elementId: string;
+  elementType: string;
+  elementLabel?: string;
+  settings?: Record<string, unknown>;
+}
+
 export function useMentionSearch(
   type: MentionType | null,
   query: string,
@@ -242,7 +251,7 @@ async function fetchByType(
       }));
     }
     case "form": {
-      const resp = await invoke<{ results: { elementId: string; elementType: string; elementLabel: string; postTitle: string }[] }>(
+      const resp = await invoke<{ results: ElementSearchMatch[] }>(
         "search_elements",
         { siteUrl, apiKey, elementType: "form", perPage: 20 }
       );
@@ -257,7 +266,7 @@ async function fetchByType(
       }));
     }
     case "loop": {
-      const resp = await invoke<{ results: { elementId: string; elementType: string; elementLabel: string; postTitle: string }[] }>(
+      const resp = await invoke<{ results: ElementSearchMatch[] }>(
         "search_elements",
         { siteUrl, apiKey, elementType: "posts", perPage: 20 }
       );
@@ -269,6 +278,64 @@ async function fetchByType(
         label: e.elementLabel || "Query Loop",
         sublabel: e.postTitle,
         data: e,
+      }));
+    }
+    case "query": {
+      const resp = await invoke<{ results: ElementSearchMatch[] }>(
+        "search_elements",
+        { siteUrl, apiKey, hasQuery: true, perPage: 20 }
+      );
+      const queries = (resp.results ?? []).filter((e) => {
+        if (!query) return true;
+        const haystack = [
+          e.elementLabel ?? "",
+          e.elementType,
+          e.postTitle,
+          summarizeQuerySettings(e.settings),
+        ].join(" ").toLowerCase();
+        return haystack.includes(query.toLowerCase());
+      });
+      return queries.map((e) => ({
+        id: e.elementId,
+        label: e.elementLabel || e.elementType,
+        sublabel: `${e.postTitle} · ${summarizeQuerySettings(e.settings)}`,
+        data: e,
+      }));
+    }
+    case "product": {
+      const resp = await invoke<{ products: { id: number; title: string; slug: string; sku?: string; price?: string; status?: string }[] }>(
+        "get_woo_products",
+        { siteUrl, apiKey, search: query || null, perPage: 20 }
+      );
+      return (resp.products ?? []).map((p) => ({
+        id: p.id,
+        label: p.title,
+        sublabel: [p.sku, p.price, p.status].filter(Boolean).join(" · ") || `/${p.slug}`,
+        data: p,
+      }));
+    }
+    case "product-category": {
+      const resp = await invoke<{ categories: { id: number; name: string; slug: string; count?: number }[] }>(
+        "get_woo_product_categories",
+        { siteUrl, apiKey, search: query || null, perPage: 20 }
+      );
+      return (resp.categories ?? []).map((c) => ({
+        id: c.id,
+        label: c.name,
+        sublabel: `${c.slug}${typeof c.count === "number" ? ` · ${c.count} products` : ""}`,
+        data: c,
+      }));
+    }
+    case "product-tag": {
+      const resp = await invoke<{ tags: { id: number; name: string; slug: string; count?: number }[] }>(
+        "get_woo_product_tags",
+        { siteUrl, apiKey, search: query || null, perPage: 20 }
+      );
+      return (resp.tags ?? []).map((t) => ({
+        id: t.id,
+        label: t.name,
+        sublabel: `${t.slug}${typeof t.count === "number" ? ` · ${t.count} products` : ""}`,
+        data: t,
       }));
     }
     case "condition": {
@@ -291,4 +358,27 @@ async function fetchByType(
     default:
       return [];
   }
+}
+
+function summarizeQuerySettings(settings: Record<string, unknown> | undefined): string {
+  const query = settings?.query as Record<string, unknown> | undefined;
+  if (!query) {
+    return "query";
+  }
+
+  const objectType = typeof query.objectType === "string" ? query.objectType : "query";
+  const postTypes = Array.isArray(query.post_type)
+    ? query.post_type.filter((v): v is string => typeof v === "string")
+    : [];
+  const taxonomy = typeof query.taxonomy === "string" ? query.taxonomy : "";
+
+  const details = [objectType];
+  if (postTypes.length > 0) {
+    details.push(`post_type=${postTypes.join(",")}`);
+  }
+  if (taxonomy) {
+    details.push(`taxonomy=${taxonomy}`);
+  }
+
+  return details.join(" · ");
 }

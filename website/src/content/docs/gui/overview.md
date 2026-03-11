@@ -9,12 +9,12 @@ The Agent to Bricks GUI is a desktop application built with [Tauri 2](https://v2
 
 The app wraps AI coding tools (Claude Code, Codex, OpenCode, or any CLI tool you add) in managed terminal sessions. You pick a tool, configure it, and launch. The app handles the PTY (pseudo-terminal) connection, streams output in real time, and lets you switch between multiple running sessions.
 
-On top of that, the prompt composer lets you write prompts that reference your actual site objects. Type `@page` and the app pulls your real pages from the WordPress REST API. That context gets injected into the prompt before it reaches the AI tool, so the agent knows exactly which page, section, or class you mean.
+On top of that, the prompt composer lets you write prompts that reference your actual site objects. Type `@page` and the app pulls your real pages from the WordPress REST API. Type `@query` or `@product` and it pulls live query loops or WooCommerce products. That context gets injected into the prompt before it reaches the AI tool, so the agent knows exactly which page, section, class, loop, or product you mean.
 
 Here is what you get:
 
 - **Managed terminal sessions** for each AI tool, with scrollback preserved when you switch between them
-- **@mention autocomplete** that queries your live Bricks site for pages, sections, classes, colors, components, and media
+- **@mention autocomplete** that queries your live Bricks site for pages, sections, query loops, products, classes, colors, components, and media
 - **Prompt presets** for common workflows like generating sections, pulling pages, and converting HTML
 - **Multi-site switching** so you can work across production, staging, and local environments
 - **Persistent configuration** saved to `~/.agent-to-bricks/config.yaml` and shared with the CLI

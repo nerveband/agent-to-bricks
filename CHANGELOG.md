@@ -2,6 +2,28 @@
 
 All notable changes to Agent to Bricks are documented in this file.
 
+## [2.1.0] - 2026-03-10
+
+### Added
+
+- WooCommerce discovery surfaces across the stack: `bricks woo status`, `bricks woo products`, `bricks woo categories`, and `bricks woo tags`.
+- Machine-readable site discovery for query-aware builds via `bricks site features` and `bricks site query-elements`.
+- Query-aware GUI mentions for `@query`, `@product`, `@product-category`, and `@product-tag`, backed by live plugin routes.
+- New plugin runner coverage for site feature discovery, WooCommerce routes, and query metadata search filters on `ts-staging`.
+
+### Changed
+
+- WordPress Abilities now include query/Woo discovery abilities under `agent-bricks-site` and `agent-bricks-commerce`.
+- Search surfaces now expose Bricks query metadata end to end, including query object type, queried post types, and queried taxonomies.
+- Staging SSH/deploy scripts now accept first-seen host keys automatically so the release gate can run cleanly on fresh machines once SSH signing is approved.
+
+### Fixed
+
+- `bricks abilities list --json` now tolerates empty-array schemas from the Abilities API instead of crashing decode.
+- `bricks search elements --setting query --format json` no longer breaks when staging returns numeric `parentId` values.
+- `bricks validate` now accepts exported Bricks payloads shaped as `bricksExport.content`, not just top-level `elements`.
+- `ATB_Site_API` no longer emits implicit-nullable deprecation warnings on newer PHP versions.
+
 ## [2.0.0] - 2026-03-10
 
 ### Breaking

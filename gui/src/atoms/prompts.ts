@@ -5,6 +5,7 @@ export type MentionType =
   | "page"
   | "section"
   | "element"
+  | "query"
   | "class"
   | "color"
   | "variable"
@@ -13,6 +14,9 @@ export type MentionType =
   | "template"
   | "form"
   | "loop"
+  | "product"
+  | "product-category"
+  | "product-tag"
   | "condition";
 
 export interface MentionToken {

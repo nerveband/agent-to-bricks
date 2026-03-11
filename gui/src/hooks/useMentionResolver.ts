@@ -65,6 +65,35 @@ export function useMentionResolver() {
             formatted = `Reusable component: "${mention.displayName}"`;
             break;
           }
+          case "query":
+          case "loop": {
+            const data = mention.resolvedData as { postTitle?: string; elementType?: string; settings?: Record<string, unknown> } | null;
+            const query = data?.settings?.query as Record<string, unknown> | undefined;
+            const postTypes = Array.isArray(query?.post_type)
+              ? query?.post_type.filter((v): v is string => typeof v === "string")
+              : [];
+            const querySummary = [
+              typeof query?.objectType === "string" ? query.objectType : undefined,
+              postTypes.length > 0 ? `post_type=${postTypes.join(",")}` : undefined,
+            ].filter(Boolean).join(" · ");
+            formatted = `Query element: ${mention.displayName}${data?.elementType ? ` (${data.elementType})` : ""}${data?.postTitle ? ` on ${data.postTitle}` : ""}${querySummary ? ` [${querySummary}]` : ""}`;
+            break;
+          }
+          case "product": {
+            const data = mention.resolvedData as { sku?: string; price?: string; status?: string; slug?: string } | null;
+            formatted = `WooCommerce product: ${mention.displayName}${data?.sku ? ` (SKU ${data.sku})` : ""}${data?.price ? ` price ${data.price}` : ""}${data?.status ? ` status ${data.status}` : ""}${data?.slug ? ` slug ${data.slug}` : ""}`;
+            break;
+          }
+          case "product-category": {
+            const data = mention.resolvedData as { slug?: string; count?: number } | null;
+            formatted = `WooCommerce product category: ${mention.displayName}${data?.slug ? ` (${data.slug})` : ""}${typeof data?.count === "number" ? ` with ${data.count} products` : ""}`;
+            break;
+          }
+          case "product-tag": {
+            const data = mention.resolvedData as { slug?: string; count?: number } | null;
+            formatted = `WooCommerce product tag: ${mention.displayName}${data?.slug ? ` (${data.slug})` : ""}${typeof data?.count === "number" ? ` with ${data.count} products` : ""}`;
+            break;
+          }
           case "media": {
             const data = mention.resolvedData as { url?: string; mimeType?: string } | null;
             formatted = `Media: ${mention.displayName} (${data?.mimeType ?? "file"}) ${data?.url ?? ""}`;

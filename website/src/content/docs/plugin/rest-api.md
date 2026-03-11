@@ -96,6 +96,57 @@ curl -s "https://your-site.com/wp-json/agent-bricks/v1/site/element-types?catego
 }
 ```
 
+### GET /site/features
+
+Returns a machine-readable summary of the site's Bricks, framework, query, Abilities, and WooCommerce capabilities.
+
+```bash
+curl -s https://your-site.com/wp-json/agent-bricks/v1/site/features \
+  -H "X-ATB-Key: atb_abc123..."
+```
+
+```json
+{
+  "bricks": { "active": true, "version": "1.12.2" },
+  "wordpress": { "version": "6.9" },
+  "plugin": { "version": "2.1.0" },
+  "abilities": { "available": true },
+  "frameworks": ["acss", "frames"],
+  "queryElements": ["accordion", "carousel", "posts"],
+  "queryElementCount": 3,
+  "woocommerce": {
+    "active": true,
+    "version": "9.8.1",
+    "productPostType": true,
+    "elementTypeCount": 2
+  }
+}
+```
+
+### GET /site/query-elements
+
+Returns only the Bricks element types that expose a query control.
+
+**Query parameters:**
+
+| Param | Type | Description |
+|-------|------|-------------|
+| `include_controls` | boolean | Include control definitions for each query-capable element type |
+
+```bash
+curl -s "https://your-site.com/wp-json/agent-bricks/v1/site/query-elements?include_controls=1" \
+  -H "X-ATB-Key: atb_abc123..."
+```
+
+### GET /site/woocommerce
+
+Returns WooCommerce availability, taxonomy support, HPOS status, and any Woo-specific Bricks element types exposed by the current Bricks install.
+
+```bash
+curl -s https://your-site.com/wp-json/agent-bricks/v1/site/woocommerce \
+  -H "X-ATB-Key: atb_abc123..."
+```
+
 ### GET /pages
 
 Lists pages on the site. Useful for browsing available pages before pulling or pushing elements.
@@ -529,6 +580,10 @@ Searches elements across all pages, posts, and templates on the site.
 | `setting_value` | string | Filter by settings value (case-insensitive substring match) |
 | `global_class` | string | Filter by global class name or ID |
 | `post_type` | string | Filter by post type (`page`, `post`, `bricks_template`) |
+| `has_query` | boolean | Only return elements that expose Bricks query data |
+| `query_object_type` | string | Filter by Bricks query object type |
+| `query_post_type` | string | Filter by queried post type |
+| `query_taxonomy` | string | Filter by queried taxonomy |
 | `per_page` | integer | Results per page (max 100, default 50) |
 | `page` | integer | Page number (default 1) |
 
@@ -548,7 +603,12 @@ curl -s "https://your-site.com/wp-json/agent-bricks/v1/search/elements?element_t
       "elementType": "heading",
       "elementLabel": "",
       "settings": { "tag": "h2", "text": "Simple pricing for everyone" },
-      "parentId": "xyz789"
+      "parentId": "xyz789",
+      "hasQuery": false,
+      "queryObjectType": "",
+      "queryPostTypes": [],
+      "queryTaxonomies": [],
+      "queryRaw": {}
     }
   ],
   "total": 3,
@@ -557,6 +617,44 @@ curl -s "https://your-site.com/wp-json/agent-bricks/v1/search/elements?element_t
   "totalPages": 1
 }
 ```
+
+---
+
+## WooCommerce
+
+### GET /woo/products
+
+Lists WooCommerce products for discovery, autocomplete, and query-building flows.
+
+**Query parameters:**
+
+| Param | Type | Description |
+|-------|------|-------------|
+| `search` | string | Search products by title |
+| `per_page` | integer | Results per page (default 20, max 50) |
+| `page` | integer | Page number (default 1) |
+
+### GET /woo/product-categories
+
+Lists WooCommerce product categories.
+
+**Query parameters:**
+
+| Param | Type | Description |
+|-------|------|-------------|
+| `search` | string | Search categories by name |
+| `per_page` | integer | Results per page (default 20, max 50) |
+
+### GET /woo/product-tags
+
+Lists WooCommerce product tags.
+
+**Query parameters:**
+
+| Param | Type | Description |
+|-------|------|-------------|
+| `search` | string | Search tags by name |
+| `per_page` | integer | Results per page (default 20, max 50) |
 
 ---
 

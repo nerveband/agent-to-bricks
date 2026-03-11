@@ -401,7 +401,7 @@ func TestSearchElements(t *testing.T) {
 		}
 		json.NewEncoder(w).Encode(map[string]interface{}{
 			"results": []map[string]interface{}{
-				{"postId": 42, "postTitle": "Home", "postType": "page", "elementId": "abc", "elementType": "heading"},
+				{"postId": 42, "postTitle": "Home", "postType": "page", "elementId": "abc", "elementType": "heading", "parentId": 0},
 			},
 			"total":      1,
 			"page":       1,
@@ -421,6 +421,9 @@ func TestSearchElements(t *testing.T) {
 	}
 	if resp.Results[0].ElementType != "heading" {
 		t.Errorf("expected heading, got %s", resp.Results[0].ElementType)
+	}
+	if string(resp.Results[0].ParentID) != "0" {
+		t.Errorf("expected parent id 0, got %q", resp.Results[0].ParentID)
 	}
 }
 
@@ -548,6 +551,169 @@ func TestListElementTypesByCategory(t *testing.T) {
 	_, err := c.ListElementTypes(false, "media")
 	if err != nil {
 		t.Fatalf("unexpected error: %v", err)
+	}
+}
+
+func TestGetSiteFeatures(t *testing.T) {
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path != "/wp-json/agent-bricks/v1/site/features" {
+			t.Errorf("unexpected path: %s", r.URL.Path)
+		}
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"bricks":            map[string]interface{}{"active": true, "version": "2.2"},
+			"wordpress":         map[string]interface{}{"version": "6.9.2"},
+			"plugin":            map[string]interface{}{"version": "2.0.0"},
+			"abilities":         map[string]interface{}{"available": true},
+			"frameworks":        []string{"acss"},
+			"queryElements":     []string{"posts", "slider"},
+			"queryElementCount": 2,
+			"woocommerce":       map[string]interface{}{"active": false, "version": "", "elementTypes": []string{}},
+		})
+	}))
+	defer srv.Close()
+
+	c := client.New(srv.URL, "atb_testkey")
+	resp, err := c.GetSiteFeatures()
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if !resp.Bricks.Active || resp.Bricks.Version != "2.2" {
+		t.Fatalf("unexpected bricks payload: %+v", resp.Bricks)
+	}
+	if resp.QueryElementCount != 2 {
+		t.Fatalf("expected query element count 2, got %d", resp.QueryElementCount)
+	}
+}
+
+func TestListQueryElementTypes(t *testing.T) {
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path != "/wp-json/agent-bricks/v1/site/query-elements" {
+			t.Errorf("unexpected path: %s", r.URL.Path)
+		}
+		if r.URL.Query().Get("include_controls") != "1" {
+			t.Errorf("expected include_controls=1, got %q", r.URL.Query().Get("include_controls"))
+		}
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"queryElements": []map[string]interface{}{
+				{"name": "posts", "label": "Posts", "category": "wordpress", "icon": "icon", "controls": map[string]interface{}{"query": map[string]interface{}{"type": "query"}}},
+			},
+			"count": 1,
+		})
+	}))
+	defer srv.Close()
+
+	c := client.New(srv.URL, "atb_testkey")
+	resp, err := c.ListQueryElementTypes(true)
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if resp.Count != 1 || resp.QueryElements[0].Name != "posts" {
+		t.Fatalf("unexpected response: %+v", resp)
+	}
+}
+
+func TestGetWooStatus(t *testing.T) {
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path != "/wp-json/agent-bricks/v1/site/woocommerce" {
+			t.Errorf("unexpected path: %s", r.URL.Path)
+		}
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"active":            true,
+			"version":           "9.8.1",
+			"hpos":              true,
+			"productPostType":   true,
+			"productCategories": true,
+			"productTags":       true,
+			"elementTypes":      []string{"product-add-to-cart"},
+			"elementTypeCount":  1,
+		})
+	}))
+	defer srv.Close()
+
+	c := client.New(srv.URL, "atb_testkey")
+	resp, err := c.GetWooStatus()
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if !resp.Active || resp.ElementTypeCount != 1 {
+		t.Fatalf("unexpected woo status: %+v", resp)
+	}
+}
+
+func TestListWooProducts(t *testing.T) {
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path != "/wp-json/agent-bricks/v1/woo/products" {
+			t.Errorf("unexpected path: %s", r.URL.Path)
+		}
+		if r.URL.Query().Get("search") != "hoodie" {
+			t.Errorf("expected search=hoodie, got %q", r.URL.Query().Get("search"))
+		}
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"products": []map[string]interface{}{
+				{"id": 7, "title": "Hoodie", "slug": "hoodie", "status": "publish", "sku": "HD-1", "price": "39.00"},
+			},
+			"count": 1, "total": 1, "page": 1, "perPage": 20, "totalPages": 1, "woocommerceActive": true,
+		})
+	}))
+	defer srv.Close()
+
+	c := client.New(srv.URL, "atb_testkey")
+	resp, err := c.ListWooProducts("hoodie", 20, 1)
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if resp.Count != 1 || resp.Products[0].Title != "Hoodie" {
+		t.Fatalf("unexpected products response: %+v", resp)
+	}
+}
+
+func TestListWooProductCategories(t *testing.T) {
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path != "/wp-json/agent-bricks/v1/woo/product-categories" {
+			t.Errorf("unexpected path: %s", r.URL.Path)
+		}
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"categories": []map[string]interface{}{
+				{"id": 3, "name": "Accessories", "slug": "accessories", "count": 4},
+			},
+			"count":             1,
+			"woocommerceActive": true,
+		})
+	}))
+	defer srv.Close()
+
+	c := client.New(srv.URL, "atb_testkey")
+	resp, err := c.ListWooProductCategories("", 20)
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if len(resp.Categories) != 1 || resp.Categories[0].Name != "Accessories" {
+		t.Fatalf("unexpected category response: %+v", resp)
+	}
+}
+
+func TestListWooProductTags(t *testing.T) {
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path != "/wp-json/agent-bricks/v1/woo/product-tags" {
+			t.Errorf("unexpected path: %s", r.URL.Path)
+		}
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"tags": []map[string]interface{}{
+				{"id": 8, "name": "Featured", "slug": "featured", "count": 2},
+			},
+			"count":             1,
+			"woocommerceActive": true,
+		})
+	}))
+	defer srv.Close()
+
+	c := client.New(srv.URL, "atb_testkey")
+	resp, err := c.ListWooProductTags("", 20)
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if len(resp.Tags) != 1 || resp.Tags[0].Name != "Featured" {
+		t.Fatalf("unexpected tag response: %+v", resp)
 	}
 }
 

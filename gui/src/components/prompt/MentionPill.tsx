@@ -20,6 +20,7 @@ const TYPE_COLORS: Record<string, string> = {
   page: "#4a9eff",
   section: "#a78bfa",
   element: "#34d399",
+  query: "#f97316",
   class: "#f59e0b",
   color: "#f472b6",
   variable: "#22d3ee",
@@ -28,6 +29,9 @@ const TYPE_COLORS: Record<string, string> = {
   template: "#c084fc",
   form: "#38bdf8",
   loop: "#fb7185",
+  product: "#10b981",
+  "product-category": "#84cc16",
+  "product-tag": "#14b8a6",
   condition: "#fbbf24",
 };
 

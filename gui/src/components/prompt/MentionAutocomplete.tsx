@@ -9,6 +9,7 @@ const TYPE_LABELS: Record<string, string> = {
   page: "Pages",
   section: "Sections",
   element: "Elements",
+  query: "Query Elements",
   class: "Global Classes",
   color: "Colors",
   variable: "CSS Variables",
@@ -17,6 +18,9 @@ const TYPE_LABELS: Record<string, string> = {
   template: "Templates",
   form: "Forms",
   loop: "Loops (Query)",
+  product: "Products",
+  "product-category": "Product Categories",
+  "product-tag": "Product Tags",
   condition: "Conditions",
 };
 
@@ -24,6 +28,7 @@ const EMPTY_MESSAGES: Record<string, string> = {
   page: "No pages found",
   section: "No sections found on this page",
   element: "No elements found on this page",
+  query: "No query-driven elements found on any page",
   class: "No global classes defined in Bricks",
   color: "No colors found on this site",
   variable: "No CSS variables found on this site",
@@ -32,6 +37,9 @@ const EMPTY_MESSAGES: Record<string, string> = {
   template: "No Bricks templates found",
   form: "No form elements found on any page",
   loop: "No query loop (Posts) elements found on any page",
+  product: "No WooCommerce products found on this site",
+  "product-category": "No WooCommerce product categories found on this site",
+  "product-tag": "No WooCommerce product tags found on this site",
   condition: "No conditions available",
 };
 

@@ -565,12 +565,26 @@ async fn search_elements(
     site_url: String,
     api_key: String,
     element_type: Option<String>,
+    setting_key: Option<String>,
+    setting_value: Option<String>,
     global_class: Option<String>,
+    post_type: Option<String>,
+    has_query: Option<bool>,
+    query_object_type: Option<String>,
+    query_post_type: Option<String>,
+    query_taxonomy: Option<String>,
     per_page: Option<u32>,
 ) -> Result<serde_json::Value, String> {
     let mut path = "/search/elements?".to_string();
     if let Some(t) = element_type { path.push_str(&format!("element_type={}&", urlencoding::encode(&t))); }
+    if let Some(k) = setting_key { path.push_str(&format!("setting_key={}&", urlencoding::encode(&k))); }
+    if let Some(v) = setting_value { path.push_str(&format!("setting_value={}&", urlencoding::encode(&v))); }
     if let Some(c) = global_class { path.push_str(&format!("global_class={}&", urlencoding::encode(&c))); }
+    if let Some(p) = post_type { path.push_str(&format!("post_type={}&", urlencoding::encode(&p))); }
+    if has_query.unwrap_or(false) { path.push_str("has_query=1&"); }
+    if let Some(v) = query_object_type { path.push_str(&format!("query_object_type={}&", urlencoding::encode(&v))); }
+    if let Some(v) = query_post_type { path.push_str(&format!("query_post_type={}&", urlencoding::encode(&v))); }
+    if let Some(v) = query_taxonomy { path.push_str(&format!("query_taxonomy={}&", urlencoding::encode(&v))); }
     path.push_str(&format!("per_page={}", per_page.unwrap_or(50).min(100)));
     atb_get(&http.0, &site_url, &api_key, &path).await
 }
@@ -620,6 +634,54 @@ async fn get_media(
         Some(q) => format!("/media?search={}", urlencoding::encode(&q)),
         None => "/media".to_string(),
     };
+    atb_get(&http.0, &site_url, &api_key, &path).await
+}
+
+#[tauri::command]
+async fn get_woo_products(
+    http: tauri::State<'_, HttpClient>,
+    site_url: String,
+    api_key: String,
+    search: Option<String>,
+    per_page: Option<u32>,
+) -> Result<serde_json::Value, String> {
+    let mut path = "/woo/products?".to_string();
+    if let Some(q) = search {
+        path.push_str(&format!("search={}&", urlencoding::encode(&q)));
+    }
+    path.push_str(&format!("per_page={}", per_page.unwrap_or(20).min(100)));
+    atb_get(&http.0, &site_url, &api_key, &path).await
+}
+
+#[tauri::command]
+async fn get_woo_product_categories(
+    http: tauri::State<'_, HttpClient>,
+    site_url: String,
+    api_key: String,
+    search: Option<String>,
+    per_page: Option<u32>,
+) -> Result<serde_json::Value, String> {
+    let mut path = "/woo/product-categories?".to_string();
+    if let Some(q) = search {
+        path.push_str(&format!("search={}&", urlencoding::encode(&q)));
+    }
+    path.push_str(&format!("per_page={}", per_page.unwrap_or(20).min(100)));
+    atb_get(&http.0, &site_url, &api_key, &path).await
+}
+
+#[tauri::command]
+async fn get_woo_product_tags(
+    http: tauri::State<'_, HttpClient>,
+    site_url: String,
+    api_key: String,
+    search: Option<String>,
+    per_page: Option<u32>,
+) -> Result<serde_json::Value, String> {
+    let mut path = "/woo/product-tags?".to_string();
+    if let Some(q) = search {
+        path.push_str(&format!("search={}&", urlencoding::encode(&q)));
+    }
+    path.push_str(&format!("per_page={}", per_page.unwrap_or(20).min(100)));
     atb_get(&http.0, &site_url, &api_key, &path).await
 }
 
@@ -806,6 +868,9 @@ pub fn run() {
             get_components,
             get_templates,
             get_media,
+            get_woo_products,
+            get_woo_product_categories,
+            get_woo_product_tags,
             get_abilities,
             config::read_config,
             config::write_config,

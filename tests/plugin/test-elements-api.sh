@@ -22,7 +22,8 @@ else
   SSH_PREFIX=()
 fi
 
-SSH_CMD=("${SSH_PREFIX[@]}" ssh -o ConnectTimeout=30 "$SSH_HOST")
+SSH_OPTIONS=(-o StrictHostKeyChecking=accept-new -o ConnectTimeout=30)
+SSH_CMD=("${SSH_PREFIX[@]}" ssh "${SSH_OPTIONS[@]}" "$SSH_HOST")
 REMOTE_HOME="/home/${SSH_HOST%%@*}"
 PHP="$PHP_BIN"
 WPCLI="$WPCLI_BIN"

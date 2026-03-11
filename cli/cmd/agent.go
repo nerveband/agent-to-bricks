@@ -120,22 +120,20 @@ Examples:
 					var abilityInfos []agent.AbilityInfo
 					for _, a := range abilities {
 						inputHint := ""
-						if a.InputSchema != nil {
-							if props, ok := a.InputSchema["properties"].(map[string]interface{}); ok && len(props) > 0 {
-								// Build a simplified input hint
-								parts := make([]string, 0, len(props))
-								for k, v := range props {
-									typ := "any"
-									if vm, ok := v.(map[string]interface{}); ok {
-										if t, ok := vm["type"].(string); ok {
-											typ = t
-										}
+						if props := abilitySchemaProperties(a.InputSchema); len(props) > 0 {
+							// Build a simplified input hint
+							parts := make([]string, 0, len(props))
+							for k, v := range props {
+								typ := "any"
+								if vm, ok := v.(map[string]interface{}); ok {
+									if t, ok := vm["type"].(string); ok {
+										typ = t
 									}
-									parts = append(parts, fmt.Sprintf("%q: <%s>", k, typ))
 								}
-								sort.Strings(parts)
-								inputHint = "{" + strings.Join(parts, ", ") + "}"
+								parts = append(parts, fmt.Sprintf("%q: <%s>", k, typ))
 							}
+							sort.Strings(parts)
+							inputHint = "{" + strings.Join(parts, ", ") + "}"
 						}
 						abilityInfos = append(abilityInfos, agent.AbilityInfo{
 							Name:          a.Name,

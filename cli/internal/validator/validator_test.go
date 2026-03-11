@@ -172,6 +172,20 @@ func TestValidateFile(t *testing.T) {
 	}
 }
 
+func TestValidateFileBricksExport(t *testing.T) {
+	data := map[string]interface{}{
+		"bricksExport": map[string]interface{}{
+			"content": []interface{}{
+				map[string]interface{}{"id": "e1", "name": "section", "parent": float64(0)},
+			},
+		},
+	}
+	r := validator.ValidateFile(data)
+	if !r.Valid {
+		t.Errorf("expected export payload to validate, got errors: %v", r.Errors)
+	}
+}
+
 func TestValidateFileMissingElements(t *testing.T) {
 	data := map[string]interface{}{}
 	r := validator.ValidateFile(data)

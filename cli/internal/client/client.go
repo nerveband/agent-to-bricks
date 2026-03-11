@@ -420,6 +420,86 @@ type ElementTypesResponse struct {
 	Count        int               `json:"count"`
 }
 
+// QueryElementTypesResponse from GET /site/query-elements.
+type QueryElementTypesResponse struct {
+	QueryElements []ElementTypeInfo `json:"queryElements"`
+	Count         int               `json:"count"`
+}
+
+// SiteFeaturesResponse from GET /site/features.
+type SiteFeaturesResponse struct {
+	Bricks struct {
+		Active  bool   `json:"active"`
+		Version string `json:"version"`
+	} `json:"bricks"`
+	WordPress struct {
+		Version string `json:"version"`
+	} `json:"wordpress"`
+	Plugin struct {
+		Version string `json:"version"`
+	} `json:"plugin"`
+	Abilities struct {
+		Available bool `json:"available"`
+	} `json:"abilities"`
+	Frameworks        []string          `json:"frameworks"`
+	QueryElements     []string          `json:"queryElements"`
+	QueryElementCount int               `json:"queryElementCount"`
+	WooCommerce       WooStatusResponse `json:"woocommerce"`
+}
+
+// WooStatusResponse from GET /site/woocommerce.
+type WooStatusResponse struct {
+	Active             bool     `json:"active"`
+	Version            string   `json:"version"`
+	HPOS               bool     `json:"hpos"`
+	ProductPostType    bool     `json:"productPostType"`
+	ProductCategories  bool     `json:"productCategories"`
+	ProductTags        bool     `json:"productTags"`
+	ElementTypes       []string `json:"elementTypes"`
+	ElementTypeCount   int      `json:"elementTypeCount"`
+	AbilitiesAvailable bool     `json:"abilitiesAvailable"`
+}
+
+// WooProductItem from GET /woo/products.
+type WooProductItem struct {
+	ID         int              `json:"id"`
+	Title      string           `json:"title"`
+	Slug       string           `json:"slug"`
+	Status     string           `json:"status"`
+	Modified   string           `json:"modified"`
+	SKU        string           `json:"sku"`
+	Price      string           `json:"price"`
+	Categories []WooTermSummary `json:"categories"`
+	Tags       []WooTermSummary `json:"tags"`
+}
+
+// WooProductsResponse from GET /woo/products.
+type WooProductsResponse struct {
+	Products          []WooProductItem `json:"products"`
+	Count             int              `json:"count"`
+	Total             int              `json:"total"`
+	Page              int              `json:"page"`
+	PerPage           int              `json:"perPage"`
+	TotalPages        int              `json:"totalPages"`
+	WooCommerceActive bool             `json:"woocommerceActive"`
+}
+
+// WooTermSummary from Woo term endpoints.
+type WooTermSummary struct {
+	ID    int    `json:"id"`
+	Name  string `json:"name"`
+	Slug  string `json:"slug"`
+	Count int    `json:"count"`
+}
+
+// WooTermsResponse from GET /woo/product-categories and /woo/product-tags.
+type WooTermsResponse struct {
+	Categories        []WooTermSummary `json:"categories,omitempty"`
+	Tags              []WooTermSummary `json:"tags,omitempty"`
+	Count             int              `json:"count"`
+	WooCommerceActive bool             `json:"woocommerceActive"`
+}
+
 // ListElementTypes returns rich element type metadata.
 func (c *Client) ListElementTypes(includeControls bool, category string) (*ElementTypesResponse, error) {
 	v := url.Values{}
@@ -440,6 +520,124 @@ func (c *Client) ListElementTypes(includeControls bool, category string) (*Eleme
 	}
 	defer resp.Body.Close()
 	var result ElementTypesResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return nil, err
+	}
+	return &result, nil
+}
+
+// GetSiteFeatures returns machine-discoverable site capabilities.
+func (c *Client) GetSiteFeatures() (*SiteFeaturesResponse, error) {
+	resp, err := c.do("GET", "/site/features", nil)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var result SiteFeaturesResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return nil, err
+	}
+	return &result, nil
+}
+
+// ListQueryElementTypes returns element types with a query control.
+func (c *Client) ListQueryElementTypes(includeControls bool) (*QueryElementTypesResponse, error) {
+	v := url.Values{}
+	if includeControls {
+		v.Set("include_controls", "1")
+	}
+
+	path := "/site/query-elements"
+	if len(v) > 0 {
+		path += "?" + v.Encode()
+	}
+
+	resp, err := c.do("GET", path, nil)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var result QueryElementTypesResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return nil, err
+	}
+	return &result, nil
+}
+
+// GetWooStatus returns WooCommerce availability and Bricks/Woo integration info.
+func (c *Client) GetWooStatus() (*WooStatusResponse, error) {
+	resp, err := c.do("GET", "/site/woocommerce", nil)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var result WooStatusResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return nil, err
+	}
+	return &result, nil
+}
+
+// ListWooProducts returns WooCommerce products for discovery/autocomplete.
+func (c *Client) ListWooProducts(search string, perPage, page int) (*WooProductsResponse, error) {
+	v := url.Values{}
+	if search != "" {
+		v.Set("search", search)
+	}
+	if perPage > 0 {
+		v.Set("per_page", fmt.Sprintf("%d", perPage))
+	}
+	if page > 0 {
+		v.Set("page", fmt.Sprintf("%d", page))
+	}
+
+	path := "/woo/products"
+	if len(v) > 0 {
+		path += "?" + v.Encode()
+	}
+
+	resp, err := c.do("GET", path, nil)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var result WooProductsResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return nil, err
+	}
+	return &result, nil
+}
+
+// ListWooProductCategories returns WooCommerce product categories.
+func (c *Client) ListWooProductCategories(search string, perPage int) (*WooTermsResponse, error) {
+	return c.listWooTerms("/woo/product-categories", search, perPage)
+}
+
+// ListWooProductTags returns WooCommerce product tags.
+func (c *Client) ListWooProductTags(search string, perPage int) (*WooTermsResponse, error) {
+	return c.listWooTerms("/woo/product-tags", search, perPage)
+}
+
+func (c *Client) listWooTerms(basePath, search string, perPage int) (*WooTermsResponse, error) {
+	v := url.Values{}
+	if search != "" {
+		v.Set("search", search)
+	}
+	if perPage > 0 {
+		v.Set("per_page", fmt.Sprintf("%d", perPage))
+	}
+
+	path := basePath
+	if len(v) > 0 {
+		path += "?" + v.Encode()
+	}
+
+	resp, err := c.do("GET", path, nil)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var result WooTermsResponse
 	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
 		return nil, err
 	}
@@ -519,25 +717,69 @@ func (c *Client) ListMedia(search string) (*MediaListResponse, error) {
 
 // SearchParams for GET /search/elements.
 type SearchParams struct {
-	ElementType  string
-	SettingKey   string
-	SettingValue string
-	GlobalClass  string
-	PostType     string
-	PerPage      int
-	Page         int
+	ElementType     string
+	SettingKey      string
+	SettingValue    string
+	GlobalClass     string
+	PostType        string
+	HasQuery        bool
+	QueryObjectType string
+	QueryPostType   string
+	QueryTaxonomy   string
+	PerPage         int
+	Page            int
 }
 
 // SearchResult is a single element match.
 type SearchResult struct {
-	PostID       int                    `json:"postId"`
-	PostTitle    string                 `json:"postTitle"`
-	PostType     string                 `json:"postType"`
-	ElementID    string                 `json:"elementId"`
-	ElementType  string                 `json:"elementType"`
-	ElementLabel string                 `json:"elementLabel"`
-	Settings     map[string]interface{} `json:"settings"`
-	ParentID     string                 `json:"parentId"`
+	PostID          int                    `json:"postId"`
+	PostTitle       string                 `json:"postTitle"`
+	PostType        string                 `json:"postType"`
+	ElementID       string                 `json:"elementId"`
+	ElementType     string                 `json:"elementType"`
+	ElementLabel    string                 `json:"elementLabel"`
+	Settings        map[string]interface{} `json:"settings"`
+	ParentID        Stringish              `json:"parentId"`
+	HasQuery        bool                   `json:"hasQuery"`
+	QueryObjectType string                 `json:"queryObjectType"`
+	QueryPostTypes  []string               `json:"queryPostTypes"`
+	QueryTaxonomies []string               `json:"queryTaxonomies"`
+	QueryRaw        map[string]interface{} `json:"queryRaw"`
+}
+
+// Stringish accepts string, number, boolean, or null JSON values and
+// normalizes them to a string for CLI consumers.
+type Stringish string
+
+func (s *Stringish) UnmarshalJSON(data []byte) error {
+	if string(data) == "null" {
+		*s = ""
+		return nil
+	}
+
+	var asString string
+	if err := json.Unmarshal(data, &asString); err == nil {
+		*s = Stringish(asString)
+		return nil
+	}
+
+	var asNumber json.Number
+	if err := json.Unmarshal(data, &asNumber); err == nil {
+		*s = Stringish(asNumber.String())
+		return nil
+	}
+
+	var asBool bool
+	if err := json.Unmarshal(data, &asBool); err == nil {
+		if asBool {
+			*s = "true"
+		} else {
+			*s = "false"
+		}
+		return nil
+	}
+
+	return fmt.Errorf("unsupported stringish value: %s", string(data))
 }
 
 // SearchResponse from GET /search/elements.
@@ -566,6 +808,18 @@ func (c *Client) SearchElements(params SearchParams) (*SearchResponse, error) {
 	}
 	if params.PostType != "" {
 		v.Set("post_type", params.PostType)
+	}
+	if params.HasQuery {
+		v.Set("has_query", "1")
+	}
+	if params.QueryObjectType != "" {
+		v.Set("query_object_type", params.QueryObjectType)
+	}
+	if params.QueryPostType != "" {
+		v.Set("query_post_type", params.QueryPostType)
+	}
+	if params.QueryTaxonomy != "" {
+		v.Set("query_taxonomy", params.QueryTaxonomy)
 	}
 	if params.PerPage > 0 {
 		v.Set("per_page", fmt.Sprintf("%d", params.PerPage))
@@ -680,14 +934,14 @@ func (c *Client) UploadMedia(filePath string) (*MediaUploadResponse, error) {
 
 // Ability represents a WordPress Abilities API entry (WP 6.9+).
 type Ability struct {
-	Name         string                 `json:"name"`
-	Label        string                 `json:"label"`
-	Description  string                 `json:"description"`
-	Category     string                 `json:"category"`
-	Meta         AbilityMeta            `json:"meta"`
-	Annotations  AbilityAnnotations     `json:"-"` // populated from Meta after decode
-	InputSchema  map[string]interface{} `json:"input_schema"`
-	OutputSchema map[string]interface{} `json:"output_schema"`
+	Name         string             `json:"name"`
+	Label        string             `json:"label"`
+	Description  string             `json:"description"`
+	Category     string             `json:"category"`
+	Meta         AbilityMeta        `json:"meta"`
+	Annotations  AbilityAnnotations `json:"-"` // populated from Meta after decode
+	InputSchema  interface{}        `json:"input_schema"`
+	OutputSchema interface{}        `json:"output_schema"`
 }
 
 // AbilityMeta wraps the meta object returned by the WP Abilities REST API.

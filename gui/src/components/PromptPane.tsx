@@ -40,6 +40,7 @@ const QUICK_CHIPS: { type: MentionType; label: string; tooltip: string }[] = [
   { type: "page", label: "@page", tooltip: "Reference a page by name" },
   { type: "section", label: "@section", tooltip: "Reference a section within a page" },
   { type: "element", label: "@element", tooltip: "Reference a specific element on a page" },
+  { type: "query", label: "@query", tooltip: "Reference any query-driven Bricks element" },
   { type: "class", label: "@class", tooltip: "Reference a Bricks global CSS class" },
   { type: "color", label: "@color", tooltip: "Reference a color from the site palette or CSS variables" },
   { type: "variable", label: "@variable", tooltip: "Reference a CSS custom property" },
@@ -48,6 +49,8 @@ const QUICK_CHIPS: { type: MentionType; label: string; tooltip: string }[] = [
   { type: "template", label: "@template", tooltip: "Reference a Bricks template" },
   { type: "form", label: "@form", tooltip: "Reference a form element" },
   { type: "loop", label: "@loop", tooltip: "Reference a query loop (Posts) element" },
+  { type: "product", label: "@product", tooltip: "Reference a WooCommerce product" },
+  { type: "product-category", label: "@product-category", tooltip: "Reference a WooCommerce product category" },
   { type: "condition", label: "@condition", tooltip: "Reference a Bricks condition" },
 ];
 
@@ -357,12 +360,12 @@ export function PromptPane() {
       )}
 
       {/* Tags reference strip */}
-      <div className="px-5 pb-4 flex items-center gap-2 overflow-x-auto shrink-0">
+      <div className="px-5 pb-4 flex flex-wrap items-start gap-2 shrink-0">
         {QUICK_CHIPS.map((chip) => (
           <button
             key={chip.type}
             onClick={() => handleChipClick(chip.type)}
-            className="tag-btn px-2.5 py-1.5 rounded-md text-[11px] font-mono cursor-pointer"
+            className="tag-btn max-w-full px-2.5 py-1.5 rounded-md text-[11px] font-mono text-left cursor-pointer"
             title={chip.tooltip}
           >
             {chip.label}

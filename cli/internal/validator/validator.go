@@ -218,11 +218,11 @@ func validateDynamicData(text, path string, r *Result) {
 
 // ValidateFile validates elements from a parsed JSON file structure.
 func ValidateFile(data map[string]interface{}) *Result {
-	elementsRaw, ok := data["elements"].([]interface{})
+	elementsRaw, ok := extractElements(data)
 	if !ok {
 		return &Result{
 			Valid:  false,
-			Errors: []string{"file missing 'elements' array"},
+			Errors: []string{"file missing 'elements' array or 'bricksExport.content' export payload"},
 		}
 	}
 
@@ -234,4 +234,22 @@ func ValidateFile(data map[string]interface{}) *Result {
 	}
 
 	return Validate(elements)
+}
+
+func extractElements(data map[string]interface{}) ([]interface{}, bool) {
+	if elementsRaw, ok := data["elements"].([]interface{}); ok {
+		return elementsRaw, true
+	}
+
+	bricksExport, ok := data["bricksExport"].(map[string]interface{})
+	if !ok {
+		return nil, false
+	}
+
+	elementsRaw, ok := bricksExport["content"].([]interface{})
+	if !ok {
+		return nil, false
+	}
+
+	return elementsRaw, true
 }

@@ -122,5 +122,49 @@ if ($r['status'] === 200) {
     $fail++;
 }
 
+// ===== Test 7: Query-aware filters =====
+echo "TEST 7: Filter by has_query=1... ";
+$r = dispatch_rest('GET', '/agent-bricks/v1/search/elements', ['has_query' => true, 'per_page' => 5]);
+if ($r['status'] === 200 && isset($r['data']['results'])) {
+    $all_query = true;
+    foreach ($r['data']['results'] as $result) {
+        if (empty($result['hasQuery'])) {
+            $all_query = false;
+            break;
+        }
+    }
+    if ($all_query) {
+        echo "PASS (" . count($r['data']['results']) . " query elements)\n";
+        $pass++;
+    } else {
+        echo "FAIL (non-query results returned)\n";
+        $fail++;
+    }
+} else {
+    echo "FAIL (status={$r['status']})\n";
+    $fail++;
+}
+
+// ===== Test 8: Query metadata shape =====
+echo "TEST 8: Query metadata fields included... ";
+$r = dispatch_rest('GET', '/agent-bricks/v1/search/elements', ['per_page' => 1]);
+if ($r['status'] === 200 && count($r['data']['results']) > 0) {
+    $first = $r['data']['results'][0];
+    $has_fields = array_key_exists('hasQuery', $first)
+        && array_key_exists('queryObjectType', $first)
+        && array_key_exists('queryPostTypes', $first)
+        && array_key_exists('queryTaxonomies', $first)
+        && array_key_exists('queryRaw', $first);
+    if ($has_fields) {
+        echo "PASS\n";
+        $pass++;
+    } else {
+        echo "FAIL (missing query metadata fields)\n";
+        $fail++;
+    }
+} else {
+    echo "SKIP (no results to check query metadata)\n";
+}
+
 echo "\nResults: $pass passed, $fail failed\n";
 exit($fail > 0 ? 1 : 0);

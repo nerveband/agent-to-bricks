@@ -23,44 +23,45 @@ Run the full local verification pass, docs/content audit, and staging-aware chec
 
 **Staging and E2E checks:**
 12. If staging credentials are available, prefer `./scripts/verify-staging-release.sh` as the canonical end-to-end gate. It deploys staging, verifies `/site/info`, runs the plugin runner matrix, CLI E2E, template smoke, and GUI MCP E2E.
-13. If the full gate fails and you need to isolate the breakage, use these narrower scripts:
+13. If staging SSH is backed by the 1Password agent on this machine, unlock/approve the SSH signing prompt before retrying deploy or runner scripts.
+14. If the full gate fails and you need to isolate the breakage, use these narrower scripts:
     - `./scripts/deploy-staging.sh`
     - `./tests/plugin/run-staging-suite.sh`
     - `./tests/e2e/test-full-workflow.sh`
     - `./tests/e2e/test-template-smoke.sh`
     - `./gui/e2e/run-tests.sh`
-14. Treat `docs/test-data/templates` as local/private. If the proprietary corpus exists, run the template smoke flow and confirm it used real fixtures. If it is absent, confirm the repo skips cleanly instead of failing.
+15. Treat `docs/test-data/templates` as local/private. If the proprietary corpus exists, run the template smoke flow and confirm it used real fixtures. If it is absent, confirm the repo skips cleanly instead of failing.
 
 **Docs & content audit:**
-15. Check `git diff --name-only HEAD~5` to see what changed recently
-16. For any CLI, GUI, or plugin changes: check if the matching docs in `website/src/content/docs/` need updating
+16. Check `git diff --name-only HEAD~5` to see what changed recently
+17. For any CLI, GUI, or plugin changes: check if the matching docs in `website/src/content/docs/` need updating
     - If CLI commands, flags, or payloads changed: verify `cli/schema.json` and the docs examples were updated together
     - If staging, install, or env behavior changed: verify `.env.example`, `README.md`, and any relevant guides reflect it
     - If release-facing messaging changed: verify `CHANGELOG.md`, `README.md`, and `website/src/components/home/HeroSection.astro`
-17. Check if the homepage sections in `website/src/components/home/` reference outdated features or are missing new ones
-18. Check if `README.md`, `CHANGELOG.md`, and the prompt docs under `prompts/` reflect recent process changes
-19. Check the change against the repo philosophy in `AGENTS.md`:
+18. Check if the homepage sections in `website/src/components/home/` reference outdated features or are missing new ones
+19. Check if `README.md`, `CHANGELOG.md`, and the prompt docs under `prompts/` reflect recent process changes
+20. Check the change against the repo philosophy in `AGENTS.md`:
     - contract-first, machine-readable surfaces in the ShipTypes sense
     - agent-DX CLI discipline: structured JSON I/O, raw payload input, schema validation, stable errors, pagination/field selection, safety rails
     - no naive regex or delimiter splitting that could corrupt structured strings
 
 **Cross-link & URL verification:**
-20. Grep all URLs in CLI source (`cmd/*.go`), GUI source (`src/`), and plugin source (`includes/`) that point to `agenttobricks.com` and verify each target page exists in `website/src/content/docs/` or `website/src/pages/`
-21. Check that plugin settings links and CLI help text URLs are not broken
+21. Grep all URLs in CLI source (`cmd/*.go`), GUI source (`src/`), and plugin source (`includes/`) that point to `agenttobricks.com` and verify each target page exists in `website/src/content/docs/` or `website/src/pages/`
+22. Check that plugin settings links and CLI help text URLs are not broken
 
 **Website preview (if website changed):**
-22. If any files under `website/` changed, build the website and deploy a preview:
+23. If any files under `website/` changed, build the website and deploy a preview:
     - `cd website && npm run build`
     - `cd website && npx netlify deploy --dir=dist`
     - Share the preview URL for review
     - After review is approved, deploy to production: `cd website && npx netlify deploy --dir=dist --prod`
 
 **GUI MCP notes:**
-23. The GUI E2E tests require the app running with the MCP debug feature:
+24. The GUI E2E tests require the app running with the MCP debug feature:
     - Start GUI with MCP: `cd gui && npm run dev:mcp`
     - Wait for socket at `/tmp/tauri-mcp-atb.sock`
     - Run `./gui/e2e/run-tests.sh`
-24. The suite currently contains 41 tests. All should pass before shipping.
+25. The suite currently contains 41 tests. All should pass before shipping.
 
 **Reporting:**
-25. Report what passed, what failed, what was skipped because local/private fixtures were absent, whether the installed binary path is clean, and any ShipTypes/agent-DX philosophy regressions or wins.
+26. Report what passed, what failed, what was skipped because local/private fixtures were absent, whether the installed binary path is clean, and any ShipTypes/agent-DX philosophy regressions or wins.

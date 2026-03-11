@@ -36,18 +36,19 @@ Implement the requested changes end to end, then run the relevant verification a
     - `./tests/e2e/test-full-workflow.sh`
     - `./tests/e2e/test-template-smoke.sh`
     - `./gui/e2e/run-tests.sh`
-16. Any staging mutation test must leave staging reusable. Use snapshots/rollback or equivalent cleanup and confirm the cleanup happened.
+16. If staging SSH is backed by the 1Password agent on this machine, unlock/approve the key prompt before retrying deploy or runner scripts.
+17. Any staging mutation test must leave staging reusable. Use snapshots/rollback or equivalent cleanup and confirm the cleanup happened.
 
 **Private corpus and conversion coverage:**
-17. If templates, Frames parsing, composition, or conversion logic changed, use the local/private `docs/test-data/templates` corpus when available.
-18. For those changes, confirm both:
+18. If templates, Frames parsing, composition, or conversion logic changed, use the local/private `docs/test-data/templates` corpus when available.
+19. For those changes, confirm both:
     - offline/local validation still passes or skips cleanly in public clones
     - staging smoke uses representative real fixtures when the corpus is available locally
 
 **Docs and prompt sync:**
-19. Update matching docs in `website/src/content/docs/` for any CLI, GUI, or plugin user-facing change.
-20. Update `.env.example`, `README.md`, `CHANGELOG.md`, and `website/src/components/home/HeroSection.astro` when staging/install/release-facing behavior changes.
-21. If you change the expected build, install, staging, release workflow, or core agent-facing philosophy, update the prompt docs under `prompts/` and align `AGENTS.md` so future AI sessions inherit the same process.
+20. Update matching docs in `website/src/content/docs/` for any CLI, GUI, or plugin user-facing change.
+21. Update `.env.example`, `README.md`, `CHANGELOG.md`, and `website/src/components/home/HeroSection.astro` when staging/install/release-facing behavior changes.
+22. If you change the expected build, install, staging, release workflow, or core agent-facing philosophy, update the prompt docs under `prompts/` and align `AGENTS.md` so future AI sessions inherit the same process.
 
 **Reporting:**
-22. Report the code changes, the exact verification you ran, what was skipped because private fixtures or staging creds were unavailable, any ShipTypes/agent-DX regressions you prevented or improved, and any remaining risks.
+23. Report the code changes, the exact verification you ran, what was skipped because private fixtures or staging creds were unavailable, any ShipTypes/agent-DX regressions you prevented or improved, and any remaining risks.

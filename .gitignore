@@ -41,3 +41,10 @@ config.yaml
 
 # Image backups (local only)
 _image-backups/
+
+# Local GUI E2E artifacts
+gui/e2e/screenshots/
+gui/e2e/test-results.json
+
+# Local CLI release artifact
+cli/agent-to-bricks

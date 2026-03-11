@@ -21,8 +21,9 @@ else
     SSH_PREFIX=()
 fi
 
-SSH_CMD=("${SSH_PREFIX[@]}" ssh -o ConnectTimeout=10 "$SSH_HOST")
-SCP_CMD=("${SSH_PREFIX[@]}" scp -q)
+SSH_OPTIONS=(-o StrictHostKeyChecking=accept-new -o ConnectTimeout=10)
+SSH_CMD=("${SSH_PREFIX[@]}" ssh "${SSH_OPTIONS[@]}" "$SSH_HOST")
+SCP_CMD=("${SSH_PREFIX[@]}" scp -q "${SSH_OPTIONS[@]}")
 WP_CMD="$PHP_BIN $WPCLI_BIN"
 PLUGIN_DIR="$WP_PATH/wp-content/plugins/agent-to-bricks"
 

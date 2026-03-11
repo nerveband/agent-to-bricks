@@ -1,6 +1,6 @@
 {
   "name": "bricks",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Agent to Bricks — AI-powered Bricks Builder CLI",
   "globalFlags": {
     "--config": {"type": "string", "default": "~/.agent-to-bricks/config.yaml", "description": "config file path"}
@@ -271,13 +271,28 @@
         "--setting": {"type": "string", "default": "", "description": "setting filter as key=value"},
         "--class": {"type": "string", "default": "", "description": "global class name or ID"},
         "--post-type": {"type": "string", "default": "", "description": "post type filter"},
+        "--has-query": {"type": "bool", "default": false, "description": "only return elements with Bricks query settings"},
+        "--query-object-type": {"type": "string", "default": "", "description": "filter query elements by query object type"},
+        "--query-post-type": {"type": "string", "default": "", "description": "filter query elements by queried post type"},
+        "--query-taxonomy": {"type": "string", "default": "", "description": "filter query elements by queried taxonomy"},
         "--limit": {"type": "int", "default": 0, "description": "max results"},
         "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
         "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
       },
       "stdin": false,
       "output": ["json", "table"],
-      "example": "bricks search elements --type heading --format json"
+      "example": "bricks search elements --has-query --query-post-type product --format json"
+    },
+    "site features": {
+      "description": "Show machine-discoverable site features",
+      "args": [],
+      "flags": {
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": false,
+      "output": ["json", "text"],
+      "example": "bricks site features --format json"
     },
     "site frameworks": {
       "description": "Detect CSS frameworks (ACSS, etc.)",
@@ -300,6 +315,18 @@
       "stdin": false,
       "output": ["json", "text"],
       "example": "bricks site info --format json"
+    },
+    "site query-elements": {
+      "description": "List Bricks element types with query controls",
+      "args": ["name?"],
+      "flags": {
+        "--controls": {"type": "bool", "default": false, "description": "include query element controls schema"},
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": false,
+      "output": ["json", "table", "text"],
+      "example": "bricks site query-elements --format json"
     },
     "site patch": {
       "description": "Patch specific elements on a page",
@@ -458,6 +485,57 @@
       "stdin": false,
       "output": ["text"],
       "example": "bricks templates show hero-section"
+    },
+    "woo categories": {
+      "description": "List WooCommerce product categories",
+      "args": [],
+      "flags": {
+        "--search": {"type": "string", "default": "", "description": "filter WooCommerce categories by name"},
+        "--limit": {"type": "int", "default": 20, "description": "max results"},
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": false,
+      "output": ["json", "table"],
+      "example": "bricks woo categories --search featured --format json"
+    },
+    "woo products": {
+      "description": "List WooCommerce products",
+      "args": [],
+      "flags": {
+        "--search": {"type": "string", "default": "", "description": "filter WooCommerce products by title"},
+        "--limit": {"type": "int", "default": 20, "description": "max results"},
+        "--page": {"type": "int", "default": 1, "description": "result page"},
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": false,
+      "output": ["json", "table"],
+      "example": "bricks woo products --search hoodie --format json"
+    },
+    "woo status": {
+      "description": "Show WooCommerce availability on the connected site",
+      "args": [],
+      "flags": {
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": false,
+      "output": ["json", "text"],
+      "example": "bricks woo status --format json"
+    },
+    "woo tags": {
+      "description": "List WooCommerce product tags",
+      "args": [],
+      "flags": {
+        "--search": {"type": "string", "default": "", "description": "filter WooCommerce tags by name"},
+        "--limit": {"type": "int", "default": 20, "description": "max results"},
+        "--format": {"type": "string", "default": "", "description": "Output format: json, table"},
+        "--json": {"type": "bool", "default": false, "description": "Shorthand for --format json"}
+      },
+      "stdin": false,
+      "output": ["json", "table"],
+      "example": "bricks woo tags --search sale --format json"
     },
     "update": {
       "description": "Update CLI and plugin to the latest version",

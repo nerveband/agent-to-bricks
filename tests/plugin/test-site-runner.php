@@ -105,5 +105,52 @@ if ($r['status'] === 200 && isset($r['data']['frameworks']['acss'])) {
     echo "SKIP (no ACSS)\n";
 }
 
+// ===== Test 7: GET /site/features =====
+echo "TEST 7: GET site features... ";
+$r = dispatch_rest('GET', '/agent-bricks/v1/site/features');
+if (
+    $r['status'] === 200
+    && isset($r['data']['bricks'])
+    && isset($r['data']['frameworks'])
+    && isset($r['data']['queryElements'])
+    && isset($r['data']['woocommerce'])
+) {
+    echo "PASS (queryElements=" . count($r['data']['queryElements']) . ", abilities=" . (($r['data']['abilities']['available'] ?? false) ? 'yes' : 'no') . ")\n";
+    $pass++;
+} else {
+    echo "FAIL (status={$r['status']})\n";
+    echo json_encode($r['data']) . "\n";
+    $fail++;
+}
+
+// ===== Test 8: GET /site/query-elements =====
+echo "TEST 8: GET query-capable element types... ";
+$r = dispatch_rest('GET', '/agent-bricks/v1/site/query-elements');
+if ($r['status'] === 200 && isset($r['data']['queryElements']) && isset($r['data']['count'])) {
+    echo "PASS (count={$r['data']['count']})\n";
+    $pass++;
+} else {
+    echo "FAIL (status={$r['status']})\n";
+    echo json_encode($r['data']) . "\n";
+    $fail++;
+}
+
+// ===== Test 9: GET /site/woocommerce =====
+echo "TEST 9: GET WooCommerce site status... ";
+$r = dispatch_rest('GET', '/agent-bricks/v1/site/woocommerce');
+if (
+    $r['status'] === 200
+    && isset($r['data']['active'])
+    && isset($r['data']['productPostType'])
+    && isset($r['data']['elementTypeCount'])
+) {
+    echo "PASS (active=" . (!empty($r['data']['active']) ? 'yes' : 'no') . ", elementTypes=" . ($r['data']['elementTypeCount'] ?? 0) . ")\n";
+    $pass++;
+} else {
+    echo "FAIL (status={$r['status']})\n";
+    echo json_encode($r['data']) . "\n";
+    $fail++;
+}
+
 echo "\nResults: $pass passed, $fail failed\n";
 exit($fail > 0 ? 1 : 0);

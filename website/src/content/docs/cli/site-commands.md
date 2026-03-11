@@ -26,6 +26,61 @@ Breakpoints: base (1280), tablet (1024), mobile_landscape (768), mobile_portrait
 
 This is a good first command to run after `bricks config init`. If something is misconfigured, you'll know right away.
 
+## Get machine-discoverable site features
+
+Use this when you want a quick capability summary instead of raw version data.
+
+```bash
+bricks site features
+bricks site features --format json
+```
+
+```
+Bricks:          true (1.12.2)
+WordPress:       6.9
+Plugin:          2.1.0
+Abilities API:   true
+Frameworks:      2
+Query Elements:  5
+WooCommerce:     true (9.8.1)
+```
+
+This is the fastest way to check whether a site exposes query-capable Bricks elements, WooCommerce discovery routes, and the WordPress Abilities API.
+
+## List query-capable element types
+
+Query-aware builds often depend on knowing which Bricks elements actually expose a `query` control. This command gives you that list directly from the site.
+
+```bash
+bricks site query-elements
+bricks site query-elements posts --controls --format json
+```
+
+### Flags
+
+| Flag | Description |
+|------|-------------|
+| `--controls` | Include the control schema for each query-capable element type |
+| `--format json` | Output result as JSON |
+| `--json` | Shorthand for `--format json` |
+
+### Example
+
+```bash
+bricks site query-elements
+```
+
+```
+NAME       LABEL       CATEGORY
+accordion  Accordion   general
+carousel   Carousel    media
+map        Map         media
+posts      Posts       query
+slider     Slider      media
+```
+
+When you pass a specific element name, the CLI prints that element's control metadata so an agent or developer can inspect its query settings without scraping help text.
+
 ## Pull page elements
 
 Download all Bricks elements from a page as JSON.
@@ -257,6 +312,11 @@ bricks frameworks show acss
 ```
 
 `bricks frameworks show acss` prints the full ACSS configuration: spacing scales, color palettes, typography tokens, and every registered utility class.
+
+## Related commands
+
+- [`bricks woo status`](/cli/woo-commands/) for WooCommerce-specific discovery
+- [`bricks search elements`](/cli/search-commands/) for query-aware element search across the site
 
 ## Related commands
 

@@ -13,7 +13,8 @@ When your site runs WordPress 6.9+ with Agent to Bricks, these abilities become 
 
 | Category | Abilities | Description |
 |----------|-----------|-------------|
-| `agent-bricks-site` | `get-site-info`, `get-frameworks`, `list-element-types`, `list-pages` | Site configuration and metadata |
+| `agent-bricks-site` | `get-site-info`, `get-site-features`, `get-frameworks`, `list-element-types`, `list-query-element-types`, `list-pages` | Site configuration, discovery metadata, and query-capable element types |
+| `agent-bricks-commerce` | `get-woocommerce-status`, `list-products`, `list-product-categories`, `list-product-tags` | WooCommerce discovery and catalog metadata |
 | `agent-bricks-pages` | `get-page-elements`, `replace-page-elements`, `append-page-elements`, `patch-page-elements`, `delete-page-elements`, `search-elements` | Read and write Bricks page content |
 | `agent-bricks-pages` | `list-snapshots`, `create-snapshot`, `rollback-snapshot` | Version control for page content |
 | `agent-bricks-design` | `list-classes`, `create-class`, `delete-class`, `get-styles`, `get-variables` | Design system access |
@@ -103,8 +104,9 @@ bricks agent context --format prompt --abilities
 This adds a "Site Abilities" section to the context output. The LLM sees abilities from all plugins — Agent to Bricks, Yoast, WooCommerce, Gravity Forms, or anything else that registers abilities. It can then mix and match:
 
 - Build a Bricks page using ATB abilities
+- Discover query-capable elements and existing product loops before editing
 - Set SEO meta using Yoast abilities
-- Create a WooCommerce product using WC abilities
+- Create or inspect WooCommerce objects using WC or ATB commerce abilities
 
 All from the same conversation.
 
