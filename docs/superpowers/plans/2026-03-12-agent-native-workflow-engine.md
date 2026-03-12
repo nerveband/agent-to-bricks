@@ -479,16 +479,10 @@ type ResolvedClass struct {
 
 // Resolver resolves human-readable class names to Bricks global class IDs.
 type Resolver struct {
-	byName   map[string]classEntry // name → entry (for lookup by human name)
-	byID     map[string]bool       // known IDs (for passthrough detection)
-	acss     map[string]string     // name → ID (ACSS classes, checked first)
-	frames   map[string]string     // name → ID (Frames classes, checked second)
-	globals  map[string]string     // name → ID (other global classes, checked third)
-}
-
-type classEntry struct {
-	ID     string
-	Source string
+	byID    map[string]bool   // known IDs (for passthrough detection)
+	acss    map[string]string // name → ID (ACSS classes, checked first)
+	frames  map[string]string // name → ID (Frames classes, checked second)
+	globals map[string]string // name → ID (other global classes, checked third)
 }
 
 var bricksIDPattern = regexp.MustCompile(`^[a-z0-9]{5,8}$`)
@@ -496,7 +490,6 @@ var bricksIDPattern = regexp.MustCompile(`^[a-z0-9]{5,8}$`)
 // NewResolver creates an empty resolver. Call AddClass to populate.
 func NewResolver() *Resolver {
 	return &Resolver{
-		byName:  make(map[string]classEntry),
 		byID:    make(map[string]bool),
 		acss:    make(map[string]string),
 		frames:  make(map[string]string),
@@ -507,8 +500,6 @@ func NewResolver() *Resolver {
 // AddClass adds a class to the resolver registry.
 func (r *Resolver) AddClass(id, name, source string) {
 	r.byID[id] = true
-	entry := classEntry{ID: id, Source: source}
-	r.byName[name] = entry
 
 	switch {
 	case source == "acss" || strings.HasPrefix(id, "acss_import_"):
@@ -682,7 +673,8 @@ import "fmt"
 // InlineStyleWarning is a non-fatal warning about an inline style that has an ACSS equivalent.
 type InlineStyleWarning struct {
 	ElementID  string `json:"element"`
-	Setting    string `json:"issue"`
+	Issue      string `json:"issue"`      // Always "inline_style"
+	Setting    string `json:"setting"`    // The inline setting name (e.g., "_padding")
 	Message    string `json:"message"`
 	Suggestion string `json:"suggestion"`
 }
@@ -712,6 +704,7 @@ func CheckInlineStyles(elementID string, settings map[string]interface{}) []Inli
 		if val, ok := settings[setting]; ok && val != nil {
 			w := InlineStyleWarning{
 				ElementID: elementID,
+				Issue:     "inline_style",
 				Setting:   setting,
 				Message:   fmt.Sprintf("%s has ACSS equivalent", setting),
 			}
@@ -1764,8 +1757,11 @@ In `cli/cmd/site.go`, modify the existing `sitePatchCmd.RunE` to check for `--el
 1. If `--element` is set: build patch JSON from `--set` flags, fetch contentHash (or use `--content-hash`), call PatchElements
 2. Else: fall through to existing stdin/file path
 
+**Insertion point:** After `pageID` is parsed from `args[0]` (existing line ~208-211 of site.go), but BEFORE the existing stdin/file reading logic (line ~214). The `pageID` variable must already be declared. The `output.ResolveFormat(cmd)` and `requireConfig()` calls at the top of the existing function remain unchanged.
+
 ```go
-// At the top of sitePatchCmd.RunE, before existing logic:
+// INSERT AFTER: pageID, err := strconv.Atoi(args[0])
+// INSERT BEFORE: existing stdin/file reading logic
 elementID, _ := cmd.Flags().GetString("element")
 if elementID != "" {
 	setFlags, _ := cmd.Flags().GetStringArray("set")
@@ -2482,7 +2478,7 @@ Add to `cli/cmd/agent_test.go`:
 ```go
 func TestAgentContext_PromptHasDecisionTree(t *testing.T) {
 	b := agent.NewContextBuilder()
-	b.SetVersions("1.9.8", "6.7", "2.1.0")
+	b.SetSiteInfo("1.9.8", "6.7", "2.1.0")
 	prompt := b.RenderPrompt()
 
 	// Must contain decision tree, not "bricks generate"
@@ -2588,12 +2584,26 @@ func (b *ContextBuilder) RenderPrompt() string {
 
 `, b.bricksVersion))
 
-	// Add context sections
+	// Add context sections in spec-defined order (spec line 338-346):
+	// 1. Decision tree (above), 2. Class rules, 3. Element reference,
+	// 4. Design tokens, 5. ACSS classes, 6. Frames classes, 7. Templates, 8. Abilities
 	b.writeClassRulesSection(&sb)
 	b.writeElementReferenceSection(&sb)
 
 	sb.WriteString("## Available Design Tokens\n")
-	// ... rest of existing section rendering ...
+	if b.acssTokens != nil {
+		for k, v := range b.acssTokens {
+			sb.WriteString(fmt.Sprintf("- **%s**: %v\n", k, v))
+		}
+	}
+	sb.WriteString("\n")
+
+	b.writeClassesSection(&sb)   // ACSS + Frames classes
+	b.writeTemplatesSection(&sb)
+	b.writeAbilitiesSection(&sb)
+
+	return sb.String()
+}
 ```
 
 - [ ] **Step 5: Run test**
@@ -2825,6 +2835,79 @@ Expected: Build succeeds.
 ```bash
 git add website/public/llms.txt website/src/content/docs/guides/bring-your-own-agent.md
 git commit -m "docs: update llms.txt and BYOA guide with new commands"
+```
+
+---
+
+### Task 15b: Update CLI Documentation Page
+
+**Files:**
+- Modify: `website/src/content/docs/cli/site-commands.md`
+
+- [ ] **Step 1: Read current site-commands.md**
+
+```bash
+cat website/src/content/docs/cli/site-commands.md
+```
+
+- [ ] **Step 2: Add documentation for new commands**
+
+Add sections for `site find`, `site delete`, `site append`, `site batch`, and the `site patch` shorthand flags (`--element`, `--set`, `--set-class`, `--content-hash`). Follow existing documentation format in the file.
+
+Also add a section for `pages list` (may need a new `pages.md` file or add to an existing reference page).
+
+- [ ] **Step 3: Build website to verify**
+
+```bash
+cd website && npm run build 2>&1 | tail -5
+```
+
+Expected: Build succeeds.
+
+- [ ] **Step 4: Commit**
+
+```bash
+git add website/src/content/docs/cli/
+git commit -m "docs: add site find/delete/append/batch and pages list to CLI docs"
+```
+
+---
+
+### Task 15c: Version Bump
+
+**Files:**
+- Modify: `VERSION`
+
+- [ ] **Step 1: Read current version**
+
+```bash
+cat VERSION
+```
+
+- [ ] **Step 2: Bump minor version**
+
+Update VERSION file to the next minor version (e.g., 2.1.0 → 2.2.0).
+
+- [ ] **Step 3: Sync version across all components**
+
+```bash
+make sync-version
+```
+
+- [ ] **Step 4: Verify version sync**
+
+```bash
+make check-version
+```
+
+Expected: PASS.
+
+- [ ] **Step 5: Commit**
+
+```bash
+git add VERSION
+git add -u  # catch files modified by sync-version
+git commit -m "chore: bump version to X.Y.Z"
 ```
 
 ---

@@ -126,7 +126,7 @@ bricks abilities run agent-bricks/upload-media --input '{"filename":"hero.jpg",.
 
 Executes any WordPress Ability discovered via `abilities list`. Readonly abilities use GET, write abilities use POST. Input is validated against the ability's schema before sending.
 
-**Implementation note:** This command uses the `wp-abilities/v1` REST namespace (NOT `agent-bricks/v1`). A new `RunAbility()` method must be added to `client.go` that targets this different namespace. The method must construct the URL as `/wp-json/wp-abilities/v1/execute/<ability-name>` rather than using the standard ATB base path.
+**Implementation note:** This command uses the `wp-abilities/v1` REST namespace (NOT `agent-bricks/v1`). A new `RunAbility()` method must be added to `client.go` that targets this different namespace. The method must construct the URL as `/wp-json/wp-abilities/v1/<ability-name>/run` rather than using the standard ATB base path (matching the pattern used by existing `abilities describe` output at `abilities.go:149`).
 
 **When to use:** Any site operation beyond page content — SEO, WooCommerce, forms, media, or anything third-party plugins expose.
 
