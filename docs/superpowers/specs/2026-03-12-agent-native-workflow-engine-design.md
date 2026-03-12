@@ -42,10 +42,12 @@ The CLI was designed with `generate` as the primary UX. When that was removed, t
 | Raw Payload Input | 2 | 3 |
 | Schema Introspection | 1 | 2 |
 | Context Window Discipline | 1 | 2 |
-| Input Hardening | 1 | 1 |
+| Input Hardening | 1 | 2 |
 | Safety Rails | 1 | 2 |
 | Agent Knowledge Packaging | 2 | 3 |
-| **Total** | **9** | **15 (Agent-ready)** |
+| **Total** | **9** | **16 (Agent-first)** |
+
+**Input Hardening note:** The class resolution pipeline (resolving human-readable names to IDs, rejecting invalid class names, auto-creating missing classes instead of silently failing) is a form of input hardening specific to this domain — it defends against agent hallucination of class names. Target raised from 1→2.
 
 ---
 
@@ -103,7 +105,7 @@ bricks pages list --search "pricing"       # search by title
 bricks pages list --json                   # structured output
 ```
 
-Wraps existing `GET /pages` endpoint (plugin already supports this). Returns page ID, title, slug, status.
+Wraps existing `GET /pages` endpoint (plugin already supports this). The plugin returns a bare JSON array; the CLI wraps it into the structured response below for consistency with other commands. Returns page ID, title, slug, status.
 
 **When to use:** Finding page IDs before any content operation.
 
@@ -113,6 +115,8 @@ Wraps existing `GET /pages` endpoint (plugin already supports this). Returns pag
  "count": 12}
 ```
 
+**Implementation note:** The `ListPages()` client method receives `[]map[string]interface{}` from the API and wraps it into `{"pages": [...], "count": len(...)}` before returning to the command layer.
+
 #### `bricks abilities run` (NEW)
 
 ```
@@ -121,6 +125,8 @@ bricks abilities run agent-bricks/upload-media --input '{"filename":"hero.jpg",.
 ```
 
 Executes any WordPress Ability discovered via `abilities list`. Readonly abilities use GET, write abilities use POST. Input is validated against the ability's schema before sending.
+
+**Implementation note:** This command uses the `wp-abilities/v1` REST namespace (NOT `agent-bricks/v1`). A new `RunAbility()` method must be added to `client.go` that targets this different namespace. The method must construct the URL as `/wp-json/wp-abilities/v1/execute/<ability-name>` rather than using the standard ATB base path.
 
 **When to use:** Any site operation beyond page content — SEO, WooCommerce, forms, media, or anything third-party plugins expose.
 
@@ -145,7 +151,7 @@ bricks convert html section.html --append 42 --after xottyu
 bricks convert html section.html --append 42 --after xottyu --snapshot
 ```
 
-Uses existing `AppendElements()` client method. Class resolution happens during HTML conversion, so appended elements always use `_cssGlobalClasses` correctly. `--after` maps to REST API's `insertAfter` parameter.
+Extends existing `AppendElements()` client method — **signature must change** to add `insertAfter string` parameter. The current method at `client.go:230` has no `insertAfter` support; it must be added to the payload as `"insertAfter": "<element-id>"` (camelCase — matching the plugin's `$body['insertAfter']` at `class-elements-api.php:212`) when non-empty. Class resolution happens during HTML conversion, so appended elements always use `_cssGlobalClasses` correctly. `--after` maps to REST API's `insert_after` body parameter.
 
 **When to use:** Adding new content to an existing page. Always prefer this over `site append` because it resolves ACSS classes from HTML automatically.
 
@@ -166,7 +172,7 @@ bricks site find 42 --text "Knowledge"                # by text content
 bricks site find 42 --type section --json             # sections with full details
 ```
 
-Pulls the page and filters elements client-side. Returns element IDs, types, labels, text content, and parent chain. Eliminates the "pull 95 elements and parse in Python" pattern.
+Pulls the page and filters elements client-side. This is intentional — single-page filtering is fast and avoids adding a server-side search endpoint. For site-wide search across all pages, use `bricks search elements` instead. Returns element IDs, types, labels, text content, and parent chain. Eliminates the "pull 95 elements and parse in Python" pattern.
 
 **When to use:** Finding element IDs before patching, deleting, or inserting after.
 
@@ -199,7 +205,7 @@ bricks site patch 42 --element abc123 --set tag=h2
 bricks site patch 42 --element abc123 --set-class "gap--m,padding--l"
 ```
 
-`--set` takes `key=value` pairs and constructs the patch JSON automatically. Fetches contentHash internally so the agent doesn't need to.
+`--set` takes `key=value` pairs and constructs the patch JSON automatically. Fetches contentHash internally so the agent doesn't need to. An optional `--content-hash` flag accepts a pre-fetched hash to preserve optimistic locking when the agent already has one (e.g., from a prior `site find` or `site pull`).
 
 `--set-class` resolves human-readable ACSS class names to `_cssGlobalClasses` IDs using the class registry. Auto-creates classes that don't exist (see Class Resolution Pipeline below).
 
@@ -314,7 +320,7 @@ When the CLI detects inline style settings that have ACSS equivalents, it produc
 | `_borderRadius` | small/medium/large values | `radius--s` / `radius--m` / `radius--l` |
 | `_background.color` | `var(--primary)` etc. | `bg--primary` etc. |
 
-This table is compiled from the site's actual ACSS class registry at runtime, not hardcoded.
+The hardcoded table above serves as a bootstrap fallback for offline/dry-run usage. At runtime, when connected to a site, the CLI enriches this table by querying the site's actual ACSS class registry (via `GET /classes?framework=acss`) to discover additional mappings and verify existing ones. This means the warning system works offline (with the bootstrap table) but is more accurate when connected.
 
 ### Opt-out
 
@@ -357,6 +363,12 @@ All errors gain `hint` and `see_also` fields. Key error paths:
 |---|---|---|
 | `INVALID_JSON` on patch | Expected format with example | `bricks site pull <page-id>` |
 | `MISSING_CONTENT_HASH` (428) | Run site pull to get contentHash | `bricks site pull <page-id>` |
+
+**Note:** HTTP 428 is not currently handled in `FromHTTPStatus()` (`internal/errors/errors.go`). It must be added:
+```go
+case 428:
+    return &CLIError{Code: "MISSING_CONTENT_HASH", Message: "...", Hint: "Run: bricks site pull <page-id>  # to get the current contentHash", Exit: 6}
+```
 | `ELEMENT_NOT_FOUND` | Element ID not on this page | `bricks site find <page-id>` |
 | `ABILITY_NOT_FOUND` | Ability name not registered | `bricks abilities list` |
 | `CONFIG_MISSING_URL` | Site URL not configured | `bricks config init` |
@@ -496,14 +508,14 @@ bricks elements types --json > cli/testdata/element-types.json
 | File | Changes |
 |---|---|
 | `cli/cmd/site.go` | Add `site find`, `site delete`, `site append`, `site batch`. Add `--set`/`--set-class` to `site patch`. Wire class resolver into all mutating commands. |
-| `cli/cmd/convert.go` | Add `--append` and `--after` flags to `convert html`. |
-| `cli/internal/agent/context.go` | Rewrite `writeWorkflowsSection()`. Add `writeClassRulesSection()`, `writeElementReferenceSection()`. Reorder sections. Remove dead `generate` reference. |
+| `cli/cmd/convert.go` | Add `--append` and `--after` flags to `convert html`. **`--snapshot` must be explicitly handled** when combined with `--append` (snapshot before appending, not after full replace). |
+| `cli/internal/agent/context.go` | Rewrite `writeWorkflowsSection()`. **Also rewrite `RenderPrompt()` hardcoded workflow text** (lines 157-183 contain independent "Converting HTML to Bricks" and "Using Templates" guidance that duplicates and contradicts the workflows section — must be replaced with the decision-tree approach). Add `writeClassRulesSection()`, `writeElementReferenceSection()`. Reorder sections. Remove dead `generate` reference. |
 | `cli/cmd/agent.go` | Pass new sections to context builder. |
 | `cli/cmd/root.go` | Add agent context hint to root help text. |
-| `cli/internal/client/client.go` | Add `ListPages()`, `RunAbility()` methods. |
+| `cli/internal/client/client.go` | Add `ListPages()` (wraps bare array into structured response), `RunAbility()` (targets `wp-abilities/v1` namespace, not `agent-bricks/v1`), `BatchOperations()` (wraps `POST /pages/{id}/elements/batch`) methods. **Change `AppendElements()` signature** to add `insertAfter string` parameter and include it in request payload when non-empty. |
 | `cli/schema.json` | Add new commands, `workflows` key, update examples. |
 | `cli/cmd/schema.go` | Validate `workflows` key in schema. |
-| `cli/internal/errors/errors.go` | Add `Hint`, `SeeAlso`, `NextSteps` fields. |
+| `cli/internal/errors/errors.go` | Add `SeeAlso string` and `NextSteps []string` fields to `CLIError` struct. Add HTTP 428 (`Exit: 6`) to `FromHTTPStatus()`. Add hints to existing error codes (401, 403, 404, 409). Target struct shape: `CLIError{Code, Message, Hint, SeeAlso, NextSteps, Exit}`. |
 | `website/public/llms.txt` | Update with "first command" guidance and new commands. |
 | `website/src/content/docs/guides/bring-your-own-agent.md` | Update workflows section. |
 | `website/src/content/docs/cli/site-commands.md` | Document new commands. |
