@@ -2,6 +2,16 @@
 
 All notable changes to Agent to Bricks are documented in this file.
 
+## [2.2.0] - 2026-03-23
+
+### Added
+
+- HTML-to-Bricks conversion: `bricks convert html` CLI command and `POST /convert` REST endpoint. Supports tag mapping, inline style parsing, CSS class resolution, and append/replace/return modes.
+- `bricks patch` command for surgical element-level mutations (`--set`, `--rm`, `--list`) without full-page round-trips.
+- `bricks discover` command for machine-readable site discovery (info, features, frameworks, classes, variables) in a single JSON payload for LLM context building.
+- `bricks init` command that tests connection, installs `.bricks-skill.md`, and updates `CLAUDE.md` for AI agent self-discovery.
+- Element validator enhancements in the plugin for stricter schema validation during conversion.
+
 ## [2.1.0] - 2026-03-10
 
 ### Added

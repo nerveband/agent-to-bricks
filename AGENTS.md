@@ -73,6 +73,8 @@ Key classes:
 - `class-classes-api.php` -- global class CRUD
 - `class-snapshots-api.php` -- snapshot and rollback
 - `class-site-api.php` -- site info, framework detection
+- `class-convert-api.php` -- HTML-to-Bricks conversion (tag/style mapping, class resolution)
+- `class-element-validator.php` -- element schema validation
 - `class-api-auth.php` -- API key auth (hashed storage, X-ATB-Key header)
 
 ## Versioning
@@ -158,8 +160,17 @@ All require `X-ATB-Key` header.
 | `/pages/<id>/snapshots` | GET | List snapshots |
 | `/pages/<id>/snapshots` | POST | Create snapshot |
 | `/pages/<id>/rollback` | POST | Rollback to snapshot |
+| `/convert` | POST | HTML-to-Bricks conversion (tag mapping, style parsing, class resolution) |
 
 PUT requires `If-Match: <contentHash>` header. GET elements first to get the hash.
+
+## CLI commands for agent workflows
+
+Beyond the standard CRUD commands, the CLI includes agent-specific workflow commands:
+
+- `bricks discover` -- machine-readable site discovery (info, features, frameworks, classes, variables) in a single JSON payload for LLM context building
+- `bricks patch` -- surgical element mutations (`--set`, `--rm`, `--list`) without full-page round-trips
+- `bricks init` -- tests connection, installs a `.bricks-skill.md` file, and updates `CLAUDE.md` so AI agents can self-discover capabilities
 
 ## Bricks element format
 
