@@ -93,6 +93,7 @@ export default defineConfig({
             'cli/style-commands',
             'cli/media-commands',
             'cli/agent-commands',
+            'cli/discover-patch',
             'cli/doctor-validate',
             'cli/config-update',
           ],

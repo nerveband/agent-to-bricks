@@ -52,8 +52,24 @@ export const DEFAULT_SESSION_PREPROMPT =
 Site: {site_url}
 Site name: {site_name}
 Credentials: {api_key}
-The bricks CLI is available. Use \`bricks\` commands to pull, push, generate, and modify page elements.
-No raw API key is injected into this session bootstrap. Use the locally configured \`bricks\` CLI or another secure credential path if authenticated access is required.{abilities_block}`;
+
+## Bricks CLI Quick Reference
+The \`bricks\` CLI is installed and configured for this site. Key commands:
+
+| Command | What it does |
+|---------|-------------|
+| \`bricks discover --json\` | Full site context: design system, classes, variables, element types |
+| \`bricks convert html --push PAGE_ID --stdin\` | Convert HTML to Bricks elements and push to a page |
+| \`bricks convert html --push PAGE_ID --snapshot --stdin\` | Same, but create a rollback snapshot first |
+| \`bricks patch PAGE_ID --list\` | List element IDs on a page (for targeted updates) |
+| \`bricks patch PAGE_ID -e ID --set 'key=value'\` | Update a specific element's settings (classes, text, styles) |
+| \`bricks classes --json\` | List all global CSS classes (ACSS, Frames, custom) |
+| \`bricks frameworks --json\` | CSS framework config (ACSS colors, spacing, typography) |
+
+**Workflow:** discover → generate HTML with site CSS vars → convert & push. For edits, use \`bricks patch\` (faster, fewer tokens).
+**Prefer patch for updates** — don't regenerate what you can patch.
+**Use the site's CSS variables** (var(--primary), var(--space-m), etc.) — not hardcoded values.
+{design_system}{abilities_block}`;
 
 // Session pre-prompt template (injected when launching Claude Code)
 // Variables: {site_url}, {api_key}, {site_name}, {environment}, {abilities_block}

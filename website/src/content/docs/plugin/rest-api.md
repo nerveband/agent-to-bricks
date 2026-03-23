@@ -172,6 +172,82 @@ curl -s "https://your-site.com/wp-json/agent-bricks/v1/pages?search=home" \
 
 ---
 
+## Convert
+
+### POST /convert
+
+Convert raw HTML (and optional CSS) to Bricks elements. Optionally push the result directly to a page. This is the server-side equivalent of `bricks convert html`.
+
+**Parameters:**
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `html` | string | Yes | Raw HTML to convert |
+| `css` | string | No | Optional CSS string (reserved for future use) |
+| `postId` | integer | No | Target page ID (required if mode is not `return`) |
+| `mode` | string | No | `return` (default), `append`, or `replace` |
+| `createGlobalClasses` | boolean | No | Create global classes from CSS class names (default: false) |
+
+```bash
+curl -s -X POST https://your-site.com/wp-json/agent-bricks/v1/convert \
+  -H "X-ATB-Key: atb_abc123..." \
+  -H "Content-Type: application/json" \
+  -d '{
+    "html": "<section style=\"padding: var(--section-space-m)\"><div><h2>Hello</h2><p>World</p></div></section>"
+  }'
+```
+
+```json
+{
+  "success": true,
+  "elements": [
+    {
+      "id": "a1b2c3",
+      "name": "section",
+      "parent": "0",
+      "children": ["d4e5f6"],
+      "settings": {
+        "_padding": { "top": "var(--section-space-m)", "right": "var(--section-space-m)", "bottom": "var(--section-space-m)", "left": "var(--section-space-m)" }
+      },
+      "label": "Section"
+    }
+  ],
+  "stats": {
+    "htmlTags": 4,
+    "bricksElements": 4,
+    "skippedTags": 0,
+    "stylesExtracted": 0
+  },
+  "warnings": []
+}
+```
+
+**Convert and push to a page:**
+
+```bash
+curl -s -X POST https://your-site.com/wp-json/agent-bricks/v1/convert \
+  -H "X-ATB-Key: atb_abc123..." \
+  -H "Content-Type: application/json" \
+  -d '{
+    "html": "<section><h1>New Page</h1></section>",
+    "postId": 1338,
+    "mode": "replace"
+  }'
+```
+
+When `mode` is `replace`, a snapshot is automatically created before overwriting. The response includes `stats.pushed`, `stats.postId`, `stats.mode`, and `stats.contentHash`.
+
+**Conversion features:**
+
+- HTML tags mapped to native Bricks elements (section, heading, text-basic, button, image, etc.)
+- Inline styles parsed to Bricks settings (`_padding`, `_typography`, `_background`, etc.)
+- CSS shorthand expanded (e.g., `padding: 10px 20px` → top/right/bottom/left)
+- CSS class names resolved against the Bricks global class registry
+- CSS variables (`var(--primary)`) preserved as-is in Bricks settings
+- `data-*` attributes preserved as custom attributes
+
+---
+
 ## Pages / Elements
 
 All element endpoints use optimistic locking. Write operations require an `If-Match` header containing the `contentHash` from your last GET. If someone else modified the page in between, you'll get a `409 Conflict` with the current hash so you can retry.

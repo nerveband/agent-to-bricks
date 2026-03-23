@@ -1,11 +1,12 @@
 import { useSetAtom, useAtom } from "jotai";
 import { sessionsAtom, activeSessionIdAtom } from "../atoms/sessions";
-import { activeToolSlugAtom, toolCustomFlagsAtom, toolWorkingDirsAtom, toolPathsAtom, type Tool } from "../atoms/tools";
+import { activeToolSlugAtom, toolCustomFlagsAtom, toolWorkingDirsAtom, toolPathsAtom, bricksCliAtom, type Tool } from "../atoms/tools";
 import { activeSiteAtom, sessionPrePromptAtom, SESSION_API_KEY_PLACEHOLDER, DEFAULT_SESSION_PREPROMPT, type SiteEntry } from "../atoms/app";
 import { useAtomValue } from "jotai";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useRef } from "react";
 import { writeToActivePtyWhenReady } from "../atoms/ptyBridge";
 import { homeDir } from "@tauri-apps/api/path";
+import { invoke } from "@tauri-apps/api/core";
 import type { AbilityInfo } from "./useAbilities";
 import { useAbilities } from "./useAbilities";
 
@@ -64,8 +65,70 @@ Read-only abilities also accept GET. Auth: X-ATB-Key header.
   return block;
 }
 
+/** Fetch a compact design system summary from the site for context injection. */
+export async function fetchDesignSystemSummary(siteUrl: string, apiKey: string): Promise<string> {
+  try {
+    const [fwResult, varsResult] = await Promise.all([
+      invoke<Record<string, unknown>>("get_site_styles", { siteUrl, apiKey }),
+      invoke<Record<string, unknown>>("get_site_variables", { siteUrl, apiKey }),
+    ]);
+
+    const parts: string[] = ["\n## Site Design System"];
+
+    // Extract color palette
+    const palette = fwResult?.colorPalette;
+    if (Array.isArray(palette) && palette.length > 0) {
+      const colors = palette
+        .filter((c: any) => c?.color && c?.name)
+        .slice(0, 20)
+        .map((c: any) => `${c.name}: ${c.color}`)
+        .join(", ");
+      if (colors) parts.push(`Colors: ${colors}`);
+    }
+
+    // Extract CSS variables (key ones)
+    const vars = varsResult?.variables;
+    if (Array.isArray(vars) && vars.length > 0) {
+      const varNames = vars
+        .filter((v: any) => v?.name)
+        .map((v: any) => v.name as string);
+
+      const spacing = varNames.filter(n => n.includes("space") || n.includes("gap")).slice(0, 10);
+      const typo = varNames.filter(n => n.includes("text") || n.includes("--h") || n.includes("font")).slice(0, 10);
+      const colorVars = varNames.filter(n => n.includes("primary") || n.includes("secondary") || n.includes("accent") || n.includes("base") || n.includes("neutral")).slice(0, 10);
+
+      if (colorVars.length) parts.push(`Color vars: ${colorVars.join(", ")}`);
+      if (spacing.length) parts.push(`Spacing vars: ${spacing.join(", ")}`);
+      if (typo.length) parts.push(`Typography vars: ${typo.join(", ")}`);
+    }
+
+    return parts.length > 1 ? parts.join("\n") + "\n" : "";
+  } catch {
+    return "";
+  }
+}
+
+/**
+ * Run `bricks init --skip-test` in a directory if the skill file doesn't exist.
+ * Best-effort — failure is silent and non-blocking.
+ */
+async function ensureSkillInstalled(bricksPath: string, cwd: string): Promise<boolean> {
+  try {
+    // Check if skill already exists
+    const skillPath = `${cwd}/.claude/skills/agent-to-bricks/SKILL.md`;
+    const exists = await invoke<boolean>("config_exists", { path: skillPath });
+    if (exists) return false;
+
+    // Run bricks init --skip-test via Tauri command
+    const ok = await invoke<boolean>("run_bricks_init", { bricksPath, cwd });
+    return ok;
+  } catch {
+    return false;
+  }
+}
+
 /** Build the initial context prompt for a coding tool session using the user's template. */
-export function buildSiteContextPrompt(site: SiteEntry | null, template?: string, abilities?: AbilityInfo[]): string {
+export function buildSiteContextPrompt(site: SiteEntry | null, template?: string, abilities?: AbilityInfo[], designSystem?: string): string {
   if (!site) return "";
   const tmpl = template || DEFAULT_SESSION_PREPROMPT;
 
@@ -74,6 +137,7 @@ export function buildSiteContextPrompt(site: SiteEntry | null, template?: string
     .replace(/\{api_key\}/g, SESSION_API_KEY_PLACEHOLDER)
     .replace(/\{site_name\}/g, site.name)
     .replace(/\{environment\}/g, site.environment ?? "")
+    .replace(/\{design_system\}/g, designSystem ?? "")
     .replace(/\{abilities_block\}/g, formatAbilitiesBlock(abilities ?? []));
 }
 
@@ -87,6 +151,10 @@ export function useSessionLauncher() {
   const site = useAtomValue(activeSiteAtom);
   const promptTemplate = useAtomValue(sessionPrePromptAtom);
   const { abilities } = useAbilities();
+  const bricksCli = useAtomValue(bricksCliAtom);
+
+  // Cache design system per site URL to avoid refetching
+  const designSystemCache = useRef<Record<string, string>>({});
 
   // Resolve home directory once for default cwd
   const [defaultDir, setDefaultDir] = useState<string | undefined>();
@@ -95,7 +163,7 @@ export function useSessionLauncher() {
   }, []);
 
   const launch = useCallback(
-    (tool: Tool, cwd?: string) => {
+    async (tool: Tool, cwd?: string) => {
       const customFlags = toolFlags[tool.slug] ?? "";
       const mergedArgs = [...tool.args, ...parseFlags(customFlags)];
       const dir = cwd || toolDirs[tool.slug] || defaultDir;
@@ -119,14 +187,32 @@ export function useSessionLauncher() {
 
       // Send initial context prompt to coding tool sessions (not plain terminals)
       if (tool.command && site) {
-        const contextPrompt = buildSiteContextPrompt(site, promptTemplate, abilities);
+        // Auto-install skill file if bricks CLI is available and dir is set
+        const bricksPath = toolPaths["bricks"] || bricksCli?.path || "bricks";
+        if (dir && bricksPath) {
+          ensureSkillInstalled(bricksPath, dir).catch(() => {});
+        }
+
+        // Fetch design system (cached per site URL)
+        let designSystem = "";
+        const cacheKey = site.site_url;
+        if (designSystemCache.current[cacheKey]) {
+          designSystem = designSystemCache.current[cacheKey];
+        } else {
+          designSystem = await fetchDesignSystemSummary(site.site_url, site.api_key);
+          if (designSystem) {
+            designSystemCache.current[cacheKey] = designSystem;
+          }
+        }
+
+        const contextPrompt = buildSiteContextPrompt(site, promptTemplate, abilities, designSystem);
         if (contextPrompt) {
           // Wait for PTY to be ready, then send the context prompt
           writeToActivePtyWhenReady(contextPrompt + "\n", 15000);
         }
       }
     },
-    [setSessions, setActiveSessionId, setActiveToolSlug, toolFlags, toolDirs, toolPaths, defaultDir, site, promptTemplate, abilities]
+    [setSessions, setActiveSessionId, setActiveToolSlug, toolFlags, toolDirs, toolPaths, defaultDir, site, promptTemplate, abilities, bricksCli]
   );
 
   /** Launch a plain terminal with no tool command. */

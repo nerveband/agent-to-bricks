@@ -15,12 +15,13 @@ class ATB_Element_Validator {
 	private static $valid_types = array(
 		'section', 'container', 'block', 'div',
 		'heading', 'text-basic', 'rich-text', 'text-link',
-		'button', 'icon', 'image', 'video',
+		'button', 'icon', 'image', 'video', 'audio',
 		'nav-menu', 'nav-nested', 'offcanvas',
 		'accordion', 'accordion-nested', 'tabs', 'tabs-nested',
 		'slider', 'slider-nested', 'carousel',
 		'form', 'map', 'code', 'template',
 		'post-content', 'posts', 'pagination',
+		'divider', 'list', 'svg',
 	);
 
 	/**

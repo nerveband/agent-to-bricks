@@ -34,7 +34,7 @@ export function useSiteContextSync() {
 
     const prompt = [
       "--- Site switched ---",
-      buildSiteContextPrompt(site, promptTemplate),
+      buildSiteContextPrompt(site, promptTemplate, [], ""),
     ].join("\n");
 
     writeToActivePty(prompt + "\n");

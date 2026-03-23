@@ -825,6 +825,20 @@ async fn fetch_wp_site_name(client: &reqwest::Client, base_url: &str) -> Option<
 }
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
+/// Run `bricks init --skip-test` in a directory to install the Claude Code skill.
+/// Returns true if the command succeeded, false otherwise.
+/// This is best-effort — failure is not fatal.
+#[tauri::command]
+async fn run_bricks_init(bricks_path: String, cwd: String) -> bool {
+    let output = std::process::Command::new(&bricks_path)
+        .args(["init", "--skip-test"])
+        .current_dir(&cwd)
+        .stdout(std::process::Stdio::null())
+        .stderr(std::process::Stdio::null())
+        .status();
+    matches!(output, Ok(status) if status.success())
+}
+
 pub fn run() {
     let client = reqwest::Client::builder()
         .timeout(std::time::Duration::from_secs(15))
@@ -874,7 +888,8 @@ pub fn run() {
             get_abilities,
             config::read_config,
             config::write_config,
-            config::config_exists
+            config::config_exists,
+            run_bricks_init
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

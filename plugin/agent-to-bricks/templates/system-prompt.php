@@ -92,10 +92,11 @@ Each element node has this shape:
 ### Available Element Types
 - **Layout:** section, container, block, div
 - **Typography:** heading, text-basic, rich-text, text-link
-- **Interactive:** button, icon, image, video
+- **Interactive:** button, icon, image, video, audio
 - **Navigation:** nav-menu, nav-nested, offcanvas
-- **Components:** accordion, accordion-nested, tabs, tabs-nested, slider, slider-nested
+- **Components:** accordion, accordion-nested, tabs, tabs-nested, slider, slider-nested, carousel
 - **Data:** form, map, code, template, post-content, posts, pagination
+- **Decorative:** divider, list, svg
 
 ### Settings Reference
 - `text` — Content string (heading, text-basic, button)
@@ -106,9 +107,26 @@ Each element node has this shape:
 - `link` — Link object: { type: "external"|"internal", url: "", newTab: false }
 - `style` — Button style variant
 - `size` — Button size
-- `_typography` — Typography overrides { "font-size": "2rem", "font-weight": "700" }
-- `_background` — Background settings
+- `_typography` — Typography overrides { "font-size": "2rem", "font-weight": "700", "color": { "raw": "#hex" } }
+- `_background` — Background settings { "color": { "raw": "var(--base)" } }
 - `_border` — Border and border-radius
+- `_padding` — Padding { "top": "20px", "right": "20px", "bottom": "20px", "left": "20px" }
+- `_margin` — Margin (same structure as padding)
+- `_display` — Display type: flex, grid, block, inline-flex
+- `_direction` — Flex direction: row, column, row-reverse, column-reverse
+- `_justifyContent` — Justify content: flex-start, center, flex-end, space-between
+- `_alignItems` — Align items: flex-start, center, flex-end, stretch
+- `_gap` — Gap value for flex/grid layouts
+- `_width`, `_maxWidth`, `_minWidth` — Width constraints
+- `_height`, `_maxHeight`, `_minHeight` — Height constraints
+- `_gridTemplateColumns` — Grid columns: "repeat(3, 1fr)"
+- `_borderRadius` — Border radius value
+- `_overflow` — Overflow: hidden, auto, scroll, visible
+- `_position` — Position: relative, absolute, fixed, sticky
+- `_zIndex` — Z-index value
+- `_opacity` — Opacity (0-1)
+- `_transform` — CSS transform value (Bricks 2.3+: includes perspective(), scale3d())
+- `_boxShadow` — Box shadow array
 PROMPT;
 	}
 
