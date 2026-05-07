@@ -23,6 +23,7 @@ type Client struct {
 	cliVersion        string
 	lastPluginVersion string
 	versionWarned     bool
+	quietNotices      bool
 }
 
 // New creates a client using X-ATB-Key authentication.
@@ -67,8 +68,13 @@ func (c *Client) LastPluginVersion() string {
 	return c.lastPluginVersion
 }
 
+// SetQuietNotices suppresses non-fatal stderr notices during machine-readable workflows.
+func (c *Client) SetQuietNotices(quiet bool) {
+	c.quietNotices = quiet
+}
+
 func (c *Client) checkVersionMismatch() {
-	if c.cliVersion == "" || c.lastPluginVersion == "" || c.versionWarned {
+	if c.quietNotices || c.cliVersion == "" || c.lastPluginVersion == "" || c.versionWarned {
 		return
 	}
 	cli := strings.TrimPrefix(c.cliVersion, "v")
@@ -135,22 +141,43 @@ type SnapshotsListResponse struct {
 
 // Snapshot represents a single snapshot entry.
 type Snapshot struct {
-	ID          string `json:"id"`
+	ID          string `json:"snapshotId"`
 	ContentHash string `json:"contentHash"`
 	Label       string `json:"label"`
-	CreatedAt   string `json:"createdAt"`
-	Count       int    `json:"count"`
+	CreatedAt   string `json:"timestamp"`
+	Count       int    `json:"elementCount"`
 }
 
 // RollbackResponse from POST /pages/{id}/snapshots/{snapshot_id}/rollback.
 type RollbackResponse struct {
-	Success     bool   `json:"success"`
-	ContentHash string `json:"contentHash"`
-	Restored    string `json:"restored"`
+	ContentHash  string `json:"contentHash"`
+	RestoredFrom string `json:"restoredFrom"`
+	Count        int    `json:"count"`
+}
+
+// GetElementsFilter holds optional server-side filters for the elements endpoint.
+type GetElementsFilter struct {
+	Type string // filter by element type (e.g. "section", "heading")
+	Name string // filter by label (case-insensitive substring)
 }
 
 func (c *Client) GetElements(pageID int) (*ElementsResponse, error) {
-	resp, err := c.do("GET", fmt.Sprintf("/pages/%d/elements", pageID), nil)
+	return c.GetElementsFiltered(pageID, GetElementsFilter{})
+}
+
+func (c *Client) GetElementsFiltered(pageID int, filter GetElementsFilter) (*ElementsResponse, error) {
+	path := fmt.Sprintf("/pages/%d/elements", pageID)
+	params := url.Values{}
+	if filter.Type != "" {
+		params.Set("type", filter.Type)
+	}
+	if filter.Name != "" {
+		params.Set("name", filter.Name)
+	}
+	if len(params) > 0 {
+		path += "?" + params.Encode()
+	}
+	resp, err := c.do("GET", path, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -303,6 +330,7 @@ type ClassesResponse struct {
 // StylesResponse from GET /styles.
 type StylesResponse struct {
 	ThemeStyles    []map[string]interface{} `json:"themeStyles"`
+	StyleManager   interface{}              `json:"styleManager"`
 	ColorPalette   interface{}              `json:"colorPalette"`
 	CSSColors      []map[string]interface{} `json:"cssColors"`
 	GlobalSettings map[string]interface{}   `json:"globalSettings"`
@@ -355,7 +383,7 @@ func (c *Client) CreateClass(name string, settings map[string]interface{}) (map[
 
 // DeleteClass removes a global class by ID.
 func (c *Client) DeleteClass(classID string) error {
-	resp, err := c.do("DELETE", "/classes/"+classID, nil)
+	resp, err := c.do("DELETE", "/classes/"+url.PathEscape(classID), nil)
 	if err != nil {
 		return err
 	}
@@ -393,7 +421,7 @@ func (c *Client) GetVariables() (*VariablesResponse, error) {
 
 // Rollback restores a snapshot.
 func (c *Client) Rollback(pageID int, snapshotID string) (*RollbackResponse, error) {
-	resp, err := c.do("POST", fmt.Sprintf("/pages/%d/snapshots/%s/rollback", pageID, snapshotID), nil)
+	resp, err := c.do("POST", fmt.Sprintf("/pages/%d/snapshots/%s/rollback", pageID, url.PathEscape(snapshotID)), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -441,10 +469,21 @@ type SiteFeaturesResponse struct {
 	Abilities struct {
 		Available bool `json:"available"`
 	} `json:"abilities"`
-	Frameworks        []string          `json:"frameworks"`
-	QueryElements     []string          `json:"queryElements"`
-	QueryElementCount int               `json:"queryElementCount"`
-	WooCommerce       WooStatusResponse `json:"woocommerce"`
+	Frameworks        []string `json:"frameworks"`
+	QueryElements     []string `json:"queryElements"`
+	QueryElementCount int      `json:"queryElementCount"`
+	GlobalQueries     struct {
+		Count         int `json:"count"`
+		CategoryCount int `json:"categoryCount"`
+	} `json:"globalQueries"`
+	WooCommerce WooStatusResponse `json:"woocommerce"`
+}
+
+// GlobalQueriesResponse from GET /site/global-queries.
+type GlobalQueriesResponse struct {
+	Queries    []map[string]interface{} `json:"queries"`
+	Categories []map[string]interface{} `json:"categories"`
+	Count      int                      `json:"count"`
 }
 
 // WooStatusResponse from GET /site/woocommerce.
@@ -558,6 +597,20 @@ func (c *Client) ListQueryElementTypes(includeControls bool) (*QueryElementTypes
 	}
 	defer resp.Body.Close()
 	var result QueryElementTypesResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return nil, err
+	}
+	return &result, nil
+}
+
+// GetGlobalQueries returns Bricks global query presets and categories.
+func (c *Client) GetGlobalQueries() (*GlobalQueriesResponse, error) {
+	resp, err := c.do("GET", "/site/global-queries", nil)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var result GlobalQueriesResponse
 	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
 		return nil, err
 	}
@@ -835,6 +888,48 @@ func (c *Client) SearchElements(params SearchParams) (*SearchResponse, error) {
 	}
 	defer resp.Body.Close()
 	var result SearchResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return nil, err
+	}
+	return &result, nil
+}
+
+// PageResult from GET /search/pages.
+type PageResult struct {
+	ID           int    `json:"id"`
+	Title        string `json:"title"`
+	Slug         string `json:"slug"`
+	PostType     string `json:"postType"`
+	Status       string `json:"status"`
+	Modified     string `json:"modified"`
+	ElementCount int    `json:"elementCount"`
+}
+
+// PagesResponse from GET /search/pages.
+type PagesResponse struct {
+	Pages []PageResult `json:"pages"`
+	Total int          `json:"total"`
+}
+
+// SearchPages searches for pages with Bricks content by title.
+func (c *Client) SearchPages(search string, perPage int, page int) (*PagesResponse, error) {
+	v := url.Values{}
+	if search != "" {
+		v.Set("search", search)
+	}
+	if perPage > 0 {
+		v.Set("per_page", fmt.Sprintf("%d", perPage))
+	}
+	if page > 0 {
+		v.Set("page", fmt.Sprintf("%d", page))
+	}
+	path := "/search/pages?" + v.Encode()
+	resp, err := c.do("GET", path, nil)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var result PagesResponse
 	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
 		return nil, err
 	}

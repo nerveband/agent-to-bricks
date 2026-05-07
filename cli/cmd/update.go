@@ -13,6 +13,7 @@ var (
 	updateCLIOnly bool
 	updateCheck   bool
 	updateForce   bool
+	updateDryRun  bool
 )
 
 var updateCmd = &cobra.Command{
@@ -72,6 +73,11 @@ Use --force to re-download even if already on the latest version.`,
 			return nil
 		}
 
+		if updateDryRun {
+			fmt.Fprintf(os.Stdout, "{\n  \"dryRun\": true,\n  \"latest\": \"v%s\",\n  \"cliNeedsUpdate\": %t,\n  \"pluginNeedsUpdate\": %t\n}\n", rel.Version, cliNeedsUpdate, pluginNeedsUpdate)
+			return nil
+		}
+
 		if cliNeedsUpdate {
 			goos, goarch := updater.DetectPlatform()
 			asset := rel.FindCLIAsset(goos, goarch)
@@ -119,5 +125,6 @@ func init() {
 	updateCmd.Flags().BoolVar(&updateCLIOnly, "cli-only", false, "only update the CLI binary")
 	updateCmd.Flags().BoolVar(&updateCheck, "check", false, "check for updates without installing")
 	updateCmd.Flags().BoolVar(&updateForce, "force", false, "force update even if already on latest")
+	updateCmd.Flags().BoolVar(&updateDryRun, "dry-run", false, "show planned update actions without installing")
 	rootCmd.AddCommand(updateCmd)
 }

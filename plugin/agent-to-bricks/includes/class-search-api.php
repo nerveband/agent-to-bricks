@@ -13,6 +13,29 @@ class ATB_Search_API {
 	}
 
 	public static function register_routes(): void {
+		register_rest_route( 'agent-bricks/v1', '/search/pages', array(
+			'methods'             => 'GET',
+			'callback'            => array( __CLASS__, 'search_pages' ),
+			'permission_callback' => array( __CLASS__, 'check_permission' ),
+			'args'                => array(
+				'search'   => array(
+					'type'              => 'string',
+					'sanitize_callback' => 'sanitize_text_field',
+					'default'           => '',
+				),
+				'per_page' => array(
+					'type'              => 'integer',
+					'sanitize_callback' => 'absint',
+					'default'           => 50,
+				),
+				'page'     => array(
+					'type'              => 'integer',
+					'sanitize_callback' => 'absint',
+					'default'           => 1,
+				),
+			),
+		) );
+
 		register_rest_route( 'agent-bricks/v1', '/search/elements', array(
 			'methods'             => 'GET',
 			'callback'            => array( __CLASS__, 'search_elements' ),
@@ -79,6 +102,60 @@ class ATB_Search_API {
 
 	public static function check_permission(): bool {
 		return current_user_can( 'edit_posts' );
+	}
+
+	/**
+	 * GET /search/pages — list pages with Bricks content, optionally filtered by title.
+	 */
+	public static function search_pages( WP_REST_Request $request ): WP_REST_Response {
+		$search   = sanitize_text_field( $request->get_param( 'search' ) ?? '' );
+		$per_page = min( max( (int) ( $request->get_param( 'per_page' ) ?: 50 ), 1 ), 100 );
+		$page     = max( (int) ( $request->get_param( 'page' ) ?: 1 ), 1 );
+		$meta_key = ATB_Bricks_Lifecycle::content_meta_key();
+
+		$query_args = array(
+			'post_type'      => array( 'page', 'post', 'product', 'bricks_template' ),
+			'posts_per_page' => $per_page,
+			'paged'          => $page,
+			'post_status'    => 'any',
+			'meta_query'     => array(
+				array(
+					'key'     => $meta_key,
+					'compare' => 'EXISTS',
+				),
+			),
+			'orderby'        => 'title',
+			'order'          => 'ASC',
+		);
+
+		if ( $search ) {
+			$query_args['s'] = $search;
+		}
+
+		$posts   = get_posts( $query_args );
+		$results = array();
+
+		foreach ( $posts as $post ) {
+			$elements = get_post_meta( $post->ID, $meta_key, true );
+			$count    = is_array( $elements ) ? count( $elements ) : 0;
+
+			$results[] = array(
+				'id'           => $post->ID,
+				'title'        => $post->post_title,
+				'slug'         => $post->post_name,
+				'postType'     => $post->post_type,
+				'status'       => $post->post_status,
+				'modified'     => $post->post_modified,
+				'elementCount' => $count,
+			);
+		}
+
+		return new WP_REST_Response( array(
+			'pages'      => $results,
+			'total'      => count( $results ),
+			'page'       => $page,
+			'perPage'    => $per_page,
+		), 200 );
 	}
 
 	/**

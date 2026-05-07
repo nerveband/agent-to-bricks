@@ -10,6 +10,7 @@ import (
 	"strings"
 
 	"github.com/spf13/cobra"
+	"github.com/spf13/pflag"
 )
 
 var schemaValidate bool
@@ -30,13 +31,85 @@ Use --validate to check that schema.json matches the live command tree.`,
 		if schemaValidate {
 			return validateSchema(schemaPath)
 		}
-		data, err := os.ReadFile(schemaPath)
-		if err != nil {
-			return fmt.Errorf("failed to read schema.json: %w", err)
-		}
-		fmt.Print(string(data))
-		return nil
+		enc := json.NewEncoder(os.Stdout)
+		enc.SetIndent("", "  ")
+		return enc.Encode(generateSchema())
 	},
+}
+
+func generateSchema() map[string]interface{} {
+	commands := map[string]interface{}{}
+	walkCommandDetails(rootCmd, "", commands)
+	return map[string]interface{}{
+		"name":        "bricks",
+		"version":     cliVersion,
+		"description": "Agent to Bricks — AI-powered Bricks Builder CLI",
+		"globalFlags": map[string]interface{}{
+			"--config": map[string]interface{}{"type": "string", "description": "config file path"},
+		},
+		"commands": commands,
+		"agentDX": map[string]interface{}{
+			"machineOutput":  []string{"--json", "--format json", "--ndjson"},
+			"contextControl": []string{"--fields", "--limit", "--page", "--page-all"},
+			"safetyRails":    []string{"--dry-run", "If-Match contentHash", "automatic snapshots where available"},
+		},
+		"errorCodes": map[string]interface{}{
+			"CONFIG_MISSING_URL": map[string]interface{}{"exit": 2, "description": "Site URL not configured"},
+			"CONFIG_MISSING_KEY": map[string]interface{}{"exit": 2, "description": "API key not configured"},
+			"INVALID_INPUT":      map[string]interface{}{"exit": 1, "description": "Invalid command input"},
+			"INVALID_JSON":       map[string]interface{}{"exit": 1, "description": "Invalid JSON input"},
+			"API_UNAUTHORIZED":   map[string]interface{}{"exit": 3, "description": "HTTP 401 invalid or missing API key"},
+			"API_FORBIDDEN":      map[string]interface{}{"exit": 3, "description": "HTTP 403 forbidden"},
+			"API_CONFLICT":       map[string]interface{}{"exit": 6, "description": "HTTP 409 contentHash conflict"},
+			"PRECONDITION":       map[string]interface{}{"exit": 6, "description": "HTTP 428 If-Match required"},
+		},
+	}
+}
+
+func walkCommandDetails(cmd *cobra.Command, prefix string, result map[string]interface{}) {
+	for _, sub := range cmd.Commands() {
+		if sub.Hidden || !sub.IsAvailableCommand() {
+			continue
+		}
+		name := strings.TrimSpace(prefix + " " + sub.Name())
+		if sub.HasSubCommands() {
+			walkCommandDetails(sub, name, result)
+			continue
+		}
+		flags := map[string]interface{}{}
+		sub.Flags().VisitAll(func(f *pflag.Flag) {
+			flags["--"+f.Name] = map[string]interface{}{
+				"type":        f.Value.Type(),
+				"default":     f.DefValue,
+				"description": f.Usage,
+				"shorthand":   f.Shorthand,
+			}
+		})
+		result[name] = map[string]interface{}{
+			"description": sub.Short,
+			"use":         sub.Use,
+			"flags":       flags,
+			"stdin":       commandUsesStdin(sub),
+			"output":      commandOutputs(sub),
+		}
+	}
+}
+
+func commandUsesStdin(cmd *cobra.Command) bool {
+	text := cmd.Long + "\n" + cmd.Example + "\n" + cmd.Short
+	return strings.Contains(strings.ToLower(text), "stdin")
+}
+
+func commandOutputs(cmd *cobra.Command) []string {
+	out := []string{"text"}
+	if cmd.Flags().Lookup("json") != nil || cmd.Flags().Lookup("format") != nil {
+		out = append(out, "json")
+	}
+	if cmd.Flags().Lookup("ndjson") != nil {
+		out = append(out, "ndjson")
+	}
+	sort.Strings(out)
+	return out
 }
 
 func findSchemaPath() string {

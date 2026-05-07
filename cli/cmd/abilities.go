@@ -53,8 +53,8 @@ Examples:
 			return nil
 		}
 
-		if output.IsJSON() {
-			return output.JSON(abilities)
+		if output.IsJSON() || getDX(cmd).NDJSON {
+			return writeDXCollection(cmd, abilities, nil, "abilities")
 		}
 
 		// Group by category
@@ -188,6 +188,7 @@ var abilitiesCategoriesCmd = &cobra.Command{
 func init() {
 	abilitiesListCmd.Flags().String("category", "", "filter by category slug")
 	output.AddFormatFlags(abilitiesListCmd)
+	addReadDXFlags(abilitiesListCmd, 0)
 
 	abilitiesCmd.AddCommand(abilitiesListCmd)
 	abilitiesCmd.AddCommand(abilitiesDescribeCmd)

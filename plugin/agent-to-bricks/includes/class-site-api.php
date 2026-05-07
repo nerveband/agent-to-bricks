@@ -62,6 +62,12 @@ class ATB_Site_API {
 			),
 		) );
 
+		register_rest_route( 'agent-bricks/v1', '/site/global-queries', array(
+			'methods'             => 'GET',
+			'callback'            => array( __CLASS__, 'get_global_queries' ),
+			'permission_callback' => array( __CLASS__, 'check_permission' ),
+		) );
+
 		register_rest_route( 'agent-bricks/v1', '/site/woocommerce', array(
 			'methods'             => 'GET',
 			'callback'            => array( __CLASS__, 'get_woocommerce_status' ),
@@ -190,6 +196,7 @@ class ATB_Site_API {
 			'frameworks'        => array_keys( $frameworks ),
 			'queryElements'     => array_map( static fn( $type ) => $type['name'], $query_types['queryElements'] ),
 			'queryElementCount' => $query_types['count'],
+			'globalQueries'     => self::get_global_queries_summary(),
 			'woocommerce'       => $woocommerce,
 		), 200 );
 	}
@@ -211,6 +218,13 @@ class ATB_Site_API {
 		$include_controls = (bool) $request->get_param( 'include_controls' );
 
 		return new WP_REST_Response( self::get_query_element_types_data( $include_controls ), 200 );
+	}
+
+	/**
+	 * GET /site/global-queries — Bricks global query presets and categories.
+	 */
+	public static function get_global_queries( ?WP_REST_Request $request = null ): WP_REST_Response {
+		return new WP_REST_Response( self::get_global_queries_data(), 200 );
 	}
 
 	/**
@@ -516,6 +530,26 @@ class ATB_Site_API {
 
 	private static function element_supports_query( array $type ): bool {
 		return ! empty( $type['controls']['query'] );
+	}
+
+	private static function get_global_queries_data(): array {
+		$queries    = get_option( 'bricks_global_queries', array() );
+		$categories = get_option( 'bricks_global_queries_categories', array() );
+
+		return array(
+			'queries'    => is_array( $queries ) ? array_values( $queries ) : array(),
+			'categories' => is_array( $categories ) ? array_values( $categories ) : array(),
+			'count'      => is_array( $queries ) ? count( $queries ) : 0,
+		);
+	}
+
+	private static function get_global_queries_summary(): array {
+		$data = self::get_global_queries_data();
+
+		return array(
+			'count'         => $data['count'],
+			'categoryCount' => count( $data['categories'] ),
+		);
 	}
 
 	private static function get_woocommerce_status_data(): array {

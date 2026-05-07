@@ -133,7 +133,7 @@ check_or_update "$TAURI_CARGO_TOML" "tauri-Cargo.toml" \
 
 [ -f "$CLI_SCHEMA_JSON" ] || die "CLI schema not found: $CLI_SCHEMA_JSON"
 
-CLI_SCHEMA_VER="$(grep '"version"' "$CLI_SCHEMA_JSON" | head -1 | sed -E 's/.*"version": *"([^"]+)".*/\1/')"
+CLI_SCHEMA_VER="$(grep -E '^  "version":' "$CLI_SCHEMA_JSON" | head -1 | sed -E 's/.*"version": *"([^"]+)".*/\1/')"
 
 check_or_update "$CLI_SCHEMA_JSON" "cli-schema.json" \
     "s/(\"version\": \")[^\"]*/\\1$VERSION/" \

@@ -51,6 +51,15 @@ Use --json (recommended) for structured output that agents can parse.`,
 			"breakpoints":    info.Breakpoints,
 			"contentMetaKey": info.ContentMetaKey,
 		}
+		result["summary"] = map[string]interface{}{
+			"siteURL":          cfg.Site.URL,
+			"bricksVersion":    info.BricksVersion,
+			"pluginVersion":    info.PluginVersion,
+			"wpVersion":        info.WPVersion,
+			"contentMetaKey":   info.ContentMetaKey,
+			"elementTypeCount": len(info.ElementTypes),
+			"breakpointCount":  len(info.Breakpoints),
+		}
 
 		// Features
 		features, err := c.GetSiteFeatures()
@@ -60,6 +69,7 @@ Use --json (recommended) for structured output that agents can parse.`,
 			result["features"] = map[string]interface{}{
 				"frameworks":    features.Frameworks,
 				"queryElements": features.QueryElements,
+				"globalQueries": features.GlobalQueries,
 				"woocommerce":   features.WooCommerce.Active,
 				"abilities":     features.Abilities.Available,
 			}
@@ -71,6 +81,27 @@ Use --json (recommended) for structured output that agents can parse.`,
 			fmt.Fprintf(os.Stderr, "Warning: could not fetch frameworks: %v\n", err)
 		} else {
 			result["frameworks"] = fw.Frameworks
+		}
+
+		// Bricks Style Manager and global style surfaces.
+		styles, err := c.GetStyles()
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Warning: could not fetch styles: %v\n", err)
+		} else {
+			result["styles"] = map[string]interface{}{
+				"themeStyleCount": len(styles.ThemeStyles),
+				"styleManager":    styles.StyleManager,
+				"colorPalette":    styles.ColorPalette,
+				"cssColorCount":   len(styles.CSSColors),
+			}
+		}
+
+		// Bricks global query presets and categories.
+		globalQueries, err := c.GetGlobalQueries()
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Warning: could not fetch global queries: %v\n", err)
+		} else {
+			result["globalQueries"] = globalQueries
 		}
 
 		// Global classes
@@ -109,7 +140,7 @@ Use --json (recommended) for structured output that agents can parse.`,
 		}
 
 		if output.IsJSON() {
-			return output.JSON(result)
+			return writeDXJSON(cmd, result)
 		}
 
 		// Human-readable summary
@@ -121,6 +152,8 @@ Use --json (recommended) for structured output that agents can parse.`,
 		if features != nil {
 			fmt.Printf("Frameworks: %v\n", features.Frameworks)
 			fmt.Printf("Query elements: %d\n", len(features.QueryElements))
+			fmt.Printf("Global queries: %d (%d categories)\n",
+				features.GlobalQueries.Count, features.GlobalQueries.CategoryCount)
 		}
 
 		if classes != nil {
@@ -150,6 +183,7 @@ Use --json (recommended) for structured output that agents can parse.`,
 
 func init() {
 	output.AddFormatFlags(discoverCmd)
+	addFieldsFlag(discoverCmd)
 	rootCmd.AddCommand(discoverCmd)
 }
 

@@ -44,7 +44,7 @@ run_runner() {
   printf '%s\n' "$result"
   "${SSH_CMD[@]}" "rm -f '$remote_path'" >/dev/null 2>&1 || true
 
-  if grep -q "FAIL" <<<"$result" || grep -q "0 passed" <<<"$result"; then
+  if grep -q "FAIL" <<<"$result" || grep -Eq "(^|[^0-9])0 passed" <<<"$result"; then
     STATUS=1
   fi
   echo ""

@@ -56,7 +56,10 @@ func init() {
 	rootCmd.PersistentPreRun = func(cmd *cobra.Command, args []string) {
 		// Skip update check for these commands
 		name := cmd.Name()
-		if name == "update" || name == "version" || name == "help" {
+		if name == "update" || name == "version" || name == "schema" || name == "help" {
+			return
+		}
+		if commandWantsMachineOutput(cmd) {
 			return
 		}
 
@@ -105,7 +108,27 @@ func initConfig() {
 func newSiteClient() *client.Client {
 	c := client.New(cfg.Site.URL, cfg.Site.APIKey)
 	c.SetCLIVersion(cliVersion)
+	c.SetQuietNotices(output.IsJSON())
 	return c
+}
+
+func commandWantsMachineOutput(cmd *cobra.Command) bool {
+	if cmd.Flags().Lookup("json") != nil {
+		if v, _ := cmd.Flags().GetBool("json"); v {
+			return true
+		}
+	}
+	if cmd.Flags().Lookup("format") != nil {
+		if v, _ := cmd.Flags().GetString("format"); v == "json" {
+			return true
+		}
+	}
+	if cmd.Flags().Lookup("ndjson") != nil {
+		if v, _ := cmd.Flags().GetBool("ndjson"); v {
+			return true
+		}
+	}
+	return false
 }
 
 func requireConfig() error {

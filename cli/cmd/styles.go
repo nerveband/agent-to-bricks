@@ -2,9 +2,9 @@ package cmd
 
 import (
 	"fmt"
-	"strconv"
 
 	"github.com/nerveband/agent-to-bricks/internal/output"
+	"github.com/nerveband/agent-to-bricks/internal/security"
 	"github.com/nerveband/agent-to-bricks/internal/styles"
 	"github.com/spf13/cobra"
 )
@@ -21,6 +21,7 @@ var stylesLearnCmd = &cobra.Command{
   bricks styles learn 1234 5678 9012`,
 	Args: cobra.MinimumNArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		if err := requireConfig(); err != nil {
 			return err
 		}
@@ -30,7 +31,7 @@ var stylesLearnCmd = &cobra.Command{
 		c := newSiteClient()
 
 		for _, arg := range args {
-			pageID, err := strconv.Atoi(arg)
+			pageID, err := security.PageID(arg)
 			if err != nil {
 				fmt.Printf("Skipping invalid page ID: %s\n", arg)
 				continue
@@ -44,6 +45,10 @@ var stylesLearnCmd = &cobra.Command{
 
 			profile.AnalyzePage(resp.Elements)
 			fmt.Printf("Analyzed page %d (%d elements)\n", pageID, resp.Count)
+		}
+
+		if getDX(cmd).DryRun {
+			return dryRun(cmd, "LOCAL_WRITE", styles.DefaultPath(), map[string]interface{}{"pages": args})
 		}
 
 		if err := profile.Save(profilePath); err != nil {
@@ -103,6 +108,10 @@ var stylesResetCmd = &cobra.Command{
 	Use:   "reset",
 	Short: "Reset the style profile",
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
+		if getDX(cmd).DryRun {
+			return dryRun(cmd, "LOCAL_DELETE", styles.DefaultPath(), nil)
+		}
 		profile := styles.NewProfile()
 		if err := profile.Save(styles.DefaultPath()); err != nil {
 			return err
@@ -280,6 +289,10 @@ func topFromMap(m map[string]int, limit int) []styles.RankedItem {
 
 func init() {
 	stylesShowCmd.Flags().Int("limit", 10, "number of items to display")
+	output.AddFormatFlags(stylesLearnCmd)
+	addDryRunFlag(stylesLearnCmd)
+	output.AddFormatFlags(stylesResetCmd)
+	addDryRunFlag(stylesResetCmd)
 	output.AddFormatFlags(stylesColorsCmd)
 	output.AddFormatFlags(stylesVariablesCmd)
 	output.AddFormatFlags(stylesThemeCmd)

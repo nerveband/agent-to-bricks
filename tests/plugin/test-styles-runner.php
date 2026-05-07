@@ -45,6 +45,20 @@ if (($by_name['--color'] ?? null) === '#fff') {
 	$fail++;
 }
 
+echo "TEST 4: /styles exposes Bricks style manager... ";
+$server = rest_get_server();
+$request = new WP_REST_Request('GET', '/agent-bricks/v1/styles');
+$response = $server->dispatch($request);
+$data = $response->get_data();
+if ($response->get_status() === 200 && array_key_exists('styleManager', $data)) {
+	echo "PASS\n";
+	$pass++;
+} else {
+	echo "FAIL\n";
+	echo json_encode($data) . "\n";
+	$fail++;
+}
+
 echo "\n=== Styles API Summary ===\n";
 echo "Passed: $pass\n";
 echo "Failed: $fail\n";

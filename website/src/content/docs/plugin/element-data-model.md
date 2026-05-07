@@ -35,6 +35,18 @@ Every element has these fields:
 
 There's also an optional `label` field for a human-readable name shown in the Bricks structure panel.
 
+Bricks 2.3 component and slot trees can include additional top-level metadata. Preserve these fields when reading, patching, appending, replacing, or deleting elements:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `cid` | string | Component definition identifier used by Bricks component instances. |
+| `parentComponent` | string | Parent component instance reference for nested component content. |
+| `instanceId` | string | Runtime instance identifier used by Bricks CSS/query generation. |
+| `slotChildren` | object or array | Slot-to-child mapping for component slot roots. |
+| `ajaxLocalId` | string | Local AJAX/query identifier used by dynamic elements. |
+
+Settings such as `_hideElementFrontend`, `global`, `global_settings_checked`, and `is_frontend` are also intentionally preserved. They are not decoration; Bricks may use them to render component instances and frontend visibility correctly.
+
 ## The settings object
 
 Settings hold everything about an element's appearance and content. A few key properties:
@@ -160,7 +172,7 @@ The valid element type names come from Bricks Builder's element registry. Common
 
 **Forms and data:** `form`, `map`, `code`, `template`, `post-content`, `posts`, `pagination`
 
-Custom elements registered by third-party plugins are also valid. The validator will warn about unknown types but won't reject them, since your site might have custom elements it doesn't know about.
+Custom elements registered by third-party plugins are also valid. The plugin validator reads the live `\Bricks\Elements::$elements` registry when Bricks is loaded, and falls back to a bundled type list for offline tests. Unknown types warn but are not rejected, since your site might have custom elements it doesn't know about.
 
 You can fetch the full list from your site with:
 

@@ -150,7 +150,9 @@ All require `X-ATB-Key` header.
 |----------|--------|--------------|
 | `/site/info` | GET | Bricks version, WP version, element types |
 | `/site/frameworks` | GET | ACSS tokens, framework detection |
+| `/site/global-queries` | GET | Bricks Global Queries and Global Query Categories |
 | `/site/update` | POST | Trigger plugin self-update from GitHub |
+| `/styles` | GET | Theme styles, Style Manager data, palette, and global settings |
 | `/classes` | GET | All global classes (ACSS + Frames) |
 | `/classes/<id>` | GET | Single class definition |
 | `/pages/<id>/elements` | GET | Page elements + contentHash |
@@ -168,9 +170,11 @@ PUT requires `If-Match: <contentHash>` header. GET elements first to get the has
 
 Beyond the standard CRUD commands, the CLI includes agent-specific workflow commands:
 
-- `bricks discover` -- machine-readable site discovery (info, features, frameworks, classes, variables) in a single JSON payload for LLM context building
+- `bricks discover` -- machine-readable site discovery (stable summary, info, features, frameworks, classes, Style Manager, Global Queries, variables) in a single JSON payload for LLM context building
 - `bricks patch` -- surgical element mutations (`--set`, `--rm`, `--list`) without full-page round-trips
 - `bricks init` -- tests connection, installs a `.bricks-skill.md` file, and updates `CLAUDE.md` so AI agents can self-discover capabilities
+
+For large read workflows, prefer `--json --fields ...` first, then add `--limit`, `--page`, `--page-all`, or `--ndjson` when the command exposes them. For mutating workflows, use `--dry-run` before applying changes whenever the command supports it. JSON/NDJSON command output must remain quiet and machine-readable.
 
 ## Bricks element format
 
@@ -190,6 +194,8 @@ Flat array with parent references (not nested). Each element:
   }
 }
 ```
+
+Bricks 2.3 component/slot metadata is part of the content contract. Preserve `cid`, `slotChildren`, `parentComponent`, `instanceId`, `ajaxLocalId`, `global`, `global_settings_checked`, `is_frontend`, and frontend visibility settings such as `_hideElementFrontend` through all element mutation APIs.
 
 ACSS class IDs start with `acss_import_`. Frames class IDs do not.
 

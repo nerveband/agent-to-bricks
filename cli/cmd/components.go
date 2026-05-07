@@ -29,8 +29,8 @@ var componentsListCmd = &cobra.Command{
 			return fmt.Errorf("list failed: %w", err)
 		}
 
-		if output.IsJSON() {
-			return output.JSON(resp)
+		if output.IsJSON() || getDX(cmd).NDJSON {
+			return writeDXCollection(cmd, resp.Components, map[string]interface{}{"total": resp.Total}, "components")
 		}
 
 		if resp.Count == 0 {
@@ -40,9 +40,11 @@ var componentsListCmd = &cobra.Command{
 
 		w := tabwriter.NewWriter(os.Stdout, 0, 0, 2, ' ', 0)
 		fmt.Fprintln(w, "ID\tTITLE\tSTATUS\tELEMENTS\tMODIFIED")
-		for _, comp := range resp.Components {
+		rows := paginate(normalizeSlice(resp.Components), getDX(cmd).Limit, getDX(cmd).Page)
+		for _, item := range rows {
+			comp, _ := item.(map[string]interface{})
 			fmt.Fprintf(w, "%d\t%s\t%s\t%d\t%s\n",
-				comp.ID, comp.Title, comp.Status, comp.ElementCount, comp.Modified)
+				int(comp["id"].(float64)), comp["title"], comp["status"], int(comp["elementCount"].(float64)), comp["modified"])
 		}
 		w.Flush()
 		fmt.Printf("\n%d components\n", resp.Count)
@@ -70,7 +72,7 @@ var componentsShowCmd = &cobra.Command{
 		}
 
 		if output.IsJSON() {
-			return output.JSON(resp)
+			return writeDXJSON(cmd, resp)
 		}
 
 		fmt.Printf("Component: %s (ID: %d)\n", resp.Title, resp.ID)
@@ -87,6 +89,8 @@ var componentsShowCmd = &cobra.Command{
 func init() {
 	output.AddFormatFlags(componentsListCmd)
 	output.AddFormatFlags(componentsShowCmd)
+	addReadDXFlags(componentsListCmd, 0)
+	addFieldsFlag(componentsShowCmd)
 
 	componentsCmd.AddCommand(componentsListCmd)
 	componentsCmd.AddCommand(componentsShowCmd)

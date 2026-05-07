@@ -2,6 +2,24 @@
 
 All notable changes to Agent to Bricks are documented in this file.
 
+## [2.3.0] - 2026-05-07
+
+### Added
+
+- Bricks Builder 2.3.x compatibility coverage for component metadata, slots, instance IDs, hidden frontend flags, and query/filter element names.
+- Runtime-driven element type validation from `\Bricks\Elements::$elements`, with an expanded static fallback for offline tests and public clone workflows.
+- Bricks Style Manager and Global Queries discovery in REST/CLI site context, surfaced through a stable `bricks discover --json` summary.
+- Agent DX controls across large read commands: `--fields`, `--limit`, `--page`, `--page-all`, and `--ndjson` where useful.
+- `--dry-run` support across mutating CLI commands so agents can inspect request targets and payloads before applying side effects.
+- Centralized CLI input hardening for page IDs, resource IDs, output paths, and path-escaped REST route segments.
+
+### Changed
+
+- JSON and NDJSON workflows are quieter by default; update/version notices are suppressed during machine-readable command output.
+- `bricks schema` now generates command, flag, Agent DX, and error-code metadata from the live Cobra command tree.
+- Element mutation APIs preserve Bricks 2.3 component/slot fields such as `cid`, `slotChildren`, `parentComponent`, `instanceId`, and `_hideElementFrontend`.
+- Staging verification retries GUI webview startup races and uses the current TS staging scratch page ID.
+
 ## [2.2.0] - 2026-03-23
 
 ### Added

@@ -25,6 +25,9 @@ var mediaUploadCmd = &cobra.Command{
 		if err := requireConfig(); err != nil {
 			return err
 		}
+		if getDX(cmd).DryRun {
+			return dryRun(cmd, "POST", "/media/upload", map[string]interface{}{"file": args[0]})
+		}
 		c := newSiteClient()
 		resp, err := c.UploadMedia(args[0])
 		if err != nil {
@@ -59,8 +62,8 @@ var mediaListCmd = &cobra.Command{
 		if err != nil {
 			return fmt.Errorf("list failed: %w", err)
 		}
-		if output.IsJSON() {
-			return output.JSON(resp)
+		if output.IsJSON() || getDX(cmd).NDJSON {
+			return writeDXCollection(cmd, resp.Media, map[string]interface{}{}, "media")
 		}
 		if resp.Count == 0 {
 			fmt.Println("No media items found.")
@@ -68,8 +71,10 @@ var mediaListCmd = &cobra.Command{
 		}
 		w := tabwriter.NewWriter(os.Stdout, 0, 0, 2, ' ', 0)
 		fmt.Fprintln(w, "ID\tTITLE\tTYPE\tSIZE\tURL")
-		for _, m := range resp.Media {
-			fmt.Fprintf(w, "%d\t%s\t%s\t%d\t%s\n", m.ID, m.Title, m.MimeType, m.Filesize, m.URL)
+		rows := paginate(normalizeSlice(resp.Media), getDX(cmd).Limit, getDX(cmd).Page)
+		for _, item := range rows {
+			m, _ := item.(map[string]interface{})
+			fmt.Fprintf(w, "%.0f\t%s\t%s\t%.0f\t%s\n", m["id"], m["title"], m["mimeType"], m["filesize"], m["url"])
 		}
 		w.Flush()
 		fmt.Printf("\n%d items\n", resp.Count)
@@ -80,7 +85,9 @@ var mediaListCmd = &cobra.Command{
 func init() {
 	mediaListCmd.Flags().StringVarP(&mediaListSearch, "search", "s", "", "search term")
 	output.AddFormatFlags(mediaUploadCmd)
+	addDryRunFlag(mediaUploadCmd)
 	output.AddFormatFlags(mediaListCmd)
+	addReadDXFlags(mediaListCmd, 0)
 
 	mediaCmd.AddCommand(mediaUploadCmd)
 	mediaCmd.AddCommand(mediaListCmd)

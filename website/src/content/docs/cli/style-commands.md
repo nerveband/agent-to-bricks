@@ -98,7 +98,7 @@ Theme Styles:
     padding: 0.75em 1.5em
 ```
 
-Theme styles are Bricks-level defaults that apply across your site. They're the baseline that element-specific styles build on top of.
+Theme styles are Bricks-level defaults that apply across your site. They're the baseline that element-specific styles build on top of. On Bricks 2.3+ the same discovery payload also includes Style Manager data; use `bricks discover --json --fields styles.styleManager` when an agent only needs that compact section.
 
 ## Learn a style profile
 

@@ -14,15 +14,49 @@ class ATB_Element_Validator {
 	 */
 	private static $valid_types = array(
 		'section', 'container', 'block', 'div',
-		'heading', 'text-basic', 'rich-text', 'text-link',
-		'button', 'icon', 'image', 'video', 'audio',
+		'heading', 'text-basic', 'text', 'rich-text', 'text-link',
+		'button', 'icon', 'icon-box', 'image', 'image-gallery', 'video', 'audio',
 		'nav-menu', 'nav-nested', 'offcanvas',
 		'accordion', 'accordion-nested', 'tabs', 'tabs-nested',
 		'slider', 'slider-nested', 'carousel',
-		'form', 'map', 'code', 'template',
-		'post-content', 'posts', 'pagination',
-		'divider', 'list', 'svg',
+		'form', 'map', 'map-leaflet', 'map-connector', 'code', 'html', 'template',
+		'logo', 'facebook-page', 'breadcrumbs', 'rating', 'back-to-top',
+		'dropdown', 'toggle', 'toggle-mode', 'slot',
+		'post-content', 'posts', 'post-title', 'post-excerpt', 'post-author', 'post-date', 'post-comments',
+		'pagination', 'query-results-summary', 'search', 'shortcode',
+		'filter-search', 'filter-radio', 'filter-checkbox', 'filter-select', 'filter-range',
+		'divider', 'list', 'social-icons', 'svg',
 	);
+
+
+	/**
+	 * Cached runtime valid Bricks types.
+	 *
+	 * @var array|null
+	 */
+	private static $runtime_valid_types = null;
+
+	/**
+	 * Resolve valid types from Bricks runtime when available, with static fallback.
+	 *
+	 * @return array
+	 */
+	private static function get_valid_types() {
+		if ( is_array( self::$runtime_valid_types ) ) {
+			return self::$runtime_valid_types;
+		}
+
+		$types = self::$valid_types;
+
+		if ( class_exists( '\\Bricks\\Elements' ) && isset( \Bricks\Elements::$elements ) && is_array( \Bricks\Elements::$elements ) ) {
+			$runtime_types = array_keys( \Bricks\Elements::$elements );
+			$types = array_values( array_unique( array_merge( $types, $runtime_types ) ) );
+		}
+
+		sort( $types );
+		self::$runtime_valid_types = $types;
+		return self::$runtime_valid_types;
+	}
 
 	/**
 	 * Validate the full LLM response.
@@ -85,7 +119,7 @@ class ATB_Element_Validator {
 		$name = sanitize_text_field( $node['name'] );
 
 		// Warn on unknown element types but don't reject (Bricks may have custom elements).
-		if ( ! in_array( $name, self::$valid_types, true ) ) {
+		if ( ! in_array( $name, self::get_valid_types(), true ) ) {
 			$result['warnings'][] = "$path: Unknown element type '$name'.";
 		}
 

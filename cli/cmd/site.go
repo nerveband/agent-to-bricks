@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"io"
 	"os"
-	"strconv"
 	"strings"
 
 	clierrors "github.com/nerveband/agent-to-bricks/internal/errors"
 	"github.com/nerveband/agent-to-bricks/internal/output"
+	"github.com/nerveband/agent-to-bricks/internal/security"
 	"github.com/spf13/cobra"
 )
 
@@ -35,7 +35,7 @@ var siteInfoCmd = &cobra.Command{
 		}
 
 		if output.IsJSON() {
-			return output.JSON(info)
+			return writeDXJSON(cmd, info)
 		}
 
 		fmt.Printf("Bricks Version:  %s\n", info.BricksVersion)
@@ -83,7 +83,7 @@ var siteFrameworksCmd = &cobra.Command{
 		}
 
 		if output.IsJSON() {
-			return output.JSON(resp)
+			return writeDXJSON(cmd, resp)
 		}
 
 		if len(resp.Frameworks) == 0 {
@@ -111,9 +111,13 @@ var sitePullCmd = &cobra.Command{
 			return err
 		}
 
-		pageID, err := strconv.Atoi(args[0])
+		output.ResolveFormat(cmd)
+		pageID, err := security.PageID(args[0])
 		if err != nil {
-			return fmt.Errorf("invalid page ID: %s", args[0])
+			return err
+		}
+		if err := security.OutputPath(pullOutput, true); err != nil {
+			return err
 		}
 
 		c := newSiteClient()
@@ -123,7 +127,14 @@ var sitePullCmd = &cobra.Command{
 			return fmt.Errorf("failed to pull elements: %w", err)
 		}
 
-		data, err := json.MarshalIndent(resp, "", "  ")
+		payload := interface{}(resp)
+		if len(getDX(cmd).Fields) > 0 {
+			payload = selectFields(normalizeJSON(resp), getDX(cmd).Fields)
+		}
+		if output.IsJSON() {
+			return output.JSON(payload)
+		}
+		data, err := json.MarshalIndent(payload, "", "  ")
 		if err != nil {
 			return fmt.Errorf("failed to marshal JSON: %w", err)
 		}
@@ -153,9 +164,9 @@ var sitePushCmd = &cobra.Command{
 			return err
 		}
 
-		pageID, err := strconv.Atoi(args[0])
+		pageID, err := security.PageID(args[0])
 		if err != nil {
-			return clierrors.ValidationError("INVALID_PAGE_ID", fmt.Sprintf("invalid page ID: %s", args[0]))
+			return clierrors.ValidationError("INVALID_PAGE_ID", err.Error())
 		}
 
 		var data []byte
@@ -174,6 +185,10 @@ var sitePushCmd = &cobra.Command{
 		}
 		if err := json.Unmarshal(data, &payload); err != nil {
 			return clierrors.ValidationError("INVALID_JSON", "failed to parse JSON input")
+		}
+
+		if getDX(cmd).DryRun {
+			return dryRun(cmd, "PUT", fmt.Sprintf("/pages/%d/elements", pageID), payload)
 		}
 
 		c := newSiteClient()
@@ -206,9 +221,9 @@ var sitePatchCmd = &cobra.Command{
 			return err
 		}
 
-		pageID, err := strconv.Atoi(args[0])
+		pageID, err := security.PageID(args[0])
 		if err != nil {
-			return clierrors.ValidationError("INVALID_PAGE_ID", fmt.Sprintf("invalid page ID: %s", args[0]))
+			return clierrors.ValidationError("INVALID_PAGE_ID", err.Error())
 		}
 
 		var data []byte
@@ -227,6 +242,10 @@ var sitePatchCmd = &cobra.Command{
 		}
 		if err := json.Unmarshal(data, &patches); err != nil {
 			return clierrors.ValidationError("INVALID_JSON", "failed to parse patch JSON input")
+		}
+
+		if getDX(cmd).DryRun {
+			return dryRun(cmd, "PATCH", fmt.Sprintf("/pages/%d/elements", pageID), patches)
 		}
 
 		c := newSiteClient()
@@ -255,9 +274,14 @@ var siteSnapshotCmd = &cobra.Command{
 			return err
 		}
 
-		pageID, err := strconv.Atoi(args[0])
+		output.ResolveFormat(cmd)
+		pageID, err := security.PageID(args[0])
 		if err != nil {
-			return fmt.Errorf("invalid page ID: %s", args[0])
+			return err
+		}
+
+		if getDX(cmd).DryRun {
+			return dryRun(cmd, "POST", fmt.Sprintf("/pages/%d/snapshots", pageID), map[string]string{"label": snapshotLabel})
 		}
 
 		c := newSiteClient()
@@ -267,6 +291,9 @@ var siteSnapshotCmd = &cobra.Command{
 			return fmt.Errorf("failed to create snapshot: %w", err)
 		}
 
+		if output.IsJSON() {
+			return writeDXJSON(cmd, resp)
+		}
 		fmt.Printf("Snapshot created: %s (hash: %s)\n", resp.SnapshotID, resp.ContentHash)
 		return nil
 	},
@@ -281,9 +308,10 @@ var siteSnapshotsListCmd = &cobra.Command{
 			return err
 		}
 
-		pageID, err := strconv.Atoi(args[0])
+		output.ResolveFormat(cmd)
+		pageID, err := security.PageID(args[0])
 		if err != nil {
-			return fmt.Errorf("invalid page ID: %s", args[0])
+			return err
 		}
 
 		c := newSiteClient()
@@ -293,13 +321,23 @@ var siteSnapshotsListCmd = &cobra.Command{
 			return fmt.Errorf("failed to list snapshots: %w", err)
 		}
 
-		if len(resp.Snapshots) == 0 {
+		if output.IsJSON() || getDX(cmd).NDJSON {
+			return writeDXCollection(cmd, resp.Snapshots, map[string]interface{}{}, "snapshots")
+		}
+
+		snapshots := resp.Snapshots
+		items := normalizeSlice(snapshots)
+		if !getDX(cmd).PageAll {
+			items = paginate(items, getDX(cmd).Limit, getDX(cmd).Page)
+		}
+		if len(items) == 0 {
 			fmt.Println("No snapshots found.")
 			return nil
 		}
 
-		for _, s := range resp.Snapshots {
-			fmt.Printf("  %s  %s  (%d elements, hash: %s)\n", s.ID, s.Label, s.Count, s.ContentHash)
+		for _, item := range items {
+			m, _ := item.(map[string]interface{})
+			fmt.Printf("  %s  %s  (%v elements, hash: %s)\n", m["snapshotId"], m["label"], m["elementCount"], m["contentHash"])
 		}
 		return nil
 	},
@@ -314,9 +352,10 @@ var siteRollbackCmd = &cobra.Command{
 			return err
 		}
 
-		pageID, err := strconv.Atoi(args[0])
+		output.ResolveFormat(cmd)
+		pageID, err := security.PageID(args[0])
 		if err != nil {
-			return fmt.Errorf("invalid page ID: %s", args[0])
+			return err
 		}
 
 		c := newSiteClient()
@@ -324,6 +363,9 @@ var siteRollbackCmd = &cobra.Command{
 		snapshotID := ""
 		if len(args) > 1 {
 			snapshotID = args[1]
+			if err := security.ResourceID("snapshot ID", snapshotID); err != nil {
+				return err
+			}
 		} else {
 			// Get latest snapshot
 			list, err := c.ListSnapshots(pageID)
@@ -336,12 +378,19 @@ var siteRollbackCmd = &cobra.Command{
 			snapshotID = list.Snapshots[0].ID
 		}
 
+		if getDX(cmd).DryRun {
+			return dryRun(cmd, "POST", fmt.Sprintf("/pages/%d/snapshots/%s/rollback", pageID, snapshotID), nil)
+		}
+
 		resp, err := c.Rollback(pageID, snapshotID)
 		if err != nil {
 			return fmt.Errorf("failed to rollback: %w", err)
 		}
 
-		fmt.Printf("Rolled back to %s (new hash: %s)\n", resp.Restored, resp.ContentHash)
+		if output.IsJSON() {
+			return writeDXJSON(cmd, resp)
+		}
+		fmt.Printf("Rolled back to %s (new hash: %s)\n", resp.RestoredFrom, resp.ContentHash)
 		return nil
 	},
 }
@@ -349,11 +398,24 @@ var siteRollbackCmd = &cobra.Command{
 func init() {
 	output.AddFormatFlags(siteInfoCmd)
 	output.AddFormatFlags(siteFrameworksCmd)
+	addFieldsFlag(siteInfoCmd)
+	addFieldsFlag(siteFrameworksCmd)
+	output.AddFormatFlags(sitePullCmd)
 	output.AddFormatFlags(sitePushCmd)
 	output.AddFormatFlags(sitePatchCmd)
+	output.AddFormatFlags(siteSnapshotCmd)
+	output.AddFormatFlags(siteSnapshotsListCmd)
+	output.AddFormatFlags(siteRollbackCmd)
 	sitePullCmd.Flags().StringVarP(&pullOutput, "output", "o", "", "output file path (default: stdout)")
+	addFieldsFlag(sitePullCmd)
 	sitePatchCmd.Flags().StringVarP(&patchFile, "file", "f", "", "patch file (JSON)")
+	addDryRunFlag(sitePushCmd)
+	addDryRunFlag(sitePatchCmd)
 	siteSnapshotCmd.Flags().StringVarP(&snapshotLabel, "label", "l", "", "snapshot label")
+	addFieldsFlag(siteSnapshotCmd)
+	addReadDXFlags(siteSnapshotsListCmd, 20)
+	addDryRunFlag(siteSnapshotCmd)
+	addDryRunFlag(siteRollbackCmd)
 
 	siteCmd.AddCommand(siteInfoCmd)
 	siteCmd.AddCommand(siteFrameworksCmd)

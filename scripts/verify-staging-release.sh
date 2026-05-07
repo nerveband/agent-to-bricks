@@ -91,4 +91,18 @@ if [[ ! -S "$SOCKET_PATH" ]]; then
   exit 1
 fi
 
-TAURI_MCP_IPC_PATH="$SOCKET_PATH" "$PROJECT_DIR/gui/e2e/run-tests.sh"
+GUI_TEST_LOG="$(mktemp)"
+for attempt in 1 2 3; do
+  if TAURI_MCP_IPC_PATH="$SOCKET_PATH" "$PROJECT_DIR/gui/e2e/run-tests.sh" 2>&1 | tee "$GUI_TEST_LOG"; then
+    rm -f "$GUI_TEST_LOG"
+    exit 0
+  fi
+  if ! grep -q "Webview not found" "$GUI_TEST_LOG"; then
+    rm -f "$GUI_TEST_LOG"
+    exit 1
+  fi
+  echo "GUI E2E webview was not ready; retrying ($attempt/3)..."
+  sleep 5
+done
+rm -f "$GUI_TEST_LOG"
+exit 1

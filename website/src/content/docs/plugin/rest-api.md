@@ -109,11 +109,16 @@ curl -s https://your-site.com/wp-json/agent-bricks/v1/site/features \
 {
   "bricks": { "active": true, "version": "1.12.2" },
   "wordpress": { "version": "6.9" },
-  "plugin": { "version": "2.1.0" },
+  "plugin": { "version": "2.3.0" },
   "abilities": { "available": true },
   "frameworks": ["acss", "frames"],
   "queryElements": ["accordion", "carousel", "posts"],
   "queryElementCount": 3,
+  "globalQueries": {
+    "available": true,
+    "count": 2,
+    "categoryCount": 1
+  },
   "woocommerce": {
     "active": true,
     "version": "9.8.1",
@@ -136,6 +141,28 @@ Returns only the Bricks element types that expose a query control.
 ```bash
 curl -s "https://your-site.com/wp-json/agent-bricks/v1/site/query-elements?include_controls=1" \
   -H "X-ATB-Key: atb_abc123..."
+```
+
+### GET /site/global-queries
+
+Returns Bricks Global Queries and Global Query Categories from `bricks_global_queries` and `bricks_global_queries_categories`.
+
+```bash
+curl -s https://your-site.com/wp-json/agent-bricks/v1/site/global-queries \
+  -H "X-ATB-Key: atb_abc123..."
+```
+
+```json
+{
+  "queries": [
+    { "id": "featured-posts", "label": "Featured posts", "settings": { "postType": "post" } }
+  ],
+  "categories": [
+    { "id": "content", "label": "Content" }
+  ],
+  "count": 1,
+  "categoryCount": 1
+}
 ```
 
 ### GET /site/woocommerce
@@ -230,7 +257,7 @@ curl -s -X POST https://your-site.com/wp-json/agent-bricks/v1/convert \
   -H "Content-Type: application/json" \
   -d '{
     "html": "<section><h1>New Page</h1></section>",
-    "postId": 1338,
+    "postId": 1297,
     "mode": "replace"
   }'
 ```
@@ -793,7 +820,7 @@ curl -X POST https://your-site.com/wp-json/agent-bricks/v1/media/upload \
 
 ### GET /styles
 
-Returns Bricks theme styles, color palette, and global settings.
+Returns Bricks theme styles, Style Manager data, color palette, and global settings.
 
 ```bash
 curl -s https://your-site.com/wp-json/agent-bricks/v1/styles \
@@ -815,6 +842,10 @@ curl -s https://your-site.com/wp-json/agent-bricks/v1/styles \
   "colorPalette": [
     { "id": "cp1", "color": { "hex": "#2563eb" }, "name": "Primary" }
   ],
+  "styleManager": {
+    "globalClassesLocked": false,
+    "classCategories": []
+  },
   "globalSettings": {}
 }
 ```

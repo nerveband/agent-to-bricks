@@ -82,20 +82,20 @@ The Desktop App checks for updates automatically on launch.
 
 ## Latest Release
 
-### v2.2.0
+### v2.3.0
 
-- HTML-to-Bricks conversion via `bricks convert html` and `POST /convert` REST endpoint with tag mapping, inline style parsing, and CSS class resolution.
-- `bricks patch` for surgical element-level mutations without full-page round-trips.
-- `bricks discover` for machine-readable site discovery (info, frameworks, classes, variables) in a single JSON payload.
-- `bricks init` bootstraps AI agent integration with skill files and CLAUDE.md.
+- Bricks Builder 2.3.x compatibility for component metadata, slots, instance IDs, hidden frontend flags, and query/filter elements.
+- Runtime-driven element validation from the live Bricks element registry, with offline-safe fallback types.
+- `bricks discover --json` now includes a stable `summary`, Bricks Style Manager data, and Global Queries discovery.
+- Agent DX controls across large reads: `--fields`, pagination, `--ndjson`, quieter JSON workflows, centralized input hardening, and broader `--dry-run`.
 
 See [CHANGELOG.md](CHANGELOG.md) for the full release summary.
 
 ## Key Features
 
-- **Machine-Readable CLI** — `bricks schema` outputs a JSON manifest of all commands. Structured error codes, `--format json` on every command, and stdin pipelines make the CLI fully automatable by AI agents.
+- **Machine-Readable CLI** — `bricks schema` outputs a JSON manifest of commands, Agent DX flags, and error codes. Structured errors, `--json`, `--fields`, `--ndjson`, pagination, dry-runs, and stdin pipelines make the CLI automatable by AI agents.
 - **HTML-to-Bricks Conversion** — `bricks convert html` and `POST /convert` turn raw HTML/CSS into native Bricks elements with tag mapping, inline style parsing, and CSS class resolution.
-- **Agent Discovery & Init** — `bricks discover` outputs full site context (info, frameworks, classes, variables) as a single JSON payload. `bricks init` bootstraps AI agent integration with skill files and `CLAUDE.md`.
+- **Agent Discovery & Init** — `bricks discover` outputs full site context (info, frameworks, classes, Bricks Style Manager, Global Queries, variables) as a single JSON payload with a stable summary. `bricks init` bootstraps AI agent integration with skill files and `CLAUDE.md`.
 - **Surgical Element Patching** — `bricks patch` applies `--set` and `--rm` mutations to individual elements without full-page round-trips.
 - **Query & Woo discovery** — `bricks site features`, `bricks site query-elements`, and `bricks woo ...` expose query-capable Bricks elements plus WooCommerce products, categories, and tags without scraping wp-admin.
 - **WordPress Abilities API** — Auto-discovers plugin abilities (Yoast, WooCommerce, Gravity Forms, etc.) and includes them in AI prompts. Requires WordPress 6.9+.

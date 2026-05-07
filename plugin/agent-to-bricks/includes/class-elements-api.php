@@ -94,12 +94,33 @@ class ATB_Elements_API {
 			return new WP_REST_Response( array( 'error' => 'Post not found.' ), 404 );
 		}
 
-		$data = ATB_Bricks_Lifecycle::read_elements( $post_id );
+		$data     = ATB_Bricks_Lifecycle::read_elements( $post_id );
+		$elements = $data['elements'];
+
+		// Server-side filtering by element type.
+		$filter_type = $request->get_param( 'type' );
+		if ( $filter_type ) {
+			$filter_type = sanitize_text_field( $filter_type );
+			$elements = array_values( array_filter( $elements, function( $el ) use ( $filter_type ) {
+				return isset( $el['name'] ) && $el['name'] === $filter_type;
+			} ) );
+		}
+
+		// Server-side filtering by element label (case-insensitive substring).
+		$filter_name = $request->get_param( 'name' );
+		if ( $filter_name ) {
+			$filter_name = sanitize_text_field( $filter_name );
+			$lower_name  = mb_strtolower( $filter_name );
+			$elements = array_values( array_filter( $elements, function( $el ) use ( $lower_name ) {
+				$label = isset( $el['label'] ) ? mb_strtolower( $el['label'] ) : '';
+				return strpos( $label, $lower_name ) !== false;
+			} ) );
+		}
 
 		return new WP_REST_Response( array(
-			'elements'    => $data['elements'],
+			'elements'    => $elements,
 			'contentHash' => $data['contentHash'],
-			'count'       => count( $data['elements'] ),
+			'count'       => count( $elements ),
 			'metaKey'     => ATB_Bricks_Lifecycle::content_meta_key(),
 		), 200 );
 	}

@@ -55,6 +55,66 @@ assert_same_css(
 	".x {\n  --token:\"a;b\";\n  color:red\n}"
 );
 
+
+function assert_true( $label, $condition, $message ) {
+	echo "TEST: {$label}... ";
+	if ( $condition ) {
+		echo "PASS
+";
+		$GLOBALS['pass']++;
+		return;
+	}
+	echo "FAIL
+";
+	echo $message . "
+";
+	$GLOBALS['fail']++;
+}
+
+$flat = ATB_Element_Validator::sanitize_flat_elements(
+	array(
+		array(
+			'id' => 'abc123',
+			'name' => 'slot',
+			'parent' => 'root001',
+			'children' => array( 'def456' ),
+			'cid' => 'component-1',
+			'slotChildren' => array( 'slotChildA', 'slotChildB' ),
+			'parentComponent' => 'parent-comp',
+			'instanceId' => 'instance-xyz',
+			'_hideElementFrontend' => true,
+			'settings' => array( 'queryId' => 'filter-main' ),
+		),
+	)
+);
+
+assert_true(
+	'Preserves Bricks 2.3 component fields in flat sanitizer',
+	isset( $flat[0]['cid'], $flat[0]['slotChildren'], $flat[0]['parentComponent'], $flat[0]['instanceId'], $flat[0]['_hideElementFrontend'] ),
+	'Expected cid/slotChildren/parentComponent/instanceId/_hideElementFrontend to be preserved.'
+);
+
+$validated = ATB_Element_Validator::validate(
+	array(
+		'elements' => array(
+			array(
+				'name' => 'query-results-summary',
+				'settings' => array( 'queryId' => 'products' ),
+			),
+			array(
+				'name' => 'filter-select',
+				'settings' => array( 'queryId' => 'products', 'source' => 'taxonomy' ),
+			),
+		),
+	)
+);
+
+assert_true(
+	'Bricks 2.3 query/filter element names are accepted without warnings',
+	empty( $validated['warnings'] ),
+	'Expected no warnings for query-results-summary and filter-select.'
+);
+
 $pass = $GLOBALS['pass'];
 $fail = $GLOBALS['fail'];
 

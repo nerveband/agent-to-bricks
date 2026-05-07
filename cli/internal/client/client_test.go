@@ -200,9 +200,9 @@ func TestRollback(t *testing.T) {
 			t.Errorf("unexpected path: %s", r.URL.Path)
 		}
 		json.NewEncoder(w).Encode(map[string]interface{}{
-			"success":     true,
-			"contentHash": "restored",
-			"restored":    "snap_abc",
+			"contentHash":  "restored",
+			"restoredFrom": "snap_abc",
+			"count":        4,
 		})
 	}))
 	defer srv.Close()
@@ -212,8 +212,8 @@ func TestRollback(t *testing.T) {
 	if err != nil {
 		t.Fatalf("unexpected error: %v", err)
 	}
-	if !resp.Success {
-		t.Error("expected success")
+	if resp.RestoredFrom != "snap_abc" {
+		t.Errorf("expected snap_abc, got %s", resp.RestoredFrom)
 	}
 	if resp.ContentHash != "restored" {
 		t.Errorf("expected restored, got %s", resp.ContentHash)

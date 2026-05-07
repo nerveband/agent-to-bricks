@@ -5,9 +5,10 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-	"strconv"
 
 	"github.com/nerveband/agent-to-bricks/internal/embeddings"
+	"github.com/nerveband/agent-to-bricks/internal/output"
+	"github.com/nerveband/agent-to-bricks/internal/security"
 	"github.com/nerveband/agent-to-bricks/internal/templates"
 	"github.com/spf13/cobra"
 )
@@ -37,6 +38,7 @@ var templatesListCmd = &cobra.Command{
 	Use:   "list",
 	Short: "List available templates",
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		cat, err := loadCatalog()
 		if err != nil {
 			return err
@@ -49,9 +51,20 @@ var templatesListCmd = &cobra.Command{
 			return nil
 		}
 
+		rows := []map[string]interface{}{}
 		for _, name := range names {
 			tmpl := cat.Get(name)
-			fmt.Printf("  %-30s %s (%d elements)\n", name, tmpl.Category, len(tmpl.Elements))
+			rows = append(rows, map[string]interface{}{
+				"name": name, "category": tmpl.Category, "description": tmpl.Description,
+				"tags": tmpl.Tags, "elementCount": len(tmpl.Elements), "source": tmpl.Source,
+			})
+		}
+		if output.IsJSON() || getDX(cmd).NDJSON {
+			return writeDXCollection(cmd, rows, nil, "templates")
+		}
+		for _, item := range paginate(normalizeSlice(rows), getDX(cmd).Limit, getDX(cmd).Page) {
+			row, _ := item.(map[string]interface{})
+			fmt.Printf("  %-30s %s (%.0f elements)\n", row["name"], row["category"], row["elementCount"])
 		}
 		fmt.Printf("\n%d templates\n", len(names))
 		return nil
@@ -63,6 +76,7 @@ var templatesShowCmd = &cobra.Command{
 	Short: "Show template details",
 	Args:  cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		cat, err := loadCatalog()
 		if err != nil {
 			return err
@@ -73,6 +87,9 @@ var templatesShowCmd = &cobra.Command{
 			return fmt.Errorf("template '%s' not found", args[0])
 		}
 
+		if output.IsJSON() {
+			return writeDXJSON(cmd, tmpl)
+		}
 		fmt.Printf("Name:        %s\n", tmpl.Name)
 		fmt.Printf("Description: %s\n", tmpl.Description)
 		fmt.Printf("Category:    %s\n", tmpl.Category)
@@ -91,12 +108,16 @@ var templatesImportCmd = &cobra.Command{
 	Short: "Import templates from a directory or JSON file",
 	Args:  cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		cat, err := loadCatalog()
 		if err != nil {
 			return err
 		}
 
 		src := args[0]
+		if getDX(cmd).DryRun {
+			return dryRun(cmd, "LOCAL_IMPORT", "templates", map[string]interface{}{"source": src, "destination": templateDir()})
+		}
 		info, err := os.Stat(src)
 		if err != nil {
 			return fmt.Errorf("cannot access %s: %w", src, err)
@@ -142,9 +163,9 @@ var templatesLearnCmd = &cobra.Command{
 			return err
 		}
 
-		pageID, err := strconv.Atoi(args[0])
+		pageID, err := security.PageID(args[0])
 		if err != nil {
-			return fmt.Errorf("invalid page ID: %s", args[0])
+			return err
 		}
 
 		c := newSiteClient()
@@ -182,6 +203,7 @@ var composeCmd = &cobra.Command{
 	Short: "Compose multiple templates into a single page",
 	Args:  cobra.MinimumNArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		cat, err := loadCatalog()
 		if err != nil {
 			return err
@@ -208,6 +230,9 @@ var composeCmd = &cobra.Command{
 			if err := requireConfig(); err != nil {
 				return err
 			}
+			if getDX(cmd).DryRun {
+				return dryRun(cmd, "PUT", fmt.Sprintf("/pages/%d/elements", composePush), map[string]interface{}{"elements": elements})
+			}
 			c := newSiteClient()
 			existing, _ := c.GetElements(composePush)
 			ifMatch := ""
@@ -223,20 +248,26 @@ var composeCmd = &cobra.Command{
 		}
 
 		// Build output payload including globalClasses if present
-		output := map[string]interface{}{
+		payload := map[string]interface{}{
 			"elements": elements,
 			"count":    len(elements),
 		}
 		if len(result.GlobalClasses) > 0 {
-			output["globalClasses"] = result.GlobalClasses
+			payload["globalClasses"] = result.GlobalClasses
 		}
 
-		data, err := json.MarshalIndent(output, "", "  ")
+		data, err := json.MarshalIndent(payload, "", "  ")
 		if err != nil {
 			return err
 		}
 
+		if output.IsJSON() {
+			return writeDXJSON(cmd, payload)
+		}
 		if composeOutput != "" {
+			if err := security.OutputPath(composeOutput, true); err != nil {
+				return err
+			}
 			if err := os.WriteFile(composeOutput, data, 0644); err != nil {
 				return err
 			}
@@ -253,6 +284,7 @@ var templatesSearchCmd = &cobra.Command{
 	Short: "Search templates by description or tags",
 	Args:  cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
 		cat, err := loadCatalog()
 		if err != nil {
 			return err
@@ -271,11 +303,25 @@ var templatesSearchCmd = &cobra.Command{
 			return nil
 		}
 
-		for i, r := range results {
+		rows := []map[string]interface{}{}
+		for _, r := range results {
 			tmpl := cat.Get(r.ID)
-			fmt.Printf("  %d. %-30s (score: %.3f)\n", i+1, r.Name, r.Score)
-			if tmpl != nil && tmpl.Description != "" {
-				fmt.Printf("     %s\n", tmpl.Description)
+			row := map[string]interface{}{"id": r.ID, "name": r.Name, "score": r.Score}
+			if tmpl != nil {
+				row["description"] = tmpl.Description
+				row["category"] = tmpl.Category
+				row["tags"] = tmpl.Tags
+			}
+			rows = append(rows, row)
+		}
+		if output.IsJSON() || getDX(cmd).NDJSON {
+			return writeDXCollection(cmd, rows, nil, "templates")
+		}
+		for i, item := range paginate(normalizeSlice(rows), getDX(cmd).Limit, getDX(cmd).Page) {
+			row, _ := item.(map[string]interface{})
+			fmt.Printf("  %d. %-30s (score: %.3f)\n", i+1, row["name"], row["score"])
+			if desc, _ := row["description"].(string); desc != "" {
+				fmt.Printf("     %s\n", desc)
 			}
 		}
 		return nil
@@ -285,6 +331,17 @@ var templatesSearchCmd = &cobra.Command{
 func init() {
 	composeCmd.Flags().StringVarP(&composeOutput, "output", "o", "", "output file path")
 	composeCmd.Flags().IntVar(&composePush, "push", 0, "push composed result to page ID")
+	output.AddFormatFlags(composeCmd)
+	addFieldsFlag(composeCmd)
+	addDryRunFlag(composeCmd)
+	output.AddFormatFlags(templatesListCmd)
+	addReadDXFlags(templatesListCmd, 0)
+	output.AddFormatFlags(templatesShowCmd)
+	addFieldsFlag(templatesShowCmd)
+	output.AddFormatFlags(templatesSearchCmd)
+	addReadDXFlags(templatesSearchCmd, 10)
+	output.AddFormatFlags(templatesImportCmd)
+	addDryRunFlag(templatesImportCmd)
 
 	templatesCmd.AddCommand(templatesListCmd)
 	templatesCmd.AddCommand(templatesShowCmd)

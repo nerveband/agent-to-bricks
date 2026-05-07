@@ -66,14 +66,19 @@ Examples:
 		if searchLimit > 0 {
 			params.PerPage = searchLimit
 		}
+		if getDX(cmd).Page > 0 {
+			params.Page = getDX(cmd).Page
+		}
 
 		resp, err := c.SearchElements(params)
 		if err != nil {
 			return fmt.Errorf("search failed: %w", err)
 		}
 
-		if output.IsJSON() {
-			return output.JSON(resp)
+		if output.IsJSON() || getDX(cmd).NDJSON {
+			return writeDXCollection(cmd, resp.Results, map[string]interface{}{
+				"total": resp.Total, "page": resp.Page, "perPage": resp.PerPage, "totalPages": resp.TotalPages,
+			}, "results")
 		}
 
 		if len(resp.Results) == 0 {
@@ -83,7 +88,8 @@ Examples:
 
 		w := tabwriter.NewWriter(os.Stdout, 0, 0, 2, ' ', 0)
 		fmt.Fprintln(w, "PAGE\tTYPE\tELEMENT ID\tLABEL\tPOST TYPE\tQUERY")
-		for _, r := range resp.Results {
+		rows := resp.Results
+		for _, r := range rows {
 			label := r.ElementLabel
 			if label == "" {
 				label = "-"
@@ -106,6 +112,53 @@ func splitSetting(s string) []string {
 	return []string{s}
 }
 
+var searchPagesCmd = &cobra.Command{
+	Use:   "pages [search-term]",
+	Short: "Find pages with Bricks content by title",
+	Long: `List pages that have Bricks content, optionally filtered by title.
+
+Examples:
+  bricks search pages
+  bricks search pages "Home"
+  bricks search pages "Contact" --json`,
+	RunE: func(cmd *cobra.Command, args []string) error {
+		output.ResolveFormat(cmd)
+		if err := requireConfig(); err != nil {
+			return err
+		}
+		c := newSiteClient()
+
+		search := ""
+		if len(args) > 0 {
+			search = args[0]
+		}
+
+		resp, err := c.SearchPages(search, searchLimit, getDX(cmd).Page)
+		if err != nil {
+			return fmt.Errorf("search failed: %w", err)
+		}
+
+		if output.IsJSON() || getDX(cmd).NDJSON {
+			return writeDXCollection(cmd, resp.Pages, map[string]interface{}{"total": resp.Total}, "pages")
+		}
+
+		if len(resp.Pages) == 0 {
+			fmt.Println("No pages with Bricks content found.")
+			return nil
+		}
+
+		w := tabwriter.NewWriter(os.Stdout, 0, 0, 2, ' ', 0)
+		fmt.Fprintln(w, "ID\tTITLE\tSLUG\tTYPE\tSTATUS\tELEMENTS")
+		for _, p := range resp.Pages {
+			fmt.Fprintf(w, "%d\t%s\t%s\t%s\t%s\t%d\n",
+				p.ID, p.Title, p.Slug, p.PostType, p.Status, p.ElementCount)
+		}
+		w.Flush()
+		fmt.Fprintf(os.Stderr, "\n%d pages\n", resp.Total)
+		return nil
+	},
+}
+
 func init() {
 	searchElementsCmd.Flags().StringVar(&searchType, "type", "", "element type (heading, button, etc.)")
 	searchElementsCmd.Flags().StringVar(&searchSetting, "setting", "", "setting filter as key=value")
@@ -117,8 +170,14 @@ func init() {
 	searchElementsCmd.Flags().StringVar(&searchQueryTaxonomy, "query-taxonomy", "", "filter query elements by queried taxonomy")
 	output.AddFormatFlags(searchElementsCmd)
 	searchElementsCmd.Flags().IntVar(&searchLimit, "limit", 0, "max results")
+	addReadDXFlags(searchElementsCmd, 0)
+
+	output.AddFormatFlags(searchPagesCmd)
+	searchPagesCmd.Flags().IntVar(&searchLimit, "limit", 50, "max results")
+	addReadDXFlags(searchPagesCmd, 50)
 
 	searchCmd.AddCommand(searchElementsCmd)
+	searchCmd.AddCommand(searchPagesCmd)
 	rootCmd.AddCommand(searchCmd)
 }
 

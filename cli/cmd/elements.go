@@ -68,8 +68,8 @@ Examples:
 			return fmt.Errorf("element type '%s' not found", singleName)
 		}
 
-		if output.IsJSON() {
-			return output.JSON(resp)
+		if output.IsJSON() || getDX(cmd).NDJSON {
+			return writeDXCollection(cmd, resp.ElementTypes, map[string]interface{}{}, "elementTypes")
 		}
 
 		if resp.Count == 0 {
@@ -79,8 +79,10 @@ Examples:
 
 		w := tabwriter.NewWriter(os.Stdout, 0, 0, 2, ' ', 0)
 		fmt.Fprintln(w, "NAME\tLABEL\tCATEGORY\tICON")
-		for _, et := range resp.ElementTypes {
-			fmt.Fprintf(w, "%s\t%s\t%s\t%s\n", et.Name, et.Label, et.Category, et.Icon)
+		rows := paginate(normalizeSlice(resp.ElementTypes), getDX(cmd).Limit, getDX(cmd).Page)
+		for _, item := range rows {
+			m, _ := item.(map[string]interface{})
+			fmt.Fprintf(w, "%s\t%s\t%s\t%s\n", m["name"], m["label"], m["category"], m["icon"])
 		}
 		w.Flush()
 		fmt.Printf("\n%d element types\n", resp.Count)
@@ -92,6 +94,7 @@ func init() {
 	elemTypesCmd.Flags().BoolVar(&elemTypesControls, "controls", false, "include element controls schema")
 	elemTypesCmd.Flags().StringVar(&elemTypesCategory, "category", "", "filter by category")
 	output.AddFormatFlags(elemTypesCmd)
+	addReadDXFlags(elemTypesCmd, 0)
 
 	elementsCmd.AddCommand(elemTypesCmd)
 	rootCmd.AddCommand(elementsCmd)

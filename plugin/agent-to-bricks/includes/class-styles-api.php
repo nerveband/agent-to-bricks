@@ -272,6 +272,7 @@ class ATB_Styles_API {
 	public static function get_styles() {
 		$theme_styles    = get_option( 'bricks_theme_styles', array() );
 		$global_settings = get_option( 'bricks_global_settings', array() );
+		$style_manager   = get_option( 'bricks_style_manager', array() );
 		$color_palette   = $global_settings['colorPalette'] ?? array();
 
 		// Format theme styles as array with key included
@@ -299,6 +300,7 @@ class ATB_Styles_API {
 
 		return new WP_REST_Response( array(
 			'themeStyles'    => $styles_list,
+			'styleManager'   => is_array( $style_manager ) ? $style_manager : array(),
 			'colorPalette'   => $color_palette,
 			'cssColors'      => $css_colors,
 			'globalSettings' => $global_settings,

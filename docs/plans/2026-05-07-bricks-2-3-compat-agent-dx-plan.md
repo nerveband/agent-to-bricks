@@ -2,7 +2,7 @@
 
 Date: 2026-05-07
 Branch: `codex/bricks-2-3-compat-plan`
-Status: planned
+Status: implemented for v2.3.0
 
 ## Context
 

@@ -38,14 +38,15 @@ bricks site features --format json
 ```
 Bricks:          true (1.12.2)
 WordPress:       6.9
-Plugin:          2.1.0
+Plugin:          2.3.0
+Global Queries: 2
 Abilities API:   true
 Frameworks:      2
 Query Elements:  5
 WooCommerce:     true (9.8.1)
 ```
 
-This is the fastest way to check whether a site exposes query-capable Bricks elements, WooCommerce discovery routes, and the WordPress Abilities API.
+This is the fastest way to check whether a site exposes query-capable Bricks elements, Bricks Global Queries, WooCommerce discovery routes, and the WordPress Abilities API.
 
 ## List query-capable element types
 
@@ -63,6 +64,8 @@ bricks site query-elements posts --controls --format json
 | `--controls` | Include the control schema for each query-capable element type |
 | `--format json` | Output result as JSON |
 | `--json` | Shorthand for `--format json` |
+
+Use `bricks discover --json --fields summary,features.globalQueries,globalQueries` when an agent needs Global Query names/categories plus the stable site summary in one compact payload.
 
 ### Example
 

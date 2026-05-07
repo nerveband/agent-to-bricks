@@ -9,6 +9,7 @@ import (
 
 	clierrors "github.com/nerveband/agent-to-bricks/internal/errors"
 	"github.com/nerveband/agent-to-bricks/internal/output"
+	"github.com/nerveband/agent-to-bricks/internal/security"
 	"github.com/spf13/cobra"
 )
 
@@ -33,12 +34,14 @@ var classesListCmd = &cobra.Command{
 			return fmt.Errorf("failed to list classes: %w", err)
 		}
 
-		if output.IsJSON() {
-			return output.JSON(resp)
+		if output.IsJSON() || getDX(cmd).NDJSON {
+			return writeDXCollection(cmd, resp.Classes, map[string]interface{}{"total": resp.Total}, "classes")
 		}
 
 		fmt.Printf("Global Classes (%d of %d total)\n\n", resp.Count, resp.Total)
-		for _, cls := range resp.Classes {
+		rows := paginate(normalizeSlice(resp.Classes), getDX(cmd).Limit, getDX(cmd).Page)
+		for _, item := range rows {
+			cls, _ := item.(map[string]interface{})
 			name, _ := cls["name"].(string)
 			id, _ := cls["id"].(string)
 			fw, _ := cls["framework"].(string)
@@ -96,6 +99,13 @@ var classesCreateCmd = &cobra.Command{
 
 		if name == "" {
 			return clierrors.ValidationError("MISSING_NAME", "class name is required")
+		}
+		if err := security.ResourceID("class name", name); err != nil {
+			return clierrors.ValidationError("INVALID_CLASS_NAME", err.Error())
+		}
+
+		if getDX(cmd).DryRun {
+			return dryRun(cmd, "POST", "/classes", map[string]interface{}{"name": name, "settings": settings})
 		}
 
 		result, err := c.CreateClass(name, settings)
@@ -166,6 +176,13 @@ var classesDeleteCmd = &cobra.Command{
 			return err
 		}
 		c := newSiteClient()
+		if err := security.ResourceID("class ID", args[0]); err != nil {
+			return clierrors.ValidationError("INVALID_CLASS_ID", err.Error())
+		}
+
+		if getDX(cmd).DryRun {
+			return dryRun(cmd, "DELETE", "/classes/"+args[0], nil)
+		}
 
 		if err := c.DeleteClass(args[0]); err != nil {
 			return fmt.Errorf("failed to delete class: %w", err)
@@ -208,8 +225,13 @@ func matchWildcard(pattern, s string) bool {
 
 func init() {
 	classesListCmd.Flags().String("framework", "", "filter by framework (acss, custom)")
+	addReadDXFlags(classesListCmd, 0)
 	output.AddFormatFlags(classesListCmd)
 	classesCreateCmd.Flags().String("settings", "", "class settings as JSON")
+	output.AddFormatFlags(classesCreateCmd)
+	addDryRunFlag(classesCreateCmd)
+	output.AddFormatFlags(classesDeleteCmd)
+	addDryRunFlag(classesDeleteCmd)
 
 	classesCmd.AddCommand(classesListCmd)
 	classesCmd.AddCommand(classesCreateCmd)

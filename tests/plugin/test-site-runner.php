@@ -152,5 +152,22 @@ if (
     $fail++;
 }
 
+// ===== Test 10: GET /site/global-queries =====
+echo "TEST 10: GET Bricks global queries... ";
+$r = dispatch_rest('GET', '/agent-bricks/v1/site/global-queries');
+if (
+    $r['status'] === 200
+    && isset($r['data']['queries'])
+    && isset($r['data']['categories'])
+    && isset($r['data']['count'])
+) {
+    echo "PASS (queries={$r['data']['count']}, categories=" . count($r['data']['categories']) . ")\n";
+    $pass++;
+} else {
+    echo "FAIL (status={$r['status']})\n";
+    echo json_encode($r['data']) . "\n";
+    $fail++;
+}
+
 echo "\nResults: $pass passed, $fail failed\n";
 exit($fail > 0 ? 1 : 0);

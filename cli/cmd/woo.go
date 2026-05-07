@@ -37,7 +37,7 @@ var wooStatusCmd = &cobra.Command{
 		}
 
 		if output.IsJSON() {
-			return output.JSON(resp)
+			return writeDXJSON(cmd, resp)
 		}
 
 		fmt.Printf("Active:             %t\n", resp.Active)
@@ -69,8 +69,10 @@ var wooProductsCmd = &cobra.Command{
 			return fmt.Errorf("failed to list WooCommerce products: %w", err)
 		}
 
-		if output.IsJSON() {
-			return output.JSON(resp)
+		if output.IsJSON() || getDX(cmd).NDJSON {
+			return writeDXCollection(cmd, resp.Products, map[string]interface{}{
+				"total": resp.Total, "page": resp.Page, "perPage": resp.PerPage, "totalPages": resp.TotalPages,
+			}, "products")
 		}
 		if len(resp.Products) == 0 {
 			fmt.Println("No WooCommerce products found.")
@@ -79,8 +81,10 @@ var wooProductsCmd = &cobra.Command{
 
 		w := tabwriter.NewWriter(os.Stdout, 0, 0, 2, ' ', 0)
 		fmt.Fprintln(w, "ID\tTITLE\tSKU\tPRICE\tSTATUS")
-		for _, product := range resp.Products {
-			fmt.Fprintf(w, "%d\t%s\t%s\t%s\t%s\n", product.ID, product.Title, product.SKU, product.Price, product.Status)
+		rows := paginate(normalizeSlice(resp.Products), getDX(cmd).Limit, getDX(cmd).Page)
+		for _, item := range rows {
+			p, _ := item.(map[string]interface{})
+			fmt.Fprintf(w, "%.0f\t%s\t%s\t%s\t%s\n", p["id"], p["title"], p["sku"], p["price"], p["status"])
 		}
 		w.Flush()
 		fmt.Printf("\n%d products (page %d of %d)\n", resp.Total, resp.Page, resp.TotalPages)
@@ -112,7 +116,6 @@ func runWooTerms(cmd *cobra.Command, kind string) error {
 
 	c := newSiteClient()
 	var (
-		resp interface{}
 		err  error
 		rows []struct {
 			ID    int
@@ -125,7 +128,7 @@ func runWooTerms(cmd *cobra.Command, kind string) error {
 	switch kind {
 	case "categories":
 		categories, e := c.ListWooProductCategories(wooSearch, wooLimit)
-		resp, err = categories, e
+		err = e
 		for _, row := range categories.Categories {
 			rows = append(rows, struct {
 				ID    int
@@ -136,7 +139,7 @@ func runWooTerms(cmd *cobra.Command, kind string) error {
 		}
 	case "tags":
 		tags, e := c.ListWooProductTags(wooSearch, wooLimit)
-		resp, err = tags, e
+		err = e
 		for _, row := range tags.Tags {
 			rows = append(rows, struct {
 				ID    int
@@ -151,8 +154,8 @@ func runWooTerms(cmd *cobra.Command, kind string) error {
 	if err != nil {
 		return fmt.Errorf("failed to list WooCommerce %s: %w", kind, err)
 	}
-	if output.IsJSON() {
-		return output.JSON(resp)
+	if output.IsJSON() || getDX(cmd).NDJSON {
+		return writeDXCollection(cmd, rows, nil, kind)
 	}
 	if len(rows) == 0 {
 		fmt.Printf("No WooCommerce %s found.\n", kind)
@@ -182,6 +185,9 @@ func init() {
 	wooCategoriesCmd.Flags().IntVar(&wooLimit, "limit", 20, "max results")
 	wooTagsCmd.Flags().StringVar(&wooSearch, "search", "", "filter WooCommerce tags by name")
 	wooTagsCmd.Flags().IntVar(&wooLimit, "limit", 20, "max results")
+	addReadDXFlags(wooProductsCmd, 20)
+	addReadDXFlags(wooCategoriesCmd, 20)
+	addReadDXFlags(wooTagsCmd, 20)
 
 	wooCmd.AddCommand(wooStatusCmd)
 	wooCmd.AddCommand(wooProductsCmd)

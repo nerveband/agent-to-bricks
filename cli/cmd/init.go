@@ -102,8 +102,7 @@ bricks CLI to build and manage your Bricks pages.`,
 }
 
 func containsATBPointer(content string) bool {
-	return len(content) > 0 && (
-		contains(content, "agent-to-bricks") ||
+	return len(content) > 0 && (contains(content, "agent-to-bricks") ||
 		contains(content, "Agent to Bricks") ||
 		contains(content, "/agent-to-bricks"))
 }
